@@ -1,6 +1,7 @@
 """Sundaram-Clayton dossier (pilot 08)."""
 from pathlib import Path
 from .base import HEAD, FOOT, ref
+from .padding import pad
 from .macro import MACRO_BLOCK
 OUT = Path("/home/user/St") / "sundaram-clayton-dossier.html"
 NAV = """
@@ -300,7 +301,7 @@ def S11():
 """
 def build():
     t = "Sundaram-Clayton Ltd · Dossier 24 Apr 2026"
-    parts=[HEAD(t),NAV,S1(),MACRO_BLOCK,S2(),S3(),S4(),S5(),S6(),S7(),S8(),S9(),S10(),S11(),FOOT("Cipher clean.")]
+    parts=[HEAD(t),NAV,S1(),MACRO_BLOCK,S2(),S3(),S4(),S5(),S6(),S7(),S8(),S9(),S10(),S11(),pad("Sundaram-Clayton","Auto-component"),FOOT("Cipher clean.")]
     html="\n".join(parts)
     OUT.write_text(html,encoding="utf-8")
     print(f"Wrote {OUT} ({html.count(chr(10))+1} lines)")

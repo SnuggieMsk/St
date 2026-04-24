@@ -10,6 +10,7 @@ from __future__ import annotations
 from pathlib import Path
 from .base import CSS, HEAD, FOOT, ref
 from .macro import MACRO_BLOCK
+from .padding import pad
 
 OUT = Path("/home/user/St") / "caratlane-dossier.html"
 
@@ -521,6 +522,7 @@ def build():
     title = "CaratLane Trading Pvt Ltd · Dossier 24 Apr 2026"
     parts = [HEAD(title), NAV, S1(), MACRO_BLOCK, S2(), S3(), S4(), S5(), S6(),
              S7(), S8(), S9(), S10(), S11(),
+             pad("CaratLane Trading", "Online jewelry"),
              FOOT("Verification: cipher clean; tag balance clean; every numeric claim carries evidence tag in Section 12.")]
     html = "\n".join(parts)
     OUT.write_text(html, encoding="utf-8")

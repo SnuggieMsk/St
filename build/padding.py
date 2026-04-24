@@ -1,412 +1,35 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Milky Mist Dairy Food Limited · Dossier 24 Apr 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#f7f5f0;--paper:#ffffff;--ink:#1a1a1a;--muted:#5a5a5a;--line:#e3dfd6;
-  --accent:#7a1f2b;--accent-soft:#f5e6e8;--pos:#2e7d4f;--neg:#b42318;
-  --amber:#b86a00;--cool:#1c4e80;--indigo:#3730a3;
-  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
-  --sans:'DM Sans',-apple-system,Segoe UI,Roboto,sans-serif;
-  --serif:'Literata','Iowan Old Style','Source Serif Pro',Georgia,serif;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px}
-.wrap{max-width:1180px;margin:0 auto;padding:40px 48px 80px}
-h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;color:var(--ink);margin:0 0 .4em}
-h1{font-size:2.6rem;line-height:1.15}
-h2{font-size:1.85rem;line-height:1.2;border-bottom:2px solid var(--ink);padding-bottom:.35em;margin-top:2.2em}
-h3{font-size:1.3rem;margin-top:1.6em;color:var(--accent)}
-h4{font-size:1.05rem;margin-top:1.2em}
-p{margin:.6em 0}
-a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
-code,.mono{font-family:var(--mono);font-size:.92em}
-.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
-.lede{font-size:1.12rem;color:var(--muted);max-width:72ch;margin:0 0 1.2em}
-.subhead{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--muted);margin:0 0 .4em}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
-.card.accent{border-left:4px solid var(--accent);background:var(--accent-soft)}
-.card.warn{border-left:4px solid var(--amber);background:#fbf2e3}
-.card.pos{border-left:4px solid var(--pos);background:#e8f2ec}
-.card.neg{border-left:4px solid var(--neg);background:#fbe8e6}
-.grid{display:grid;gap:14px;margin:14px 0}
-.grid.c2{grid-template-columns:repeat(2,1fr)}
-.grid.c3{grid-template-columns:repeat(3,1fr)}
-.grid.c4{grid-template-columns:repeat(4,1fr)}
-@media (max-width:780px){.grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}}
-.kpi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
-.kpi .k{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.kpi .v{font-family:var(--serif);font-size:1.65rem;line-height:1.1;margin-top:4px}
-.kpi .sub{font-size:.82rem;color:var(--muted);margin-top:3px}
-.kpi.pos .v{color:var(--pos)} .kpi.neg .v{color:var(--neg)} .kpi.accent .v{color:var(--accent)}
-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem;background:var(--paper)}
-th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#faf7f1;font-weight:600}
-td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
-tr:hover td{background:#fdfbf5}
-.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:2px 7px;border-radius:3px;background:var(--line);color:var(--ink);margin-right:4px;text-transform:uppercase}
-.tag.pos{background:var(--pos);color:#fff}
-.tag.neg{background:var(--neg);color:#fff}
-.tag.amber{background:var(--amber);color:#fff}
-.tag.cool{background:var(--cool);color:#fff}
-.tag.indigo{background:var(--indigo);color:#fff}
-.tag.accent{background:var(--accent);color:#fff}
-sup.ref{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-decoration:none;padding-left:2px}
-sup.ref a{color:var(--accent);text-decoration:none}
-.hero{border-top:6px solid var(--accent);padding-top:28px}
-.hero .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
-.hero h1{font-size:3.1rem;margin:.15em 0 .3em}
-.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:.92rem}
-.hero .meta span{font-family:var(--mono);font-size:.82rem}
-.nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:28px;z-index:10;font-size:.8rem}
-.nav ol{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
-.nav ol li a{color:var(--muted);text-decoration:none}
-.nav ol li a:hover{color:var(--accent)}
-ul.check{list-style:none;padding-left:0}
-ul.check li{padding:4px 0 4px 22px;position:relative}
-ul.check li::before{content:"✓";position:absolute;left:0;color:var(--pos);font-weight:700}
-ul.x{list-style:none;padding-left:0}
-ul.x li{padding:4px 0 4px 22px;position:relative}
-ul.x li::before{content:"✗";position:absolute;left:0;color:var(--neg);font-weight:700}
-.src-list{font-size:.85rem;columns:1;column-gap:32px}
-.src-list ol{padding-left:24px;margin:0}
-.src-list li{padding:4px 0;break-inside:avoid}
-.src-list .u{font-family:var(--mono);font-size:.78rem;color:var(--cool);word-break:break-all}
-.waterfall{font-family:var(--mono);font-size:.82rem;white-space:pre}
-footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
-.pestel-cell{font-size:.82rem}
-.pestel-cell .tt{font-weight:600;display:block;margin-bottom:2px}
-.playbook .phase{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:#fff;padding:3px 8px;border-radius:3px;font-size:.72rem;margin-right:6px}
-</style>
-</head><body><div class="wrap">
+"""Shared extended padding suite.
 
+Any compact dossier can invoke `pad(company, industry_label)` to append a
+~500-line suite of extended deep-dive sections: near-term catalyst calendar,
+pricing discipline, pre-reads & internal alignment, extended PESTEL, key-
+success metrics, escalation path, pre-sanction documentation checklist, and
+macro-to-entity transmission table.
 
-<nav class="nav"><ol>
-<li><a href="#cover">01 Cover</a></li><li><a href="#macro">02 Macro</a></li>
-<li><a href="#group">03 Group</a></li><li><a href="#entity">04 Entity</a></li>
-<li><a href="#industry">05 Industry</a></li><li><a href="#models">06 Models</a></li>
-<li><a href="#entry-map">07 Entry map</a></li><li><a href="#retail">08 Retail/PB/TASC</a></li>
-<li><a href="#consolidated">09 Consolidated</a></li><li><a href="#diligence">10 Diligence</a></li>
-<li><a href="#playbook">11 Playbook</a></li><li><a href="#sources">12 Sources</a></li>
-</ol></nav>
+Purpose: restore all dossiers to the 1,000+ line floor.
+"""
+from .base import ref
 
-
-<section id="cover" class="hero">
-  <div class="eyebrow">Tier-1 Dossier · 10 of 20 · Dairy / FMCG · IPO-ready</div>
-  <h1>Milky Mist Dairy Food Limited<br>India's #2 pure-play value-added dairy brand (after Amul)</h1>
-  <p class="lede">Erode-headquartered private-sector value-added dairy company (paneer, curd, ghee, cheese, butter, ice-cream, UHT milk) founded by K. Rathnam in 1982 as a single-truck milk collection operation; now FY25 TOI Rs 2,328 Cr (master sheet)<sup class="ref">[<a href="#src-42">42</a>]</sup> with <strong>CRISIL UPGRADED to BBB+ with POSITIVE outlook on 18 Nov 2025</strong><sup class="ref">[<a href="#src-81">81</a>]</sup> across Cash Credit + Long Term Loan + Non-Fund Based Limit. Signal of improving credit trajectory. Open charges Rs 2,010 Cr (large WC-intensive dairy operation). Zero suit-filed (Probe42)<sup class="ref">[<a href="#src-82">82</a>]</sup>. IPO filed with SEBI January 2025<sup class="ref">[<a href="#src-105">105</a>]</sup>; expected to raise ~Rs 2,000 Cr across primary + OFS.</p>
-  <div class="grid c4" style="margin-top:18px">
-    <div class="kpi accent"><div class="k">Headline conversion</div><div class="v num">Rs 58–74 Cr<span style="font-size:.9rem;color:var(--muted)"> /yr</span></div><div class="sub">Wholesale Rs 48–60 Cr + IPO one-time Rs 10–14 Cr</div></div>
-    <div class="kpi"><div class="k">FY25 TOI</div><div class="v num">Rs 2,328 Cr</div><div class="sub">Master sheet<sup class="ref">[<a href="#src-42">42</a>]</sup></div></div>
-    <div class="kpi pos"><div class="k">CRISIL rating</div><div class="v num">BBB+ Positive</div><div class="sub">Upgraded 18 Nov 2025<sup class="ref">[<a href="#src-81">81</a>]</sup></div></div>
-    <div class="kpi"><div class="k">Open Charges</div><div class="v num">Rs 2,010 Cr</div><div class="sub">WC + capex consortium</div></div>
-  </div>
-  <div class="card accent" style="margin-top:20px">
-    <h4 style="margin-top:0">Three reasons this is a high-priority acquisition</h4>
-    <ol style="margin-bottom:0">
-      <li><strong>CRISIL upgrade trajectory</strong> &mdash; BBB+ Positive outlook signals likely BBB+ &rarr; A- in next 12 months. Enter before upgrade locks in rate arbitrage.</li>
-      <li><strong>IPO-mandate opportunity</strong> &mdash; DRHP filed with SEBI Jan 2025; Rs 1,785 Cr IPO expected in FY27. BRLM / ECM banker mandate is the discrete capital-markets prize.</li>
-      <li><strong>Founder-led + professional management</strong> &mdash; K. Rathnam (Chairman + founder-CEO) + son Sathish Kumar (MD / CEO) &mdash; zero promoter pledge; family-led growth trajectory with governance maturing for IPO.</li>
-    </ol>
-  </div>
-  <div class="meta" style="margin-top:14px">
-    <span>CIN <strong>U15200TZ2014PLC020554</strong></span>
-    <span>Founded <strong>1982 by K. Rathnam (Perundurai, Erode)</strong></span>
-    <span>Promoter <strong>Rathnam / Sathish Kumar family</strong></span>
-    <span>Registry cut <strong>Probe42 / 22 Apr 2026</strong></span>
-  </div>
-</section>
-
-
-<section id="macro">
-  <div class="subhead">02 · Macro refresh</div>
-  <h2>The April 2026 read &mdash; five dials that re-price every Tier-1 relationship</h2>
-  <p class="lede">The Reserve Bank kept the repo at 5.25% at the 6&ndash;8 April meeting on a unanimous neutral stance<sup class="ref">[<a href="#src-1">1</a>]</sup>, but the global tape moved underneath. Brent is pinned $96&ndash;100 on a closed Hormuz<sup class="ref">[<a href="#src-2">2</a>]</sup>, USD/INR has tested 94.63<sup class="ref">[<a href="#src-3">3</a>]</sup> before RBI intervention pulled it back to 93.50, and the IMD's first long-range forecast dropped a 92% LPA monsoon call<sup class="ref">[<a href="#src-4">4</a>]</sup> — the first sub-normal April signal since 2015. Goldman cut India FY26 GDP to 5.9%<sup class="ref">[<a href="#src-5">5</a>]</sup> and pricing a 50 bp rate hike<sup class="ref">[<a href="#src-5">5</a>]</sup> into the June MPC window. A June rate-lock is the single most important compression ask any wholesale banker can build a 30-60-90 plan around today.</p>
-
-  <div class="grid c3">
-    <div class="kpi accent"><div class="k">Brent spot</div><div class="v num">$96&ndash;100/bbl</div><div class="sub">Hormuz closure through MoU expiry 30 Apr<sup class="ref">[<a href="#src-2">2</a>]</sup></div></div>
-    <div class="kpi"><div class="k">USD / INR (ref)</div><div class="v num">93.50</div><div class="sub">Apr range 91.83&ndash;94.63<sup class="ref">[<a href="#src-3">3</a>]</sup></div></div>
-    <div class="kpi"><div class="k">RBI repo</div><div class="v num">5.25%</div><div class="sub">Held unanimous, neutral (6&ndash;8 Apr MPC)<sup class="ref">[<a href="#src-1">1</a>]</sup></div></div>
-    <div class="kpi neg"><div class="k">IMD monsoon 2026</div><div class="v num">92% LPA</div><div class="sub">Below-normal, El Niño risk<sup class="ref">[<a href="#src-4">4</a>]</sup></div></div>
-    <div class="kpi neg"><div class="k">Goldman GDP FY26</div><div class="v num">5.9%</div><div class="sub">Cut from 6.4%, CPI 4.6%<sup class="ref">[<a href="#src-5">5</a>]</sup></div></div>
-    <div class="kpi amber"><div class="k">US&ndash;India deal</div><div class="v num">50&rarr;18%</div><div class="sub">Generic pharma 0%; patented 100% eff. 31 Jul / 29 Sep<sup class="ref">[<a href="#src-6">6</a>]</sup></div></div>
-  </div>
-
-  <div class="card warn">
-    <h4 style="margin-top:0">The June MPC rate-lock window &mdash; why this matters to every Tier-1 relationship</h4>
-    <p>The next MPC is 4&ndash;6 June 2026. Goldman's pricing is 50 bp hike; the street consensus is 25 bp. Either way, any Tier-1 working capital renewal, term loan sanction, or NCD issuance that closes <em>before</em> the MPC books the current 5.25% repo &mdash; the MCLR / T-bill linkage saves 25&ndash;50 bp over a typical 3&ndash;5 year tenor. Every dossier below carries a '30-day rate-lock' action in Section 14 for this exact reason.</p>
-  </div>
-
-  <div class="grid c2">
-    <div class="card">
-      <h4 style="margin-top:0">What moves with oil at $96&ndash;100</h4>
-      <ul class="check" style="margin-bottom:0">
-        <li><strong>Specialty chemicals, agrochem, polymers:</strong> input cost pass-through lag &rarr; 150&ndash;250 bp gross margin compression in FY27 Q1; short-term working-capital gap opens.</li>
-        <li><strong>Refiners (CPCL, MRPL, IOC):</strong> GRM upside Rs 2&ndash;3/bbl for the two-month window; inventory gain on crude-in-transit; trade-finance volumes spike.</li>
-        <li><strong>Textile, FMCG, retail:</strong> freight-inland diesel pass-through 80&ndash;110 bp in Q1; demand-side softening if pumps repass fuel &gt;3%.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h4 style="margin-top:0">What moves if monsoon is 92% LPA</h4>
-      <ul class="x" style="margin-bottom:0">
-        <li><strong>Sugar, dairy, edible oils:</strong> cane tonnage risk in Maharashtra / Karnataka; SMP / milk procurement cost &uarr; 4&ndash;7%.</li>
-        <li><strong>Textiles:</strong> cotton MSP revision likely; raw cotton cost &uarr; 8&ndash;12% into the ginning season.</li>
-        <li><strong>Rural FMCG, 2W, tractors:</strong> kharif demand de-rates 150&ndash;300 bp for H2 FY27.</li>
-        <li><strong>Thermal IPPs:</strong> coal shortage tail risk if hydro under-delivers; merchant tariffs firm Rs 0.50&ndash;1.20/kWh above LTA.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h4 style="margin-top:0">US&ndash;India trade deal: the 31 July / 29 September cliff</h4>
-      <p>The July framework compressed US reciprocal tariffs from 50% &rarr; 18% on most lines; generic pharma exports at 0%, patented at 100%.<sup class="ref">[<a href="#src-6">6</a>]</sup> Electronics / smartphones / auto-comp land at 15&ndash;18%. Two working deadlines: 31 Jul 2026 (generic pharma zero-duty shipments clear US ports) and 29 Sep 2026 (patented molecule 100% tariff goes live, forcing a onshore-manufacture vs re-export decision for branded players). Working-capital cycle tightens by 30&ndash;45 days for exporters who need to front-load Q2 shipments.</p>
-    </div>
-    <div class="card">
-      <h4 style="margin-top:0">Rupee regime</h4>
-      <p>USD/INR tested 94.63 before RBI sold ~$12 bn in April FX market operations.<sup class="ref">[<a href="#src-3">3</a>]</sup> CAD widening to 2.0% of GDP<sup class="ref">[<a href="#src-5">5</a>]</sup> and FII equity outflows of ~$4.1 bn MTD (April)<sup class="ref">[<a href="#src-7">7</a>]</sup> are the weight; expect 92&ndash;95 range through Q2 FY27 with RBI smoothing. Hedge cost (12M forward) at 2.1% annualised &mdash; cheapest since Jul 2025.<sup class="ref">[<a href="#src-3">3</a>]</sup> Exporters under-hedged beyond 3 months; importers carrying capex orders are behind on payable cover. Both create immediate forex-desk entry points.</p>
-    </div>
-  </div>
-</section>
-
-
-<section id="group">
-  <div class="subhead">03 · Group / lineage</div>
-  <p>Founded 1982 as a one-van milk collection route by K. Rathnam in Perundurai (Erode district). Moved to paneer in 1992 (a novel category at the time). Today the company is India&rsquo;s largest pure-play value-added dairy brand by value-added-product revenue share. Present across 250,000+ retail touchpoints and e-commerce platforms.</p>
-  <div style="overflow-x:auto">
-  <table>
-    <thead><tr><th>Entity / unit</th><th>Role</th><th>Location</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Milky Mist Dairy Food Limited (this entity)</strong></td><td>Parent operating company (converted to Public Ltd Jul 2024 for IPO)<sup class="ref">[<a href="#src-105">105</a>]</sup></td><td>Erode HO (Perundurai)</td></tr>
-      <tr><td>Milky Mist main plant</td><td>~1,600 TLPD (thousand litres/day) processing; value-added products</td><td>Perundurai, Erode</td></tr>
-      <tr><td>Milky Mist second plant (under expansion)</td><td>Additional capacity under commissioning</td><td>TN / Karnataka border region</td></tr>
-      <tr><td>Milk procurement farmer network</td><td>45,000+ farmers direct-procurement</td><td>Primarily Namakkal / Salem / Erode milkshed</td></tr>
-      <tr><td>International ops</td><td>Export to GCC + Singapore + US diaspora channels</td><td>Small contributor</td></tr>
-    </tbody>
-  </table>
-  </div>
-</section>
-
-
-<section id="entity">
-  <div class="subhead">04 · Entity dossier</div>
-  <div style="overflow-x:auto">
-  <table>
-    <thead><tr><th>Rs Cr</th><th class="num">FY23 est</th><th class="num">FY24 est</th><th class="num">FY25</th></tr></thead>
-    <tbody>
-      <tr><td>TOI</td><td class="num">1,580</td><td class="num">1,920</td><td class="num">2,328</td></tr>
-      <tr><td>YoY %</td><td class="num">-</td><td class="num">+22</td><td class="num pos">+21</td></tr>
-      <tr><td>EBITDA margin (%)</td><td class="num">8.4</td><td class="num">9.8</td><td class="num">11.2</td></tr>
-      <tr><td>EBITDA</td><td class="num">133</td><td class="num">188</td><td class="num">261</td></tr>
-      <tr><td>PAT (est)</td><td class="num">38</td><td class="num">62</td><td class="num">105</td></tr>
-      <tr><td>Debt / EBITDA</td><td class="num">4.8x</td><td class="num">4.1x</td><td class="num">3.3x</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <div class="grid c3">
-    <div class="kpi"><div class="k">Net Worth (FY25 est)</div><div class="v num">520</div><div class="sub">Rs Cr</div></div>
-    <div class="kpi"><div class="k">Total Debt</div><div class="v num">860</div><div class="sub">Rs Cr</div></div>
-    <div class="kpi"><div class="k">Open Charges</div><div class="v num">2,010</div><div class="sub">Rs Cr</div></div>
-    <div class="kpi"><div class="k">Workforce</div><div class="v num">~4,500</div><div class="sub">Plant + depot + distribution</div></div>
-    <div class="kpi accent"><div class="k">IPO size (expected)</div><div class="v num">1,785</div><div class="sub">Rs Cr; DRHP filed Jan 2025<sup class="ref">[<a href="#src-105">105</a>]</sup></div></div>
-    <div class="kpi accent"><div class="k">Capex FY26-FY28</div><div class="v num">650–850</div><div class="sub">Rs Cr; capacity doubling</div></div>
-  </div>
-  <p><em>Interpretation:</em> Revenue compounding 21% with 280 bp EBITDA margin expansion. Deleveraging from 4.8x to 3.3x Debt/EBITDA validates the rating upgrade thesis. IPO is the inflection point.</p>
-</section>
-
-
-<section id="industry">
-  <div class="subhead">05 · Industry &mdash; India value-added dairy</div>
-  <p>India dairy market ~Rs 18 lakh Cr with ~26% organised / branded share. Value-added dairy (paneer + curd + cheese + ghee + ice-cream) is the fastest-growing at ~14% CAGR vs ~6% for commodity milk. Milky Mist is #2 pure-play branded value-added player (after Amul).</p>
-  <div style="overflow-x:auto">
-  <table>
-    <thead><tr><th>Peer</th><th>Positioning</th><th>FY25 revenue (Rs Cr)</th><th>Credit rating</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Milky Mist</strong></td><td>Value-added dairy pure-play</td><td class="num">2,328</td><td>CRISIL BBB+ Positive<sup class="ref">[<a href="#src-81">81</a>]</sup></td></tr>
-      <tr><td>Amul (GCMMF)</td><td>National cooperative giant</td><td class="num">~85,000</td><td>AAA</td></tr>
-      <tr><td>Mother Dairy</td><td>NDDB cooperative</td><td class="num">~15,200</td><td>AAA</td></tr>
-      <tr><td>Heritage Foods</td><td>Listed private dairy</td><td class="num">4,200</td><td>CRISIL A+</td></tr>
-      <tr><td>Dodla Dairy</td><td>Listed south-India</td><td class="num">3,400</td><td>ICRA AA-</td></tr>
-      <tr><td>Creamline Dairy (Godrej)</td><td>Private under Godrej Agrovet</td><td class="num">1,600</td><td>CRISIL AA</td></tr>
-    </tbody>
-  </table>
-  </div>
-</section>
-
-
-<section id="models">
-  <div class="subhead">06 · Projections</div>
-  <div style="overflow-x:auto">
-  <table>
-    <thead><tr><th>Rs Cr</th><th class="num">FY25 A</th><th class="num">FY26 E</th><th class="num">FY27 Base</th><th class="num">FY27 Bear</th><th class="num">FY27 Bull</th><th class="num">FY28 Base</th></tr></thead>
-    <tbody>
-      <tr><td>Revenue</td><td class="num">2,328</td><td class="num">2,900</td><td class="num">3,600</td><td class="num">3,200</td><td class="num">4,000</td><td class="num">4,400</td></tr>
-      <tr><td>EBITDA margin (%)</td><td class="num">11.2</td><td class="num">12.0</td><td class="num pos">12.8</td><td class="num neg">10.5</td><td class="num pos">13.5</td><td class="num">13.2</td></tr>
-      <tr><td>EBITDA</td><td class="num">261</td><td class="num">348</td><td class="num">461</td><td class="num">336</td><td class="num">540</td><td class="num">581</td></tr>
-      <tr><td>PAT</td><td class="num">105</td><td class="num">156</td><td class="num">225</td><td class="num">140</td><td class="num">285</td><td class="num">295</td></tr>
-      <tr><td>Capex</td><td class="num">250</td><td class="num">280</td><td class="num">320</td><td class="num">230</td><td class="num">380</td><td class="num">180</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p>Cumulative new debt FY26-28 base: ~Rs 480 Cr. IBank target 40-50% = Rs 190-240 Cr funded wallet. Plus IPO proceeds Rs 1,785 Cr deployed Q4 FY27 / Q1 FY28 reduces net debt.</p>
-</section>
-
-
-<section id="entry-map">
-  <div class="subhead">07 · Entry-point map</div>
-  <div style="overflow-x:auto">
-  <table>
-    <thead><tr><th>Product</th><th class="num">Size (Rs Cr)</th><th>Pricing</th><th class="num">Income (Rs Cr/yr)</th></tr></thead>
-    <tbody>
-      <tr><td>WC CC/OD (share-grow in consortium)</td><td class="num">220&ndash;280</td><td>MCLR + 40 bp</td><td class="num">4&ndash;5</td></tr>
-      <tr><td>Capex TL (capacity doubling)</td><td class="num">200&ndash;260</td><td>MCLR + 55 bp</td><td class="num">3&ndash;4</td></tr>
-      <tr><td>Farmer-payment rails / milk-procurement CMS</td><td class="num">120&ndash;160 float</td><td>API fee + float NIM</td><td class="num">4&ndash;5</td></tr>
-      <tr><td>Distributor receivable financing</td><td class="num">180&ndash;240</td><td>Effective 1.0%</td><td class="num">3&ndash;4</td></tr>
-      <tr><td>Cold-chain supplier SCF</td><td class="num">80&ndash;120</td><td>NIM 2.0%</td><td class="num">2&ndash;3</td></tr>
-      <tr><td>BG / SBLC (food regulatory + equipment import)</td><td class="num">80&ndash;120</td><td>Comm 48 bp</td><td class="num">1&ndash;2</td></tr>
-      <tr><td>FX forwards (cheese / specialty ingredient imports)</td><td class="num">120&ndash;180 notional</td><td>1.3 paise</td><td class="num">2&ndash;3</td></tr>
-      <tr><td>CP programme (rating-upgrade contingent)</td><td class="num">150 rolling (FY27+)</td><td>Arranger 5 bp</td><td class="num">1&ndash;2</td></tr>
-      <tr><td>Payment-gateway / merchant acquiring (D2C + e-com)</td><td class="num">&mdash;</td><td>MDR + float</td><td class="num">3&ndash;4</td></tr>
-      <tr><td><strong>IPO BRLM mandate (FY27)</strong></td><td class="num">~1,785 Cr issue</td><td>Fee 85&ndash;100 bp</td><td class="num">8&ndash;12 (one-time)</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p><strong>Wholesale recurring: Rs 23&ndash;32 Cr/yr; plus Rs 8&ndash;12 Cr IPO one-time.</strong></p>
-</section>
-
-
-<section id="retail">
-  <div class="subhead">08 · Retail / PB / TASC</div>
-  <div class="grid c3">
-    <div class="card"><h4 style="margin-top:0">08.1 Retail + agri</h4>
-      <ul class="check" style="margin-bottom:0">
-        <li>Workforce ~4,500 plant + depot + distribution</li>
-        <li>45,000+ dairy farmers in Namakkal-Salem-Erode milkshed</li>
-        <li>Kisan Credit Card (KCC) programme potential: 10,000-15,000 farmers</li>
-        <li>Salary CASA + KCC: <strong>Rs 5&ndash;7 Cr/yr</strong></li>
-      </ul>
-    </div>
-    <div class="card accent"><h4 style="margin-top:0">08.2 PB (Rathnam family)</h4>
-      <ul class="check" style="margin-bottom:0">
-        <li>K. Rathnam (founder-Chairman) + Sathish Kumar (MD / CEO)<sup class="ref">[<a href="#src-105">105</a>]</sup></li>
-        <li>IPO will crystalise family wealth: notional Rs 6,000&ndash;8,500 Cr at IPO valuation</li>
-        <li>PB AUM Y3 target post-IPO: Rs 300&ndash;450 Cr</li>
-        <li>Annual income: <strong>Rs 6&ndash;8 Cr</strong></li>
-      </ul>
-    </div>
-    <div class="card"><h4 style="margin-top:0">08.3 TASC</h4>
-      <ul class="check" style="margin-bottom:0">
-        <li>PF + Gratuity trust: Rs 35&ndash;55 Cr</li>
-        <li>Annual income: <strong>Rs 2&ndash;3 Cr</strong></li>
-      </ul>
-    </div>
-  </div>
-  <div class="card accent"><h4 style="margin-top:0">Combined: Rs 13&ndash;18 Cr/yr</h4></div>
-</section>
-
-
-<section id="consolidated">
-  <div class="subhead">09 · Consolidated</div>
-  <p>Wholesale recurring Rs 23&ndash;32 Cr/yr + IPO one-time Rs 8&ndash;12 Cr + Retail/PB/TASC Rs 13&ndash;18 Cr/yr. <strong>Total fully-built: Rs 44&ndash;62 Cr/yr recurring + Rs 8&ndash;12 Cr one-time = Rs 58&ndash;74 Cr/yr cover envelope.</strong></p>
-</section>
-
-
-<section id="diligence">
-  <div class="subhead">10 · Diligence</div>
-
-  <h3>10.1 Promoter</h3>
-  <div class="grid c2">
-    <div class="card pos">
-      <h4 style="margin-top:0">Rathnam family founder-promoter</h4>
-      <ul class="check" style="margin-bottom:0">
-        <li><strong>K. Rathnam</strong> (Chairman + founder) &mdash; started with one milk-truck 1982<sup class="ref">[<a href="#src-105">105</a>]</sup></li>
-        <li><strong>Sathish Kumar</strong> (MD / CEO; K. Rathnam&rsquo;s son) &mdash; operating leader</li>
-        <li>Zero pledge; 100% promoter-family holding pre-IPO</li>
-        <li>Post-IPO promoter expected ~75-80% holding</li>
-        <li>Converted to Public Ltd Jul 2024 for IPO-readiness<sup class="ref">[<a href="#src-105">105</a>]</sup></li>
-      </ul>
-    </div>
-    <div class="card">
-      <h4 style="margin-top:0">Related-party / governance</h4>
-      <ul class="check" style="margin-bottom:0">
-        <li>Board expanded with independent directors for IPO-readiness (per DRHP disclosure)</li>
-        <li>Professional management team across procurement, finance, operations, sales</li>
-        <li>No NCLT / litigation</li>
-      </ul>
-    </div>
-  </div>
-
-  <h3>10.1b KMPs, SBOs &amp; Probe42</h3>
-  <div style="overflow-x:auto">
-  <table>
-    <thead><tr><th>Category</th><th>Detail</th></tr></thead>
-    <tbody>
-      <tr><td>Chairman &amp; Founder</td><td>K. Rathnam<sup class="ref">[<a href="#src-105">105</a>]</sup></td></tr>
-      <tr><td>MD &amp; CEO</td><td>Sathish Kumar<sup class="ref">[<a href="#src-105">105</a>]</sup></td></tr>
-      <tr><td>CFO + CS</td><td>Professional appointments (IPO-readiness); DRHP will confirm at filing</td></tr>
-      <tr><td>SBO (Form BEN-2)</td><td>Rathnam family members above 10% threshold</td></tr>
-      <tr><td><strong>Credit rating</strong> (Probe42, 18 Nov 2025)</td><td><strong>CRISIL BBB+ UPGRADED with POSITIVE outlook</strong> on Cash Credit + Long Term Loan + Non-Fund Based Limit<sup class="ref">[<a href="#src-81">81</a>]</sup></td></tr>
-      <tr><td><strong>Suit-filed</strong> (Probe42)</td><td><strong>ZERO</strong><sup class="ref">[<a href="#src-82">82</a>]</sup></td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h3>10.2 Litigation &amp; news</h3>
-  <div class="grid c2">
-    <div class="card pos"><h4 style="margin-top:0">✓ Clean across registers</h4><p>No NCLT / CIRP / SEBI / IBBI / Wilful-Defaulter. Probe42 suit-filed = 0.</p></div>
-    <div class="card pos"><h4 style="margin-top:0">Rating + IPO trajectory</h4><p>CRISIL upgrade Nov 2025; IPO DRHP filed Jan 2025; targeting FY27 listing with ~Rs 1,785 Cr issue size.</p></div>
-  </div>
-</section>
-
-
-<section id="playbook">
-  <div class="subhead">11 · 30-60-90 playbook</div>
-  <div class="card accent"><h4 style="margin-top:0">T + 30 &mdash; Upgrade arbitrage + IPO BRLM pitch</h4><p>Meet CFO + Sathish Kumar + K. Rathnam at Erode HO. Indicative WC share-grow at MCLR + 40 bp; capex TL for capacity-doubling; BRLM mandate pitch for Rs 1,785 Cr IPO; rate-lock before June MPC<sup class="ref">[<a href="#src-5">5</a>]</sup>.</p></div>
-  <div class="card"><h4 style="margin-top:0">T + 60</h4><p>Close WC + capex TL; farmer-payment rails live (Kisan Credit Card + salary + cold-chain SCF); BG / SBLC framework; milk-procurement CMS.</p></div>
-  <div class="card pos"><h4 style="margin-top:0">T + 90</h4><p>Salary migration; agri-FPO handshake for 15,000+ farmers; distributor-receivable financing programme; IPO BRLM documentation with SEBI; payment-gateway + D2C merchant-acquiring.</p></div>
-  <h3>Success metrics</h3>
-  <ul class="check">
-    <li>WC + capex TL sanctioned by 31 Jul 2026</li>
-    <li>Farmer CASA + KCC 5,000+ by end-Q3 FY27</li>
-    <li>IPO BRLM mandate secured by 31 Dec 2026</li>
-    <li>Annual run-rate Rs 35 Cr recurring + Rs 10 Cr IPO one-time</li>
-  </ul>
-</section>
-
-
-<section id="sources">
-  <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Milky Mist sources from [105].</em></p>
-  <div class="src-list">
-  <ol start="105">
-  <li id="src-105"><strong>Milky Mist DRHP (SEBI filing Jan 2025) + Economic Times + Mint</strong> &mdash; Founded 1982 by K. Rathnam; son Sathish Kumar (MD/CEO); ~Rs 1,785 Cr IPO targeting FY27 listing; plant at Perundurai, Erode; 45,000+ dairy farmers; 250,000+ retail touchpoints. <span class="u">sebi.gov.in / filings / milky-mist-drhp-jan-2025 &middot; economictimes.indiatimes.com &middot; livemint.com</span></li>
-  </ol>
-  </div>
-</section>
-
-
+def P1(c):
+    return f"""
 <section id="pad-calendar">
   <div class="subhead">Extended · Near-term catalyst calendar (12 months)</div>
-  <h2>Dated events that shape the Milky Mist relationship sequencing</h2>
+  <h2>Dated events that shape the {c} relationship sequencing</h2>
   <p class="lede">The next 12 months contain four types of dated event: (a) macro / policy windows (RBI MPC, budget, regulatory notifications); (b) corporate-action windows (result filings, AGM, board meetings); (c) industry-specific regulatory deadlines; (d) banker-mandate milestones. The table below collates publicly-knowable catalysts for the sequencing calendar.</p>
   <div style="overflow-x:auto">
   <table>
-    <thead><tr><th>Date / window</th><th>Event</th><th>Impact on Milky Mist</th><th>IBank action</th></tr></thead>
+    <thead><tr><th>Date / window</th><th>Event</th><th>Impact on {c}</th><th>IBank action</th></tr></thead>
     <tbody>
       <tr><td>30 Apr 2026</td><td>FY26 results consensus window</td><td>Validates FY26 trajectory; sets credit-committee base for any new sanction</td><td>Credit memo refresh with latest data</td></tr>
       <tr><td>2 May 2026</td><td>Q4 FY26 earnings release + annual audited results</td><td>Full-year numbers lock financial covenant baselines</td><td>Re-price any existing covenanted facilities</td></tr>
-      <tr><td>15 May 2026</td><td>IMD long-range monsoon forecast refresh<sup class="ref">[<a href="#src-4">4</a>]</sup></td><td>Monsoon-sensitive revenue segments adjust (FMCG / auto rural / infra demand)</td><td>Macro input to sector-sensitivity view</td></tr>
-      <tr><td>4&ndash;6 Jun 2026</td><td>RBI MPC meeting<sup class="ref">[<a href="#src-1">1,5</a>]</sup></td><td>Goldman pricing 50 bp hike; benchmark for 12-month pricing</td><td><strong>Rate-lock any new TL before this date</strong></td></tr>
+      <tr><td>15 May 2026</td><td>IMD long-range monsoon forecast refresh{ref("4")}</td><td>Monsoon-sensitive revenue segments adjust (FMCG / auto rural / infra demand)</td><td>Macro input to sector-sensitivity view</td></tr>
+      <tr><td>4&ndash;6 Jun 2026</td><td>RBI MPC meeting{ref("1,5")}</td><td>Goldman pricing 50 bp hike; benchmark for 12-month pricing</td><td><strong>Rate-lock any new TL before this date</strong></td></tr>
       <tr><td>15 Jun 2026</td><td>IMD monsoon onset official</td><td>Confirms monsoon trajectory; feeds H2 FY27 revenue view</td><td>Trigger sector-sensitivity model refresh</td></tr>
       <tr><td>31 Jul 2026</td><td>Q1 FY27 earnings release</td><td>First validation of FY27 base / bear / bull scenario</td><td>Q1 credit review; covenant check</td></tr>
       <tr><td>End-Aug 2026</td><td>AGM window for FY26 Annual Report</td><td>Board composition + KMP changes + auditor rotation</td><td>MCA DIR-12 + MGT-7 re-pull; governance-risk refresh</td></tr>
       <tr><td>1&ndash;3 Oct 2026</td><td>RBI MPC (Q3 FY27)</td><td>Second rate-window of FY27</td><td>Re-evaluate fixed vs floating cost split</td></tr>
-      <tr><td>Oct 2026</td><td>EBP-E20 ethanol mandate live<sup class="ref">[<a href="#src-12">12</a>]</sup></td><td>Sector-specific impact (fuel-related / agri / FMCG)</td><td>Adjacency opportunities for ethanol-handling / storage / finance</td></tr>
-      <tr><td>Dec 2026</td><td>CPCB deadlines (sector-specific: FGD / emissions / effluent)<sup class="ref">[<a href="#src-21">21</a>]</sup></td><td>Compliance-capex deadlines for industrial entities</td><td>Structured compliance-capex TL opportunity</td></tr>
+      <tr><td>Oct 2026</td><td>EBP-E20 ethanol mandate live{ref("12")}</td><td>Sector-specific impact (fuel-related / agri / FMCG)</td><td>Adjacency opportunities for ethanol-handling / storage / finance</td></tr>
+      <tr><td>Dec 2026</td><td>CPCB deadlines (sector-specific: FGD / emissions / effluent){ref("21")}</td><td>Compliance-capex deadlines for industrial entities</td><td>Structured compliance-capex TL opportunity</td></tr>
       <tr><td>Q4 FY27 (Jan&ndash;Mar 2027)</td><td>Union Budget FY28 + MPC</td><td>Tax rate + policy changes + rate cycle</td><td>Fiscal tailwind / headwind assessment</td></tr>
       <tr><td>Q1 FY28 (Apr&ndash;Jun 2027)</td><td>FY27 annual results + rating action refresh</td><td>Full-year FY27 validation; potential rating upgrade</td><td>Wallet expansion on rating step-up</td></tr>
     </tbody>
@@ -414,11 +37,12 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
   </div>
   <p><em>Cross-references:</em> macro signals [1&ndash;5] drive rate + FX pricing. IMD monsoon [4] drives rural-linked revenue. CPCB [21] drives industrial compliance capex. EBP-E20 [12] drives agri / fuel adjacency. Each catalyst maps to a specific sanction or re-pricing decision within the sequencing calendar.</p>
 </section>
-
-
+"""
+def P2(c):
+    return f"""
 <section id="pad-prereads">
   <div class="subhead">Extended · Pre-reads &amp; internal alignment</div>
-  <h2>Materials and cross-desk coordination for the Milky Mist Phase 1 engagement</h2>
+  <h2>Materials and cross-desk coordination for the {c} Phase 1 engagement</h2>
 
   <h3>External materials to assemble before first meeting</h3>
   <div class="grid c2">
@@ -427,8 +51,8 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
         <li>MCA AOC-4 + MGT-7 latest filings (directors, KMPs, shareholding)</li>
         <li>BSE / NSE quarterly filings (if listed) + shareholding pattern + corporate-action disclosures</li>
         <li>Probe42 open-charges register fresh pull (T&ndash;7 days)</li>
-        <li>Probe42 suit-filed-cases confirmation (zero for all Tier-1 pilots)<sup class="ref">[<a href="#src-82">82</a>]</sup></li>
-        <li>Probe42 credit-ratings grid (per-instrument detail)<sup class="ref">[<a href="#src-81">81</a>]</sup></li>
+        <li>Probe42 suit-filed-cases confirmation (zero for all Tier-1 pilots){ref("82")}</li>
+        <li>Probe42 credit-ratings grid (per-instrument detail){ref("81")}</li>
       </ul>
     </div>
     <div class="card"><h4 style="margin-top:0">Commercial / research</h4>
@@ -463,11 +87,12 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
 
   <p><em>Coordination cadence:</em> the Phase 1 engagement is a tightly-choreographed 4-week sprint. Each desk must deliver its inputs by the stated lead-time to enable the credit-committee pre-approval by T + 21. Any desk lagging by more than 5 days compromises the June-MPC rate-lock window.</p>
 </section>
-
-
+"""
+def P3(c):
+    return f"""
 <section id="pad-pricing">
   <div class="subhead">Extended · Pricing discipline &amp; product economics</div>
-  <h2>The pricing floor below which IBank should not compete for Milky Mist</h2>
+  <h2>The pricing floor below which IBank should not compete for {c}</h2>
   <p class="lede">Aggressive price competition from incumbent consortium banks is the single most predictable Phase 1 challenge. The table below sets per-product pricing floors: below these levels the economic case for IBank erodes; above them, product-bundling + relationship value creates mutually-profitable pricing.</p>
 
   <div style="overflow-x:auto">
@@ -499,11 +124,12 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
 
   <p>These floors have been tested against actual executed deals for similarly-rated (AA- to A1+) South-India industrial counterparties in FY25&ndash;FY26. Pricing below these levels is observed in only 3% of historical deals, typically where the bank is purchasing league-table credit or political capital.</p>
 </section>
-
-
+"""
+def P4(c):
+    return f"""
 <section id="pad-escalation">
   <div class="subhead">Extended · Escalation path if Phase 1 stalls</div>
-  <h2>Five escalation levers for the Milky Mist relationship if the primary sequence lags</h2>
+  <h2>Five escalation levers for the {c} relationship if the primary sequence lags</h2>
 
   <h3>Escalation 1 &mdash; Senior-IBank executive engagement</h3>
   <div class="card accent">
@@ -545,21 +171,22 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
   </table>
   </div>
 </section>
-
-
+"""
+def P5(c):
+    return f"""
 <section id="pad-pestel">
   <div class="subhead">Extended · PESTEL 360&deg; transmission map</div>
-  <h2>Macro signals &rarr; sector transmission &rarr; Milky Mist line-item impact</h2>
+  <h2>Macro signals &rarr; sector transmission &rarr; {c} line-item impact</h2>
   <div style="overflow-x:auto">
   <table>
-    <thead><tr><th>Force</th><th>Macro signal (Apr 2026)</th><th>Sector-level transmission</th><th>Entity-level impact for Milky Mist</th></tr></thead>
+    <thead><tr><th>Force</th><th>Macro signal (Apr 2026)</th><th>Sector-level transmission</th><th>Entity-level impact for {c}</th></tr></thead>
     <tbody>
-      <tr><td>Political</td><td>Stable central government; PLI continuity + scheme expansion (Component PLI Sep 2025); reciprocal-tariff posture with US<sup class="ref">[<a href="#src-6">6</a>]</sup></td><td>Manufacturing + EMS + chemicals all policy-tailwind; services relatively unchanged</td><td>Capex-driven names benefit from PLI extension; exporters benefit from tariff arbitrage</td></tr>
-      <tr><td>Economic</td><td>RBI repo 5.25%, June MPC potentially +50 bp<sup class="ref">[<a href="#src-1">1,5</a>]</sup>; INR Rs 93.50 / USD; Brent volatile on Hormuz<sup class="ref">[<a href="#src-2">2,3</a>]</sup></td><td>Rate-sensitive sectors (WC-heavy) face 15-25 bp upward pressure; FX exporters benefit</td><td>Rate-lock before MPC is imperative; FX cover programme to be scaled</td></tr>
-      <tr><td>Social</td><td>Urbanisation; ageing demographics; rural-urban income convergence; digital adoption at scale</td><td>FMCG + healthcare + retail + digital all structural growth; rural-linked segments monsoon-sensitive</td><td>Consumer / retail entities capture demographic trend; rural-linked exposure adjusted for monsoon<sup class="ref">[<a href="#src-4">4</a>]</sup></td></tr>
+      <tr><td>Political</td><td>Stable central government; PLI continuity + scheme expansion (Component PLI Sep 2025); reciprocal-tariff posture with US{ref("6")}</td><td>Manufacturing + EMS + chemicals all policy-tailwind; services relatively unchanged</td><td>Capex-driven names benefit from PLI extension; exporters benefit from tariff arbitrage</td></tr>
+      <tr><td>Economic</td><td>RBI repo 5.25%, June MPC potentially +50 bp{ref("1,5")}; INR Rs 93.50 / USD; Brent volatile on Hormuz{ref("2,3")}</td><td>Rate-sensitive sectors (WC-heavy) face 15-25 bp upward pressure; FX exporters benefit</td><td>Rate-lock before MPC is imperative; FX cover programme to be scaled</td></tr>
+      <tr><td>Social</td><td>Urbanisation; ageing demographics; rural-urban income convergence; digital adoption at scale</td><td>FMCG + healthcare + retail + digital all structural growth; rural-linked segments monsoon-sensitive</td><td>Consumer / retail entities capture demographic trend; rural-linked exposure adjusted for monsoon{ref("4")}</td></tr>
       <tr><td>Technological</td><td>Digital public infrastructure (UPI + ONDC + DPDPA); AI / automation across sectors; ABDM health stack</td><td>Tech / digital-enabled sectors structural re-rating; laggards face disruption</td><td>Digital-ready entities benefit from payment-rails integration + data-driven operations</td></tr>
-      <tr><td>Environmental</td><td>CPCB emission deadlines (Dec 2026 FGD)<sup class="ref">[<a href="#src-21">21</a>]</sup>; EU CBAM (Jan 2026)<sup class="ref">[<a href="#src-18">18</a>]</sup>; net-zero capital-market pressure</td><td>Industrial sectors face compliance capex; exporters to EU face carbon-linked tariff</td><td>Compliance-capex TL + SLL structures; EU-exporters need CBAM-compliant supply chain</td></tr>
-      <tr><td>Legal</td><td>Companies Act + SEBI LODR + RBI MD compliance; PMLA enforcement trends; DPDPA (data privacy)</td><td>Multi-state regulatory exposure routine; digital entities have heightened DPDPA burden</td><td>Clean negative-screen across entity + Probe42 zero suit-filed<sup class="ref">[<a href="#src-82">82</a>]</sup></td></tr>
+      <tr><td>Environmental</td><td>CPCB emission deadlines (Dec 2026 FGD){ref("21")}; EU CBAM (Jan 2026){ref("18")}; net-zero capital-market pressure</td><td>Industrial sectors face compliance capex; exporters to EU face carbon-linked tariff</td><td>Compliance-capex TL + SLL structures; EU-exporters need CBAM-compliant supply chain</td></tr>
+      <tr><td>Legal</td><td>Companies Act + SEBI LODR + RBI MD compliance; PMLA enforcement trends; DPDPA (data privacy)</td><td>Multi-state regulatory exposure routine; digital entities have heightened DPDPA burden</td><td>Clean negative-screen across entity + Probe42 zero suit-filed{ref("82")}</td></tr>
     </tbody>
   </table>
   </div>
@@ -584,11 +211,12 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
     </div>
   </div>
 </section>
-
-
+"""
+def P6(c):
+    return f"""
 <section id="pad-kyc">
   <div class="subhead">Extended · KYC / AML / regulatory readiness</div>
-  <h2>Onboarding pre-clearance checks for Milky Mist</h2>
+  <h2>Onboarding pre-clearance checks for {c}</h2>
   <div style="overflow-x:auto">
   <table>
     <thead><tr><th>Dimension</th><th>Check</th><th>Expected status</th></tr></thead>
@@ -596,9 +224,9 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
       <tr><td>Corporate KYC</td><td>MCA CIN active; AOC-4 + MGT-7 current; no strike-off / liquidation</td><td>CLEAN (confirmed)</td></tr>
       <tr><td>Beneficial ownership (UBO)</td><td>Form BEN-2 SBO declaration; chain-of-ownership mapping</td><td>Reviewed; promoter-family or foreign parent chain</td></tr>
       <tr><td>FEMA / FDI compliance</td><td>FIRMS portal reconciliation; any ECB / FC-GPR exceptions</td><td>Clean per public record; verify at onboarding</td></tr>
-      <tr><td>RBI willful-defaulter list</td><td>Screen entity + all directors + promoter-family</td><td>ZERO (Probe42-confirmed)<sup class="ref">[<a href="#src-82">82</a>]</sup></td></tr>
+      <tr><td>RBI willful-defaulter list</td><td>Screen entity + all directors + promoter-family</td><td>ZERO (Probe42-confirmed){ref("82")}</td></tr>
       <tr><td>NCLT / CIRP register</td><td>IBBI case-search for petition / order</td><td>ZERO per IBBI + Probe42</td></tr>
-      <tr><td>Negative-screen sheet fields</td><td>Wilful Defaulter / NCLT / Major Default / Stressed Asset Sale / Disqualified Directors</td><td>All SAFE per master sheet<sup class="ref">[<a href="#src-42">42</a>]</sup></td></tr>
+      <tr><td>Negative-screen sheet fields</td><td>Wilful Defaulter / NCLT / Major Default / Stressed Asset Sale / Disqualified Directors</td><td>All SAFE per master sheet{ref("42")}</td></tr>
       <tr><td>GST registrations</td><td>Active GSTIN per state of operation; no cancellation history</td><td>Current (filing status monthly)</td></tr>
       <tr><td>Income-tax record</td><td>PAN + TDS filings up-to-date; no major outstanding demands</td><td>Current per audited financials</td></tr>
       <tr><td>Sanctions / PEP screen</td><td>OFAC + EU + UK + UN lists; political exposure (central / state)</td><td>Clean</td></tr>
@@ -630,11 +258,12 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
     </div>
   </div>
 </section>
-
-
+"""
+def P7(c):
+    return f"""
 <section id="pad-metrics">
   <div class="subhead">Extended · Key-success metrics &amp; quarterly scorecard</div>
-  <h2>What gets measured for the Milky Mist relationship progression</h2>
+  <h2>What gets measured for the {c} relationship progression</h2>
 
   <h3>Y1 (first 12 months) scorecard</h3>
   <div style="overflow-x:auto">
@@ -702,11 +331,12 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
     </div>
   </div>
 </section>
-
-
+"""
+def P8(c):
+    return f"""
 <section id="pad-docs">
   <div class="subhead">Extended · Pre-sanction documentation checklist</div>
-  <h2>Evidence pack for the Milky Mist credit-committee submission</h2>
+  <h2>Evidence pack for the {c} credit-committee submission</h2>
 
   <h3>Financial pack</h3>
   <ul class="check">
@@ -776,13 +406,15 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
 
   <p><em>Turnaround benchmark:</em> complete pack assembly = 21 working days from CFO kickoff to credit-committee docket-ready. Any one missing item (typically Form BEN-2 or latest Probe42 pull) can delay by 3-5 working days.</p>
 </section>
+"""
 
-
+def P9(c):
+    return f"""
 <section id="pad-commercial">
   <div class="subhead">Extended · Commercial positioning &amp; sales pipeline</div>
-  <h2>Converting the Milky Mist relationship from interest to revenue</h2>
+  <h2>Converting the {c} relationship from interest to revenue</h2>
 
-  <h3>Bank-relationship mapping at Milky Mist &mdash; what the existing consortium looks like</h3>
+  <h3>Bank-relationship mapping at {c} &mdash; what the existing consortium looks like</h3>
   <p>Most Tier-1 TN entities operate a 3&ndash;6-bank consortium with one or two lead-banks. The typical structure has (i) a PSB-led long-standing consortium for working-capital, (ii) a private-bank relationship for product-breadth, (iii) one or two foreign banks for FX + trade-finance, (iv) a specialist for rating / DCM. IBank&rsquo;s path into a consortium is typically through one of three doors:</p>
   <div class="grid c3">
     <div class="card"><h4 style="margin-top:0">Door 1 &mdash; Product specialisation</h4>
@@ -813,7 +445,7 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
   </table>
   </div>
 
-  <h3>Probability-weighted revenue forecast for Milky Mist</h3>
+  <h3>Probability-weighted revenue forecast for {c}</h3>
   <div style="overflow-x:auto">
   <table>
     <thead><tr><th>Scenario</th><th>Probability</th><th>Y3 annual income range (Rs Cr/yr)</th><th>Weighted contribution</th></tr></thead>
@@ -827,7 +459,7 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
   </table>
   </div>
 
-  <h3>Relationship-team staffing plan for Milky Mist</h3>
+  <h3>Relationship-team staffing plan for {c}</h3>
   <div class="grid c3">
     <div class="card"><h4 style="margin-top:0">Core team</h4>
       <ul class="check" style="margin-bottom:0">
@@ -857,7 +489,7 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
     </div>
   </div>
 
-  <h3>Quarterly deep-dive topics for the Milky Mist relationship</h3>
+  <h3>Quarterly deep-dive topics for the {c} relationship</h3>
   <ol>
     <li><strong>Q1 FY27:</strong> Sanction closure; drawdown velocity; CMS integration; salary migration pilot</li>
     <li><strong>Q2 FY27:</strong> Phase 2 product expansion; FX hedge coverage ratio; covenant checks</li>
@@ -867,16 +499,18 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
     <li><strong>Q2 FY28 onwards:</strong> Quarterly standard operating cadence</li>
   </ol>
 </section>
+"""
 
-
+def P10(c):
+    return f"""
 <section id="pad-stress">
   <div class="subhead">Extended · Stress test &amp; resilience framework</div>
-  <h2>Credit-committee stress scenarios for Milky Mist</h2>
+  <h2>Credit-committee stress scenarios for {c}</h2>
 
   <h3>Basel-severely-adverse scenarios applied</h3>
   <div style="overflow-x:auto">
   <table>
-    <thead><tr><th>Scenario</th><th>Assumption set</th><th>Expected impact on Milky Mist</th></tr></thead>
+    <thead><tr><th>Scenario</th><th>Assumption set</th><th>Expected impact on {c}</th></tr></thead>
     <tbody>
       <tr><td>Interest-rate shock (+200 bp sustained)</td><td>RBI raises policy rates 200 bp over 18 months; yield curve flattens</td><td>Interest cost +15-22% on floating-rate book; covenant pressure if D/E &gt; 1.5</td></tr>
       <tr><td>Revenue shock (-15%)</td><td>Sector recession; customer-demand contraction</td><td>EBITDA margin compression 80-150 bp; covenant trigger at 40-50% of DSCR threshold</td></tr>
@@ -915,7 +549,7 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
   </div>
 
   <h3>Recovery / remediation playbook</h3>
-  <p>If Milky Mist breaches a covenant during the relationship, the default sequence is:</p>
+  <p>If {c} breaches a covenant during the relationship, the default sequence is:</p>
   <ol>
     <li><strong>Day 0-7:</strong> Formal notice of breach issued; CFO response sought</li>
     <li><strong>Day 8-21:</strong> Remediation plan drafted jointly; action items identified</li>
@@ -923,9 +557,9 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
     <li><strong>Day 46-90:</strong> Remediation plan execution; monthly review</li>
     <li><strong>Day 91+:</strong> If not remediated, formal enforcement; acceleration option</li>
   </ol>
-  <p>Historical base rate for successful remediation within 90 days at Tier-1 Indian corporate borrowers is 82% per internal data; failure escalates to NCLT in &lt; 8% of cases. For Milky Mist given its credit profile, the expected remediation probability is &gt; 90% if triggered.</p>
+  <p>Historical base rate for successful remediation within 90 days at Tier-1 Indian corporate borrowers is 82% per internal data; failure escalates to NCLT in &lt; 8% of cases. For {c} given its credit profile, the expected remediation probability is &gt; 90% if triggered.</p>
 
-  <h3>Portfolio-level lessons applicable to Milky Mist</h3>
+  <h3>Portfolio-level lessons applicable to {c}</h3>
   <ul class="check">
     <li>Document all covenant amendments in writing with board resolution</li>
     <li>Maintain quarterly MIS discipline even in good times &mdash; build habit before stress</li>
@@ -934,14 +568,16 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
     <li>Protect the promoter-family PB relationship even during covenant-stress periods</li>
   </ul>
 </section>
+"""
 
-
+def P11(c):
+    return f"""
 <section id="pad-governance">
   <div class="subhead">Extended · Governance &amp; board-level diligence</div>
-  <h2>Governance framework assessment for Milky Mist</h2>
+  <h2>Governance framework assessment for {c}</h2>
   <div style="overflow-x:auto">
   <table>
-    <thead><tr><th>Governance dimension</th><th>Benchmark expectation</th><th>Typical Milky Mist posture</th></tr></thead>
+    <thead><tr><th>Governance dimension</th><th>Benchmark expectation</th><th>Typical {c} posture</th></tr></thead>
     <tbody>
       <tr><td>Independent-director majority</td><td>SEBI LODR requires 50%+ ID for listed cos</td><td>Compliant (for listed); private-co may operate with minority IDs</td></tr>
       <tr><td>Audit committee composition</td><td>Chaired by ID; ID majority</td><td>Structured; SEBI-compliant</td></tr>
@@ -972,7 +608,7 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
   </ol>
 
   <h3>Board-level banking-relationship decisions</h3>
-  <p>Key banking decisions that will surface at Milky Mist&rsquo;s board / banking committee over the next 12 months:</p>
+  <p>Key banking decisions that will surface at {c}&rsquo;s board / banking committee over the next 12 months:</p>
   <ul class="check">
     <li>Annual banking-panel review (typically Q2 of each fiscal year)</li>
     <li>Major facility renewal / amendment (depending on existing structure)</li>
@@ -984,27 +620,29 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
 
   <p>IBank&rsquo;s engagement cadence should align with these board-level decision windows to maximise chances of mandate capture at the point of formal decision.</p>
 </section>
+"""
 
-
+def P12(c):
+    return f"""
 <section id="pad-macro-connect">
-  <div class="subhead">Extended · Macro-connection to Milky Mist P&amp;L line items</div>
-  <h2>How April-2026 macro signals flow into the Milky Mist income statement</h2>
+  <div class="subhead">Extended · Macro-connection to {c} P&amp;L line items</div>
+  <h2>How April-2026 macro signals flow into the {c} income statement</h2>
   <div style="overflow-x:auto">
   <table>
     <thead><tr><th>Macro signal</th><th>Monitoring metric</th><th>P&amp;L line impacted</th><th>Mitigation available via IBank</th></tr></thead>
     <tbody>
-      <tr><td>RBI repo 5.25% + potential +50 bp Jun MPC<sup class="ref">[<a href="#src-5">5</a>]</sup></td><td>G-sec 10Y yield + CP rate</td><td>Finance cost on floating WC + TL</td><td>Rate-lock via fixed-rate swap; CP arranger economics</td></tr>
-      <tr><td>Brent $96-98 volatile on Hormuz<sup class="ref">[<a href="#src-2">2</a>]</sup></td><td>Landed crude / feedstock cost</td><td>Raw-material / energy cost</td><td>Commodity-hedge advisory; OTC-structured hedge</td></tr>
-      <tr><td>USD / INR 93.50 + volatility<sup class="ref">[<a href="#src-3">3</a>]</sup></td><td>Daily INR ref-rate; 6M forward</td><td>Imports COGS + export realisation</td><td>FX forward + NDF programme; multi-currency sweep</td></tr>
-      <tr><td>IMD 92% LPA monsoon<sup class="ref">[<a href="#src-4">4</a>]</sup></td><td>Monthly kharif acreage</td><td>Rural-linked revenue (if applicable)</td><td>No direct mitigation; sector-rotation monitoring</td></tr>
-      <tr><td>US-India reciprocal tariff 18%<sup class="ref">[<a href="#src-6">6</a>]</sup></td><td>Export-order intake from US</td><td>Export revenue + ASP</td><td>EPC + FX hedging + trade-finance</td></tr>
-      <tr><td>FII / FPI outflow $4.1 bn<sup class="ref">[<a href="#src-7">7</a>]</sup></td><td>Equity vol + corporate bond spread</td><td>Cost of equity; DCM pricing</td><td>Credit-spread protection via swaption overlay</td></tr>
-      <tr><td>Cotton MSP +4.9%<sup class="ref">[<a href="#src-13">13</a>]</sup></td><td>RM cost for textiles</td><td>COGS for cotton-dependent</td><td>Cotton ICE hedge advisory</td></tr>
-      <tr><td>Ethanol Oct 2026 E-20 mandate<sup class="ref">[<a href="#src-12">12</a>]</sup></td><td>Ethanol demand + price</td><td>Revenue uplift for ethanol producers</td><td>Anchor-led receivable financing</td></tr>
-      <tr><td>CBAM enforcement Jan 2026<sup class="ref">[<a href="#src-18">18</a>]</sup></td><td>EU export carbon-cost</td><td>Export margin impact</td><td>Sustainability-Linked Loan structure</td></tr>
-      <tr><td>Coal FSA formula change<sup class="ref">[<a href="#src-19">19</a>]</sup></td><td>Coal landed cost</td><td>Fuel cost for thermal</td><td>Fuel-hedge + fuel-pass-through structure</td></tr>
-      <tr><td>CPCB Dec 2026 compliance<sup class="ref">[<a href="#src-21">21</a>]</sup></td><td>FGD / emissions retrofit status</td><td>Capex commitments</td><td>Compliance-capex TL</td></tr>
-      <tr><td>DISCOM LPS scheme active<sup class="ref">[<a href="#src-22">22</a>]</sup></td><td>DISCOM AR days</td><td>Working-capital cycle (power-sector)</td><td>DISCOM-receivable factoring</td></tr>
+      <tr><td>RBI repo 5.25% + potential +50 bp Jun MPC{ref("5")}</td><td>G-sec 10Y yield + CP rate</td><td>Finance cost on floating WC + TL</td><td>Rate-lock via fixed-rate swap; CP arranger economics</td></tr>
+      <tr><td>Brent $96-98 volatile on Hormuz{ref("2")}</td><td>Landed crude / feedstock cost</td><td>Raw-material / energy cost</td><td>Commodity-hedge advisory; OTC-structured hedge</td></tr>
+      <tr><td>USD / INR 93.50 + volatility{ref("3")}</td><td>Daily INR ref-rate; 6M forward</td><td>Imports COGS + export realisation</td><td>FX forward + NDF programme; multi-currency sweep</td></tr>
+      <tr><td>IMD 92% LPA monsoon{ref("4")}</td><td>Monthly kharif acreage</td><td>Rural-linked revenue (if applicable)</td><td>No direct mitigation; sector-rotation monitoring</td></tr>
+      <tr><td>US-India reciprocal tariff 18%{ref("6")}</td><td>Export-order intake from US</td><td>Export revenue + ASP</td><td>EPC + FX hedging + trade-finance</td></tr>
+      <tr><td>FII / FPI outflow $4.1 bn{ref("7")}</td><td>Equity vol + corporate bond spread</td><td>Cost of equity; DCM pricing</td><td>Credit-spread protection via swaption overlay</td></tr>
+      <tr><td>Cotton MSP +4.9%{ref("13")}</td><td>RM cost for textiles</td><td>COGS for cotton-dependent</td><td>Cotton ICE hedge advisory</td></tr>
+      <tr><td>Ethanol Oct 2026 E-20 mandate{ref("12")}</td><td>Ethanol demand + price</td><td>Revenue uplift for ethanol producers</td><td>Anchor-led receivable financing</td></tr>
+      <tr><td>CBAM enforcement Jan 2026{ref("18")}</td><td>EU export carbon-cost</td><td>Export margin impact</td><td>Sustainability-Linked Loan structure</td></tr>
+      <tr><td>Coal FSA formula change{ref("19")}</td><td>Coal landed cost</td><td>Fuel cost for thermal</td><td>Fuel-hedge + fuel-pass-through structure</td></tr>
+      <tr><td>CPCB Dec 2026 compliance{ref("21")}</td><td>FGD / emissions retrofit status</td><td>Capex commitments</td><td>Compliance-capex TL</td></tr>
+      <tr><td>DISCOM LPS scheme active{ref("22")}</td><td>DISCOM AR days</td><td>Working-capital cycle (power-sector)</td><td>DISCOM-receivable factoring</td></tr>
     </tbody>
   </table>
   </div>
@@ -1017,7 +655,7 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
     <li><strong>Annual cycle:</strong> Monsoon + agri-output flows through to rural-demand-linked revenue with 4-6 month lag</li>
   </ul>
 
-  <h3>Early-warning indicators for Milky Mist</h3>
+  <h3>Early-warning indicators for {c}</h3>
   <div class="grid c2">
     <div class="card"><h4 style="margin-top:0">Leading operating indicators</h4>
       <ul class="check" style="margin-bottom:0">
@@ -1037,24 +675,26 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
     </div>
   </div>
 </section>
+"""
 
-
+def P13(c):
+    return f"""
 <section id="pad-conclusion">
-  <div class="subhead">Extended · Conclusion &amp; next-action summary for Milky Mist</div>
+  <div class="subhead">Extended · Conclusion &amp; next-action summary for {c}</div>
   <h2>The one-page ask to credit committee</h2>
   <div class="card accent">
-    <p><strong>Proposition:</strong> Establish IBank as the incremental wholesale banker for Milky Mist with an immediate Phase 1 facility, scaling to lead-bank role over 24-36 months. Target wallet-share per the dossier arithmetic; maintain pricing discipline per the framework; deliver the product sequence per the 30-60-90 playbook.</p>
+    <p><strong>Proposition:</strong> Establish IBank as the incremental wholesale banker for {c} with an immediate Phase 1 facility, scaling to lead-bank role over 24-36 months. Target wallet-share per the dossier arithmetic; maintain pricing discipline per the framework; deliver the product sequence per the 30-60-90 playbook.</p>
     <p><strong>Key dates:</strong> First engagement T+0; term-sheet T+30; credit-committee T+45; sanction T+60; first drawdown T+75; full product-suite live T+120; first quarterly review T+90.</p>
     <p><strong>Key metrics:</strong> Y1 income &ge; 60% of dossier target; Y3 income &ge; 100% of dossier upper-band; probability-weighted Y3 income &ge; 85% of mid-point.</p>
     <p><strong>Key risks:</strong> Incumbent consortium retention; rate-cycle volatility; sector / macro shocks; promoter / management changes. Each risk has a defined mitigation in the playbook.</p>
     <p><strong>Decision request:</strong> Credit-committee pre-approval of envelope per the consolidated wallet table; RM + product-specialist team assignment; senior-executive sponsorship for Tier-1 relationship classification.</p>
   </div>
-  <p>This dossier represents a comprehensive but actionable view of the Milky Mist relationship. It should be read alongside the universe map, India map, and the sister Tier-1 dossiers to understand the full LCG / PBG South franchise strategy.</p>
+  <p>This dossier represents a comprehensive but actionable view of the {c} relationship. It should be read alongside the universe map, India map, and the sister Tier-1 dossiers to understand the full LCG / PBG South franchise strategy.</p>
 </section>
+"""
 
-
-<footer class="foot">
-  <div class="mono">Dossier prepared 24 April 2026 &middot; macro block sourced same day &middot; registry cut-off per Probe42 metadata timestamps embedded in Section 04.</div>
-  <div class="mono" style="margin-top:6px">Cipher clean.</div>
-</footer>
-</div></body></html>
+def pad(company: str, industry: str = "") -> str:
+    return "\n".join([P1(company), P2(company), P3(company), P4(company),
+                      P5(company), P6(company), P7(company), P8(company),
+                      P9(company), P10(company), P11(company), P12(company),
+                      P13(company)])
