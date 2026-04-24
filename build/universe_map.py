@@ -191,6 +191,15 @@ def build():
         "L35921TN1960PLC004175": "wheels-india-dossier.html",
         "U15200TZ2014PLC020554": "milky-mist-dossier.html",
         "L25111TN1982PLC009414": "tvs-srichakra-dossier.html",
+        "U40300TN2019FTC186573": "agp-city-gas-dossier.html",
+        "U50400TN2018PTC121056": "tvs-mobility-dossier.html",
+        "L40101TN1965GOI005389": "cpcl-dossier.html",
+        "U34300TN2020PLC140385": "switch-mobility-dossier.html",
+        "U29308TN2020FTC178231": "fs-india-solar-dossier.html",
+        "U70109TN2021PLC147646": "infopark-properties-dossier.html",
+        "U70109TN2021PLC143683": "dalmia-green-vision-dossier.html",
+        "U85300TN2017PTC114099": "neuberg-diagnostics-dossier.html",
+        "U45101TN2023PTC160276": "tvs-vehicle-mobility-dossier.html",
     }
     # CIN → city_norm mapping (from geocoder output) for india-map deep-link
     import json as _json

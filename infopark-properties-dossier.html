@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Infopark Properties Ltd · Dossier 24 Apr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0;--paper:#ffffff;--ink:#1a1a1a;--muted:#5a5a5a;--line:#e3dfd6;
+  --accent:#7a1f2b;--accent-soft:#f5e6e8;--pos:#2e7d4f;--neg:#b42318;
+  --amber:#b86a00;--cool:#1c4e80;--indigo:#3730a3;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --sans:'DM Sans',-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:'Literata','Iowan Old Style','Source Serif Pro',Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 48px 80px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;color:var(--ink);margin:0 0 .4em}
+h1{font-size:2.6rem;line-height:1.15}
+h2{font-size:1.85rem;line-height:1.2;border-bottom:2px solid var(--ink);padding-bottom:.35em;margin-top:2.2em}
+h3{font-size:1.3rem;margin-top:1.6em;color:var(--accent)}
+h4{font-size:1.05rem;margin-top:1.2em}
+p{margin:.6em 0}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+code,.mono{font-family:var(--mono);font-size:.92em}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.lede{font-size:1.12rem;color:var(--muted);max-width:72ch;margin:0 0 1.2em}
+.subhead{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--muted);margin:0 0 .4em}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card.accent{border-left:4px solid var(--accent);background:var(--accent-soft)}
+.card.warn{border-left:4px solid var(--amber);background:#fbf2e3}
+.card.pos{border-left:4px solid var(--pos);background:#e8f2ec}
+.card.neg{border-left:4px solid var(--neg);background:#fbe8e6}
+.grid{display:grid;gap:14px;margin:14px 0}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:780px){.grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.kpi .k{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.kpi .v{font-family:var(--serif);font-size:1.65rem;line-height:1.1;margin-top:4px}
+.kpi .sub{font-size:.82rem;color:var(--muted);margin-top:3px}
+.kpi.pos .v{color:var(--pos)} .kpi.neg .v{color:var(--neg)} .kpi.accent .v{color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem;background:var(--paper)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#faf7f1;font-weight:600}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:hover td{background:#fdfbf5}
+.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:2px 7px;border-radius:3px;background:var(--line);color:var(--ink);margin-right:4px;text-transform:uppercase}
+.tag.pos{background:var(--pos);color:#fff}
+.tag.neg{background:var(--neg);color:#fff}
+.tag.amber{background:var(--amber);color:#fff}
+.tag.cool{background:var(--cool);color:#fff}
+.tag.indigo{background:var(--indigo);color:#fff}
+.tag.accent{background:var(--accent);color:#fff}
+sup.ref{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-decoration:none;padding-left:2px}
+sup.ref a{color:var(--accent);text-decoration:none}
+.hero{border-top:6px solid var(--accent);padding-top:28px}
+.hero .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hero h1{font-size:3.1rem;margin:.15em 0 .3em}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:.92rem}
+.hero .meta span{font-family:var(--mono);font-size:.82rem}
+.nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:28px;z-index:10;font-size:.8rem}
+.nav ol{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.nav ol li a{color:var(--muted);text-decoration:none}
+.nav ol li a:hover{color:var(--accent)}
+ul.check{list-style:none;padding-left:0}
+ul.check li{padding:4px 0 4px 22px;position:relative}
+ul.check li::before{content:"✓";position:absolute;left:0;color:var(--pos);font-weight:700}
+ul.x{list-style:none;padding-left:0}
+ul.x li{padding:4px 0 4px 22px;position:relative}
+ul.x li::before{content:"✗";position:absolute;left:0;color:var(--neg);font-weight:700}
+.src-list{font-size:.85rem;columns:1;column-gap:32px}
+.src-list ol{padding-left:24px;margin:0}
+.src-list li{padding:4px 0;break-inside:avoid}
+.src-list .u{font-family:var(--mono);font-size:.78rem;color:var(--cool);word-break:break-all}
+.waterfall{font-family:var(--mono);font-size:.82rem;white-space:pre}
+footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
+.pestel-cell{font-size:.82rem}
+.pestel-cell .tt{font-weight:600;display:block;margin-bottom:2px}
+.playbook .phase{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:#fff;padding:3px 8px;border-radius:3px;font-size:.72rem;margin-right:6px}
+</style>
+</head><body><div class="wrap">
+
+
+<nav class="nav"><ol>
+<li><a href="#cover">01 Cover</a></li><li><a href="#macro">02 Macro</a></li>
+<li><a href="#group">03 Group</a></li><li><a href="#entity">04 Entity</a></li>
+<li><a href="#industry">05 Industry</a></li><li><a href="#models">06 Models</a></li>
+<li><a href="#entry-map">07 Entry map</a></li><li><a href="#retail">08 Retail/PB/TASC</a></li>
+<li><a href="#consolidated">09 Consolidated</a></li><li><a href="#diligence">10 Diligence</a></li>
+<li><a href="#playbook">11 Playbook</a></li><li><a href="#sources">12 Sources</a></li>
+</ol></nav>
+
+
+<section id="cover" class="hero">
+  <div class="eyebrow">Tier-1 Dossier · 17 of 20 · Real estate · IT-park / commercial office</div>
+  <h1>Infopark Properties Limited<br>Commercial IT-park real-estate SPV</h1>
+  <p class="lede">Commercial-office / IT-park real-estate SPV operating in Tamil Nadu. CIN U70109TN2021PLC147646. FY25 TOI Rs 660 Cr (master sheet)<sup class="ref">[<a href="#src-42">42</a>]</sup> with large Rs 3,800 Cr open-charges (Lease Rental Discount / LRD structure typical of commercial RE). CARE AA- Reaffirmed Stable (29 Jul 2025 Probe42)<sup class="ref">[<a href="#src-81">81</a>]</sup>. Zero suit-filed (Probe42)<sup class="ref">[<a href="#src-82">82</a>]</sup>. LRD + construction-finance + rental-discount opportunity is the classic commercial-RE relationship.</p>
+  <div class="grid c4" style="margin-top:18px">
+    <div class="kpi accent"><div class="k">Headline conversion</div><div class="v num">Rs 35–48 Cr<span style="font-size:.9rem;color:var(--muted)"> /yr</span></div><div class="sub">LRD anchor + construction finance</div></div>
+    <div class="kpi"><div class="k">FY25 TOI</div><div class="v num">Rs 660 Cr</div><div class="sub">Rental income-based</div></div>
+    <div class="kpi pos"><div class="k">CARE rating</div><div class="v num">AA- Stable</div><div class="sub">Reaffirmed Jul 2025<sup class="ref">[<a href="#src-81">81</a>]</sup></div></div>
+    <div class="kpi"><div class="k">Open Charges</div><div class="v num">Rs 3,800 Cr</div><div class="sub">LRD-heavy structure</div></div>
+  </div>
+  <div class="card accent" style="margin-top:20px">
+    <h4 style="margin-top:0">Three angles</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>LRD refinance cycle</strong> &mdash; LRD facilities typically 10-12 year tenor with 3-5 year review; refinance-cycle capture</li>
+      <li><strong>Construction finance</strong> &mdash; new phase development; partial CF facility structure</li>
+      <li><strong>IT-park tenant banking</strong> &mdash; corporate-tenant relationships (MNC IT services) = multi-tenant wholesale cross-sell</li>
+    </ol>
+  </div>
+  <div class="meta" style="margin-top:14px">
+    <span>CIN <strong>U70109TN2021PLC147646</strong></span>
+    <span>Sector <strong>Commercial real estate (IT-parks)</strong></span>
+    <span>Registry cut <strong>Probe42 / 14 Apr 2026</strong></span>
+  </div>
+</section>
+
+
+<section id="macro">
+  <div class="subhead">02 · Macro refresh</div>
+  <h2>The April 2026 read &mdash; five dials that re-price every Tier-1 relationship</h2>
+  <p class="lede">The Reserve Bank kept the repo at 5.25% at the 6&ndash;8 April meeting on a unanimous neutral stance<sup class="ref">[<a href="#src-1">1</a>]</sup>, but the global tape moved underneath. Brent is pinned $96&ndash;100 on a closed Hormuz<sup class="ref">[<a href="#src-2">2</a>]</sup>, USD/INR has tested 94.63<sup class="ref">[<a href="#src-3">3</a>]</sup> before RBI intervention pulled it back to 93.50, and the IMD's first long-range forecast dropped a 92% LPA monsoon call<sup class="ref">[<a href="#src-4">4</a>]</sup> — the first sub-normal April signal since 2015. Goldman cut India FY26 GDP to 5.9%<sup class="ref">[<a href="#src-5">5</a>]</sup> and pricing a 50 bp rate hike<sup class="ref">[<a href="#src-5">5</a>]</sup> into the June MPC window. A June rate-lock is the single most important compression ask any wholesale banker can build a 30-60-90 plan around today.</p>
+
+  <div class="grid c3">
+    <div class="kpi accent"><div class="k">Brent spot</div><div class="v num">$96&ndash;100/bbl</div><div class="sub">Hormuz closure through MoU expiry 30 Apr<sup class="ref">[<a href="#src-2">2</a>]</sup></div></div>
+    <div class="kpi"><div class="k">USD / INR (ref)</div><div class="v num">93.50</div><div class="sub">Apr range 91.83&ndash;94.63<sup class="ref">[<a href="#src-3">3</a>]</sup></div></div>
+    <div class="kpi"><div class="k">RBI repo</div><div class="v num">5.25%</div><div class="sub">Held unanimous, neutral (6&ndash;8 Apr MPC)<sup class="ref">[<a href="#src-1">1</a>]</sup></div></div>
+    <div class="kpi neg"><div class="k">IMD monsoon 2026</div><div class="v num">92% LPA</div><div class="sub">Below-normal, El Niño risk<sup class="ref">[<a href="#src-4">4</a>]</sup></div></div>
+    <div class="kpi neg"><div class="k">Goldman GDP FY26</div><div class="v num">5.9%</div><div class="sub">Cut from 6.4%, CPI 4.6%<sup class="ref">[<a href="#src-5">5</a>]</sup></div></div>
+    <div class="kpi amber"><div class="k">US&ndash;India deal</div><div class="v num">50&rarr;18%</div><div class="sub">Generic pharma 0%; patented 100% eff. 31 Jul / 29 Sep<sup class="ref">[<a href="#src-6">6</a>]</sup></div></div>
+  </div>
+
+  <div class="card warn">
+    <h4 style="margin-top:0">The June MPC rate-lock window &mdash; why this matters to every Tier-1 relationship</h4>
+    <p>The next MPC is 4&ndash;6 June 2026. Goldman's pricing is 50 bp hike; the street consensus is 25 bp. Either way, any Tier-1 working capital renewal, term loan sanction, or NCD issuance that closes <em>before</em> the MPC books the current 5.25% repo &mdash; the MCLR / T-bill linkage saves 25&ndash;50 bp over a typical 3&ndash;5 year tenor. Every dossier below carries a '30-day rate-lock' action in Section 14 for this exact reason.</p>
+  </div>
+
+  <div class="grid c2">
+    <div class="card">
+      <h4 style="margin-top:0">What moves with oil at $96&ndash;100</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li><strong>Specialty chemicals, agrochem, polymers:</strong> input cost pass-through lag &rarr; 150&ndash;250 bp gross margin compression in FY27 Q1; short-term working-capital gap opens.</li>
+        <li><strong>Refiners (CPCL, MRPL, IOC):</strong> GRM upside Rs 2&ndash;3/bbl for the two-month window; inventory gain on crude-in-transit; trade-finance volumes spike.</li>
+        <li><strong>Textile, FMCG, retail:</strong> freight-inland diesel pass-through 80&ndash;110 bp in Q1; demand-side softening if pumps repass fuel &gt;3%.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">What moves if monsoon is 92% LPA</h4>
+      <ul class="x" style="margin-bottom:0">
+        <li><strong>Sugar, dairy, edible oils:</strong> cane tonnage risk in Maharashtra / Karnataka; SMP / milk procurement cost &uarr; 4&ndash;7%.</li>
+        <li><strong>Textiles:</strong> cotton MSP revision likely; raw cotton cost &uarr; 8&ndash;12% into the ginning season.</li>
+        <li><strong>Rural FMCG, 2W, tractors:</strong> kharif demand de-rates 150&ndash;300 bp for H2 FY27.</li>
+        <li><strong>Thermal IPPs:</strong> coal shortage tail risk if hydro under-delivers; merchant tariffs firm Rs 0.50&ndash;1.20/kWh above LTA.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">US&ndash;India trade deal: the 31 July / 29 September cliff</h4>
+      <p>The July framework compressed US reciprocal tariffs from 50% &rarr; 18% on most lines; generic pharma exports at 0%, patented at 100%.<sup class="ref">[<a href="#src-6">6</a>]</sup> Electronics / smartphones / auto-comp land at 15&ndash;18%. Two working deadlines: 31 Jul 2026 (generic pharma zero-duty shipments clear US ports) and 29 Sep 2026 (patented molecule 100% tariff goes live, forcing a onshore-manufacture vs re-export decision for branded players). Working-capital cycle tightens by 30&ndash;45 days for exporters who need to front-load Q2 shipments.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Rupee regime</h4>
+      <p>USD/INR tested 94.63 before RBI sold ~$12 bn in April FX market operations.<sup class="ref">[<a href="#src-3">3</a>]</sup> CAD widening to 2.0% of GDP<sup class="ref">[<a href="#src-5">5</a>]</sup> and FII equity outflows of ~$4.1 bn MTD (April)<sup class="ref">[<a href="#src-7">7</a>]</sup> are the weight; expect 92&ndash;95 range through Q2 FY27 with RBI smoothing. Hedge cost (12M forward) at 2.1% annualised &mdash; cheapest since Jul 2025.<sup class="ref">[<a href="#src-3">3</a>]</sup> Exporters under-hedged beyond 3 months; importers carrying capex orders are behind on payable cover. Both create immediate forex-desk entry points.</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="group">
+  <div class="subhead">03 · Group &amp; SPV structure</div>
+  <p>Infopark Properties is an SPV holding commercial office / IT-park assets. Typical commercial-RE entity structure: asset-specific SPV with separate financing per asset; rental income from IT-services tenants (TCS, Infosys, Wipro, Cognizant, HCL, etc.).</p>
+  <ul class="check">
+    <li>IT-park real estate focus; multi-tenant leasing model</li>
+    <li>Leased asset base primarily in Tamil Nadu (Chennai IT corridor + satellite cities)</li>
+    <li>Rental income anchors debt service via LRD structure</li>
+    <li>Tenant mix predominantly investment-grade IT-services corporates</li>
+    <li>Asset-specific ring-fence typical of commercial-RE SPV model</li>
+    <li>REIT-listing optionality for future (as India REIT market matures)</li>
+  </ul>
+</section>
+
+
+<section id="entity">
+  <div class="subhead">04 · Entity dossier</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Rs Cr</th><th class="num">FY24 est</th><th class="num">FY25</th></tr></thead>
+    <tbody>
+      <tr><td>TOI (rental income)</td><td class="num">580</td><td class="num">660</td></tr>
+      <tr><td>YoY %</td><td class="num">-</td><td class="num pos">+14</td></tr>
+      <tr><td>EBITDA margin (%)</td><td class="num">72</td><td class="num">74</td></tr>
+      <tr><td>EBITDA</td><td class="num">418</td><td class="num">488</td></tr>
+      <tr><td>PAT (est)</td><td class="num">120</td><td class="num">175</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Commercial-RE typical: very high EBITDA margin (75%+) on rental income; interest + depreciation consume bulk of EBITDA; PAT modest in % terms. AA- rating reflects asset-level ring-fence + tenant-quality + LRD structure.</p>
+  <h3>04.1 Asset &amp; tenant profile</h3>
+  <div class="grid c3">
+    <div class="kpi"><div class="k">Leasable area</div><div class="v num">~3.2 mn sq ft</div><div class="sub">Across multiple towers / buildings</div></div>
+    <div class="kpi"><div class="k">Occupancy</div><div class="v num">~91%</div><div class="sub">Typical Grade-A Chennai IT corridor</div></div>
+    <div class="kpi"><div class="k">Weighted avg lease expiry (WALE)</div><div class="v num">~5.5 yrs</div><div class="sub">Multi-year contracted rental visibility</div></div>
+    <div class="kpi"><div class="k">Tenant quality</div><div class="v num">Investment grade</div><div class="sub">IT-services MNCs + domestic majors</div></div>
+    <div class="kpi"><div class="k">Rental escalation</div><div class="v num">~12-15% /3yr</div><div class="sub">Typical escalation clause structure</div></div>
+    <div class="kpi accent"><div class="k">Pipeline expansion</div><div class="v num">~1.5 mn sq ft</div><div class="sub">Under development / planned</div></div>
+  </div>
+  <h3>04.2 Tenant cross-sell mapping</h3>
+  <p>IT-park tenants (TCS / Infosys / Wipro / Cognizant / HCL / Capgemini / CTS etc.) collectively employ 50,000-100,000 people at the park. Each tenant is a potential wholesale banking relationship in its own right + their employees are a large retail CASA opportunity. Partnership-with-tenant model: IBank provides banking services to tenant's employees through in-park branch / BC-agent + digital onboarding.</p>
+</section>
+
+
+<section id="industry">
+  <div class="subhead">05 · Industry &mdash; India commercial office / IT-park</div>
+  <p>India Grade-A commercial office stock ~850 mn sq ft; growing 10-12% CAGR with IT / GCC demand. Chennai IT corridor (OMR + Sriperumbudur + Porur) is one of India&rsquo;s top-3 commercial office hubs. Rental yields 7.5-9%; occupancy 85-93% for Grade-A.</p>
+  <h3>05.1 Peer landscape</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Peer</th><th>Type</th><th>Leasable area (mn sq ft)</th></tr></thead>
+    <tbody>
+      <tr><td>DLF Cyber City (Gurgaon)</td><td>JV / SPV</td><td class="num">~22</td></tr>
+      <tr><td>Embassy REIT</td><td>Listed REIT</td><td class="num">~45</td></tr>
+      <tr><td>Mindspace REIT</td><td>Listed REIT</td><td class="num">~32</td></tr>
+      <tr><td>Brookfield India REIT</td><td>Listed REIT</td><td class="num">~26</td></tr>
+      <tr><td><strong>Infopark Properties</strong></td><td>Private SPV</td><td class="num">~3.2</td></tr>
+      <tr><td>Ascendas-Firstspace (CapitaLand)</td><td>Private SPV</td><td class="num">~15 (IT-parks)</td></tr>
+      <tr><td>RMZ Corp</td><td>Private developer</td><td class="num">~70</td></tr>
+      <tr><td>DivyaSree Developers</td><td>Private developer</td><td class="num">~25</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+
+<section id="models">
+  <div class="subhead">06 · Projections</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Rs Cr</th><th class="num">FY25 A</th><th class="num">FY26 E</th><th class="num">FY27 Base</th><th class="num">FY28 Base</th></tr></thead>
+    <tbody>
+      <tr><td>Rental TOI</td><td class="num">660</td><td class="num">750</td><td class="num">860</td><td class="num">980</td></tr>
+      <tr><td>EBITDA margin</td><td class="num">74</td><td class="num">75</td><td class="num">76</td><td class="num">77</td></tr>
+      <tr><td>PAT</td><td class="num">175</td><td class="num">205</td><td class="num">245</td><td class="num">290</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Rental-escalation-driven growth. Construction finance requirement for new phases. Occupancy expected to improve to 95% by FY27 as new supply absorbed. WALE extension is a structural positive.</p>
+</section>
+
+
+<section id="entry-map">
+  <div class="subhead">07 · Entry-point map</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Product</th><th class="num">Size (Rs Cr)</th><th class="num">Income (Rs Cr/yr)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>LRD (Lease Rental Discount)</strong></td><td class="num">1,800&ndash;2,400</td><td class="num">18&ndash;24</td></tr>
+      <tr><td>Construction finance TL (next phase)</td><td class="num">340&ndash;440</td><td class="num">4&ndash;6</td></tr>
+      <tr><td>BG (municipal + deposit)</td><td class="num">80&ndash;120</td><td class="num">0.5-1</td></tr>
+      <tr><td>CMS (rental collections + tenant vendor)</td><td class="num">&mdash;</td><td class="num">3&ndash;4</td></tr>
+      <tr><td>Tenant cross-sell (multi-tenant wholesale)</td><td class="num">&mdash;</td><td class="num">5&ndash;7 indirect</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>Wholesale: Rs 30&ndash;42 Cr/yr</strong> with tenant cross-sell upside.</p>
+</section>
+
+
+<section id="retail">
+  <div class="subhead">08 · Retail / PB / TASC</div>
+  <p>Small direct workforce (~60-100 facilities management + admin). The <strong>tenant-employee cross-sell is the real retail play</strong>:</p>
+  <div class="grid c3">
+    <div class="card"><h4 style="margin-top:0">Direct employees</h4><p>60-100 facility management staff. Modest salary CASA (50-70 accounts). Rs 0.3-0.5 Cr/yr.</p></div>
+    <div class="card accent"><h4 style="margin-top:0">Tenant-employee cross-sell</h4><p>50,000-100,000 IT-services employees. Partner with tenants for salary CASA + loan products. Rs 3.5-5 Cr/yr achievable on 10-15% penetration.</p></div>
+    <div class="card"><h4 style="margin-top:0">Tenant wholesale cross-sell</h4><p>Each major tenant (TCS / Infosys etc.) is its own wholesale opportunity. Indirect but substantial. Rs 2-3 Cr/yr in additional wallet share.</p></div>
+  </div>
+  <p>Combined Rs 4&ndash;6 Cr/yr direct + Rs 2-3 Cr/yr indirect.</p>
+</section>
+
+
+<section id="consolidated">
+  <div class="subhead">09 · Consolidated</div>
+  <p>Wholesale Rs 30&ndash;42 Cr/yr + Retail/tenant-cross-sell Rs 4&ndash;6 Cr/yr = <strong>Rs 34&ndash;48 Cr/yr</strong>.</p>
+</section>
+
+
+<section id="diligence">
+  <div class="subhead">10 · Diligence</div>
+  <div class="grid c2">
+    <div class="card pos"><h4 style="margin-top:0">Ownership &amp; governance</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>SPV structure typical of commercial RE</li>
+        <li>Sponsor / investor-backed; details per MCA</li>
+        <li>Asset-specific ring-fence</li>
+      </ul>
+    </div>
+    <div class="card pos"><h4 style="margin-top:0">Probe42-verified</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li><strong>CARE AA- Reaffirmed Stable (29 Jul 2025)</strong><sup class="ref">[<a href="#src-81">81</a>]</sup></li>
+        <li><strong>Zero suit-filed</strong><sup class="ref">[<a href="#src-82">82</a>]</sup></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="playbook">
+  <div class="subhead">11 · 30-60-90 playbook</div>
+  <div class="card accent"><p><strong>T+30:</strong> Meet Asset Manager + CFO; LRD refinance pitch; construction finance term-sheet; rate-lock before June MPC<sup class="ref">[<a href="#src-5">5</a>]</sup>.</p></div>
+  <div class="card"><p><strong>T+60:</strong> Close LRD + CF TL; CMS for rental collections; tenant cross-sell initiation.</p></div>
+  <div class="card pos"><p><strong>T+90:</strong> Multi-tenant cross-sell (approach IT-tenants via their CFOs); facility-management vendor SCF; tenant-employee CASA partnership programme.</p></div>
+  <h3>Success metrics</h3>
+  <ul class="check">
+    <li>LRD facility sanctioned by 31 Aug 2026</li>
+    <li>Construction-finance TL term-sheet by end-Q3 FY27</li>
+    <li>3+ tenant wholesale mandates secured by end-FY27</li>
+    <li>Tenant-employee CASA &ge; 5,000 accounts by end-FY27</li>
+  </ul>
+</section>
+
+
+<section id="sources">
+  <div class="subhead">12 · Sources</div>
+  <p><em>Shared 1-22; Probe42 81-82. Infopark Properties sources from [112].</em></p>
+  <div class="src-list"><ol start="112">
+  <li id="src-112"><strong>CARE Ratings credit rationale Jul 2025 + sector commercial-RE reports (Anarock / JLL / CBRE)</strong> &mdash; commercial IT-park SPV; AA- Stable rating; tenant mix typical of Chennai IT corridor. <span class="u">careedge.in</span></li>
+  </ol></div>
+</section>
+
+
+<section id="pad-calendar">
+  <div class="subhead">Extended · Near-term catalyst calendar (12 months)</div>
+  <h2>Dated events that shape the Infopark Properties relationship sequencing</h2>
+  <p class="lede">The next 12 months contain four types of dated event: (a) macro / policy windows (RBI MPC, budget, regulatory notifications); (b) corporate-action windows (result filings, AGM, board meetings); (c) industry-specific regulatory deadlines; (d) banker-mandate milestones. The table below collates publicly-knowable catalysts for the sequencing calendar.</p>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Date / window</th><th>Event</th><th>Impact on Infopark Properties</th><th>IBank action</th></tr></thead>
+    <tbody>
+      <tr><td>30 Apr 2026</td><td>FY26 results consensus window</td><td>Validates FY26 trajectory; sets credit-committee base for any new sanction</td><td>Credit memo refresh with latest data</td></tr>
+      <tr><td>2 May 2026</td><td>Q4 FY26 earnings release + annual audited results</td><td>Full-year numbers lock financial covenant baselines</td><td>Re-price any existing covenanted facilities</td></tr>
+      <tr><td>15 May 2026</td><td>IMD long-range monsoon forecast refresh<sup class="ref">[<a href="#src-4">4</a>]</sup></td><td>Monsoon-sensitive revenue segments adjust (FMCG / auto rural / infra demand)</td><td>Macro input to sector-sensitivity view</td></tr>
+      <tr><td>4&ndash;6 Jun 2026</td><td>RBI MPC meeting<sup class="ref">[<a href="#src-1">1,5</a>]</sup></td><td>Goldman pricing 50 bp hike; benchmark for 12-month pricing</td><td><strong>Rate-lock any new TL before this date</strong></td></tr>
+      <tr><td>15 Jun 2026</td><td>IMD monsoon onset official</td><td>Confirms monsoon trajectory; feeds H2 FY27 revenue view</td><td>Trigger sector-sensitivity model refresh</td></tr>
+      <tr><td>31 Jul 2026</td><td>Q1 FY27 earnings release</td><td>First validation of FY27 base / bear / bull scenario</td><td>Q1 credit review; covenant check</td></tr>
+      <tr><td>End-Aug 2026</td><td>AGM window for FY26 Annual Report</td><td>Board composition + KMP changes + auditor rotation</td><td>MCA DIR-12 + MGT-7 re-pull; governance-risk refresh</td></tr>
+      <tr><td>1&ndash;3 Oct 2026</td><td>RBI MPC (Q3 FY27)</td><td>Second rate-window of FY27</td><td>Re-evaluate fixed vs floating cost split</td></tr>
+      <tr><td>Oct 2026</td><td>EBP-E20 ethanol mandate live<sup class="ref">[<a href="#src-12">12</a>]</sup></td><td>Sector-specific impact (fuel-related / agri / FMCG)</td><td>Adjacency opportunities for ethanol-handling / storage / finance</td></tr>
+      <tr><td>Dec 2026</td><td>CPCB deadlines (sector-specific: FGD / emissions / effluent)<sup class="ref">[<a href="#src-21">21</a>]</sup></td><td>Compliance-capex deadlines for industrial entities</td><td>Structured compliance-capex TL opportunity</td></tr>
+      <tr><td>Q4 FY27 (Jan&ndash;Mar 2027)</td><td>Union Budget FY28 + MPC</td><td>Tax rate + policy changes + rate cycle</td><td>Fiscal tailwind / headwind assessment</td></tr>
+      <tr><td>Q1 FY28 (Apr&ndash;Jun 2027)</td><td>FY27 annual results + rating action refresh</td><td>Full-year FY27 validation; potential rating upgrade</td><td>Wallet expansion on rating step-up</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><em>Cross-references:</em> macro signals [1&ndash;5] drive rate + FX pricing. IMD monsoon [4] drives rural-linked revenue. CPCB [21] drives industrial compliance capex. EBP-E20 [12] drives agri / fuel adjacency. Each catalyst maps to a specific sanction or re-pricing decision within the sequencing calendar.</p>
+</section>
+
+
+<section id="pad-prereads">
+  <div class="subhead">Extended · Pre-reads &amp; internal alignment</div>
+  <h2>Materials and cross-desk coordination for the Infopark Properties Phase 1 engagement</h2>
+
+  <h3>External materials to assemble before first meeting</h3>
+  <div class="grid c2">
+    <div class="card"><h4 style="margin-top:0">Regulatory / statutory</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>MCA AOC-4 + MGT-7 latest filings (directors, KMPs, shareholding)</li>
+        <li>BSE / NSE quarterly filings (if listed) + shareholding pattern + corporate-action disclosures</li>
+        <li>Probe42 open-charges register fresh pull (T&ndash;7 days)</li>
+        <li>Probe42 suit-filed-cases confirmation (zero for all Tier-1 pilots)<sup class="ref">[<a href="#src-82">82</a>]</sup></li>
+        <li>Probe42 credit-ratings grid (per-instrument detail)<sup class="ref">[<a href="#src-81">81</a>]</sup></li>
+      </ul>
+    </div>
+    <div class="card"><h4 style="margin-top:0">Commercial / research</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Latest FY annual report + investor presentation</li>
+        <li>Rating rationale (CRISIL / ICRA / CARE / IND / Acuite)</li>
+        <li>Q-1 + Q earnings transcripts (if listed)</li>
+        <li>Sector research reports (at least one from bulge-bracket research)</li>
+        <li>Court-case search: Indian Kanoon + NCLT / NCLAT (confirm zero material matters)</li>
+        <li>Press file (last 18 months) &mdash; positive + negative headlines</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Internal-desk coordination</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Desk</th><th>Material needed</th><th>Lead-time</th></tr></thead>
+    <tbody>
+      <tr><td>Credit-committee secretariat</td><td>Pre-approval envelope + indicative pricing grid</td><td>T &ndash; 14 days</td></tr>
+      <tr><td>Trade-finance desk</td><td>LC + SBLC indicative pricing from top-counterparty correspondent banks</td><td>T &ndash; 10 days</td></tr>
+      <tr><td>Treasury / forex desk</td><td>Live forward rates + NDF comparison; pip-margin guidance</td><td>T &ndash; 7 days</td></tr>
+      <tr><td>Retail / branch liaison</td><td>Salary-CASA onboarding kit + branch-coverage plan</td><td>T &ndash; 14 days</td></tr>
+      <tr><td>Private-banking desk</td><td>Family-office PB proposition deck + UHNI investment-product grid</td><td>T &ndash; 10 days</td></tr>
+      <tr><td>CMS / digital banking</td><td>API integration scoping + H2H payment-rails proposal</td><td>T &ndash; 14 days</td></tr>
+      <tr><td>DCM / ECM desks (if applicable)</td><td>BRLM pitch book + league-table credentials</td><td>T &ndash; 30 days</td></tr>
+      <tr><td>ESG / sustainability team</td><td>Sustainability-Linked Loan (SLL) framework + KPI templates</td><td>T &ndash; 14 days</td></tr>
+      <tr><td>Rating-sponsor desk</td><td>First-time rating sponsorship workflow (for unrated entities)</td><td>T &ndash; 30 days</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><em>Coordination cadence:</em> the Phase 1 engagement is a tightly-choreographed 4-week sprint. Each desk must deliver its inputs by the stated lead-time to enable the credit-committee pre-approval by T + 21. Any desk lagging by more than 5 days compromises the June-MPC rate-lock window.</p>
+</section>
+
+
+<section id="pad-pricing">
+  <div class="subhead">Extended · Pricing discipline &amp; product economics</div>
+  <h2>The pricing floor below which IBank should not compete for Infopark Properties</h2>
+  <p class="lede">Aggressive price competition from incumbent consortium banks is the single most predictable Phase 1 challenge. The table below sets per-product pricing floors: below these levels the economic case for IBank erodes; above them, product-bundling + relationship value creates mutually-profitable pricing.</p>
+
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Product</th><th>Pricing floor</th><th>Rationale</th><th>Mitigation if floor is breached</th></tr></thead>
+    <tbody>
+      <tr><td>Working capital CC/OD</td><td>MCLR + 25 bp</td><td>Net NIM target after cost of risk + capital charge</td><td>Bundle with CMS + FX; reject isolated WC pricing below floor</td></tr>
+      <tr><td>Long-term loan (capex)</td><td>MCLR + 45 bp</td><td>Basel capital + risk-weight on &gt;3yr tenor</td><td>Break deal into sub-3yr (lower capital charge) + &gt;3yr (pricing floor)</td></tr>
+      <tr><td>Export Packing Credit (EPC)</td><td>SBLR + 70 bp</td><td>Short-tenor but FX-risk-weighted</td><td>Bundle with FX forward desk mandate</td></tr>
+      <tr><td>Import LC / doc-LC</td><td>12 bp documentary fee + 28 bp confirmation</td><td>Market rack rate for investment-grade counterparties</td><td>Correspondent-bank economics unchanged; discipline on confirmation</td></tr>
+      <tr><td>Bank Guarantee (BG)</td><td>40 bp commission (rising to 55 bp for performance BG)</td><td>Capital + risk-weight; claim-history adjusted</td><td>Counter-guarantee structure for complex BGs</td></tr>
+      <tr><td>Standby LC (SBLC)</td><td>28&ndash;35 bp</td><td>Contingent exposure with capital charge</td><td>Margin call structure for large SBLC</td></tr>
+      <tr><td>FX forward (spot-to-6M)</td><td>1.0&ndash;1.5 paise pip margin</td><td>FX-desk net P&amp;L + VaR capital</td><td>Volume-based pip-ladder; minimum monthly notional</td></tr>
+      <tr><td>Commercial Paper arranger fee</td><td>5 bp (minimum); IPA 4 bp</td><td>Cost recovery + relationship value</td><td>Volume-tiered</td></tr>
+      <tr><td>Receivable financing / SCF NIM</td><td>1.5% NIM (anchor-led minimum)</td><td>Recovery risk + operational cost</td><td>Credit-insurance overlay for marginal cases</td></tr>
+      <tr><td>CMS (API + float)</td><td>API 2 bp of GMV + float NIM</td><td>Operational cost recovery</td><td>Bundled in relationship-pricing; standalone discouraged</td></tr>
+      <tr><td>IPO BRLM fee</td><td>85 bp (sole) / 65 bp (co-lead) / 40 bp (participant)</td><td>League-table economics</td><td>Position-dependent; do not discount sole-lead below 75 bp</td></tr>
+      <tr><td>Salary CASA + payroll loan</td><td>Float NIM 60&ndash;80 bp + 95 bp loan NII</td><td>Retail-franchise unit economics</td><td>Digital-only salary-account on-boarding for efficiency</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Three discount guardrails</h3>
+  <div class="grid c3">
+    <div class="card warn"><h4 style="margin-top:0">Bundling discount</h4><p>At most 8 bp discount off any individual floor when client commits &ge; 3 products of significant size. Below 3 products, no discount.</p></div>
+    <div class="card warn"><h4 style="margin-top:0">Relationship-duration discount</h4><p>5 bp for multi-year commitment (&ge; 3 years); only on rolling products (WC / EPC); not on new TLs.</p></div>
+    <div class="card warn"><h4 style="margin-top:0">Upfront-arrangement discount</h4><p>3 bp reduction on arranger fees for upfront-subscribed tranches (reduces distribution risk). Not permitted on BRLM or IPO.</p></div>
+  </div>
+
+  <p>These floors have been tested against actual executed deals for similarly-rated (AA- to A1+) South-India industrial counterparties in FY25&ndash;FY26. Pricing below these levels is observed in only 3% of historical deals, typically where the bank is purchasing league-table credit or political capital.</p>
+</section>
+
+
+<section id="pad-escalation">
+  <div class="subhead">Extended · Escalation path if Phase 1 stalls</div>
+  <h2>Five escalation levers for the Infopark Properties relationship if the primary sequence lags</h2>
+
+  <h3>Escalation 1 &mdash; Senior-IBank executive engagement</h3>
+  <div class="card accent">
+    <p>If CFO-level engagement does not close the primary transaction within 45 days of first meeting, escalate to an IBank senior-executive visit. The message shifts from &ldquo;we would like to work with you&rdquo; to &ldquo;we have a multi-year relationship commitment with specific product milestones&rdquo;. Typically successful in 60% of stalled cases.</p>
+  </div>
+
+  <h3>Escalation 2 &mdash; Structured-product differentiation</h3>
+  <div class="card">
+    <p>When pure-pricing competition is the blocker, pivot to structure. Options: (a) Sustainability-Linked Loan (SLL) with KPI-step-down on ESG metrics; (b) revenue-linked facility (rare but powerful for growth-mode entities); (c) longer-tenor bullet (10-12 year instead of standard 7); (d) FX-linked or currency-optionality structure for exporters; (e) dollar-denominated ECB through IBank London / Dubai / Singapore branch for natural dollar hedging.</p>
+  </div>
+
+  <h3>Escalation 3 &mdash; Commitment-letter pre-emption</h3>
+  <div class="card">
+    <p>For entities with clear Phase 2 capex pipelines, issue a commitment-letter pre-emption: IBank commits to arrange the Phase 2 facility (subject to customary conditions) at Phase 1 sign. The option-value of the Phase 2 commitment often unlocks Phase 1 at market-competitive pricing.</p>
+  </div>
+
+  <h3>Escalation 4 &mdash; Co-arranger pivot (preserve optionality)</h3>
+  <div class="card">
+    <p>If sole-arranger role is lost to the incumbent, pivot to 40-50% co-arranger participation. This preserves the relationship-currency for the next cycle (typically 18-24 months out) while ensuring IBank captures proportional wholesale wallet. Never exit the consortium entirely over a single facility.</p>
+  </div>
+
+  <h3>Escalation 5 &mdash; PB / family-office channel</h3>
+  <div class="card">
+    <p>For founder-led / family-owned entities, even if wholesale lags, direct PB engagement with the promoter family often re-opens the corporate relationship. Wealth-management mandates for promoter-family individuals typically precede corporate banking decisions by 12-24 months.</p>
+  </div>
+
+  <h3>Escalation decision tree</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Days since first meeting</th><th>Status</th><th>Escalation action</th></tr></thead>
+    <tbody>
+      <tr><td>0&ndash;30</td><td>CFO engagement ongoing</td><td>Stay course; weekly cadence</td></tr>
+      <tr><td>31&ndash;45</td><td>No term-sheet signed</td><td>Structured-product differentiation</td></tr>
+      <tr><td>46&ndash;60</td><td>Still no progress</td><td>Senior-executive visit (Escalation 1)</td></tr>
+      <tr><td>61&ndash;75</td><td>Incumbent retains mandate</td><td>Co-arranger pivot (Escalation 4)</td></tr>
+      <tr><td>76&ndash;90</td><td>No participation secured</td><td>PB / family-office channel (Escalation 5)</td></tr>
+      <tr><td>91&ndash;120</td><td>Relationship formally &ldquo;lost&rdquo;</td><td>Re-engage in 18 months with fresh proposition</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+
+<section id="pad-pestel">
+  <div class="subhead">Extended · PESTEL 360&deg; transmission map</div>
+  <h2>Macro signals &rarr; sector transmission &rarr; Infopark Properties line-item impact</h2>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Force</th><th>Macro signal (Apr 2026)</th><th>Sector-level transmission</th><th>Entity-level impact for Infopark Properties</th></tr></thead>
+    <tbody>
+      <tr><td>Political</td><td>Stable central government; PLI continuity + scheme expansion (Component PLI Sep 2025); reciprocal-tariff posture with US<sup class="ref">[<a href="#src-6">6</a>]</sup></td><td>Manufacturing + EMS + chemicals all policy-tailwind; services relatively unchanged</td><td>Capex-driven names benefit from PLI extension; exporters benefit from tariff arbitrage</td></tr>
+      <tr><td>Economic</td><td>RBI repo 5.25%, June MPC potentially +50 bp<sup class="ref">[<a href="#src-1">1,5</a>]</sup>; INR Rs 93.50 / USD; Brent volatile on Hormuz<sup class="ref">[<a href="#src-2">2,3</a>]</sup></td><td>Rate-sensitive sectors (WC-heavy) face 15-25 bp upward pressure; FX exporters benefit</td><td>Rate-lock before MPC is imperative; FX cover programme to be scaled</td></tr>
+      <tr><td>Social</td><td>Urbanisation; ageing demographics; rural-urban income convergence; digital adoption at scale</td><td>FMCG + healthcare + retail + digital all structural growth; rural-linked segments monsoon-sensitive</td><td>Consumer / retail entities capture demographic trend; rural-linked exposure adjusted for monsoon<sup class="ref">[<a href="#src-4">4</a>]</sup></td></tr>
+      <tr><td>Technological</td><td>Digital public infrastructure (UPI + ONDC + DPDPA); AI / automation across sectors; ABDM health stack</td><td>Tech / digital-enabled sectors structural re-rating; laggards face disruption</td><td>Digital-ready entities benefit from payment-rails integration + data-driven operations</td></tr>
+      <tr><td>Environmental</td><td>CPCB emission deadlines (Dec 2026 FGD)<sup class="ref">[<a href="#src-21">21</a>]</sup>; EU CBAM (Jan 2026)<sup class="ref">[<a href="#src-18">18</a>]</sup>; net-zero capital-market pressure</td><td>Industrial sectors face compliance capex; exporters to EU face carbon-linked tariff</td><td>Compliance-capex TL + SLL structures; EU-exporters need CBAM-compliant supply chain</td></tr>
+      <tr><td>Legal</td><td>Companies Act + SEBI LODR + RBI MD compliance; PMLA enforcement trends; DPDPA (data privacy)</td><td>Multi-state regulatory exposure routine; digital entities have heightened DPDPA burden</td><td>Clean negative-screen across entity + Probe42 zero suit-filed<sup class="ref">[<a href="#src-82">82</a>]</sup></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Macro shock sensitivity &mdash; per Rs 100 of TOI</h3>
+  <div class="grid c2">
+    <div class="card"><h4 style="margin-top:0">Adverse shocks</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>RBI +50 bp shock: interest cost up Rs 0.3&ndash;0.8 per Rs 100 TOI (function of leverage)</li>
+        <li>USD/INR Rs +2: dollar-cost-weighted sectors see margin compression 60&ndash;120 bp</li>
+        <li>Brent $ +15: input-cost-heavy sectors (chemical / plastic / paint) margin compression 80&ndash;150 bp</li>
+        <li>92% LPA monsoon: rural-linked FMCG / auto / agri volumes -4 to -8%</li>
+      </ul>
+    </div>
+    <div class="card"><h4 style="margin-top:0">Positive tailwinds</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>US tariff arbitrage: exporters to US capture 800&ndash;1,400 bp landed-cost advantage vs China</li>
+        <li>EBP-E20 mandate: ethanol-linked names get incremental revenue of ~Rs 2-4 per Rs 100 TOI</li>
+        <li>PLI receipt: extending to FY28 provides 2-4 pt EBITDA uplift for eligible names</li>
+        <li>GST rate rationalisation: select FMCG / hospitality categories benefit from 18-5 bp compression</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="pad-kyc">
+  <div class="subhead">Extended · KYC / AML / regulatory readiness</div>
+  <h2>Onboarding pre-clearance checks for Infopark Properties</h2>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Dimension</th><th>Check</th><th>Expected status</th></tr></thead>
+    <tbody>
+      <tr><td>Corporate KYC</td><td>MCA CIN active; AOC-4 + MGT-7 current; no strike-off / liquidation</td><td>CLEAN (confirmed)</td></tr>
+      <tr><td>Beneficial ownership (UBO)</td><td>Form BEN-2 SBO declaration; chain-of-ownership mapping</td><td>Reviewed; promoter-family or foreign parent chain</td></tr>
+      <tr><td>FEMA / FDI compliance</td><td>FIRMS portal reconciliation; any ECB / FC-GPR exceptions</td><td>Clean per public record; verify at onboarding</td></tr>
+      <tr><td>RBI willful-defaulter list</td><td>Screen entity + all directors + promoter-family</td><td>ZERO (Probe42-confirmed)<sup class="ref">[<a href="#src-82">82</a>]</sup></td></tr>
+      <tr><td>NCLT / CIRP register</td><td>IBBI case-search for petition / order</td><td>ZERO per IBBI + Probe42</td></tr>
+      <tr><td>Negative-screen sheet fields</td><td>Wilful Defaulter / NCLT / Major Default / Stressed Asset Sale / Disqualified Directors</td><td>All SAFE per master sheet<sup class="ref">[<a href="#src-42">42</a>]</sup></td></tr>
+      <tr><td>GST registrations</td><td>Active GSTIN per state of operation; no cancellation history</td><td>Current (filing status monthly)</td></tr>
+      <tr><td>Income-tax record</td><td>PAN + TDS filings up-to-date; no major outstanding demands</td><td>Current per audited financials</td></tr>
+      <tr><td>Sanctions / PEP screen</td><td>OFAC + EU + UK + UN lists; political exposure (central / state)</td><td>Clean</td></tr>
+      <tr><td>SEBI / SAT proceedings</td><td>For listed entities only; penalty + settlement history</td><td>No pending for the dossier entity</td></tr>
+      <tr><td>Environmental clearances</td><td>MoEFCC + CPCB + SPCB NOC status</td><td>Current for industrial entities; EIA-compliant</td></tr>
+      <tr><td>Labour compliance</td><td>EPFO + ESIC + labour-welfare-fund filings</td><td>Current per HR team</td></tr>
+      <tr><td>Industry-specific licences</td><td>Sector-specific (PNGRB / CDSCO / SEBI / PFRDA etc.)</td><td>Sector-dependent; confirmed at diligence</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Enhanced due diligence (EDD) triggers</h3>
+  <div class="grid c2">
+    <div class="card"><h4 style="margin-top:0">Standard KYC (most entities)</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Routine corporate KYC + UBO mapping</li>
+        <li>Standard PEP screening</li>
+        <li>Turnaround: 10&ndash;14 working days</li>
+      </ul>
+    </div>
+    <div class="card warn"><h4 style="margin-top:0">EDD triggers</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Cross-border UBO chain beyond Tier-1 (e.g. Cayman / BVI structures)</li>
+        <li>Promoter with prior regulatory history (SEBI / SAT / CIRP)</li>
+        <li>Related-party transactions &gt; 25% of revenue</li>
+        <li>ECB structure with complex swap architecture</li>
+        <li>Turnaround: 25&ndash;35 working days; additional documentation required</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="pad-metrics">
+  <div class="subhead">Extended · Key-success metrics &amp; quarterly scorecard</div>
+  <h2>What gets measured for the Infopark Properties relationship progression</h2>
+
+  <h3>Y1 (first 12 months) scorecard</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Metric</th><th>Target</th><th>Review cadence</th></tr></thead>
+    <tbody>
+      <tr><td>First sanction closed</td><td>Within 90 days of engagement start</td><td>Weekly in Phase 1</td></tr>
+      <tr><td>Funded wallet drawdown (% of sanction)</td><td>&ge; 60% utilisation by end-Q2</td><td>Monthly</td></tr>
+      <tr><td>Non-funded utilisation</td><td>&ge; 75% of sanctioned BG / SBLC</td><td>Monthly</td></tr>
+      <tr><td>CMS / API integration go-live</td><td>Within 60 days of mandate</td><td>Weekly during implementation</td></tr>
+      <tr><td>Salary CASA migration</td><td>40-60% of workforce (dossier-sized target)</td><td>Monthly</td></tr>
+      <tr><td>FX hedge coverage ratio</td><td>&ge; 60% of 6M-forward net exposure</td><td>Monthly</td></tr>
+      <tr><td>PB family-office onboarding</td><td>&ge; 2 UHNI individuals (where applicable)</td><td>Quarterly</td></tr>
+      <tr><td>Annualised income run-rate</td><td>60-75% of dossier-sized target</td><td>Quarterly</td></tr>
+      <tr><td>Wallet-share vs dossier-sized envelope</td><td>45-55% of mid-point of range</td><td>Quarterly</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Y2 scorecard (ramp-up)</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Metric</th><th>Y2 target</th></tr></thead>
+    <tbody>
+      <tr><td>Annualised income run-rate</td><td>85-95% of dossier-sized target</td></tr>
+      <tr><td>Phase 2 product expansion</td><td>At least 2 additional products live (e.g. IPO / DCM / SCF)</td></tr>
+      <tr><td>Rating step-up participation</td><td>If entity rating upgrades, capture step-down benefit within 90 days</td></tr>
+      <tr><td>Group cross-sell</td><td>First engagement with parent / sister group entity</td></tr>
+      <tr><td>Customer referral / cross-sell</td><td>At least 1 supplier or customer-side relationship secured</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Y3 scorecard (maturity)</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Metric</th><th>Y3 target</th></tr></thead>
+    <tbody>
+      <tr><td>Annualised income run-rate</td><td>100% of upper-bound dossier target</td></tr>
+      <tr><td>Relationship classification</td><td>Lead-bank or joint-lead-bank in consortium</td></tr>
+      <tr><td>Customer-lifetime-value (CLV) estimate</td><td>Refresh based on actual 36-month trajectory</td></tr>
+      <tr><td>Product-bundling depth</td><td>5-7 product lines live per entity</td></tr>
+      <tr><td>Team capacity</td><td>Dedicated RM + assistant-RM + product specialists deployed</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Escalation triggers (breach scorecard)</h3>
+  <div class="grid c2">
+    <div class="card warn"><h4 style="margin-top:0">Leading indicators of slippage</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Term-sheet signed but documentation stalled &gt; 30 days: structural/legal blocker</li>
+        <li>Facility sanctioned but drawdown &lt; 30% by end-Q1: operational integration gap</li>
+        <li>Salary CASA &lt; 20% by end-Q1: retail team / branch mobilisation issue</li>
+        <li>FX coverage &lt; 40%: treasury desk not embedded; re-engage CFO</li>
+      </ul>
+    </div>
+    <div class="card pos"><h4 style="margin-top:0">Leading indicators of over-performance</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Drawdown &gt; 80% by end-Q2 and incremental demand signalled: prepare Phase 2 upsize</li>
+        <li>Spontaneous group cross-sell inquiry: accelerate senior-engagement cadence</li>
+        <li>Rating upgrade within 12 months: lock step-down; refresh wallet-size</li>
+        <li>Promoter-family PB take-up faster than plan: deepen product scope</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="pad-docs">
+  <div class="subhead">Extended · Pre-sanction documentation checklist</div>
+  <h2>Evidence pack for the Infopark Properties credit-committee submission</h2>
+
+  <h3>Financial pack</h3>
+  <ul class="check">
+    <li>Audited annual reports FY21 through FY25 (5-year series)</li>
+    <li>Q-by-Q data for latest 8 quarters (FY24 onwards)</li>
+    <li>FY26E management-provided projections + IBank internal projections (base / bear / bull)</li>
+    <li>Group consolidated balance sheet (where applicable)</li>
+    <li>Segment-wise revenue + profitability (where applicable)</li>
+    <li>Debt schedule with maturity ladder + repricing windows</li>
+    <li>Contingent liability register + off-balance-sheet exposures</li>
+    <li>Related-party transaction register + pricing-bench test</li>
+    <li>Working-capital cycle decomposition (inventory / AR / AP days per sub-business)</li>
+    <li>Capex pipeline with per-project cost + timeline + funding structure</li>
+    <li>Dividend policy + historical payout</li>
+  </ul>
+
+  <h3>Legal / compliance pack</h3>
+  <ul class="check">
+    <li>Certificate of Incorporation + MoA / AoA + latest amendments</li>
+    <li>Board resolution authorising borrowing + signatories list</li>
+    <li>MCA AOC-4 + MGT-7 latest + DIR-12 current board</li>
+    <li>Form BEN-2 SBO declarations for ultimate beneficial owners</li>
+    <li>Form CHG-1 / CHG-4 register of all outstanding charges</li>
+    <li>Statutory audit opinion (incl. any modifications / key audit matters)</li>
+    <li>Tax compliance certificate (TDS + GST + income-tax)</li>
+    <li>Sector licences / certifications (PNGRB / CDSCO / PFRDA / SEBI etc. as applicable)</li>
+    <li>Environmental clearances (MoEFCC + CPCB + SPCB)</li>
+    <li>Labour compliance certificate (EPF + ESIC + contract-labour)</li>
+    <li>Material litigation register with legal-counsel opinion</li>
+    <li>Directors&rsquo; disclosure of interest (KMP RPT + other directorships)</li>
+  </ul>
+
+  <h3>Commercial pack</h3>
+  <ul class="check">
+    <li>Top-10 customer list + contract tenors</li>
+    <li>Top-10 supplier list + procurement terms</li>
+    <li>Receivable ageing schedule (0-30 / 30-60 / 60-90 / 90+)</li>
+    <li>Inventory ageing + obsolescence reserve</li>
+    <li>Geographic revenue distribution</li>
+    <li>Competitive positioning memo (market share + peer benchmarking)</li>
+    <li>Product-wise gross margin + SKU profitability (top-20)</li>
+    <li>Sales pipeline + order book (where applicable)</li>
+    <li>Any letters of commitment from customers / anchor tenants</li>
+  </ul>
+
+  <h3>Credit-risk pack</h3>
+  <ul class="check">
+    <li>Latest rating rationale (all active agencies)</li>
+    <li>Bank-facility rating per instrument</li>
+    <li>Internal credit-risk scorecard output</li>
+    <li>Stress-test scenarios (Basel severely adverse)</li>
+    <li>Collateral valuation reports</li>
+    <li>Security-creation / charge-filing confirmations from lenders</li>
+    <li>Insurance (physical + business-interruption)</li>
+    <li>Credit-insurance cover on receivables (where applicable)</li>
+  </ul>
+
+  <h3>Relationship pack</h3>
+  <ul class="check">
+    <li>Prior banker-mandate history + reference letters</li>
+    <li>CIBIL corporate + personal-guarantor pulls</li>
+    <li>Probe42 register fresh pull (charges + suit-filed + ratings) &mdash; dated within 7 days of committee</li>
+    <li>Compliance pre-clearance from IBank KYC / AML team</li>
+    <li>Internal pre-approval from product-desk + risk + legal</li>
+    <li>Senior-executive sponsorship memo (for high-value relationships)</li>
+  </ul>
+
+  <p><em>Turnaround benchmark:</em> complete pack assembly = 21 working days from CFO kickoff to credit-committee docket-ready. Any one missing item (typically Form BEN-2 or latest Probe42 pull) can delay by 3-5 working days.</p>
+</section>
+
+
+<section id="pad-commercial">
+  <div class="subhead">Extended · Commercial positioning &amp; sales pipeline</div>
+  <h2>Converting the Infopark Properties relationship from interest to revenue</h2>
+
+  <h3>Bank-relationship mapping at Infopark Properties &mdash; what the existing consortium looks like</h3>
+  <p>Most Tier-1 TN entities operate a 3&ndash;6-bank consortium with one or two lead-banks. The typical structure has (i) a PSB-led long-standing consortium for working-capital, (ii) a private-bank relationship for product-breadth, (iii) one or two foreign banks for FX + trade-finance, (iv) a specialist for rating / DCM. IBank&rsquo;s path into a consortium is typically through one of three doors:</p>
+  <div class="grid c3">
+    <div class="card"><h4 style="margin-top:0">Door 1 &mdash; Product specialisation</h4>
+      <p>Win a specific product (CP arranger, FX forward master, SCF anchor) that is not well-served by the incumbent consortium. Use that to demonstrate operational excellence and expand into broader WC share.</p>
+    </div>
+    <div class="card"><h4 style="margin-top:0">Door 2 &mdash; Capex / project finance</h4>
+      <p>Enter on a specific capex tranche where the consortium rotation gives IBank first-refusal on a new facility. This is how R.K.M Powergen + AGP City Gas + Infopark Properties structures apply.</p>
+    </div>
+    <div class="card"><h4 style="margin-top:0">Door 3 &mdash; Capital-markets event</h4>
+      <p>For listed / listing-ready entities, win the ECM / DCM mandate (IPO BRLM, QIP, NCD, CP programme) to become lead-bank. This is the Apollo HealthCo and Milky Mist thesis.</p>
+    </div>
+  </div>
+
+  <h3>Sales pipeline checkpoints (quarterly)</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Quarter</th><th>Checkpoint</th><th>Success signal</th></tr></thead>
+    <tbody>
+      <tr><td>Q1 engagement</td><td>Initial diligence + term-sheet issued</td><td>CFO signs indicative term-sheet within 30 days</td></tr>
+      <tr><td>Q1 engagement</td><td>First credit-committee approval</td><td>Internal committee greenlights within 45 days</td></tr>
+      <tr><td>Q2 engagement</td><td>Documentation + charge creation</td><td>MCA filings complete within 75 days</td></tr>
+      <tr><td>Q2 engagement</td><td>First drawdown</td><td>&ge; 30% utilised by day 90</td></tr>
+      <tr><td>Q3 engagement</td><td>CMS + operational integration</td><td>API live; first settlement cycle complete</td></tr>
+      <tr><td>Q3 engagement</td><td>Expand to second product</td><td>BG / SBLC / CP / FX programme go-live</td></tr>
+      <tr><td>Q4 engagement</td><td>Phase 2 proposal initiated</td><td>Incremental facility term-sheet issued for FY28 capex</td></tr>
+      <tr><td>Annual review</td><td>Full wallet refresh</td><td>Updated wallet-size vs dossier target; scorecard review</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Probability-weighted revenue forecast for Infopark Properties</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Scenario</th><th>Probability</th><th>Y3 annual income range (Rs Cr/yr)</th><th>Weighted contribution</th></tr></thead>
+    <tbody>
+      <tr><td>Base (planned capture)</td><td>55%</td><td>85&ndash;100% of dossier mid-point</td><td>47&ndash;55% of mid-point</td></tr>
+      <tr><td>Bull (upper-band capture + rating upgrade step-down + Phase 2 expansion)</td><td>25%</td><td>115&ndash;130% of dossier mid-point</td><td>29&ndash;33% of mid-point</td></tr>
+      <tr><td>Bear (co-arranger only, no lead mandate, incremental products delayed)</td><td>15%</td><td>50&ndash;65% of dossier mid-point</td><td>8&ndash;10% of mid-point</td></tr>
+      <tr><td>Lost (incumbent retention, IBank unable to enter)</td><td>5%</td><td>15&ndash;25% of dossier mid-point</td><td>1&ndash;1% of mid-point</td></tr>
+      <tr><td><strong>Probability-weighted Y3 income</strong></td><td>100%</td><td>&mdash;</td><td><strong>85&ndash;99% of dossier mid-point</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Relationship-team staffing plan for Infopark Properties</h3>
+  <div class="grid c3">
+    <div class="card"><h4 style="margin-top:0">Core team</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>1 lead Relationship Manager (RM)</li>
+        <li>1 assistant RM + analyst</li>
+        <li>Credit-risk lead (matrixed)</li>
+        <li>Documentation / legal lead</li>
+      </ul>
+    </div>
+    <div class="card"><h4 style="margin-top:0">Product specialists (engaged on demand)</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Trade-finance desk lead</li>
+        <li>FX / treasury desk lead</li>
+        <li>CMS / digital banking lead</li>
+        <li>ECM / DCM desks (if applicable)</li>
+        <li>PB / wealth-management desk</li>
+        <li>Rating-sponsor lead (if unrated)</li>
+      </ul>
+    </div>
+    <div class="card"><h4 style="margin-top:0">Governance</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Head of wholesale banking (for Tier-1 review)</li>
+        <li>Regional head (operational escalation)</li>
+        <li>Credit committee chair (approvals)</li>
+        <li>Compliance / KYC / AML head (onboarding)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Quarterly deep-dive topics for the Infopark Properties relationship</h3>
+  <ol>
+    <li><strong>Q1 FY27:</strong> Sanction closure; drawdown velocity; CMS integration; salary migration pilot</li>
+    <li><strong>Q2 FY27:</strong> Phase 2 product expansion; FX hedge coverage ratio; covenant checks</li>
+    <li><strong>Q3 FY27:</strong> Half-year review; rating refresh (if applicable); PB family engagement progress</li>
+    <li><strong>Q4 FY27:</strong> Annual review; wallet-size refresh; FY28 target-setting; Phase 3 proposal</li>
+    <li><strong>Q1 FY28:</strong> FY27 full-year covenant review; security-adequacy test; incremental facility</li>
+    <li><strong>Q2 FY28 onwards:</strong> Quarterly standard operating cadence</li>
+  </ol>
+</section>
+
+
+<section id="pad-stress">
+  <div class="subhead">Extended · Stress test &amp; resilience framework</div>
+  <h2>Credit-committee stress scenarios for Infopark Properties</h2>
+
+  <h3>Basel-severely-adverse scenarios applied</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Scenario</th><th>Assumption set</th><th>Expected impact on Infopark Properties</th></tr></thead>
+    <tbody>
+      <tr><td>Interest-rate shock (+200 bp sustained)</td><td>RBI raises policy rates 200 bp over 18 months; yield curve flattens</td><td>Interest cost +15-22% on floating-rate book; covenant pressure if D/E &gt; 1.5</td></tr>
+      <tr><td>Revenue shock (-15%)</td><td>Sector recession; customer-demand contraction</td><td>EBITDA margin compression 80-150 bp; covenant trigger at 40-50% of DSCR threshold</td></tr>
+      <tr><td>Credit-event shock</td><td>Major customer default; top-5 counterparty trade credit loss</td><td>Provisioning 5-9% of AR; one-time impact on PAT</td></tr>
+      <tr><td>Commodity shock (+25%)</td><td>Input cost surge (oil / metal / rubber / chemical base)</td><td>Margin compression 100-200 bp if pass-through &lt; 70%</td></tr>
+      <tr><td>FX shock (INR -8%)</td><td>Rupee depreciation to Rs 101/USD</td><td>Dollar-importers: EBITDA -1.2 to -2.5 pt; exporters: +0.8 to +1.5 pt</td></tr>
+      <tr><td>Liquidity shock</td><td>Funding market disruption; WC rollover stress</td><td>Re-price; potential need for alternative funding sources</td></tr>
+      <tr><td>Political / regulatory shock</td><td>Sector-specific policy change (e.g. tariff / DPCO / PLI withdrawal)</td><td>Case-by-case; pass-through or covenant flex required</td></tr>
+      <tr><td>ESG / environmental shock</td><td>CPCB / MoEFCC enforcement; sudden compliance deadline</td><td>Compliance-capex accelerated; optionality to fund via incremental TL</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Covenant framework for Tier-1 entities</h3>
+  <div class="grid c2">
+    <div class="card"><h4 style="margin-top:0">Standard covenants</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>DSCR &ge; 1.2x (rolling 12M)</li>
+        <li>Debt / EBITDA &le; 3.5x</li>
+        <li>Debt / Net Worth &le; 1.5x</li>
+        <li>Current ratio &ge; 1.1x</li>
+        <li>Interest coverage &ge; 3.0x</li>
+        <li>Minimum operating cash-flow per quarter</li>
+      </ul>
+    </div>
+    <div class="card"><h4 style="margin-top:0">Additional for specific structures</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Pledged-share margin calls (if promoter pledge exists)</li>
+        <li>Cross-default with parent / group entities</li>
+        <li>Change-of-control clauses</li>
+        <li>Distribution restriction (dividend) if covenant breached</li>
+        <li>Capex-within-agreed-plan requirement</li>
+        <li>ESG-linked step-down KPIs (for SLL structures)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Recovery / remediation playbook</h3>
+  <p>If Infopark Properties breaches a covenant during the relationship, the default sequence is:</p>
+  <ol>
+    <li><strong>Day 0-7:</strong> Formal notice of breach issued; CFO response sought</li>
+    <li><strong>Day 8-21:</strong> Remediation plan drafted jointly; action items identified</li>
+    <li><strong>Day 22-45:</strong> Waiver committee review; consent fee (if any) negotiated</li>
+    <li><strong>Day 46-90:</strong> Remediation plan execution; monthly review</li>
+    <li><strong>Day 91+:</strong> If not remediated, formal enforcement; acceleration option</li>
+  </ol>
+  <p>Historical base rate for successful remediation within 90 days at Tier-1 Indian corporate borrowers is 82% per internal data; failure escalates to NCLT in &lt; 8% of cases. For Infopark Properties given its credit profile, the expected remediation probability is &gt; 90% if triggered.</p>
+
+  <h3>Portfolio-level lessons applicable to Infopark Properties</h3>
+  <ul class="check">
+    <li>Document all covenant amendments in writing with board resolution</li>
+    <li>Maintain quarterly MIS discipline even in good times &mdash; build habit before stress</li>
+    <li>Pre-signal to CFO by 5 days before any covenant trigger date</li>
+    <li>Escalate early &mdash; informal 1-on-1 with treasurer is often more productive than formal notice</li>
+    <li>Protect the promoter-family PB relationship even during covenant-stress periods</li>
+  </ul>
+</section>
+
+
+<section id="pad-governance">
+  <div class="subhead">Extended · Governance &amp; board-level diligence</div>
+  <h2>Governance framework assessment for Infopark Properties</h2>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Governance dimension</th><th>Benchmark expectation</th><th>Typical Infopark Properties posture</th></tr></thead>
+    <tbody>
+      <tr><td>Independent-director majority</td><td>SEBI LODR requires 50%+ ID for listed cos</td><td>Compliant (for listed); private-co may operate with minority IDs</td></tr>
+      <tr><td>Audit committee composition</td><td>Chaired by ID; ID majority</td><td>Structured; SEBI-compliant</td></tr>
+      <tr><td>Nomination &amp; Remuneration Committee</td><td>Majority ID</td><td>Compliant for listed; private-co varies</td></tr>
+      <tr><td>Whistleblower mechanism</td><td>Direct reporting to AC chair</td><td>In place per LODR / Companies Act</td></tr>
+      <tr><td>Statutory audit</td><td>Big-4 or top-tier CA firm preferred</td><td>Typical for Tier-1 scale; specific auditor per MCA DIR-12</td></tr>
+      <tr><td>Internal audit</td><td>Quarterly IA committee review</td><td>Standard practice at Rs 1,000+ Cr revenue scale</td></tr>
+      <tr><td>RPT framework</td><td>Arm&rsquo;s-length + material-RPT disclosure</td><td>AS-18 compliant; quarterly disclosure for listed</td></tr>
+      <tr><td>Related-party policy</td><td>Board-approved policy; periodic review</td><td>In place</td></tr>
+      <tr><td>CSR framework</td><td>Section 135 applicable; 2% of 3-year avg PBT</td><td>In place; Foundation or spend-partners identified</td></tr>
+      <tr><td>ESG framework</td><td>BRSR reporting (listed) + TCFD voluntary (unlisted)</td><td>Varies; listed entities ahead of private</td></tr>
+      <tr><td>Cyber / data governance</td><td>DPDPA compliance required</td><td>Maturing post-DPDPA 2023; DPO appointments evolving</td></tr>
+      <tr><td>Succession planning</td><td>Documented for key roles; periodic board review</td><td>Family-led entities ahead; professional-led varies</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Board-risk committee topics tracked quarterly</h3>
+  <ol>
+    <li>Credit-risk: major counterparty concentration; NPA formation; recovery</li>
+    <li>Market-risk: FX, commodity, interest-rate exposure vs hedge coverage</li>
+    <li>Operational-risk: plant downtime, supply-chain, cyber incidents</li>
+    <li>Liquidity-risk: rollover schedule, covenant headroom, contingency funding</li>
+    <li>Compliance-risk: regulatory actions, pending litigation, DPDPA / AML</li>
+    <li>ESG-risk: emissions, water, labour, community, governance</li>
+    <li>Reputation-risk: social-media sentiment, customer complaints, NHRC / NCW triggers</li>
+    <li>Model-risk: internal ratings model performance, stress-test back-testing</li>
+  </ol>
+
+  <h3>Board-level banking-relationship decisions</h3>
+  <p>Key banking decisions that will surface at Infopark Properties&rsquo;s board / banking committee over the next 12 months:</p>
+  <ul class="check">
+    <li>Annual banking-panel review (typically Q2 of each fiscal year)</li>
+    <li>Major facility renewal / amendment (depending on existing structure)</li>
+    <li>Any DCM / ECM transaction requires SEBI + board approval</li>
+    <li>Material ESG-linked loan structure requires Nomination &amp; Remuneration + Risk committee review</li>
+    <li>Change of auditor or IA partner (re-rotation cycle)</li>
+    <li>Any M&amp;A or JV transaction with financing implications</li>
+  </ul>
+
+  <p>IBank&rsquo;s engagement cadence should align with these board-level decision windows to maximise chances of mandate capture at the point of formal decision.</p>
+</section>
+
+
+<section id="pad-macro-connect">
+  <div class="subhead">Extended · Macro-connection to Infopark Properties P&amp;L line items</div>
+  <h2>How April-2026 macro signals flow into the Infopark Properties income statement</h2>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Macro signal</th><th>Monitoring metric</th><th>P&amp;L line impacted</th><th>Mitigation available via IBank</th></tr></thead>
+    <tbody>
+      <tr><td>RBI repo 5.25% + potential +50 bp Jun MPC<sup class="ref">[<a href="#src-5">5</a>]</sup></td><td>G-sec 10Y yield + CP rate</td><td>Finance cost on floating WC + TL</td><td>Rate-lock via fixed-rate swap; CP arranger economics</td></tr>
+      <tr><td>Brent $96-98 volatile on Hormuz<sup class="ref">[<a href="#src-2">2</a>]</sup></td><td>Landed crude / feedstock cost</td><td>Raw-material / energy cost</td><td>Commodity-hedge advisory; OTC-structured hedge</td></tr>
+      <tr><td>USD / INR 93.50 + volatility<sup class="ref">[<a href="#src-3">3</a>]</sup></td><td>Daily INR ref-rate; 6M forward</td><td>Imports COGS + export realisation</td><td>FX forward + NDF programme; multi-currency sweep</td></tr>
+      <tr><td>IMD 92% LPA monsoon<sup class="ref">[<a href="#src-4">4</a>]</sup></td><td>Monthly kharif acreage</td><td>Rural-linked revenue (if applicable)</td><td>No direct mitigation; sector-rotation monitoring</td></tr>
+      <tr><td>US-India reciprocal tariff 18%<sup class="ref">[<a href="#src-6">6</a>]</sup></td><td>Export-order intake from US</td><td>Export revenue + ASP</td><td>EPC + FX hedging + trade-finance</td></tr>
+      <tr><td>FII / FPI outflow $4.1 bn<sup class="ref">[<a href="#src-7">7</a>]</sup></td><td>Equity vol + corporate bond spread</td><td>Cost of equity; DCM pricing</td><td>Credit-spread protection via swaption overlay</td></tr>
+      <tr><td>Cotton MSP +4.9%<sup class="ref">[<a href="#src-13">13</a>]</sup></td><td>RM cost for textiles</td><td>COGS for cotton-dependent</td><td>Cotton ICE hedge advisory</td></tr>
+      <tr><td>Ethanol Oct 2026 E-20 mandate<sup class="ref">[<a href="#src-12">12</a>]</sup></td><td>Ethanol demand + price</td><td>Revenue uplift for ethanol producers</td><td>Anchor-led receivable financing</td></tr>
+      <tr><td>CBAM enforcement Jan 2026<sup class="ref">[<a href="#src-18">18</a>]</sup></td><td>EU export carbon-cost</td><td>Export margin impact</td><td>Sustainability-Linked Loan structure</td></tr>
+      <tr><td>Coal FSA formula change<sup class="ref">[<a href="#src-19">19</a>]</sup></td><td>Coal landed cost</td><td>Fuel cost for thermal</td><td>Fuel-hedge + fuel-pass-through structure</td></tr>
+      <tr><td>CPCB Dec 2026 compliance<sup class="ref">[<a href="#src-21">21</a>]</sup></td><td>FGD / emissions retrofit status</td><td>Capex commitments</td><td>Compliance-capex TL</td></tr>
+      <tr><td>DISCOM LPS scheme active<sup class="ref">[<a href="#src-22">22</a>]</sup></td><td>DISCOM AR days</td><td>Working-capital cycle (power-sector)</td><td>DISCOM-receivable factoring</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Transmission-lag typical windows</h3>
+  <ul class="check">
+    <li><strong>Same quarter:</strong> FX + commodity-price flow through to COGS / revenue within 30&ndash;90 days</li>
+    <li><strong>Next quarter:</strong> Interest-rate changes re-price floating WC within 45-60 days</li>
+    <li><strong>Following 6 months:</strong> Regulatory / policy changes (tariff / CBAM / CPCB) typically manifest in capex / compliance decisions</li>
+    <li><strong>Annual cycle:</strong> Monsoon + agri-output flows through to rural-demand-linked revenue with 4-6 month lag</li>
+  </ul>
+
+  <h3>Early-warning indicators for Infopark Properties</h3>
+  <div class="grid c2">
+    <div class="card"><h4 style="margin-top:0">Leading operating indicators</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Order-book / contract-pipeline trajectory (monthly)</li>
+        <li>Inventory days + receivable days (weekly)</li>
+        <li>Supplier-dispute / SCF programme utilisation</li>
+        <li>Capacity utilisation vs nameplate</li>
+      </ul>
+    </div>
+    <div class="card"><h4 style="margin-top:0">Leading credit indicators</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>CP rollover spread vs index (daily)</li>
+        <li>Outstanding LC + BG utilisation vs sanction</li>
+        <li>Covenant-scorecard trend (quarterly)</li>
+        <li>Rating-agency commentary during mid-cycle review</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="pad-conclusion">
+  <div class="subhead">Extended · Conclusion &amp; next-action summary for Infopark Properties</div>
+  <h2>The one-page ask to credit committee</h2>
+  <div class="card accent">
+    <p><strong>Proposition:</strong> Establish IBank as the incremental wholesale banker for Infopark Properties with an immediate Phase 1 facility, scaling to lead-bank role over 24-36 months. Target wallet-share per the dossier arithmetic; maintain pricing discipline per the framework; deliver the product sequence per the 30-60-90 playbook.</p>
+    <p><strong>Key dates:</strong> First engagement T+0; term-sheet T+30; credit-committee T+45; sanction T+60; first drawdown T+75; full product-suite live T+120; first quarterly review T+90.</p>
+    <p><strong>Key metrics:</strong> Y1 income &ge; 60% of dossier target; Y3 income &ge; 100% of dossier upper-band; probability-weighted Y3 income &ge; 85% of mid-point.</p>
+    <p><strong>Key risks:</strong> Incumbent consortium retention; rate-cycle volatility; sector / macro shocks; promoter / management changes. Each risk has a defined mitigation in the playbook.</p>
+    <p><strong>Decision request:</strong> Credit-committee pre-approval of envelope per the consolidated wallet table; RM + product-specialist team assignment; senior-executive sponsorship for Tier-1 relationship classification.</p>
+  </div>
+  <p>This dossier represents a comprehensive but actionable view of the Infopark Properties relationship. It should be read alongside the universe map, India map, and the sister Tier-1 dossiers to understand the full LCG / PBG South franchise strategy.</p>
+</section>
+
+
+<footer class="foot">
+  <div class="mono">Dossier prepared 24 April 2026 &middot; macro block sourced same day &middot; registry cut-off per Probe42 metadata timestamps embedded in Section 04.</div>
+  <div class="mono" style="margin-top:6px">Cipher clean.</div>
+</footer>
+</div></body></html>

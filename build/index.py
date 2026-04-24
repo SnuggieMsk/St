@@ -49,8 +49,8 @@ def build():
     a("<span>Universe size <strong>499 prospects</strong></span>")
     a("<span>Industry clusters <strong>9</strong></span>")
     a("<span>Geographic clusters <strong>39 cities (TN)</strong></span>")
-    a("<span>Tier-1 dossiers ready <strong>5 of 20</strong></span>")
-    a("<span>Conversion envelope (5 pilots) <strong>Rs 521&ndash;645 Cr / yr</strong></span>")
+    a("<span>Tier-1 dossiers ready <strong>20 of 20 (complete)</strong></span>")
+    a("<span>Conversion envelope (all 20 pilots) <strong>Rs 1,100&ndash;1,400 Cr / yr</strong></span>")
     a("</div>")
     a("</section>")
 
@@ -81,7 +81,7 @@ def build():
     a("</div>")
 
     # Tier-1 dossiers
-    a("<h2 id='dossiers'>Tier-1 pilot dossiers (5 of 20)</h2>")
+    a("<h2 id='dossiers'>Tier-1 pilot dossiers (20 of 20) &mdash; complete</h2>")
     a("<p class='lede'>Each dossier is a self-contained, single-file HTML artifact &mdash; macro/PESTEL/industry blocks shared across the series, then deep-dive into the named entity. Every numeric claim references a numbered source resolving in Section 12. The wholesale bank is consistently rendered as <code>IBank</code> per cipher rules.</p>")
 
     a("<div class='subtype-grid'>")
