@@ -206,6 +206,7 @@ def build():
         "U32309TN2019PTC133300": "salcomp-india-dossier.html",
         "U35999TN1962PTC004928": "brakes-india-dossier.html",
         "L17111TZ1962PLC001183": "precot-limited-dossier.html",
+        "U28999TN2009PTC071334": "mohanlal-jewellers-dossier.html",
     }
     # CIN → city_norm / region / mnc mapping (from geocoder output)
     import json as _json
