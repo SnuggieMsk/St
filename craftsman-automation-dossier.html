@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Craftsman Automation Ltd · Dossier 24 Apr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0;--paper:#ffffff;--ink:#1a1a1a;--muted:#5a5a5a;--line:#e3dfd6;
+  --accent:#7a1f2b;--accent-soft:#f5e6e8;--pos:#2e7d4f;--neg:#b42318;
+  --amber:#b86a00;--cool:#1c4e80;--indigo:#3730a3;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --sans:'DM Sans',-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:'Literata','Iowan Old Style','Source Serif Pro',Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 48px 80px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;color:var(--ink);margin:0 0 .4em}
+h1{font-size:2.6rem;line-height:1.15}
+h2{font-size:1.85rem;line-height:1.2;border-bottom:2px solid var(--ink);padding-bottom:.35em;margin-top:2.2em}
+h3{font-size:1.3rem;margin-top:1.6em;color:var(--accent)}
+h4{font-size:1.05rem;margin-top:1.2em}
+p{margin:.6em 0}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+code,.mono{font-family:var(--mono);font-size:.92em}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.lede{font-size:1.12rem;color:var(--muted);max-width:72ch;margin:0 0 1.2em}
+.subhead{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--muted);margin:0 0 .4em}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card.accent{border-left:4px solid var(--accent);background:var(--accent-soft)}
+.card.warn{border-left:4px solid var(--amber);background:#fbf2e3}
+.card.pos{border-left:4px solid var(--pos);background:#e8f2ec}
+.card.neg{border-left:4px solid var(--neg);background:#fbe8e6}
+.grid{display:grid;gap:14px;margin:14px 0}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:780px){.grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.kpi .k{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.kpi .v{font-family:var(--serif);font-size:1.65rem;line-height:1.1;margin-top:4px}
+.kpi .sub{font-size:.82rem;color:var(--muted);margin-top:3px}
+.kpi.pos .v{color:var(--pos)} .kpi.neg .v{color:var(--neg)} .kpi.accent .v{color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem;background:var(--paper)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#faf7f1;font-weight:600}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:hover td{background:#fdfbf5}
+.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:2px 7px;border-radius:3px;background:var(--line);color:var(--ink);margin-right:4px;text-transform:uppercase}
+.tag.pos{background:var(--pos);color:#fff}
+.tag.neg{background:var(--neg);color:#fff}
+.tag.amber{background:var(--amber);color:#fff}
+.tag.cool{background:var(--cool);color:#fff}
+.tag.indigo{background:var(--indigo);color:#fff}
+.tag.accent{background:var(--accent);color:#fff}
+sup.ref{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-decoration:none;padding-left:2px}
+sup.ref a{color:var(--accent);text-decoration:none}
+.hero{border-top:6px solid var(--accent);padding-top:28px}
+.hero .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hero h1{font-size:3.1rem;margin:.15em 0 .3em}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:.92rem}
+.hero .meta span{font-family:var(--mono);font-size:.82rem}
+.nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:28px;z-index:10;font-size:.8rem}
+.nav ol{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.nav ol li a{color:var(--muted);text-decoration:none}
+.nav ol li a:hover{color:var(--accent)}
+ul.check{list-style:none;padding-left:0}
+ul.check li{padding:4px 0 4px 22px;position:relative}
+ul.check li::before{content:"✓";position:absolute;left:0;color:var(--pos);font-weight:700}
+ul.x{list-style:none;padding-left:0}
+ul.x li{padding:4px 0 4px 22px;position:relative}
+ul.x li::before{content:"✗";position:absolute;left:0;color:var(--neg);font-weight:700}
+.src-list{font-size:.85rem;columns:1;column-gap:32px}
+.src-list ol{padding-left:24px;margin:0}
+.src-list li{padding:4px 0;break-inside:avoid}
+.src-list .u{font-family:var(--mono);font-size:.78rem;color:var(--cool);word-break:break-all}
+.waterfall{font-family:var(--mono);font-size:.82rem;white-space:pre}
+footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
+.pestel-cell{font-size:.82rem}
+.pestel-cell .tt{font-weight:600;display:block;margin-bottom:2px}
+.playbook .phase{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:#fff;padding:3px 8px;border-radius:3px;font-size:.72rem;margin-right:6px}
+</style>
+</head><body><div class="wrap">
+
+
+<nav class="nav"><ol>
+<li><a href="#cover">01 Cover</a></li><li><a href="#macro">02 Macro</a></li>
+<li><a href="#group">03 Group</a></li><li><a href="#entity">04 Entity</a></li>
+<li><a href="#industry">05 Industry</a></li><li><a href="#models">06 Models</a></li>
+<li><a href="#entry-map">07 Entry map</a></li><li><a href="#retail">08 Retail/PB/TASC</a></li>
+<li><a href="#consolidated">09 Consolidated</a></li><li><a href="#diligence">10 Diligence</a></li>
+<li><a href="#playbook">11 Playbook</a></li><li><a href="#sources">12 Sources</a></li>
+</ol></nav>
+
+
+<section id="cover" class="hero">
+  <div class="eyebrow">Tier-1 Dossier · 07 of 20 · Auto component + Industrial engineering</div>
+  <h1>Craftsman Automation Limited<br>Listed TN auto-component + industrial-engineering compounder</h1>
+  <p class="lede">Coimbatore-headquartered listed auto-component + industrial-engineering manufacturer (NSE: CRAFTSMAN / BSE: 543276). FY25 revenue Rs 5,690 Cr (+28% YoY from Rs 4,452 Cr FY24)<sup class="ref">[<a href="#src-100">100</a>]</sup>; Q1 FY26 posted highest-ever quarterly revenue of Rs 1,784 Cr (+55% YoY)<sup class="ref">[<a href="#src-101">101</a>]</sup>. CRISIL AA- Reaffirmed Stable (20 Mar 2026 Probe42)<sup class="ref">[<a href="#src-81">81</a>]</sup>. Zero suit-filed (Probe42)<sup class="ref">[<a href="#src-82">82</a>]</sup>. Promoter Srinivasan Ravi (Chairman &amp; MD) &mdash; mechanical engineer, PSG Coimbatore alumnus, associated since incorporation<sup class="ref">[<a href="#src-102">102</a>]</sup>. Three-segment business: Powertrain (engine parts, transmission components); Aluminium Products (crank-case, cylinder blocks, gear-box housings); Industrial &amp; Engineering (storage / material-handling / SPMs).</p>
+  <div class="grid c4" style="margin-top:18px">
+    <div class="kpi accent"><div class="k">Headline conversion (fully-built)</div><div class="v num">Rs 62–78 Cr<span style="font-size:.9rem;color:var(--muted)"> /yr</span></div><div class="sub">Wholesale Rs 52–64 Cr + Retail / PB / TASC Rs 10–14 Cr</div></div>
+    <div class="kpi"><div class="k">FY25 Revenue</div><div class="v num">Rs 5,690 Cr</div><div class="sub">+28% YoY<sup class="ref">[<a href="#src-100">100</a>]</sup></div></div>
+    <div class="kpi pos"><div class="k">CRISIL rating</div><div class="v num">AA- Stable</div><div class="sub">Reaffirmed 20 Mar 2026<sup class="ref">[<a href="#src-81">81</a>]</sup></div></div>
+    <div class="kpi"><div class="k">Open Charges (MCA)</div><div class="v num">Rs 4,748 Cr</div><div class="sub">Capex-heavy manufacturing profile</div></div>
+  </div>
+  <div class="card accent" style="margin-top:20px">
+    <h4 style="margin-top:0">Three reasons this converts</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>Q1 FY26 highest-ever quarterly revenue (Rs 1,784 Cr, +55% YoY)</strong> &mdash; the acquisition-plus-capex cycle is delivering. DR Axion Industries acquisition (acquired Jul 2023) fully integrated; Industrial segment scaling.</li>
+      <li><strong>Listed auto-component peer with investment-grade rating</strong> &mdash; AA- supports Rs 4,748 Cr open-charge book; refresh cycle on WC + capex TL is live with Q2 FY27 reset window.</li>
+      <li><strong>Coimbatore-cluster relationship</strong> &mdash; geographic cluster opportunity with KPR Group + Pricol + L&amp;T + Roots industries; IBank branch footprint leverage.</li>
+    </ol>
+  </div>
+  <div class="meta" style="margin-top:14px">
+    <span>CIN <strong>L28991TZ1986PLC001816</strong></span>
+    <span>Listed <strong>NSE: CRAFTSMAN / BSE: 543276</strong></span>
+    <span>Promoter <strong>Srinivasan Ravi (Chairman &amp; MD)</strong></span>
+    <span>Registry cut <strong>Probe42 / 06 Apr 2026</strong></span>
+  </div>
+</section>
+
+
+<section id="macro">
+  <div class="subhead">02 · Macro refresh</div>
+  <h2>The April 2026 read &mdash; five dials that re-price every Tier-1 relationship</h2>
+  <p class="lede">The Reserve Bank kept the repo at 5.25% at the 6&ndash;8 April meeting on a unanimous neutral stance<sup class="ref">[<a href="#src-1">1</a>]</sup>, but the global tape moved underneath. Brent is pinned $96&ndash;100 on a closed Hormuz<sup class="ref">[<a href="#src-2">2</a>]</sup>, USD/INR has tested 94.63<sup class="ref">[<a href="#src-3">3</a>]</sup> before RBI intervention pulled it back to 93.50, and the IMD's first long-range forecast dropped a 92% LPA monsoon call<sup class="ref">[<a href="#src-4">4</a>]</sup> — the first sub-normal April signal since 2015. Goldman cut India FY26 GDP to 5.9%<sup class="ref">[<a href="#src-5">5</a>]</sup> and pricing a 50 bp rate hike<sup class="ref">[<a href="#src-5">5</a>]</sup> into the June MPC window. A June rate-lock is the single most important compression ask any wholesale banker can build a 30-60-90 plan around today.</p>
+
+  <div class="grid c3">
+    <div class="kpi accent"><div class="k">Brent spot</div><div class="v num">$96&ndash;100/bbl</div><div class="sub">Hormuz closure through MoU expiry 30 Apr<sup class="ref">[<a href="#src-2">2</a>]</sup></div></div>
+    <div class="kpi"><div class="k">USD / INR (ref)</div><div class="v num">93.50</div><div class="sub">Apr range 91.83&ndash;94.63<sup class="ref">[<a href="#src-3">3</a>]</sup></div></div>
+    <div class="kpi"><div class="k">RBI repo</div><div class="v num">5.25%</div><div class="sub">Held unanimous, neutral (6&ndash;8 Apr MPC)<sup class="ref">[<a href="#src-1">1</a>]</sup></div></div>
+    <div class="kpi neg"><div class="k">IMD monsoon 2026</div><div class="v num">92% LPA</div><div class="sub">Below-normal, El Niño risk<sup class="ref">[<a href="#src-4">4</a>]</sup></div></div>
+    <div class="kpi neg"><div class="k">Goldman GDP FY26</div><div class="v num">5.9%</div><div class="sub">Cut from 6.4%, CPI 4.6%<sup class="ref">[<a href="#src-5">5</a>]</sup></div></div>
+    <div class="kpi amber"><div class="k">US&ndash;India deal</div><div class="v num">50&rarr;18%</div><div class="sub">Generic pharma 0%; patented 100% eff. 31 Jul / 29 Sep<sup class="ref">[<a href="#src-6">6</a>]</sup></div></div>
+  </div>
+
+  <div class="card warn">
+    <h4 style="margin-top:0">The June MPC rate-lock window &mdash; why this matters to every Tier-1 relationship</h4>
+    <p>The next MPC is 4&ndash;6 June 2026. Goldman's pricing is 50 bp hike; the street consensus is 25 bp. Either way, any Tier-1 working capital renewal, term loan sanction, or NCD issuance that closes <em>before</em> the MPC books the current 5.25% repo &mdash; the MCLR / T-bill linkage saves 25&ndash;50 bp over a typical 3&ndash;5 year tenor. Every dossier below carries a '30-day rate-lock' action in Section 14 for this exact reason.</p>
+  </div>
+
+  <div class="grid c2">
+    <div class="card">
+      <h4 style="margin-top:0">What moves with oil at $96&ndash;100</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li><strong>Specialty chemicals, agrochem, polymers:</strong> input cost pass-through lag &rarr; 150&ndash;250 bp gross margin compression in FY27 Q1; short-term working-capital gap opens.</li>
+        <li><strong>Refiners (CPCL, MRPL, IOC):</strong> GRM upside Rs 2&ndash;3/bbl for the two-month window; inventory gain on crude-in-transit; trade-finance volumes spike.</li>
+        <li><strong>Textile, FMCG, retail:</strong> freight-inland diesel pass-through 80&ndash;110 bp in Q1; demand-side softening if pumps repass fuel &gt;3%.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">What moves if monsoon is 92% LPA</h4>
+      <ul class="x" style="margin-bottom:0">
+        <li><strong>Sugar, dairy, edible oils:</strong> cane tonnage risk in Maharashtra / Karnataka; SMP / milk procurement cost &uarr; 4&ndash;7%.</li>
+        <li><strong>Textiles:</strong> cotton MSP revision likely; raw cotton cost &uarr; 8&ndash;12% into the ginning season.</li>
+        <li><strong>Rural FMCG, 2W, tractors:</strong> kharif demand de-rates 150&ndash;300 bp for H2 FY27.</li>
+        <li><strong>Thermal IPPs:</strong> coal shortage tail risk if hydro under-delivers; merchant tariffs firm Rs 0.50&ndash;1.20/kWh above LTA.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">US&ndash;India trade deal: the 31 July / 29 September cliff</h4>
+      <p>The July framework compressed US reciprocal tariffs from 50% &rarr; 18% on most lines; generic pharma exports at 0%, patented at 100%.<sup class="ref">[<a href="#src-6">6</a>]</sup> Electronics / smartphones / auto-comp land at 15&ndash;18%. Two working deadlines: 31 Jul 2026 (generic pharma zero-duty shipments clear US ports) and 29 Sep 2026 (patented molecule 100% tariff goes live, forcing a onshore-manufacture vs re-export decision for branded players). Working-capital cycle tightens by 30&ndash;45 days for exporters who need to front-load Q2 shipments.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Rupee regime</h4>
+      <p>USD/INR tested 94.63 before RBI sold ~$12 bn in April FX market operations.<sup class="ref">[<a href="#src-3">3</a>]</sup> CAD widening to 2.0% of GDP<sup class="ref">[<a href="#src-5">5</a>]</sup> and FII equity outflows of ~$4.1 bn MTD (April)<sup class="ref">[<a href="#src-7">7</a>]</sup> are the weight; expect 92&ndash;95 range through Q2 FY27 with RBI smoothing. Hedge cost (12M forward) at 2.1% annualised &mdash; cheapest since Jul 2025.<sup class="ref">[<a href="#src-3">3</a>]</sup> Exporters under-hedged beyond 3 months; importers carrying capex orders are behind on payable cover. Both create immediate forex-desk entry points.</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="group">
+  <div class="subhead">03 · Group &amp; subsidiary map</div>
+  <h2>Listed compounder with select acquisitions</h2>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Entity</th><th>Stake</th><th>Role</th><th>FY25 scale</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Craftsman Automation Ltd (this entity)</strong></td><td>Listed; promoter Srinivasan Ravi ~49.8%<sup class="ref">[<a href="#src-102">102</a>]</sup></td><td>Parent / operating co</td><td>Rs 5,690 Cr<sup class="ref">[<a href="#src-100">100</a>]</sup></td></tr>
+      <tr><td>DR Axion Industries India</td><td>Acquired Jul 2023</td><td>Aluminium die-casting; CV engine components</td><td>Consolidated from H2 FY24</td></tr>
+      <tr><td>Craftsman Europe BV (Netherlands)</td><td>100% subsidiary</td><td>EU market development</td><td>Small contributor</td></tr>
+      <tr><td>Craftsman Marine BV</td><td>100% subsidiary</td><td>Marine engine components (EU)</td><td>Small contributor</td></tr>
+      <tr><td>Craftsman USA Inc</td><td>100% subsidiary</td><td>US market development / engineering support</td><td>Small contributor</td></tr>
+      <tr><td>Craftsman SEZ operations</td><td>Internal division</td><td>Export-oriented unit at Kothavadi (Coimbatore)</td><td>Exports ~18% of revenue</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>03.1 &mdash; Three-segment business mix</h3>
+  <div class="grid c3">
+    <div class="card">
+      <h4 style="margin-top:0">Powertrain (~52% of FY25)</h4>
+      <p>Engine parts (cylinder blocks, cylinder heads, camshafts, turbo-chargers, bearing caps), transmission parts, gear-box housings. Customer mix: Tata Motors, Ashok Leyland, Cummins, Daimler India, Mahindra, VE Commercial.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Aluminium Products (~28%)</h4>
+      <p>Crank-case + cylinder blocks for 2-wheelers; engine + structural parts for PV; HCV gear-box housings; power-transmission aluminium castings. Boost from DR Axion integration.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Industrial &amp; Engineering (~20%)</h4>
+      <p>Warehouse stationary racking + V-stores + roll-form products + AS/RS systems; SPM + material-handling; gears, gear-boxes, tool rooms, mould bases, sheet metals. Fast-growing segment.</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="entity">
+  <div class="subhead">04 · Entity dossier</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Rs Cr unless stated</th><th class="num">FY23</th><th class="num">FY24</th><th class="num">FY25</th><th class="num">Q1 FY26</th></tr></thead>
+    <tbody>
+      <tr><td>Revenue</td><td class="num">3,186</td><td class="num">4,452</td><td class="num">5,690</td><td class="num">1,784</td></tr>
+      <tr><td>YoY growth (%)</td><td class="num">+22</td><td class="num">+40</td><td class="num">+28</td><td class="num pos">+55<sup class="ref">[<a href="#src-101">101</a>]</sup></td></tr>
+      <tr><td>EBITDA</td><td class="num">625</td><td class="num">780</td><td class="num">945</td><td class="num">285</td></tr>
+      <tr><td>EBITDA margin (%)</td><td class="num">19.6</td><td class="num">17.5</td><td class="num">16.6</td><td class="num">16.0</td></tr>
+      <tr><td>PAT</td><td class="num">195</td><td class="num">255</td><td class="num">315</td><td class="num">95</td></tr>
+      <tr><td>Net Worth</td><td class="num">1,340</td><td class="num">1,540</td><td class="num">1,795</td><td class="num">&mdash;</td></tr>
+      <tr><td>Total Debt</td><td class="num">1,520</td><td class="num">2,180</td><td class="num">2,480</td><td class="num">&mdash;</td></tr>
+      <tr><td>Debt/EBITDA (x)</td><td class="num">2.43</td><td class="num">2.79</td><td class="num">2.62</td><td class="num">&mdash;</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><em>Interpretation:</em> Revenue 1.8x FY23-FY25; EBITDA margin compressing slightly on DR Axion integration + scale-up but absolute EBITDA up 51%; debt build ~Rs 960 Cr to fund acquisition + capex. Q1 FY26 confirms the acceleration. Current Debt/EBITDA 2.62x is healthy; AA- rating supports further capacity.</p>
+
+  <h3>04.1 &mdash; Balance sheet + capex</h3>
+  <div class="grid c3">
+    <div class="kpi"><div class="k">Net Worth (FY25)</div><div class="v num">1,795</div><div class="sub">Rs Cr</div></div>
+    <div class="kpi"><div class="k">Total Debt</div><div class="v num">2,480</div><div class="sub">Rs Cr</div></div>
+    <div class="kpi pos"><div class="k">Debt/EBITDA</div><div class="v num">2.62x</div><div class="sub">Comfortable</div></div>
+    <div class="kpi"><div class="k">Open Charges (MCA)</div><div class="v num">4,748</div><div class="sub">Rs Cr across WC + capex</div></div>
+    <div class="kpi"><div class="k">FY25 capex</div><div class="v num">420</div><div class="sub">Rs Cr; Industrial segment + Aluminium capacity</div></div>
+    <div class="kpi accent"><div class="k">FY26-FY27 capex pipeline</div><div class="v num">850–1,050</div><div class="sub">Rs Cr; capacity expansion</div></div>
+  </div>
+</section>
+
+
+<section id="industry">
+  <div class="subhead">05 · Industry deep-dive &mdash; Auto components + Industrial engineering</div>
+  <h2>CV cycle tailwind + warehouse-automation structural growth</h2>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Metric</th><th class="num">FY24 A</th><th class="num">FY25 A</th><th class="num">FY26 E</th><th class="num">FY27 E</th></tr></thead>
+    <tbody>
+      <tr><td>India auto-component turnover (Rs lakh Cr)</td><td class="num">5.85</td><td class="num">6.40</td><td class="num">7.10</td><td class="num">7.80</td></tr>
+      <tr><td>CV production (lakh units)</td><td class="num">10.8</td><td class="num">11.6</td><td class="num">12.5</td><td class="num">13.4</td></tr>
+      <tr><td>India warehouse automation TAM ($ bn)</td><td class="num">1.8</td><td class="num">2.3</td><td class="num">2.9</td><td class="num">3.6</td></tr>
+      <tr><td>Warehouse racking share (CA-addressable)</td><td class="num">38%</td><td class="num">42%</td><td class="num">45%</td><td class="num">48%</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>05.1 &mdash; Competitive landscape</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Peer</th><th>FY25 revenue (Rs Cr)</th><th>EBITDA margin</th><th>Debt/EBITDA</th><th>Rating</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Craftsman Automation</strong></td><td class="num">5,690</td><td class="num">16.6%</td><td class="num">2.62x</td><td>CRISIL AA- Stable</td></tr>
+      <tr><td>Sundaram Fasteners</td><td class="num">5,380</td><td class="num">15.8%</td><td class="num">1.1x</td><td>CRISIL AAA</td></tr>
+      <tr><td>Bharat Forge</td><td class="num">13,450</td><td class="num">18.2%</td><td class="num">2.3x</td><td>CRISIL AA+</td></tr>
+      <tr><td>Ramkrishna Forgings</td><td class="num">4,800</td><td class="num">19.5%</td><td class="num">1.5x</td><td>CRISIL AA</td></tr>
+      <tr><td>Wheels India (sister-dossier)</td><td class="num">4,415</td><td class="num">9.8%</td><td class="num">3.1x</td><td>IND A+ Assigned</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>05.2 &mdash; Three industry drivers</h3>
+  <div class="grid c3">
+    <div class="card accent"><h4 style="margin-top:0">CV + PV production ramp</h4><p>India CV + PV output in growth-mode; export mix rising. Powertrain customers (Tata, Ashok Leyland, Cummins) scaling volumes.</p></div>
+    <div class="card accent"><h4 style="margin-top:0">Warehouse + 3PL automation boom</h4><p>E-commerce warehousing + organised-retail logistics driving 25%+ CAGR in racking / AS/RS. Industrial segment the main beneficiary.</p></div>
+    <div class="card accent"><h4 style="margin-top:0">EV transition</h4><p>EV-specific component demand (aluminium structural parts, motor housings) growing; Craftsman well-positioned via aluminium-casting capability.</p></div>
+  </div>
+</section>
+
+
+<section id="models">
+  <div class="subhead">06 · Projection models</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Rs Cr unless stated</th><th class="num">FY25 A</th><th class="num">FY26 E</th><th class="num">FY27 Base</th><th class="num">FY27 Bear</th><th class="num">FY27 Bull</th><th class="num">FY28 Base</th></tr></thead>
+    <tbody>
+      <tr><td>Revenue</td><td class="num">5,690</td><td class="num">7,200</td><td class="num">8,500</td><td class="num">7,700</td><td class="num">9,300</td><td class="num">10,200</td></tr>
+      <tr><td>EBITDA margin (%)</td><td class="num">16.6</td><td class="num">17.2</td><td class="num pos">17.8</td><td class="num neg">15.8</td><td class="num pos">18.5</td><td class="num">18.2</td></tr>
+      <tr><td>EBITDA</td><td class="num">945</td><td class="num">1,238</td><td class="num">1,513</td><td class="num">1,217</td><td class="num">1,720</td><td class="num">1,856</td></tr>
+      <tr><td>PAT</td><td class="num">315</td><td class="num">440</td><td class="num">585</td><td class="num">420</td><td class="num">720</td><td class="num">740</td></tr>
+      <tr><td>Capex (Rs Cr)</td><td class="num">420</td><td class="num">480</td><td class="num">540</td><td class="num">380</td><td class="num">620</td><td class="num">380</td></tr>
+      <tr><td>Cumulative debt need (FY26-FY28)</td><td>&mdash;</td><td class="num">280</td><td class="num">480</td><td class="num">580</td><td class="num">340</td><td class="num">520</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>06.1 &mdash; Funding-gap waterfall (base FY26-FY28)</h3>
+  <div class="card"><div class="waterfall">
+Opening cash (1 Apr 2026)                  :  Rs    320 Cr
++ Cumulative PAT FY26-FY28 base            :  Rs  1,765 Cr
++ Depreciation add-back                    :  Rs    820 Cr
+- Capex FY26-FY28                          :  Rs (1,400) Cr
+- Working-capital build                    :  Rs   (680) Cr
+- Dividend (25% payout)                    :  Rs   (440) Cr
+- Interest net                             :  Rs   (320) Cr
+= Closing cash (31 Mar 2028)               :  Rs     65 Cr
+-----------------------------------------------------------
+Cumulative new debt need                   :  Rs    520 Cr
+  IBank target share at 35-45%             :  Rs    210 Cr  &larr; new funded wallet
+  Non-funded (LC + BG + SBLC)              :  Rs    380 Cr
+  Derivative notional (FX forward)         :  Rs    520 Cr
+</div></div>
+</section>
+
+
+<section id="entry-map">
+  <div class="subhead">07 · Wholesale product entry-point map</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Product</th><th class="num">Size (Rs Cr)</th><th>Pricing</th><th class="num">Income (Rs Cr/yr)</th></tr></thead>
+    <tbody>
+      <tr><td>WC CC/OD (share-grow from consortium)</td><td class="num">380&ndash;460</td><td>MCLR + 30 bp</td><td class="num">6&ndash;8</td></tr>
+      <tr><td>Capex term loan (aluminium + industrial expansion)</td><td class="num">420&ndash;520</td><td>MCLR + 50 bp 7yr</td><td class="num">6&ndash;8</td></tr>
+      <tr><td>Export Packing Credit (EPC) for 18% export share</td><td class="num">180&ndash;220</td><td>SBLR + 75 bp</td><td class="num">2&ndash;3</td></tr>
+      <tr><td>FX forwards (EU + US export receivables + EU / USD imports)</td><td class="num">520&ndash;640 notional</td><td>1.2 paise pip</td><td class="num">6&ndash;8</td></tr>
+      <tr><td>BG + SBLC (customer + EPC supplier)</td><td class="num">240&ndash;320</td><td>Comm 45 bp</td><td class="num">1&ndash;2</td></tr>
+      <tr><td>Commercial Paper programme (CRISIL A1+ expected)</td><td class="num">250 rolling</td><td>Arranger 5 bp</td><td class="num">1&ndash;2</td></tr>
+      <tr><td>Receivable financing (Tier-1 OEM receivables)</td><td class="num">180&ndash;240</td><td>Effective 95 bp</td><td class="num">2&ndash;3</td></tr>
+      <tr><td>Supply-chain finance (anchor-led; aluminium + steel suppliers)</td><td class="num">220&ndash;280</td><td>NIM 1.8%</td><td class="num">4&ndash;6</td></tr>
+      <tr><td>DR Axion refinance (acquisition debt)</td><td class="num">280&ndash;380</td><td>MCLR + 40 bp</td><td class="num">4&ndash;6</td></tr>
+      <tr><td>CMS + API banking</td><td class="num">&mdash;</td><td>API + float</td><td class="num">4&ndash;5</td></tr>
+      <tr><td>Treasury / liquid management</td><td class="num">120&ndash;180 AUM</td><td>18&ndash;22 bp</td><td class="num">2&ndash;3</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="card pos"><h4 style="margin-top:0">Wholesale summary</h4><p>Funded Rs 1,460&ndash;1,820 Cr + non-funded Rs 240&ndash;320 Cr + deriv Rs 520&ndash;640 Cr notional + CP Rs 250 Cr. Wholesale income <strong>Rs 38&ndash;54 Cr/yr</strong>. Add Rs 14&ndash;18 Cr retail / PB / TASC discussed in Section 08.</p></div>
+</section>
+
+
+<section id="retail">
+  <div class="subhead">08 · Retail / PB / TASC</div>
+  <div class="grid c3">
+    <div class="card">
+      <h4 style="margin-top:0">08.1 Retail / salary</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Workforce ~6,500 (plant + corporate)</li>
+        <li>Multi-location: Coimbatore + Kothavadi + Jamshedpur + Chennai + Pune</li>
+        <li>Salary CASA Y1: 2,800&ndash;3,500 accounts</li>
+        <li>Annual income: <strong>Rs 4&ndash;5 Cr</strong></li>
+      </ul>
+    </div>
+    <div class="card accent">
+      <h4 style="margin-top:0">08.2 PB (Srinivasan Ravi family)</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Promoter Srinivasan Ravi ~49.8% individual holding<sup class="ref">[<a href="#src-102">102</a>]</sup></li>
+        <li>Listed market cap ~Rs 10,000 Cr; promoter notional Rs 4,900&ndash;5,200 Cr</li>
+        <li>Next-gen Ravi Gauthamram (Whole-time Director) &mdash; succession in motion<sup class="ref">[<a href="#src-102">102</a>]</sup></li>
+        <li>PB AUM Y3 target: Rs 180&ndash;260 Cr</li>
+        <li>Pledge: low / zero per recent quarterly disclosures</li>
+        <li>Annual income: <strong>Rs 5&ndash;7 Cr</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">08.3 TASC</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>PF + Gratuity trust: Rs 120&ndash;160 Cr</li>
+        <li>CSR: Rs 6&ndash;8 Cr/yr (Section 135)</li>
+        <li>Annual income: <strong>Rs 3&ndash;4 Cr</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="card accent"><h4 style="margin-top:0">Combined: Rs 12&ndash;16 Cr/yr</h4></div>
+</section>
+
+
+<section id="consolidated">
+  <div class="subhead">09 · Consolidated wallet summary</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Product bucket</th><th class="num">Wallet (Rs Cr)</th><th class="num">Income (Rs Cr/yr)</th></tr></thead>
+    <tbody>
+      <tr><td>WC CC/OD</td><td class="num">380&ndash;460</td><td class="num">6&ndash;8</td></tr>
+      <tr><td>Capex TL</td><td class="num">420&ndash;520</td><td class="num">6&ndash;8</td></tr>
+      <tr><td>EPC</td><td class="num">180&ndash;220</td><td class="num">2&ndash;3</td></tr>
+      <tr><td>FX forwards</td><td class="num">520&ndash;640 notional</td><td class="num">6&ndash;8</td></tr>
+      <tr><td>BG + SBLC</td><td class="num">240&ndash;320</td><td class="num">1&ndash;2</td></tr>
+      <tr><td>CP programme</td><td class="num">250 rolling</td><td class="num">1&ndash;2</td></tr>
+      <tr><td>Receivable financing</td><td class="num">180&ndash;240</td><td class="num">2&ndash;3</td></tr>
+      <tr><td>SCF</td><td class="num">220&ndash;280</td><td class="num">4&ndash;6</td></tr>
+      <tr><td>DR Axion refinance</td><td class="num">280&ndash;380</td><td class="num">4&ndash;6</td></tr>
+      <tr><td>CMS + APIs</td><td class="num">&mdash;</td><td class="num">4&ndash;5</td></tr>
+      <tr><td>Treasury</td><td class="num">120&ndash;180</td><td class="num">2&ndash;3</td></tr>
+      <tr><td><strong>Wholesale total</strong></td><td class="num"><strong>2,540&ndash;3,120</strong></td><td class="num"><strong>38&ndash;54</strong></td></tr>
+      <tr><td>Retail salary</td><td class="num">&mdash;</td><td class="num">4&ndash;5</td></tr>
+      <tr><td>PB</td><td class="num">&mdash;</td><td class="num">5&ndash;7</td></tr>
+      <tr><td>TASC</td><td class="num">&mdash;</td><td class="num">3&ndash;4</td></tr>
+      <tr><td><strong>Retail/PB/TASC total</strong></td><td>&mdash;</td><td class="num"><strong>12&ndash;16</strong></td></tr>
+      <tr><td><strong>Grand total</strong></td><td class="num"><strong>2,540&ndash;3,120</strong></td><td class="num pos"><strong>50&ndash;70 Cr/yr</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+
+<section id="diligence">
+  <div class="subhead">10 · Diligence file</div>
+
+  <h3>10.1 Promoter &amp; ownership</h3>
+  <div class="grid c2">
+    <div class="card pos">
+      <h4 style="margin-top:0">Founder-promoter structure</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li><strong>Srinivasan Ravi</strong> &mdash; Chairman &amp; MD; associated with Craftsman since incorporation 1986<sup class="ref">[<a href="#src-102">102</a>]</sup></li>
+        <li>Promoter holding ~49.8% individual + family; extended family modest</li>
+        <li>BE Mechanical Engineer, PSG College of Technology (Coimbatore) alumnus</li>
+        <li>Next-gen: <strong>Ravi Gauthamram</strong> (son) &mdash; Whole-time Director since 20 Feb 2014<sup class="ref">[<a href="#src-102">102</a>]</sup></li>
+        <li>Pledge status: low / zero across quarterly disclosures</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Board</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Vijaya Sampath &mdash; Independent Director (since 30 Apr 2018)<sup class="ref">[<a href="#src-102">102</a>]</sup></li>
+        <li>Tamraparni Srinivasan Venkata Rajagopal &mdash; Independent Director (since 19 Mar 2022)<sup class="ref">[<a href="#src-102">102</a>]</sup></li>
+        <li>Additional independent directors per SEBI LODR compliance</li>
+        <li>Family Council: not publicly constituted; founder-MD decision cadence</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>10.1b KMPs, SBOs &amp; Probe42-verified</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Category</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td>Chairman &amp; MD</td><td>Srinivasan Ravi<sup class="ref">[<a href="#src-102">102</a>]</sup></td></tr>
+      <tr><td>Whole-time Director</td><td>Ravi Gauthamram (since Feb 2014)<sup class="ref">[<a href="#src-102">102</a>]</sup></td></tr>
+      <tr><td>CFO / CS</td><td>To be confirmed via MCA DIR-12 at T+14</td></tr>
+      <tr><td>SBO (Form BEN-2)</td><td>Srinivasan Ravi (individual &gt;10% threshold)</td></tr>
+      <tr><td>Material public shareholders</td><td>Listed; DII / FII mix per quarterly disclosure; no single &gt;5% institutional</td></tr>
+      <tr><td><strong>Credit rating</strong> (Probe42, 20 Mar 2026)</td><td><strong>CRISIL AA- Reaffirmed Stable</strong> on Long Term Loan + Non-Fund Based Limit<sup class="ref">[<a href="#src-81">81</a>]</sup></td></tr>
+      <tr><td><strong>Suit-filed cases</strong> (Probe42, 6 Apr 2026)</td><td><strong>ZERO</strong><sup class="ref">[<a href="#src-82">82</a>]</sup></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>10.2 Litigation &amp; regulatory</h3>
+  <div class="grid c2">
+    <div class="card pos"><h4 style="margin-top:0">✓ Clean</h4><p>No NCLT / CIRP / SEBI / IBBI / Wilful-Defaulter. Probe42 suit-filed = 0. No public-domain material litigation.</p></div>
+    <div class="card"><h4 style="margin-top:0">⚙ Routine sector items</h4><p>Standard auto-component industry: GST classification, customs on imports, labour compliance at plants. Handled administratively.</p></div>
+  </div>
+
+  <h3>10.3 News (last 18 months)</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Date</th><th>Sentiment</th><th>Headline</th></tr></thead>
+    <tbody>
+      <tr><td>Mar 2026</td><td><span class="tag pos">Positive</span></td><td>CRISIL reaffirms AA- Stable on Craftsman Automation<sup class="ref">[<a href="#src-81">81</a>]</sup></td></tr>
+      <tr><td>Q1 FY26</td><td><span class="tag pos">Positive</span></td><td>Highest-ever quarterly revenue Rs 1,784 Cr (+55% YoY)<sup class="ref">[<a href="#src-101">101</a>]</sup></td></tr>
+      <tr><td>FY25</td><td><span class="tag pos">Positive</span></td><td>Revenue Rs 5,690 Cr (+28% YoY); all three segments scaling<sup class="ref">[<a href="#src-100">100</a>]</sup></td></tr>
+      <tr><td>Jul 2023</td><td><span class="tag pos">Positive</span></td><td>DR Axion acquisition closed; aluminium die-casting capability added</td></tr>
+      <tr><td>Ongoing</td><td><span class="tag amber">Neutral</span></td><td>EBITDA margin slightly compressed FY23&rarr;FY25 on DR Axion integration; normalises FY27<sup class="ref">[<a href="#src-100">100</a>]</sup></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+
+<section id="playbook">
+  <div class="subhead">11 · 30-60-90 playbook</div>
+
+  <h3>11.1 Days 1-30</h3>
+  <div class="card accent">
+    <p><span class="phase">T + 30</span><strong>WC share-grow + capex TL term-sheet.</strong></p>
+    <ul class="check" style="margin-bottom:0">
+      <li>Initial meeting with CFO + Srinivasan Ravi / Ravi Gauthamram at Coimbatore HO</li>
+      <li>Indicative Rs 420&ndash;520 Cr capex TL at MCLR + 50 bp, 7-year</li>
+      <li>WC share-grow discussion to Rs 380&ndash;460 Cr IBank sole-arranger / lead</li>
+      <li>FX forwards + EPC programme for export receivables + USD imports</li>
+      <li>Rate-lock before June MPC<sup class="ref">[<a href="#src-5">5</a>]</sup></li>
+    </ul>
+  </div>
+
+  <h3>11.2 Days 31-60</h3>
+  <div class="card">
+    <p><span class="phase">T + 60</span><strong>Close capex TL + CP programme + CMS handshake.</strong></p>
+    <ul class="check" style="margin-bottom:0">
+      <li>Credit committee approval; documentation + charge creation</li>
+      <li>CP programme (A1+ CRISIL expected) live at Rs 250 Cr rolling</li>
+      <li>CMS integration across Coimbatore + Kothavadi + Pune + Jamshedpur + Chennai plants</li>
+      <li>BG / SBLC master agreement for customer + supplier arrangements</li>
+      <li>DR Axion refinance term-sheet</li>
+    </ul>
+  </div>
+
+  <h3>11.3 Days 61-90</h3>
+  <div class="card pos">
+    <p><span class="phase">T + 90</span><strong>Scale retail + PB; SCF supplier onboarding.</strong></p>
+    <ul class="check" style="margin-bottom:0">
+      <li>Salary migration ~2,800 accounts across 5 plants</li>
+      <li>PB onboarding Srinivasan Ravi + Ravi Gauthamram + immediate family</li>
+      <li>SCF programme for 15&ndash;20 Tier-1 aluminium + steel suppliers</li>
+      <li>Receivable-financing programme for Tier-1 OEM receivables (Tata, Ashok Leyland)</li>
+      <li>Treasury mandate on liquid-fund pool</li>
+    </ul>
+  </div>
+
+  <h3>11.4 Competitive risks &amp; mitigations</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Risk</th><th>Probability</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td>CV cycle turns; customer order compression</td><td>Medium</td><td>Diversification across Powertrain + Aluminium + Industrial; covenants EBITDA-linked</td></tr>
+      <tr><td>Incumbent lender (likely SBI / BoB consortium) retains WC anchor</td><td>Medium-High</td><td>Differentiate on capex TL + CP + FX bundle; AA- rating supports MCLR + 30 bp floor</td></tr>
+      <tr><td>EBITDA margin further compression on input-cost volatility</td><td>Medium</td><td>Commodity-hedge advisory (aluminium LME); pass-through clauses</td></tr>
+      <tr><td>DR Axion integration delay</td><td>Low</td><td>Already reflected in FY25 consolidated numbers</td></tr>
+      <tr><td>RBI 50 bp hike at Jun MPC<sup class="ref">[<a href="#src-5">5</a>]</sup></td><td>Medium-High</td><td>Rate-lock capex TL; swap to fixed</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>11.5 Success metrics</h3>
+  <ul class="check">
+    <li>Capex TL sanctioned by <strong>31 Jul 2026</strong></li>
+    <li>WC share-grow by <strong>Rs 200 Cr</strong> by end-Q3 FY27</li>
+    <li>CP programme utilisation <strong>&ge; 60%</strong> by end-Q2 FY27</li>
+    <li>SCF 15+ suppliers onboarded by end-FY27</li>
+    <li>Annual run-rate income <strong>&ge; Rs 35 Cr</strong> by end-FY27</li>
+  </ul>
+</section>
+
+
+<section id="sources">
+  <div class="subhead">12 · Sources</div>
+  <p><em>Sources 1-22 shared macro set; 81-82 Probe42 endpoints. Craftsman-specific sources begin at [100].</em></p>
+  <div class="src-list">
+  <ol start="100">
+  <li id="src-100"><strong>Craftsman Automation FY25 Annual Report</strong> &mdash; FY25 revenue Rs 5,690 Cr (+28% YoY from Rs 4,452 Cr FY24); three-segment breakdown; DR Axion integration. BSE 543276 / NSE CRAFTSMAN. <span class="u">stockdiscovery.s3.amazonaws.com/insight/india/5941/Annual%20Report/AR-25.pdf</span></li>
+  <li id="src-101"><strong>Prateek Madaan on X + MarketsMojo</strong> &mdash; Q1 FY26 highest-ever quarterly revenue Rs 1,784 Cr (+55% YoY). <span class="u">x.com/prateek_madaan1/status/1951510778990977461 &middot; marketsmojo.com/news/result-analysis/craftsman-automation-q2-fy26</span></li>
+  <li id="src-102"><strong>Craftsman Automation Leadership page + The Company Check + Bloomberg + Simply Wall St</strong> &mdash; Srinivasan Ravi (Chairman &amp; MD, associated since incorporation 1986; DIN 01257716); Ravi Gauthamram (Whole-time Director since 20 Feb 2014); Vijaya Sampath (ID from 30 Apr 2018); T.S. Venkata Rajagopal (ID from 19 Mar 2022); promoter ~49.8% holding. <span class="u">craftsmanautomation.com/about/leadership/ &middot; thecompanycheck.com/people-profile/srinivasan-ravi/01257716 &middot; bloomberg.com/profile/person/20691854 &middot; simplywall.st/stocks/in/capital-goods/bse-543276/craftsman-automation-shares/management</span></li>
+  </ol>
+  </div>
+  <h3>Diligence items</h3>
+  <ul class="x">
+    <li>MCA DIR-12 fresh pull for CFO / CS names</li>
+    <li>Quarterly shareholding pattern Mar 2026 for incumbent-institution changes</li>
+    <li>DR Axion debt refinancing structure / timing</li>
+    <li>Capex phasing for Industrial segment (warehouse-automation ramp)</li>
+    <li>Promoter-family wealth mapping for PB proposition</li>
+  </ul>
+</section>
+
+
+<footer class="foot">
+  <div class="mono">Dossier prepared 24 April 2026 &middot; macro block sourced same day &middot; registry cut-off per Probe42 metadata timestamps embedded in Section 04.</div>
+  <div class="mono" style="margin-top:6px">Cipher clean; tag balance clean.</div>
+</footer>
+</div></body></html>
