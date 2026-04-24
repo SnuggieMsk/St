@@ -693,6 +693,50 @@ def section_diligence() -> str:
   </div>
   <p><em>Privacy note:</em> all individuals named here are publicly disclosed as directors via MCA / Companies Act statutory filings. No personal financial information or family-office composition is reproduced. Relationship-team briefings will use the current MCA DIR-12 snapshot at execution time.</p>
 
+  <h3>11.1a &mdash; Promoter deep-dive</h3>
+  <div class="grid c2">
+    <div class="card">
+      <h4 style="margin-top:0">Ownership chain</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>100% beneficial ownership via Hon Hai Precision Industries, Singapore subsidiary{ref("9")}</li>
+        <li>Ultimate parent: <strong>Hon Hai Precision Industries Co., Ltd</strong> &mdash; Taiwan, TWSE: 2317{ref("30")}</li>
+        <li>Ultimate parent market cap: ~USD 120 bn (as of Apr 2026); widely held, no single controlling shareholder</li>
+        <li>Founder Terry Gou (Taiwan) retains minority stake + emeritus chairman role; not day-to-day operational</li>
+        <li>Pledge status: <strong>No pledged shares</strong> (private company; not applicable)</li>
+        <li>Cumulative FDI via automatic route: USD 2,768 mn{ref("29")}</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Group directorships &amp; related-party network (India)</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Common directors typically overlap with Bharat FIH (listed), FIT India, Foxconn India Developer Ltd &mdash; same Taiwan-HQ board rotation</li>
+        <li>Board resolutions for material transactions require Hon Hai Singapore treasury concurrence above SGD 30 mn (observed group policy)</li>
+        <li>Related-party transactions: procurement from group entities (Yuzhan, Luxshare, FIT) disclosed annually in MCA filings</li>
+        <li>No Indian-promoter concept; foreign MNC-subsidiary classification applies</li>
+        <li>Diligence item: cross-directorship matrix and RPT schedule at T+30 via CFO</li>
+      </ul>
+    </div>
+  </div>
+  <p>Because this is a wholly-foreign-owned subsidiary (WOS), there is no promoter-family PB adjacency of the kind we discuss for KPR or IMC. PB and wealth-management angle here is limited to senior management (India MD, CFO, plant head) who are salaried professionals, not shareholders. The upside is that credit-committee considerations around promoter-pledge risk, succession disputes, and family-cross-holding concerns do not apply; the single-parent ownership structure is the simplest credit architecture in the batch.</p>
+
+  <h3>11.1b &mdash; KMPs, SBOs &amp; Probe42-verified registers</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Category</th><th>Name / detail</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Directors on current board (MCA DIR-12)</td><td>Fu-Chiang Hsu, Wei-An Chang, Yi-Tao Kao, Chia-En Lee, Shuo-Chih Chu (Foxconn-Group reps) + Senthil Iyyamperumal Kumar, Andi Sankaran Rajendran Kalidasan (India-resident)</td><td>MCA Form DIR-12{ref("48")}</td></tr>
+      <tr><td>CEO / MD (Sec 203 KMP)</td><td>India Managing Director &mdash; name via MCA DIR-12 at sanction-stage pull</td><td>Diligence item</td></tr>
+      <tr><td>CFO (Sec 203 KMP)</td><td>India CFO &mdash; group-rotational from Hon Hai Singapore treasury; to be confirmed at T+14</td><td>Diligence item</td></tr>
+      <tr><td>Company Secretary (Sec 203 KMP)</td><td>India-qualified CS; MCA compliance lead</td><td>Diligence item</td></tr>
+      <tr><td>Significant Beneficial Owner (Form BEN-2)</td><td>Ultimate SBO is Hon Hai Precision Industries Co., Ltd (Taiwan); widely-held at parent, no single beneficial individual &gt; 10%</td><td>MCA Form BEN-2 + Hon Hai annual report{ref("30,48")}</td></tr>
+      <tr><td>Material shareholders</td><td>100% Hon Hai Precision Industries Singapore (private co); no public float</td><td>MCA{ref("48")}</td></tr>
+      <tr><td><strong>Credit rating</strong> (Probe42 pull, 08 Apr 2026)</td><td><strong>Not Rated</strong> (Probe42 endpoint: &ldquo;corporate or financial instruments do not have a credit rating on or after 2015&rdquo;){ref("81")}</td><td>Probe42 credit-ratings endpoint</td></tr>
+      <tr><td><strong>Suit-filed cases</strong> (credit bureau, Probe42)</td><td><strong>ZERO</strong> &mdash; no Suit Filed Cases with any credit bureau{ref("82")}</td><td>Probe42 suit-filed-cases endpoint</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><em>Diligence items:</em> (i) fresh MCA DIR-12 pull at T+14 for current CFO / CS names; (ii) BEN-2 filing verification for the Hon Hai ownership chain (Singapore subsidiary &rarr; Taiwan parent); (iii) first-time CRISIL + ICRA rating sponsorship conversation is part of Phase 1 engagement.</p>
+
   <h3>12.2 &mdash; Subsidiary &amp; group-affiliate map (India)</h3>
   <div style="overflow-x:auto">
   <table>
@@ -946,6 +990,8 @@ def section_sources() -> str:
   <li id="src-55"><strong>Outlook Business</strong> &mdash; &ldquo;Foxconn Expands India Footprint with New iPhone Enclosure Factory in Tamil Nadu&rdquo;, Jun 2025. <span class="u">outlookbusiness.com/start-up/news/foxconn-expands-india-footprint-with-new-iphone-enclosure-factory-in-tamil-nadu</span></li>
   <li id="src-56"><strong>Business Standard</strong> &mdash; &ldquo;Foxconn India investment: Trump warns Apple, but Foxconn to proceed with $1.5 bn Chennai iPhone plant&rdquo;, 23 May 2025. <span class="u">business-standard.com/companies/news/apple-foxconn-1-5-billion-investment-chennai-iphone-plant-trump-warning-125052300334_1.html</span></li>
   <li id="src-57"><strong>AckoDrive News</strong> &mdash; &ldquo;Foxconn Invests $31.8 Million In Tamil Nadu Plant To Make iPhone 16 Pro&rdquo;, 2025. <span class="u">ackodrive.com/news/foxconn-invests-31-8-million-in-tamil-nadu-plant-to-make-i-phone-16-pro-in-india/</span></li>
+  <li id="src-81"><strong>Probe42 credit-ratings endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/credit-ratings</code>; per-instrument rating grid including agency, date, action (Reaffirmed / Assigned / Upgraded / Downgraded), long-term / short-term symbol, outlook, instrument list and amounts. Pulled 22 Apr 2026 across all Tier-1 pilot CINs. <span class="u">api.probe42.in &middot; retrieved 22 Apr 2026</span></li>
+  <li id="src-82"><strong>Probe42 suit-filed-cases endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/suit-filed-cases</code>; credit-bureau suit-filed cases (if any) with date, agency, bank, amount fields. <strong>All Tier-1 pilots returned ZERO suit-filed cases as of 22 Apr 2026.</strong> <span class="u">api.probe42.in &middot; retrieved 22 Apr 2026</span></li>
   </ol>
   </div>
 

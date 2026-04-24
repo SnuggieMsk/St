@@ -709,6 +709,50 @@ def section_diligence() -> str:
   </div>
   <p><em>Founder narrative:</em> K.P. Ramasamy ventured into business as a small power-loom cloth manufacturer in 1971; the three brothers built KPR over four decades into one of India&rsquo;s largest vertically-integrated cotton-to-garment groups. The zero-pledge promoter holding through multiple textile cycles is among the strongest governance signals available for any unlisted-equivalent industrial in this universe.</p>
 
+  <h3>11.1a &mdash; Promoter deep-dive</h3>
+  <div class="grid c2">
+    <div class="card pos">
+      <h4 style="margin-top:0">Promoter trio &amp; holding structure</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li><strong>Dr. K.P. Ramasamy</strong> &mdash; Executive Chairman; 19.29% individual; founder sibling-1{ref("59")}</li>
+        <li><strong>K.P.D. Sigamani</strong> &mdash; Managing Director; 19.29% individual; founder sibling-2{ref("59")}</li>
+        <li><strong>P. Nataraj</strong> &mdash; Managing Director; 19.29% individual; founder sibling-3{ref("59")}</li>
+        <li>Three-brother structure active in day-to-day operations (unusual for a 50-year-old industrial group)</li>
+        <li>Total individual promoter: 57.87%; with extended family &amp; promoter-group entities: ~67.5%{ref("42")}</li>
+        <li><strong>Pledge status: ZERO on Mill; ZERO on Sugar</strong> (rare 0.00% pledge through FY21&ndash;FY25){ref("42")}</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Group directorships &amp; related-party network</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>All three brothers hold directorships at K.P.R. Mill (listed) + KPR Sugar &amp; Apparels (unlisted) + KPRS + KPRSAL + Quantum Knits + Galaxy Knits + KPR Agro Farms + Jahnvi Motor + KPR Cements</li>
+        <li>Related-party transactions disclosed quarterly per SEBI LODR (at listed-co level) &mdash; predominantly intra-group captive-supply pricing at arm&rsquo;s length</li>
+        <li>Family Council equivalent not formally disclosed; three-brother decision cadence direct</li>
+        <li>Succession: second generation (nephew / son level) beginning to appear in senior-management roles per corporate disclosures; formal next-gen plan not yet public</li>
+        <li>No NCLT / litigation exposure at any promoter-group company per public-domain searches{ref("61")}</li>
+      </ul>
+    </div>
+  </div>
+  <p><em>PB angle:</em> the three-brother family is a high-priority Private Banking target. Aggregate family wealth (notional, via listed-Mill share value alone) estimated Rs 3,400&ndash;3,800 Cr; liquid investable surplus across the three branches meaningfully material for IBank PB proposition. Engagement recommended via CFO channel once wholesale-lead mandate is secured.</p>
+
+  <h3>11.1b &mdash; KMPs, SBOs &amp; material shareholders</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Category</th><th>Name / detail</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>CEO / MD (Companies Act Sec 203)</td><td>K.P.D. Sigamani + P. Nataraj (joint MDs)</td><td>BSE / NSE disclosures{ref("42")}</td></tr>
+      <tr><td>Chief Financial Officer</td><td>P. Kandaswamy (per FY25 AR board composition); role-confirmed at execution time</td><td>FY25 Annual Report{ref("42")}</td></tr>
+      <tr><td>Company Secretary &amp; Compliance Officer</td><td>P. Kandaswamy (also CS per listed-co disclosures)</td><td>FY25 Annual Report{ref("42")}</td></tr>
+      <tr><td>Chief Risk Officer</td><td>Not separately disclosed (not mandated for KPR size-band under RBI rules)</td><td>&mdash;</td></tr>
+      <tr><td>Significant Beneficial Owners (Form BEN-2, MCA)</td><td>K.P. Ramasamy, K.P.D. Sigamani, P. Nataraj &mdash; each &gt;10% beneficial holding; filed Form BEN-2{ref("59")}</td><td>MCA Form BEN-2 public filings</td></tr>
+      <tr><td>Material public shareholders (&gt;5%, K.P.R. Mill)</td><td>No single public shareholder &gt;5% per latest pattern; institutional ownership ~12%; DII / FII split disclosed quarterly</td><td>BSE / NSE quarterly shareholding pattern{ref("42")}</td></tr>
+      <tr><td>Auditor</td><td>Deloitte Haskins &amp; Sells (statutory auditor, FY24 onwards)</td><td>FY25 Annual Report{ref("42")}</td></tr>
+      <tr><td>Internal Auditor</td><td>K.P. Rajagopal &amp; Associates (per MCA disclosure; varies by year)</td><td>FY25 Annual Report{ref("42")}</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><em>Diligence items:</em> (i) confirm current CFO / CS names at execution via MCA DIR-12 + MGT-7 pull; (ii) obtain BEN-2 filings for both Mill and Sugar entities; (iii) verify no change in auditor/internal-auditor beyond Deloitte + associate firm.</p>
+
   <h3>12.2 &mdash; Subsidiary &amp; group-affiliate map</h3>
   <div style="overflow-x:auto">
   <table>
@@ -947,6 +991,8 @@ def section_sources() -> str:
   <li id="src-60"><strong>The Textile Magazine</strong> &mdash; &ldquo;KPR Mill maintains growth momentum in FY25, strengthens vertically integrated operations &amp; eyes expansion&rdquo;. Garment division Rs 2,665 Cr (vs Rs 2,571 Cr FY24); 173.63 mn pieces (vs 151.95 mn). Captive renewable: 61.92 MW wind + 90 MW co-gen + 38 MW rooftop solar. <span class="u">indiantextilemagazine.in/kpr-mill-maintains-growth-momentum-in-fy25-strengthens-vertically-integrated-operations-eyes-expansion/</span></li>
   <li id="src-61"><strong>Indian Kanoon &amp; NCLT case-search</strong> &mdash; public-domain query against K.P.R. Mill / KPR Sugar &amp; Apparels for last 24 months returns no material commercial litigation or NCLT proceedings as of 24 Apr 2026. <span class="u">indiankanoon.org &middot; nclt.gov.in/case-number-wise</span></li>
   <li id="src-62"><strong>MarketsMojo / Trendlyne &mdash; KPR Mill Q2/Q3 FY26 result analysis</strong> &mdash; profit growth masking margin pressure amid global cotton input cost volatility; analyst valuation observations. <span class="u">marketsmojo.com/news/result-analysis/k-p-r-mill-q2-fy26 &middot; trendlyne.com/fundamentals/financials/764/KPRMILL/kpr-mill-ltd/</span></li>
+  <li id="src-81"><strong>Probe42 credit-ratings endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/credit-ratings</code>; per-instrument rating grid including agency, date, action (Reaffirmed / Assigned / Upgraded / Downgraded), long-term / short-term symbol, outlook, instrument list and amounts. Pulled 22 Apr 2026 across all Tier-1 pilot CINs. <span class="u">api.probe42.in &middot; retrieved 22 Apr 2026</span></li>
+  <li id="src-82"><strong>Probe42 suit-filed-cases endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/suit-filed-cases</code>; credit-bureau suit-filed cases (if any) with date, agency, bank, amount fields. <strong>All Tier-1 pilots returned ZERO suit-filed cases as of 22 Apr 2026.</strong> <span class="u">api.probe42.in &middot; retrieved 22 Apr 2026</span></li>
   </ol>
   </div>
 
