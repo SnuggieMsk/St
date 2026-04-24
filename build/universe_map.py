@@ -201,68 +201,109 @@ def build():
         "U85300TN2017PTC114099": "neuberg-diagnostics-dossier.html",
         "U45101TN2023PTC160276": "tvs-vehicle-mobility-dossier.html",
     }
-    # CIN → city_norm mapping (from geocoder output) for india-map deep-link
+    # CIN → city_norm / region / mnc mapping (from geocoder output)
     import json as _json
     geo_path = WORK / "companies_geo.json"
     CITY_BY_CIN = {}
+    REGION_BY_CIN = {}
+    MNC_BY_CIN = {}
+    COO_BY_CIN = {}
     if geo_path.exists():
         for c in _json.loads(geo_path.read_text()):
             CITY_BY_CIN[c["cin"]] = c["city_norm"]
+            REGION_BY_CIN[c["cin"]] = c.get("region", "ROTN")
+            MNC_BY_CIN[c["cin"]] = bool(c.get("mnc", False))
+            COO_BY_CIN[c["cin"]] = c.get("country_of_origin", "")
 
-    # Per-industry collapsible sections
-    for ind, xs in sorted(by_ind.items(), key=lambda kv: -len(kv[1])):
-        # open the biggest 3 industries by default
-        open_attr = " open" if len(xs) >= 40 else ""
-        push(f"<details{open_attr}><summary>{html.escape(ind)} &nbsp;<span class='mono' style='font-size:.82rem;color:var(--muted)'>· {len(xs)} names</span></summary>")
-        push("<div style='overflow-x:auto'><table>")
-        push("<thead><tr><th>Company</th><th>Bucket</th><th>Rating (LT)</th><th>Agency</th>"
-             "<th class='num'>TOI (Cr)</th><th class='num'>Debt (Cr)</th>"
-             "<th class='num'>NW (Cr)</th><th class='num'>Debt/EBITDA</th>"
-             "<th>IBank</th><th>City</th><th>Open</th></tr></thead><tbody>")
+    # Regroup by Region (Chennai / ROTN), then by Industry within region
+    # This is the primary organising principle per user direction (24 Apr 2026)
+    by_region = {"CHENNAI": {}, "ROTN": {}}
+    for ind, xs in by_ind.items():
         for r in xs:
-            name = cipher(r.get("Company") or "")
-            cin = r.get("CIN") or ""
-            t1_flag = " <span class='tag accent' style='font-size:.62rem'>T1</span>" if cin in tier1_cins else ""
-            dossier = DOSSIER_BY_CIN.get(cin)
-            if dossier:
-                name_cell = (f"<a href='{dossier}' style='color:var(--accent);text-decoration:none;font-weight:600' "
-                             f"title='Open comprehensive dossier'>{html.escape(name)} ↗</a>{t1_flag}")
-            else:
-                name_cell = f"{html.escape(name)}{t1_flag}"
-            bucket = r["_bucket"]
-            bucket_tag = BUCKET_TAG[bucket]
-            bucket_label_short = {"IG":"IG","HY":"HY","POTENTIAL_IG":"P·IG"}[bucket]
-            rating = r.get("_rating_norm") or "—"
-            agency = r.get("_rating_source") or "—"
-            toi = fmt_inr(r.get("Total Operating Income (Rs Crore)"))
-            debt = fmt_inr(r.get("Total Debt  (A+B+C+D) (Rs Crore)"))
-            nw = fmt_inr(r.get("Tangible Net Worth (Rs Crore)"))
-            d_e = fmt_inr(r.get("Total debt/EBIDTA (times)"), 2)
-            is_ibk = str(r.get("_ibank_rel")).lower() == "true"
-            ibk_cell = (f"<span class='hrt y'></span><span class='ibk y'>IBank-IN</span>"
-                        if is_ibk else f"<span class='hrt n'></span><span class='ibk'>—</span>")
-            city_norm = CITY_BY_CIN.get(cin, "")
-            from urllib.parse import quote_plus
-            map_link = (f"<a href='india-map.html?city={quote_plus(city_norm)}' "
-                        f"class='mono' style='font-size:.7rem;color:var(--cool);text-decoration:none' "
-                        f"title='Show on India map'>{html.escape(city_norm.title())} ↗</a>"
-                        if city_norm else "—")
-            dossier_link = (f"<a href='{dossier}' class='mono' style='font-size:.72rem;color:var(--accent);text-decoration:none'>dossier ↗</a>"
-                            if dossier else "<span class='mono' style='font-size:.7rem;color:var(--muted)'>—</span>")
-            push(f"<tr class='row'>"
-                 f"<td><div class='bname'>{name_cell}</div>"
-                 f"<div class='bcin'>{html.escape(cin)}</div></td>"
-                 f"<td><span class='tag {bucket_tag}'>{bucket_label_short}</span></td>"
-                 f"<td class='mono'>{html.escape(rating)}</td>"
-                 f"<td class='mono' style='font-size:.78rem'>{html.escape(agency)}</td>"
-                 f"<td class='num'>{toi}</td>"
-                 f"<td class='num'>{debt}</td>"
-                 f"<td class='num'>{nw}</td>"
-                 f"<td class='num'>{d_e}</td>"
-                 f"<td>{ibk_cell}</td>"
-                 f"<td>{map_link}</td>"
-                 f"<td>{dossier_link}</td></tr>")
-        push("</tbody></table></div></details>")
+            region = REGION_BY_CIN.get(r.get("CIN",""), "ROTN")
+            by_region[region].setdefault(ind, []).append(r)
+
+    # Top-of-list region summary
+    n_chennai = sum(len(v) for v in by_region["CHENNAI"].values())
+    n_rotn = sum(len(v) for v in by_region["ROTN"].values())
+    n_mnc = sum(1 for cin in MNC_BY_CIN if MNC_BY_CIN[cin])
+    n_nonmnc = len(MNC_BY_CIN) - n_mnc
+    push("<h2>Region &amp; parent-origin split</h2>")
+    push("<div class='grid c4'>")
+    push(f"<div class='kpi accent'><div class='k'>Chennai cluster</div><div class='v num'>{n_chennai}</div><div class='sub'>Chennai + Sriperumbudur + Kancheepuram + Thiruvallur + Chengalpet + Maraimalai Nagar + Gummidipundi</div></div>")
+    push(f"<div class='kpi'><div class='k'>ROTN (Rest of TN)</div><div class='v num'>{n_rotn}</div><div class='sub'>Coimbatore + Tirupur + Erode + Madurai + Salem + Namakkal + Hosur + Krishnagiri + others</div></div>")
+    push(f"<div class='kpi'><div class='k'>MNC (foreign parent)</div><div class='v num'>{n_mnc}</div><div class='sub'>Foreign Country-Of-Origin or FTC-suffix CIN</div></div>")
+    push(f"<div class='kpi pos'><div class='k'>Non-MNC (Indian promoter)</div><div class='v num'>{n_nonmnc}</div><div class='sub'>Indian parent / promoter-family-led</div></div>")
+    push("</div>")
+
+    # Per-region, per-industry collapsible sections
+    for region_label, display_name, extra_class in [
+        ("CHENNAI", "Chennai cluster &mdash; Chennai + close metros", "accent"),
+        ("ROTN", "Rest of Tamil Nadu (ROTN) &mdash; Coimbatore + Tirupur + Erode + Madurai + others", ""),
+    ]:
+        reg_dict = by_region[region_label]
+        reg_count = sum(len(v) for v in reg_dict.values())
+        push(f"<h2 style='margin-top:2em'>{display_name} &mdash; {reg_count} names</h2>")
+        for ind, xs in sorted(reg_dict.items(), key=lambda kv: -len(kv[1])):
+            open_attr = " open" if len(xs) >= 20 else ""
+            push(f"<details{open_attr}><summary>{html.escape(ind)} &nbsp;<span class='mono' style='font-size:.82rem;color:var(--muted)'>· {len(xs)} names</span></summary>")
+            push("<div style='overflow-x:auto'><table>")
+            push("<thead><tr><th>Company</th><th>Bucket</th><th>MNC</th><th>Rating (LT)</th><th>Agency</th>"
+                 "<th class='num'>TOI (Cr)</th><th class='num'>Debt (Cr)</th>"
+                 "<th class='num'>NW (Cr)</th><th class='num'>Debt/EBITDA</th>"
+                 "<th>IBank</th><th>City</th><th>Open</th></tr></thead><tbody>")
+            for r in xs:
+                name = cipher(r.get("Company") or "")
+                cin = r.get("CIN") or ""
+                t1_flag = " <span class='tag accent' style='font-size:.62rem'>T1</span>" if cin in tier1_cins else ""
+                dossier = DOSSIER_BY_CIN.get(cin)
+                if dossier:
+                    name_cell = (f"<a href='{dossier}' style='color:var(--accent);text-decoration:none;font-weight:600' "
+                                 f"title='Open comprehensive dossier'>{html.escape(name)} ↗</a>{t1_flag}")
+                else:
+                    name_cell = f"{html.escape(name)}{t1_flag}"
+                bucket = r["_bucket"]
+                bucket_tag = BUCKET_TAG[bucket]
+                bucket_label_short = {"IG":"IG","HY":"HY","POTENTIAL_IG":"P·IG"}[bucket]
+                rating = r.get("_rating_norm") or "—"
+                agency = r.get("_rating_source") or "—"
+                toi = fmt_inr(r.get("Total Operating Income (Rs Crore)"))
+                debt = fmt_inr(r.get("Total Debt  (A+B+C+D) (Rs Crore)"))
+                nw = fmt_inr(r.get("Tangible Net Worth (Rs Crore)"))
+                d_e = fmt_inr(r.get("Total debt/EBIDTA (times)"), 2)
+                is_ibk = str(r.get("_ibank_rel")).lower() == "true"
+                ibk_cell = (f"<span class='hrt y'></span><span class='ibk y'>IBank-IN</span>"
+                            if is_ibk else f"<span class='hrt n'></span><span class='ibk'>—</span>")
+                city_norm = CITY_BY_CIN.get(cin, "")
+                from urllib.parse import quote_plus
+                map_link = (f"<a href='india-map.html?city={quote_plus(city_norm)}' "
+                            f"class='mono' style='font-size:.7rem;color:var(--cool);text-decoration:none' "
+                            f"title='Show on India map'>{html.escape(city_norm.title())} ↗</a>"
+                            if city_norm else "—")
+                dossier_link = (f"<a href='{dossier}' class='mono' style='font-size:.72rem;color:var(--accent);text-decoration:none'>dossier ↗</a>"
+                                if dossier else "<span class='mono' style='font-size:.7rem;color:var(--muted)'>—</span>")
+                is_mnc = MNC_BY_CIN.get(cin, False)
+                coo = COO_BY_CIN.get(cin, "") or "Foreign parent"
+                coo_title = html.escape(coo)
+                if is_mnc:
+                    mnc_cell = f"<span class='tag amber' title='{coo_title}'>MNC</span>"
+                else:
+                    mnc_cell = "<span class='tag' style='background:var(--line);color:var(--muted)'>Non-MNC</span>"
+                push(f"<tr class='row'>"
+                     f"<td><div class='bname'>{name_cell}</div>"
+                     f"<div class='bcin'>{html.escape(cin)}</div></td>"
+                     f"<td><span class='tag {bucket_tag}'>{bucket_label_short}</span></td>"
+                     f"<td>{mnc_cell}</td>"
+                     f"<td class='mono'>{html.escape(rating)}</td>"
+                     f"<td class='mono' style='font-size:.78rem'>{html.escape(agency)}</td>"
+                     f"<td class='num'>{toi}</td>"
+                     f"<td class='num'>{debt}</td>"
+                     f"<td class='num'>{nw}</td>"
+                     f"<td class='num'>{d_e}</td>"
+                     f"<td>{ibk_cell}</td>"
+                     f"<td>{map_link}</td>"
+                     f"<td>{dossier_link}</td></tr>")
+            push("</tbody></table></div></details>")
 
     # Tier-1 additions outside the TN-499 universe
     extras_path = WORK / "tier1_extras.json"

@@ -141,8 +141,10 @@ def build():
 .mapland{fill:#dcd6c2;stroke:#9a8f72;stroke-width:1}
 .maptn{fill:#f5e6e8;stroke:var(--accent);stroke-width:1.5}
 .mapdot{cursor:pointer;transition:opacity .15s ease,r .15s ease;stroke:var(--accent);stroke-width:1;fill:rgba(122,31,43,.65)}
+.mapdot.chennai-cluster{fill:rgba(28,78,128,.75);stroke:var(--cool);stroke-width:1.5}
 .mapdot:hover{opacity:.85;stroke-width:2}
 .mapdot.active{fill:var(--accent);stroke:#3a0d14;stroke-width:2}
+.mapdot.chennai-cluster.active{fill:var(--cool);stroke:#0d2840}
 .mapdot.dim{opacity:.18}
 .maplabel{font-family:var(--mono);font-size:9px;fill:#1a1a1a;pointer-events:none}
 .maplabel.faint{fill:#666;font-size:8px}
@@ -182,11 +184,18 @@ def build():
     a("<div class='eyebrow'>Geographic locator · 499 prospects · April 2026</div>")
     a("<h1>India map · prospect-office locator</h1>")
     a("<p class='lede'>Each circle on the India map is a city in which one or more qualifying prospects has its corporate office. Marker area is proportional to the number of qualifying companies in that city. Click any marker to populate the right-hand panel with the company list at that location, with one-click navigation to the comprehensive dossier (where one exists in the Tier-1 pilot batch). All 499 names are headquartered in Tamil Nadu, the LCG / PBG South franchise footprint.</p>")
+    # region + MNC counts for summary line
+    n_chennai = sum(1 for c in companies if c.get("region") == "CHENNAI")
+    n_rotn = sum(1 for c in companies if c.get("region") == "ROTN")
+    n_mnc = sum(1 for c in companies if c.get("mnc"))
+    n_nonmnc = len(companies) - n_mnc
     a("<div class='meta'>")
     a("<span>Dossier date <strong>24 Apr 2026</strong></span>")
-    a("<span>Cities mapped <strong>39</strong></span>")
-    a("<span>Total prospects <strong>499</strong></span>")
-    a("<span>Tier-1 pilot dossiers <strong>3 of 20</strong></span>")
+    a(f"<span>Chennai cluster <strong>{n_chennai}</strong></span>")
+    a(f"<span>ROTN <strong>{n_rotn}</strong></span>")
+    a(f"<span>MNC <strong>{n_mnc}</strong></span>")
+    a(f"<span>Non-MNC <strong>{n_nonmnc}</strong></span>")
+    a("<span>Tier-1 pilot dossiers <strong>20 of 20 complete</strong></span>")
     a("</div>")
     a("</section>")
 
@@ -221,7 +230,8 @@ def build():
         # Marker radius: sqrt scaling, min 5, max 36
         r = 5 + 31 * math.sqrt(c["count"] / max_count)
         cname = c["city"]
-        a(f"<circle class='mapdot' data-city=\"{cname}\" cx='{x:.1f}' cy='{y:.1f}' r='{r:.1f}'>")
+        cluster_cls = "chennai-cluster" if c.get("region") == "CHENNAI" else ""
+        a(f"<circle class='mapdot {cluster_cls}' data-city=\"{cname}\" data-region=\"{c.get('region','ROTN')}\" cx='{x:.1f}' cy='{y:.1f}' r='{r:.1f}'>")
         a(f"<title>{cname} · {c['count']} prospects · {c['ig']} IG / {c['hy']} HY / {c['pig']} P-IG · {c['ibank_in']} IBank-in</title>")
         a("</circle>")
         # Label only larger markers
@@ -233,9 +243,12 @@ def build():
 
     # Legend overlay
     a("<div class='legend'>")
-    a("<div style='font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem'>Marker size = # prospects</div>")
-    a("<div class='lrow'><span class='ldot lg'></span><span>Largest cluster (Chennai · 249)</span></div>")
-    a("<div class='lrow'><span class='ldot md'></span><span>Mid (Coimbatore · 56)</span></div>")
+    a("<div style='font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem'>Region colour</div>")
+    a("<div class='lrow'><span class='ldot' style='background:rgba(28,78,128,.75);border-color:var(--cool)'></span><span>Chennai cluster (320)</span></div>")
+    a("<div class='lrow'><span class='ldot'></span><span>ROTN &mdash; Rest of TN (179)</span></div>")
+    a("<div style='border-top:1px dashed var(--line);margin-top:6px;padding-top:6px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem'>Marker size = # prospects</div>")
+    a("<div class='lrow'><span class='ldot lg'></span><span>Chennai · 249</span></div>")
+    a("<div class='lrow'><span class='ldot md'></span><span>Coimbatore · 56</span></div>")
     a("<div class='lrow'><span class='ldot'></span><span>Small (1&ndash;10 prospects)</span></div>")
     a("<div style='border-top:1px dashed var(--line);margin-top:6px;padding-top:6px;color:var(--muted)'>Click any marker to load the city panel</div>")
     a("</div>")
@@ -254,6 +267,14 @@ def build():
     a("<button data-bk='POTENTIAL_IG'>P-IG</button>")
     a("<button data-bk='ibank'>IBank-IN</button>")
     a("<button data-bk='tier1'>Tier-1</button>")
+    a("<button data-bk='mnc'>MNC</button>")
+    a("<button data-bk='nonmnc'>Non-MNC</button>")
+    a("</div>")
+    a("<div class='filterbar' id='pregion' style='margin-top:-6px;font-size:.72rem'>")
+    a("<span style='padding:6px 10px;color:var(--muted);font-weight:600'>REGION:</span>")
+    a("<button data-rg='all' class='active'>All Cities</button>")
+    a("<button data-rg='CHENNAI'>Chennai cluster</button>")
+    a("<button data-rg='ROTN'>ROTN</button>")
     a("</div>")
     a("<div id='plist'></div>")
     a("</aside>")
@@ -282,6 +303,7 @@ def build():
 const byName = Object.fromEntries(CITIES.map(c => [c.city, c]));
 let active = null;
 let currentBucketFilter = 'all';
+let currentRegionFilter = 'all';
 
 function tagFor(c){
   const tags = [];
@@ -290,6 +312,12 @@ function tagFor(c){
   if(c.bucket==='HY') tags.push("<span class='tag hy'>HY</span>");
   if(c.bucket==='POTENTIAL_IG') tags.push("<span class='tag pig'>P-IG</span>");
   if(c.ibank_in) tags.push("<span class='tag ibk'>IBank-IN</span>");
+  if(c.mnc) {
+    const coo = c.country_of_origin ? ` (${c.country_of_origin.split(',')[0]})` : '';
+    tags.push(`<span class='tag' style='background:#fce6c6;color:var(--amber)' title='${coo}'>MNC${coo}</span>`);
+  } else {
+    tags.push("<span class='tag' style='background:var(--line);color:var(--muted)'>Non-MNC</span>");
+  }
   return tags.join('');
 }
 
@@ -297,6 +325,8 @@ function passes(c){
   if(currentBucketFilter==='all') return true;
   if(currentBucketFilter==='ibank') return c.ibank_in;
   if(currentBucketFilter==='tier1') return c.tier1;
+  if(currentBucketFilter==='mnc') return c.mnc;
+  if(currentBucketFilter==='nonmnc') return !c.mnc;
   return c.bucket === currentBucketFilter;
 }
 
@@ -348,6 +378,23 @@ document.querySelectorAll('#pfilter button').forEach(b => {
     b.classList.add('active');
     currentBucketFilter = b.dataset.bk;
     render(active, document.getElementById('psearch').value);
+  });
+});
+document.querySelectorAll('#pregion button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#pregion button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    currentRegionFilter = b.dataset.rg;
+    // Dim markers not in the selected region
+    document.querySelectorAll('.mapdot').forEach(d => {
+      const city = d.dataset.city;
+      const cobj = byName[city];
+      if(!cobj || currentRegionFilter==='all' || cobj.region===currentRegionFilter){
+        d.classList.remove('dim');
+      } else {
+        d.classList.add('dim');
+      }
+    });
   });
 });
 
