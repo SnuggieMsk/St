@@ -207,6 +207,18 @@ def build():
         "U35999TN1962PTC004928": "brakes-india-dossier.html",
         "L17111TZ1962PLC001183": "precot-limited-dossier.html",
         "U28999TN2009PTC071334": "mohanlal-jewellers-dossier.html",
+        "U34103TN2000PTC045537": "ford-india-dossier.html",
+        "U74120TN1998PTC041070": "ford-india-dossier.html",
+        "U72300TN2001PTC046551": "verizon-dsi-dossier.html",
+        "U30007TN2002PTC048391": "sanmina-sci-dossier.html",
+        "U67100TN2017PTC134459": "stellantis-india-dossier.html",
+        "U50102TN2012PTC189428": "stellantis-india-dossier.html",
+        "U29309TN2017PTC149467": "stellantis-india-dossier.html",
+        "U72900TN2020FTC189526": "stellantis-india-dossier.html",
+        "U27104TN2006PTC060275": "hyundai-steel-india-dossier.html",
+        "U27100TN2011PTC081333": "hyundai-steel-india-dossier.html",
+        "U72200TN2006PTC058697": "paypal-india-dossier.html",
+        "U24100TN2010PLC077127": "greenstar-fertilizers-dossier.html",
     }
     # CIN → city_norm / region / mnc mapping (from geocoder output)
     import json as _json
