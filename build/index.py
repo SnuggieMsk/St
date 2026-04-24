@@ -49,8 +49,8 @@ def build():
     a("<span>Universe size <strong>499 prospects</strong></span>")
     a("<span>Industry clusters <strong>9</strong></span>")
     a("<span>Geographic clusters <strong>39 cities (TN)</strong></span>")
-    a("<span>Tier-1 dossiers ready <strong>3 of 20</strong></span>")
-    a("<span>Conversion envelope (3 pilots) <strong>Rs 345&ndash;426 Cr / yr</strong></span>")
+    a("<span>Tier-1 dossiers ready <strong>4 of 20</strong></span>")
+    a("<span>Conversion envelope (4 pilots) <strong>Rs 403&ndash;500 Cr / yr</strong></span>")
     a("</div>")
     a("</section>")
 
@@ -81,7 +81,7 @@ def build():
     a("</div>")
 
     # Tier-1 dossiers
-    a("<h2 id='dossiers'>Tier-1 pilot dossiers (3 of 20)</h2>")
+    a("<h2 id='dossiers'>Tier-1 pilot dossiers (4 of 20)</h2>")
     a("<p class='lede'>Each dossier is a self-contained, single-file HTML artifact &mdash; macro/PESTEL/industry blocks shared across the series, then deep-dive into the named entity. Every numeric claim references a numbered source resolving in Section 12. The wholesale bank is consistently rendered as <code>IBank</code> per cipher rules.</p>")
 
     a("<div class='subtype-grid'>")
@@ -101,10 +101,17 @@ def build():
     a("</a>")
 
     a("<a class='navcard' href='rkm-powergen-dossier.html'>")
-    a("<span class='nctype'>Pilot 03 · Thermal IPP · Greenfield refi</span>")
+    a("<span class='nctype'>Pilot 03 · Thermal IPP · Post-litigation discharge</span>")
     a("<h3>R.K.M Powergen<br>1,440 MW supercritical IPP</h3>")
-    a("<p>Chennai HO; plant at Uchpinda, Chhattisgarh. FY25 TOI Rs 3,929 Cr at 42.8% EBITDA margin. Capital stack entirely PFC + IDBI Trustee + legacy Indian Bank (Rs 31,266 Cr MCA charges). Refi arithmetic: PFC at ~9.75% can be displaced by MCLR + 55 bp on Rs 2,800 Cr addressable pool.</p>")
-    a("<span class='ncmeta'>1,003 lines · Rs 68&ndash;86 Cr/yr conversion →</span>")
+    a("<p>Chennai HO; plant at Uchpinda, Chhattisgarh. FY25 TOI Rs 3,929 Cr at 42.8% EBITDA margin. Capital stack entirely PFC + IDBI Trustee + legacy Indian Bank (Rs 31,266 Cr MCA charges). Refi arithmetic: PFC at ~9.75% can be displaced by MCLR + 55 bp on Rs 2,800 Cr addressable pool. <strong>Nov 2025 CBI-court discharge in Fatehpur coal-block matter</strong> clears the litigation overhang.</p>")
+    a("<span class='ncmeta'>1,090 lines · Rs 68&ndash;86 Cr/yr conversion →</span>")
+    a("</a>")
+
+    a("<a class='navcard' href='imc-limited-dossier.html'>")
+    a("<span class='nctype'>Pilot 04 · Bulk-liquid storage · Greenfield / out-of-TN</span>")
+    a("<h3>IMC Limited<br>India's largest independent bulk-liquid terminal</h3>")
+    a("<p>Kolkata HO; 14-port national footprint (incl. Chennai + Ennore); founded 1935 as Indian Molasses Co. FY24 TOI Rs 789 Cr (consolidated) at <strong>37% PBILDT</strong> and <strong>negative net debt</strong>. Pothen-family 89.81% promoter holding; no material litigation; 90-year operating history. Capex pipeline Rs 2,155 Cr (Rs 1,480 Cr debt) for Kandla + Pipavav + aviation tanker SPVs &mdash; sanction-eligible today.</p>")
+    a("<span class='ncmeta'>1,023 lines · Rs 58&ndash;74 Cr/yr conversion →</span>")
     a("</a>")
     a("</div>")
 

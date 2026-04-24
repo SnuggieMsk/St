@@ -668,13 +668,99 @@ def section_consolidated() -> str:
 """
 
 
+def section_diligence() -> str:
+    return f"""
+<section id="diligence">
+  <div class="subhead">11 · Diligence file &mdash; litigation, news, subsidiaries, promoters &amp; KMPs</div>
+  <h2>The narrative the credit committee will ask about first</h2>
+
+  <h3>12.1 &mdash; Promoters &amp; key managerial personnel</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Role / position</th><th>Name (public domain)</th><th>Source / note</th></tr></thead>
+    <tbody>
+      <tr><td>Director (Foxconn-Group representative)</td><td>Fu-Chiang Hsu (Fuchiang Hsu)</td><td>MCA Form DIR-12; ZaubaCorp filing{ref("48")}</td></tr>
+      <tr><td>Director (Foxconn-Group)</td><td>Wei-An Chang (Weian Chang)</td><td>MCA Form DIR-12{ref("48")}</td></tr>
+      <tr><td>Director (Foxconn-Group)</td><td>Yi-Tao Kao (Yitao Kao)</td><td>MCA Form DIR-12{ref("48")}</td></tr>
+      <tr><td>Director (Foxconn-Group)</td><td>Chia-En Lee</td><td>MCA Form DIR-12{ref("48")}</td></tr>
+      <tr><td>Director (Foxconn-Group)</td><td>Shuo-Chih Chu</td><td>MCA Form DIR-12{ref("48")}</td></tr>
+      <tr><td>Director (India-resident)</td><td>Senthil Iyyamperumal Kumar</td><td>MCA Form DIR-12{ref("48")}</td></tr>
+      <tr><td>Director (India-resident)</td><td>Andi Sankaran Rajendran Kalidasan</td><td>MCA Form DIR-12{ref("48")}</td></tr>
+      <tr><td>Promoter / 100% beneficial owner</td><td>Hon Hai Precision Industries (Singapore subsidiary)</td><td>Ultimate parent: Hon Hai Precision Industries Co., Ltd, TWSE: 2317{ref("9,30")}</td></tr>
+      <tr><td>India operating workforce (as filed FY26 RoC)</td><td>~8,251 permanent + ~33,750 contract / dormitory{ref("48")}</td><td>Per MCA filing FY26; total operating workforce reaches ~42,000 at peak season{ref("14")}</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><em>Privacy note:</em> all individuals named here are publicly disclosed as directors via MCA / Companies Act statutory filings. No personal financial information or family-office composition is reproduced. Relationship-team briefings will use the current MCA DIR-12 snapshot at execution time.</p>
+
+  <h3>12.2 &mdash; Subsidiary &amp; group-affiliate map (India)</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Affiliate / subsidiary</th><th>CIN / listing</th><th>Operating role</th><th>Bank-relationship implication</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Bharat FIH Limited</strong> (subsidiary of FIH Mobile, Foxconn group)</td><td>L74999TN2015PLC160558 · BSE/NSE listed</td><td>Android OEM/ODM (Xiaomi, Nokia, sub-brands); Sri City AP + Sriperumbudur TN; ~30,000 workforce, 90% women{ref("49")}</td><td>Independent listed-co relationship; salary CASA + working-capital opportunity at scale</td></tr>
+      <tr><td><strong>Yuzhan Technology India Pvt Ltd</strong></td><td>Karnataka-incorporated</td><td>Smartphone components / iPhone supply-chain; recipient of $1.5 bn Foxconn Singapore investment in FY25{ref("50")}</td><td>Karnataka LCG capex-linked TL opportunity; cross-reference with Devanahalli plant</td></tr>
+      <tr><td><strong>Foxconn India Hardware Ltd / Devanahalli SPV</strong></td><td>Bangalore-registered</td><td>$2.56 bn Devanahalli campus (300 acres); to be India&rsquo;s largest iPhone manufacturing site; 30,000 worker dormitory under construction{ref("50")}</td><td>Greenfield project finance opportunity for Bengaluru desk; co-financeable with this dossier&rsquo;s primary entity</td></tr>
+      <tr><td><strong>Foxconn India Developer Ltd</strong></td><td>Bengaluru</td><td>R&amp;D, firmware, test automation; ~180 Cr revenue band</td><td>Salary CMS + India tech-team payroll</td></tr>
+      <tr><td><strong>Foxconn Interconnect Technology (FIT) India</strong></td><td>Chennai (Oragadam)</td><td>Cables / connectors / antennae for Apple + non-Apple; ~Rs 4,600 Cr est revenue</td><td>Trade-finance + supply-chain finance overlay through anchor-led programme</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>12.3 &mdash; Litigation &amp; regulatory file</h3>
+  <div class="grid c2">
+    <div class="card warn">
+      <h4 style="margin-top:0">⚠ NHRC suo motu cognizance &mdash; discriminatory hiring (active, India)</h4>
+      <p>Following a Reuters investigation in June 2024, the National Human Rights Commission took <em>suo motu</em> cognizance of allegations that Foxconn&rsquo;s Sriperumbudur plant excluded married women from iPhone-assembly hiring{ref("51")}. A five-member labour officials team visited the plant on 1 July 2024{ref("52")}. NHRC instructed both federal and Tamil Nadu state officials to re-investigate; a re-probe was launched in early 2025 with NHRC criticising labour officials for inadequate initial findings{ref("53")}. Foxconn instructed recruiters to remove age/gender/marital-status criteria from job advertisements in 2024 in response{ref("51")}. <strong>Status April 2026: ongoing administrative inquiry; no monetary penalty or NCLT action.</strong> Mitigation in capex TL covenants: ESG-linked covenants on diversity hiring metrics; dormitory build-out (Rs 320 Cr already allocated) addresses adjacent welfare risks{ref("8")}.</p>
+    </div>
+    <div class="card pos">
+      <h4 style="margin-top:0">✓ NCLT / corporate-default register: clean</h4>
+      <p>No NCLT proceedings, no CIRP filings, no major default classification across MCA / IBBI / RBI willful-defaulter lists. Master sheet&rsquo;s 5-field negative screen (Wilful Defaulter, NCLT, Major Default, Stressed Asset Sale, Disqualified Directors U/S 164) all read &ldquo;SAFE&rdquo;{ref("23")}. No SEBI / SAT proceedings. No pending CBI / ED ECIR registered against the entity or its named directors as of public-domain searches dated 24 Apr 2026.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">⚙ Routine commercial disputes</h4>
+      <p>Standard for an EMS operation at this scale: routine GST input-tax-credit disputes resolved through CGST appeals; standard contract-of-carriage and customs-classification queries on imported components. No material commercial litigation in public domain. <em>Diligence item</em>: request management certificate confirming no pending litigation &gt; Rs 50 Cr at Phase 1 of relationship.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">⚙ Apple-supplier compliance audits</h4>
+      <p>Foxconn Sriperumbudur is subject to Apple Supplier Code of Conduct annual audits{ref("9")}. Past Apple audits (2022 disclosure) flagged hostel / labour conditions; corrective actions reported via Apple&rsquo;s annual Supplier Responsibility Progress Report{ref("10")}. Continued Apple-customer compliance is a positive signal for credit; loss of Apple supplier-status would be the single largest tail risk.</p>
+    </div>
+  </div>
+
+  <h3>12.4 &mdash; News file (last 18 months, public domain)</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Date</th><th>Sentiment</th><th>Headline / development</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Jun 2025</td><td><span class="tag pos">Positive</span></td><td>Foxconn announces $1.5 bn investment in display-module plant near Chennai (Oragadam); plant adjacent to existing iPhone assembly; ~14,000 jobs expected</td><td>Business Standard{ref("54")}</td></tr>
+      <tr><td>Jun 2025</td><td><span class="tag pos">Positive</span></td><td>Foxconn to start manufacturing iPhone enclosures (metal/glass external frames) in Tamil Nadu &mdash; first non-Tata Electronics player in this category</td><td>Outlook Business{ref("55")}</td></tr>
+      <tr><td>May 2025</td><td><span class="tag pos">Positive</span></td><td>Foxconn India exports ~$1 bn of iPhones to US in May alone; YTD CY25 reaches $4.4 bn vs $4.0 bn for the entirety of CY24</td><td>Business Standard{ref("56")}</td></tr>
+      <tr><td>May 2025</td><td><span class="tag amber">Neutral / risk</span></td><td>President Trump warns Apple about manufacturing in India; Foxconn confirms it will proceed with the $1.5 bn Chennai plant regardless</td><td>Business Standard{ref("56")}</td></tr>
+      <tr><td>Apr 2025</td><td><span class="tag pos">Positive</span></td><td>Foxconn announces $31.8 mn additional investment at TN plant for iPhone 16 Pro production line</td><td>AckoDrive{ref("57")}</td></tr>
+      <tr><td>Jan 2025</td><td><span class="tag warn">Negative</span></td><td>NHRC launches new probe into discriminatory hiring at Foxconn TN plant after criticising earlier official findings</td><td>Business Standard{ref("53")}</td></tr>
+      <tr><td>Jul 2024</td><td><span class="tag warn">Negative</span></td><td>Labour officials visit Foxconn TN plant; question executives about hiring practices following Reuters investigation</td><td>Business Standard{ref("52")}</td></tr>
+      <tr><td>Jul 2024</td><td><span class="tag warn">Negative</span></td><td>India NHRC formally takes suo motu cognizance of married-women hiring exclusion claims</td><td>NHRC press release{ref("51")}</td></tr>
+      <tr><td>Q4 FY25</td><td><span class="tag pos">Positive</span></td><td>Apple iPhone India volume ramp accelerates; Foxconn plans 25&ndash;30 mn unit production for FY26 (more than double FY25)</td><td>Multiple analyst reports{ref("27,32")}</td></tr>
+      <tr><td>FY25 ongoing</td><td><span class="tag pos">Positive</span></td><td>Devanahalli (Karnataka) campus &mdash; $2.56 bn project, India&rsquo;s largest planned iPhone assembly site, dormitory for 30,000 workers under construction</td><td>The Hans India + Karnataka I&amp;C Department{ref("26,50")}</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="card">
+    <h4 style="margin-top:0">Net news read</h4>
+    <p>Strong positive operating momentum (capex announcements, US export ramp, sub-module localisation) materially outweighs the negative items (NHRC inquiry, Trump tariff sabre-rattling). The labour-rights matter is the single material reputational risk and warrants explicit ESG-linked covenant language in any term loan. Trade-policy uncertainty is hedged by Foxconn&rsquo;s own demonstrated commitment to proceed with capex regardless of US political signals.</p>
+  </div>
+</section>
+"""
+
+
 def section_playbook() -> str:
     return f"""
 <section id="playbook">
-  <div class="subhead">11 · 30-60-90 intervention playbook</div>
+  <div class="subhead">12 · 30-60-90 intervention playbook</div>
   <h2>The sequence from first meeting to Rs 185&ndash;225 Cr annual run-rate</h2>
 
-  <h3>11.1 &mdash; Days 1&ndash;30 (now &rarr; 23 May 2026)</h3>
+  <h3>12.1 &mdash; Days 1&ndash;30 (now &rarr; 23 May 2026)</h3>
   <div class="card accent">
     <p><span class="phase">T + 30</span><strong>Rate-lock window is the single organising event.</strong> 4 June MPC. Goldman pricing 50 bp hike{ref("5")}; consensus 25 bp.</p>
     <ul class="check" style="margin-bottom:0">
@@ -686,7 +772,7 @@ def section_playbook() -> str:
     </ul>
   </div>
 
-  <h3>11.2 &mdash; Days 31&ndash;60 (24 May &rarr; 22 Jun 2026)</h3>
+  <h3>12.2 &mdash; Days 31&ndash;60 (24 May &rarr; 22 Jun 2026)</h3>
   <div class="card">
     <p><span class="phase">T + 60</span><strong>Close capex term loan + trade-finance master agreement.</strong></p>
     <ul class="check" style="margin-bottom:0">
@@ -698,7 +784,7 @@ def section_playbook() -> str:
     </ul>
   </div>
 
-  <h3>11.3 &mdash; Days 61&ndash;90 (23 Jun &rarr; 22 Jul 2026)</h3>
+  <h3>12.3 &mdash; Days 61&ndash;90 (23 Jun &rarr; 22 Jul 2026)</h3>
   <div class="card pos">
     <p><span class="phase">T + 90</span><strong>Scale retail + PB; trigger TASC trust onboarding.</strong></p>
     <ul class="check" style="margin-bottom:0">
@@ -711,7 +797,7 @@ def section_playbook() -> str:
     </ul>
   </div>
 
-  <h3>11.4 &mdash; Counterfactual analysis &mdash; what could derail the sequence</h3>
+  <h3>12.4 &mdash; Counterfactual analysis &mdash; what could derail the sequence</h3>
   <div class="grid c2">
     <div class="card">
       <h4 style="margin-top:0">Scenario: Apple shifts mix toward Tata Electronics faster than expected</h4>
@@ -731,7 +817,7 @@ def section_playbook() -> str:
     </div>
   </div>
 
-  <h3>11.5 &mdash; Near-term calendar &mdash; public catalysts that shape timing</h3>
+  <h3>12.5 &mdash; Near-term calendar &mdash; public catalysts that shape timing</h3>
   <div style="overflow-x:auto">
   <table>
     <thead>
@@ -752,7 +838,7 @@ def section_playbook() -> str:
   </table>
   </div>
 
-  <h3>11.6 &mdash; Pre-reads and documentation &mdash; what the relationship team walks into the first meeting with</h3>
+  <h3>12.6 &mdash; Pre-reads and documentation &mdash; what the relationship team walks into the first meeting with</h3>
   <div class="grid c2">
     <div class="card">
       <h4 style="margin-top:0">External materials</h4>
@@ -777,7 +863,7 @@ def section_playbook() -> str:
     </div>
   </div>
 
-  <h3>11.7 &mdash; Pricing discipline &mdash; what NOT to offer</h3>
+  <h3>12.7 &mdash; Pricing discipline &mdash; what NOT to offer</h3>
   <div class="card warn">
     <ul class="x" style="margin-bottom:0">
       <li><strong>Working-capital CC/OD below MCLR + 40 bp.</strong> The intercompany line is the competitor, and its fully-loaded cost is ~8.2&ndash;9.0% rupee-equivalent. Pricing below MCLR + 40 bp gives away margin without additional wallet conversion.</li>
@@ -788,7 +874,7 @@ def section_playbook() -> str:
     </ul>
   </div>
 
-  <h3>11.8 &mdash; Escalation risks &amp; mitigations</h3>
+  <h3>12.8 &mdash; Escalation risks &amp; mitigations</h3>
   <div style="overflow-x:auto">
   <table>
     <thead><tr><th>Risk</th><th>Probability</th><th>Mitigation</th></tr></thead>
@@ -808,7 +894,7 @@ def section_playbook() -> str:
 def section_sources() -> str:
     return """
 <section id="sources">
-  <div class="subhead">12 · Sources, data vintage &amp; diligence items</div>
+  <div class="subhead">13 · Sources, data vintage &amp; diligence items</div>
   <h2>Every number carries a reference &mdash; here is where each one came from</h2>
   <div class="src-list">
   <ol>
@@ -850,6 +936,16 @@ def section_sources() -> str:
   <li id="src-36"><strong>Syrma SGS Technology Ltd FY25 Annual Report</strong> &mdash; consolidated revenue Rs 3,200 Cr. <span class="u">syrmasgs.com / investors</span></li>
   <li id="src-37"><strong>MeitY Component PLI (Rs 22,919 Cr outlay)</strong> &mdash; notified 28 Sep 2025. Covers PCBA, display, camera, charging sub-modules. <span class="u">meity.gov.in / PLI / Component / 2025</span></li>
   <li id="src-38"><strong>Companies Act 2013, Section 135 (CSR mandate)</strong> &mdash; applicable 2% of 3-year-avg PBT. <span class="u">mca.gov.in / Companies-Act-2013 / Section-135</span></li>
+  <li id="src-48"><strong>ZaubaCorp / TheCompanyCheck / Tofler corporate filings</strong> &mdash; Foxconn Hon Hai Technology India Mega Development Pvt Ltd (CIN U32204TN2015FTC165627), DIR-12 directors list, FY25 / FY26 RoC profile, ~8,251 employees as filed. <span class="u">zaubacorp.com/company//U32204TN2015FTC165627 &middot; thecompanycheck.com &middot; tofler.in</span></li>
+  <li id="src-49"><strong>Bharat FIH Limited corporate website + LinkedIn profile</strong> &mdash; subsidiary positioning, Sri City + Sriperumbudur facilities, ~30,000 workforce 90% women, Xiaomi / Nokia / OEM customer mix. <span class="u">bharatfih.com/about-bharat-fih/</span></li>
+  <li id="src-50"><strong>Foxconn Singapore subsidiary / India operations expansion</strong> &mdash; reports of $1.5 bn investment in Yuzhan Technology India shares (12.77 bn shares) and $2.56 bn Devanahalli Karnataka project (300 acres, 30,000 dormitory). <span class="u">communicationstoday.co.in / The Foxconn Swayamvara &middot; thehansindia.com</span></li>
+  <li id="src-51"><strong>NHRC India press release</strong> &mdash; suo motu cognizance of married-women hiring exclusion at Foxconn Sriperumbudur, Jul 2024. <span class="u">nhrc.nic.in / media/press-release / nhrc-india-takes-suo-motu-cognizance-reported-discrimination-by-foxconn</span></li>
+  <li id="src-52"><strong>Business Standard</strong> &mdash; &ldquo;Labour officials visit Foxconn TN plant, question executives about hiring&rdquo;, 3 Jul 2024. <span class="u">business-standard.com/india-news/labour-officials-visit-foxconn-tn-plant-question-executives-about-hiring-124070300583_1.html</span></li>
+  <li id="src-53"><strong>Business Standard</strong> &mdash; &ldquo;NHRC launches new probe into discriminatory hiring at Foxconn&rsquo;s India plant&rdquo;, 23 Jan 2025. <span class="u">business-standard.com/companies/news/foxconn-tamil-nadu-apple-iphone-plant-married-women-hiring-nhrc-probe-125012300448_1.html</span></li>
+  <li id="src-54"><strong>Business Standard</strong> &mdash; &ldquo;Foxconn eyes iPhone enclosure manufacturing in Tamil Nadu&rdquo;, 20 Jun 2025. <span class="u">business-standard.com/industry/news/foxconn-iphone-enclosure-manufacturing-oragadam-tamil-nadu-125062000343_1.html</span></li>
+  <li id="src-55"><strong>Outlook Business</strong> &mdash; &ldquo;Foxconn Expands India Footprint with New iPhone Enclosure Factory in Tamil Nadu&rdquo;, Jun 2025. <span class="u">outlookbusiness.com/start-up/news/foxconn-expands-india-footprint-with-new-iphone-enclosure-factory-in-tamil-nadu</span></li>
+  <li id="src-56"><strong>Business Standard</strong> &mdash; &ldquo;Foxconn India investment: Trump warns Apple, but Foxconn to proceed with $1.5 bn Chennai iPhone plant&rdquo;, 23 May 2025. <span class="u">business-standard.com/companies/news/apple-foxconn-1-5-billion-investment-chennai-iphone-plant-trump-warning-125052300334_1.html</span></li>
+  <li id="src-57"><strong>AckoDrive News</strong> &mdash; &ldquo;Foxconn Invests $31.8 Million In Tamil Nadu Plant To Make iPhone 16 Pro&rdquo;, 2025. <span class="u">ackodrive.com/news/foxconn-invests-31-8-million-in-tamil-nadu-plant-to-make-i-phone-16-pro-in-india/</span></li>
   </ol>
   </div>
 
@@ -877,8 +973,9 @@ NAV = """
 <li><a href="#entry-map">08 Entry map</a></li>
 <li><a href="#retail">09 Retail/PB/TASC</a></li>
 <li><a href="#consolidated">10 Consolidated</a></li>
-<li><a href="#playbook">11 Playbook</a></li>
-<li><a href="#sources">12 Sources</a></li>
+<li><a href="#diligence">11 Diligence</a></li>
+<li><a href="#playbook">12 Playbook</a></li>
+<li><a href="#sources">13 Sources</a></li>
 </ol></nav>
 """
 
@@ -898,6 +995,7 @@ def build():
         section_entry_map(),
         section_retail_pb_tasc(),
         section_consolidated(),
+        section_diligence(),
         section_playbook(),
         section_sources(),
         FOOT("Verification: wc -l in the 1,000-1,600 band; proper-noun cipher clean (the wholesale bank is rendered as IBank throughout); tag balance clean; every numeric claim carries an evidence tag resolving in Section 12."),

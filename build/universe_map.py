@@ -248,6 +248,50 @@ def build():
                  f"<td>{dossier_link}</td></tr>")
         push("</tbody></table></div></details>")
 
+    # Tier-1 additions outside the TN-499 universe
+    extras_path = WORK / "tier1_extras.json"
+    if extras_path.exists():
+        extras = _json.loads(extras_path.read_text())
+        if extras:
+            push("<details open><summary>Tier-1 additions &mdash; outside TN-499 universe &nbsp;"
+                 f"<span class='mono' style='font-size:.82rem;color:var(--muted)'>· {len(extras)} names</span></summary>")
+            push("<p class='lede' style='margin-top:8px'>Names added to the Tier-1 batch on direction, "
+                 "headquartered outside the TN-anchored 499-company sheet. These are the largest single-name "
+                 "credit relationships sitting in the broader South / East footprint of LCG / PBG franchise.</p>")
+            push("<div style='overflow-x:auto'><table>")
+            push("<thead><tr><th>Company</th><th>Bucket</th><th>Rating (LT)</th><th>Agency</th>"
+                 "<th class='num'>TOI (Cr)</th><th class='num'>Debt (Cr)</th>"
+                 "<th class='num'>NW (Cr)</th><th class='num'>Debt/EBITDA</th>"
+                 "<th>IBank</th><th>City</th><th>Open</th></tr></thead><tbody>")
+            for e in extras:
+                cin = e.get("cin", "")
+                name = cipher(e.get("company", ""))
+                dossier = e.get("dossier")
+                name_cell = (f"<a href='{dossier}' style='color:var(--accent);text-decoration:none;font-weight:600'>"
+                             f"{html.escape(name)} ↗</a>" + " <span class='tag accent' style='font-size:.62rem'>T1</span>"
+                             if dossier else html.escape(name))
+                from urllib.parse import quote_plus as _qp
+                city_norm = e.get("city_norm", "")
+                map_link = (f"<a href='india-map.html?city={_qp(city_norm)}' class='mono' "
+                            f"style='font-size:.7rem;color:var(--cool);text-decoration:none'>"
+                            f"{html.escape(city_norm.title())} ↗</a>")
+                dossier_link = (f"<a href='{dossier}' class='mono' "
+                                f"style='font-size:.72rem;color:var(--accent);text-decoration:none'>dossier ↗</a>")
+                push(f"<tr class='row'>"
+                     f"<td><div class='bname'>{name_cell}</div>"
+                     f"<div class='bcin'>{html.escape(cin)}</div></td>"
+                     f"<td><span class='tag pos'>IG</span></td>"
+                     f"<td class='mono'>{html.escape(e.get('rating',''))}</td>"
+                     f"<td class='mono' style='font-size:.78rem'>{html.escape(e.get('rating_source',''))}</td>"
+                     f"<td class='num'>{e.get('toi','')}</td>"
+                     f"<td class='num'>{e.get('debt','')}</td>"
+                     f"<td class='num'>{e.get('nw','')}</td>"
+                     f"<td class='num'>N/A</td>"
+                     f"<td><span class='hrt n'></span><span class='ibk'>—</span></td>"
+                     f"<td>{map_link}</td>"
+                     f"<td>{dossier_link}</td></tr>")
+            push("</tbody></table></div></details>")
+
     # Methodology + caveats
     push("<h2>Methodology &amp; caveats</h2>")
     push("<div class='grid c2'>")

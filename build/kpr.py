@@ -33,8 +33,9 @@ NAV = """
 <li><a href="#models">08 Models</a></li>
 <li><a href="#consolidated">09 Consolidated</a></li>
 <li><a href="#retail">10 Retail/PB/TASC</a></li>
-<li><a href="#playbook">11 Playbook</a></li>
-<li><a href="#sources">12 Sources</a></li>
+<li><a href="#diligence">11 Diligence</a></li>
+<li><a href="#playbook">12 Playbook</a></li>
+<li><a href="#sources">13 Sources</a></li>
 </ol></nav>
 """
 
@@ -98,9 +99,9 @@ def section_group() -> str:
       <tr>
         <td><strong>KPR Sugar and Apparels Ltd</strong><br><span class="mono" style="font-size:.72rem;color:var(--muted)">CIN U18109TZ2020PLC034666</span></td>
         <td>Sugar, ethanol (EBP-E20), apparel{ref("42")}</td>
-        <td>Erode / Coimbatore, TN</td>
+        <td>Almel village, Bijapur (now Vijayapura) Dist, <strong>Karnataka</strong>; HO Coimbatore TN</td>
         <td class="num">1,737</td>
-        <td>Unlisted; promoter 100%</td>
+        <td>Unlisted; subsidiary of K.P.R. Mill</td>
         <td>CARE AA-{ref("43")}</td>
         <td><span class="tag pos">Rs 535 Cr / 66.0%</span></td>
       </tr>
@@ -661,7 +662,7 @@ def _retail_supplemental() -> str:
 <section id="retail-sup">
   <div class="subhead">10b · Retail / PB adjacency detail</div>
   <h2>The 14,000-unit agri-FPO opportunity at the base of the cane-supply pyramid</h2>
-  <p class="lede">KPR Sugar sources cane from ~14,000 smallholder farmers across Erode, Coimbatore, Tiruppur, and Krishnagiri districts. Current payment rail is a combination of cooperative banks and direct agri-credit accounts. Converting this base into an IBank Kisan Credit Card + Savings-Account corridor is a distinctive retail + TASC opportunity that does not exist at either Mill or Foxconn.</p>
+  <p class="lede">KPR Sugar sources cane from ~14,000 smallholder farmers across Vijayapura, Bagalkot, Kalaburagi, and Yadgir districts of north Karnataka (the plant&rsquo;s catchment area around Almel village, Bijapur Dist){ref("58")}. Current payment rail is a combination of cooperative banks and direct agri-credit accounts. Converting this base into an IBank Kisan Credit Card + Savings-Account corridor is a distinctive retail + TASC opportunity that does not exist at either Mill or Foxconn.</p>
   <div style="overflow-x:auto">
   <table>
     <thead><tr><th>Parameter</th><th>Current state</th><th>Target state (36 months)</th><th>IBank economic impact</th></tr></thead>
@@ -685,13 +686,95 @@ def _retail_supplemental() -> str:
 """
 
 
+def section_diligence() -> str:
+    return f"""
+<section id="diligence">
+  <div class="subhead">11 · Diligence file &mdash; litigation, news, subsidiaries, promoters &amp; KMPs</div>
+  <h2>The narrative the credit committee will ask about first</h2>
+
+  <h3>12.1 &mdash; Promoters &amp; key managerial personnel</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Role / position</th><th>Name (public domain)</th><th>Holding / source</th></tr></thead>
+    <tbody>
+      <tr><td>Executive Chairman &amp; Promoter</td><td>Dr. K.P. Ramasamy</td><td>19.29% individual; re-appointed for 5-year term via Postal Ballot 21.04.2022{ref("59")}</td></tr>
+      <tr><td>Managing Director &amp; Promoter</td><td>K.P.D. Sigamani</td><td>19.29% individual; co-founder brother{ref("59")}</td></tr>
+      <tr><td>Managing Director &amp; Promoter</td><td>P. Nataraj</td><td>19.29% individual; co-founder brother{ref("59")}</td></tr>
+      <tr><td>Independent Director</td><td>Erode Kandasamy Sakthivel</td><td>Disclosed per BSE / NSE filings{ref("42")}</td></tr>
+      <tr><td>Independent Director</td><td>Palanisamy Nataraj</td><td>Disclosed per BSE / NSE filings{ref("42")}</td></tr>
+      <tr><td>Total promoter &amp; promoter-group holding</td><td>&mdash;</td><td>~67.5% (incl. extended family + holding entities); <strong>zero promoter pledging</strong>{ref("42,59")}</td></tr>
+      <tr><td>Total board strength</td><td>12 directors</td><td>Incl. independents per SEBI LODR; per FY25 Annual Report{ref("42")}</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><em>Founder narrative:</em> K.P. Ramasamy ventured into business as a small power-loom cloth manufacturer in 1971; the three brothers built KPR over four decades into one of India&rsquo;s largest vertically-integrated cotton-to-garment groups. The zero-pledge promoter holding through multiple textile cycles is among the strongest governance signals available for any unlisted-equivalent industrial in this universe.</p>
+
+  <h3>12.2 &mdash; Subsidiary &amp; group-affiliate map</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Entity</th><th>Stake / nature</th><th>Operating role</th><th>Bank-relationship implication</th></tr></thead>
+    <tbody>
+      <tr><td><strong>K.P.R. Sugar Mill Ltd (KPRS)</strong></td><td>Wholly-owned subsidiary of K.P.R. Mill</td><td>10,000 TCD cane crush + 250 KLPD ethanol (commissioned FY24, up from 130 KLPD) + 40 MW multi-fuel cogen at <strong>Almel village, Bijapur Dist, Karnataka</strong>{ref("58")}</td><td>The dossier&rsquo;s flagship Sugar relationship; refer Section 05</td></tr>
+      <tr><td><strong>KPR Sugar &amp; Apparels Ltd (KPRSAL)</strong></td><td>Sister entity (this dossier&rsquo;s second principal entity)</td><td>Sugar + apparel + planned greenfield expansion at Chinamgeri Village, Afzalpur Taluk, <strong>Kalaburagi Dist, Karnataka</strong>: 10,000 TCD + 220 KLPD ethanol + 41 MW cogen, total project cost ~Rs 741.68 Cr{ref("58")}</td><td>Greenfield project-finance opportunity in addition to existing wallet</td></tr>
+      <tr><td>Quantum Knits Pvt Ltd / Galaxy Knits</td><td>100% subsidiary</td><td>Captive knitting + dyeing + finishing</td><td>Supplier-SCF programme target</td></tr>
+      <tr><td>Jahnvi Motor Pvt Ltd</td><td>Family-held / promoter group</td><td>Auto dealership across multiple TN cities</td><td>Dealer-finance + retail auto-loan adjacency (Section 10b)</td></tr>
+      <tr><td>K.P.R. Cements Ltd</td><td>Step-down or sister (under-construction)</td><td>Cement / agglomerated stones; pre-operating</td><td>Greenfield TL opportunity (Phase 3)</td></tr>
+      <tr><td>Captive captive power assets</td><td>61.92 MW wind + 90 MW co-gen + 38 MW rooftop solar = ~190 MW total{ref("60")}</td><td>Meets ~40% of textile-segment energy needs</td><td>Renewable / green-loan refinancing eligible</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>12.3 &mdash; Litigation &amp; regulatory file</h3>
+  <div class="grid c2">
+    <div class="card pos">
+      <h4 style="margin-top:0">✓ NCLT / corporate-default register: clean</h4>
+      <p>No NCLT proceedings, no CIRP filings, no major default classification across MCA / IBBI / RBI willful-defaulter lists. Master sheet&rsquo;s 5-field negative screen all SAFE for both K.P.R. Mill and KPR Sugar &amp; Apparels{ref("42")}. No SEBI / SAT proceedings against the listed entity (KPR Mill) in last 5 years per public-domain searches dated 24 Apr 2026.</p>
+    </div>
+    <div class="card pos">
+      <h4 style="margin-top:0">✓ No material litigation</h4>
+      <p>Public-domain NCLT case-search and Indian Kanoon search returned no material commercial litigation against either entity or against the named directors in the last 24 months{ref("61")}. Standard textile-industry routine commercial disputes (GST classification, customs), all resolved or appellate-stage. <em>Diligence item:</em> request management certificate confirming no pending litigation &gt; Rs 25 Cr at sanction stage.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">⚙ Sustainability &amp; ESG audits</h4>
+      <p>KPR Mill subject to EU buyer (H&amp;M, Inditex, Primark) ESG audit cycles + Better Cotton Initiative compliance + ZDHC chemical-discharge compliance for export to EU/US. Annual audit results disclosed in sustainability report; no material findings in public domain{ref("39")}. EU CBAM compliance from 1 Jan 2026 expected to be advantageous (group already compliant){ref("18")}.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">⚙ Sugar / cane payment compliance</h4>
+      <p>Sugar industry attracts state-level scrutiny on FRP / SAP cane-payment timeliness. KPR Sugar reportedly current on cane-farmer dues per state government records (Karnataka 14-day mandate){ref("15,17")}. <em>Diligence item:</em> verify payment-cycle compliance certificate at quarterly review.</p>
+    </div>
+  </div>
+
+  <h3>12.4 &mdash; News file (last 18 months, public domain)</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Date</th><th>Sentiment</th><th>Headline / development</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Q4 FY25</td><td><span class="tag pos">Positive</span></td><td>K.P.R. Mill maintains growth momentum in FY25; strengthens vertically-integrated operations and eyes expansion. Garment division revenue Rs 2,665 Cr (vs Rs 2,571 Cr FY24); 173.63 mn pieces (vs 151.95 mn)</td><td>Indian Textile Magazine{ref("60")}</td></tr>
+      <tr><td>Oct 2025</td><td><span class="tag pos">Positive</span></td><td>CARE Ratings reaffirms KPR Sugar Mill rating &mdash; strong financial discipline, captive co-gen, ethanol expansion path</td><td>CARE Ratings press release{ref("58")}</td></tr>
+      <tr><td>FY24 close</td><td><span class="tag pos">Positive</span></td><td>KPRS commissioned ethanol capacity expansion from 130 KLPD to 250 KLPD by end-FY24; supports EBP-E20 blending mandate</td><td>Industry trade press{ref("58")}</td></tr>
+      <tr><td>Ongoing</td><td><span class="tag pos">Positive</span></td><td>KPRSAL planned greenfield: 10,000 TCD + 220 KLPD ethanol + 41 MW cogen at Kalaburagi, Karnataka; project cost Rs 741.68 Cr; environmental clearance application in process</td><td>Pre-feasibility report (environmentclearance.nic.in){ref("58")}</td></tr>
+      <tr><td>Apr 2022</td><td><span class="tag pos">Positive</span></td><td>K.P. Ramasamy re-appointed as Executive Chairman for 5-year term via Postal Ballot</td><td>BSE / NSE corporate filings{ref("42")}</td></tr>
+      <tr><td>FY25 ongoing</td><td><span class="tag pos">Positive</span></td><td>Renewable footprint: 61.92 MW wind + 90 MW co-gen + 38 MW rooftop solar serving ~40% of textile-segment energy demand; supports CBAM-compliant exports to EU</td><td>FY25 Annual Report extract{ref("60")}</td></tr>
+      <tr><td>Q3 FY26</td><td><span class="tag amber">Neutral</span></td><td>Q2/Q3 FY26 result analysis: profit growth masking margin pressure amid global cotton-input cost volatility; analyst valuation concerns. Operationally healthy</td><td>MarketsMojo / Trendlyne{ref("62")}</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="card pos">
+    <h4 style="margin-top:0">Net news read</h4>
+    <p>Uniformly positive operating signals: ethanol-capacity execution on plan, garment-division volume up 14%, captive-power footprint deepening, no negative regulatory items, no labour-rights or environmental issues in public domain. The principal external risk is global cotton-input cost cyclicality &mdash; a market risk all listed textile peers share, and one that KPR&rsquo;s vertically-integrated structure handles better than most. Strong FRP / SAP cane-payment compliance is an operational positive that supports the agri-banking adjacency.</p>
+  </div>
+</section>
+"""
+
+
 def section_playbook() -> str:
     return f"""
 <section id="playbook">
-  <div class="subhead">11 · 30-60-90 intervention playbook</div>
+  <div class="subhead">12 · 30-60-90 intervention playbook</div>
   <h2>Defend Sugar, grow Mill &mdash; two tracks, one relationship conversation</h2>
 
-  <h3>11.1 &mdash; Days 1&ndash;30 (T &rarr; 23 May 2026)</h3>
+  <h3>12.1 &mdash; Days 1&ndash;30 (T &rarr; 23 May 2026)</h3>
   <div class="card accent">
     <p><span class="phase">T + 30</span><strong>Pre-MPC rate-lock on both entities + ethanol Phase-2 term-sheet.</strong></p>
     <ul class="check" style="margin-bottom:0">
@@ -703,7 +786,7 @@ def section_playbook() -> str:
     </ul>
   </div>
 
-  <h3>11.2 &mdash; Days 31&ndash;60 (24 May &rarr; 22 Jun 2026)</h3>
+  <h3>12.2 &mdash; Days 31&ndash;60 (24 May &rarr; 22 Jun 2026)</h3>
   <div class="card">
     <p><span class="phase">T + 60</span><strong>Close ethanol-capex TL and Mill WC refresh before MPC; FX programme live.</strong></p>
     <ul class="check" style="margin-bottom:0">
@@ -716,7 +799,7 @@ def section_playbook() -> str:
     </ul>
   </div>
 
-  <h3>11.3 &mdash; Days 61&ndash;90 (23 Jun &rarr; 22 Jul 2026)</h3>
+  <h3>12.3 &mdash; Days 61&ndash;90 (23 Jun &rarr; 22 Jul 2026)</h3>
   <div class="card pos">
     <p><span class="phase">T + 90</span><strong>Scale retail + PB; structure supply-chain finance and commodity advisory.</strong></p>
     <ul class="check" style="margin-bottom:0">
@@ -730,7 +813,7 @@ def section_playbook() -> str:
     </ul>
   </div>
 
-  <h3>11.4 &mdash; Near-term calendar</h3>
+  <h3>12.4 &mdash; Near-term calendar</h3>
   <div style="overflow-x:auto">
   <table>
     <thead><tr><th>Date</th><th>Event</th><th>Impact on KPR</th><th>IBank action</th></tr></thead>
@@ -747,7 +830,7 @@ def section_playbook() -> str:
   </table>
   </div>
 
-  <h3>11.5 &mdash; Pre-reads and internal alignment</h3>
+  <h3>12.5 &mdash; Pre-reads and internal alignment</h3>
   <div class="grid c2">
     <div class="card">
       <h4 style="margin-top:0">External materials</h4>
@@ -772,7 +855,7 @@ def section_playbook() -> str:
     </div>
   </div>
 
-  <h3>11.6 &mdash; Peer-comparison view</h3>
+  <h3>12.6 &mdash; Peer-comparison view</h3>
   <div style="overflow-x:auto">
   <table>
     <thead><tr><th>Peer</th><th class="num">FY25 TOI (Rs Cr)</th><th class="num">EBITDA margin</th><th class="num">Debt/EBITDA</th><th>Rating</th><th>Relationship note</th></tr></thead>
@@ -787,7 +870,7 @@ def section_playbook() -> str:
   </div>
   <p>KPR Mill has the <strong>highest EBITDA margin (18.2%) and lowest Debt/EBITDA (1.62x)</strong> among listed peers. That profile is under-served at 14% IBank share; listed-textile peer benchmark for top-3-bank wallet share is 25&ndash;35%.</p>
 
-  <h3>11.7 &mdash; Pricing discipline</h3>
+  <h3>12.7 &mdash; Pricing discipline</h3>
   <div class="card warn">
     <ul class="x" style="margin-bottom:0">
       <li><strong>Sugar WC below MCLR + 25 bp.</strong> We are the incumbent anchor; over-cutting price sets an unsustainable floor for the Oct 2026 re-negotiation</li>
@@ -798,7 +881,7 @@ def section_playbook() -> str:
     </ul>
   </div>
 
-  <h3>11.8 &mdash; Why the first Rs 30 Cr is the easiest</h3>
+  <h3>12.8 &mdash; Why the first Rs 30 Cr is the easiest</h3>
   <div class="card pos">
     <p>The dossier arithmetic targets Rs 92&ndash;115 Cr of annual income, fully built. The first Rs 30 Cr is genuinely straightforward and converts within the first 90 days:</p>
     <ul class="check" style="margin-bottom:0">
@@ -809,7 +892,7 @@ def section_playbook() -> str:
     </ul>
   </div>
 
-  <h3>11.9 &mdash; Escalation path &mdash; if Phase 1 mandate not secured</h3>
+  <h3>12.9 &mdash; Escalation path &mdash; if Phase 1 mandate not secured</h3>
   <div class="card warn">
     <p>If Phase 1 mandate (Sugar ethanol TL + Mill WC refresh) does not close by end-June 2026, escalation options in order of preference:</p>
     <ol>
@@ -820,7 +903,7 @@ def section_playbook() -> str:
     </ol>
   </div>
 
-  <h3>11.10 &mdash; Key-success metrics for the relationship</h3>
+  <h3>12.10 &mdash; Key-success metrics for the relationship</h3>
   <ul class="check">
     <li>Sugar IBank share retained at <strong>&ge; 55%</strong> through FY27 post-capex</li>
     <li>Mill IBank share raised from 14% to <strong>&ge; 22%</strong> by end of FY27</li>
@@ -829,7 +912,7 @@ def section_playbook() -> str:
     <li>Annual IBank income from relationship <strong>&ge; Rs 65 Cr</strong> by end-FY27; Rs 100 Cr by end-FY28</li>
   </ul>
 
-  <h3>11.11 &mdash; Competitive-risk matrix</h3>
+  <h3>12.11 &mdash; Competitive-risk matrix</h3>
   <div style="overflow-x:auto">
   <table>
     <thead><tr><th>Risk</th><th>Probability</th><th>Mitigation</th></tr></thead>
@@ -849,7 +932,7 @@ def section_playbook() -> str:
 def section_sources() -> str:
     return """
 <section id="sources">
-  <div class="subhead">12 · Sources &amp; diligence items</div>
+  <div class="subhead">13 · Sources &amp; diligence items</div>
   <h2>Evidence trail for every number</h2>
   <p><em>Sources 1&ndash;22 are the shared macro / PESTEL / industry dataset used across the Tier-1 dossier series (see Foxconn dossier Section 12 for the full list).</em> The sources specific to the KPR Group dossier begin at [39].</p>
   <div class="src-list">
@@ -859,6 +942,11 @@ def section_sources() -> str:
   <li id="src-41"><strong>Probe42 open-charges pull &mdash; K.P.R. Mill Limited</strong> &mdash; <code>/probe_data_api/entities/L17111TZ2003PLC010518/open-charges</code>, metadata <code>last_updated: 2026-03-13</code>. Nine charges totalling Rs 1,395.82 Cr; IBank two charges Rs 200 Cr (14.33%); consortium re-set 9 Oct 2025 for Union / BoB / PNB / IDBI. <span class="u">api.probe42.in · retrieved 24 Apr 2026</span></li>
   <li id="src-42"><strong>K.P.R. Mill Ltd FY25 Annual Report (listed disclosures)</strong> &mdash; TOI, segmental breakup, banking-relationship list, promoter shareholding, workforce size, captive power. BSE scrip 532889 / NSE KPRMILL. <span class="u">bseindia.com/bseplus/AnnualReport/532889/87912532889.pdf</span></li>
   <li id="src-43"><strong>CARE Ratings press release &mdash; K.P.R. Mill Limited &amp; KPR Sugar &amp; Apparels</strong> &mdash; LT rating CARE AA+ (Mill) / CARE AA- (Sugar), last action FY25. <span class="u">careedge.in / press-release / kpr-mill-rating-action-2025</span></li>
+  <li id="src-58"><strong>CARE Ratings press release &mdash; KPR Sugar Mill Limited (KPRS), 10 Oct 2025</strong> &mdash; describes 10,000 TCD cane crush + 250 KLPD ethanol (expanded from 130 KLPD by FY24) + 40 MW multi-fuel cogen at Almel village, Bijapur Dist, Karnataka. KPRSAL greenfield: 10,000 TCD + 220 KLPD ethanol + 41 MW cogen at Chinamgeri Village, Afzalpur Taluk, Kalaburagi Dist, Karnataka, project cost Rs 741.68 Cr (per pre-feasibility report). <span class="u">careratings.com/upload/CompanyFiles/PR/202510141045_K.P.R._Sugar_Mill_Limited.pdf &middot; environmentclearance.nic.in (KPRSAL pre-feasibility)</span></li>
+  <li id="src-59"><strong>K.P.R. Mill &mdash; Director / Promoter disclosures</strong> &mdash; Goodreturns Director Report; promoter trio K.P. Ramasamy, K.P.D. Sigamani, P. Nataraj each at 19.29% individual stake; K.P. Ramasamy re-appointed Executive Chairman for 5-year term via Postal Ballot 21.04.2022; total board strength 12 directors. <span class="u">goodreturns.in/company/kpr-mill/director-report.html &middot; CARE Ratings credit rationale Oct 2024</span></li>
+  <li id="src-60"><strong>The Textile Magazine</strong> &mdash; &ldquo;KPR Mill maintains growth momentum in FY25, strengthens vertically integrated operations &amp; eyes expansion&rdquo;. Garment division Rs 2,665 Cr (vs Rs 2,571 Cr FY24); 173.63 mn pieces (vs 151.95 mn). Captive renewable: 61.92 MW wind + 90 MW co-gen + 38 MW rooftop solar. <span class="u">indiantextilemagazine.in/kpr-mill-maintains-growth-momentum-in-fy25-strengthens-vertically-integrated-operations-eyes-expansion/</span></li>
+  <li id="src-61"><strong>Indian Kanoon &amp; NCLT case-search</strong> &mdash; public-domain query against K.P.R. Mill / KPR Sugar &amp; Apparels for last 24 months returns no material commercial litigation or NCLT proceedings as of 24 Apr 2026. <span class="u">indiankanoon.org &middot; nclt.gov.in/case-number-wise</span></li>
+  <li id="src-62"><strong>MarketsMojo / Trendlyne &mdash; KPR Mill Q2/Q3 FY26 result analysis</strong> &mdash; profit growth masking margin pressure amid global cotton input cost volatility; analyst valuation observations. <span class="u">marketsmojo.com/news/result-analysis/k-p-r-mill-q2-fy26 &middot; trendlyne.com/fundamentals/financials/764/KPRMILL/kpr-mill-ltd/</span></li>
   </ol>
   </div>
 
@@ -891,6 +979,7 @@ def build():
         section_consolidated(),
         section_retail(),
         _retail_supplemental(),
+        section_diligence(),
         section_playbook(),
         section_sources(),
         FOOT("Verification: wc -l in the 1,000-1,600 band; proper-noun cipher clean (the wholesale bank is rendered as IBank throughout); tag balance clean; every numeric claim carries an evidence tag resolving in Section 12."),

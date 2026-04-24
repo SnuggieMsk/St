@@ -60,6 +60,37 @@ def build():
     cities = json.loads((WORK / "cities_agg.json").read_text())
     companies = json.loads((WORK / "companies_geo.json").read_text())
 
+    # Merge Tier-1 extras (companies added outside the TN-499 sheet)
+    extras_path = WORK / "tier1_extras.json"
+    if extras_path.exists():
+        extras = json.loads(extras_path.read_text())
+        for e in extras:
+            # Add to cities aggregate
+            city = e["city_norm"]
+            existing = next((c for c in cities if c["city"] == city), None)
+            ex_co = {
+                "cin": e["cin"], "company": e["company"], "industry": e["industry"],
+                "bucket": e["bucket"], "rating": e["rating"], "ibank_in": e.get("ibank_in", False),
+                "tier1": True, "dossier": e.get("dossier"), "toi": e.get("toi", ""),
+            }
+            if existing:
+                existing["count"] += 1
+                existing["ig"] += 1 if e["bucket"] == "IG" else 0
+                existing["hy"] += 1 if e["bucket"] == "HY" else 0
+                existing["pig"] += 1 if e["bucket"] == "POTENTIAL_IG" else 0
+                existing["companies"].insert(0, ex_co)
+            else:
+                cities.append({
+                    "city": city, "lat": e["lat"], "lng": e["lng"],
+                    "count": 1,
+                    "ig": 1 if e["bucket"] == "IG" else 0,
+                    "hy": 1 if e["bucket"] == "HY" else 0,
+                    "pig": 1 if e["bucket"] == "POTENTIAL_IG" else 0,
+                    "ibank_in": 1 if e.get("ibank_in") else 0,
+                    "companies": [ex_co],
+                })
+            companies.append({**e, "_score": float(e.get("score", "0") or "0")})
+
     # ---- HTML ----
     o = []
     a = o.append
