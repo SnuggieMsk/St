@@ -200,6 +200,11 @@ def build():
         "U70109TN2021PLC143683": "dalmia-green-vision-dossier.html",
         "U85300TN2017PTC114099": "neuberg-diagnostics-dossier.html",
         "U45101TN2023PTC160276": "tvs-vehicle-mobility-dossier.html",
+        "U74999TN2020FTC136376": "tata-electronics-dossier.html",
+        "U29244TN2000FTC046255": "caterpillar-india-dossier.html",
+        "U34200TN2007PTC072876": "daimler-india-dossier.html",
+        "U32309TN2019PTC133300": "salcomp-india-dossier.html",
+        "U35999TN1962PTC004928": "brakes-india-dossier.html",
     }
     # CIN → city_norm / region / mnc mapping (from geocoder output)
     import json as _json
