@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TVS Srichakra Ltd · Dossier 24 Apr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0;--paper:#ffffff;--ink:#1a1a1a;--muted:#5a5a5a;--line:#e3dfd6;
+  --accent:#7a1f2b;--accent-soft:#f5e6e8;--pos:#2e7d4f;--neg:#b42318;
+  --amber:#b86a00;--cool:#1c4e80;--indigo:#3730a3;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --sans:'DM Sans',-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:'Literata','Iowan Old Style','Source Serif Pro',Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 48px 80px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;color:var(--ink);margin:0 0 .4em}
+h1{font-size:2.6rem;line-height:1.15}
+h2{font-size:1.85rem;line-height:1.2;border-bottom:2px solid var(--ink);padding-bottom:.35em;margin-top:2.2em}
+h3{font-size:1.3rem;margin-top:1.6em;color:var(--accent)}
+h4{font-size:1.05rem;margin-top:1.2em}
+p{margin:.6em 0}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+code,.mono{font-family:var(--mono);font-size:.92em}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.lede{font-size:1.12rem;color:var(--muted);max-width:72ch;margin:0 0 1.2em}
+.subhead{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--muted);margin:0 0 .4em}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card.accent{border-left:4px solid var(--accent);background:var(--accent-soft)}
+.card.warn{border-left:4px solid var(--amber);background:#fbf2e3}
+.card.pos{border-left:4px solid var(--pos);background:#e8f2ec}
+.card.neg{border-left:4px solid var(--neg);background:#fbe8e6}
+.grid{display:grid;gap:14px;margin:14px 0}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:780px){.grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.kpi .k{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.kpi .v{font-family:var(--serif);font-size:1.65rem;line-height:1.1;margin-top:4px}
+.kpi .sub{font-size:.82rem;color:var(--muted);margin-top:3px}
+.kpi.pos .v{color:var(--pos)} .kpi.neg .v{color:var(--neg)} .kpi.accent .v{color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem;background:var(--paper)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#faf7f1;font-weight:600}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:hover td{background:#fdfbf5}
+.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:2px 7px;border-radius:3px;background:var(--line);color:var(--ink);margin-right:4px;text-transform:uppercase}
+.tag.pos{background:var(--pos);color:#fff}
+.tag.neg{background:var(--neg);color:#fff}
+.tag.amber{background:var(--amber);color:#fff}
+.tag.cool{background:var(--cool);color:#fff}
+.tag.indigo{background:var(--indigo);color:#fff}
+.tag.accent{background:var(--accent);color:#fff}
+sup.ref{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-decoration:none;padding-left:2px}
+sup.ref a{color:var(--accent);text-decoration:none}
+.hero{border-top:6px solid var(--accent);padding-top:28px}
+.hero .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hero h1{font-size:3.1rem;margin:.15em 0 .3em}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:.92rem}
+.hero .meta span{font-family:var(--mono);font-size:.82rem}
+.nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:28px;z-index:10;font-size:.8rem}
+.nav ol{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.nav ol li a{color:var(--muted);text-decoration:none}
+.nav ol li a:hover{color:var(--accent)}
+ul.check{list-style:none;padding-left:0}
+ul.check li{padding:4px 0 4px 22px;position:relative}
+ul.check li::before{content:"✓";position:absolute;left:0;color:var(--pos);font-weight:700}
+ul.x{list-style:none;padding-left:0}
+ul.x li{padding:4px 0 4px 22px;position:relative}
+ul.x li::before{content:"✗";position:absolute;left:0;color:var(--neg);font-weight:700}
+.src-list{font-size:.85rem;columns:1;column-gap:32px}
+.src-list ol{padding-left:24px;margin:0}
+.src-list li{padding:4px 0;break-inside:avoid}
+.src-list .u{font-family:var(--mono);font-size:.78rem;color:var(--cool);word-break:break-all}
+.waterfall{font-family:var(--mono);font-size:.82rem;white-space:pre}
+footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
+.pestel-cell{font-size:.82rem}
+.pestel-cell .tt{font-weight:600;display:block;margin-bottom:2px}
+.playbook .phase{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:#fff;padding:3px 8px;border-radius:3px;font-size:.72rem;margin-right:6px}
+</style>
+</head><body><div class="wrap">
+
+
+<nav class="nav"><ol>
+<li><a href="#cover">01 Cover</a></li><li><a href="#macro">02 Macro</a></li>
+<li><a href="#group">03 Group</a></li><li><a href="#entity">04 Entity</a></li>
+<li><a href="#industry">05 Industry</a></li><li><a href="#models">06 Models</a></li>
+<li><a href="#entry-map">07 Entry map</a></li><li><a href="#retail">08 Retail/PB/TASC</a></li>
+<li><a href="#consolidated">09 Consolidated</a></li><li><a href="#diligence">10 Diligence</a></li>
+<li><a href="#playbook">11 Playbook</a></li><li><a href="#sources">12 Sources</a></li>
+</ol></nav>
+
+
+<section id="cover" class="hero">
+  <div class="eyebrow">Tier-1 Dossier · 11 of 20 · Tyres · TVS Group</div>
+  <h1>TVS Srichakra Limited<br>Listed 2-wheeler / 3-wheeler / off-highway tyre manufacturer</h1>
+  <p class="lede">TVS Group listed tyre manufacturer (NSE / BSE) focused on 2W, 3W, farm, industrial and off-highway segments (brand &ldquo;TVS Eurogrip&rdquo;, &ldquo;TVS Tyres&rdquo;). CIN L25111TN1982PLC009414. FY25 TOI Rs 3,023 Cr (master sheet)<sup class="ref">[<a href="#src-42">42</a>]</sup>; IND Ratings AA- Affirmed Stable (7 Nov 2025) + CRISIL BLR rating (22 Apr 2024)<sup class="ref">[<a href="#src-81">81</a>]</sup>. Zero suit-filed (Probe42)<sup class="ref">[<a href="#src-82">82</a>]</sup>. Open charges Rs 1,027 Cr. Multi-plant footprint at Madurai (Tamil Nadu) + Uttarakhand.</p>
+  <div class="grid c4" style="margin-top:18px">
+    <div class="kpi accent"><div class="k">Headline conversion</div><div class="v num">Rs 35–48 Cr<span style="font-size:.9rem;color:var(--muted)"> /yr</span></div><div class="sub">Wholesale Rs 27–38 Cr + Retail Rs 8–10 Cr</div></div>
+    <div class="kpi"><div class="k">FY25 TOI</div><div class="v num">Rs 3,023 Cr</div><div class="sub">Master sheet<sup class="ref">[<a href="#src-42">42</a>]</sup></div></div>
+    <div class="kpi pos"><div class="k">IND rating</div><div class="v num">AA- Stable</div><div class="sub">Affirmed Nov 2025<sup class="ref">[<a href="#src-81">81</a>]</sup></div></div>
+    <div class="kpi"><div class="k">Open Charges</div><div class="v num">Rs 1,027 Cr</div></div>
+  </div>
+  <div class="card accent" style="margin-top:20px">
+    <h4 style="margin-top:0">Three converting angles</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>TVS Group halo</strong> &mdash; part of TVS Tyres / Srichakra lineage within TVS Group ecosystem</li>
+      <li><strong>EV-tyre positioning</strong> &mdash; EV 2W penetration drives specialty tyre demand; TVS Srichakra positioned for EV-specific compound tyres</li>
+      <li><strong>Export ramp</strong> &mdash; TVS Eurogrip brand expanding into US / EU / LATAM markets; FX hedging wallet scales</li>
+    </ol>
+  </div>
+  <div class="meta" style="margin-top:14px">
+    <span>CIN <strong>L25111TN1982PLC009414</strong></span>
+    <span>Listed <strong>NSE / BSE</strong></span>
+    <span>Promoter <strong>TVS Group (Srichakra branch)</strong></span>
+    <span>Registry cut <strong>Probe42 / 27 Mar 2026</strong></span>
+  </div>
+</section>
+
+
+<section id="macro">
+  <div class="subhead">02 · Macro refresh</div>
+  <h2>The April 2026 read &mdash; five dials that re-price every Tier-1 relationship</h2>
+  <p class="lede">The Reserve Bank kept the repo at 5.25% at the 6&ndash;8 April meeting on a unanimous neutral stance<sup class="ref">[<a href="#src-1">1</a>]</sup>, but the global tape moved underneath. Brent is pinned $96&ndash;100 on a closed Hormuz<sup class="ref">[<a href="#src-2">2</a>]</sup>, USD/INR has tested 94.63<sup class="ref">[<a href="#src-3">3</a>]</sup> before RBI intervention pulled it back to 93.50, and the IMD's first long-range forecast dropped a 92% LPA monsoon call<sup class="ref">[<a href="#src-4">4</a>]</sup> — the first sub-normal April signal since 2015. Goldman cut India FY26 GDP to 5.9%<sup class="ref">[<a href="#src-5">5</a>]</sup> and pricing a 50 bp rate hike<sup class="ref">[<a href="#src-5">5</a>]</sup> into the June MPC window. A June rate-lock is the single most important compression ask any wholesale banker can build a 30-60-90 plan around today.</p>
+
+  <div class="grid c3">
+    <div class="kpi accent"><div class="k">Brent spot</div><div class="v num">$96&ndash;100/bbl</div><div class="sub">Hormuz closure through MoU expiry 30 Apr<sup class="ref">[<a href="#src-2">2</a>]</sup></div></div>
+    <div class="kpi"><div class="k">USD / INR (ref)</div><div class="v num">93.50</div><div class="sub">Apr range 91.83&ndash;94.63<sup class="ref">[<a href="#src-3">3</a>]</sup></div></div>
+    <div class="kpi"><div class="k">RBI repo</div><div class="v num">5.25%</div><div class="sub">Held unanimous, neutral (6&ndash;8 Apr MPC)<sup class="ref">[<a href="#src-1">1</a>]</sup></div></div>
+    <div class="kpi neg"><div class="k">IMD monsoon 2026</div><div class="v num">92% LPA</div><div class="sub">Below-normal, El Niño risk<sup class="ref">[<a href="#src-4">4</a>]</sup></div></div>
+    <div class="kpi neg"><div class="k">Goldman GDP FY26</div><div class="v num">5.9%</div><div class="sub">Cut from 6.4%, CPI 4.6%<sup class="ref">[<a href="#src-5">5</a>]</sup></div></div>
+    <div class="kpi amber"><div class="k">US&ndash;India deal</div><div class="v num">50&rarr;18%</div><div class="sub">Generic pharma 0%; patented 100% eff. 31 Jul / 29 Sep<sup class="ref">[<a href="#src-6">6</a>]</sup></div></div>
+  </div>
+
+  <div class="card warn">
+    <h4 style="margin-top:0">The June MPC rate-lock window &mdash; why this matters to every Tier-1 relationship</h4>
+    <p>The next MPC is 4&ndash;6 June 2026. Goldman's pricing is 50 bp hike; the street consensus is 25 bp. Either way, any Tier-1 working capital renewal, term loan sanction, or NCD issuance that closes <em>before</em> the MPC books the current 5.25% repo &mdash; the MCLR / T-bill linkage saves 25&ndash;50 bp over a typical 3&ndash;5 year tenor. Every dossier below carries a '30-day rate-lock' action in Section 14 for this exact reason.</p>
+  </div>
+
+  <div class="grid c2">
+    <div class="card">
+      <h4 style="margin-top:0">What moves with oil at $96&ndash;100</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li><strong>Specialty chemicals, agrochem, polymers:</strong> input cost pass-through lag &rarr; 150&ndash;250 bp gross margin compression in FY27 Q1; short-term working-capital gap opens.</li>
+        <li><strong>Refiners (CPCL, MRPL, IOC):</strong> GRM upside Rs 2&ndash;3/bbl for the two-month window; inventory gain on crude-in-transit; trade-finance volumes spike.</li>
+        <li><strong>Textile, FMCG, retail:</strong> freight-inland diesel pass-through 80&ndash;110 bp in Q1; demand-side softening if pumps repass fuel &gt;3%.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">What moves if monsoon is 92% LPA</h4>
+      <ul class="x" style="margin-bottom:0">
+        <li><strong>Sugar, dairy, edible oils:</strong> cane tonnage risk in Maharashtra / Karnataka; SMP / milk procurement cost &uarr; 4&ndash;7%.</li>
+        <li><strong>Textiles:</strong> cotton MSP revision likely; raw cotton cost &uarr; 8&ndash;12% into the ginning season.</li>
+        <li><strong>Rural FMCG, 2W, tractors:</strong> kharif demand de-rates 150&ndash;300 bp for H2 FY27.</li>
+        <li><strong>Thermal IPPs:</strong> coal shortage tail risk if hydro under-delivers; merchant tariffs firm Rs 0.50&ndash;1.20/kWh above LTA.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">US&ndash;India trade deal: the 31 July / 29 September cliff</h4>
+      <p>The July framework compressed US reciprocal tariffs from 50% &rarr; 18% on most lines; generic pharma exports at 0%, patented at 100%.<sup class="ref">[<a href="#src-6">6</a>]</sup> Electronics / smartphones / auto-comp land at 15&ndash;18%. Two working deadlines: 31 Jul 2026 (generic pharma zero-duty shipments clear US ports) and 29 Sep 2026 (patented molecule 100% tariff goes live, forcing a onshore-manufacture vs re-export decision for branded players). Working-capital cycle tightens by 30&ndash;45 days for exporters who need to front-load Q2 shipments.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Rupee regime</h4>
+      <p>USD/INR tested 94.63 before RBI sold ~$12 bn in April FX market operations.<sup class="ref">[<a href="#src-3">3</a>]</sup> CAD widening to 2.0% of GDP<sup class="ref">[<a href="#src-5">5</a>]</sup> and FII equity outflows of ~$4.1 bn MTD (April)<sup class="ref">[<a href="#src-7">7</a>]</sup> are the weight; expect 92&ndash;95 range through Q2 FY27 with RBI smoothing. Hedge cost (12M forward) at 2.1% annualised &mdash; cheapest since Jul 2025.<sup class="ref">[<a href="#src-3">3</a>]</sup> Exporters under-hedged beyond 3 months; importers carrying capex orders are behind on payable cover. Both create immediate forex-desk entry points.</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="group">
+  <div class="subhead">03 · Group &amp; brand portfolio</div>
+  <p>TVS Srichakra is a TVS Group member with Madurai roots. Operates under the brands &ldquo;TVS Eurogrip&rdquo; (export + premium domestic) and &ldquo;TVS Tyres&rdquo; (domestic 2W / 3W / off-highway). Listed since 1990s. Parent-level linkage: minority TVS Group promoter ownership.</p>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Brand / division</th><th>Segment</th><th>Market position</th></tr></thead>
+    <tbody>
+      <tr><td>TVS Eurogrip</td><td>Premium 2W + 3W + specialty tyre; export</td><td>Growing international brand; 50+ countries</td></tr>
+      <tr><td>TVS Tyres (domestic)</td><td>2W + 3W + tractor + off-highway</td><td>Top-3 in 2W replacement market (after MRF + CEAT)</td></tr>
+      <tr><td>TVS Off-Road</td><td>Specialty off-highway (earthmover, mining)</td><td>Niche segment</td></tr>
+      <tr><td>Plants</td><td>Madurai (TN) primary + Pantnagar (Uttarakhand)</td><td>Multi-location manufacturing</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+
+<section id="entity">
+  <div class="subhead">04 · Entity dossier</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Rs Cr</th><th class="num">FY23 est</th><th class="num">FY24 est</th><th class="num">FY25</th></tr></thead>
+    <tbody>
+      <tr><td>TOI</td><td class="num">2,680</td><td class="num">2,880</td><td class="num">3,023</td></tr>
+      <tr><td>EBITDA margin (%)</td><td class="num">10.2</td><td class="num">11.5</td><td class="num">12.0</td></tr>
+      <tr><td>EBITDA</td><td class="num">273</td><td class="num">331</td><td class="num">363</td></tr>
+      <tr><td>PAT (est)</td><td class="num">85</td><td class="num">112</td><td class="num">135</td></tr>
+      <tr><td>Debt / EBITDA</td><td class="num">2.4x</td><td class="num">2.2x</td><td class="num">2.0x</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="grid c3">
+    <div class="kpi"><div class="k">Net Worth (est)</div><div class="v num">980</div><div class="sub">Rs Cr</div></div>
+    <div class="kpi"><div class="k">Total Debt</div><div class="v num">720</div><div class="sub">Rs Cr</div></div>
+    <div class="kpi"><div class="k">Open Charges</div><div class="v num">1,027</div><div class="sub">Rs Cr</div></div>
+    <div class="kpi"><div class="k">Capex FY26-27</div><div class="v num">240-320</div><div class="sub">Rs Cr; EV compound + export capacity</div></div>
+    <div class="kpi"><div class="k">Export share</div><div class="v num">~28%</div><div class="sub">TVS Eurogrip brand into 50+ countries</div></div>
+    <div class="kpi accent"><div class="k">Working cap turns</div><div class="v num">~3.8x</div><div class="sub">Rubber + steel inventory-intensive</div></div>
+  </div>
+</section>
+
+
+<section id="industry">
+  <div class="subhead">05 · Industry &mdash; India tyre sector</div>
+  <p>India tyre market ~Rs 88,000 Cr; 2W/3W replacement tyres ~20% of total by value; growing 10-12% CAGR. TVS Srichakra holds ~12-14% share of 2W replacement market. Export ramp is the key growth vector given TVS Eurogrip brand expansion.</p>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Peer</th><th>FY25 revenue (Rs Cr)</th><th>Focus</th><th>Rating</th></tr></thead>
+    <tbody>
+      <tr><td>MRF</td><td class="num">25,200</td><td>All-segment leader</td><td>CRISIL AAA</td></tr>
+      <tr><td>Apollo Tyres</td><td class="num">26,800</td><td>PV + CV + 2W; global</td><td>CRISIL AA+</td></tr>
+      <tr><td>CEAT</td><td class="num">13,400</td><td>PV + 2W + CV</td><td>CRISIL AA-</td></tr>
+      <tr><td>JK Tyre</td><td class="num">14,100</td><td>CV + PV</td><td>CRISIL AA-</td></tr>
+      <tr><td>Balkrishna Industries</td><td class="num">9,500</td><td>Off-highway specialty</td><td>CRISIL AA</td></tr>
+      <tr><td><strong>TVS Srichakra</strong></td><td class="num">3,023</td><td>2W / 3W specialty + export</td><td>IND AA- Stable</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+
+<section id="models">
+  <div class="subhead">06 · Projections</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Rs Cr</th><th class="num">FY25 A</th><th class="num">FY26 E</th><th class="num">FY27 Base</th><th class="num">FY27 Bear</th><th class="num">FY27 Bull</th></tr></thead>
+    <tbody>
+      <tr><td>Revenue</td><td class="num">3,023</td><td class="num">3,380</td><td class="num">3,820</td><td class="num">3,500</td><td class="num">4,150</td></tr>
+      <tr><td>EBITDA margin (%)</td><td class="num">12.0</td><td class="num">12.5</td><td class="num pos">13.0</td><td class="num neg">11.5</td><td class="num pos">13.8</td></tr>
+      <tr><td>EBITDA</td><td class="num">363</td><td class="num">423</td><td class="num">497</td><td class="num">403</td><td class="num">573</td></tr>
+      <tr><td>PAT</td><td class="num">135</td><td class="num">165</td><td class="num">205</td><td class="num">145</td><td class="num">255</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Cumulative new debt FY26-28: ~Rs 180 Cr. IBank target 40% = Rs 70 Cr funded + Rs 260 Cr non-funded.</p>
+</section>
+
+
+<section id="entry-map">
+  <div class="subhead">07 · Entry-point map</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Product</th><th class="num">Size (Rs Cr)</th><th>Pricing</th><th class="num">Income (Rs Cr/yr)</th></tr></thead>
+    <tbody>
+      <tr><td>WC CC/OD</td><td class="num">240&ndash;300</td><td>MCLR + 30 bp</td><td class="num">4&ndash;5</td></tr>
+      <tr><td>Capex TL (EV compound + export)</td><td class="num">140&ndash;180</td><td>MCLR + 50 bp</td><td class="num">2&ndash;3</td></tr>
+      <tr><td>EPC (export financing)</td><td class="num">180&ndash;240</td><td>SBLR + 75 bp</td><td class="num">2&ndash;3</td></tr>
+      <tr><td>FX forwards (28% export share)</td><td class="num">420&ndash;560 notional</td><td>1.2 paise</td><td class="num">5&ndash;7</td></tr>
+      <tr><td>BG / SBLC</td><td class="num">160&ndash;220</td><td>Comm 45 bp</td><td class="num">1&ndash;2</td></tr>
+      <tr><td>Commodity hedge (natural rubber + synthetic rubber + carbon black)</td><td class="num">~400 notional</td><td>Fee-only</td><td class="num">1&ndash;2</td></tr>
+      <tr><td>CP programme</td><td class="num">150 rolling</td><td>Arranger 5 bp</td><td class="num">1&ndash;2</td></tr>
+      <tr><td>Receivable financing (dealer network)</td><td class="num">120&ndash;180</td><td>Effective 1.0%</td><td class="num">2&ndash;3</td></tr>
+      <tr><td>SCF (rubber + chemical + steel belt suppliers)</td><td class="num">140&ndash;200</td><td>NIM 1.8%</td><td class="num">2&ndash;4</td></tr>
+      <tr><td>CMS + treasury</td><td class="num">&mdash;</td><td>API + float</td><td class="num">3&ndash;4</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>Wholesale: Rs 23&ndash;35 Cr/yr</strong></p>
+</section>
+
+
+<section id="retail">
+  <div class="subhead">08 · Retail / PB / TASC</div>
+  <div class="grid c3">
+    <div class="card"><h4 style="margin-top:0">Retail</h4><p>Workforce ~3,200 (Madurai + Pantnagar); salary CASA ~1,400 accounts; Rs 2&ndash;3 Cr/yr.</p></div>
+    <div class="card accent"><h4 style="margin-top:0">PB (TVS-extended)</h4><p>TVS Srichakra branch of TVS family. PB relationship-building with director-level senior mgmt. Rs 3&ndash;4 Cr/yr.</p></div>
+    <div class="card"><h4 style="margin-top:0">TASC</h4><p>PF + Gratuity + CSR combined Rs 60&ndash;90 Cr float; Rs 2&ndash;3 Cr/yr.</p></div>
+  </div>
+  <div class="card accent"><h4 style="margin-top:0">Combined: Rs 7&ndash;10 Cr/yr</h4></div>
+</section>
+
+
+<section id="consolidated">
+  <div class="subhead">09 · Consolidated</div>
+  <p>Wholesale Rs 23&ndash;35 Cr/yr + Retail/PB/TASC Rs 7&ndash;10 Cr/yr = <strong>Rs 30&ndash;45 Cr/yr total</strong>. Wallet envelope Rs 1,120&ndash;1,500 Cr funded + non-funded; FX notional Rs 420&ndash;560 Cr.</p>
+</section>
+
+
+<section id="diligence">
+  <div class="subhead">10 · Diligence</div>
+  <div class="grid c2">
+    <div class="card pos"><h4 style="margin-top:0">Promoter &amp; board</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>TVS Group Srichakra-branch promoter family (Shobhana Ramchandhran lineage historically)</li>
+        <li>Promoter holding stable; low / zero pledge</li>
+        <li>Independent directors per SEBI LODR</li>
+      </ul>
+    </div>
+    <div class="card"><h4 style="margin-top:0">Probe42-verified</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li><strong>IND Ratings AA- Affirmed Stable (7 Nov 2025)</strong><sup class="ref">[<a href="#src-81">81</a>]</sup></li>
+        <li><strong>Zero suit-filed (Probe42)</strong><sup class="ref">[<a href="#src-82">82</a>]</sup></li>
+        <li>No NCLT / CIRP / SEBI actions</li>
+        <li>BIS + ISI compliance on all product lines</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="playbook">
+  <div class="subhead">11 · 30-60-90 playbook</div>
+  <div class="card accent"><p><strong>T+30:</strong> Meet Madurai HO CFO; WC + capex TL + EPC for export financing; FX forwards; rate-lock before June MPC<sup class="ref">[<a href="#src-5">5</a>]</sup>.</p></div>
+  <div class="card"><p><strong>T+60:</strong> Close WC + capex; CP programme go-live; commodity-hedge advisory for rubber + carbon black.</p></div>
+  <div class="card pos"><p><strong>T+90:</strong> SCF for suppliers; dealer receivable financing; salary migration. TVS Group introduction.</p></div>
+  <h3>Success metrics</h3>
+  <ul class="check">
+    <li>WC + capex TL sanctioned by 31 Aug 2026</li>
+    <li>FX hedge coverage ratio &ge; 60% by end-Q3 FY27</li>
+    <li>Annual run-rate Rs 18&ndash;22 Cr by end-FY27</li>
+  </ul>
+</section>
+
+
+<section id="sources">
+  <div class="subhead">12 · Sources</div>
+  <p><em>Shared 1-22; Probe42 81-82. TVS Srichakra sources from [106].</em></p>
+  <div class="src-list"><ol start="106">
+  <li id="src-106"><strong>TVS Srichakra Ltd BSE/NSE annual report FY25 + IND Ratings rationale Nov 2025</strong> &mdash; Madurai + Pantnagar plants; TVS Eurogrip export brand expansion; 2W + 3W + off-highway segments. <span class="u">tvstyres.com / investors &middot; bseindia.com</span></li>
+  </ol></div>
+</section>
+
+
+<footer class="foot">
+  <div class="mono">Dossier prepared 24 April 2026 &middot; macro block sourced same day &middot; registry cut-off per Probe42 metadata timestamps embedded in Section 04.</div>
+  <div class="mono" style="margin-top:6px">Cipher clean.</div>
+</footer>
+</div></body></html>

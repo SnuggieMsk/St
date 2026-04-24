@@ -71,6 +71,8 @@ def build():
         "L28991TZ1986PLC001816": "craftsman-automation-dossier.html",
         "L51100TN2017PLC118316": "sundaram-clayton-dossier.html",
         "L35921TN1960PLC004175": "wheels-india-dossier.html",
+        "U15200TZ2014PLC020554": "milky-mist-dossier.html",
+        "L25111TN1982PLC009414": "tvs-srichakra-dossier.html",
     }
     # Patch dossier links + tier1 flags inside each city's companies list
     for city in cities:
