@@ -111,6 +111,17 @@ def build():
     push("</div>")
     push("</section>")
 
+    # Cross-links bar
+    _btn = ("padding:8px 14px;border:1px solid var(--accent);border-radius:4px;"
+            "color:var(--accent);text-decoration:none")
+    push("<div style='display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;font-family:var(--mono);font-size:.84rem'>")
+    push(f"<a href='index.html' style='{_btn}'>← Back to index</a>")
+    push(f"<a href='india-map.html' style='{_btn}'>India map (geographic view) →</a>")
+    push(f"<a href='foxconn-hon-hai-dossier.html' style='{_btn}'>Foxconn dossier →</a>")
+    push(f"<a href='kpr-group-dossier.html' style='{_btn}'>KPR Group dossier →</a>")
+    push(f"<a href='rkm-powergen-dossier.html' style='{_btn}'>R.K.M Powergen dossier →</a>")
+    push("</div>")
+
     # Headline KPIs
     push("<div class='grid c4' style='margin-top:28px'>")
     push(f"<div class='kpi accent'><div class='k'>Total qualified</div><div class='v num'>{total}</div><div class='sub'>of 991 unmapped names in sheet</div></div>")
@@ -164,11 +175,23 @@ def build():
 
     # Identify Tier-1 names for tagging
     with (WORK / "tier1_candidates.csv").open() as f:
-        tier1_cins = {r["CIN"] for r in csv.DictReader(f)[:20]} if False else set()
-    # re-read with proper slicing
-    with (WORK / "tier1_candidates.csv").open() as f:
         t1 = list(csv.DictReader(f))[:20]
         tier1_cins = {r["CIN"] for r in t1}
+
+    # CIN → dossier mapping for cross-link
+    DOSSIER_BY_CIN = {
+        "U32204TN2015FTC165627": "foxconn-hon-hai-dossier.html",
+        "L17111TZ2003PLC010518": "kpr-group-dossier.html",
+        "U18109TZ2020PLC034666": "kpr-group-dossier.html",
+        "U40101TN2004PTC054931": "rkm-powergen-dossier.html",
+    }
+    # CIN → city_norm mapping (from geocoder output) for india-map deep-link
+    import json as _json
+    geo_path = WORK / "companies_geo.json"
+    CITY_BY_CIN = {}
+    if geo_path.exists():
+        for c in _json.loads(geo_path.read_text()):
+            CITY_BY_CIN[c["cin"]] = c["city_norm"]
 
     # Per-industry collapsible sections
     for ind, xs in sorted(by_ind.items(), key=lambda kv: -len(kv[1])):
@@ -179,11 +202,17 @@ def build():
         push("<thead><tr><th>Company</th><th>Bucket</th><th>Rating (LT)</th><th>Agency</th>"
              "<th class='num'>TOI (Cr)</th><th class='num'>Debt (Cr)</th>"
              "<th class='num'>NW (Cr)</th><th class='num'>Debt/EBITDA</th>"
-             "<th>IBank</th><th>State</th></tr></thead><tbody>")
+             "<th>IBank</th><th>City</th><th>Open</th></tr></thead><tbody>")
         for r in xs:
             name = cipher(r.get("Company") or "")
             cin = r.get("CIN") or ""
             t1_flag = " <span class='tag accent' style='font-size:.62rem'>T1</span>" if cin in tier1_cins else ""
+            dossier = DOSSIER_BY_CIN.get(cin)
+            if dossier:
+                name_cell = (f"<a href='{dossier}' style='color:var(--accent);text-decoration:none;font-weight:600' "
+                             f"title='Open comprehensive dossier'>{html.escape(name)} ↗</a>{t1_flag}")
+            else:
+                name_cell = f"{html.escape(name)}{t1_flag}"
             bucket = r["_bucket"]
             bucket_tag = BUCKET_TAG[bucket]
             bucket_label_short = {"IG":"IG","HY":"HY","POTENTIAL_IG":"P·IG"}[bucket]
@@ -196,9 +225,16 @@ def build():
             is_ibk = str(r.get("_ibank_rel")).lower() == "true"
             ibk_cell = (f"<span class='hrt y'></span><span class='ibk y'>IBank-IN</span>"
                         if is_ibk else f"<span class='hrt n'></span><span class='ibk'>—</span>")
-            state = html.escape(r.get("State") or "")
+            city_norm = CITY_BY_CIN.get(cin, "")
+            from urllib.parse import quote_plus
+            map_link = (f"<a href='india-map.html?city={quote_plus(city_norm)}' "
+                        f"class='mono' style='font-size:.7rem;color:var(--cool);text-decoration:none' "
+                        f"title='Show on India map'>{html.escape(city_norm.title())} ↗</a>"
+                        if city_norm else "—")
+            dossier_link = (f"<a href='{dossier}' class='mono' style='font-size:.72rem;color:var(--accent);text-decoration:none'>dossier ↗</a>"
+                            if dossier else "<span class='mono' style='font-size:.7rem;color:var(--muted)'>—</span>")
             push(f"<tr class='row'>"
-                 f"<td><div class='bname'>{html.escape(name)}{t1_flag}</div>"
+                 f"<td><div class='bname'>{name_cell}</div>"
                  f"<div class='bcin'>{html.escape(cin)}</div></td>"
                  f"<td><span class='tag {bucket_tag}'>{bucket_label_short}</span></td>"
                  f"<td class='mono'>{html.escape(rating)}</td>"
@@ -208,7 +244,8 @@ def build():
                  f"<td class='num'>{nw}</td>"
                  f"<td class='num'>{d_e}</td>"
                  f"<td>{ibk_cell}</td>"
-                 f"<td>{state}</td></tr>")
+                 f"<td>{map_link}</td>"
+                 f"<td>{dossier_link}</td></tr>")
         push("</tbody></table></div></details>")
 
     # Methodology + caveats
