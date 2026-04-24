@@ -60,6 +60,22 @@ def build():
     cities = json.loads((WORK / "cities_agg.json").read_text())
     companies = json.loads((WORK / "companies_geo.json").read_text())
 
+    # Wire dossier links for in-universe Tier-1 names
+    DOSSIER_BY_CIN = {
+        "U32204TN2015FTC165627": "foxconn-hon-hai-dossier.html",
+        "L17111TZ2003PLC010518": "kpr-group-dossier.html",
+        "U18109TZ2020PLC034666": "kpr-group-dossier.html",
+        "U40101TN2004PTC054931": "rkm-powergen-dossier.html",
+        "U85110TN2020PLC135839": "apollo-healthco-dossier.html",
+    }
+    # Patch dossier links + tier1 flags inside each city's companies list
+    for city in cities:
+        for co in city.get("companies", []):
+            cin = co.get("cin", "")
+            if cin in DOSSIER_BY_CIN:
+                co["dossier"] = DOSSIER_BY_CIN[cin]
+                co["tier1"] = True
+
     # Merge Tier-1 extras (companies added outside the TN-499 sheet)
     extras_path = WORK / "tier1_extras.json"
     if extras_path.exists():

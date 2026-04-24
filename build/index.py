@@ -49,8 +49,8 @@ def build():
     a("<span>Universe size <strong>499 prospects</strong></span>")
     a("<span>Industry clusters <strong>9</strong></span>")
     a("<span>Geographic clusters <strong>39 cities (TN)</strong></span>")
-    a("<span>Tier-1 dossiers ready <strong>4 of 20</strong></span>")
-    a("<span>Conversion envelope (4 pilots) <strong>Rs 403&ndash;500 Cr / yr</strong></span>")
+    a("<span>Tier-1 dossiers ready <strong>5 of 20</strong></span>")
+    a("<span>Conversion envelope (5 pilots) <strong>Rs 521&ndash;645 Cr / yr</strong></span>")
     a("</div>")
     a("</section>")
 
@@ -81,7 +81,7 @@ def build():
     a("</div>")
 
     # Tier-1 dossiers
-    a("<h2 id='dossiers'>Tier-1 pilot dossiers (4 of 20)</h2>")
+    a("<h2 id='dossiers'>Tier-1 pilot dossiers (5 of 20)</h2>")
     a("<p class='lede'>Each dossier is a self-contained, single-file HTML artifact &mdash; macro/PESTEL/industry blocks shared across the series, then deep-dive into the named entity. Every numeric claim references a numbered source resolving in Section 12. The wholesale bank is consistently rendered as <code>IBank</code> per cipher rules.</p>")
 
     a("<div class='subtype-grid'>")
@@ -111,7 +111,14 @@ def build():
     a("<span class='nctype'>Pilot 04 · Bulk-liquid storage · Greenfield / out-of-TN</span>")
     a("<h3>IMC Limited<br>India's largest independent bulk-liquid terminal</h3>")
     a("<p>Kolkata HO; 14-port national footprint (incl. Chennai + Ennore); founded 1935 as Indian Molasses Co. FY24 TOI Rs 789 Cr (consolidated) at <strong>37% PBILDT</strong> and <strong>negative net debt</strong>. Pothen-family 89.81% promoter holding; no material litigation; 90-year operating history. Capex pipeline Rs 2,155 Cr (Rs 1,480 Cr debt) for Kandla + Pipavav + aviation tanker SPVs &mdash; sanction-eligible today.</p>")
-    a("<span class='ncmeta'>1,023 lines · Rs 58&ndash;74 Cr/yr conversion →</span>")
+    a("<span class='ncmeta'>1,067 lines · Rs 58&ndash;74 Cr/yr conversion →</span>")
+    a("</a>")
+
+    a("<a class='navcard' href='apollo-healthco-dossier.html'>")
+    a("<span class='nctype'>Pilot 05 · Retail pharma + digital health · Capital-markets event</span>")
+    a("<h3>Apollo HealthCo Limited<br>India's largest omni-channel pharmacy</h3>")
+    a("<p>Apollo Hospitals pharmacy-distribution + Apollo 24|7 digital-health vehicle. FY25 TOI Rs 9,093 Cr (+16% YoY); Q3 FY25 first quarterly profit Rs 32 Cr. CRISIL <strong>A1+</strong>. Composite scheme of arrangement + Keimed amalgamation + Advent International Rs 2,475 Cr infusion targeting <strong>Rs 25,000 Cr FY27 revenue</strong>; standalone listing expected FY27. Transition-TL + IPO BRLM mandate window is the NCLT-timed arbitrage.</p>")
+    a("<span class='ncmeta'>1,004 lines · Rs 118&ndash;145 Cr/yr conversion →</span>")
     a("</a>")
     a("</div>")
 
