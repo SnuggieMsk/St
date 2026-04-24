@@ -201,11 +201,15 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. CPCL sources from [109].</em></p>
-  <div class="src-list"><ol start="109">
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
+  <ol start="109">
   <li id="src-109"><strong>CPCL annual reports + BSE / NSE quarterly filings + IOC parent disclosures + MoPNG regulations</strong> &mdash; Manali 10.5 MMTPA + Cauvery 1 MMTPA; IOC 51.9% parent; PSU structure. <span class="u">cpcl.co.in &middot; bseindia.com/stock-share-price/chennai-petroleum-corporation-ltd/CHENNPETRO/500110/</span></li>
   </ol></div>
 </section>

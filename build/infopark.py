@@ -203,11 +203,15 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Infopark Properties sources from [112].</em></p>
-  <div class="src-list"><ol start="112">
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
+  <ol start="112">
   <li id="src-112"><strong>CARE Ratings credit rationale Jul 2025 + sector commercial-RE reports (Anarock / JLL / CBRE)</strong> &mdash; commercial IT-park SPV; AA- Stable rating; tenant mix typical of Chennai IT corridor. <span class="u">careedge.in</span></li>
   </ol></div>
 </section>

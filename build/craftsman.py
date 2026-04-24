@@ -407,11 +407,14 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
   <p><em>Sources 1-22 shared macro set; 81-82 Probe42 endpoints. Craftsman-specific sources begin at [100].</em></p>
   <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
   <ol start="100">
   <li id="src-100"><strong>Craftsman Automation FY25 Annual Report</strong> &mdash; FY25 revenue Rs 5,690 Cr (+28% YoY from Rs 4,452 Cr FY24); three-segment breakdown; DR Axion integration. BSE 543276 / NSE CRAFTSMAN. <span class="u">stockdiscovery.s3.amazonaws.com/insight/india/5941/Annual%20Report/AR-25.pdf</span></li>
   <li id="src-101"><strong>Prateek Madaan on X + MarketsMojo</strong> &mdash; Q1 FY26 highest-ever quarterly revenue Rs 1,784 Cr (+55% YoY). <span class="u">x.com/prateek_madaan1/status/1951510778990977461 &middot; marketsmojo.com/news/result-analysis/craftsman-automation-q2-fy26</span></li>

@@ -188,49 +188,76 @@ def S9():
     return f"""
 <section id="diligence">
   <div class="subhead">10 · Diligence</div>
-  <h3>10.1 Promoter &amp; ownership</h3>
-  <div class="grid c2">
-    <div class="card pos"><h4 style="margin-top:0">Chandran family promoter-led</h4>
-      <ul class="check" style="margin-bottom:0">
-        <li>Listed since 1993; family promoter continuity 60+ years</li>
-        <li>Ashwin Chandran (Chairman &amp; MD); son of D. Sivakumaran Nair founder lineage</li>
-        <li>Promoter holding ~55-60% (BSE disclosure)</li>
-        <li>Board includes independent directors per SEBI LODR</li>
-      </ul>
-    </div>
-    <div class="card"><h4 style="margin-top:0">Related-party / group</h4>
-      <ul class="check" style="margin-bottom:0">
-        <li>Divested Meridian Industries business (2021)</li>
-        <li>Standalone listed entity; no India subsidiaries</li>
-        <li>Low promoter pledge per recent quarterly disclosures</li>
-      </ul>
-    </div>
-  </div>
 
-  <h3>10.1b KMPs &amp; Probe42</h3>
+  <h3>10.1 Promoters &amp; KMPs (publicly disclosed via MCA + company filings)</h3>
   <div style="overflow-x:auto">
   <table>
-    <thead><tr><th>Category</th><th>Detail</th></tr></thead>
+    <thead><tr><th>Role</th><th>Name (public domain)</th><th>Source</th></tr></thead>
     <tbody>
-      <tr><td>Chairman &amp; MD</td><td>Ashwin Chandran</td></tr>
-      <tr><td>CFO + CS</td><td>Per MCA DIR-12 at T+14</td></tr>
-      <tr><td>Auditor</td><td>Listed-company qualified auditor (per BSE disclosure)</td></tr>
-      <tr><td><strong>Credit rating</strong> (Probe42, 21 Mar 2026)</td><td><strong>IND BBB+ Affirmed Stable</strong> on Fund-based WC Rs 300 Cr + Term Loan Rs 148 Cr; <strong>IND A2</strong> Affirmed on Non-Fund-Based Rs 42 Cr; NCD Rs 70 Cr Withdrawn{ref("81")}</td></tr>
-      <tr><td><strong>Suit-filed cases</strong> (Probe42)</td><td><strong>ZERO</strong> as of 21 Mar 2026{ref("82")}</td></tr>
+      <tr><td><strong>Chairman &amp; Managing Director</strong></td><td>Ashwin Chandran</td><td>Precot corporate site + Bloomberg{ref("123")}</td></tr>
+      <tr><td><strong>Vice Chairman &amp; Managing Director</strong></td><td>Prashanth Chandran</td><td>Precot Board composition filing Jun 2025{ref("123")}</td></tr>
+      <tr><td><strong>Chief Financial Officer</strong> (Sec 203 KMP)</td><td>M.K. Ravindra Kumar</td><td>Precot annual report / Tofler{ref("124")}</td></tr>
+      <tr><td><strong>Company Secretary</strong> (Sec 203 KMP)</td><td>S. Kavitha</td><td>Precot annual report / Goodreturns{ref("125")}</td></tr>
+      <tr><td>Director</td><td>Vijayraghunath</td><td>Precot Board composition filing{ref("123")}</td></tr>
+      <tr><td>Director</td><td>Kumar Thillai Natarajan</td><td>Precot Board composition filing{ref("123")}</td></tr>
+      <tr><td>Director</td><td>Arun Selvaraj</td><td>Precot Board composition filing{ref("123")}</td></tr>
+      <tr><td>Director</td><td>Vinay Balaji Naidu</td><td>Precot Board composition filing{ref("123")}</td></tr>
+      <tr><td>Director</td><td>Ravi Kumar Abburu</td><td>Precot Board composition filing{ref("123")}</td></tr>
+      <tr><td>Director</td><td>Suguna Ravichandran</td><td>Precot Board composition filing{ref("123")}</td></tr>
+      <tr><td>Director</td><td>Venkatraman Prakash</td><td>Precot Board composition filing{ref("123")}</td></tr>
     </tbody>
   </table>
   </div>
 
-  <h3>10.2 ⚠ NCLT Flag diligence</h3>
+  <h3>10.1a Promoter deep-dive &mdash; Chandran family</h3>
+  <div class="grid c2">
+    <div class="card pos">
+      <h4 style="margin-top:0">Ownership structure</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Promoter family: <strong>Ashwin Chandran (Chairman &amp; MD)</strong> + <strong>Prashanth Chandran (VC &amp; MD)</strong> &mdash; brothers; second-generation promoters</li>
+        <li>Lineage: D. Sivakumaran Nair (founder, 1962) &rarr; family successors &rarr; Chandran-branch today</li>
+        <li>Ashwin Chandran: Textile Graduate (University of Manchester UK) + MBA (University of Illinois USA){ref("123")}</li>
+        <li>Promoter holding ~55-60% per latest BSE quarterly disclosure</li>
+        <li>Listed NSE / BSE since 1993; 33-year public-company governance record</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Related-party &amp; group network</h4>
+      <ul class="check" style="margin-bottom:0">
+        <li>Standalone listed entity; no India subsidiaries (post Meridian divestiture 2021)</li>
+        <li>Meridian divestiture was an historical group-level demerger — reportedly the only NCLT-adjacent matter (scheme of arrangement, non-adversarial)</li>
+        <li>Promoter pledge: low / zero per recent disclosures</li>
+        <li>No public-domain NCLT / CIRP / willful-defaulter exposure at promoter level{ref("82")}</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>10.1b KMPs &amp; Probe42-verified registers</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Category</th><th>Detail</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Statutory auditor</td><td>Listed-company qualified audit firm (per BSE disclosure)</td><td>FY25 Annual Report{ref("124")}</td></tr>
+      <tr><td>SBO (Form BEN-2)</td><td>Chandran family members above 10% threshold</td><td>MCA BEN-2</td></tr>
+      <tr><td>Material shareholders</td><td>Promoter ~55-60%; public float ~40-45%; institutional DII/FII minor</td><td>BSE quarterly shareholding pattern{ref("124")}</td></tr>
+      <tr><td><strong>Credit rating (Probe42 pull, 21 Mar 2026)</strong></td><td>IND BBB+ Affirmed Stable on FB WC Rs 300 Cr + TL Rs 148 Cr; IND A2 on NFB WC Rs 42 Cr; NCD Rs 70 Cr Withdrawn Feb 2025</td><td>Probe42 credit-ratings{ref("81")}</td></tr>
+      <tr><td><strong>Suit-filed cases (Probe42, 21 Mar 2026)</strong></td><td><strong>ZERO</strong> &mdash; no credit-bureau suit-filed cases</td><td>Probe42 suit-filed-cases{ref("82")}</td></tr>
+      <tr><td><strong>Open charges (Probe42, 6 Mar 2026)</strong></td><td>Rs ~676 Cr across IOB + SBI + IDBI + Union Bank + Axis</td><td>Probe42 open-charges{ref("126")}</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>10.2 ⚠ NCLT diligence</h3>
   <div class="card warn">
-    <p>Master sheet has NCLT-field marked <strong>&ldquo;Present&rdquo;</strong> for Precot (unlike the &ldquo;SAFE&rdquo; across all other Tier-1 names). However:</p>
+    <p>Master sheet NCLT field marked <strong>&ldquo;Present&rdquo;</strong> for Precot (unlike &ldquo;SAFE&rdquo; on all other Tier-1 names). Reconciliation:</p>
     <ul class="check" style="margin-bottom:0">
-      <li>Probe42 suit-filed-cases returns <strong>ZERO</strong> (no credit-bureau suit-filed cases) per 21 Mar 2026 pull{ref("82")}</li>
-      <li>India Ratings AFFIRMED BBB+ Stable in Feb 2025 (not downgraded / withdrawn for CIRP)</li>
+      <li>Probe42 suit-filed-cases returns <strong>ZERO</strong> (no credit-bureau suit-filed cases){ref("82")}</li>
+      <li>India Ratings AFFIRMED BBB+ Stable Feb 2025 (not downgraded / withdrawn for CIRP){ref("81")}</li>
+      <li>NCD Rs 70 Cr was Withdrawn in Feb 2025 rating action &mdash; normal withdrawal of a repaid instrument, not a default event</li>
       <li>Public-domain searches on Precot NCLT matters returned no major CIRP / insolvency references in 2024-25</li>
-      <li>Most likely: a routine Companies Act matter (scheme of arrangement / Meridian demerger / oppression-petition / tax matter) that&rsquo;s administratively in NCLT but not credit-adverse</li>
+      <li>Most likely: Meridian Industries divestiture scheme (2021) residual administrative filings; or oppression / minority-shareholder petition (common but routine)</li>
     </ul>
-    <p><strong>Diligence action (T + 14):</strong> fresh Indian Kanoon + NCLT portal pull by specific case number; verify with management; confirm no adverse order pending. Sanction subject to clear confirmation.</p>
+    <p><strong>Diligence action (T + 14):</strong> NCLT case-number specific pull (both Chennai + Hyderabad benches); management-certificate confirmation of no adverse pending matter; only then proceed to credit committee.</p>
   </div>
 </section>
 """
@@ -251,21 +278,34 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
-  <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Precot-specific sources from [120].</em></p>
-  <div class="src-list"><ol start="120">
-  <li id="src-120"><strong>Probe42 open-charges pull for Precot Limited (L17111TZ1962PLC001183)</strong> &mdash; 6 Mar 2026 metadata; 10+ charges across IOB, SBI, IDBI, Union Bank, Axis Bank (Jan 2026 new creation); total Rs 676 Cr face value. <span class="u">api.probe42.in/probe_data_api/entities/L17111TZ1962PLC001183/open-charges</span></li>
-  <li id="src-121"><strong>Precot Ltd BSE/NSE corporate filings + India Ratings credit rationale Feb 2025</strong> &mdash; Listed; FY25 TOI Rs 978 Cr; BBB+ Stable on term loans + WC. <span class="u">bseindia.com/stock-share-price/precot-ltd/PRECOT/521148/ &middot; indiaratings.co.in</span></li>
-  </ol></div>
-  <h3>Diligence items</h3>
+  <div class="subhead">12 · Sources &amp; diligence items</div>
+  <p>Every numeric claim in this dossier resolves to a numbered source below. Sources 1&ndash;22 are the shared macro + PESTEL dataset (referenced across the entire Tier-1 series); 81&ndash;82 are the Probe42 endpoints used for all credit-bureau + rating verification; Precot-specific sources begin at [123].</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:2em">Precot-specific sources</h3>
+  <ol start="123">
+  <li id="src-123"><strong>Precot Limited &mdash; Board of Directors and Committees of the Board (Jun 2025)</strong> &mdash; PDF published on corporate site; lists all 9 directors (Ashwin Chandran, Prashanth Chandran, Vijayraghunath, Kumar Thillai Natarajan, Arun Selvaraj, Vinay Balaji Naidu, Ravi Kumar Abburu, Suguna Ravichandran, Venkatraman Prakash). Also: Bloomberg profile 07468M-E (Ashwin Chandran); University of Manchester Textile + University of Illinois MBA education. <span class="u">precot.com/wp-content/uploads/2025/06/Board-of-Directors-and-Committees-of-the-Board.pdf &middot; bloomberg.com/profile/person/7528212</span></li>
+  <li id="src-124"><strong>Precot Limited FY24 Annual Report</strong> &mdash; corporate site PDF (AGM + Annual Report 2024); board composition, KMP list, audited financial statements FY24. Source of Precot TOI, EBITDA, PAT, NW, Debt trajectory through FY24. <span class="u">precot.com/wp-content/uploads/2024/08/AGM-and-Annual-Report-2024.pdf &middot; tofler.in/precot-limited/company/L17111TZ1962PLC001183</span></li>
+  <li id="src-125"><strong>Goodreturns Director Report &mdash; Precot Ltd</strong> &mdash; KMP list including CFO M.K. Ravindra Kumar and Company Secretary S. Kavitha; directors&rsquo; remuneration disclosure. <span class="u">goodreturns.in/company/precot/director-report.html</span></li>
+  <li id="src-126"><strong>Probe42 open-charges pull for Precot Limited (L17111TZ1962PLC001183)</strong> &mdash; 6 Mar 2026 metadata; 10+ charges across Indian Overseas Bank (Rs 134 Cr total / anchor), State Bank of India (Rs 81 Cr Apr 2025 mod), IDBI Bank (Rs 70 Cr May 2025 mod), Union Bank of India (Rs 60 Cr Mar 2025), Axis Bank (Rs 18.88 Cr Jan 2026 new creation). Total Rs 676 Cr face value. Source of entire Section 04.1 charge-register table and Rs 390.08 Cr / Rs 676 Cr total-debt / open-charges figures cited in cover + entity sections. <span class="u">api.probe42.in/probe_data_api/entities/L17111TZ1962PLC001183/open-charges &middot; retrieved 24 Apr 2026</span></li>
+  <li id="src-127"><strong>Precot Limited BSE/NSE live disclosures</strong> &mdash; BSE scrip 521148 / NSE PRECOT. Source of listing status, promoter holding pattern, market-cap-linked PB notional wealth estimate. <span class="u">bseindia.com/stock-share-price/precot-ltd/PRECOT/521148/ &middot; nseindia.com/get-quotes/equity?symbol=PRECOT</span></li>
+  <li id="src-128"><strong>Master Lead Generation sheet &mdash; Precot record (CIN L17111TZ1962PLC001183)</strong> &mdash; source of Rs 977.76 Cr TOI, Rs 65.71 Cr EBITDA, Rs 16.78 Cr PAT, Rs 392.71 Cr Tangible Net Worth, Rs 390.08 Cr Total Debt, Rs 675.92 Cr Open Charges headline figures. Also source of &ldquo;NCLT Present&rdquo; diligence flag. Sheet metadata cut 8 Sep 2025. <span class="u">Internal reference: Master Lead Generation sheet / row for Precot Limited</span></li>
+  <li id="src-129"><strong>Precot Limited &mdash; GOTS, USDA NOP, OCS, BCI cotton certifications</strong> &mdash; corporate sustainability page; organic cotton positioning. <span class="u">precot.com &middot; gots.control-union.com</span></li>
+  </ol>
+  </div>
+
+  <h3>Diligence items (must resolve before credit committee)</h3>
   <ul class="x">
-    <li>NCLT case-number lookup for any adverse / pending matter (sheet flag verification)</li>
-    <li>Fresh MCA DIR-12 for current CFO / CS / board composition</li>
-    <li>Promoter-pledge % per latest quarterly disclosure</li>
-    <li>Organic / BCI / GOTS customer certifications (for SLL framework)</li>
-    <li>Meridian Industries demerger settlement status (historical / closed)</li>
+    <li><strong>NCLT case-number lookup</strong> &mdash; fresh Indian Kanoon + NCLT Chennai/Hyderabad bench pulls to identify specific case nature; management-certificate confirmation</li>
+    <li><strong>Fresh MCA DIR-12 + MGT-7</strong> for current KMP + shareholding confirmation at T+14</li>
+    <li><strong>Promoter pledge %</strong> per latest quarterly disclosure (BSE/NSE shareholding pattern)</li>
+    <li><strong>Meridian Industries demerger settlement status</strong> &mdash; historical closure / residual liability check</li>
+    <li><strong>GOTS + BCI customer contract schedule</strong> &mdash; for SLL structuring</li>
+    <li><strong>Cotton-price exposure hedging policy</strong> &mdash; gap vs best-practice benchmarks</li>
+    <li><strong>Axis Bank consortium entry mechanics</strong> &mdash; template for IBank secondary-entry path</li>
   </ul>
 </section>
 """

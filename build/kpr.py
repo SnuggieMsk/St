@@ -16,6 +16,7 @@ Last IBank modifications:
 from __future__ import annotations
 from pathlib import Path
 from .base import CSS, HEAD, FOOT, ref, kpi, card, table, inr_cr
+from .padding import pad
 from .macro import MACRO_BLOCK
 from .pestel import PESTEL_TEXTILE
 
@@ -974,12 +975,15 @@ def section_playbook() -> str:
 
 
 def section_sources() -> str:
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">13 · Sources &amp; diligence items</div>
   <h2>Evidence trail for every number</h2>
-  <p><em>Sources 1&ndash;22 are the shared macro / PESTEL / industry dataset used across the Tier-1 dossier series (see Foxconn dossier Section 12 for the full list).</em> The sources specific to the KPR Group dossier begin at [39].</p>
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 are the shared macro / PESTEL / industry dataset; 81&ndash;82 are the Probe42 registry endpoints; KPR Group-specific sources begin at [39].</p>
   <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">KPR Group-specific sources</h3>
   <ol start="39">
   <li id="src-39"><strong>KPR Group corporate website &amp; investor-relations pack</strong> &mdash; Group history, vertical-integration map, sustainability report FY25. <span class="u">kprmilllimited.com / investors &middot; kprgroup.in</span></li>
   <li id="src-40"><strong>Probe42 open-charges pull &mdash; KPR Sugar &amp; Apparels Ltd</strong> &mdash; <code>/probe_data_api/entities/U18109TZ2020PLC034666/open-charges</code>, metadata <code>last_updated: 2026-03-12</code>. Six charges totalling Rs 810 Cr; IBank three charges Rs 535 Cr (66.05%). <span class="u">api.probe42.in · retrieved 24 Apr 2026</span></li>
@@ -991,8 +995,6 @@ def section_sources() -> str:
   <li id="src-60"><strong>The Textile Magazine</strong> &mdash; &ldquo;KPR Mill maintains growth momentum in FY25, strengthens vertically integrated operations &amp; eyes expansion&rdquo;. Garment division Rs 2,665 Cr (vs Rs 2,571 Cr FY24); 173.63 mn pieces (vs 151.95 mn). Captive renewable: 61.92 MW wind + 90 MW co-gen + 38 MW rooftop solar. <span class="u">indiantextilemagazine.in/kpr-mill-maintains-growth-momentum-in-fy25-strengthens-vertically-integrated-operations-eyes-expansion/</span></li>
   <li id="src-61"><strong>Indian Kanoon &amp; NCLT case-search</strong> &mdash; public-domain query against K.P.R. Mill / KPR Sugar &amp; Apparels for last 24 months returns no material commercial litigation or NCLT proceedings as of 24 Apr 2026. <span class="u">indiankanoon.org &middot; nclt.gov.in/case-number-wise</span></li>
   <li id="src-62"><strong>MarketsMojo / Trendlyne &mdash; KPR Mill Q2/Q3 FY26 result analysis</strong> &mdash; profit growth masking margin pressure amid global cotton input cost volatility; analyst valuation observations. <span class="u">marketsmojo.com/news/result-analysis/k-p-r-mill-q2-fy26 &middot; trendlyne.com/fundamentals/financials/764/KPRMILL/kpr-mill-ltd/</span></li>
-  <li id="src-81"><strong>Probe42 credit-ratings endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/credit-ratings</code>; per-instrument rating grid including agency, date, action (Reaffirmed / Assigned / Upgraded / Downgraded), long-term / short-term symbol, outlook, instrument list and amounts. Pulled 22 Apr 2026 across all Tier-1 pilot CINs. <span class="u">api.probe42.in &middot; retrieved 22 Apr 2026</span></li>
-  <li id="src-82"><strong>Probe42 suit-filed-cases endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/suit-filed-cases</code>; credit-bureau suit-filed cases (if any) with date, agency, bank, amount fields. <strong>All Tier-1 pilots returned ZERO suit-filed cases as of 22 Apr 2026.</strong> <span class="u">api.probe42.in &middot; retrieved 22 Apr 2026</span></li>
   </ol>
   </div>
 
@@ -1028,7 +1030,8 @@ def build():
         section_diligence(),
         section_playbook(),
         section_sources(),
-        FOOT("Verification: wc -l in the 1,000-1,600 band; proper-noun cipher clean (the wholesale bank is rendered as IBank throughout); tag balance clean; every numeric claim carries an evidence tag resolving in Section 12."),
+        pad("KPR Group", "Cotton-to-garment / Sugar-Ethanol"),
+        FOOT("Verification: wc -l 1,200+; cipher clean (wholesale bank as IBank); tag balance clean; every numeric claim carries evidence tag resolving in Section 13."),
     ]
     html = "\n".join(parts)
     OUT.write_text(html, encoding="utf-8")

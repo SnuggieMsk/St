@@ -204,11 +204,15 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Neuberg sources from [114].</em></p>
-  <div class="src-list"><ol start="114">
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
+  <ol start="114">
   <li id="src-114"><strong>Neuberg corporate website + IND Ratings rationale Dec 2025 + Quadria + TPG press releases on investment</strong> &mdash; Formation 2017 via 5-chain roll-up; Dr. GSK Velu founder; PE-backed. <span class="u">neubergdiagnostics.com</span></li>
   </ol></div>
 </section>

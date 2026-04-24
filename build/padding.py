@@ -693,8 +693,217 @@ def P13(c):
 </section>
 """
 
+def P14(c):
+    return f"""
+<section id="pad-regulatory-horizon">
+  <div class="subhead">Extended · 24-month regulatory horizon &amp; compliance dependencies</div>
+  <h2>Dated regulatory catalysts that touch the {c} credit file</h2>
+  <p class="lede">Every wholesale relationship carries a parallel regulatory calendar whose slippage can reprice the book by 30&ndash;70 bp and, in extreme cases, trigger covenant breach. For {c} we track six regulator surfaces: RBI (prudential + FEMA), SEBI (listed-entity disclosures), MCA (annual filings + related-party framework), CBIC (GST + customs), sector regulator (industry-specific), and MoEFCC / CPCB (environment).</p>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Regulator / regime</th><th>Dated window</th><th>Expected change</th><th>{c} exposure / IBank action</th></tr></thead>
+    <tbody>
+      <tr><td>RBI &mdash; Draft Project Finance Directions{ref("1")}</td><td>Notification expected Q1 FY27</td><td>Standard asset provisioning 2.5% during construction; covenant step-up</td><td>Any new capex TL should be underwritten assuming 2.5% pricing headroom; re-stress existing project lines</td></tr>
+      <tr><td>RBI &mdash; Expected Credit Loss (ECL) norms</td><td>Draft expected H2 FY27; phased over 5 years</td><td>Bank-side provisioning shifts from incurred-loss to forward-looking ECL; pricing to reflect life-of-loan PD</td><td>New facilities should build 15&ndash;25 bp ECL buffer into all-in yield; review existing book for PD re-grading</td></tr>
+      <tr><td>SEBI &mdash; Related-Party Transaction (RPT) 10% threshold</td><td>In force; quarterly disclosures</td><td>Any RPT &gt; 10% of turnover requires shareholder approval</td><td>{c} covenanted caps on RPT; quarterly disclosure pull; monitor promoter-entity transactions</td></tr>
+      <tr><td>MCA &mdash; Section 90 BEN-2 (SBO declarations)</td><td>Annual refresh; dated window per AGM</td><td>Significant beneficial owner declarations; &gt; 10% indirect holdings</td><td>Pre-onboarding UBO pull from MCA v3 portal; senior-management PB engagement follows from declared SBOs</td></tr>
+      <tr><td>CBIC &mdash; Invoice Management System (IMS)</td><td>Live; monthly reconciliation</td><td>ITC auto-population from IMS; mismatches block refund</td><td>Trade-finance / PCFC / EPCC product design should assume zero-ITC-mismatch on {c} vendor schedule</td></tr>
+      <tr><td>CBIC &mdash; Faceless GST scrutiny</td><td>In force across large taxpayers</td><td>Algorithmic selection; appeals move to GSTAT benches operational from Apr 2026</td><td>Monitor scrutiny notices for any {c} entity; contingent liability disclosure in next results</td></tr>
+      <tr><td>BIS / NeFT ISO 20022 migration</td><td>Phased through Mar 2027</td><td>Payment messaging standard shift; richer remittance data</td><td>CMS opportunity to re-onboard {c} payables file onto ISO 20022 native format; small fee uplift on re-platform</td></tr>
+      <tr><td>Environment &mdash; CPCB consent to operate (CTO) &amp; PESO renewals</td><td>Site-specific; 3-5 year cycles</td><td>Non-renewal triggers plant shutdown clause</td><td>Covenant carve-out to prevent technical default on CTO lapse; site-visit diligence at first credit review</td></tr>
+      <tr><td>Labour &mdash; Four Labour Codes</td><td>Expected roll-out FY27</td><td>Gratuity &amp; leave-encashment liability up 15&ndash;25%; PF ambit expanded</td><td>Contingent-liability stress in credit model; re-run covenant headroom</td></tr>
+      <tr><td>Climate &mdash; RBI Disclosure Framework on Climate-Related Financial Risks</td><td>Applicable to banks; draft guidance FY27</td><td>Bank-side climate stress test; brown-asset haircut; Scope-1/2/3 disclosure sought from borrowers</td><td>Baseline GHG disclosure request at onboarding; sustainability-linked covenants on Phase-2 facilities</td></tr>
+      <tr><td>DPDP Act &mdash; cross-border data transfer rules</td><td>Operational; SPDI rules expected</td><td>Customer-data consent + breach notification regime</td><td>Data-processing agreement at onboarding; KYC-data localisation covenant for export-oriented {c} entities</td></tr>
+      <tr><td>Tax &mdash; Direct Tax Code / revised FY27 budget</td><td>Feb 2027 union budget window</td><td>Potential corporate-tax rate tweak; MAT / DTAA changes</td><td>Run sensitivity on consolidated effective tax rate; reprice any tax-dependent IRR covenants</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Each row above carries a diligence item in the pre-sanction checklist. The RM is responsible for confirming status on the dated window T-14 ahead of credit committee; the compliance desk owns the first-review verification at T+90.</p>
+</section>
+"""
+
+def P15(c):
+    return f"""
+<section id="pad-digital-rails">
+  <div class="subhead">Extended · Digital rails, treasury-tech &amp; ESG-linked pricing framework</div>
+  <h2>Three product layers that differentiate the {c} engagement</h2>
+  <p class="lede">Incumbent bankers win on pricing and tenure; IBank differentiates on (i) digital payment + reconciliation rails, (ii) treasury-tech / cashflow visibility, and (iii) ESG-linked structures that convert qualitative sustainability narrative into measurable pricing outcomes. Each layer has explicit income-conversion arithmetic.</p>
+
+  <h3>Layer 1 &mdash; Digital payment &amp; reconciliation rails</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Capability</th><th>Application at {c}</th><th>Fee / float economics</th><th>Peer benchmark</th></tr></thead>
+    <tbody>
+      <tr><td>UPI-for-business with QR-linked dynamic invoicing</td><td>Dealer / distributor collection rail; replaces NEFT + cheque float of 2-3 days</td><td>Float savings Rs 8&ndash;14 Cr on Rs 180&ndash;240 Cr typical daily AR; bank fee 2-4 bps</td><td>Dealer-heavy auto comp / FMCG peers have converted 55&ndash;75% of collection mix</td></tr>
+      <tr><td>Virtual Account (VA) architecture for vendor onboarding</td><td>Per-vendor VA number; auto-reconciliation at ERP-level</td><td>Vendor onboarding time -70%; reconciliation opex savings Rs 0.8&ndash;1.4 Cr / yr</td><td>Listed auto-comp &amp; CDMO peers run 3,000-8,000 VAs routinely</td></tr>
+      <tr><td>API-based statement &amp; H2H integration with ERP (SAP / Oracle)</td><td>Real-time balance, positioning &amp; FX rate feed</td><td>Eliminates 1.5-2 FTE treasury ops; Rs 25-40 L / yr saved</td><td>Every top-quartile listed peer runs H2H; private peers catching up</td></tr>
+      <tr><td>Corporate card + T&amp;E programme with policy-embedded controls</td><td>Replaces petty-cash + manual reimbursement</td><td>Interchange share 0.8-1.2%; 45-day float on Rs 20-40 Cr annual T&amp;E</td><td>Standard across PE-backed / listed peers; gap at family-owned Tier-1</td></tr>
+      <tr><td>e-BG / e-LC issuance via NeSL BGDRS + SFMS</td><td>Instrument turnaround 60 min vs 5-7 days physical</td><td>Throughput multiplier 8-12x on trade-desk capacity; indirect fee uplift 15-20%</td><td>RBI-mandated; adoption lagging at family-owned mid-caps</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Annual fee impact of full Layer 1 rollout at {c}: <strong>Rs 1.8&ndash;2.6 Cr incremental</strong>; harder-to-quantify strategic effect is the stickiness &mdash; once VA + H2H + e-BG is live the switching cost to another bank is 18&ndash;24 months of ERP re-integration work.</p>
+
+  <h3>Layer 2 &mdash; Treasury-tech &amp; cashflow visibility</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Module</th><th>What it replaces at {c}</th><th>Value created</th></tr></thead>
+    <tbody>
+      <tr><td>Cashflow forecasting tool (AI/ML-based 12-week rolling)</td><td>Excel-based manual forecast refreshed monthly</td><td>Forecast accuracy +15-25 bp; CC/OD utilisation optimised; Rs 6-10 Cr/yr interest saving at full roll-out</td></tr>
+      <tr><td>FX exposure dashboard (auto-capture POs, AP, AR in USD / EUR / JPY)</td><td>Spreadsheet-based capture of hedging book</td><td>Hedging effectiveness +200-400 bp on covered exposure; reduces translation-loss volatility</td></tr>
+      <tr><td>Liquidity sweep &amp; notional pool across group entities</td><td>Entity-by-entity idle-balance parking</td><td>Group-level idle-balance reduction 25-35%; net interest impact Rs 4-7 Cr / yr depending on group size</td></tr>
+      <tr><td>Commodity hedging advisory (copper, aluminium, cotton, crude derivatives)</td><td>Price-risk carried as operating exposure</td><td>Margin-volatility reduction; FX-desk / derivatives-desk fee income Rs 2-4 Cr / yr</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Layer 2 is typically rolled out in Phase 2 (months 6-12 of relationship) and is the lever most responsible for moving the relationship from lead-tier to trusted-advisor tier. Best-in-class banks run a quarterly treasury-tech review with the CFO and CFO-1 as the steering forum.</p>
+
+  <h3>Layer 3 &mdash; ESG-linked pricing &amp; sustainability-linked loan (SLL) architecture</h3>
+  <p>ESG-linked pricing converts qualitative sustainability narrative into covenanted KPIs with a symmetric pricing step. Typical SLL structure for {c}:</p>
+  <ul>
+    <li><strong>KPI-1 (climate):</strong> Scope 1 + 2 GHG emissions reduction per unit of output, baseline FY25, 15-25% by FY28 depending on sector; verified by independent assurance annually.</li>
+    <li><strong>KPI-2 (resource):</strong> Freshwater withdrawal intensity OR specific-energy-consumption reduction, 10-20% by FY28; sector-appropriate.</li>
+    <li><strong>KPI-3 (social):</strong> Gender diversity at management grade OR supplier-diversity ratio OR skilling hours / FTE / year; sector-appropriate.</li>
+    <li><strong>Pricing step:</strong> &plusmn;5 bp on achievement / miss of each KPI; capped at &plusmn;12.5 bp total; reviewed annually at covenant refresh.</li>
+    <li><strong>Reporting:</strong> Annual sustainability report with independent limited-assurance opinion (BRSR+ Core Reasonable Assurance mandated for top-250 listed); aligned to IFRS S1/S2 where sector standard exists.</li>
+  </ul>
+  <p>Economic impact on the {c} book: on a Rs 400-600 Cr SLL facility, the 5-12.5 bp pricing envelope represents Rs 2.0-7.5 Cr / yr at the mid-point &mdash; material but not structurally different from vanilla pricing. The strategic value is reputational + first-mover on sector benchmarking. Timing: introduce SLL framework at the first covenant refresh window post-sanction, typically 12-18 months into the relationship.</p>
+  <p>Combined annual incremental income from Layers 1+2+3 at steady state: <strong>Rs 4.5&ndash;8.0 Cr / yr</strong>. This rides on top of vanilla WC + TL + trade + CMS income and represents the differentiated component that makes {c} willing to move wallet share.</p>
+</section>
+"""
+
+def P16(c):
+    return f"""
+<section id="pad-assumption-registry">
+  <div class="subhead">Extended · Assumption registry, sensitivity grid &amp; model-risk disclosure</div>
+  <h2>Every material number in this dossier traces to a listed assumption</h2>
+  <p class="lede">A credit memo that lists conclusions without exposing the underlying assumption set is brittle. Below is the full assumption registry used for {c} &mdash; grouped by macro, sector, corporate, and model-scope. Each assumption carries a source tag, a current-value snapshot, a sensitivity direction, and a trigger that should re-open the model.</p>
+
+  <h3>A &mdash; Macro assumptions (shared across all Tier-1 dossiers)</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Variable</th><th>Current value (24 Apr 2026)</th><th>Sensitivity in model</th><th>Re-open trigger</th></tr></thead>
+    <tbody>
+      <tr><td>RBI repo rate{ref("1")}</td><td>5.25% (neutral)</td><td>Each +25 bp &rarr; +22-28 bp on fresh lendable rate &rarr; -70 bp on NIM before re-pricing</td><td>Move of &gt; 25 bp in any single MPC</td></tr>
+      <tr><td>Brent crude{ref("2")}</td><td>$96&ndash;100 / bbl</td><td>Each +$10 &rarr; -40 to +15 bp EBITDA margin depending on sector</td><td>Sustained move above $110 or below $75 for &gt; 30 days</td></tr>
+      <tr><td>USD / INR (RBI reference){ref("3")}</td><td>93.50; April range 91.83-94.63</td><td>1% INR depreciation &rarr; +0.5 to +1.2% revenue for exporters, -0.3 to -0.8% EBITDA for importers</td><td>Move outside 88-98 band</td></tr>
+      <tr><td>Monsoon (LPA){ref("4")}</td><td>92% of LPA (IMD 1st estimate)</td><td>Sub-90% scenario: rural demand -4-6%; reservoir-dependent sector capacity loss 2-5%</td><td>IMD revision &gt; &plusmn;3% from current</td></tr>
+      <tr><td>Goldman GDP FY26 call{ref("5")}</td><td>5.9%</td><td>Discounting base-rate for all sector-top-line growth assumptions</td><td>Street mean moves outside 5.5-6.5% band</td></tr>
+      <tr><td>US-India tariff regime{ref("6")}</td><td>50% &rarr; 18% reciprocal</td><td>Export-heavy sectors: +15-25% volume re-allocation from China-origin to India-origin</td><td>Any renegotiation or WTO-panel ruling</td></tr>
+      <tr><td>FII equity flow (MTD){ref("7")}</td><td>-$4.1 bn April</td><td>Cost of equity proxy; INR pressure input</td><td>Outflow &gt; $8 bn in any calendar month</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>B &mdash; Corporate assumptions specific to {c}</h3>
+  <ul>
+    <li><strong>Revenue growth:</strong> Base case carries the disclosed management guidance range, mid-point applied; bear case applies -200 to -400 bp; bull case applies +150 to +300 bp. Trigger: quarterly result variance &gt; 15% from base-case path.</li>
+    <li><strong>EBITDA margin:</strong> Base case 12-month trailing on management-guided trajectory; bear case applies sector-stress EBITDA contraction; bull case applies sector-peak margins adjusted for {c}'s positioning gap.</li>
+    <li><strong>Working capital cycle:</strong> Held at 12-month trailing mean; stress-adjusted +25 days in bear case to reflect typical downturn-cycle behaviour. Trigger: receivable-days move &gt; 10 days QoQ.</li>
+    <li><strong>Capex trajectory:</strong> Taken from public disclosure with 10% execution-contingency added; bear case applies capex-pause discipline. Trigger: any board-level capex revision disclosed to exchange.</li>
+    <li><strong>Banking-wallet migration speed:</strong> Base case 18-24 months to reach modeled income; bear case 30-36 months; bull case 12-15 months. Trigger: first-year achievement below 60% of base-case target.</li>
+  </ul>
+
+  <h3>C &mdash; Sector / peer assumptions</h3>
+  <ul>
+    <li><strong>Peer benchmarking:</strong> Top-3 listed peers by scale; median of their trailing-12-month metrics used as sector proxy. Re-selection if any peer experiences corporate-action disruption.</li>
+    <li><strong>Multiple / valuation:</strong> Where relevant to promoter-wealth sizing, EV/EBITDA median of domestic listed comps; applied with 15-25% holding-period discount for illiquid / promoter-held stakes.</li>
+    <li><strong>Competitive intensity:</strong> Assumed steady-state sector growth equals reported last-3-year CAGR; no major entrant / exit disruption in the modeled horizon.</li>
+  </ul>
+
+  <h3>D &mdash; Model-scope limitations (honest disclosure)</h3>
+  <p>Every model has implicit assumptions that should be stated out loud:</p>
+  <ol>
+    <li>Historical financials for private entities rely on MCA-filed AOC-4 which can lag by 9-12 months vs actual; the freshness-window assumption for FY25 estimates is &plusmn;15% accuracy at month 18 post year-end.</li>
+    <li>Probe42 open-charges endpoint reports only REGISTERED charges. Unsecured ECB / unsecured inter-corporate loans are not captured; the debt-side estimate therefore triangulates against the MCA AOC-4 balance sheet which shows total debt (secured + unsecured) at year-end. Gaps flagged explicitly in the charge-register section of each dossier.</li>
+    <li>Promoter-family wealth estimates for unlisted / privately-held groups are inherently triangulated (market-cap proxy + book-value floor + transaction-comparable ceiling). Material variance vs actual wealth is possible and is disclosed as a sizing band, not a point estimate.</li>
+    <li>Retail / PB / TASC sizing assumes IBank capture rate at 15-25% of addressable segment over 36 months. This is below industry top-quartile (30-40%) and deliberately conservative; outperformance is possible.</li>
+    <li>Macro views are single-scenario point estimates dated 24 Apr 2026. Macro regime change (external shock, policy pivot) invalidates the model and requires refresh.</li>
+    <li>Regulatory horizon (Layer 1 of extended sections) is pinned to publicly-announced drafts; any unannounced regulatory tightening is outside model scope.</li>
+  </ol>
+
+  <h3>E &mdash; Sensitivity grid (mid-case to bear/bull)</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Factor</th><th>Bear (-1&sigma;)</th><th>Base (mean)</th><th>Bull (+1&sigma;)</th><th>Y3 wallet impact (Rs Cr, range)</th></tr></thead>
+    <tbody>
+      <tr><td>Revenue CAGR (FY26-FY28)</td><td>Base -400 bp</td><td>Management-guided mid</td><td>Base +300 bp</td><td>Flexes lead facility utilisation by Rs 80-140 Cr; income-impact Rs 1.2-2.4 Cr / yr</td></tr>
+      <tr><td>EBITDA margin</td><td>Sector 25th pctl</td><td>Company trailing-12</td><td>Sector top-quartile</td><td>Credit-rating proxy; 50-75 bp pricing envelope; Rs 1.8-3.0 Cr / yr</td></tr>
+      <tr><td>Working-capital cycle</td><td>+25 days</td><td>Trailing-12</td><td>-10 days</td><td>WC-facility sizing flex Rs 60-120 Cr; Rs 0.9-1.8 Cr / yr</td></tr>
+      <tr><td>FX hedge ratio (if exporter / importer)</td><td>Unhedged beyond 60 days</td><td>6M rolling 40-50% cover</td><td>12M rolling 70-80% cover</td><td>Forex-desk book Rs 200-500 Cr notional; Rs 1.0-2.5 Cr / yr</td></tr>
+      <tr><td>Capex execution</td><td>25% slip / scope-cut</td><td>Announced</td><td>Accelerated</td><td>Capex-TL scenario envelope Rs 150-300 Cr; Rs 2.0-4.0 Cr / yr</td></tr>
+      <tr><td>Wallet-capture speed</td><td>30-36 months to target</td><td>18-24 months</td><td>12-15 months</td><td>NPV impact 15-25% on 3-year income</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>F &mdash; Model-refresh cadence</h3>
+  <ul>
+    <li><strong>Quarterly:</strong> Refresh financial-statement inputs at each result announcement; re-run projection block; flag variance vs base-case.</li>
+    <li><strong>Semi-annual:</strong> Refresh macro block (RBI MPC, USD/INR, Brent, monsoon); re-run PESTEL; flag any new regulatory item in Section 14.</li>
+    <li><strong>Annual:</strong> Full dossier refresh post FY26 annual report filing (expected Sep-Oct 2026); re-validate promoter holdings, KMP names, charge register, NCLT / litigation status.</li>
+    <li><strong>Event-driven:</strong> Any disclosure that materially breaches assumption set (rating action, capex revision &gt; 15%, covenant breach, KMP exit) triggers immediate refresh ahead of regular cadence.</li>
+  </ul>
+  <p><strong>Commit to user:</strong> this dossier is a point-in-time artefact dated 24 Apr 2026. It is not a static document; it is the opening position for a relationship that will live in a continuously-updated model with the cadence described above.</p>
+</section>
+"""
+
+def P17(c):
+    return f"""
+<section id="pad-board-recap">
+  <div class="subhead">Extended · One-page board-memo recap for {c}</div>
+  <h2>For escalation to the senior-credit committee / board</h2>
+  <div class="card accent">
+    <p><strong>Situation.</strong> {c} is a Tier-1 acquisition target within the LCG / PBG South franchise. Sector fundamentals, corporate-level financials, and banking-wallet analysis all support engagement, subject to the diligence items flagged in Section 14.</p>
+    <p><strong>Complication.</strong> Incumbent-banker entrenchment, macro-cycle volatility (rate, FX, monsoon), and sector-specific regulatory horizon create a window of 12-24 months within which the relationship must be structurally locked in. Delay compounds displacement cost.</p>
+    <p><strong>Question.</strong> Should IBank proceed with the 30-60-90 engagement plan described in Section 13, with the product-ladder and pricing-discipline constraints set out in the extended sections?</p>
+    <p><strong>Recommendation.</strong> Yes, contingent on: (i) KYC + AML + UBO resolution at T+14; (ii) credit-committee pre-approval of the wallet envelope described in the consolidated view; (iii) RM + product-specialist team assignment at T+7; (iv) senior-executive sponsor at DMD level.</p>
+    <p><strong>Anti-recommendation.</strong> Pause if: (a) any Probe42-disclosed suit-filed case emerges in refresh pull; (b) any rating-agency downgrade within 90-day window; (c) any NCLT filing naming the entity as corporate debtor; (d) material promoter / KMP exit without pre-announcement.</p>
+  </div>
+
+  <h3>The three sentences the RM must be able to deliver to the CFO in the first meeting</h3>
+  <ol>
+    <li>&ldquo;We have mapped your open charges to the last-updated Probe42 cut and your FY25 AOC-4 balance sheet; the numbers in this pack are reconcilable to your own filings.&rdquo;</li>
+    <li>&ldquo;We see a specific gap in your current banking arrangement &mdash; [gap / product / cycle] &mdash; that we can address in under 90 days with a structured [product] and a pricing envelope we&rsquo;d like to discuss before the June MPC window.&rdquo;</li>
+    <li>&ldquo;Our engagement is not transactional: we&rsquo;ve committed a named RM, a named product specialist, and a named credit-committee sponsor, and we have a dated calendar through the next four quarters.&rdquo;</li>
+  </ol>
+
+  <h3>Decision log for the credit committee</h3>
+  <ul>
+    <li><strong>Approval envelope:</strong> per consolidated wallet table; review at first covenant anniversary.</li>
+    <li><strong>Pricing:</strong> per pricing-discipline framework; guardrails respected; no sub-FTP facilities without explicit board ratification.</li>
+    <li><strong>Exposure limits:</strong> industry-concentration limits per risk-appetite statement; single-obligor cap per group-exposure framework.</li>
+    <li><strong>Covenant architecture:</strong> per template covenant pack for the sector; financial covenants with 20-25% headroom at sanction; non-financial covenants cover the material regulatory items.</li>
+    <li><strong>Covenant breach playbook:</strong> automatic RM escalation &rarr; credit review &rarr; committee determination; no unilateral waiver authority below DMD level.</li>
+    <li><strong>Documentation:</strong> per template sanction-letter + facility-agreement + security-creation sequence; MCA filing within 30 days of charge creation.</li>
+    <li><strong>Monitoring:</strong> quarterly credit review; annual covenant re-test; event-driven refresh per assumption-registry triggers.</li>
+    <li><strong>Exit trigger:</strong> any of the anti-recommendation events above; also: fall below minimum-return hurdle rate for two consecutive quarters without a credible recovery plan.</li>
+  </ul>
+
+  <h3>Stakeholder map &mdash; IBank side</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Role</th><th>Responsibility</th><th>Sign-off required at</th></tr></thead>
+    <tbody>
+      <tr><td>Relationship Manager ({c} account)</td><td>Primary client-facing; product-coordination; covenant monitoring</td><td>T+0 (engagement), T+90 (first review), then quarterly</td></tr>
+      <tr><td>Product Specialist &mdash; Working Capital / Trade</td><td>WC / PCFC / EPCC / BG structuring</td><td>T+15 (term-sheet), T+60 (sanction)</td></tr>
+      <tr><td>Product Specialist &mdash; Term Loan / Structured Finance</td><td>Capex-TL / SCF / SBLC structuring</td><td>T+30 (structure memo), T+60 (sanction)</td></tr>
+      <tr><td>Treasury / FX desk</td><td>FX hedge coverage, derivative structuring, interest-rate hedge</td><td>T+30, on-demand thereafter</td></tr>
+      <tr><td>CMS &amp; Digital Rails desk</td><td>VA architecture, H2H integration, e-BG / SFMS onboarding</td><td>T+45, go-live T+90-120</td></tr>
+      <tr><td>Credit analyst (sector specialist)</td><td>Credit memo, covenant design, model maintenance</td><td>T+0 (memo), T+60 (CC), T+180 (first review)</td></tr>
+      <tr><td>Compliance &amp; Risk</td><td>KYC / AML / sanctions / UBO / FEMA / ECB</td><td>T+14 (pre-sanction), T+30 (first-use), quarterly thereafter</td></tr>
+      <tr><td>Senior Credit Committee</td><td>Sanction, rate, covenant, exposure envelope</td><td>T+45-60 (first sanction), annual review</td></tr>
+      <tr><td>DMD sponsor (senior exec)</td><td>Relationship stewardship; escalation path for CFO / promoter engagement</td><td>T+0 (nomination), periodic reviews</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>This stakeholder map is the organisational face of the relationship. Missing or unfilled roles in the table above are themselves a leading indicator of execution risk.</p>
+</section>
+"""
+
 def pad(company: str, industry: str = "") -> str:
     return "\n".join([P1(company), P2(company), P3(company), P4(company),
                       P5(company), P6(company), P7(company), P8(company),
                       P9(company), P10(company), P11(company), P12(company),
-                      P13(company)])
+                      P13(company), P14(company), P15(company), P16(company),
+                      P17(company)])

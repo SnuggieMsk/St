@@ -281,11 +281,14 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
   <p><em>Shared macro sources 1-22; Probe42 endpoints 81-82. Sundaram-Clayton-specific sources from [103].</em></p>
   <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
   <ol start="103">
   <li id="src-103"><strong>Sundaram-Clayton Ltd annual report + TVS Group public disclosures + BSE/NSE listing data</strong> &mdash; post-demerger entity (CIN L51100TN2017PLC118316), Padi Chennai + Hosur + Mysore plants, aluminium + zinc die-casting, NVH + engine components. Promoter family Venu Srinivasan + Dr. Lakshmi Venu next-gen. <span class="u">bseindia.com/stock-share-price/sundaram-clayton-ltd/SUNDRMFAST/</span></li>
   </ol>

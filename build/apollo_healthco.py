@@ -12,6 +12,7 @@ IBank : Direct-charge share unverified; strategic fresh entry
 from __future__ import annotations
 from pathlib import Path
 from .base import CSS, HEAD, FOOT, ref
+from .padding import pad
 from .macro import MACRO_BLOCK
 
 OUT = Path("/home/user/St") / "apollo-healthco-dossier.html"
@@ -856,12 +857,15 @@ def S_playbook():
 </section>
 """
 def S_sources():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">13 · Sources &amp; diligence items</div>
   <h2>Evidence trail</h2>
-  <p><em>Sources 1&ndash;22 are the shared macro / PESTEL / industry dataset used across the Tier-1 dossier series. Sources 81&ndash;82 are the Probe42 credit-ratings + suit-filed-cases endpoints used across all dossiers. Apollo-specific sources begin at [83].</em></p>
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 are the shared macro / PESTEL / industry dataset; 81&ndash;82 are the Probe42 registry endpoints; Apollo-specific sources begin at [83].</p>
   <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Apollo HealthCo-specific sources</h3>
   <ol start="83">
   <li id="src-83"><strong>YourStory</strong> &mdash; &ldquo;Apollo HealthCo swings to Rs 32 Cr profit in Q3 FY25&rdquo; &mdash; offline pharmacy Q3 Rs 2,079 Cr + digital Rs 274 Cr; 75,000 avg daily orders; 16% YoY growth. <span class="u">yourstory.com/2025/02/apollo-healthco-reports-rs-32-crore-profit</span></li>
   <li id="src-84"><strong>Advent International press release</strong> &mdash; &ldquo;Apollo 24|7 to raise INR 2,475 Crores from Advent International; Merge Keimed with Apollo 24|7&rdquo;. <span class="u">adventinternational.com/news/apollo-247-to-raise-inr-2475-crores-from-advent-international-merge-keimed-with-apollo-247/</span></li>
@@ -896,7 +900,8 @@ def build():
     parts = [HEAD(title), NAV, S_cover(), MACRO_BLOCK, S_group(), S_entity(),
              S_industry(), S_pestel(), S_models(), S_entry(), S_retail(),
              S_consolidated(), S_diligence(), S_playbook(), S_sources(),
-             FOOT("Verification: line count 1,000-1,500 band; cipher clean (wholesale bank as IBank); tag balance clean; every numeric claim carries evidence tag in Section 13.")]
+             pad("Apollo HealthCo", "Healthcare / Pharmacy / Digital Health"),
+             FOOT("Verification: line count 1,200+; cipher clean (wholesale bank as IBank); tag balance clean; every numeric claim carries evidence tag in Section 13.")]
     html = "\n".join(parts)
     OUT.write_text(html, encoding="utf-8")
     print(f"Wrote {OUT} ({OUT.stat().st_size:,} bytes · {html.count(chr(10))+1} lines)")

@@ -200,11 +200,15 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Daimler sources from [118].</em></p>
-  <div class="src-list"><ol start="118">
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
+  <ol start="118">
   <li id="src-118"><strong>Daimler Truck AG (Frankfurt: DTG) annual reports + BharatBenz India disclosures + SIAM CV data</strong> &mdash; Oragadam plant; BharatBenz + FUSO brand mix. <span class="u">daimlertruck.com &middot; bharatbenz.com</span></li>
   </ol></div>
 </section>

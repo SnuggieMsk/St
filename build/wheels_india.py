@@ -248,11 +248,14 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Wheels-India sources from [104].</em></p>
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
   <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
   <ol start="104">
   <li id="src-104"><strong>Wheels India corporate disclosures + BSE/NSE quarterly filings + IND + ICRA credit rationales Feb 2026</strong> &mdash; FY25 TOI Rs 4,415 Cr; 7-plant footprint; TVS Group promoter; IND A+ Assigned Stable; ICRA ratings on FD + bank loan facilities. <span class="u">wheelsindia.com &middot; bseindia.com &middot; nseindia.com</span></li>
   </ol>

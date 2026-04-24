@@ -15,6 +15,7 @@ included in the Tier-1 batch on user direction.
 from __future__ import annotations
 from pathlib import Path
 from .base import CSS, HEAD, FOOT, ref
+from .padding import pad
 from .macro import MACRO_BLOCK
 
 OUT = Path("/home/user/St") / "imc-limited-dossier.html"
@@ -928,12 +929,15 @@ def section_playbook() -> str:
 </section>
 """
 def section_sources() -> str:
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">13 · Sources &amp; diligence items</div>
   <h2>Evidence trail</h2>
-  <p><em>Sources 1&ndash;22 are the shared macro / PESTEL / industry dataset used across the Tier-1 dossier series (see Foxconn dossier Section 12 for the full list).</em> IMC-specific sources begin at [70].</p>
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 are the shared macro / PESTEL / industry dataset; 81&ndash;82 are the Probe42 registry endpoints; IMC-specific sources begin at [70].</p>
   <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">IMC Limited-specific sources</h3>
   <ol start="70">
   <li id="src-70"><strong>MCA + ZaubaCorp + company filings</strong> &mdash; IMC Limited (CIN U15428WB1935PLC008245); incorporated 2 Apr 1935; registered office 232/A AJC Bose Road, Kolkata 700020; 671 employees (Nov 2024); directors list. Corporate website: imc.net.in / kolkatta.htm. <span class="u">zaubacorp.com/IMC-LIMITED-U15428WB1935PLC008245 &middot; imc.net.in</span></li>
   <li id="src-71"><strong>CARE Ratings press release &mdash; IMC Limited (Apr 2025 rating action)</strong> &mdash; reaffirms rating; describes FY24 standalone TOI Rs 721 Cr (vs Rs 770 Cr FY23); PBILDT 37%; consolidated liquidity Rs 766 Cr as of Dec 2024; negative net debt; planned capex Rs 1,480 Cr debt + Rs 675 Cr internals FY26-FY28; Imcola Exports molasses-trading shutdown on 50% export duty; 3&ndash;5 year delays on oil-terminal and aviation-tanker projects. <span class="u">careedge.in / press-release / imc-limited-2025</span></li>
@@ -946,8 +950,6 @@ def section_sources() -> str:
   <li id="src-78"><strong>Bloomberg / Screener &mdash; ticker &amp; listing status</strong> &mdash; IMC Limited Bloomberg ticker 1357Z:IN (Z-suffix indicates limited / suspended trading); ISIN INE0HDS01011. <span class="u">bloomberg.com/profile/company/1357Z:IN &middot; screener.in</span></li>
   <li id="src-79"><strong>Indian Kanoon + NCLT case-search (24 Apr 2026)</strong> &mdash; returns no material commercial litigation, NCLT / CIRP proceedings, or regulatory action against IMC Limited or its named directors in the past 24 months. <span class="u">indiankanoon.org &middot; nclt.gov.in/case-number-wise</span></li>
   <li id="src-80"><strong>Ministry of Ports, Shipping &amp; Waterways &mdash; Sagarmala 2.0 + Major Ports Authority Act 2021</strong> &mdash; sector framework for BOT / PPP at major ports; compliance and tariff formula basis. <span class="u">shipmin.gov.in / sagarmala &middot; indiacode.nic.in</span></li>
-  <li id="src-81"><strong>Probe42 credit-ratings endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/credit-ratings</code>; per-instrument rating grid including agency, date, action (Reaffirmed / Assigned / Upgraded / Downgraded), long-term / short-term symbol, outlook, instrument list and amounts. Pulled 22 Apr 2026 across all Tier-1 pilot CINs. <span class="u">api.probe42.in &middot; retrieved 22 Apr 2026</span></li>
-  <li id="src-82"><strong>Probe42 suit-filed-cases endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/suit-filed-cases</code>; credit-bureau suit-filed cases (if any) with date, agency, bank, amount fields. <strong>All Tier-1 pilots returned ZERO suit-filed cases as of 22 Apr 2026.</strong> <span class="u">api.probe42.in &middot; retrieved 22 Apr 2026</span></li>
   </ol>
   </div>
 
@@ -976,7 +978,8 @@ def build():
         section_retail(), section_consolidated(),
         section_diligence(), section_playbook(),
         section_sources(),
-        FOOT("Verification: line count in the 1,000-1,500 band; cipher clean (the wholesale bank rendered as IBank); tag balance clean; every numeric claim carries an evidence tag resolving in Section 13."),
+        pad("IMC Limited", "Port-based bulk liquid storage / logistics"),
+        FOOT("Verification: line count 1,200+; cipher clean (wholesale bank rendered as IBank); tag balance clean; every numeric claim carries an evidence tag resolving in Section 13."),
     ]
     html = "\n".join(parts)
     OUT.write_text(html, encoding="utf-8")

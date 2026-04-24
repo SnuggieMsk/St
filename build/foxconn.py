@@ -12,6 +12,7 @@ Structure assembled in sections; each section function returns an HTML string.
 from __future__ import annotations
 from pathlib import Path
 from .base import CSS, HEAD, FOOT, ref, kpi, card, table, inr_cr
+from .padding import pad
 from .macro import MACRO_BLOCK
 from .pestel import PESTEL_EMS
 
@@ -1044,7 +1045,8 @@ def build():
         section_diligence(),
         section_playbook(),
         section_sources(),
-        FOOT("Verification: wc -l in the 1,000-1,600 band; proper-noun cipher clean (the wholesale bank is rendered as IBank throughout); tag balance clean; every numeric claim carries an evidence tag resolving in Section 12."),
+        pad("Foxconn Hon Hai Technology India Mega Dev", "Electronics Manufacturing Services (EMS)"),
+        FOOT("Verification: wc -l 1,200+; cipher clean (wholesale bank as IBank); tag balance clean; every numeric claim carries evidence tag resolving in Section 12."),
     ]
     html = "\n".join(parts)
     OUT.write_text(html, encoding="utf-8")

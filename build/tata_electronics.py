@@ -207,11 +207,15 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Tata Electronics-specific sources from [116].</em></p>
-  <div class="src-list"><ol start="116">
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
+  <ol start="116">
   <li id="src-116"><strong>Tata Electronics Pvt Ltd corporate disclosures + Tata Sons annual report + GOI semiconductor mission press releases + MeitY PLI list + Wistron acquisition press</strong> &mdash; Chengalpet + Hosur + Kolar + Sanand + Dholera operations; N Chandrasekaran + Randhir Thakur leadership. <span class="u">tata.com &middot; tataelectronics.com &middot; meity.gov.in/esdm &middot; ism.gov.in</span></li>
   </ol></div>
 </section>

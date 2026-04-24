@@ -256,11 +256,14 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Milky Mist sources from [105].</em></p>
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
   <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
   <ol start="105">
   <li id="src-105"><strong>Milky Mist DRHP (SEBI filing Jan 2025) + Economic Times + Mint</strong> &mdash; Founded 1982 by K. Rathnam; son Sathish Kumar (MD/CEO); ~Rs 1,785 Cr IPO targeting FY27 listing; plant at Perundurai, Erode; 45,000+ dairy farmers; 250,000+ retail touchpoints. <span class="u">sebi.gov.in / filings / milky-mist-drhp-jan-2025 &middot; economictimes.indiatimes.com &middot; livemint.com</span></li>
   </ol>

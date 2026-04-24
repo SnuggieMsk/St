@@ -207,11 +207,15 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Dalmia Bharat Green Vision sources from [113].</em></p>
-  <div class="src-list"><ol start="113">
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
+  <ol start="113">
   <li id="src-113"><strong>Dalmia Bharat Ltd annual report + sustainability report + CRISIL Apr 2026 rationale</strong> &mdash; Green-cement SPV structure; Net Zero 2040 commitment. <span class="u">dalmiabharat.com &middot; dalmiabharatsugar.com</span></li>
   </ol></div>
 </section>

@@ -208,11 +208,15 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Mohanlal-specific sources from [122].</em></p>
-  <div class="src-list"><ol start="122">
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
+  <ol start="122">
   <li id="src-122"><strong>Master Lead Generation sheet + MCA CIN U28999TN2009PTC071334 + India Ratings coverage</strong> &mdash; Chennai private jewellery retailer; FY25 TOI Rs 7,023 Cr; IND BB+/A4+ rating. <span class="u">mca.gov.in &middot; indiaratings.co.in</span></li>
   </ol></div>
 </section>

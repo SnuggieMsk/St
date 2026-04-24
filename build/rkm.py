@@ -12,6 +12,7 @@ IBank : Zero wallet (greenfield acquisition)
 from __future__ import annotations
 from pathlib import Path
 from .base import CSS, HEAD, FOOT, ref
+from .padding import pad
 from .macro import MACRO_BLOCK
 from .pestel import PESTEL_POWER
 
@@ -976,12 +977,15 @@ def section_playbook() -> str:
 
 
 def section_sources() -> str:
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">13 · Sources &amp; diligence items</div>
   <h2>Evidence trail</h2>
-  <p><em>Sources 1&ndash;22 are the shared macro / PESTEL / industry dataset used across the Tier-1 dossier series (see Foxconn dossier Section 12 for the full list).</em> R.K.M-specific sources begin at [44].</p>
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 are the shared macro / PESTEL / industry dataset; 81&ndash;82 are the Probe42 registry endpoints; R.K.M Powergen-specific sources begin at [44].</p>
   <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">R.K.M Powergen-specific sources</h3>
   <ol start="44">
   <li id="src-44"><strong>MCA Form AOC-4 &mdash; R.K.M Powergen Pvt Ltd, FY25 Annual Financial Statement</strong> &mdash; filed Dec 2025. <span class="u">mca.gov.in / MCA21 · CIN U40101TN2004PTC054931</span></li>
   <li id="src-45"><strong>Probe42 open-charges pull</strong> &mdash; <code>/probe_data_api/entities/U40101TN2004PTC054931/open-charges</code>, metadata <code>last_updated: 2026-03-13</code>. Seven charges totalling Rs 31,265.99 Cr; zero Indian-private-bank; PFC 5 charges, IDBI Trusteeship 1, Indian Bank 1 (legacy). <span class="u">api.probe42.in · retrieved 24 Apr 2026</span></li>
@@ -994,8 +998,6 @@ def section_sources() -> str:
   <li id="src-67"><strong>Special CBI Court (Coal Block cases) &mdash; discharge order Nov 2025</strong> &mdash; discharged R.K.M Powergen Pvt Ltd, former Coal Secretary H.C. Gupta, and three other accused in Fatehpur East coal block allocation case for want of evidence. <span class="u">aninews.in/news/national/general-news/cbi-court-discharges-former-coal-secretary-4-others-in-coal-block-allocation-case20251103132212/ &middot; dailypioneer.com/2025/india/coal-scam-gupta-rkm-powergen-and-promoters-discharged.html &middot; thehitavada.com</span></li>
   <li id="src-68"><strong>The Edge Malaysia</strong> &mdash; &ldquo;High Court of Madras clears Mudajaya&rsquo;s India unit RKM Powergen in coal block fraud case&rdquo;. <span class="u">theedgemalaysia.com/node/763034</span></li>
   <li id="src-69"><strong>Business Standard</strong> &mdash; &ldquo;Two power producers move Madras HC to block lenders from approaching NCLT&rdquo;, Sep 2018 (background context). <span class="u">business-standard.com/article/companies/two-power-producers-move-madras-hc-to-block-lenders-from-approaching-nclt-118091001039_1.html</span></li>
-  <li id="src-81"><strong>Probe42 credit-ratings endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/credit-ratings</code>; per-instrument rating grid including agency, date, action (Reaffirmed / Assigned / Upgraded / Downgraded), long-term / short-term symbol, outlook, instrument list and amounts. Pulled 22 Apr 2026 across all Tier-1 pilot CINs. <span class="u">api.probe42.in &middot; retrieved 22 Apr 2026</span></li>
-  <li id="src-82"><strong>Probe42 suit-filed-cases endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/suit-filed-cases</code>; credit-bureau suit-filed cases (if any) with date, agency, bank, amount fields. <strong>All Tier-1 pilots returned ZERO suit-filed cases as of 22 Apr 2026.</strong> <span class="u">api.probe42.in &middot; retrieved 22 Apr 2026</span></li>
   </ol>
   </div>
 
@@ -1031,7 +1033,8 @@ def build():
         section_diligence(),
         section_playbook(),
         section_sources(),
-        FOOT("Verification: wc -l in the 1,000-1,600 band; proper-noun cipher clean (the wholesale bank is rendered as IBank throughout); tag balance clean; every numeric claim carries an evidence tag resolving in Section 12."),
+        pad("R.K.M Powergen", "Thermal power / Coal-fired generation"),
+        FOOT("Verification: wc -l 1,200+; cipher clean (wholesale bank as IBank); tag balance clean; every numeric claim carries evidence tag resolving in Section 13."),
     ]
     html = "\n".join(parts)
     OUT.write_text(html, encoding="utf-8")

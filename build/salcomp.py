@@ -200,11 +200,15 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Salcomp sources from [119].</em></p>
-  <div class="src-list"><ol start="119">
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
+  <ol start="119">
   <li id="src-119"><strong>Salcomp India disclosures + Salcomp Oyj annual report + ex-Nokia Chennai plant acquisition press</strong> &mdash; Sriperumbudur + Kancheepuram plants; Apple charger tier-1 supplier. <span class="u">salcomp.com</span></li>
   </ol></div>
 </section>

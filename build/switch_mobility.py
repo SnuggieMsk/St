@@ -200,11 +200,15 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. Switch Mobility sources from [110].</em></p>
-  <div class="src-list"><ol start="110">
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
+  <ol start="110">
   <li id="src-110"><strong>Switch Mobility + Ashok Leyland FY25 disclosures + Hinduja Group corporate press</strong> &mdash; EV bus + LCV; Chennai + Hosur + UK (Optare) operations; FAME-III alignment. <span class="u">switchmobility.com &middot; ashokleyland.com</span></li>
   </ol></div>
 </section>

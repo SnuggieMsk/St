@@ -492,11 +492,14 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources &amp; diligence items</div>
   <p><em>Sources 1-22 shared macro set; 81-82 Probe42 endpoints. CaratLane-specific sources begin at [95].</em></p>
   <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
   <ol start="95">
   <li id="src-95"><strong>Rapaport + Inc42</strong> &mdash; Titan acquisition history: 2016 initial stake at Rs 575 Cr post-money; Aug 2023 buy-out of Mithun Sacheti&rsquo;s 27% at Rs 17,000 Cr valuation (Sacheti net Rs 4,621 Cr); Feb 2024 final 0.36% for Rs 60.08 Cr making CaratLane wholly-owned. <span class="u">rapaport.com/news/indias-titan-company-buys-out-caratlane-for-557m/ &middot; inc42.com</span></li>
   <li id="src-96"><strong>Inc42 + Infomance</strong> &mdash; FY25 total income Rs 3,583 Cr (+24% YoY); EBIT Rs 296 Cr at 8.3% margin; Q4 FY25 17 new stores taking total to 322 stores across 140 cities. <span class="u">inc42.com/buzz/caratlanes-q4-revenue-rises-23-yoy-to-inr-883-cr/ &middot; infomance.com/startup-ecosystem/reports/financial-reports/caratlane-q1-fy25-rs-754-cr-total-revenue-ebitda-jumps-8-5-yoy/</span></li>

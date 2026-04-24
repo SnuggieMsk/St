@@ -206,11 +206,15 @@ def S10():
 </section>
 """
 def S11():
-    return """
+    from .shared_sources import MACRO_SOURCES_HTML
+    return f"""
 <section id="sources">
   <div class="subhead">12 · Sources</div>
-  <p><em>Shared 1-22; Probe42 81-82. TVS Srichakra sources from [106].</em></p>
-  <div class="src-list"><ol start="106">
+  <p>Every numeric claim resolves below. Sources 1&ndash;22 shared macro + PESTEL; 81&ndash;82 Probe42 registry endpoints; entity-specific begin at the ordered list that follows.</p>
+  <div class="src-list">
+  {MACRO_SOURCES_HTML}
+  <h3 style="margin-top:1.6em">Entity-specific sources</h3>
+  <ol start="106">
   <li id="src-106"><strong>TVS Srichakra Ltd BSE/NSE annual report FY25 + IND Ratings rationale Nov 2025</strong> &mdash; Madurai + Pantnagar plants; TVS Eurogrip export brand expansion; 2W + 3W + off-highway segments. <span class="u">tvstyres.com / investors &middot; bseindia.com</span></li>
   </ol></div>
 </section>
