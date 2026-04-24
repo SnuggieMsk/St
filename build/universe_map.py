@@ -187,6 +187,8 @@ def build():
         "U85110TN2020PLC135839": "apollo-healthco-dossier.html",
         "U52393TN2007PTC064830": "caratlane-dossier.html",
         "L28991TZ1986PLC001816": "craftsman-automation-dossier.html",
+        "L51100TN2017PLC118316": "sundaram-clayton-dossier.html",
+        "L35921TN1960PLC004175": "wheels-india-dossier.html",
     }
     # CIN → city_norm mapping (from geocoder output) for india-map deep-link
     import json as _json
