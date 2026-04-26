@@ -49,7 +49,7 @@ def build():
     a("<span>Universe size <strong>499 + 2 extras</strong></span>")
     a("<span>Industry clusters <strong>9</strong></span>")
     a("<span>Geographic clusters <strong>40 cities (TN) + 1 extra (Kolkata)</strong></span>")
-    a("<span>Tier-1 dossiers ready <strong>34 of 34</strong></span>")
+    a("<span>Tier-1 dossiers ready <strong>38 of 38</strong></span>")
     a("<span>Per-dossier line-count floor <strong>1,500+</strong></span>")
     a("<span>Consolidated wallet (34 dossiers) <strong>Rs 2,100&ndash;3,000 Cr / yr</strong></span>")
     a("</div>")
@@ -82,7 +82,7 @@ def build():
     a("</div>")
 
     # Tier-1 dossiers
-    a("<h2 id='dossiers'>Tier-1 dossiers (34 of 34) &mdash; complete</h2>")
+    a("<h2 id='dossiers'>Tier-1 dossiers (38 of 38) &mdash; complete</h2>")
     a("<p class='lede'>Each dossier is a self-contained, single-file HTML artifact &mdash; macro/PESTEL/industry blocks shared across the series via <code>build/shared_sources.py</code>, extended sections P1&ndash;P20 via <code>build/padding.py</code>, then deep-dive into the named entity. Every numeric claim references a numbered source resolving within the same HTML file. The wholesale bank is consistently rendered as <code>IBank</code> per cipher rules.</p>")
 
     a("<div class='subtype-grid'>")
@@ -152,6 +152,10 @@ def build():
         ("hyundai-steel-india-dossier.html", "Pilot 32 · Korean auto steel", "Hyundai Steel India", "Hyundai Steel Co. (KRX 004020) steel-service-centre; supplies HMIL Sriperumbudur + Talegaon and Kia Anantapur. IND A-/A1.", "Rs 48&ndash;72 Cr/yr"),
         ("paypal-india-dossier.html", "Pilot 33 · US fintech GCC + PA-CB", "PayPal India", "PayPal Holdings (PYPL) Chennai GCC (6,671 FTE) + RBI-authorised PA-CB cross-border settlement rails. Parent S&amp;P BBB+.", "Rs 62&ndash;92 Cr/yr"),
         ("greenstar-fertilizers-dossier.html", "Pilot 34 · Fertilisers · Tuticorin", "Greenstar Fertilizers", "Post-SPIC IBC acquisition (2017); Tuticorin DAP/NPK/acids; AM Intl (Singapore) + Mercantile Ventures promoter. IND BBB+/A2.", "Rs 36&ndash;58 Cr/yr"),
+        ("rane-steering-dossier.html", "Pilot 35 · Auto-comp · Rane JV · IBank anchor", "Rane Steering Systems", "Tri-party JV: Rane Holdings + Maruti Suzuki + JTEKT (Japan). Steering systems for Maruti / Tata / M&amp;M / Hyundai. CRISIL A-/A- Stable. IBank holds Rs 350 Cr (99.8%) of Rs 350.75 Cr secured — wallet-defence + cross-sell into Rane Group.", "Rs 38&ndash;58 Cr/yr"),
+        ("zf-rane-auto-dossier.html", "Pilot 36 · Auto-comp · Rane / ZF JV", "ZF Rane Automotive India", "50:50 JV between Rane Group and ZF Friedrichshafen (Germany). CV steering + brake systems for Tata CV / Ashok Leyland / VECV / Daimler India CV. ICRA AA- Stable. IBank Rs 30 Cr (5.7%) of Rs 524 Cr — share-grow play.", "Rs 50&ndash;72 Cr/yr"),
+        ("faurecia-india-dossier.html", "Pilot 37 · Auto-comp / clean mobility", "Faurecia India", "Forvia SE (Euronext Paris) Indian subsidiary; emissions / clean-mobility components. Forvia parent Moody's Ba2 / S&amp;P BB+. Greenfield (zero active bank charge); Forvia-group cross-sell into Hella + Faurecia Interiors.", "Rs 32&ndash;52 Cr/yr"),
+        ("hanon-automotive-dossier.html", "Pilot 38 · Auto thermal-management", "Hanon Automotive Systems India", "Hanon Systems Korea (KRX 018880) Indian subsidiary; Hahn &amp; Co. + Hyundai Mobis joint-controlled. Thermal-management + HVAC for Hyundai-Kia + Maruti + Renault-Nissan. Greenfield (zero secured charges); EV battery-TMS capex pipeline.", "Rs 38&ndash;58 Cr/yr"),
     ]:
         a(f"<a class='navcard' href='{href}'>")
         a(f"<span class='nctype'>{kind}</span>")
@@ -173,7 +177,7 @@ def build():
     # Footer
     a("<footer class='foot'>")
     a("<div class='mono'>LCG / PBG South · client acquisition review · 24 April 2026 · landing hub</div>")
-    a("<div class='mono' style='margin-top:6px'>Three primary surfaces · 34 Tier-1 dossiers published · 1,500+ line baseline · cipher-clean per editorial standard.</div>")
+    a("<div class='mono' style='margin-top:6px'>Three primary surfaces · 38 Tier-1 dossiers published · 1,500+ line baseline · per-dossier hyper-cover audit PASS · cipher-clean.</div>")
     a("</footer>")
 
     a("</div></body></html>")

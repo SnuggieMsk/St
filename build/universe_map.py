@@ -219,6 +219,10 @@ def build():
         "U27100TN2011PTC081333": "hyundai-steel-india-dossier.html",
         "U72200TN2006PTC058697": "paypal-india-dossier.html",
         "U24100TN2010PLC077127": "greenstar-fertilizers-dossier.html",
+        "U29141TN1995PTC030621": "rane-steering-dossier.html",
+        "U35999TN1987PTC014600": "zf-rane-auto-dossier.html",
+        "U29130TN1997FTC037962": "faurecia-india-dossier.html",
+        "U35911TN1997PTC037782": "hanon-automotive-dossier.html",
     }
     # CIN → city_norm / region / mnc mapping (from geocoder output)
     import json as _json
