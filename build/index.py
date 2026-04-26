@@ -49,7 +49,7 @@ def build():
     a("<span>Universe size <strong>499 + 2 extras</strong></span>")
     a("<span>Industry clusters <strong>9</strong></span>")
     a("<span>Geographic clusters <strong>40 cities (TN) + 1 extra (Kolkata)</strong></span>")
-    a("<span>Tier-1 dossiers ready <strong>38 of 38</strong></span>")
+    a("<span>Tier-1 dossiers ready <strong>41 of 41</strong></span>")
     a("<span>Per-dossier line-count floor <strong>1,500+</strong></span>")
     a("<span>Consolidated wallet (34 dossiers) <strong>Rs 2,100&ndash;3,000 Cr / yr</strong></span>")
     a("</div>")
@@ -82,7 +82,7 @@ def build():
     a("</div>")
 
     # Tier-1 dossiers
-    a("<h2 id='dossiers'>Tier-1 dossiers (38 of 38) &mdash; complete</h2>")
+    a("<h2 id='dossiers'>Tier-1 dossiers (41 of 41) &mdash; complete</h2>")
     a("<p class='lede'>Each dossier is a self-contained, single-file HTML artifact &mdash; macro/PESTEL/industry blocks shared across the series via <code>build/shared_sources.py</code>, extended sections P1&ndash;P20 via <code>build/padding.py</code>, then deep-dive into the named entity. Every numeric claim references a numbered source resolving within the same HTML file. The wholesale bank is consistently rendered as <code>IBank</code> per cipher rules.</p>")
 
     a("<div class='subtype-grid'>")
@@ -156,6 +156,9 @@ def build():
         ("zf-rane-auto-dossier.html", "Pilot 36 · Auto-comp · Rane / ZF JV", "ZF Rane Automotive India", "50:50 JV between Rane Group and ZF Friedrichshafen (Germany). CV steering + brake systems for Tata CV / Ashok Leyland / VECV / Daimler India CV. ICRA AA- Stable. IBank Rs 30 Cr (5.7%) of Rs 524 Cr — share-grow play.", "Rs 50&ndash;72 Cr/yr"),
         ("faurecia-india-dossier.html", "Pilot 37 · Auto-comp / clean mobility", "Faurecia India", "Forvia SE (Euronext Paris) Indian subsidiary; emissions / clean-mobility components. Forvia parent Moody's Ba2 / S&amp;P BB+. Greenfield (zero active bank charge); Forvia-group cross-sell into Hella + Faurecia Interiors.", "Rs 32&ndash;52 Cr/yr"),
         ("hanon-automotive-dossier.html", "Pilot 38 · Auto thermal-management", "Hanon Automotive Systems India", "Hanon Systems Korea (KRX 018880) Indian subsidiary; Hahn &amp; Co. + Hyundai Mobis joint-controlled. Thermal-management + HVAC for Hyundai-Kia + Maruti + Renault-Nissan. Greenfield (zero secured charges); EV battery-TMS capex pipeline.", "Rs 38&ndash;58 Cr/yr"),
+        ("lucas-tvs-dossier.html", "Pilot 39 · Auto-comp · TVS Group · CRISIL AA+", "Lucas-TVS", "Flagship auto-electrical / mechatronics tier-1 (TVS Group + Lucas plc heritage). FY25 TOI Rs 3,461 Cr; CRISIL AA+ Stable — highest-rated TN auto-comp ex-Tata. Greenfield secured-bank entry + TVS Group cross-sell + EV-mechatronics capex Rs 400-600 Cr.", "Rs 78&ndash;115 Cr/yr"),
+        ("lucas-indian-service-dossier.html", "Pilot 40 · Auto aftermarket · TVS Group · IBank anchor", "Lucas Indian Service", "India's leading auto-electrical aftermarket / spares distribution arm of TVS Group; 350+ ALSS + 80 LPC. CRISIL AA Stable; IBank holds Rs 54 Cr (58.7%) of Rs 92 Cr secured anchor. Defence + cross-sell into Lucas-TVS + TVS Group.", "Rs 32&ndash;48 Cr/yr"),
+        ("ls-mills-dossier.html", "Pilot 41 · Cotton yarn / knit / RMG · Theni · Competitive entry", "L.S. Mills Limited", "Vertically-integrated cotton-yarn + knit + RMG exporter (Theni; Lalji Devji family). FY25 TOI Rs 792 Cr; Acuite A- Stable. Probe42 charge register Rs 1,355 Cr in 17-bank consortium with SBI dominant; IBank ABSENT. Consortium-entry + EXIM Bank refinance + USA-tariff window play.", "Rs 32&ndash;52 Cr/yr"),
     ]:
         a(f"<a class='navcard' href='{href}'>")
         a(f"<span class='nctype'>{kind}</span>")
@@ -177,7 +180,7 @@ def build():
     # Footer
     a("<footer class='foot'>")
     a("<div class='mono'>LCG / PBG South · client acquisition review · 24 April 2026 · landing hub</div>")
-    a("<div class='mono' style='margin-top:6px'>Three primary surfaces · 38 Tier-1 dossiers published · 1,500+ line baseline · per-dossier hyper-cover audit PASS · cipher-clean.</div>")
+    a("<div class='mono' style='margin-top:6px'>Three primary surfaces · 41 Tier-1 dossiers published · 1,500+ line baseline · per-dossier hyper-cover audit PASS · cipher-clean.</div>")
     a("</footer>")
 
     a("</div></body></html>")

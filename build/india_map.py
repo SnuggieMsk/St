@@ -105,6 +105,9 @@ def build():
         "U35999TN1987PTC014600": "zf-rane-auto-dossier.html",
         "U29130TN1997FTC037962": "faurecia-india-dossier.html",
         "U35911TN1997PTC037782": "hanon-automotive-dossier.html",
+        "U35999TN1961PLC004678": "lucas-tvs-dossier.html",
+        "U35999TN1930PLC005705": "lucas-indian-service-dossier.html",
+        "U17111TN1983PLC009973": "ls-mills-dossier.html",
     }
     # Patch dossier links + tier1 flags inside each city's companies list
     for city in cities:
