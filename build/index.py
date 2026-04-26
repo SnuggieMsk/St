@@ -49,7 +49,7 @@ def build():
     a("<span>Universe size <strong>499 + 2 extras</strong></span>")
     a("<span>Industry clusters <strong>9</strong></span>")
     a("<span>Geographic clusters <strong>40 cities (TN) + 1 extra (Kolkata)</strong></span>")
-    a("<span>Tier-1 dossiers ready <strong>50 of 50</strong></span>")
+    a("<span>Tier-1 dossiers ready <strong>55 of 55</strong></span>")
     a("<span>Per-dossier line-count floor <strong>1,500+</strong></span>")
     a("<span>Consolidated wallet (34 dossiers) <strong>Rs 2,100&ndash;3,000 Cr / yr</strong></span>")
     a("</div>")
@@ -82,7 +82,7 @@ def build():
     a("</div>")
 
     # Tier-1 dossiers
-    a("<h2 id='dossiers'>Tier-1 dossiers (50 of 50) &mdash; complete</h2>")
+    a("<h2 id='dossiers'>Tier-1 dossiers (55 of 55) &mdash; complete</h2>")
     a("<p class='lede'>Each dossier is a self-contained, single-file HTML artifact &mdash; macro/PESTEL/industry blocks shared across the series via <code>build/shared_sources.py</code>, extended sections P1&ndash;P20 via <code>build/padding.py</code>, then deep-dive into the named entity. Every numeric claim references a numbered source resolving within the same HTML file. The wholesale bank is consistently rendered as <code>IBank</code> per cipher rules.</p>")
 
     a("<div class='subtype-grid'>")
@@ -168,6 +168,11 @@ def build():
         ("thejo-engineering-dossier.html", "Pilot 48 · Bulk-material handling · Listed CRISIL A", "Thejo Engineering", "Listed BSE 543238 bulk-material-handling rubber + composites + service for mining/cement/power; FY25 TOI Rs 436 Cr; CRISIL A; SBICAP-Trustee NCD-anchored Rs 109 Cr; greenfield + 5-country export.", "Rs 22&ndash;38 Cr/yr"),
         ("chemfab-alkalis-dossier.html", "Pilot 49 · Caustic-soda + chemicals · Listed BBB+", "Chemfab Alkalis", "Listed BSE 542465 caustic-soda + chlorine + H2O2 + barium chemicals (Pondicherry-belt); FY25 TOI Rs 322 Cr; IND BBB+ Stable; HDFC + Axis duopoly Rs 183 Cr; greenfield BBB+ entry + capacity-expansion capex.", "Rs 18&ndash;30 Cr/yr"),
         ("ip-rings-dossier.html", "Pilot 50 · Auto-comp piston rings + transmission · Listed", "IP Rings Limited", "Listed BSE 523486 auto-comp piston-rings + transmission-components; FY25 TOI Rs 303 Cr; 19-charge Rs 261 Cr 13-bank consortium with IBank Rs 5 Cr (1.9%) minority; share-grow + EV-transmission pivot + USA-aftermarket export.", "Rs 14&ndash;26 Cr/yr"),
+        ("delphi-tvs-dossier.html", "Pilot 51 · Diesel injection · TVS Group · CARE AA", "Delphi-TVS Technologies", "Founded 1952; 100% TVS Group post-Delphi exit; FY25 TOI Rs 2,005 Cr; CARE AA Stable; SIPCOT + SBI + HDFC trio Rs 458 Cr (IBank absent); greenfield AA pricing + EV-pivot capex + TVS-group cross-sell.", "Rs 48&ndash;72 Cr/yr"),
+        ("nippon-paint-dossier.html", "Pilot 52 · Paints + coatings · Japan-MNC", "Nippon Paint India", "Indian subsidiary of Nippon Paint Holdings (TSE: 4612); FY25 TOI Rs 2,341 Cr; greenfield (SCB-only Rs 5.25 Cr token); 8K dealer network + auto-OEM + decorative + industrial coatings.", "Rs 38&ndash;58 Cr/yr"),
+        ("india-nippon-electricals-dossier.html", "Pilot 53 · 2W ignition · Lucas-TVS / Denso JV", "India Nippon Electricals", "Listed BSE 532240 2W ignition + electricals; Lucas-TVS group + Denso (Japan) JV; FY25 TOI Rs 845 Cr; cash-rich (zero charges); 2W EV-controller pivot.", "Rs 22&ndash;38 Cr/yr"),
+        ("borgwarner-india-dossier.html", "Pilot 54 · Auto e-mobility · 2-entity US-MNC", "BorgWarner India", "BorgWarner Inc (NYSE: BWA) Morse + Cooling Systems consolidated; combined FY25 TOI Rs 1,142 Cr; 28% EBITDA margin; zero charges; greenfield BBB+ entry + EV powertrain pivot.", "Rs 30&ndash;48 Cr/yr"),
+        ("sanmar-matrix-dossier.html", "Pilot 55 · Specialty steel · Sanmar Group", "Sanmar Matrix Metals", "Sanmar Group specialty steel + iron-castings; FY25 TOI Rs 455 Cr; CARE A+/A1+; 18-bank consortium with IDBI-Trusteeship NCD Rs 328 Cr; NCD-take-out + USA-export tailwind.", "Rs 22&ndash;38 Cr/yr"),
     ]:
         a(f"<a class='navcard' href='{href}'>")
         a(f"<span class='nctype'>{kind}</span>")
@@ -189,7 +194,7 @@ def build():
     # Footer
     a("<footer class='foot'>")
     a("<div class='mono'>LCG / PBG South · client acquisition review · 24 April 2026 · landing hub</div>")
-    a("<div class='mono' style='margin-top:6px'>Three primary surfaces · 50 Tier-1 dossiers published · 1,500+ line baseline · per-dossier hyper-cover audit PASS · cipher-clean.</div>")
+    a("<div class='mono' style='margin-top:6px'>Three primary surfaces · 55 Tier-1 dossiers published · 1,500+ line baseline · per-dossier hyper-cover audit PASS · cipher-clean.</div>")
     a("</footer>")
 
     a("</div></body></html>")

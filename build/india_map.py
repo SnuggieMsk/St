@@ -117,6 +117,12 @@ def build():
         "L27209TN1986PLC012833": "thejo-engineering-dossier.html",
         "L24290TN2009PLC071563": "chemfab-alkalis-dossier.html",
         "L28920TN1991PLC020232": "ip-rings-dossier.html",
+        "U24117TN1952PLC005704": "delphi-tvs-dossier.html",
+        "U74999TN2006PTC069356": "nippon-paint-dossier.html",
+        "L31901TN1984PLC011021": "india-nippon-electricals-dossier.html",
+        "U28991TN2001FTC047397": "borgwarner-india-dossier.html",
+        "U28999TN2001PTC047184": "borgwarner-india-dossier.html",
+        "U33112TN1983PLC009911": "sanmar-matrix-dossier.html",
     }
     # Patch dossier links + tier1 flags inside each city's companies list
     for city in cities:
