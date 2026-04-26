@@ -49,7 +49,7 @@ def build():
     a("<span>Universe size <strong>499 + 2 extras</strong></span>")
     a("<span>Industry clusters <strong>9</strong></span>")
     a("<span>Geographic clusters <strong>40 cities (TN) + 1 extra (Kolkata)</strong></span>")
-    a("<span>Tier-1 dossiers ready <strong>55 of 55</strong></span>")
+    a("<span>Tier-1 dossiers ready <strong>75 of 75</strong></span>")
     a("<span>Per-dossier line-count floor <strong>1,500+</strong></span>")
     a("<span>Consolidated wallet (34 dossiers) <strong>Rs 2,100&ndash;3,000 Cr / yr</strong></span>")
     a("</div>")
@@ -82,7 +82,7 @@ def build():
     a("</div>")
 
     # Tier-1 dossiers
-    a("<h2 id='dossiers'>Tier-1 dossiers (55 of 55) &mdash; complete</h2>")
+    a("<h2 id='dossiers'>Tier-1 dossiers (75 of 75) &mdash; complete</h2>")
     a("<p class='lede'>Each dossier is a self-contained, single-file HTML artifact &mdash; macro/PESTEL/industry blocks shared across the series via <code>build/shared_sources.py</code>, extended sections P1&ndash;P20 via <code>build/padding.py</code>, then deep-dive into the named entity. Every numeric claim references a numbered source resolving within the same HTML file. The wholesale bank is consistently rendered as <code>IBank</code> per cipher rules.</p>")
 
     a("<div class='subtype-grid'>")
@@ -173,6 +173,26 @@ def build():
         ("india-nippon-electricals-dossier.html", "Pilot 53 · 2W ignition · Lucas-TVS / Denso JV", "India Nippon Electricals", "Listed BSE 532240 2W ignition + electricals; Lucas-TVS group + Denso (Japan) JV; FY25 TOI Rs 845 Cr; cash-rich (zero charges); 2W EV-controller pivot.", "Rs 22&ndash;38 Cr/yr"),
         ("borgwarner-india-dossier.html", "Pilot 54 · Auto e-mobility · 2-entity US-MNC", "BorgWarner India", "BorgWarner Inc (NYSE: BWA) Morse + Cooling Systems consolidated; combined FY25 TOI Rs 1,142 Cr; 28% EBITDA margin; zero charges; greenfield BBB+ entry + EV powertrain pivot.", "Rs 30&ndash;48 Cr/yr"),
         ("sanmar-matrix-dossier.html", "Pilot 55 · Specialty steel · Sanmar Group", "Sanmar Matrix Metals", "Sanmar Group specialty steel + iron-castings; FY25 TOI Rs 455 Cr; CARE A+/A1+; 18-bank consortium with IDBI-Trusteeship NCD Rs 328 Cr; NCD-take-out + USA-export tailwind.", "Rs 22&ndash;38 Cr/yr"),
+        ("mobis-india-dossier.html", "Pilot 56 · Auto-comp modules · Hyundai-Mobis Korean MNC", "Mobis India", "Hyundai-Mobis Korean MNC (KOSPI: 012330) Indian tier-1; FY25 TOI Rs 17,003 Cr; ICRA A1+ Apr 2026; zero charges; greenfield treasury + dealer-SCF + Hyundai-Kia ecosystem.", "Rs 60&ndash;100 Cr/yr"),
+        ("basf-catalysts-dossier.html", "Pilot 57 · Catalysts + chemicals · German MNC", "BASF Catalysts India", "BASF SE (Frankfurt) Indian catalysts subsidiary; FY25 TOI Rs 5,610 Cr; CRISIL A1+ on Rs 500 Cr CP; zero charges; greenfield CP-IPA + Pt/Pd/Rh hedge + treasury.", "Rs 32&ndash;55 Cr/yr"),
+        ("renault-india-dossier.html", "Pilot 58 · Auto OEM · French MNC", "Renault India", "Groupe Renault (Euronext) Indian sales+distribution; FY25 TOI Rs 4,510 Cr; zero charges; greenfield FX + dealer-SCF + Renault EV-relaunch capex.", "Rs 26&ndash;46 Cr/yr"),
+        ("glovis-india-dossier.html", "Pilot 59 · Auto logistics · Hyundai-Glovis Korean MNC", "Glovis India", "Hyundai Glovis Korean captive logistics; FY25 TOI Rs 4,454 Cr; zero charges; greenfield FX + vendor-SCF + bunker hedge.", "Rs 18&ndash;32 Cr/yr"),
+        ("komatsu-india-dossier.html", "Pilot 60 · Mining + construction equipment · Japanese MNC", "Komatsu India", "Komatsu Ltd (TSE: 6301) #2 mining-equipment OEM Indian sub; FY25 TOI Rs 3,613 Cr; zero charges; greenfield JPY hedge + customer-finance + Coal-FSA tailwind.", "Rs 22&ndash;38 Cr/yr"),
+        ("rntbci-dossier.html", "Pilot 61 · Auto ER&D + GCC · Renault-Nissan", "RNTBCI", "Renault-Nissan global ER&D + business-services GCC; FY25 TOI Rs 3,287 Cr; ~10,500 FTE; zero charges; FX + retail-mass + PB on FTE base.", "Rs 28&ndash;48 Cr/yr"),
+        ("turbo-energy-tvs-dossier.html", "Pilot 62 · Turbocharger · TVS-BorgWarner JV · ICRA AA", "Turbo Energy", "TVS-BorgWarner JV; FY25 TOI Rs 2,956 Cr; ICRA AA Stable / A1+ Oct 2025; HDFC sole-bank Rs 240 Cr (100%); IBank ABSENT — competitive entry / dislodge.", "Rs 18&ndash;30 Cr/yr"),
+        ("bny-mellon-tech-dossier.html", "Pilot 63 · Custody-bank GCC · BNY Mellon US", "BNY Mellon Tech", "Bank of New York Mellon Corporation custody-bank GCC; FY25 TOI Rs 2,798 Cr; ~13,500 FTE; zero charges; FX + retail-mass + PB on FTE base.", "Rs 30&ndash;52 Cr/yr"),
+        ("praxair-india-dossier.html", "Pilot 64 · Industrial gases · Linde plc US/IRL", "Praxair India", "Linde plc industrial-gases sub (post 2018 Praxair-Linde merger); FY25 TOI Rs 2,726 Cr; zero charges; greenfield FX + capex TL + green-H2 capex window.", "Rs 22&ndash;38 Cr/yr"),
+        ("iff-india-dossier.html", "Pilot 65 · Flavours+fragrances+biosciences · IFF Inc US", "IFF India", "International Flavours & Fragrances (NYSE: IFF) F&F + biosciences subsidiary; FY25 TOI Rs 2,485 Cr; zero charges; greenfield FX + customer-SCF + India capex.", "Rs 18&ndash;30 Cr/yr"),
+        ("michelin-india-dossier.html", "Pilot 66 · Tyres + mobility · Michelin France", "Michelin India", "Compagnie Generale des Etablissements Michelin (Euronext) tyre subsidiary; FY25 TOI Rs 2,419 Cr; zero charges; greenfield FX + dealer-SCF + specialty/EV-tyre capex.", "Rs 18&ndash;30 Cr/yr"),
+        ("freshworks-dossier.html", "Pilot 67 · SaaS · Indian-origin Nasdaq", "Freshworks Technologies", "Indian-origin Nasdaq-listed SaaS unicorn (NASDAQ: FRSH); FY25 TOI Rs 2,320 Cr; ~5,800 FTE; zero charges; founder + ESOP-rich PB + retail-mass + FX.", "Rs 28&ndash;46 Cr/yr"),
+        ("tenneco-clean-air-dossier.html", "Pilot 68 · Auto emission-control · Apollo-owned Tenneco · Listed", "Tenneco Clean Air India", "BSE/NSE-listed Apollo-owned Tenneco Inc subsidiary for catalysts + DPF + SCR; FY25 TOI Rs 2,237 Cr; zero charges; greenfield FX + customer-SCF + BS7 capex.", "Rs 18&ndash;30 Cr/yr"),
+        ("faiveley-transport-dossier.html", "Pilot 69 · Rail-systems · Wabtec Corp US", "Faiveley Transport India", "Wabtec Corp Indian rail-systems (brakes, doors, HVAC) subsidiary; FY25 TOI Rs 2,183 Cr; zero charges; greenfield FX + Vande Bharat / IR-LD capex.", "Rs 18&ndash;30 Cr/yr"),
+        ("dxc-india-dossier.html", "Pilot 70 · IT services + GCC · DXC Technology US", "DXC Technology India", "DXC Technology Co IT services + GCC; FY25 TOI Rs 2,181 Cr; ~9,500 FTE; zero charges; greenfield FX + retail-mass + PB.", "Rs 26&ndash;44 Cr/yr"),
+        ("astrazeneca-india-dossier.html", "Pilot 71 · Pharma + biotech · AstraZeneca UK", "AstraZeneca India", "UK AstraZeneca plc Indian operations + IGIC; FY25 TOI Rs 2,057 Cr; ~6,800 FTE; zero charges; greenfield FX + retail-mass + PB.", "Rs 22&ndash;38 Cr/yr"),
+        ("omega-healthcare-dossier.html", "Pilot 72 · Healthcare RCM BPO · Goldman + Everstone PE", "Omega Healthcare", "PE-owned (Goldman + Everstone) healthcare-RCM BPO; FY25 TOI Rs 2,053 Cr; ~32,000 FTE; zero charges; FX + retail-mass + PE-exit IPO arranger play.", "Rs 35&ndash;58 Cr/yr"),
+        ("bannari-amman-sugars-dossier.html", "Pilot 73 · Sugar+ethanol+power · CARE AA- · IBank PRESENT 13.7%", "Bannari Amman Sugars", "Listed Coimbatore sugar+ethanol+power; FY25 TOI Rs 1,793 Cr; CARE AA- Dec 2025; 9-bank Rs 728 Cr; IBank Rs 100 Cr (13.7%, #3) PRESENT — defence + share-grow + ethanol capex.", "Rs 18&ndash;30 Cr/yr"),
+        ("propel-industries-dossier.html", "Pilot 74 · Crushing+screening equipment · ICRA AA- · IBank PRESENT 27.9%", "Propel Industries", "India's largest crushing+screening OEM (A.M.M.A. Group); FY25 TOI Rs 1,786 Cr; ICRA AA- Stable / A1+ Dec 2025; 4-bank Rs 358 Cr; IBank Rs 100 Cr (27.9%, #2) PRESENT — defence + dislodge-HDFC play.", "Rs 22&ndash;38 Cr/yr"),
+        ("space-textiles-dossier.html", "Pilot 75 · Cotton spinning+weaving+made-ups · CRISIL A · UPGRADED", "Space Textiles", "Coimbatore textile spinning+weaving+made-ups; FY25 TOI Rs 2,317 Cr; CRISIL A Stable / A1 UPGRADED Feb 2026; 3-bank Rs 584 Cr (HDFC+SBI duopoly); IBank ABSENT — competitive entry on rating-upgrade window.", "Rs 18&ndash;30 Cr/yr"),
     ]:
         a(f"<a class='navcard' href='{href}'>")
         a(f"<span class='nctype'>{kind}</span>")
