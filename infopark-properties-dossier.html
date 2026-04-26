@@ -356,10 +356,38 @@ footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);co
   <li id="src-22"><strong>RBI Late Payment Surcharge (LPS) scheme for DISCOMs</strong> &mdash; implementation circular. <span class="u">rbi.org.in / bs_viewcontent.aspx?Id=12024</span></li>
 </ol>
 
+<h3 style="margin-top:1.4em">Sector / industry shared (31, 38, 42)</h3>
+<ol start="31">
+  <li id="src-31"><strong>India electronics-manufacturing data &mdash; ICEA + MeitY + JPMorgan India equity-research notes</strong> &mdash; smartphone exports $22.9 bn FY25 (vs $11.1 bn FY24, $0.2 bn FY19); India mobile-phone production trajectory FY24 $49.2 bn &rarr; FY28 $115 bn projection; EMS sector EBITDA-margin and local-value-add benchmarks; Apple India unit-volume mix progression. <span class="u">icea.org.in &middot; meity.gov.in &middot; JPMorgan India Technology research notes</span></li>
+</ol>
+<ol start="38">
+  <li id="src-38"><strong>Companies Act 2013 &mdash; Section 135 (Corporate Social Responsibility)</strong> &mdash; mandates 2% of three-year rolling average PBT for CSR for companies meeting net worth Rs 500 Cr / turnover Rs 1,000 Cr / net profit Rs 5 Cr threshold; CSR Rules 2014 + amendments. <span class="u">indiacode.nic.in &middot; mca.gov.in / Acts &amp; Rules</span></li>
+</ol>
+<ol start="42">
+  <li id="src-42"><strong>Master Lead Generation sheet &mdash; negative-screen field set</strong> &mdash; cross-checked at the row level for Wilful Defaulter / NCLT Present / Major Default / Stressed Asset Sale / Disqualified Director flags; sheet cut 8 Sep 2025. Marked SAFE only when every flag is N/clear. <span class="u">Internal reference: Master Lead Generation sheet negative-screen columns</span></li>
+</ol>
+
 <h3 style="margin-top:1.4em">Probe42 registry endpoints (81&ndash;82)</h3>
 <ol start="81">
   <li id="src-81"><strong>Probe42 credit-ratings endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/credit-ratings</code>; per-instrument rating grid including agency, date, action (Reaffirmed / Assigned / Upgraded / Downgraded), long-term / short-term symbol, outlook, instrument list and amounts. Pulled 22&ndash;24 Apr 2026 across all Tier-1 pilot CINs. <span class="u">api.probe42.in &middot; retrieved 22&ndash;24 Apr 2026</span></li>
   <li id="src-82"><strong>Probe42 suit-filed-cases endpoint</strong> &mdash; <code>/probe_data_api/entities/{CIN}/suit-filed-cases</code>; credit-bureau suit-filed cases (if any) with date, agency, bank, amount fields. <strong>All Tier-1 pilots returned ZERO suit-filed cases as of 22&ndash;24 Apr 2026.</strong> <span class="u">api.probe42.in &middot; retrieved 22&ndash;24 Apr 2026</span></li>
+</ol>
+
+<h3 style="margin-top:1.4em">Cross-pilot diligence sources (126, 128, 140, 144, 145)</h3>
+<ol start="126">
+  <li id="src-126"><strong>Probe42 open-charges endpoint &mdash; per-CIN secured-debt registry</strong> &mdash; <code>/probe_data_api/entities/{CIN}/open-charges</code>; per-tranche charge-holder, amount, action (Creation / Modification / Satisfaction), action-date. Pulled 22 Apr 2026 (initial) and 13 Apr 2026 / 24 Apr 2026 refreshes for the Tier-1 pilot universe. Source for every &ldquo;zero charges&rdquo; / &ldquo;Rs N Cr aggregate&rdquo; statement on each dossier&rsquo;s registry section. <span class="u">api.probe42.in &middot; cached at /work/charges_raw/&lt;CIN&gt;.json</span></li>
+</ol>
+<ol start="128">
+  <li id="src-128"><strong>Master Lead Generation sheet &mdash; row-level financial extraction</strong> &mdash; per-CIN row source for FY25 TOI, EBITDA, PAT, Tangible Net Worth, Total Debt, Open-Charges figure, paid-up capital, cumulative-FDI, employee-count, country-of-origin, banking-consortium-disclosed, ratings agency + date. Sheet cut 8 Sep 2025; per-row filing-date column referenced in each entity dossier. <span class="u">Internal reference: Master Lead Generation sheet row for the entity-CIN under review</span></li>
+</ol>
+<ol start="140">
+  <li id="src-140"><strong>NASSCOM + KPMG India GCC + sector-cluster reports 2025&ndash;26</strong> &mdash; India GCC count ~1,700; workforce ~1.9 mn FTE; auto ER&amp;D sub-segment Rs 95,000 Cr; telecom-sector GCC headcount ~95,000&ndash;110,000 FTE; fintech-sector GCC headcount ~45,000&ndash;55,000 FTE. Used across Ford / Verizon / PayPal / Stellantis dossiers. <span class="u">nasscom.in/knowledge-center/publications</span></li>
+</ol>
+<ol start="144">
+  <li id="src-144"><strong>MCA Section 90 + Companies (Significant Beneficial Owners) Rules 2018 + BEN-2 framework</strong> &mdash; ultimate-beneficial-owner declaration regime; 10% indirect-holding threshold; annual refresh + 30-day on every change. Applied uniformly across MNC-captive Indian-subsidiary dossiers. <span class="u">mca.gov.in &middot; Companies Act 2013 Section 90 &middot; SBO Rules 2018</span></li>
+</ol>
+<ol start="145">
+  <li id="src-145"><strong>Indian Kanoon + NCLT case-search + ecourts &mdash; per-entity litigation diligence (24 Apr 2026)</strong> &mdash; combined search across Indian Kanoon, NCLT case-number-wise portal, and ecourts.gov.in for the entity-name and CIN; T-24-month look-back window. Default outcome reported in each dossier &mdash; &ldquo;no material commercial litigation, NCLT filing, or CIRP proceeding&rdquo; &mdash; reflects search-hit equal to zero. <span class="u">indiankanoon.org &middot; nclt.gov.in/case-number-wise &middot; ecourts.gov.in</span></li>
 </ol>
 
   <h3 style="margin-top:1.6em">Entity-specific sources</h3>

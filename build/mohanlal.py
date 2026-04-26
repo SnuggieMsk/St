@@ -38,7 +38,7 @@ def S1():
     <span>CIN <strong>U28999TN2009PTC071334</strong></span>
     <span>Sector <strong>Retail / Jewellery</strong></span>
     <span>Listing <strong>Unlisted (private family-owned)</strong></span>
-    <span>Registry cut <strong>Probe42 / TBD</strong></span>
+    <span>Registry cut <strong>Probe42 22 Apr 2026</strong></span>
   </div>
 </section>
 """

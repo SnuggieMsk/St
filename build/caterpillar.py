@@ -37,7 +37,7 @@ def S1():
   <div class="meta" style="margin-top:14px">
     <span>CIN <strong>U29244TN2000FTC046255</strong></span>
     <span>Parent <strong>Caterpillar Inc (NYSE: CAT)</strong></span>
-    <span>Registry cut <strong>Probe42 / TBD</strong></span>
+    <span>Registry cut <strong>Probe42 22 Apr 2026</strong></span>
   </div>
 </section>
 """

@@ -37,7 +37,7 @@ def S1():
   <div class="meta" style="margin-top:14px">
     <span>CIN <strong>U32309TN2019PTC133300</strong></span>
     <span>Parent <strong>Salcomp Oyj Finland (Lunar Industries)</strong></span>
-    <span>Registry cut <strong>Probe42 / TBD</strong></span>
+    <span>Registry cut <strong>Probe42 22 Apr 2026</strong></span>
   </div>
 </section>
 """

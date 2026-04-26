@@ -38,7 +38,7 @@ def S1():
     <span>CIN <strong>U74999TN2020FTC136376</strong></span>
     <span>Plant HO <strong>Chengalpet (TN)</strong></span>
     <span>Parent <strong>Tata Electronics Pvt Ltd → Tata Sons</strong></span>
-    <span>Registry cut <strong>Probe42 / TBD</strong></span>
+    <span>Registry cut <strong>Probe42 22 Apr 2026</strong></span>
   </div>
 </section>
 """
@@ -48,7 +48,7 @@ def S2():
   <div class="subhead">03 · Group &amp; Tata Electronics umbrella</div>
   <p>Tata Electronics is the Tata Group&rsquo;s electronics-manufacturing consolidation vehicle, launched 2020 as a direct Tata Sons initiative under N Chandrasekaran&rsquo;s chairmanship. Strategic pillars:</p>
   <ul class="check">
-    <li><strong>EMS / iPhone assembly</strong> — Chengalpet (TN) + Hosur (Krishnagiri) + Kolar Gold Fields (KGF, Karnataka; ex-Wistron Oct 2023 acquisition for $125 mn){ref("33")}</li>
+    <li><strong>EMS / iPhone assembly</strong> — Chengalpet (TN) + Hosur (Krishnagiri) + Kolar Gold Fields (KGF, Karnataka; ex-Wistron Oct 2023 acquisition for $125 mn){ref("31")}</li>
     <li><strong>OSAT (outsourced semi-assembly + test)</strong> — Sanand, Gujarat ($11 bn investment, $2.75 bn in FY26, operational 2026)</li>
     <li><strong>Semiconductor fab (greenfield)</strong> — Dholera, Gujarat ($11 bn Phase-1; first Indian chip-fab; operational 2026-27)</li>
     <li><strong>Future categories</strong> — PCBA, display modules, automotive electronics</li>

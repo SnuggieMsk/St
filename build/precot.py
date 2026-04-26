@@ -76,7 +76,7 @@ def S3():
     </tbody>
   </table>
   </div>
-  <h3>04.1 MCA open-charges register (Probe42, 6 Mar 2026){ref("120")}</h3>
+  <h3>04.1 MCA open-charges register (Probe42 cut 6 Mar 2026){ref("126")}</h3>
   <div style="overflow-x:auto">
   <table>
     <thead><tr><th>Charge holder</th><th class="num">Amount (Rs Cr)</th><th>Latest action</th><th>Notes</th></tr></thead>

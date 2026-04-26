@@ -38,7 +38,7 @@ def S1():
     <span>CIN <strong>U34200TN2007PTC072876</strong></span>
     <span>Parent <strong>Daimler Truck AG (Frankfurt: DTG)</strong></span>
     <span>Plant <strong>Oragadam, Kancheepuram (~45km from Chennai HO)</strong></span>
-    <span>Registry cut <strong>Probe42 / TBD</strong></span>
+    <span>Registry cut <strong>Probe42 22 Apr 2026</strong></span>
   </div>
 </section>
 """
