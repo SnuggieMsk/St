@@ -143,6 +143,21 @@ def build():
         "L15421TZ1983PLC001358": "bannari-amman-sugars-dossier.html",
         "U29199TZ2009PTC015651": "propel-industries-dossier.html",
         "U17111TZ2006PTC012949": "space-textiles-dossier.html",
+        "U31909TN2007PTC062621": "byd-india-dossier.html",
+        "U31401TN2015PLC143100": "bharat-fih-dossier.html",
+        "L34103TN2004PLC054667": "zf-cv-controls-dossier.html",
+        "U28112TZ2006PTC013294": "zf-wind-power-dossier.html",
+        "U34300TN2007PTC081587": "ge-power-conversion-dossier.html",
+        "U29253TN2015PTC184205": "nordex-india-dossier.html",
+        "U29199TN1999PTC041877": "danfoss-india-dossier.html",
+        "U35999TN2002PTC049333": "seoyon-e-hwa-dossier.html",
+        "U29253TN2011PTC084853": "perkins-india-dossier.html",
+        "U34300TZ1998PTC015231": "tenneco-automotive-dossier.html",
+        "U34300TN2000PTC046158": "mitsuba-india-dossier.html",
+        "U15421TN1983PTC010243": "roca-bathroom-dossier.html",
+        "U40105TN1996PTC043776": "same-deutz-fahr-dossier.html",
+        "U31900TN1985PTC011866": "fuji-electric-dossier.html",
+        "L29299TN1987PLC058738": "esab-india-dossier.html",
     }
     # Patch dossier links + tier1 flags inside each city's companies list
     for city in cities:

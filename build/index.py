@@ -49,7 +49,7 @@ def build():
     a("<span>Universe size <strong>499 + 2 extras</strong></span>")
     a("<span>Industry clusters <strong>9</strong></span>")
     a("<span>Geographic clusters <strong>40 cities (TN) + 1 extra (Kolkata)</strong></span>")
-    a("<span>Tier-1 dossiers ready <strong>75 of 75</strong></span>")
+    a("<span>Tier-1 dossiers ready <strong>90 of 90</strong></span>")
     a("<span>Per-dossier line-count floor <strong>1,500+</strong></span>")
     a("<span>Consolidated wallet (34 dossiers) <strong>Rs 2,100&ndash;3,000 Cr / yr</strong></span>")
     a("</div>")
@@ -82,7 +82,7 @@ def build():
     a("</div>")
 
     # Tier-1 dossiers
-    a("<h2 id='dossiers'>Tier-1 dossiers (75 of 75) &mdash; complete</h2>")
+    a("<h2 id='dossiers'>Tier-1 dossiers (90 of 90) &mdash; complete</h2>")
     a("<p class='lede'>Each dossier is a self-contained, single-file HTML artifact &mdash; macro/PESTEL/industry blocks shared across the series via <code>build/shared_sources.py</code>, extended sections P1&ndash;P20 via <code>build/padding.py</code>, then deep-dive into the named entity. Every numeric claim references a numbered source resolving within the same HTML file. The wholesale bank is consistently rendered as <code>IBank</code> per cipher rules.</p>")
 
     a("<div class='subtype-grid'>")
@@ -193,6 +193,21 @@ def build():
         ("bannari-amman-sugars-dossier.html", "Pilot 73 · Sugar+ethanol+power · CARE AA- · IBank PRESENT 13.7%", "Bannari Amman Sugars", "Listed Coimbatore sugar+ethanol+power; FY25 TOI Rs 1,793 Cr; CARE AA- Dec 2025; 9-bank Rs 728 Cr; IBank Rs 100 Cr (13.7%, #3) PRESENT — defence + share-grow + ethanol capex.", "Rs 18&ndash;30 Cr/yr"),
         ("propel-industries-dossier.html", "Pilot 74 · Crushing+screening equipment · ICRA AA- · IBank PRESENT 27.9%", "Propel Industries", "India's largest crushing+screening OEM (A.M.M.A. Group); FY25 TOI Rs 1,786 Cr; ICRA AA- Stable / A1+ Dec 2025; 4-bank Rs 358 Cr; IBank Rs 100 Cr (27.9%, #2) PRESENT — defence + dislodge-HDFC play.", "Rs 22&ndash;38 Cr/yr"),
         ("space-textiles-dossier.html", "Pilot 75 · Cotton spinning+weaving+made-ups · CRISIL A · UPGRADED", "Space Textiles", "Coimbatore textile spinning+weaving+made-ups; FY25 TOI Rs 2,317 Cr; CRISIL A Stable / A1 UPGRADED Feb 2026; 3-bank Rs 584 Cr (HDFC+SBI duopoly); IBank ABSENT — competitive entry on rating-upgrade window.", "Rs 18&ndash;30 Cr/yr"),
+        ("byd-india-dossier.html", "Pilot 76 · EV + battery + electronics · BYD Co Ltd China", "BYD India", "Chinese BYD Co Ltd EV + battery + electronics subsidiary; FY25 TOI Rs 10,289 Cr; effectively zero charges; greenfield CNY-FX + flow-banking + capex (FDI-contingent).", "Rs 30&ndash;52 Cr/yr"),
+        ("bharat-fih-dossier.html", "Pilot 77 · Mobile + IoT EMS · Foxconn-FIH Taiwan · Listed", "Bharat FIH", "Foxconn-FIH Taiwan listed Indian EMS subsidiary; FY25 TOI Rs 7,034 Cr; ~9,500 FTE; zero charges; greenfield FX + customer-SCF + post-IPO DCM arranger play.", "Rs 32&ndash;55 Cr/yr"),
+        ("zf-cv-controls-dossier.html", "Pilot 78 · CV brake systems · ZF Friedrichshafen DE · Listed BSE/NSE", "ZF CV Controls", "ZF Friedrichshafen Indian listed CV brake-systems sub (ex-WABCO); FY25 TOI Rs 3,841 Cr; zero charges; greenfield FX + customer-SCF + AEBS-mandate capex.", "Rs 28&ndash;48 Cr/yr"),
+        ("zf-wind-power-dossier.html", "Pilot 79 · Wind-turbine gearbox · ZF Friedrichshafen DE", "ZF Wind Power Coimbatore", "ZF Friedrichshafen Indian wind-turbine gearbox manufacturer; FY25 TOI Rs 3,832 Cr; zero charges; greenfield FX + EBR/PCFC + offshore-wind capex tailwind.", "Rs 24&ndash;42 Cr/yr"),
+        ("ge-power-conversion-dossier.html", "Pilot 80 · Power conversion / drives · GE Vernova US", "GE Power Conversion India", "GE Vernova Indian power-conversion + drives subsidiary; FY25 TOI Rs 3,235 Cr; zero charges; greenfield FX + BG + capex / Defence/green-H2 tailwind.", "Rs 22&ndash;38 Cr/yr"),
+        ("nordex-india-dossier.html", "Pilot 81 · Wind-turbine OEM · Nordex SE Germany · Competitive entry", "Nordex India", "German Nordex SE wind-turbine OEM Indian sub; FY25 TOI Rs 2,995 Cr; HSBC sole Rs 85 Cr (100%); IBank ABSENT — competitive entry / dislodge play.", "Rs 22&ndash;38 Cr/yr"),
+        ("danfoss-india-dossier.html", "Pilot 82 · HVAC + drives · Danfoss A/S Denmark", "Danfoss Industries", "Danish Danfoss A/S HVAC+drives+climate subsidiary; FY25 TOI Rs 2,509 Cr; zero charges; greenfield FX + customer-SCF + green-cooling capex.", "Rs 22&ndash;38 Cr/yr"),
+        ("seoyon-e-hwa-dossier.html", "Pilot 83 · Auto-interior+cockpit tier-1 · Korean MNC · Citi-led 4-bank consortium", "Seoyon E-Hwa Summit", "Korean Seoyon E-Hwa auto-interior+cockpit tier-1 to Hyundai-Kia-Mahindra; FY25 TOI Rs 2,183 Cr; 4-bank Rs 154 Cr (Citi 53.7% lead); IBank ABSENT — competitive entry / Citi-dislodge play.", "Rs 18&ndash;30 Cr/yr"),
+        ("perkins-india-dossier.html", "Pilot 84 · Off-highway engines · Caterpillar/Perkins UK", "Perkins India", "Caterpillar/Perkins UK off-highway engines Indian sub; FY25 TOI Rs 2,172 Cr; zero charges; greenfield FX + customer-SCF + Tier-V emission capex.", "Rs 22&ndash;38 Cr/yr"),
+        ("tenneco-automotive-dossier.html", "Pilot 85 · Auto ride-control (shocks/struts) · Tenneco-Apollo US", "Tenneco Automotive India", "Apollo-owned Tenneco Inc Indian ride-control (shocks+struts) sub; FY25 TOI Rs 2,078 Cr; zero charges; greenfield FX + customer-SCF + EV-suspension capex.", "Rs 18&ndash;30 Cr/yr"),
+        ("mitsuba-india-dossier.html", "Pilot 86 · Auto motors + wipers · Mitsuba Japan", "Mitsuba India", "Japanese Mitsuba Corp auto-electricals (motors/wipers) Indian sub; FY25 TOI Rs 1,950 Cr; zero charges; greenfield FX + customer-SCF + EV-2W capex.", "Rs 16&ndash;28 Cr/yr"),
+        ("roca-bathroom-dossier.html", "Pilot 87 · Bathroom + sanitary-ware · Roca Spain", "Roca Bathroom Products", "Spanish Roca Sanitario Indian sanitary-ware sub (ex-Parryware); FY25 TOI Rs 1,701 Cr; zero charges; greenfield FX + dealer-SCF + premiumisation capex.", "Rs 16&ndash;28 Cr/yr"),
+        ("same-deutz-fahr-dossier.html", "Pilot 88 · Tractor + agri-equipment · SDF Italy · ICRA A+", "Same Deutz-Fahr India", "Italian SDF Group tractor+agri-equipment Indian sub; FY25 TOI Rs 1,533 Cr; ICRA A+ Reaffirmed Oct 2025; zero charges; greenfield FX + dealer-SCF + tractor retail-finance.", "Rs 16&ndash;28 Cr/yr"),
+        ("fuji-electric-dossier.html", "Pilot 89 · Power equipment + drives · Fuji Electric Japan · CARE A+/A1", "Fuji Electric India", "Japanese Fuji Electric power-electronics+drives Indian sub; FY25 TOI Rs 1,504 Cr; CARE A+ / A1 Reaffirmed Mar 2026; SIB Rs 1.45 Cr residual; greenfield FX + BG/LC + data-center capex.", "Rs 18&ndash;30 Cr/yr"),
+        ("esab-india-dossier.html", "Pilot 90 · Welding + cutting equipment · ESAB Corp US · Listed", "ESAB India", "ESAB Corp Indian listed welding+cutting equipment sub; FY25 TOI Rs 1,243 Cr; 2-bank duopoly Rs 37 Cr (Axis 64.9% + HDFC 35.1%); IBank ABSENT — competitive entry play.", "Rs 18&ndash;30 Cr/yr"),
     ]:
         a(f"<a class='navcard' href='{href}'>")
         a(f"<span class='nctype'>{kind}</span>")
