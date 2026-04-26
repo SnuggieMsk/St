@@ -49,7 +49,7 @@ def build():
     a("<span>Universe size <strong>499 + 2 extras</strong></span>")
     a("<span>Industry clusters <strong>9</strong></span>")
     a("<span>Geographic clusters <strong>40 cities (TN) + 1 extra (Kolkata)</strong></span>")
-    a("<span>Tier-1 dossiers ready <strong>41 of 41</strong></span>")
+    a("<span>Tier-1 dossiers ready <strong>50 of 50</strong></span>")
     a("<span>Per-dossier line-count floor <strong>1,500+</strong></span>")
     a("<span>Consolidated wallet (34 dossiers) <strong>Rs 2,100&ndash;3,000 Cr / yr</strong></span>")
     a("</div>")
@@ -82,7 +82,7 @@ def build():
     a("</div>")
 
     # Tier-1 dossiers
-    a("<h2 id='dossiers'>Tier-1 dossiers (41 of 41) &mdash; complete</h2>")
+    a("<h2 id='dossiers'>Tier-1 dossiers (50 of 50) &mdash; complete</h2>")
     a("<p class='lede'>Each dossier is a self-contained, single-file HTML artifact &mdash; macro/PESTEL/industry blocks shared across the series via <code>build/shared_sources.py</code>, extended sections P1&ndash;P20 via <code>build/padding.py</code>, then deep-dive into the named entity. Every numeric claim references a numbered source resolving within the same HTML file. The wholesale bank is consistently rendered as <code>IBank</code> per cipher rules.</p>")
 
     a("<div class='subtype-grid'>")
@@ -159,6 +159,15 @@ def build():
         ("lucas-tvs-dossier.html", "Pilot 39 · Auto-comp · TVS Group · CRISIL AA+", "Lucas-TVS", "Flagship auto-electrical / mechatronics tier-1 (TVS Group + Lucas plc heritage). FY25 TOI Rs 3,461 Cr; CRISIL AA+ Stable — highest-rated TN auto-comp ex-Tata. Greenfield secured-bank entry + TVS Group cross-sell + EV-mechatronics capex Rs 400-600 Cr.", "Rs 78&ndash;115 Cr/yr"),
         ("lucas-indian-service-dossier.html", "Pilot 40 · Auto aftermarket · TVS Group · IBank anchor", "Lucas Indian Service", "India's leading auto-electrical aftermarket / spares distribution arm of TVS Group; 350+ ALSS + 80 LPC. CRISIL AA Stable; IBank holds Rs 54 Cr (58.7%) of Rs 92 Cr secured anchor. Defence + cross-sell into Lucas-TVS + TVS Group.", "Rs 32&ndash;48 Cr/yr"),
         ("ls-mills-dossier.html", "Pilot 41 · Cotton yarn / knit / RMG · Theni · Competitive entry", "L.S. Mills Limited", "Vertically-integrated cotton-yarn + knit + RMG exporter (Theni; Lalji Devji family). FY25 TOI Rs 792 Cr; Acuite A- Stable. Probe42 charge register Rs 1,355 Cr in 17-bank consortium with SBI dominant; IBank ABSENT. Consortium-entry + EXIM Bank refinance + USA-tariff window play.", "Rs 32&ndash;52 Cr/yr"),
+        ("kone-elevator-dossier.html", "Pilot 42 · Elevator + escalator · Finland MNC · Greenfield", "KONE Elevator India", "Finnish #4 global elevator-escalator OEM (KNEBV); FY25 TOI Rs 3,915 Cr; 8,003 FTE; near-zero charges; greenfield secured-bank entry + service-AMC discounting + 8K FTE retail anchor.", "Rs 70&ndash;105 Cr/yr"),
+        ("keimed-dossier.html", "Pilot 43 · Pharma distribution · Apollo HealthCo group", "Keimed Private Limited", "Apollo HealthCo's pharma-distribution backbone (post-Q3 FY25 merger; Rs 25,000 Cr FY27 combined-target). FY25 TOI Rs 1,572 Cr; CARE A Stable; IBank Rs 100 Cr (27.8%) anchor; share-grow + Apollo merger flow.", "Rs 42&ndash;65 Cr/yr"),
+        ("kals-distilleries-dossier.html", "Pilot 44 · IMFL + ENA distillery · 13-bank consortium", "Kals Distilleries", "TN IMFL + ENA producer through TASMAC + Karnataka + AP + TG monopoly distribution. FY25 TOI Rs 1,963 Cr; CARE BBB; Rs 1,454 Cr 13-bank consortium NCD-anchored; consortium-entry + ethanol-blending tailwind.", "Rs 24&ndash;42 Cr/yr"),
+        ("dr-agarwal-eye-dossier.html", "Pilot 45 · Specialty hospital · Listed AA-", "Dr. Agarwal's Eye Hospital", "India's largest single-specialty eye-care chain (BSE 542741; 200+ clinics + 9 international); FY25 TOI Rs 397 Cr; ICRA AA- Stable. Single Axis Bank Rs 115 Cr position; greenfield + post-Sep-2025-IPO Rs 950 Cr capex pipeline.", "Rs 24&ndash;42 Cr/yr"),
+        ("avalon-technologies-dossier.html", "Pilot 46 · High-mix EMS · Listed CRISIL A", "Avalon Technologies", "Listed BSE 543896 high-mix EMS / box-build / cable-assembly for industrial + clean-energy + defence; FY25 TOI Rs 632 Cr; CRISIL A; 6-charge consortium Rs 201 Cr (Indian Bank lead, IBank absent); USA-tariff export tailwind.", "Rs 28&ndash;48 Cr/yr"),
+        ("swelect-energy-dossier.html", "Pilot 47 · Solar PV + IPP · Listed A(CE)", "Swelect Energy Systems", "Listed BSE 532051 solar PV manufacturer + EPC + IPP (ex-Numeric UPS, post-Legrand sale); FY25 TOI Rs 431 Cr; CRISIL A(CE); 17-charge consortium Rs 740 Cr (HDFC lead, IBank 5%); share-grow + PLI-II solar capex.", "Rs 22&ndash;38 Cr/yr"),
+        ("thejo-engineering-dossier.html", "Pilot 48 · Bulk-material handling · Listed CRISIL A", "Thejo Engineering", "Listed BSE 543238 bulk-material-handling rubber + composites + service for mining/cement/power; FY25 TOI Rs 436 Cr; CRISIL A; SBICAP-Trustee NCD-anchored Rs 109 Cr; greenfield + 5-country export.", "Rs 22&ndash;38 Cr/yr"),
+        ("chemfab-alkalis-dossier.html", "Pilot 49 · Caustic-soda + chemicals · Listed BBB+", "Chemfab Alkalis", "Listed BSE 542465 caustic-soda + chlorine + H2O2 + barium chemicals (Pondicherry-belt); FY25 TOI Rs 322 Cr; IND BBB+ Stable; HDFC + Axis duopoly Rs 183 Cr; greenfield BBB+ entry + capacity-expansion capex.", "Rs 18&ndash;30 Cr/yr"),
+        ("ip-rings-dossier.html", "Pilot 50 · Auto-comp piston rings + transmission · Listed", "IP Rings Limited", "Listed BSE 523486 auto-comp piston-rings + transmission-components; FY25 TOI Rs 303 Cr; 19-charge Rs 261 Cr 13-bank consortium with IBank Rs 5 Cr (1.9%) minority; share-grow + EV-transmission pivot + USA-aftermarket export.", "Rs 14&ndash;26 Cr/yr"),
     ]:
         a(f"<a class='navcard' href='{href}'>")
         a(f"<span class='nctype'>{kind}</span>")
@@ -180,7 +189,7 @@ def build():
     # Footer
     a("<footer class='foot'>")
     a("<div class='mono'>LCG / PBG South · client acquisition review · 24 April 2026 · landing hub</div>")
-    a("<div class='mono' style='margin-top:6px'>Three primary surfaces · 41 Tier-1 dossiers published · 1,500+ line baseline · per-dossier hyper-cover audit PASS · cipher-clean.</div>")
+    a("<div class='mono' style='margin-top:6px'>Three primary surfaces · 50 Tier-1 dossiers published · 1,500+ line baseline · per-dossier hyper-cover audit PASS · cipher-clean.</div>")
     a("</footer>")
 
     a("</div></body></html>")

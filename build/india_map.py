@@ -108,6 +108,15 @@ def build():
         "U35999TN1961PLC004678": "lucas-tvs-dossier.html",
         "U35999TN1930PLC005705": "lucas-indian-service-dossier.html",
         "U17111TN1983PLC009973": "ls-mills-dossier.html",
+        "U29141TN1984FTC010913": "kone-elevator-dossier.html",
+        "U72200TN2000PTC179280": "keimed-dossier.html",
+        "U15511TN2007PTC065347": "kals-distilleries-dossier.html",
+        "L85110TN1994PLC027366": "dr-agarwal-eye-dossier.html",
+        "L30007TN1999PLC043479": "avalon-technologies-dossier.html",
+        "L93090TN1994PLC028578": "swelect-energy-dossier.html",
+        "L27209TN1986PLC012833": "thejo-engineering-dossier.html",
+        "L24290TN2009PLC071563": "chemfab-alkalis-dossier.html",
+        "L28920TN1991PLC020232": "ip-rings-dossier.html",
     }
     # Patch dossier links + tier1 flags inside each city's companies list
     for city in cities:
