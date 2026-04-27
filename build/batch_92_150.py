@@ -718,5 +718,187 @@ SPECS.append(mnc_gf(135, "anixter", "Anixter India Pvt Ltd",
     "9", "14.2"))
 
 
+
+# Pilot 136 — Madras Engineering Industries (Indian-origin)
+SPECS.append(mnc_gf(136, "madras-engineering", "Madras Engineering Industries Pvt Ltd",
+    "U35999TN1976PTC007223", "MEI Group (Indian-origin promoter)",
+    "Madras Engineering Industries Indian auto-components + brake-shoe + drum manufacturer",
+    "Chennai", "01 Jan 1976", "Auto components / brake shoes",
+    748, 8.5, "~1,500", 50, 1210, "meigroup.com",
+    f'India auto-component aftermarket FY25 ~Rs 65,000 Cr.',
+    [f'USA-tariff{ref("6")}: India auto-aftermarket export.','EV-friction-comp transition.','OE + aftermarket capex.','Tier-1 cross-supply.'],
+    [("CC + WCDL","100&ndash;160","2","3.2","Sheet A"),("EBR/PCFC","150&ndash;240","1.5","2.4","Export"),("Trade","60&ndash;100","0.6","1","Imports"),("FX","350&ndash;500 notional","1.5","2.4","Export"),("Customer-SCF","150&ndash;240","1.5","2.4","OE + AM"),("Cards + CMS","&ndash;","0.4","0.6","1,500 FTE")],
+    [("CC+WCDL","2","3.2"),("EBR/PCFC+FX","3","4.8"),("Trade+Customer-SCF","2.1","3.4"),("CMS","0.4","0.6"),("Retail+PB+TASC","2.5","3.5")],
+    "10", "15.5", rating="Sheet A"))
+
+# Pilot 137 — Prakash Silks (TN textile)
+SPECS.append(mnc_gf(137, "prakash-silks", "Prakash Silks & Sarees Pvt Ltd",
+    "U52300TN2014PTC094974", "Prakash Group (Indian-origin)",
+    "Prakash Silks Indian-origin silk + saree retailer + manufacturer",
+    "Chennai", "13 Mar 2014", "Silk + saree retail",
+    747, 5.0, "~2,500", 50, 1220, "prakashsilks.com",
+    f'India silk + saree market FY25 ~Rs 65,000 Cr.',
+    ['Premiumisation + branded silks.',f'EU CBAM/EUDR{ref("18")}.',f'USA-tariff{ref("6")}: limited.','Export + diaspora demand.'],
+    [("CC + WCDL","100&ndash;160","2","3.2","Sheet B"),("Inventory financing","150&ndash;240","1.5","2.4","Retail"),("Trade","60&ndash;100","0.6","1","Silk import"),("Capex TL (store ramp)","60&ndash;100","0.6","1","Sustainability"),("Customer-SCF","100&ndash;160","1","1.6","Dealer"),("Cards + CMS","&ndash;","0.3","0.5","2,500 FTE")],
+    [("CC+WCDL","2","3.2"),("Inventory","1.5","2.4"),("Trade+Capex","1.2","2"),("Customer-SCF","1","1.6"),("CMS","0.3","0.5"),("Retail+PB+TASC","2","3")],
+    "8", "12.7", rating="Sheet B"))
+
+# Pilot 138 — CMA CGM Global Business Services (French shipping GCC)
+SPECS.append(mnc_gf(138, "cma-cgm", "CMA CGM Global Business Services India Pvt Ltd",
+    "U63090TN2005PTC092390", "CMA CGM Group (France; private)",
+    "CMA CGM Group (France; ~$50 bn revenue) global container-shipping major; Indian shared-services GCC",
+    "Chennai", "06 Apr 2005", "Shipping GCC + shared services",
+    727, 14.5, "~3,500", 50, 1230, "cmacgm-group.com",
+    f'India shipping + logistics GCC ~Rs 18,000 Cr.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','Container-shipping cycle + bunker volatility.','Digital-shipping platforms.','GIFT-IFSC + cross-border GBS.'],
+    [("FX (USD + EUR)","450&ndash;650 notional","2","3","100% USD"),("Treasury","180&ndash;280","1.5","2.4","MNC TM"),("EBR/PCFC","120&ndash;200","1.2","2","Receivables"),("Salary + retail (3,500)","250&ndash;380/yr","2.5","4","Auto+home"),("PB","75&ndash;130 AUM","0.9","1.4","Senior MDs"),("TASC","85&ndash;130","0.7","1.1","PF+Gratuity")],
+    [("FX","2","3"),("Treasury+EBR","2.7","4.4"),("Retail-mass","2.5","4"),("PB+TASC","1.6","2.5"),("Cards","0.4","0.6"),("Other","0.5","1")],
+    "9.7", "15.5"))
+
+# Pilot 139 — Freudenberg-NOK (German+Japanese auto-seal JV)
+SPECS.append(mnc_gf(139, "freudenberg-nok", "Freudenberg-NOK Pvt Ltd",
+    "U11202TN2000PTC152005", "Freudenberg + NOK (Germany + Japan)",
+    "Freudenberg-NOK (Germany Freudenberg + Japan NOK 50:50 JV) auto-seal + sealing-technology tier-1",
+    "Chennai", "06 Apr 2000", "Auto seals + sealing technology",
+    724, 11.0, "~700", 50, 1240, "freudenberg.com &middot; nok.co.jp",
+    f'India auto-seal + gasket market FY25 ~Rs 8,500 Cr.',
+    ['BS6 + BS7 emission demand for sealing.',f'USA-tariff{ref("6")}: India auto-seal export.','EV-thermal seals + battery-seal demand.','OEM capex cycle.'],
+    [("FX (EUR + JPY + USD)","350&ndash;500 notional","1.5","2.4","Royalty"),("Customer-SCF","150&ndash;240","1.5","2.4","OEMs"),("Capex TL","60&ndash;100","0.6","1","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.3","0.4","700 FTE")],
+    [("FX","1.5","2.4"),("Customer-SCF","1.5","2.4"),("Capex+Trade+EBR","1.7","2.8"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "7", "11", rating="Sheet X"))
+
+# Pilot 140 — Daeseung Autoparts (Korean tier-1)
+SPECS.append(mnc_gf(140, "daeseung-autoparts", "Daeseung Autoparts India Pvt Ltd",
+    "U29256TN2007FTC062531", "Daeseung Industries (Korea)",
+    "Daeseung Korean auto-component (sheet metal + stamping) tier-1 to Hyundai-Kia",
+    "Sriperumbudur (Chennai)", "20 Mar 2007", "Auto sheet-metal + stamping",
+    691, 9.0, "~900", 50, 1250, "daeseung.kr",
+    'Hyundai-Kia auto-sheet-metal tier-1 ecosystem.',
+    [f'Hyundai-Kia ramp{ref("11")}.','Korean MNC ecosystem cross-sell.','EV-BIW + chassis transition.',f'USA-tariff{ref("6")}.'],
+    [("FX (KRW + USD)","350&ndash;500 notional","1.5","2.4","Royalty"),("Customer-SCF","150&ndash;240","1.5","2.4","Hyundai/Kia"),("Capex TL","60&ndash;100","0.6","1","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("CC + WCDL","60&ndash;100","1.2","2","Sheet A"),("Cards + CMS","&ndash;","0.3","0.4","900 FTE")],
+    [("FX","1.5","2.4"),("Customer-SCF","1.5","2.4"),("Capex+Trade","1.1","1.8"),("CC+WCDL","1.2","2"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "7.6", "12", rating="Sheet A"))
+
+# Pilot 141 — AVT McCormick Ingredients (US-Indian spices JV)
+SPECS.append(mnc_gf(141, "avt-mccormick", "AVT McCormick Ingredients Pvt Ltd",
+    "U51225TN1993PTC026433", "McCormick & Co (US, NYSE: MKC) + AVT Group (India)",
+    "AVT McCormick US-India JV (McCormick NYSE: MKC; ~$6.7 bn revenue) ingredients + spices ingredients tier-1",
+    "Chennai", "06 Mar 1993", "Spices + ingredients",
+    687, 13.0, "~700", 50, 1260, "mccormickcorporation.com &middot; avtmccormick.com",
+    f'India spices + ingredients market FY25 ~Rs 22,000 Cr.',
+    ['FMCG capex + premiumisation.',f'EU CBAM{ref("18")}: scope-3 + EUDR.',f'USA-tariff{ref("6")}: India spices export.','FSSAI nutraceutical regs.'],
+    [("FX (USD)","300&ndash;450 notional","1.2","2","Royalty"),("Customer-SCF","100&ndash;160","1","1.6","FMCG"),("EBR/PCFC","120&ndash;200","1.2","2","Export"),("Capex TL","50&ndash;80","0.5","0.8","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("Cards + CMS","&ndash;","0.3","0.4","700 FTE")],
+    [("FX","1.2","2"),("Customer-SCF","1","1.6"),("EBR/PCFC+Capex+Trade","2.2","3.6"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "6.7", "10.6", rating="Sheet A"))
+
+# Pilot 142 — Taeyang Metal (Korean auto-comp)
+SPECS.append(mnc_gf(142, "taeyang-metal", "Taeyang Metal India Pvt Ltd",
+    "U28999TN2006PTC059601", "Taeyang Metal (Korea)",
+    "Taeyang Metal Korean auto-stamping + sheet-metal tier-1 (Hyundai-Kia)",
+    "Sriperumbudur (Chennai)", "20 Mar 2006", "Auto stamping + sheet metal",
+    686, 8.5, "~900", 50, 1270, "taeyangmetal.com",
+    'Hyundai-Kia ecosystem; auto-stamping + frame components.',
+    [f'Hyundai-Kia ramp{ref("11")}.','Korean MNC ecosystem.','EV-frame transition.',f'USA-tariff{ref("6")}.'],
+    [("FX (KRW + USD)","300&ndash;450 notional","1.2","2","Royalty"),("Customer-SCF","100&ndash;160","1","1.6","Hyundai/Kia"),("Capex TL","60&ndash;100","0.6","1","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("CC + WCDL","60&ndash;100","1.2","2","Sheet"),("Cards + CMS","&ndash;","0.3","0.4","900 FTE")],
+    [("FX","1.2","2"),("Customer-SCF","1","1.6"),("Capex+Trade","1.1","1.8"),("CC+WCDL","1.2","2"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "6.8", "10.8"))
+
+# Pilot 143 — Grace Mart (real-estate)
+SPECS.append(mnc_gf(143, "grace-mart", "Grace Mart Pvt Ltd",
+    "U74110TN2022PTC155748", "Grace Group (Indian-origin)",
+    "Grace Mart Indian-origin real-estate / infrastructure-services",
+    "Chennai", "07 Apr 2022", "Real-estate / infrastructure services",
+    683, 8.0, "~600", 50, 1280, "gracemart.in",
+    f'India real-estate services FY25 ~Rs 20,000 Cr (TN cluster).',
+    ['Real-estate cycle + housing capex.','Tier-2/3 city infrastructure.',f'USA-tariff{ref("6")}: limited.','REIT + retail-asset opportunities.'],
+    [("BG (project)","100&ndash;160","1","1.6","Real-estate"),("Capex TL","100&ndash;160","1","1.6","Sustainability"),("Customer-finance","100&ndash;160","1","1.6","Buyer SCF"),("CC + WCDL","60&ndash;100","1.2","2","Sheet"),("Trade","50&ndash;80","0.5","0.8","Imports"),("Cards + CMS","&ndash;","0.3","0.4","600 FTE")],
+    [("BG","1","1.6"),("Capex TL","1","1.6"),("Customer-finance+Trade","1.5","2.4"),("CC+WCDL","1.2","2"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "7", "11"))
+
+# Pilot 144 — Jayabheri Automotives (Indian auto-dealer)
+SPECS.append(mnc_gf(144, "jayabheri-auto", "Jayabheri Automotives Pvt Ltd",
+    "U73100TN2011PTC079011", "Jayabheri Group (Indian-origin)",
+    "Jayabheri Automotives Indian-origin multi-brand auto-dealer (Honda, Mahindra)",
+    "Chennai", "06 Apr 2011", "Auto dealership",
+    682, 4.5, "~1,200", 50, 1290, "jayabheri.com",
+    f'Indian auto-retail FY25 ~Rs 5.2 lakh Cr.',
+    ['PV market growth.','EV-retail transition.','Used-car + SCF.','Service annuity.'],
+    [("CC + WCDL","100&ndash;160","2","3.2","Sheet B"),("Inventory","150&ndash;240","1.5","2.4","Multi-brand"),("Retail auto-finance","250&ndash;380/yr","2.5","4","NBFC tie-up"),("Trade","50&ndash;80","0.5","0.8","Imports"),("Capex TL","50&ndash;80","0.5","0.8","Service-bay"),("Cards + CMS","&ndash;","0.3","0.4","1,200 FTE")],
+    [("CC+WCDL","2","3.2"),("Inventory","1.5","2.4"),("Retail-finance","2.5","4"),("Capex+Trade","1","1.6"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "9.3", "14.6", rating="Sheet B"))
+
+# Pilot 145 — Nemak Aluminium Castings (Mexican aluminium auto-castings)
+SPECS.append(mnc_gf(145, "nemak", "Nemak Aluminium Castings India Pvt Ltd",
+    "U34300TN2010FTC076279", "Nemak SAB de CV (Mexico; BMV: NEMAK)",
+    "Nemak SAB de CV (Mexico; ~$5 bn revenue) global aluminium auto-cylinder-head + powertrain-components major",
+    "Chennai", "06 Apr 2010", "Aluminium auto castings",
+    678, 9.5, "~700", 50, 1300, "nemak.com",
+    f'India auto-aluminium-castings ~Rs 14,000 Cr; CAGR 9-11%.',
+    ['EV-housing + e-Axle ramp.','Powertrain decarbonisation.',f'EU CBAM{ref("18")}.',f'USA-tariff{ref("6")}: India auto-cast export.'],
+    [("FX (USD + MXN)","300&ndash;450 notional","1.2","2","Royalty"),("Customer-SCF","100&ndash;160","1","1.6","OEMs"),("Capex TL","60&ndash;100","0.6","1","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.3","0.4","700 FTE")],
+    [("FX","1.2","2"),("Customer-SCF","1","1.6"),("Capex+Trade+EBR","1.7","2.8"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "6.2", "9.8"))
+
+# Pilot 146 — Valmet Technologies (Finnish pulp/paper)
+SPECS.append(mnc_gf(146, "valmet", "Valmet Technologies Pvt Ltd",
+    "U74200TN2008PTC067754", "Valmet Oyj (Finland; HEX: VALMT)",
+    "Valmet Oyj (Helsinki: VALMT; ~€5.5 bn revenue) Finnish pulp + paper + biofuel + automation tech",
+    "Chennai", "13 Mar 2008", "Pulp + paper + biofuel automation",
+    673, 12.0, "~600", 50, 1310, "valmet.com",
+    f'India pulp + paper + biofuel-automation FY25 ~Rs 12,000 Cr; CAGR 8-10%; Valmet + Andritz (pilot 107) + Voith compete.',
+    ['Pulp + paper capex.','Biofuel + green-H2 ramp.',f'EU CBAM{ref("18")}.','Process automation.'],
+    [("FX (EUR + USD)","300&ndash;450 notional","1.2","2","Royalty"),("Customer-SCF","100&ndash;160","1","1.6","ITC + JK"),("Capex TL","50&ndash;80","0.5","0.8","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.3","0.4","600 FTE")],
+    [("FX","1.2","2"),("Customer-SCF","1","1.6"),("Capex+Trade+EBR","1.6","2.6"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "6.1", "9.6"))
+
+# Pilot 147 — Shri Sabhari Metallurgical (Indian-origin)
+SPECS.append(mnc_gf(147, "shri-sabhari", "Shri Sabhari Metallurgical (India) Limited",
+    "U29142TN2006PLC058626", "Shri Sabhari Group (Indian-origin)",
+    "Shri Sabhari Metallurgical Indian steel-castings + alloy-castings major",
+    "Chennai", "20 Mar 2006", "Steel + alloy castings",
+    666, 7.0, "~600", 50, 1320, "shrisabhari.com",
+    f'India steel-castings FY25 ~Rs 18,000 Cr.',
+    [f'EU CBAM{ref("18")}: scope-3.',f'USA-tariff{ref("6")}: India castings export.','EV + railway-castings demand.','Defence-castings indigenisation.'],
+    [("CC + WCDL","100&ndash;160","2","3.2","Sheet B"),("EBR/PCFC","100&ndash;160","1","1.6","Export"),("Trade","50&ndash;80","0.5","0.8","Imports"),("Capex TL","50&ndash;80","0.5","0.8","Sustainability"),("FX","250&ndash;380 notional","1","1.6","Imports + export"),("Cards + CMS","&ndash;","0.3","0.4","600 FTE")],
+    [("CC+WCDL","2","3.2"),("EBR/PCFC+FX","2","3.2"),("Trade+Capex","1","1.6"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "7.3", "11.4", rating="Sheet B"))
+
+# Pilot 148 — Buzzworks Business Services (UAE BPO)
+SPECS.append(mnc_gf(148, "buzzworks", "Buzzworks Business Services Pvt Ltd",
+    "U74999TN2006PTC059363", "Buzzworks Group (UAE/India)",
+    "Buzzworks Indian-origin/UAE-anchored BPO + customer-experience services",
+    "Chennai", "20 Mar 2006", "BPO + customer-experience",
+    666, 13.0, "~5,500", 50, 1330, "buzzworksbpo.com",
+    f'India BPO + customer-experience FY25 ~Rs 22,000 Cr.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','Gen-AI + agentic-AI scope.','EU AI-Act compliance.','GIFT-IFSC + cross-border ops.'],
+    [("FX (AED + USD)","350&ndash;500 notional","1.5","2.4","100% USD/AED"),("Treasury","150&ndash;240","1.2","2","MNC TM"),("EBR/PCFC","100&ndash;160","1","1.6","Receivables"),("Salary + retail (5,500)","350&ndash;500/yr","3","5","Auto+home"),("PB","145&ndash;220 AUM","1.6","2.5","Senior MDs"),("TASC","120&ndash;180","1","1.5","PF+Gratuity")],
+    [("FX","1.5","2.4"),("Treasury+EBR","2.2","3.6"),("Retail-mass","3","5"),("PB+TASC","2.6","4"),("Cards","0.4","0.6"),("Other","0.5","1")],
+    "10.2", "16.6", rating="Sheet B"))
+
+# Pilot 149 — J Ray McDermott Engineering (US offshore engineering)
+SPECS.append(mnc_gf(149, "j-ray-mcdermott", "J. Ray McDermott Engineering Services Pvt Ltd",
+    "U72200TN2006FTC059871", "McDermott International (US; private post-2020 ch11)",
+    "McDermott International (US offshore EPC + engineering, post-Ch11 PE-restructured) Indian engineering services GCC",
+    "Chennai", "06 Mar 2006", "Offshore engineering / EPC GCC",
+    658, 16.0, "~2,500", 50, 1340, "mcdermott.com",
+    f'India engineering-services GCC ~Rs 95,000 Cr (NASSCOM){ref("140")}.',
+    ['Offshore-wind + green-H2 capex.','LNG + petrochem mega-projects.',f'USA-tariff{ref("6")}: services-tariff zero.','EU CBAM scope-3 reporting.'],
+    [("FX (USD)","350&ndash;500 notional","1.5","2.4","100% USD"),("Treasury","150&ndash;240","1.2","2","MNC TM"),("EBR/PCFC","100&ndash;160","1","1.6","Receivables"),("Salary + retail (2,500)","220&ndash;320/yr","2","3.2","Auto+home"),("PB","100&ndash;160 AUM","1.1","1.7","Senior leaders"),("TASC","85&ndash;130","0.7","1.1","PF+Gratuity")],
+    [("FX","1.5","2.4"),("Treasury+EBR","2.2","3.6"),("Retail-mass","2","3.2"),("PB+TASC","1.8","2.8"),("Cards","0.3","0.5"),("Other","0.5","1")],
+    "8.3", "13.5"))
+
+# Pilot 150 — Mahindra World City Developers (M&M-listed industrial-city)
+SPECS.append(mnc_gf(150, "mahindra-world-city", "Mahindra World City Developers Limited",
+    "U92490TN1997PLC037551", "Mahindra & Mahindra Limited",
+    "Mahindra World City Developers (M&M Group; flagship industrial-city + SEZ developer) Chennai + Jaipur + Pune",
+    "Chennai", "06 Apr 1997", "Industrial city + SEZ developer",
+    656, 13.0, "~750", 50, 1350, "mahindraworldcity.com",
+    f'India industrial-city + SEZ market FY25 ~Rs 32,000 Cr.',
+    ['MNC capex relocation + China+1 ramp.','Industrial-park + SEZ tenant demand.','PLI + EMS + EV cluster expansion.','ESG-park + green-cluster premium.'],
+    [("BG (project)","100&ndash;160","1","1.6","SEZ + tenant"),("Capex TL (industrial-city)","250&ndash;380","2.5","4","Sustainability"),("Customer-finance (tenant)","150&ndash;240","1.5","2.4","Tenant SCF"),("CC + WCDL","60&ndash;100","1.2","2","Sheet A"),("Trade","50&ndash;80","0.5","0.8","Imports"),("Cards + CMS","&ndash;","0.3","0.4","750 FTE")],
+    [("BG","1","1.6"),("Capex TL","2.5","4"),("Customer-finance+Trade","2","3.2"),("CC+WCDL","1.2","2"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "9", "14.2", rating="Sheet A"))
+
+
 if __name__ == "__main__":
     build_all()
