@@ -364,6 +364,114 @@ SPECS.append(mnc_gf(106, "doosan-bobcat", "Doosan Bobcat India Pvt Ltd",
     [("FX","2","3"),("Customer-finance","2.5","4"),("Capex+Trade+EBR","2","3.4"),("CMS","0.2","0.4"),("Retail+PB+TASC","2","3")],
     "8.7", "13.8"))
 
+# Pilot 107 — Andritz Technologies (Austrian pulp/paper/hydro/separation)
+SPECS.append(mnc_gf(107, "andritz-tech", "Andritz Technologies Pvt Ltd",
+    "U29246TN1998PTC150895", "Andritz AG (Austria; ATX: ANDR)",
+    "Andritz AG (Austria; FY25 ~€8.5 bn) global pulp+paper+hydro+separation+metals tech",
+    "Chennai", "01 Jan 1998", "Pulp + paper + hydro + separation tech",
+    1022, 11.0, "~1,200", 50, 920, "andritz.com",
+    f'India process-equipment market FY25 ~Rs 18,000 Cr; CAGR 9-11%; Andritz + Voith + Valmet + Metso compete.',
+    ['Pulp+paper+hydro capex.','Steel+metals decarbonisation.',f'EU CBAM{ref("18")}: scope-3.','Green-H2 + biofuel separation.'],
+    [("FX (EUR + USD)","550&ndash;800 notional","2.5","4","Royalty"),("Customer-SCF","250&ndash;380","2.5","4","ITC + JK + steel"),("Capex TL","100&ndash;160","1","1.6","Sustainability"),("Trade","100&ndash;160","1","1.6","Imports"),("EBR/PCFC","80&ndash;130","0.8","1.4","Export"),("Cards + CMS","&ndash;","0.4","0.6","1,200 FTE")],
+    [("FX","2.5","4"),("Customer-SCF","2.5","4"),("Capex+Trade+EBR","2.8","4.6"),("CMS","0.4","0.6"),("Retail+PB+TASC","2.5","3.5")],
+    "10.7", "16.7", rating="Sheet A"))
+
+# Pilot 108 — Visteon Tech & Service Centre (US Visteon GCC)
+SPECS.append(mnc_gf(108, "visteon-tech-svc", "Visteon Technical and Services Centre Pvt Ltd",
+    "U35990TN2006PTC060495", "Visteon Corp (US, NASDAQ: VC)",
+    "Visteon Corp Indian ER&D + GCC arm (separate from manufacturing pilot 94)",
+    "Chennai", "20 Apr 2006", "Auto ER&D + GCC",
+    1005, 17.0, "~3,500", 50, 930, "visteon.com",
+    f'India auto-ER&D GCC ~Rs 95,000 Cr (NASSCOM){ref("140")}; CAGR 14-16%.',
+    ['SDV + ADAS-cockpit + EV-platform.',f'USA-tariff{ref("6")}: services-tariff zero.','Visteon-cockpit IP scope expansion.','Cybersecurity + AI-Act compliance work.'],
+    [("FX (USD)","700&ndash;1,000 notional","3","5","100% USD"),("Treasury sweep","200&ndash;320","1.5","2.4","MNC TM"),("EBR/PCFC","150&ndash;240","1.5","2.4","Receivables"),("Salary + retail (3,500)","350&ndash;500/yr","3","5","Auto + home"),("PB","145&ndash;220 AUM","1.6","2.5","Senior leaders"),("TASC","120&ndash;180","1","1.5","PF + Gratuity")],
+    [("FX","3","5"),("Treasury+EBR","3","4.8"),("Retail-mass","3","5"),("PB","1.6","2.5"),("TASC","1","1.5"),("Cards","0.5","0.8")],
+    "12.1", "19.6"))
+
+# Pilot 109 — NGC Transmission Chennai (Chinese gear-transmission)
+SPECS.append(mnc_gf(109, "ngc-transmission", "NGC Transmission Chennai Pvt Ltd",
+    "U29309TN2019FTC129259", "NGC Group (China; HKEX)",
+    "NGC Group (China; Hong Kong listed) industrial gearbox + power-transmission major",
+    "Chennai", "06 Mar 2019", "Industrial gearbox + transmission",
+    985, 9.5, "~750", 50, 940, "ngcgroup.com",
+    f'India industrial-gearbox FY25 ~Rs 28,000 Cr; CAGR 9-11%; NGC + Flender + David Brown + Bonfiglioli.',
+    ['Wind + cement + steel capex.',f'EU CBAM{ref("18")}.','EV-drive + railway gearbox.','Mining + sugar industries.'],
+    [("FX (CNY + USD)","450&ndash;650 notional","2","3","Royalty"),("Customer-SCF","180&ndash;280","1.8","2.8","Anchors"),("Capex TL","80&ndash;130","0.8","1.3","Sustainability"),("Trade","60&ndash;100","0.6","1","Imports"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.3","0.5","750 FTE")],
+    [("FX","2","3"),("Customer-SCF","1.8","2.8"),("Capex+Trade+EBR","2","3.3"),("CMS","0.3","0.5"),("Retail+PB+TASC","2","3")],
+    "8.1", "12.6"))
+
+# Pilot 110 — Hyundai Wia (Korean Hyundai-Wia)
+SPECS.append(mnc_gf(110, "hyundai-wia", "Hyundai Wia India Pvt Ltd",
+    "U34300TN2010PTC074749", "Hyundai Wia (Korea; KOSPI: 011210)",
+    "Hyundai Wia (KOSPI: 011210; ~$8 bn revenue) Korean engine + module + machine-tool tier-1 in HMG ecosystem",
+    "Sriperumbudur (Chennai)", "20 Sep 2010", "Engine + module + machine-tool",
+    977, 8.5, "~1,200", 50, 950, "hyundai-wia.com",
+    f'Hyundai-Kia ecosystem captive engine + module supplier; HMIL + Kia Anantapur ramp.',
+    [f'Hyundai-Kia post-IPO ramp{ref("11")}.',f'USA-tariff{ref("6")}.','EV-engine + module transition.','Machine-tool exports.'],
+    [("FX (KRW + USD)","450&ndash;650 notional","2","3","Royalty"),("Customer-SCF","180&ndash;280","1.8","2.8","Hyundai/Kia"),("Capex TL","80&ndash;130","0.8","1.3","Sustainability"),("Trade","60&ndash;100","0.6","1","Imports"),("CC + WCDL","60&ndash;100","1.2","2","Sheet B"),("Cards + CMS","&ndash;","0.3","0.5","1,200 FTE")],
+    [("FX","2","3"),("Customer-SCF","1.8","2.8"),("Capex+Trade","1.4","2.3"),("CC+WCDL","1.2","2"),("CMS","0.3","0.5"),("Retail+PB+TASC","2.5","3.5")],
+    "9.2", "14.1"))
+
+# Pilot 111 — Athenahealth Technology (US healthcare BPO/SaaS)
+SPECS.append(mnc_gf(111, "athenahealth", "Athenahealth Technology Pvt Ltd",
+    "U72200TN2005PTC057276", "athenahealth Inc (US, Bain/Hellman PE-owned)",
+    "athenahealth Inc (US healthcare-EHR + RCM SaaS; FY25 ~$2.0 bn revenue; PE-owned)",
+    "Chennai", "07 Mar 2005", "Healthcare EHR + RCM",
+    976, 17.5, "~5,500", 50, 960, "athenahealth.com",
+    f'India healthcare-tech + RCM ~$8 bn (NASSCOM){ref("140")}; athena + Omega (pilot 72) + Cognizant Healthcare compete.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','Gen-AI medical-coding ramp.','HIPAA + HHS data-privacy compliance.','PE-exit IPO mandate window.'],
+    [("FX (USD)","700&ndash;1,000 notional","3","5","100% USD"),("Treasury sweep","200&ndash;320","1.5","2.4","MNC TM"),("EBR/PCFC","150&ndash;240","1.5","2.4","Receivables"),("Salary + retail (5,500)","450&ndash;700/yr","4","6","Auto + home + cards"),("PB (founders+ESOP)","220&ndash;350 AUM","2.5","4","UHNI"),("TASC + ESOP-Trust","180&ndash;280","1.5","2.4","PF + Gratuity")],
+    [("FX","3","5"),("Treasury+EBR","3","4.8"),("Retail+PB+TASC","8","12.4"),("CMS","0.6","1"),("IPO arranger","2","3.5")],
+    "16.6", "26.7"))
+
+# Pilot 112 — HTC Global Services (Indian-origin IT)
+SPECS.append(mnc_gf(112, "htc-global", "HTC Global Services India Pvt Ltd",
+    "U72900TN2001PTC047862", "HTC Global Services Inc (US, Indian-origin)",
+    "HTC Global Services US-headquartered Indian-origin IT-services major (~$300 mn group revenue)",
+    "Chennai", "30 Mar 2001", "IT services + GCC",
+    965, 14.0, "~4,500", 50, 970, "htcinc.com",
+    f'India IT-services + GCC ~$50 bn export; HTC + smaller mid-tier IT-services compete.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','Gen-AI + agentic-AI scope.','EU AI-Act + DORA.','Cloud-modernisation + cybersecurity.'],
+    [("FX (USD)","550&ndash;800 notional","2.5","4","100% USD"),("Treasury","180&ndash;280","1.5","2.4","MNC TM"),("EBR/PCFC","120&ndash;200","1.2","2","Receivables"),("Salary + retail (4,500)","400&ndash;600/yr","3.5","5.5","Auto+home"),("PB","145&ndash;220 AUM","1.6","2.5","Senior MDs"),("TASC","120&ndash;180","1","1.5","PF+Gratuity")],
+    [("FX","2.5","4"),("Treasury+EBR","2.7","4.4"),("Retail-mass","3.5","5.5"),("PB+TASC","2.6","4"),("Cards","0.5","0.8"),("Other","1","1.5")],
+    "12.8", "20.2"))
+
+# Pilot 113 — Albonair (German emission-control)
+SPECS.append(mnc_gf(113, "albonair", "Albonair India Pvt Ltd",
+    "U74110TN2009PTC073654", "Albonair GmbH (Germany; subsidiary of Hinduja Group)",
+    "Albonair GmbH German urea-injection + emission-control tier-1 (Hinduja Group) for global CV-OEMs",
+    "Chennai", "23 Apr 2009", "Urea-injection + emission-control",
+    929, 10.5, "~700", 50, 980, "albonair.com",
+    f'India urea-injection market growing with BS6+ + Tier-V; Albonair + Continental + Bosch + Tenneco compete.',
+    ['BS6 phase-2 + Tier-V emission ramp.',f'EU CBAM{ref("18")}.',f'USA-tariff{ref("6")}: India urea-injection export.','EV-genset + hybrid CV transition.'],
+    [("FX (EUR + USD)","400&ndash;580 notional","1.8","2.8","Royalty"),("Customer-SCF","160&ndash;240","1.6","2.4","CV-OEM anchors"),("Capex TL","80&ndash;130","0.8","1.3","Sustainability"),("Trade","60&ndash;100","0.6","1","Imports"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.3","0.5","700 FTE")],
+    [("FX","1.8","2.8"),("Customer-SCF","1.6","2.4"),("Capex+Trade+EBR","2","3.3"),("CMS","0.3","0.5"),("Retail+PB+TASC","2","3")],
+    "7.7", "12", rating="Sheet A"))
+
+# Pilot 114 — Daechang India Seat (Korean auto-seat sister)
+SPECS.append(mnc_gf(114, "daechang-seat", "Daechang India Seat Company Pvt Ltd",
+    "U74999TN2006PTC058883", "Daechang Industries (Korea)",
+    "Daechang Korean auto-seat tier-1 to Hyundai-Kia",
+    "Sriperumbudur (Chennai)", "06 Mar 2006", "Auto seat",
+    893, 8.5, "~1,100", 50, 990, "daechang.kr",
+    'Hyundai-Kia auto-seat ecosystem; sister Daebu (pilot 97).',
+    [f'Hyundai-Kia post-IPO ramp{ref("11")}.','Korean MNC ecosystem cross-sell.','EV-seat + premiumisation.',f'USA-tariff{ref("6")}.'],
+    [("FX (KRW + USD)","400&ndash;580 notional","1.8","2.8","Royalty"),("Customer-SCF","160&ndash;240","1.6","2.4","Hyundai/Kia"),("Capex TL","80&ndash;130","0.8","1.3","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("CC + WCDL","50&ndash;80","1","1.6","Sheet"),("Cards + CMS","&ndash;","0.3","0.4","1,100 FTE")],
+    [("FX","1.8","2.8"),("Customer-SCF","1.6","2.4"),("Capex+Trade","1.3","2.1"),("CC+WCDL","1","1.6"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "8", "12.3"))
+
+# Pilot 115 — Bhartiya International (listed leather + textiles)
+SPECS.append(mnc_gf(115, "bhartiya-international", "Bhartiya International Limited",
+    "L74899TN1987PLC111744", "Bhartiya Group (Indian-origin promoter)",
+    "Bhartiya International BSE/NSE-listed leather + textiles + brand house (own brands + JV with EU brands)",
+    "Chennai", "01 Jan 1987", "Leather + textiles + brands",
+    856, 7.5, "~3,200", 50, 1000, "bhartiyagroup.com",
+    f'India leather + textile export FY25 ~Rs 36,000 Cr.',
+    [f'EU CBAM{ref("18")}: scope-3 + EUDR.',f'USA-tariff{ref("6")}: India leather export.','Brand vertical-integration.','Listed-corp DCM access.'],
+    [("CC + WCDL","100&ndash;160","2","3.2","Sheet B"),("EBR/PCFC","250&ndash;380","2.5","4","60%+ export"),("Trade","100&ndash;160","1","1.6","Imports"),("FX (USD + EUR)","450&ndash;650 notional","2","3","Royalty"),("Capex TL","60&ndash;100","0.6","1","Brand expansion"),("DCM/NCD","100&ndash;160","0.8","1.4","Listed-corp")],
+    [("CC+WCDL","2","3.2"),("EBR/PCFC","2.5","4"),("Trade+FX","3","4.6"),("Capex+DCM","1.4","2.4"),("Retail+PB+TASC","2","3")],
+    "10.9", "17.2", rating="Sheet B"))
+
 
 if __name__ == "__main__":
     build_all()
