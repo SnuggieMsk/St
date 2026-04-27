@@ -152,11 +152,108 @@ def build_one(spec):
 
 
 def build_all():
+    import traceback
     for s in SPECS:
         try:
             build_one(s)
         except Exception as e:
             print(f"FAIL pilot {s['pilot']}: {e}")
+            traceback.print_exc()
+
+
+def mnc_gf(pilot, slug, name, cin, parent, parent_long, ho, incorp, industry_short,
+           toi, ebitda_pct, fte, paid_up, src_base, parent_url,
+           industry_text, drivers, product_rows, consol_rows, consol_lo, consol_hi,
+           rating="[diligence]", rating_sub="No Probe42",
+           three_angles=None, headline_low=None, headline_high=None,
+           lede_role=None, lede_extras="", group_text=None, pad_sector=None,
+           play_summary="greenfield FX + customer-SCF + capex"):
+    if headline_low is None:
+        headline_low = max(14, round(toi * 0.011))
+    if headline_high is None:
+        headline_high = max(headline_low+8, round(toi * 0.018))
+    if lede_role is None:
+        lede_role = f"the Indian subsidiary of {parent}"
+    if group_text is None:
+        group_text = f"{parent_long}; standard MNC-captive India operations + manufacturing/services."
+    if pad_sector is None:
+        pad_sector = f"{industry_short} / {parent}"
+    if three_angles is None:
+        three_angles = [
+            f"<strong>FX royalty + RM-import hedge</strong> &mdash; {parent} intercompany.",
+            "<strong>Customer-SCF on Indian + global anchor customers</strong>.",
+            "<strong>Capex + product capex window</strong> on India growth-region.",
+        ]
+    return dict(
+        pilot=pilot, slug=slug, name=name, cin=cin, parent=parent, parent_long=parent_long,
+        industry_short=industry_short, industry_long=industry_short,
+        eyebrow_extras=f"{ho.split('(')[0].strip()} · {parent.split(';')[0].split('(')[0].strip()} · {industry_short} · Greenfield",
+        headline_sub=f"{parent} Indian {industry_short.lower()} subsidiary",
+        lede_role=lede_role, lede_extras=lede_extras,
+        incorp_date=incorp, ho=ho,
+        headline_low=headline_low, headline_high=headline_high,
+        headline_strap="Y3 wallet (FX + customer-SCF + capex)",
+        toi=toi, ebitda_pct=ebitda_pct, fte=fte, paid_up=paid_up,
+        angles=three_angles,
+        rating_text=rating, rating_kpi_sub=rating_sub,
+        group_text=group_text,
+        funding_anchors=[f"Zero open MCA charges{ref('126')} — equity + parent ICDs.",
+                         f"FY25 paid-up Rs {paid_up} Cr; cash-positive MNC-treasury.",
+                         f"Disclosed banking{ref('128')}: parent-anchor + 2-3 transactional banks.",
+                         "IBank: not in current panel — greenfield FX + customer-SCF entry."],
+        industry_text=industry_text, drivers=drivers, product_rows=product_rows,
+        consolidated_rows=consol_rows, consolidated_total_low=consol_lo, consolidated_total_high=consol_hi,
+        src_base=src_base, src_parent_url=parent_url,
+        play_summary=play_summary, pad_sector=pad_sector,
+        **_greenfield_charges(),
+    )
+
+
+# Pilot 95 — Kingfa Science (Chinese specialty plastics, listed)
+SPECS.append(mnc_gf(
+    pilot=95, slug="kingfa-science", name="Kingfa Science & Technology India Limited",
+    cin="L25209TN1983PLC010438", parent="Kingfa Sci. & Tech. Co (China; SHE: 600143)",
+    parent_long="Kingfa Sci. & Tech. Co Ltd (China; Shanghai listed) modified-plastics + biodegradable-plastics major (~$5 bn revenue)",
+    ho="Chennai", incorp="06 Oct 1983", industry_short="Modified plastics + biodegradable",
+    toi=1744, ebitda_pct=10.5, fte="~1,200", paid_up=85, src_base=800,
+    parent_url="kingfa.com &middot; sse.com.cn",
+    industry_text=f'India modified-plastics market FY25 ~Rs 28,000 Cr; CAGR 10-12%; Kingfa + Sabic + Borealis + Reliance Polymers compete.',
+    drivers=[f'EU CBAM{ref("18")}: scope-3 reporting; biodegradable ramp.','Auto + appliance + EV-comp customer ramp.',f'USA-tariff{ref("6")}: India plastics export.','Premiumisation + EV-grade plastics.'],
+    product_rows=[("FX (CNY + USD)","700&ndash;1,000 notional","3","5","Royalty + RM"),("Customer-SCF","250&ndash;400","2.5","4","Auto + appliance"),("Capex TL (EV-grade ramp)","150&ndash;240","1.5","2.4","Sustainability"),("Trade","100&ndash;160","1","1.6","Imports"),("EBR / PCFC","100&ndash;160","1","1.6","Export"),("Cards + CMS","&ndash;","0.4","0.7","1,200 FTE")],
+    consol_rows=[("FX","3","5"),("Customer-SCF","2.5","4"),("Capex+Trade+EBR","3.5","5.6"),("CMS","0.4","0.7"),("Retail+PB+TASC","3","4.5")],
+    consol_lo="12.4", consol_hi="19.8",
+))
+
+# Pilot 96 — K H Exports (Indian leather export)
+SPECS.append(mnc_gf(
+    pilot=96, slug="k-h-exports", name="K H Exports India Private Limited",
+    cin="U19129TN1985PTC011821", parent="Promoter family (Indian-origin leather exporter)",
+    parent_long="K H Exports / Florind Shoes Indian leather + footwear export major",
+    ho="Chennai", incorp="14 Jun 1985", industry_short="Leather + footwear export",
+    toi=1415, ebitda_pct=9.5, fte="~3,500", paid_up=65, src_base=810,
+    parent_url="khexports.com",
+    industry_text=f'India leather + footwear export FY25 ~Rs 36,000 Cr; CAGR 7-9%; KH + Farida + Florind + Hindustan Lever compete. EU + USA + UAE export anchors.',
+    drivers=[f'USA-tariff{ref("6")}: India leather export.',f'EU CBAM{ref("18")}: scope-3 + EUDR cotton-traceability.','Premiumisation + footwear branded segments.','Vertical integration (tannery to brand).'],
+    product_rows=[("CC + WCDL refresh","60&ndash;100","1.5","2.4","Sheet B"),("EBR / PCFC (export)","350&ndash;500","3","5","60%+ export"),("Trade","100&ndash;160","1","1.6","Imports"),("FX (USD + EUR)","800&ndash;1,200 notional","3.5","5.5","Export"),("Capex TL","100&ndash;160","1","1.6","Sustainability"),("Cards + CMS","&ndash;","0.4","0.7","3,500 FTE")],
+    consol_rows=[("CC+WCDL","1.5","2.4"),("EBR/PCFC","3","5"),("FX","3.5","5.5"),("Trade+Capex","2","3.2"),("CMS","0.4","0.7"),("Retail+PB+TASC","3","4.5")],
+    consol_lo="13.4", consol_hi="21.3",
+))
+
+# Pilot 97 — Daebu Automotive Seat (Korean auto-seat)
+SPECS.append(mnc_gf(
+    pilot=97, slug="daebu-automotive-seat", name="Daebu Automotive Seat India Private Limited",
+    cin="U50500TN2006PTC061322", parent="Daebu Automotive Co (Korea; KOSPI)",
+    parent_long="Daebu Automotive Korean auto-seat + interior tier-1 (Hyundai-Kia ecosystem)",
+    ho="Sriperumbudur (Chennai)", incorp="15 Mar 2006", industry_short="Auto seat + interior",
+    toi=1411, ebitda_pct=9.5, fte="~1,600", paid_up=60, src_base=820,
+    parent_url="daebu.kr",
+    industry_text='India auto-seat market FY25 ~Rs 9,800 Cr; CAGR 9-11%; Daebu + Faurecia (pilot 25) + Magna Seating + Adient compete. Hyundai-Kia ecosystem captive.',
+    drivers=[f'Hyundai-Kia capacity ramp{ref("11")}.',f'USA-tariff{ref("6")}: HMG export benefit.','EV-seat + premiumisation.','Korean MNC ecosystem cross-sell.'],
+    product_rows=[("FX (KRW + USD)","500&ndash;750 notional","2.5","4","Royalty + RM"),("Customer-SCF (Hyundai/Kia)","200&ndash;320","2","3.2","OEM"),("Capex TL","100&ndash;160","1","1.6","Sustainability"),("Trade","80&ndash;120","0.8","1.2","Imports"),("CC + WCDL refresh","60&ndash;100","1.5","2.4","Sheet A"),("Cards + CMS","&ndash;","0.4","0.6","1,600 FTE")],
+    consol_rows=[("FX","2.5","4"),("Customer-SCF","2","3.2"),("Capex+Trade","1.8","2.8"),("CC+WCDL","1.5","2.4"),("CMS","0.4","0.6"),("Retail+PB+TASC","3","4.5")],
+    consol_lo="11.2", consol_hi="17.5",
+    rating="Sheet A",
+))
 
 
 if __name__ == "__main__":
