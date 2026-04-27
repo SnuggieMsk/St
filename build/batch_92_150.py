@@ -256,5 +256,114 @@ SPECS.append(mnc_gf(
 ))
 
 
+# Pilot 98 — Indian Additives (Chevron-Oronite/SPIC JV; engine-oil additives)
+SPECS.append(mnc_gf(98, "indian-additives", "Indian Additives Limited",
+    "U24294TN1989PLC017705", "Chevron-Oronite + SPIC JV (US/India)",
+    "Indian Additives Limited (Chevron-Oronite/IOCL JV) lubricant + engine-oil additives manufacturer",
+    "Manali (Chennai)", "01 Jan 1989", "Lubricant + engine-oil additives",
+    1307, 12.0, "~600", 60, 830, "iadditives.com",
+    f'India lubricant-additives FY25 ~Rs 16,000 Cr; CAGR 7-9%; Indian Additives + Lubrizol + Afton + Infineum compete.',
+    [f'BS6/Tier-V emission ramp.',f'EU CBAM{ref("18")}: scope-3.','EV-fluid + e-axle additives transition.','Refinery + petrochem capex.'],
+    [("FX (USD)","550&ndash;800 notional","2","3","Royalty"),("Customer-SCF (IOCL/HPCL/BPCL)","250&ndash;380","2.5","4","PSU OMC anchors"),("Capex TL","100&ndash;180","1","1.8","Sustainability"),("Trade","100&ndash;160","1","1.6","Imports"),("EBR/PCFC","80&ndash;130","0.8","1.4","Export"),("Cards + CMS","&ndash;","0.3","0.5","600 FTE")],
+    [("FX","2","3"),("Customer-SCF","2.5","4"),("Capex+Trade+EBR","2.8","4.8"),("CMS","0.3","0.5"),("Retail+PB+TASC","2.5","3.5")],
+    "10.1", "15.8", rating="Sheet A"))
+
+# Pilot 99 — Tiger Analytics (US/Indian-origin analytics consulting)
+SPECS.append(mnc_gf(99, "tiger-analytics", "Tiger Analytics India Consulting Pvt Ltd",
+    "U74999TN2021FTC146673", "Tiger Analytics Inc (US, PE-backed)",
+    "Tiger Analytics Inc, US-headquartered Indian-origin analytics + AI consulting major (~$300 mn revenue)",
+    "Chennai", "07 Apr 2021", "AI + analytics consulting / GCC",
+    1298, 16.5, "~5,500", 60, 840, "tigeranalytics.com",
+    f'India analytics-consulting + GCC FY25 ~Rs 2.10 lakh Cr (NASSCOM){ref("140")}; Tiger + Mu Sigma + Fractal + LatentView compete.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','Gen-AI + agentic-AI scope expansion.','GCC + retail-mass on FTE base.','PE-exit + IPO mandate window 24-36 mo.'],
+    [("FX (USD)","1,200&ndash;1,800 notional","5","8","100% USD billing"),("Treasury sweep","250&ndash;380","2","3","MNC TM"),("EBR / PCFC","200&ndash;320","2","3.2","Receivables"),("Salary + retail asset (5,500)","500&ndash;800/yr","4","7","Auto + home + cards"),("PB (founders + ESOP)","220&ndash;350 AUM","2.5","4","UHNI"),("TASC + ESOP-Trust","180&ndash;280","1.5","2.4","PF + Gratuity")],
+    [("FX","5","8"),("Treasury+EBR","4","6.2"),("Retail+PB+TASC","8","13.4"),("Cards","1","1.8"),("Other","2","3")],
+    "20", "32.4", rating="[diligence]"))
+
+# Pilot 100 — Murata Electronics India (Japanese passive components)
+SPECS.append(mnc_gf(100, "murata-electronics", "Murata Electronics India Private Limited",
+    "U29268TN2010FTC077446", "Murata Manufacturing Co (Japan; TSE: 6981)",
+    "Murata Manufacturing Co (TSE: 6981; ~$15 bn revenue) Japanese passive-electronics components major",
+    "Chennai", "20 Sep 2010", "Passive electronics components",
+    1214, 13.0, "~1,100", 50, 850, "murata.com &middot; jpx.co.jp",
+    f'India passive-components market FY25 ~Rs 22,000 Cr; CAGR 13-15%; Murata + Yageo + Samsung Electro-Mechanics compete.',
+    [f'EMS + smartphone export ramp{ref("31")}.','EV-passive + 5G + AI-data-centre demand.',f'USA-tariff{ref("6")}: India electronics export.','Mid-tier MLCC + capacitor capex.'],
+    [("FX (JPY + USD)","700&ndash;1,000 notional","3","5","Royalty"),("Customer-SCF (EMS)","200&ndash;320","2","3.2","Bharat FIH/Foxconn"),("Capex TL","150&ndash;240","1.5","2.4","Sustainability"),("Trade","100&ndash;160","1","1.6","Imports"),("EBR/PCFC","80&ndash;130","0.8","1.4","Export"),("Cards + CMS","&ndash;","0.4","0.6","1,100 FTE")],
+    [("FX","3","5"),("Customer-SCF","2","3.2"),("Capex+Trade+EBR","3.3","5.4"),("CMS","0.4","0.6"),("Retail+PB+TASC","3","4.5")],
+    "11.7", "18.7"))
+
+# Pilot 101 — KUN Auto Company (TN auto-dealer chain)
+SPECS.append(mnc_gf(101, "kun-auto", "K.U.N. Auto Company Pvt Ltd",
+    "U74999TN1997PTC039547", "KUN Group (Indian-origin TN auto-dealer)",
+    "KUN Group multi-brand auto-dealership chain (Mercedes, Toyota, Hyundai, Maruti) headquartered Chennai",
+    "Chennai", "12 Mar 1997", "Auto retail / dealership",
+    1204, 4.5, "~2,500", 50, 860, "kungroup.in",
+    f'India auto-retail FY25 ~Rs 5.2 lakh Cr; CAGR 7-9%; large multi-brand dealer chains consolidating.',
+    [f'PV market growth{ref("11")}.','EV-retail transition.','Used-car + SCF expansion.','Service revenue annuity.'],
+    [("CC + WCDL refresh","100&ndash;160","2","3.2","Sheet B"),("Inventory financing","250&ndash;380","2.5","4","Multi-brand"),("Retail auto-finance origination","400&ndash;600/yr","3","5","NBFC tie-up"),("Trade","60&ndash;100","0.6","1","Imports"),("Capex TL","80&ndash;130","0.8","1.4","Service-bay ramp"),("Cards + CMS","&ndash;","0.4","0.6","2,500 FTE")],
+    [("CC+WCDL","2","3.2"),("Inventory","2.5","4"),("Retail-finance","3","5"),("Capex+Trade","1.4","2.4"),("CMS","0.4","0.6"),("Retail+PB+TASC","2.5","3.5")],
+    "11.8", "18.7", rating="Sheet B"))
+
+# Pilot 102 — Komos Automotive (Korean auto-comp)
+SPECS.append(mnc_gf(102, "komos-automotive", "Komos Automotive India Pvt Ltd",
+    "U50500TN2006PTC060925", "Komos Korea / Hyundai Mobis ecosystem",
+    "Komos Korean auto-component (interior trim) tier-1 supplier to Hyundai-Kia",
+    "Sriperumbudur (Chennai)", "06 Mar 2006", "Auto interior trim",
+    1133, 8.5, "~1,400", 50, 870, "komosgroup.com",
+    f'India auto-trim market ~Rs 14,000 Cr; CAGR 9-11%; Hyundai-Kia ecosystem.',
+    [f'Hyundai-Kia ramp{ref("11")}.',f'USA-tariff{ref("6")}.','EV-cabin transition.','Korean MNC ecosystem cross-sell.'],
+    [("FX (KRW + USD)","450&ndash;650 notional","2","3","Royalty"),("Customer-SCF","180&ndash;280","1.8","2.8","Hyundai/Kia"),("Capex TL","80&ndash;130","0.8","1.3","Sustainability"),("Trade","60&ndash;100","0.6","1","Imports"),("CC + WCDL","60&ndash;100","1.2","2","Sheet B"),("Cards + CMS","&ndash;","0.3","0.5","1,400 FTE")],
+    [("FX","2","3"),("Customer-SCF","1.8","2.8"),("Capex+Trade","1.4","2.3"),("CC+WCDL","1.2","2"),("CMS","0.3","0.5"),("Retail+PB+TASC","2.5","3.5")],
+    "9.2", "14.1", rating="Sheet B"))
+
+# Pilot 103 — L&T Geostructure (L&T Group)
+SPECS.append(mnc_gf(103, "lnt-geostructure", "L&T Geostructure Pvt Ltd",
+    "U45203TN2020PTC139693", "Larsen & Toubro Limited (BSE/NSE)",
+    "L&T Construction / Geostructure (subsidiary of L&T listed) civil + foundation + marine",
+    "Chennai", "06 Apr 2020", "Civil + foundation construction",
+    1075, 8.0, "~3,500", 50, 880, "larsentoubro.com",
+    f'India infra construction FY25 ~Rs 12 lakh Cr; L&T flagship.',
+    ['Bharatmala + Sagarmala capex.','Defence + naval shipbuilding.','Metro + Vande Bharat ecosystem.','Green-H2 + offshore-wind capex.'],
+    [("BG (project)","300&ndash;500","3","5","PSU + private"),("CC + WCDL","100&ndash;160","2","3.2","Sheet A"),("Capex TL","80&ndash;130","0.8","1.4","Sustainability"),("FX (USD)","250&ndash;380 notional","1","1.6","Imports"),("Customer-finance","150&ndash;240","1.5","2.4","PSU receivable"),("Cards + CMS","&ndash;","0.5","0.8","3,500 FTE")],
+    [("BG","3","5"),("CC+WCDL","2","3.2"),("Capex+FX","1.8","3"),("Customer-finance","1.5","2.4"),("CMS","0.5","0.8"),("Retail+PB+TASC","3","4.5")],
+    "11.8", "18.9", rating="Sheet A"))
+
+# Pilot 104 — Grundfos Pumps (Danish pump MNC)
+SPECS.append(mnc_gf(104, "grundfos-pumps", "Grundfos Pumps India Pvt Ltd",
+    "U29309TN1998PTC040102", "Grundfos A/S (Denmark, private)",
+    "Grundfos A/S (Denmark; private; ~€4.5 bn revenue) Danish pump + circulator-pump MNC",
+    "Chennai (Oragadam)", "27 Apr 1998", "Pumps + circulator pumps",
+    1072, 13.5, "~950", 50, 890, "grundfos.com",
+    f'India pump market FY25 ~Rs 35,000 Cr; CAGR 9-11%; Grundfos + KSB + Kirloskar Brothers + Crompton compete.',
+    ['Water + sewage + agri irrigation.','Cold-chain + HVAC drives.',f'EU CBAM{ref("18")}.',f'USA-tariff{ref("6")}: India pump export.'],
+    [("FX (EUR + DKK)","450&ndash;650 notional","2","3","Royalty"),("Customer-SCF","180&ndash;280","1.8","2.8","Anchors"),("Capex TL","80&ndash;130","0.8","1.4","Sustainability"),("Trade","60&ndash;100","0.6","1","Imports"),("EBR / PCFC","80&ndash;130","0.8","1.4","Export"),("Cards + CMS","&ndash;","0.3","0.5","950 FTE")],
+    [("FX","2","3"),("Customer-SCF","1.8","2.8"),("Capex+Trade+EBR","2.2","3.8"),("CMS","0.3","0.5"),("Retail+PB+TASC","2.5","3.5")],
+    "8.8", "13.6"))
+
+# Pilot 105 — SIPCOT (Tamil Nadu state PSU industrial-corridor)
+SPECS.append(mnc_gf(105, "sipcot", "State Industries Promotion Corporation of Tamilnadu Limited",
+    "U74999TN1971SGC005967", "Government of Tamil Nadu",
+    "SIPCOT — Tamil Nadu government PSU industrial corridor / industrial-park developer (FY25 ~Rs 1,047 Cr revenue)",
+    "Chennai", "12 Aug 1971", "Industrial corridor / PSU",
+    1047, 14.0, "~1,200", 50, 900, "sipcot.com",
+    f'TN industrial-corridor + park development; SIPCOT operates 25+ industrial parks (Sriperumbudur, Oragadam, Mahindra World City, Hosur, Perundurai).',
+    ['TN industrial-park demand from MNC ramp.','PLI + EMS + EV park-allocation.','Defence + electronics-cluster expansion.','Green-corridor + ESG-park demand.'],
+    [("BG (project)","250&ndash;380","2.5","4","PSU + tenant"),("CC + WCDL","100&ndash;160","2","3.2","Sheet A"),("Capex TL (corridor)","150&ndash;240","1.5","2.4","Sustainability"),("Customer-finance (tenant)","200&ndash;320","2","3.2","Tenant-payment"),("Treasury + CMS","&ndash;","0.6","1","TN PSU treasury"),("Cards","&ndash;","0.3","0.5","1,200 FTE")],
+    [("BG","2.5","4"),("CC+WCDL","2","3.2"),("Capex+Customer-finance","3.5","5.6"),("Treasury+Cards","0.9","1.5"),("Retail+PB+TASC","2.5","3.5")],
+    "11.4", "17.8", rating="Sheet A"))
+
+# Pilot 106 — Doosan Bobcat India (Korean machinery)
+SPECS.append(mnc_gf(106, "doosan-bobcat", "Doosan Bobcat India Pvt Ltd",
+    "U29248TN2007FTC082032", "Doosan Bobcat (Korea; KOSPI: 241560)",
+    "Doosan Bobcat (Korea; ~$8 bn revenue) Korean compact-construction-equipment major",
+    "Chennai", "07 Apr 2007", "Compact construction equipment",
+    1026, 9.0, "~750", 50, 910, "doosanbobcat.com",
+    f'India compact-construction market FY25 ~Rs 8,500 Cr; CAGR 11-13%; Bobcat + JCB + Caterpillar (compact) + Volvo CE compete.',
+    [f'Coal-FSA + mining{ref("19")}.',f'USA-tariff{ref("6")}: India compact-construction export.','EV-skidsteer + Tier-V emission.','Bharatmala + EPC infra capex.'],
+    [("FX (KRW + USD)","450&ndash;650 notional","2","3","Royalty"),("Customer-finance origination","300&ndash;480/yr","2.5","4","EPC + miners"),("Capex TL","80&ndash;130","0.8","1.4","Sustainability"),("Trade","60&ndash;100","0.6","1","Imports"),("EBR / PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.2","0.4","750 FTE")],
+    [("FX","2","3"),("Customer-finance","2.5","4"),("Capex+Trade+EBR","2","3.4"),("CMS","0.2","0.4"),("Retail+PB+TASC","2","3")],
+    "8.7", "13.8"))
+
+
 if __name__ == "__main__":
     build_all()
