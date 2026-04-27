@@ -473,5 +473,127 @@ SPECS.append(mnc_gf(115, "bhartiya-international", "Bhartiya International Limit
     "10.9", "17.2", rating="Sheet B"))
 
 
+
+# Pilot 116 — Amphenol Omniconnect (US connectors)
+SPECS.append(mnc_gf(116, "amphenol-omniconnect", "Amphenol Omniconnect India Pvt Ltd",
+    "U32100TN2008PTC066155", "Amphenol Corp (US, NYSE: APH)",
+    "Amphenol Corp (NYSE: APH; ~$15 bn revenue) US electronic-connectors major",
+    "Maraimalai Nagar (Chennai)", "20 Aug 2008", "Electronic connectors",
+    844, 14.0, "~1,200", 50, 1010, "amphenol.com",
+    f'India electronic-connector market FY25 ~Rs 9,500 Cr; CAGR 12-14%; Amphenol + TE Connectivity + Molex compete.',
+    [f'EMS + smartphone export ramp{ref("31")}.','EV + 5G + AI-data-centre demand.',f'USA-tariff{ref("6")}: India electronics export.','PLI + EV-component ramp.'],
+    [("FX (USD)","450&ndash;650 notional","2","3","Royalty"),("Customer-SCF (EMS)","160&ndash;240","1.6","2.4","Bharat FIH/Foxconn"),("Capex TL","100&ndash;160","1","1.6","Sustainability"),("Trade","60&ndash;100","0.6","1","Imports"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.3","0.5","1,200 FTE")],
+    [("FX","2","3"),("Customer-SCF","1.6","2.4"),("Capex+Trade+EBR","2.2","3.6"),("CMS","0.3","0.5"),("Retail+PB+TASC","2","3")],
+    "8.1", "12.5"))
+
+# Pilot 117 — Pyung Hwa India (Korean auto-trim)
+SPECS.append(mnc_gf(117, "pyung-hwa", "Pyung Hwa India Pvt Ltd",
+    "U34300TN2006PTC058845", "Pyung Hwa Industrial (Korea)",
+    "Pyung Hwa Korean auto-trim + interior tier-1 to Hyundai-Kia",
+    "Sriperumbudur (Chennai)", "20 Mar 2006", "Auto trim + interior",
+    841, 8.0, "~1,000", 50, 1020, "pyunghwa.kr",
+    'Hyundai-Kia ecosystem auto-trim tier-1.',
+    [f'Hyundai-Kia ramp{ref("11")}.','Korean MNC ecosystem.','EV-trim premiumisation.',f'USA-tariff{ref("6")}.'],
+    [("FX (KRW + USD)","400&ndash;580 notional","1.8","2.8","Royalty"),("Customer-SCF","150&ndash;240","1.5","2.4","Hyundai/Kia"),("Capex TL","80&ndash;130","0.8","1.3","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("CC + WCDL","50&ndash;80","1","1.6","Sheet"),("Cards + CMS","&ndash;","0.3","0.4","1,000 FTE")],
+    [("FX","1.8","2.8"),("Customer-SCF","1.5","2.4"),("Capex+Trade","1.3","2.1"),("CC+WCDL","1","1.6"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "7.9", "12.3"))
+
+# Pilot 118 — Igarashi Motors (Japanese listed micromotors)
+SPECS.append(mnc_gf(118, "igarashi-motors", "Igarashi Motors India Limited",
+    "L29142TN1992PLC021997", "Igarashi Electric Works (Japan; subsidiary of Crane Co)",
+    "Igarashi Motors BSE/NSE-listed micromotor + auto-application motors major",
+    "MEPZ Tambaram (Chennai)", "01 Jan 1992", "Micromotors + auto motors",
+    838, 13.5, "~1,400", 50, 1030, "igarashimotors.com",
+    f'India auto-electric-motors market FY25 ~Rs 12,500 Cr; CAGR 10-12%; Igarashi + Lucas-TVS + Mitsuba + Nidec compete.',
+    ['EV-2W + EV-3W traction-motor demand.',f'USA-tariff{ref("6")}: India motor export.','BLDC + ABS-mandate demand.','Defence + medical motor expansion.'],
+    [("FX (JPY + USD)","450&ndash;650 notional","2","3","Royalty"),("Customer-SCF","180&ndash;280","1.8","2.8","2W/3W OEMs"),("Capex TL (EV-traction ramp)","100&ndash;160","1","1.6","Sustainability"),("Trade","60&ndash;100","0.6","1","Imports"),("EBR/PCFC","100&ndash;160","1","1.6","Export"),("DCM/NCD","100&ndash;160","0.8","1.4","Listed-corp")],
+    [("FX","2","3"),("Customer-SCF","1.8","2.8"),("Capex+Trade+EBR","2.6","4.2"),("DCM","0.8","1.4"),("Retail+PB+TASC","2.5","3.5")],
+    "9.7", "14.9", rating="Sheet A"))
+
+# Pilot 119 — LNW India Solutions (US software services)
+SPECS.append(mnc_gf(119, "lnw-india", "LNW India Solutions Pvt Ltd",
+    "U72200TN2005PTC057084", "LiveWire Networks Inc (US)",
+    "LNW US software-services + Indian-origin BPO-tech captive (~$120 mn revenue)",
+    "Chennai", "06 Apr 2005", "IT services + GCC",
+    837, 14.0, "~3,000", 50, 1040, "lnw.com",
+    f'India ITES + GCC sub-segment ~$50 bn export.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','Gen-AI + agentic-AI scope.','Cloud-modernisation.','Cybersecurity + EU AI-Act compliance.'],
+    [("FX (USD)","450&ndash;650 notional","2","3","100% USD"),("Treasury","150&ndash;240","1.2","2","MNC TM"),("EBR/PCFC","100&ndash;160","1","1.6","Receivables"),("Salary + retail (3,000)","250&ndash;380/yr","2.5","4","Auto+home"),("PB","75&ndash;130 AUM","0.9","1.4","Senior MDs"),("TASC","85&ndash;130","0.7","1.1","PF+Gratuity")],
+    [("FX","2","3"),("Treasury+EBR","2.2","3.6"),("Retail-mass","2.5","4"),("PB+TASC","1.6","2.5"),("Cards","0.4","0.6"),("Other","0.5","1")],
+    "9.2", "14.7"))
+
+# Pilot 120 — Schneider Electric Systems (US/UK MNC)
+SPECS.append(mnc_gf(120, "schneider-electric-systems", "Schneider Electric Systems India Pvt Ltd",
+    "U31200TN1996PTC082282", "Schneider Electric SE (France; Euronext: SU)",
+    "Schneider Electric SE (Euronext: SU; ~€38 bn revenue) French process-automation + power-management major",
+    "Chennai", "06 Apr 1996", "Process automation + power management",
+    824, 13.5, "~1,600", 50, 1050, "schneider-electric.com",
+    f'India process-automation + power-management market ~Rs 32,000 Cr; CAGR 11-13%; Schneider + Siemens + ABB + Honeywell compete.',
+    ['Data-center + UPS demand.','Industry-4.0 + Industrial-IoT.','Green-H2 + grid-modernisation.',f'EU CBAM{ref("18")}.'],
+    [("FX (EUR + USD)","450&ndash;650 notional","2","3","Royalty"),("Customer-SCF","160&ndash;240","1.6","2.4","Anchors"),("Capex TL","80&ndash;130","0.8","1.3","Sustainability"),("Trade","60&ndash;100","0.6","1","Imports"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.4","0.6","1,600 FTE")],
+    [("FX","2","3"),("Customer-SCF","1.6","2.4"),("Capex+Trade+EBR","2","3.3"),("CMS","0.4","0.6"),("Retail+PB+TASC","2.5","3.5")],
+    "8.5", "12.8"))
+
+# Pilot 121 — Symrise India (German F&F)
+SPECS.append(mnc_gf(121, "symrise", "Symrise Pvt Ltd",
+    "U24294TN1990PTC020035", "Symrise AG (Germany; FRA: SY1)",
+    "Symrise AG (Frankfurt: SY1; ~€5 bn revenue) German flavours + fragrances + nutrition major (vs IFF pilot 65)",
+    "Chennai", "01 Jan 1990", "Flavours + fragrances + nutrition",
+    821, 14.5, "~600", 50, 1060, "symrise.com",
+    f'India F&F market ~Rs 9,500 Cr (vs IFF pilot 65). Symrise + Givaudan + IFF + Firmenich-DSM compete.',
+    [f'EU CBAM{ref("18")}: scope-3.','Plant-protein + alt-meat ramp.','FSSAI nutraceutical regs.',f'USA-tariff{ref("6")}: F&F export.'],
+    [("FX (EUR + USD)","350&ndash;500 notional","1.5","2.4","Royalty"),("Customer-SCF (FMCG)","150&ndash;240","1.5","2.4","HUL+Nestle+ITC"),("Capex TL","60&ndash;100","0.6","1","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.3","0.4","600 FTE")],
+    [("FX","1.5","2.4"),("Customer-SCF","1.5","2.4"),("Capex+Trade+EBR","1.7","2.8"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "7", "11"))
+
+# Pilot 122 — ICON Clinical Research (Irish CRO)
+SPECS.append(mnc_gf(122, "icon-clinical", "ICON Clinical Research India Pvt Ltd",
+    "U74110TN2004PTC054137", "ICON plc (Ireland; NASDAQ: ICLR)",
+    "ICON plc (NASDAQ: ICLR; ~$8 bn revenue) Irish global CRO (clinical research organisation)",
+    "Chennai", "12 Mar 2004", "Clinical research / CRO",
+    814, 16.0, "~3,500", 50, 1070, "iconplc.com",
+    f'India CRO + clinical-trials FY25 ~Rs 28,000 Cr; CAGR 13-15%; ICON + IQVIA + Parexel + Syneos compete.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','India clinical-trial liberalisation.','Gene + cell-therapy + RWE growth.','EU AI-Act + EMA drug-AI compliance.'],
+    [("FX (USD + EUR)","450&ndash;650 notional","2","3","100% export"),("Treasury","180&ndash;280","1.5","2.4","MNC TM"),("EBR/PCFC","120&ndash;200","1.2","2","Receivables"),("Salary + retail (3,500)","320&ndash;480/yr","3","5","Auto+home"),("PB","145&ndash;220 AUM","1.6","2.5","Senior MDs"),("TASC","120&ndash;180","1","1.5","PF+Gratuity")],
+    [("FX","2","3"),("Treasury+EBR","2.7","4.4"),("Retail-mass","3","5"),("PB+TASC","2.6","4"),("Cards","0.4","0.7"),("Other","0.8","1.5")],
+    "11.5", "18.6"))
+
+# Pilot 123 — RR Donnelley India (US printing/marketing)
+SPECS.append(mnc_gf(123, "rr-donnelley", "RR Donnelley India Outsource Pvt Ltd",
+    "U30006TN1995PTC053395", "R. R. Donnelley & Sons (US)",
+    "RR Donnelley US-based print+marketing+packaging multinational; PE-owned (Chatham post-2022)",
+    "Chennai", "06 Mar 1995", "Print + marketing services",
+    811, 11.5, "~4,000", 50, 1080, "rrd.com",
+    f'India print + marketing services GCC ~Rs 18,000 Cr.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','Digital-marketing + agentic-AI shift.','Premium packaging + brand consolidation.','PE-exit window.'],
+    [("FX (USD)","350&ndash;500 notional","1.5","2.4","100% USD"),("Treasury","150&ndash;240","1.2","2","MNC TM"),("EBR/PCFC","100&ndash;160","1","1.6","Receivables"),("Salary + retail (4,000)","300&ndash;450/yr","3","5","Auto+home"),("PB","95&ndash;160 AUM","1.1","1.7","Senior MDs"),("TASC","115&ndash;180","1","1.5","PF+Gratuity")],
+    [("FX","1.5","2.4"),("Treasury+EBR","2.2","3.6"),("Retail-mass","3","5"),("PB+TASC","2.1","3.2"),("Cards","0.4","0.6"),("Other","0.5","1")],
+    "9.7", "15.8"))
+
+# Pilot 124 — HL Klemove (Korean ADAS)
+SPECS.append(mnc_gf(124, "hl-klemove", "HL Klemove India Pvt Ltd",
+    "U35990TN2015FTC100504", "HL Klemove (Korea; ex-Mando ADAS)",
+    "HL Klemove Korean ADAS + autonomous-driving tier-1 (spun off Mando 2021); supplier to Hyundai-Kia",
+    "Chennai", "06 Apr 2015", "ADAS + autonomous driving",
+    799, 11.5, "~750", 50, 1090, "hlklemove.com",
+    f'India ADAS market FY25 ~Rs 6,500 Cr; CAGR 28-32%; HL Klemove + Bosch + Continental + Visteon compete.',
+    ['ADAS-mandate (AEBS) Apr 2026.','SDV + L2/L3 autonomous transition.','Hyundai-Kia ramp.',f'USA-tariff{ref("6")}: ADAS export.'],
+    [("FX (KRW + USD)","350&ndash;500 notional","1.5","2.4","Royalty"),("Customer-SCF","150&ndash;240","1.5","2.4","Hyundai/Kia"),("Capex TL","100&ndash;160","1","1.6","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.3","0.4","750 FTE")],
+    [("FX","1.5","2.4"),("Customer-SCF","1.5","2.4"),("Capex+Trade+EBR","2.1","3.4"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "7.4", "11.6"))
+
+# Pilot 125 — India Motor Parts (TVS group listed auto-parts distribution)
+SPECS.append(mnc_gf(125, "india-motor-parts", "India Motor Parts & Accessories Limited",
+    "L65991TN1954PLC000958", "TVS Sundaram-Iyengar Group (Indian-origin)",
+    "India Motor Parts & Accessories TVS Sundaram listed auto-parts distribution major",
+    "Chennai", "01 Jan 1954", "Auto-parts distribution",
+    788, 6.0, "~2,500", 50, 1100, "imapaltd.com",
+    f'India auto-parts distribution FY25 ~Rs 80,000 Cr; CAGR 9-11%.',
+    ['EV-aftermarket transition.','Multi-brand authorised parts demand.',f'USA-tariff{ref("6")}: limited.','TVS group ecosystem cross-sell.'],
+    [("CC + WCDL","100&ndash;160","2","3.2","Sheet A"),("Inventory financing","250&ndash;380","2.5","4","Multi-brand"),("Customer-SCF","150&ndash;240","1.5","2.4","Dealer + workshop"),("Capex TL","60&ndash;100","0.6","1","Warehouse + service"),("DCM/NCD","100&ndash;160","0.8","1.4","Listed-corp"),("Cards + CMS","&ndash;","0.4","0.6","2,500 FTE")],
+    [("CC+WCDL","2","3.2"),("Inventory","2.5","4"),("Customer-SCF","1.5","2.4"),("Capex+DCM","1.4","2.4"),("CMS","0.4","0.6"),("Retail+PB+TASC","2.5","3.5")],
+    "10.3", "16.1", rating="Sheet A"))
+
+
 if __name__ == "__main__":
     build_all()
