@@ -595,5 +595,128 @@ SPECS.append(mnc_gf(125, "india-motor-parts", "India Motor Parts & Accessories L
     "10.3", "16.1", rating="Sheet A"))
 
 
+
+# Pilot 126 — Mindsprint Digital (Indian-origin GCC)
+SPECS.append(mnc_gf(126, "mindsprint", "Mindsprint Digital India Pvt Ltd",
+    "U72200TN2007PTC064492", "Olam Group / Mindsprint (Singapore)",
+    "Mindsprint (Singapore HQ; spun off from Olam Group) digital + supply-chain GCC for global agri-trader",
+    "Chennai", "20 Apr 2007", "Digital + supply-chain GCC",
+    787, 14.0, "~3,500", 50, 1110, "mindsprint.org",
+    f'India agri-trader supply-chain GCC; Olam + Cargill + ADM ecosystem.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','Gen-AI + agentic-AI in supply-chain.','Digital agri-trade platforms.','SGX + cross-border payments.'],
+    [("FX (USD + SGD)","350&ndash;500 notional","1.5","2.4","100% USD"),("Treasury","150&ndash;240","1.2","2","MNC TM"),("EBR/PCFC","100&ndash;160","1","1.6","Receivables"),("Salary + retail (3,500)","250&ndash;400/yr","2.5","4","Auto+home"),("PB","75&ndash;130 AUM","0.9","1.4","Senior MDs"),("TASC","85&ndash;130","0.7","1.1","PF+Gratuity")],
+    [("FX","1.5","2.4"),("Treasury+EBR","2.2","3.6"),("Retail-mass","2.5","4"),("PB+TASC","1.6","2.5"),("Cards","0.4","0.6"),("Other","0.5","1")],
+    "8.7", "14.1"))
+
+# Pilot 127 — Access Healthcare Services (US/Indian healthcare BPO)
+SPECS.append(mnc_gf(127, "access-healthcare", "Access Healthcare Services Pvt Ltd",
+    "U74220TN2011PTC078925", "Access Healthcare (US/PE-owned)",
+    "Access Healthcare US/India healthcare-RCM BPO; PE-owned (similar to Omega pilot 72)",
+    "Chennai", "06 Apr 2011", "Healthcare RCM BPO",
+    782, 17.0, "~22,000", 50, 1120, "accesshealthcare.com",
+    f'India healthcare-BPO ~$8 bn; Access + Omega (pilot 72) + Cognizant compete.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','Gen-AI medical-coding.','HIPAA + HHS compliance.','PE-exit IPO mandate window.'],
+    [("FX (USD)","550&ndash;800 notional","2.5","4","100% USD"),("Treasury","180&ndash;280","1.5","2.4","MNC TM"),("EBR/PCFC","120&ndash;200","1.2","2","Receivables"),("Salary + retail (22,000)","800&ndash;1,200/yr","6","10","T2/T3 city retail surge"),("PB","185&ndash;280 AUM","2","3.2","UHNI"),("TASC + ESOP","220&ndash;340","1.8","2.8","ESOP plan")],
+    [("FX","2.5","4"),("Treasury+EBR","2.7","4.4"),("Retail-mass","6","10"),("PB+TASC","3.8","6"),("Cards","1","1.6"),("IPO arranger","2","3")],
+    "18", "29")
+)
+
+# Pilot 128 — Accentiv India (French Edenred loyalty)
+SPECS.append(mnc_gf(128, "accentiv", "Accentiv India Pvt Ltd",
+    "U00063TN2000PTC075891", "Edenred Group (France; Euronext: EDEN)",
+    "Accentiv (Edenred Group; Euronext: EDEN ~€2.5 bn) loyalty + employee-benefit + meal-voucher",
+    "Chennai", "06 Apr 2000", "Loyalty + employee benefits",
+    774, 16.0, "~1,800", 50, 1130, "edenred.com",
+    f'India loyalty + employee-benefit market FY25 ~Rs 12,500 Cr; CAGR 14-16%; Accentiv + Sodexo + Pluxee + Zaggle compete.',
+    ['Employee-benefit + meal-voucher demand.','Gen-AI loyalty platforms.','GIFT-IFSC + cross-border benefits.','Digital-corporate-cards.'],
+    [("FX (EUR)","250&ndash;380 notional","1","1.6","Royalty"),("Treasury","150&ndash;240","1.2","2","MNC TM"),("Customer-SCF (corp clients)","150&ndash;240","1.5","2.4","Anchors"),("Capex TL","50&ndash;80","0.5","0.8","Sustainability"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.4","0.6","1,800 FTE")],
+    [("FX","1","1.6"),("Treasury+SCF","2.7","4.4"),("Capex+EBR","1.1","1.8"),("CMS","0.4","0.6"),("Retail+PB+TASC","2","3")],
+    "7.2", "11.4"))
+
+# Pilot 129 — KTV Edible Oils (Indian edible-oil)
+SPECS.append(mnc_gf(129, "ktv-edible-oils", "KTV Edible Oils Pvt Ltd",
+    "U15142TN2020PTC134011", "KTV Group (Indian-origin)",
+    "KTV Group Indian-origin edible-oil refiner + distributor",
+    "Chennai", "12 Mar 2020", "Edible oils refining",
+    773, 4.5, "~1,200", 50, 1140, "ktvgroup.com",
+    f'India edible-oil market FY25 ~Rs 2.40 lakh Cr; CAGR 6-8%.',
+    [f'USA-tariff{ref("6")}: limited.','Premiumisation + branded-oils.','Edible-oil import-dependence + FX.','FSSAI nutraceutical regs.'],
+    [("CC + WCDL","100&ndash;160","2","3.2","Sheet B"),("Trade (LC + BG)","250&ndash;380","2.5","4","Crude-oil imports"),("FX (USD)","800&ndash;1,200 notional","3.5","5.5","Crude imports"),("Customer-SCF","150&ndash;240","1.5","2.4","Dealer + retail"),("Capex TL","50&ndash;80","0.5","0.8","Refinery capex"),("Cards + CMS","&ndash;","0.3","0.5","1,200 FTE")],
+    [("CC+WCDL","2","3.2"),("Trade","2.5","4"),("FX","3.5","5.5"),("Customer-SCF","1.5","2.4"),("Capex+CMS","0.8","1.3"),("Retail+PB+TASC","2","3")],
+    "12.3", "19.4", rating="Sheet B"))
+
+# Pilot 130 — ABI-Showatech (Japanese auto-parts)
+SPECS.append(mnc_gf(130, "abi-showatech", "ABI-Showatech India Pvt Ltd",
+    "U40103TN1991PTC021872", "Showa Aluminum / Hitachi Astemo (Japan)",
+    "ABI-Showatech Japanese auto-aluminium-component (heat-exchanger, condenser) tier-1",
+    "Chennai", "12 Mar 1991", "Auto aluminium components",
+    765, 9.5, "~900", 50, 1150, "showa.co.jp",
+    f'India auto-thermal market ~Rs 11,000 Cr; CAGR 8-10%.',
+    ['BS6 + EV-thermal management ramp.',f'USA-tariff{ref("6")}: India auto-component export.','EV-cooling + battery-thermal demand.','OEM capex cycle.'],
+    [("FX (JPY + USD)","350&ndash;500 notional","1.5","2.4","Royalty"),("Customer-SCF","150&ndash;240","1.5","2.4","OEMs"),("Capex TL","60&ndash;100","0.6","1","Sustainability"),("Trade","50&ndash;80","0.5","0.8","Imports"),("EBR/PCFC","60&ndash;100","0.6","1","Export"),("Cards + CMS","&ndash;","0.3","0.4","900 FTE")],
+    [("FX","1.5","2.4"),("Customer-SCF","1.5","2.4"),("Capex+Trade+EBR","1.7","2.8"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "7", "11", rating="Sheet A"))
+
+# Pilot 131 — MKK Metal Sections (Indian-origin)
+SPECS.append(mnc_gf(131, "mkk-metal", "M K K Metal Sections Pvt Ltd",
+    "U27100TN2008PTC068037", "M K K Group (Indian-origin)",
+    "MKK Metal Sections steel-section + structural-steel manufacturer",
+    "Chennai", "20 Mar 2008", "Steel sections + structural",
+    759, 6.5, "~600", 50, 1160, "mkksteel.com",
+    f'India structural-steel market FY25 ~Rs 60,000 Cr.',
+    [f'EU CBAM{ref("18")}: scope-3 reporting.','Bharatmala + EPC infra capex.','Defence + naval capex.',f'USA-tariff{ref("6")}: limited.'],
+    [("CC + WCDL","100&ndash;160","2","3.2","Sheet B"),("Trade","100&ndash;160","1","1.6","Imports"),("Capex TL","50&ndash;80","0.5","0.8","Sustainability"),("Customer-SCF","100&ndash;160","1","1.6","EPC anchors"),("FX","250&ndash;380 notional","1","1.6","Imports"),("Cards + CMS","&ndash;","0.3","0.4","600 FTE")],
+    [("CC+WCDL","2","3.2"),("Trade+Capex","1.5","2.4"),("Customer-SCF","1","1.6"),("FX","1","1.6"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "7.8", "12.2", rating="Sheet B"))
+
+# Pilot 132 — Appasamy Associates (Indian medical-devices)
+SPECS.append(mnc_gf(132, "appasamy", "Appasamy Associates Pvt Ltd",
+    "U33201TN2019PTC129614", "Appasamy Group (Indian-origin promoter)",
+    "Appasamy Indian-origin ophthalmic medical-devices + ophthalmic-lens manufacturer (intraocular lenses, microscopes)",
+    "Chennai", "07 Mar 2019", "Ophthalmic medical devices",
+    759, 12.5, "~1,200", 50, 1170, "appasamy.com",
+    f'India ophthalmic medical-devices market FY25 ~Rs 6,500 Cr; CAGR 11-13%; Appasamy + Alcon + J&J + Bausch+Lomb compete.',
+    [f'USA-tariff{ref("6")}: India ophthalmic export.','EU CBAM{ref("18")}: regulatory compliance.','Premiumisation + IOL ramp.','Tier-2/3 ophthalmology penetration.'],
+    [("EBR/PCFC (export)","250&ndash;380","2.5","4","60%+ export"),("FX (USD + EUR)","350&ndash;500 notional","1.5","2.4","Royalty + import"),("Customer-SCF","100&ndash;160","1","1.6","Hospital chains"),("Capex TL","60&ndash;100","0.6","1","Sustainability"),("Trade","60&ndash;100","0.6","1","Imports"),("Cards + CMS","&ndash;","0.3","0.5","1,200 FTE")],
+    [("EBR/PCFC","2.5","4"),("FX","1.5","2.4"),("Customer-SCF+Capex+Trade","2.2","3.6"),("CMS","0.3","0.5"),("Retail+PB+TASC","2","3")],
+    "8.5", "13.5"))
+
+# Pilot 133 — State Express Transport Corporation (TN PSU bus operator)
+SPECS.append(mnc_gf(133, "setc", "State Express Transport Corporation Tamil Nadu Limited",
+    "U63040TN1980SGC008080", "Government of Tamil Nadu",
+    "SETC TN-state PSU inter-city bus operator (~1,500 buses; 30 lakh daily passengers)",
+    "Chennai", "12 Aug 1980", "PSU bus transport",
+    758, 5.0, "~12,000", 50, 1180, "setcsundaram.tnstc.in &middot; setc.tn.gov.in",
+    f'TN PSU inter-city bus services; SETC operates ~1,500 buses across south-India routes.',
+    ['EV-bus transition ramp.','Cold-chain + cargo expansion.','Tourism + religious-route demand.','Driver-shortage + fleet modernisation.'],
+    [("BG (project)","100&ndash;160","1","1.6","TN-PSU"),("Capex TL (EV-bus ramp)","200&ndash;320","2","3.2","Sustainability"),("Customer-finance (passenger)","100&ndash;160","1","1.6","Receivables"),("Trade","60&ndash;100","0.6","1","Imports"),("CC + WCDL","60&ndash;100","1.2","2","Sheet"),("Cards + CMS","&ndash;","0.5","0.8","12,000 FTE")],
+    [("BG","1","1.6"),("Capex TL","2","3.2"),("Customer-finance+Trade","1.6","2.6"),("CC+WCDL","1.2","2"),("CMS","0.5","0.8"),("Retail+PB+TASC","3","4.5")],
+    "9.3", "14.7"))
+
+# Pilot 134 — Movate Technologies (Indian-origin tech services)
+SPECS.append(mnc_gf(134, "movate", "Movate Technologies Pvt Ltd",
+    "U72900TN2000PTC115034", "Movate (Indian-origin, ex-CSS Corp; PE-backed by Capital Square)",
+    "Movate (ex-CSS Corp; PE-owned post-2017 Carlyle, post-2020 Capital Square) digital-services + tech-support",
+    "Chennai", "06 Jan 2000", "Digital services + tech support",
+    758, 14.5, "~10,500", 50, 1190, "movate.com",
+    f'India IT-services + GCC sub-segment ~$50 bn.',
+    [f'USA-tariff{ref("6")}: services-tariff zero.','Gen-AI + agentic-AI scope.','Cloud + cybersecurity.','PE-exit IPO mandate window.'],
+    [("FX (USD)","450&ndash;650 notional","2","3","100% USD"),("Treasury","180&ndash;280","1.5","2.4","MNC TM"),("EBR/PCFC","120&ndash;200","1.2","2","Receivables"),("Salary + retail (10,500)","700&ndash;1,000/yr","6","10","T2/T3 retail"),("PB","220&ndash;340 AUM","2.5","4","UHNI + ESOP"),("TASC + ESOP","180&ndash;280","1.5","2.4","PF+Gratuity")],
+    [("FX","2","3"),("Treasury+EBR","2.7","4.4"),("Retail-mass","6","10"),("PB+TASC","4","6.4"),("Cards","0.6","1"),("IPO arranger","2","3")],
+    "17.3", "27.8"))
+
+# Pilot 135 — Anixter India (US distribution; subsidiary of WESCO)
+SPECS.append(mnc_gf(135, "anixter", "Anixter India Pvt Ltd",
+    "U32109TN2004PTC054844", "WESCO International (US, NYSE: WCC)",
+    "Anixter (subsidiary of WESCO International NYSE: WCC; ~$22 bn FY25 revenue) global cable + connectivity distribution",
+    "Chennai", "12 Mar 2004", "Cable + connectivity distribution",
+    756, 6.0, "~700", 50, 1200, "anixter.com",
+    f'India cable + connectivity distribution market FY25 ~Rs 25,000 Cr.',
+    ['Data-center + 5G demand.',f'EU CBAM{ref("18")}: scope-3.','EV-charger + EV-cabling demand.',f'USA-tariff{ref("6")}: India cable export.'],
+    [("FX (USD)","350&ndash;500 notional","1.5","2.4","Royalty"),("Customer-SCF","150&ndash;240","1.5","2.4","Anchors"),("Trade","100&ndash;160","1","1.6","Imports"),("Inventory financing","150&ndash;240","1.5","2.4","Distribution"),("CC + WCDL","60&ndash;100","1.2","2","Sheet"),("Cards + CMS","&ndash;","0.3","0.4","700 FTE")],
+    [("FX","1.5","2.4"),("Customer-SCF","1.5","2.4"),("Trade+Inventory","2.5","4"),("CC+WCDL","1.2","2"),("CMS","0.3","0.4"),("Retail+PB+TASC","2","3")],
+    "9", "14.2"))
+
+
 if __name__ == "__main__":
     build_all()
