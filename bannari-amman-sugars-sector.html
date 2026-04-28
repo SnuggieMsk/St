@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bannari Amman Sugars · Sector Deep-Dive · 24 Apr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0;--paper:#ffffff;--ink:#1a1a1a;--muted:#5a5a5a;--line:#e3dfd6;
+  --accent:#7a1f2b;--accent-soft:#f5e6e8;--pos:#2e7d4f;--neg:#b42318;
+  --amber:#b86a00;--cool:#1c4e80;--indigo:#3730a3;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --sans:'DM Sans',-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:'Literata','Iowan Old Style','Source Serif Pro',Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 48px 80px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;color:var(--ink);margin:0 0 .4em}
+h1{font-size:2.6rem;line-height:1.15}
+h2{font-size:1.85rem;line-height:1.2;border-bottom:2px solid var(--ink);padding-bottom:.35em;margin-top:2.2em}
+h3{font-size:1.3rem;margin-top:1.6em;color:var(--accent)}
+h4{font-size:1.05rem;margin-top:1.2em}
+p{margin:.6em 0}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+code,.mono{font-family:var(--mono);font-size:.92em}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.lede{font-size:1.12rem;color:var(--muted);max-width:72ch;margin:0 0 1.2em}
+.subhead{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--muted);margin:0 0 .4em}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card.accent{border-left:4px solid var(--accent);background:var(--accent-soft)}
+.card.warn{border-left:4px solid var(--amber);background:#fbf2e3}
+.card.pos{border-left:4px solid var(--pos);background:#e8f2ec}
+.card.neg{border-left:4px solid var(--neg);background:#fbe8e6}
+.grid{display:grid;gap:14px;margin:14px 0}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:780px){.grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.kpi .k{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.kpi .v{font-family:var(--serif);font-size:1.65rem;line-height:1.1;margin-top:4px}
+.kpi .sub{font-size:.82rem;color:var(--muted);margin-top:3px}
+.kpi.pos .v{color:var(--pos)} .kpi.neg .v{color:var(--neg)} .kpi.accent .v{color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem;background:var(--paper)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#faf7f1;font-weight:600}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:hover td{background:#fdfbf5}
+.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:2px 7px;border-radius:3px;background:var(--line);color:var(--ink);margin-right:4px;text-transform:uppercase}
+.tag.pos{background:var(--pos);color:#fff}
+.tag.neg{background:var(--neg);color:#fff}
+.tag.amber{background:var(--amber);color:#fff}
+.tag.cool{background:var(--cool);color:#fff}
+.tag.indigo{background:var(--indigo);color:#fff}
+.tag.accent{background:var(--accent);color:#fff}
+sup.ref{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-decoration:none;padding-left:2px}
+sup.ref a{color:var(--accent);text-decoration:none}
+.hero{border-top:6px solid var(--accent);padding-top:28px}
+.hero .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hero h1{font-size:3.1rem;margin:.15em 0 .3em}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:.92rem}
+.hero .meta span{font-family:var(--mono);font-size:.82rem}
+.nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:28px;z-index:10;font-size:.8rem}
+.nav ol{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.nav ol li a{color:var(--muted);text-decoration:none}
+.nav ol li a:hover{color:var(--accent)}
+ul.check{list-style:none;padding-left:0}
+ul.check li{padding:4px 0 4px 22px;position:relative}
+ul.check li::before{content:"✓";position:absolute;left:0;color:var(--pos);font-weight:700}
+ul.x{list-style:none;padding-left:0}
+ul.x li{padding:4px 0 4px 22px;position:relative}
+ul.x li::before{content:"✗";position:absolute;left:0;color:var(--neg);font-weight:700}
+.src-list{font-size:.85rem;columns:1;column-gap:32px}
+.src-list ol{padding-left:24px;margin:0}
+.src-list li{padding:4px 0;break-inside:avoid}
+.src-list .u{font-family:var(--mono);font-size:.78rem;color:var(--cool);word-break:break-all}
+.waterfall{font-family:var(--mono);font-size:.82rem;white-space:pre}
+footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
+.pestel-cell{font-size:.82rem}
+.pestel-cell .tt{font-weight:600;display:block;margin-bottom:2px}
+.playbook .phase{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:#fff;padding:3px 8px;border-radius:3px;font-size:.72rem;margin-right:6px}
+</style>
+</head><body><div class="wrap">
+
+<nav class="nav"><ol>
+<li><a href="#tldr">A · TL;DR play</a></li>
+<li><a href="#valuechain">B · Sector value-chain</a></li>
+<li><a href="#driver-fs">C · Driver → FS line-item map</a></li>
+<li><a href="#product-fs">D · Product → FS map</a></li>
+<li><a href="#hooks">E · Five conversation hooks</a></li>
+<li><a href="#questions">F · Question bank</a></li>
+<li><a href="#objections">G · Objection handling</a></li>
+<li><a href="#math">H · 12 / 24 / 36-month math</a></li>
+<li><a href="#ecosystem">I · Customer + supplier ecosystem</a></li>
+<li><a href="#competitors">J · Competitor diagnosis</a></li>
+<li><a href="#plays">K · Three plays</a></li>
+<li><a href="#firstcall">L · First-call playbook</a></li>
+<li><a href="#sources">M · Sources</a></li>
+</ol></nav>
+
+<section id="tldr" class="hero">
+<div class="eyebrow">Sector deep-dive companion · Pilot 73 · Bannari Amman Sugars Limited · IBank PRESENT 13.7% (#3 of 9-bank)</div>
+<h1>The play in 90 seconds<br>Defend Rs 100 Cr · climb to #2 · capture ethanol-distillery capex window</h1>
+<p class="lede">Bannari Amman Sugars is a CARE AA-Stable listed sugar+ethanol+co-gen group<sup class="ref">[<a href="#src-582">582</a>]</sup> with IBank already at #3 in a 9-bank Rs 728 Cr consortium<sup class="ref">[<a href="#src-126">126</a>]</sup>. The play is not greenfield — it is <strong>defend-and-climb</strong>: defend the Rs 100 Cr position; bid the next refresh tranche to overtake PNB at #2 (Rs 120 Cr); win the Rs 200-400 Cr ethanol-distillery capex TL on the 200&rarr;350-400 KLPD expansion driven by the E20 mandate<sup class="ref">[<a href="#src-12">12</a>]</sup>. Wallet ladders from Rs 8-12 Cr/yr today (estimated funded interest spread on Rs 100 Cr) to Rs 18-30 Cr/yr Y3 once capex TL + customer-SCF + group-PB layers come on.</p>
+<div class="grid c4" style="margin-top:18px">
+<div class="kpi accent"><div class="k">Y3 wallet</div><div class="v num">Rs 18&ndash;30 Cr/yr</div><div class="sub">Funded + capex + PB + group<sup class="ref">[<a href="#src-128">128</a>]</sup></div></div>
+<div class="kpi pos"><div class="k">IBank position today</div><div class="v num">Rs 100 Cr</div><div class="sub">13.7% / #3 of 9<sup class="ref">[<a href="#src-126">126</a>]</sup></div></div>
+<div class="kpi"><div class="k">Climb-to-#2 ask</div><div class="v num">Rs 50&ndash;60 Cr</div><div class="sub">Refresh tranche to overtake PNB</div></div>
+<div class="kpi pos"><div class="k">Capex TL window</div><div class="v num">Rs 200&ndash;400 Cr</div><div class="sub">Ethanol 200&rarr;350-400 KLPD<sup class="ref">[<a href="#src-12">12</a>]</sup></div></div>
+</div>
+<div class="card accent" style="margin-top:20px">
+<h4 style="margin-top:0">The single sentence the RM walks in with</h4>
+<p style="font-size:1.1rem;margin-bottom:0"><em>"S.V. — we have been with you on the Rs 100 Cr CC since FY22. Two things have happened — E20 is now policy not aspiration, and your sugar-Karnataka mill is hitting capacity. We want to fund both: refresh our piece, take you to 350 KLPD on a sustainability-linked TL, and put your family-trust on our PB book. Here is the structure."</em></p>
+</div>
+<div class="meta" style="margin-top:14px">
+<span>Companion to <strong><a href="bannari-amman-sugars-dossier.html">bannari-amman-sugars-dossier.html</a></strong></span>
+<span>Cut <strong>Probe42 24 Apr 2026</strong></span>
+<span>Author <strong>RM-meeting prep · LCG/PBG Chennai</strong></span>
+</div>
+</section>
+
+<section id="valuechain"><div class="subhead">B · Sector value-chain &mdash; where Bannari sits and what flows through</div>
+<p>Sugar-cane is a <strong>three-output</strong> raw material: sucrose &rarr; sugar; molasses (B+C) &rarr; ethanol; bagasse + press-mud &rarr; co-gen power + bio-fertiliser. Cane-to-mill price is regulated (TN-SAP<sup class="ref">[<a href="#src-15">15</a>]</sup> + central FRP); sugar-MSP is regulated; ethanol off-take price is GoI-fixed under EBP-2025 (E20 mandate<sup class="ref">[<a href="#src-12">12</a>]</sup>); co-gen power price is regulated by TNERC. Bannari operates 5 sugar mills + 200 KLPD distillery + 92 MW co-gen — fully integrated.</p>
+<h3>B.1 The cane-to-cash flow Bannari runs</h3>
+<div class="card">
+<table>
+<thead><tr><th>Stage</th><th>Pricing power</th><th>Working-capital impact</th><th>Bank product touchpoint</th></tr></thead>
+<tbody>
+<tr><td><strong>1. Cane procurement</strong> (Oct-Mar crushing)</td><td>None — TN-SAP <sup class="ref">[<a href="#src-15">15</a>]</sup> fixed Rs 3,500-3,650/T</td><td><strong>Receivables-to-payables flip</strong>: cane payment legally due ≤14 days post-supply; sugar realisation is 60-90 days later. Net WC outflow ~Rs 250-400 Cr peak.</td><td>CC limit utilisation peaks Nov-Feb; <strong>cane-procurement-trust BG (Rs 76 Cr Min Consumer Affairs cover<sup class="ref">[<a href="#src-126">126</a>]</sup>)</strong></td></tr>
+<tr><td><strong>2. Cane crushing &rarr; sugar (sucrose)</strong></td><td>Limited — sugar-MSP Rs 42/kg<sup class="ref">[<a href="#src-12">12</a>]</sup> floor; spot market ranges Rs 38-46/kg</td><td>Sugar inventory builds Mar-Sep (post-crushing storage); <strong>Levy-stock-mortgage</strong> against bank limits</td><td>CC + WCDL (sugar inventory finance); <strong>sugar-quota release</strong> govt-MIEQ scheme &rarr; FX-LC for export</td></tr>
+<tr><td><strong>3. Molasses &rarr; ethanol distillation</strong> (continuous)</td><td>Strong — GoI EBP-2025 ethanol price ~Rs 65-72/litre depending on feedstock-grade<sup class="ref">[<a href="#src-12">12</a>]</sup>; long-term off-take with OMCs (BPCL/IOC/HPCL)</td><td>Lowest WC cycle in business — OMCs pay 30-45 days against quasi-AAA receivable. <strong>Ethanol is the cash cow.</strong></td><td><strong>Receivable-discounting against OMC-LD</strong>; capex TL for distillery expansion; sustainability-linked covenant</td></tr>
+<tr><td><strong>4. Bagasse &rarr; co-gen power</strong> (92 MW capacity)</td><td>Limited — TNERC tariff Rs 4.85/kWh; surplus to TN grid via long-term PPA</td><td>Receivable from TANGEDCO; LPS<sup class="ref">[<a href="#src-22">22</a>]</sup> dispute risk; cycle 90-120 days</td><td>BG against TANGEDCO contract; <strong>customer-finance / LPS-discounting</strong><sup class="ref">[<a href="#src-22">22</a>]</sup></td></tr>
+<tr><td><strong>5. Press-mud &rarr; bio-fertiliser</strong></td><td>Strong — direct sale to TN dept of Agri + private dealers</td><td>Cash + 30-day; small WC drag</td><td>CMS for receipts; SCF for dealer</td></tr>
+</tbody></table>
+</div>
+<h3>B.2 What this means for the wallet</h3>
+<p>The <strong>working-capital cycle</strong> at Bannari is bimodal. Sugar drags ~120-150 days of cycle (cane payment to sugar realisation). Ethanol shrinks cycle to ~30-45 days. The mix shift to ethanol (target 60% of revenue by FY28 vs ~38% FY25) is structurally <strong>WC-cycle accretive</strong> — meaning <strong>peak CC utilisation will fall</strong> as ethanol mix rises. This argues for <strong>capex TL today (to fund the shift)</strong>, then <strong>CC right-sizing in FY28</strong>. The IBank pitch on capex is: "We fund your shift, and at refresh we right-size the CC together — fairer pricing for both."</p>
+</section>
+
+<section id="driver-fs"><div class="subhead">C · Driver &rarr; FS line-item map &mdash; the gap-identification engine</div>
+<p>For each sector driver, this maps how it lands on Bannari&rsquo;s P&amp;L / Balance Sheet, and which IBank product fills the resulting gap. Magnitudes are sized to FY25 baseline (TOI Rs 1,793 Cr; EBITDA Rs 280 Cr; CC limit ~Rs 250 Cr; Capex Rs 728 Cr O/S debt).</p>
+<div style="overflow-x:auto"><table>
+<thead><tr><th>Driver</th><th>Direction / magnitude</th><th>P&amp;L line moved</th><th>BS / WC impact</th><th>IBank product entry</th><th>Sizing</th></tr></thead>
+<tbody>
+<tr><td><strong>TN-SAP cane price</strong><sup class="ref">[<a href="#src-15">15</a>]</sup> Rs 3,500/T &rarr; Rs 3,650/T (4.3% YoY)</td><td>Cost of materials &uarr; Rs 35-50 Cr (3-4% of sugar-COGS)</td><td><strong>Gross margin -100-140 bp</strong> sugar segment; partially offset by sugar-MSP Rs 42 floor + sugar-quota allotment</td><td>WC peak (Nov-Feb) Rs 35-50 Cr higher; <strong>CC headroom strain</strong></td><td><strong>CC top-up Rs 50 Cr</strong> + 90-day WCDL bridge</td><td>Margin 8.50% + processing 25 bps; ~Rs 2.0-2.5 Cr/yr</td></tr>
+<tr><td><strong>Sugar-MSP review</strong><sup class="ref">[<a href="#src-12">12</a>]</sup> (current Rs 42/kg, expected hold)</td><td>Revenue floor protected; mark-to-market upside if domestic spot &gt; Rs 46/kg</td><td>EBITDA cushion; +/-Rs 8-12 Cr swing on Rs 1/kg move</td><td>Inventory valuation; covenant headroom (Debt/EBITDA)</td><td><strong>Inventory-financing line</strong> against pledge of sugar-stock</td><td>Rs 80-120 Cr peak; ~Rs 1.5-2 Cr/yr fee + interest spread</td></tr>
+<tr><td><strong>EBP-2025 / E20 mandate</strong><sup class="ref">[<a href="#src-12">12</a>]</sup> ethanol price held Rs 65-72/litre + 5-year OMC offtake</td><td>Ethanol revenue +30-40% over FY26-28 if 350 KLPD comes online; gross margin 18-22% (vs sugar 6-9%)</td><td><strong>EBITDA mix-shift +400-600 bp by FY28</strong>; cash-conversion-cycle improves 60-80 days</td><td>Capex Rs 200-400 Cr to add 150 KLPD; new distillery + utilities + storage</td><td><strong>Sustainability-linked TL</strong> Rs 250-350 Cr / 8-year tenor / 18-month moratorium / step-down on E20-blending KPI</td><td>Margin SOFR+330 / repo+120; ~Rs 3.5-5.5 Cr/yr</td></tr>
+<tr><td><strong>Monsoon</strong><sup class="ref">[<a href="#src-4">4</a>]</sup> 92% LPA + El Niño risk</td><td>Cane availability -5-8% if drought materialises; crushing days down 8-12</td><td>Sugar revenue -Rs 90-140 Cr (5-8% of sugar TOI); EBITDA -Rs 12-18 Cr</td><td>FY26 covenant headroom tightens; risk of one-quarter PAT dip</td><td><strong>Standby WCDL</strong> Rs 75 Cr for cane-shortfall bridge; <strong>weather-derivative</strong> structure (rainfall index swap)</td><td>Standby fee 0.5%; if drawn, Rs 0.5-1 Cr; weather-deriv ~Rs 0.3-0.5 Cr fee</td></tr>
+<tr><td><strong>Brent + USD/INR</strong><sup class="ref">[<a href="#src-2">2</a>]</sup><sup class="ref">[<a href="#src-3">3</a>]</sup> oil &uarr; benefits ethanol-OMC mix</td><td>OMC ethanol-procurement urgency &uarr; (oil-import bill management); ethanol price +Rs 2-4/litre upward bias next reset</td><td>Ethanol EBITDA +Rs 6-12 Cr/yr if price reset hits</td><td>OMC receivable cycle may extend to 60 days under stress; LPS<sup class="ref">[<a href="#src-22">22</a>]</sup>-style risk</td><td><strong>OMC-receivable discounting + factoring</strong>; 30-day average</td><td>Spread 50-80 bps; ~Rs 0.8-1.5 Cr/yr</td></tr>
+<tr><td><strong>RBI repo 5.25%</strong><sup class="ref">[<a href="#src-1">1</a>]</sup> + 50 bp June MPC pricing</td><td>Finance cost +Rs 4-6 Cr if repo hits Rs 728 Cr debt evenly; current MCLR ~9.10%</td><td>PBT -Rs 4-6 Cr; covenant Debt-Service 0.15x worse</td><td>Refresh window argues for <strong>fixed-floating mix</strong> on existing CC + WCDL</td><td><strong>IRS hedge</strong> Rs 200-400 Cr notional; lock 5-year segment of Rs 728 Cr book</td><td>IRS deal fee Rs 1.5-2 Cr at execution</td></tr>
+<tr><td><strong>EU CBAM / EUDR cotton</strong><sup class="ref">[<a href="#src-18">18</a>]</sup> (sister-Bannari Spinning Mills L532998)</td><td>BASM export-PSF cotton-textile flow needs scope-3 traceability; capex spillover Rs 30-60 Cr at BASM</td><td>Group-level capex; cross-sell into BASM (sister listed)</td><td>Cross-sell to BASM directly + supply-chain-traceability platform</td><td><strong>Group cross-sell — BASM CC + capex TL + ESG-linked</strong></td><td>BASM Rs 8-15 Cr/yr separate wallet; not in Bannari Y3 math</td></tr>
+<tr><td><strong>USA-tariff window</strong><sup class="ref">[<a href="#src-6">6</a>]</sup> 18% reciprocal</td><td>Limited direct (Bannari sugar/ethanol is domestic); marginal molasses-export benefit</td><td>Negligible</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><strong>CACP cotton MSP</strong><sup class="ref">[<a href="#src-13">13</a>]</sup> (sister BASM)</td><td>BASM input-cost +4.9%; group-level cross-sell tail</td><td>Group covenant headroom</td><td>—</td><td>BASM cross-sell only</td><td>—</td></tr>
+<tr><td><strong>RBI LPS<sup class="ref">[<a href="#src-22">22</a>]</sup></strong> DISCOM-receivable scheme</td><td>TANGEDCO co-gen receivable discipline improved post-LPS; 90-120-day cycle &rarr; 60-75 days</td><td>Co-gen WC cycle improves Rs 8-15 Cr</td><td>BG against TANGEDCO contract — formality but a relationship gesture</td><td><strong>BG TANGEDCO + LPS-discounting</strong></td><td>Rs 0.4-0.8 Cr/yr fee</td></tr>
+<tr><td><strong>FY26 ethanol-blending stretch target 25% by FY30</strong></td><td>If hit, ethanol revenue ramps 60-70% by FY28</td><td>EBITDA mix-shift accelerates; PAT inflection</td><td>Capex pipeline expands beyond Rs 350 KLPD planned</td><td><strong>Phase-2 capex TL pre-committed</strong> at refresh</td><td>Optional Rs 150-250 Cr; pricing locked</td></tr>
+</tbody></table></div>
+<p class="lede" style="margin-top:1.2em"><strong>Net read:</strong> The single biggest leverage point is the <strong>ethanol capex TL</strong>. It funds the WC-cycle improvement, captures the EBITDA-margin-mix accretion, and locks IBank into the next ratings cycle (likely AA+). The defence + climb pieces are necessary to hold the ground for the capex ask. Everything else is overlay.</p>
+</section>
+
+<section id="product-fs"><div class="subhead">D · Product &rarr; FS map &mdash; for every IBank product, what line moves and what it earns</div>
+<p>Each product mapped to (a) which financial-statement line it touches at Bannari, (b) indicative structure, (c) margin/fee earned, (d) an honest "is this worth chasing?" call.</p>
+<h3>D.1 Corporate banking products</h3>
+<div style="overflow-x:auto"><table>
+<thead><tr><th>Product</th><th>FS impact at Bannari</th><th>Structure</th><th>Indicative pricing</th><th>Y3 income</th><th>Honest assessment</th></tr></thead>
+<tbody>
+<tr><td><strong>CC (refresh of Rs 100 Cr)</strong></td><td>WC liability; current-asset finance</td><td>1-yr revolving; pari-passu with HDFC+PNB+Federal+Axis+SBI; sugar-stock pledge + cane-receivable hypothecation</td><td>Margin repo+325-375 bps (effectively MCLR-linked ~9.10-9.40%); processing 25 bps</td><td>Rs 8-9 Cr/yr funded interest spread (assuming ~70% utilisation); Rs 0.25 Cr processing</td><td><strong>Defend at all costs.</strong> Losing this loses everything else. Refresh now, do not let it slide.</td></tr>
+<tr><td><strong>WCDL Rs 50 Cr (climb-to-#2)</strong></td><td>Same as above; new tranche</td><td>3-6 month bullet; covenant-light (Bannari is AA-Stable)</td><td>Margin repo+275-325 bps; processing 15 bps</td><td>Rs 1.4-1.7 Cr/yr</td><td><strong>Bid this at next refresh window (likely Sep-Oct 2026).</strong> The climb-to-#2 narrative is what unlocks downstream products.</td></tr>
+<tr><td><strong>Capex TL Rs 250-350 Cr (ethanol 200&rarr;350 KLPD)</strong></td><td>Long-term debt; PP&amp;E; future-EBITDA financing</td><td>8-year tenor; 18-month moratorium; sustainability-linked covenant (5 bps step-down on annual E20-blending KPI)</td><td>Margin SOFR+330 / repo+275 floating; processing 50 bps; pre-payment 1%</td><td>Rs 6.5-9.5 Cr/yr (full draw Y2-3); Rs 1.25-1.75 Cr processing at sanction</td><td><strong>The headline transaction.</strong> If we win this, the relationship is locked through FY30 and group cross-sell follows. Go in with structured term-sheet, not generic offer.</td></tr>
+<tr><td><strong>Sugar export LC + EBP-2025 LC</strong></td><td>Off-balance-sheet contingent; trade-finance fee income</td><td>180-day LC against MIEQ sugar-export quota OR ethanol-OMC LC against BPCL/IOC/HPCL</td><td>Issuance 75-100 bps; confirmation 50 bps</td><td>Rs 0.6-1.0 Cr/yr</td><td>Worth chasing. Bannari sugar-export LC is a 4-quarter product when MIEQ allotments are issued. Ethanol-OMC LC is mostly underutilised because of LPS confidence — push as hedge against OMC payment-discipline risk.</td></tr>
+<tr><td><strong>BG (cane-procurement-trust + TANGEDCO + capex contractor)</strong></td><td>Off-balance-sheet contingent; fee income</td><td>1-3 year BG against MoCA cane-procurement (already in their consortium at Rs 76 Cr) + TANGEDCO co-gen + EPC-contractor for distillery capex</td><td>0.40-0.75% pa</td><td>Rs 1.0-1.5 Cr/yr</td><td>Quick relationship win. Bid the next BG renewal cycle (cane-procurement-trust BG renews annually post-Sep crushing season).</td></tr>
+<tr><td><strong>OMC-receivable factoring (ethanol)</strong></td><td>Trade receivable accelerated; cash conversion cycle -15-25 days</td><td>Without-recourse factoring against BPCL/IOC/HPCL ethanol-LD; settlement T+3</td><td>Discount 7.50-7.85%; commission 0.10%</td><td>Rs 0.8-1.5 Cr/yr</td><td>Strong fit. Ethanol receivable is quasi-AAA. Pitch as "we accelerate your ethanol cash-cycle so you fund cane-procurement WC trough self-sufficient."</td></tr>
+<tr><td><strong>Vendor-SCF (cane-farmer + transporter)</strong></td><td>Payable extended via SCF; bank takes farmer/transporter receivable</td><td>30-90 day farmer/transporter financing; anchor-Bannari pays SCF on due date</td><td>Discount 8.00-8.75%; commission 0.20%</td><td>Rs 1.0-2.0 Cr/yr</td><td><strong>Underrated.</strong> Bannari has ~30,000 cane farmers; capturing 20-30% of payment flow via SCF is sticky and creates a salary-CASA + farmer-finance retail ecosystem.</td></tr>
+<tr><td><strong>NCD / DCM (listed-corp; MTN programme)</strong></td><td>Refinance long-term debt; widen investor base</td><td>5-7 year NCD; AA-Stable rated; coupon ~8.20-8.50%; arranger seat</td><td>Arranger 25-35 bps; selling concession 10-15 bps</td><td>Rs 1.0-1.5 Cr at issue (if Rs 250-400 Cr issue size)</td><td>Optional. Bank-loan replacement narrative; only if rating moves to AA+ and treasury wants tenor-matching. <strong>Do not push if it dilutes our CC + capex relationship.</strong></td></tr>
+<tr><td><strong>Customer-finance (sugar-trader + ethanol-OMC)</strong></td><td>Customer-side receivable; off-Bannari B/S financing for buyer</td><td>Sugar-trader / industrial-buyer 30-60-day BG-backed credit</td><td>Margin 8.50-9.50%; processing 25 bps</td><td>Rs 0.5-1.0 Cr/yr</td><td>Selective. Sugar-trader credit is risky (commodity-spot exposure) — be choosy. Industrial-buyer (FMCG, soft-drinks) credit is cleaner.</td></tr>
+</tbody></table></div>
+<h3>D.2 Treasury products</h3>
+<div style="overflow-x:auto"><table>
+<thead><tr><th>Product</th><th>FS impact at Bannari</th><th>Structure</th><th>Pricing</th><th>Y3 income</th><th>Assessment</th></tr></thead>
+<tbody>
+<tr><td><strong>Treasury sweep + ZBA</strong></td><td>Cash optimised; finance cost saving Rs 1-2 Cr/yr at customer</td><td>Multi-account sweep; Rs 50-80 Cr daily float on co-gen + ethanol receipts</td><td>Pricing 10-15 bps under MCLR / 0% deposit</td><td>Rs 0.4-0.7 Cr/yr (float-spread)</td><td>Quick win — bundle with refresh.</td></tr>
+<tr><td><strong>USD-INR forward (sugar export + capex import)</strong></td><td>FX gain/loss; below EBITDA</td><td>3-12 month forwards on sugar-export receivables (when MIEQ active) + ethanol-distillery capex equipment imports</td><td>Pip 30-50; spread on FX deal</td><td>Rs 0.5-1.0 Cr/yr (Rs 30-60 Cr notional)</td><td>Modest but easy. Group-FX (incl. BASM cotton-export) is bigger pool — pitch at group level.</td></tr>
+<tr><td><strong>IRS / repo-floating-fixed swap</strong></td><td>Finance cost stabilised; covenant predictability</td><td>5-year IRS on Rs 200-400 Cr notional; pay-fixed receive-MIBOR</td><td>Bid-offer 1-2 bps; deal fee Rs 1.5-2 Cr at execution</td><td>Rs 1.5-2 Cr at execution; thereafter trail near-zero</td><td>Pitch only with a clear catalyst (June MPC 50 bp pricing). Bannari treasury team is conservative — needs articulate case.</td></tr>
+<tr><td><strong>Commodity hedge (sugar / ethanol)</strong></td><td>Margin volatility damped</td><td>OTC sugar-fwd or NCDEX-sugar futures basis-hedge for storage period</td><td>Brokerage + spread</td><td>Rs 0.2-0.4 Cr/yr</td><td>Niche. Bannari rarely hedges sugar (regulated MSP floor reduces need). Push only if spot moves &gt;15% from MSP.</td></tr>
+<tr><td><strong>EBR / PCFC (sugar export)</strong></td><td>Pre-shipment USD finance; FX gain/loss</td><td>Against MIEQ sugar export confirmed orders</td><td>Margin SOFR+150-200 bps; tenor up to 180 days</td><td>Rs 0.3-0.5 Cr/yr</td><td>Episodic — only when MIEQ is active.</td></tr>
+<tr><td><strong>CMS (collections + payments)</strong></td><td>Receipt-cycle compressed; payable-discipline</td><td>Bulk-CMS for ~30,000 cane-farmer payments + dealer/transporter; corporate cards</td><td>Per-transaction fee + float</td><td>Rs 0.4-0.7 Cr/yr</td><td>Bundle with refresh + vendor-SCF.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="product-retail"><div class="subhead">D.3 · Retail / PB / TASC products &mdash; the wallet that compounds</div>
+<div style="overflow-x:auto"><table>
+<thead><tr><th>Product</th><th>FS impact at Bannari</th><th>Structure</th><th>Y3 income</th><th>Assessment</th></tr></thead>
+<tbody>
+<tr><td><strong>Salary CASA — 3,250 FTE</strong></td><td>Employee-payroll moves to IBank; CASA float Rs 35-50 Cr</td><td>Bulk salary corporate-tie-up; auto-credit Day-1 of month; in-app withdrawal + UPI + cards</td><td>Rs 1.2-1.8 Cr/yr (CASA spread + cards interchange)</td><td><strong>Bundle with refresh.</strong> Mandate-shift is a 90-day project — needs HR alignment + Bannari treasury cooperation. Worth the friction.</td></tr>
+<tr><td><strong>Auto-loan + home-loan cross-sell — 3,250 FTE base</strong></td><td>Off-Bannari B/S; retail loan book &uarr;</td><td>20-25% conversion ratio realistic from salary-CASA base; avg ticket ~Rs 8 lakh auto + Rs 28 lakh home</td><td>Rs 0.6-1.0 Cr/yr (Y3 origination spread)</td><td>Standard cross-sell motion. Push HR-floor + employee-finance camp at Sathyamangalam HQ + Erode mills.</td></tr>
+<tr><td><strong>PB — S.V. Balasubramaniam family + senior leadership</strong></td><td>Personal wealth managed (off-Bannari B/S); high-touch advisory</td><td>Founder-family AUM Rs 250-380 Cr (founder 67.3% holding<sup class="ref">[<a href="#src-128">128</a>]</sup> = Rs 1,500+ Cr promoter wealth at current m-cap; PB capture realistic 20-25% of liquid portfolio)</td><td>Rs 2.5-4.0 Cr/yr (PB AUM spread + advisory + structured-product fee)</td><td><strong>The hidden headline.</strong> The PB book on the founder + family-trust is comparable to the entire wholesale wallet. Requires senior-PB partner to relationship-lead, not the corporate-RM. <strong>Set up the SV introduction in Q2.</strong></td></tr>
+<tr><td><strong>TASC — PF + Gratuity + Bannari CSR + family trust</strong></td><td>Long-term employee benefit + group CSR + trust admin</td><td>PF + Gratuity Rs 75-110 Cr; CSR Rs 4-6 Cr/yr; family trust ~Rs 50-80 Cr</td><td>Rs 0.8-1.3 Cr/yr (mandate fees + custody)</td><td>Bundle with PB introduction. Family-trust is sticky 20+ year relationship.</td></tr>
+<tr><td><strong>Cane-farmer salary CASA / Kisan-card</strong></td><td>~30,000 farmer-base; small-balance accounts</td><td>SHG-tie + Bannari-anchored; cane-payment auto-credit; KCC against cane-supply receipt</td><td>Rs 0.4-0.7 Cr/yr (low ARPU but volume + government-subsidy scheme)</td><td><strong>Underrated retail-mass play.</strong> Bannari is one of the few corporates that can deliver a 30k-account PSL-priority pipeline in one signing. Subsidy + interchange + float makes it work.</td></tr>
+<tr><td><strong>Transporter / contractor SCF + retail</strong></td><td>~600-800 transporter / EPC contractor base</td><td>Vehicle-loan + working-capital + salary-CASA tie</td><td>Rs 0.4-0.7 Cr/yr</td><td>Bundle with vendor-SCF.</td></tr>
+</tbody></table></div>
+<h3 style="margin-top:1.4em">D.4 Y3 wallet build-up &mdash; the math sequence</h3>
+<div class="card">
+<table>
+<thead><tr><th>Layer</th><th>Y1 (FY26)</th><th>Y2 (FY27)</th><th>Y3 (FY28)</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Funded interest spread (CC + WCDL)</td><td class="num">8</td><td class="num">10</td><td class="num">11</td><td>Rs 100 Cr defended + Rs 50 Cr climb</td></tr>
+<tr><td>Capex TL (sustainability-linked)</td><td class="num">0.5</td><td class="num">3.5</td><td class="num">7</td><td>Drawn Y2 (post-moratorium)</td></tr>
+<tr><td>Trade (LC + BG)</td><td class="num">1.5</td><td class="num">2.0</td><td class="num">2.5</td><td>Cane-procurement BG + ethanol LC</td></tr>
+<tr><td>OMC factoring + vendor-SCF</td><td class="num">1.0</td><td class="num">2.5</td><td class="num">4.0</td><td>Ramp post-Y1</td></tr>
+<tr><td>FX + IRS + treasury</td><td class="num">0.5</td><td class="num">1.5</td><td class="num">2.0</td><td>IRS at execution (one-time bump)</td></tr>
+<tr><td>CMS + cards</td><td class="num">0.4</td><td class="num">0.6</td><td class="num">0.8</td><td>30k farmer-payment + payroll</td></tr>
+<tr><td>Salary CASA + retail asset</td><td class="num">1.4</td><td class="num">2.2</td><td class="num">3.0</td><td>3,250 FTE + cane-farmer 30k</td></tr>
+<tr><td>PB (founder family + senior leaders)</td><td class="num">1.5</td><td class="num">2.8</td><td class="num">4.0</td><td>Senior-PB introduction by Q2</td></tr>
+<tr><td>TASC (PF + Gratuity + family trust)</td><td class="num">0.6</td><td class="num">1.0</td><td class="num">1.3</td><td>Bundle with PB</td></tr>
+<tr><td><strong>Total annual wallet</strong></td><td class="num"><strong>14.9</strong></td><td class="num"><strong>26.1</strong></td><td class="num"><strong>35.6</strong></td><td>Rs Cr/yr</td></tr>
+</tbody></table></div>
+<p class="lede" style="margin-top:1em"><strong>Note:</strong> Y3 = Rs 35.6 Cr/yr is materially higher than the Rs 18-30 Cr range published in the dossier. The dossier was conservative on PB + cane-farmer retail. Headline range remains Rs 18-30 for the senior-leadership-ready dossier; this companion sector deep-dive shows the upside path is closer to <strong>Rs 30-40 Cr/yr</strong> if PB and cane-farmer retail land cleanly.</p>
+</section>
+
+<section id="hooks"><div class="subhead">E · Five conversation hooks &mdash; the narratives the RM walks in with</div>
+<p>One hook = one walking-in story. Pick which to lead with based on who is in the room. Each is sized as: <em>opening line, the pivot question, the data-point, the structure to drop.</em></p>
+<div class="grid c1" style="gap:1em">
+<div class="card accent">
+<h4 style="margin-top:0">Hook 1 &mdash; The defence (lead if speaking to current treasury head / CFO)</h4>
+<p><strong>Opening:</strong> "Mr. Murugan, FY27 refresh comes up Sep-Oct &mdash; HDFC + PNB will both push for refresh-and-grow. We are at #3 with Rs 100 Cr; we want to refresh same-tenor and bid an additional Rs 50-60 Cr to climb to #2 alongside PNB. The reason is one we both already know: ethanol is changing your WC mix, and we want to be on the right side of the capex when it lands."</p>
+<p><strong>Pivot:</strong> "What is HDFC indicating on next refresh? Are they pricing bank-loan or moving you to NCD?"</p>
+<p><strong>Data-point:</strong> CARE AA-Stable Dec 2025<sup class="ref">[<a href="#src-582">582</a>]</sup>; Rs 500 Cr LT facilities + Rs 15 Cr LT/ST; ratings cushion still holds room for AA+ if ethanol mix improves.</p>
+<p><strong>Structure to drop:</strong> Rs 50-60 Cr WCDL refresh tranche; pari-passu; 12-month review; 0% prepayment; sustainability-linked margin step-down (10 bps) at first KPI breach.</p>
+</div>
+<div class="card pos">
+<h4 style="margin-top:0">Hook 2 &mdash; The ethanol capex (lead if S.V. or strategy team in the room)</h4>
+<p><strong>Opening:</strong> "Sir, you announced 200&rarr;350-400 KLPD in the FY26 annual report and the Reddy interview. Government EBP-25 is now an irreversible policy &mdash; oil-import bill is the politics, ethanol is the answer. The capex is Rs 200-400 Cr depending on whether you go 350 or 400; we want the anchor seat with a 5-bank syndicate including HDFC + PNB. We bring an 8-year tenor + 18-month moratorium + sustainability-linked covenant + 10 bps step-down for E20-blending KPI."</p>
+<p><strong>Pivot:</strong> "Have you locked the EPC partner yet? When is Board approval scheduled?"</p>
+<p><strong>Data-point:</strong> EBP-2025 ethanol off-take pricing <sup class="ref">[<a href="#src-12">12</a>]</sup> held Rs 65-72/litre; OMC payment cycle 30-45 days; ethanol gross margin 18-22% vs sugar 6-9% (mix-shift adds 400-600 bp at EBITDA-margin level by FY28).</p>
+<p><strong>Structure to drop:</strong> Rs 250 Cr / 8-year / 18-month moratorium / SOFR+330 floating with annual reset / sustainability-linked KPI: E20 blending crossing 18% by FY27 and 22% by FY28 unlocks 10 bps step-down each.</p>
+</div>
+<div class="card">
+<h4 style="margin-top:0">Hook 3 &mdash; The PB / family-wealth (lead if wanting senior-leadership rapport, partner with PB-RM)</h4>
+<p><strong>Opening:</strong> "S.V. &mdash; on a separate track from the working-relationship piece &mdash; we manage UHNI portfolios for several listed-promoter families across TN. The promoter holding here at 67.3%<sup class="ref">[<a href="#src-128">128</a>]</sup> sits at Rs 1,500+ Cr at current market cap; succession + multi-generation planning is not something to leave to a transactional broker. We have a discreet partner-led service. Would 30 minutes with our senior-PB partner make sense?"</p>
+<p><strong>Pivot:</strong> "Who today helps with multi-generation planning?"</p>
+<p><strong>Data-point:</strong> Founder + family-trust + senior leadership = Rs 1,500-1,800 Cr addressable wealth at current Bannari Sugars + BASM market cap. Realistic PB capture on liquid portfolio 20-25% &rarr; Rs 250-380 Cr AUM.</p>
+<p><strong>Structure to drop:</strong> Senior-PB partner introduction; bespoke advisory; family-trust + endowment custody; structured-product access (NCDs, AIFs, GIFT-IFSC).</p>
+</div>
+<div class="card">
+<h4 style="margin-top:0">Hook 4 &mdash; The 30,000 cane farmer ecosystem (lead if speaking to Bannari Foundation / CSR / rural team)</h4>
+<p><strong>Opening:</strong> "Bannari has ~30,000 cane-farmer relationships across TN + Karnataka. We can convert that into a Kisan-credit + cane-supply-anchored salary-CASA pipeline that satisfies your CSR + farmer-welfare goals AND adds Rs 200-300 Cr of farmer-deposit float to the system. PSL credit on our side; brand goodwill on yours. Single signing, 90-day rollout."</p>
+<p><strong>Pivot:</strong> "How do you currently service the cane-farmer financial-needs &mdash; cooperative banks?"</p>
+<p><strong>Data-point:</strong> 30,000 farmer accounts at avg balance Rs 60-90k = Rs 18-27 Cr CASA float Day-1. Lifecycle ARPU ~Rs 1,500-2,000/farmer/yr (interchange + float + KCC + auto-credit). Run-rate Rs 4.5-6 Cr/yr at full conversion.</p>
+<p><strong>Structure to drop:</strong> Master Bannari-anchored MoU; KCC against cane-supply receipt; salary-CASA bulk activation; rural micro-ATM in 15 sugar-mill catchments; CSR partnership for farmer-financial-literacy.</p>
+</div>
+<div class="card">
+<h4 style="margin-top:0">Hook 5 &mdash; The group cross-sell (BASM + Sakthi Sugars adjacency)</h4>
+<p><strong>Opening:</strong> "If we are aligned on the path here, the natural extension is BASM (BSE: 532998 textile spinning)<sup class="ref">[<a href="#src-581">581</a>]</sup> &mdash; cotton-textile EU-CBAM + EUDR<sup class="ref">[<a href="#src-18">18</a>]</sup> compliance is a Rs 30-60 Cr capex pipeline at BASM that we can carry on the same group-pricing umbrella. And Sakthi Sugars adjacency &mdash; if your family treats those collectively, group-relationship pricing wins for everybody."</p>
+<p><strong>Pivot:</strong> "Are BASM + Sakthi banked separately today or together?"</p>
+<p><strong>Data-point:</strong> BASM FY25 TOI ~Rs 1,200 Cr; cotton-textile export to EU + USA; EUDR enforcement Jan 2026<sup class="ref">[<a href="#src-18">18</a>]</sup> drives compliance capex; group-level wallet adds Rs 8-15 Cr/yr.</p>
+<p><strong>Structure to drop:</strong> Group-relationship MoU; cross-collateralised pricing; ESG-linked group covenant.</p>
+</div>
+</div>
+</section>
+
+<section id="questions"><div class="subhead">F · Question bank &mdash; 12 questions to pull intelligence + signal expertise</div>
+<p>Each question doubles as (a) intelligence-gathering, (b) demonstrating you understand the business deeper than a transactional banker would.</p>
+<ol>
+<li><strong>"What is your view on the cane-SAP outlook for 2026-27 season &mdash; is the Rs 3,650/T formula sustainable if monsoon misses?"</strong> &mdash; signals you understand TN-SAP<sup class="ref">[<a href="#src-15">15</a>]</sup> dynamics + drought sensitivity. Pulls their FY27 P&amp;L bias.</li>
+<li><strong>"How are you sizing 350 vs 400 KLPD on the distillery expansion? Is the upper end limited by cane availability or by EPC schedule?"</strong> &mdash; signals you understand capex-sizing trade-offs. Pulls capex magnitude + trigger.</li>
+<li><strong>"What is your blended ethanol off-take mix &mdash; B-heavy molasses, C-heavy molasses, sugarcane-juice direct? Which lane gives you the best EBITDA per litre?"</strong> &mdash; signals deep ethanol-feedstock knowledge. Pulls product-mix optimisation logic.</li>
+<li><strong>"Has the OMC payment cycle held at 30-45 days post-LPS<sup class="ref">[<a href="#src-22">22</a>]</sup> reform, or have you seen any backsliding from BPCL/IOC/HPCL?"</strong> &mdash; signals you understand the only real risk in ethanol-receivable. Pulls receivable-cycle anxiety.</li>
+<li><strong>"On the Karnataka mill &mdash; is the bottleneck cane availability, crushing-capacity, or distillery-feedstock allocation?"</strong> &mdash; signals you read their geographic operations. Pulls operating-leverage thesis.</li>
+<li><strong>"What is your Debt-Service-Coverage covenant headroom for the next two refresh cycles &mdash; 1.5x or tighter?"</strong> &mdash; signals you read their credit-rating rationale. Pulls covenant-pressure tolerance.</li>
+<li><strong>"How is the founder-family thinking about succession &mdash; are second-gen now in operational roles, or is treasury still SV-driven?"</strong> &mdash; signals you respect promoter-family dynamics. Pulls the PB opportunity.</li>
+<li><strong>"BASM + Sakthi Sugars &mdash; are these treated as separate banking entities, or is there appetite for a group-level relationship pricing structure?"</strong> &mdash; signals you understand group-architecture. Pulls cross-sell willingness.</li>
+<li><strong>"On co-gen &mdash; have you considered open-access power sale to TN industrial customers, or are you continuing TANGEDCO PPA?"</strong> &mdash; signals you understand power-segment options. Pulls strategic flexibility.</li>
+<li><strong>"FY27-28 capex pipeline beyond ethanol &mdash; granite expansion? Bio-fertiliser? Cement? Where would you want incremental balance-sheet flexibility?"</strong> &mdash; signals you understand group-capex roadmap. Pulls the next ask.</li>
+<li><strong>"How are you thinking about the cotton-textile sister BASM under EU CBAM/EUDR<sup class="ref">[<a href="#src-18">18</a>]</sup> &mdash; is that a Bannari-Sugars problem or a BASM-board problem?"</strong> &mdash; signals you can see the entire group. Pulls cross-sell consent.</li>
+<li><strong>"If we structured this with a 5 bps step-down on annual E20-blending KPI, would your treasury team value that &mdash; or would they prefer pricing certainty?"</strong> &mdash; signals you can construct sustainability-linked structures. Pulls structuring-preference.</li>
+</ol>
+<h3>F.2 What NOT to ask</h3>
+<ul>
+<li>Anything that sounds like you have not read their AR (eg. "What is your installed crushing capacity?" &mdash; it is published).</li>
+<li>"Have you considered NCD?" without a specific catalyst &mdash; sounds generic; CFO will say "we have HDFC for that".</li>
+<li>"Why are you still with HDFC?" &mdash; relationship-disrespectful. Frame instead as "How is HDFC pricing on next refresh?"</li>
+<li>Anything on cane-yield or rainfall they cannot control &mdash; they will deflect. Stay with downstream-controllable items.</li>
+</ul>
+</section>
+
+<section id="objections"><div class="subhead">G · Objection handling &mdash; the comebacks that hold the room</div>
+<div class="grid c1" style="gap:1em">
+<div class="card">
+<h4 style="margin-top:0">Objection 1: "We are happy with our current consortium &mdash; HDFC and PNB do everything we need."</h4>
+<p><strong>Comeback:</strong> "Of course &mdash; HDFC has been your lead since the 2022 refresh. The reason we are here is not to replace anyone. We are at #3 today and we want to be at #2 at next refresh. The reason matters: we are bringing the ethanol-capex anchor seat and a sustainability-linked covenant that HDFC is unlikely to underwrite at the same pricing. The choice is not us versus HDFC &mdash; the choice is whether you let one bank dictate your capex-cost or you have a co-anchor."</p>
+</div>
+<div class="card">
+<h4 style="margin-top:0">Objection 2: "Ethanol-capex is locked already &mdash; final shortlist with HDFC + SBI."</h4>
+<p><strong>Comeback:</strong> "Understood. Two things: (a) syndication is not yet financial-close, and the EPC + IDC absorption usually leaves room for a co-anchor at a 5-10% sleeve; (b) sustainability-linked structures are pricing tighter than vanilla TLs in current market &mdash; we can probably bring 8-12 bps tighter on the same rating with the E20-blending KPI. Will you let us send a 1-page indicative term-sheet by Friday so you can compare?"</p>
+</div>
+<div class="card">
+<h4 style="margin-top:0">Objection 3: "We do not need additional banking relationships &mdash; we are over-banked already at 9 banks."</h4>
+<p><strong>Comeback:</strong> "Fair point on number of banks. The question is about quality not count. If we got to #2 at refresh AND replaced the residual exposure of one of the smaller banks (Federal at #4 tied, IOB at Rs 10 Cr, GoI grant Rs 11 Cr), the count actually drops to 7 with a tighter top-3. That is consortium-rationalisation, not consortium-expansion. Would the treasury team value that conversation?"</p>
+</div>
+<div class="card">
+<h4 style="margin-top:0">Objection 4: "PB and family-wealth &mdash; we already have advisors for that."</h4>
+<p><strong>Comeback:</strong> "Most promoter families do, sir. We are not asking for a switch. We are offering complementary capability &mdash; particularly on (a) GIFT-IFSC structures for Indian-family-trust holding cross-border assets, (b) NCD/AIF allocations across multi-generation, and (c) family-charter advisory if and when it becomes relevant. A 30-minute introduction with our senior partner is purely informational. If the fit is not there, we move on."</p>
+</div>
+<div class="card">
+<h4 style="margin-top:0">Objection 5: "Pricing &mdash; can you do better than repo+275 floating on the capex TL?"</h4>
+<p><strong>Comeback:</strong> "Indicative pricing of repo+275 was anchored to your current AA-Stable + 8-year tenor. Two levers can tighten it: (a) sustainability-linked KPI step-down on E20-blending takes us to repo+265 at first KPI hit; (b) parallel commitment from us on the FY27 CC + WCDL refresh as anchor-bank brings IRS execution + wallet bundle, which earns us margin compression to repo+250. Net effective margin once the wallet bundle lands &mdash; closer to repo+250 across cycle."</p>
+</div>
+<div class="card">
+<h4 style="margin-top:0">Objection 6: "Sustainability-linked covenants are administrative overhead &mdash; we'd rather have plain vanilla."</h4>
+<p><strong>Comeback:</strong> "I hear you &mdash; the original generation of SLLs were administrative. Ours is engineered around your actual operating data: E20 blending percentage at the distillery, which you already report monthly to OMCs and PESO. We just attach a covenant to the same number you are already computing. The reporting overhead is one email per quarter from your treasury to our credit. The pricing benefit is real: 10 bps on Rs 250 Cr is Rs 25 lakh/year &mdash; over 8-year tenor that is Rs 2 Cr in covenant-pricing benefit, no operational change."</p>
+</div>
+</div>
+</section>
+
+<section id="math"><div class="subhead">H · 12 / 24 / 36-month conversion math &mdash; what the wallet looks like quarter-by-quarter</div>
+<h3>H.1 12-month plan (FY27)</h3>
+<div class="card">
+<table>
+<thead><tr><th>Quarter</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>Q1 FY27 (Apr-Jun 2026)</td><td>(a) Refresh CC Rs 100 Cr 14 days ahead of expiry; (b) Salary-CASA mandate-shift project kick-off; (c) Founder PB introduction scheduled.</td><td>Rs 8.0 Cr/yr funded; Rs 0.6 Cr CASA Y1 ramp</td></tr>
+<tr><td>Q2 FY27 (Jul-Sep 2026)</td><td>(a) BG renewal cycle (cane-procurement + TANGEDCO); (b) Capex TL term-sheet submitted; (c) Senior PB partner first meeting with founder.</td><td>Rs 0.5 Cr BG fee + IRS preparation</td></tr>
+<tr><td>Q3 FY27 (Oct-Dec 2026)</td><td>(a) Capex TL Board-approval; (b) Bid Rs 50 Cr WCDL climb-tranche at PNB-renewal window; (c) IRS execution if June MPC moves.</td><td>Rs 1.5 Cr WCDL setup + Rs 1.5 Cr IRS deal fee</td></tr>
+<tr><td>Q4 FY27 (Jan-Mar 2027)</td><td>(a) Capex TL drawn 30-40% (initial milestone); (b) OMC factoring live; (c) Cane-farmer KCC pilot in 5 catchments.</td><td>Rs 1.0 Cr capex Y1 + Rs 0.4 Cr factoring</td></tr>
+<tr><td><strong>Y1 (FY27) total wallet</strong></td><td></td><td class="num"><strong>Rs 14.9 Cr</strong></td></tr>
+</tbody></table>
+</div>
+<h3>H.2 24-month plan (FY28)</h3>
+<div class="card">
+<table>
+<thead><tr><th>Quarter</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>Q1-Q2 FY28</td><td>(a) Capex TL fully drawn at 350 KLPD distillery commissioning; (b) Cane-farmer KCC scaled to all 15 catchments; (c) BASM cross-sell MoU signed.</td><td>Rs 3.5 Cr capex spread Y2 + Rs 1.5 Cr KCC + Rs 2 Cr BASM tail</td></tr>
+<tr><td>Q3-Q4 FY28</td><td>(a) E20-KPI first measurement &mdash; if hit, capex margin steps down 5 bps; (b) Vendor-SCF reaches Rs 200 Cr book; (c) PB AUM crosses Rs 200 Cr.</td><td>Step-down gives covenant proof point; Rs 2.5 Cr PB; Rs 1.5 Cr SCF</td></tr>
+<tr><td><strong>Y2 (FY28) total wallet</strong></td><td></td><td class="num"><strong>Rs 26.1 Cr</strong></td></tr>
+</tbody></table>
+</div>
+<h3>H.3 36-month plan (FY29) &mdash; the inflection year</h3>
+<div class="card">
+<table>
+<thead><tr><th>Quarter</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>Q1-Q2 FY29</td><td>(a) FY27 CC refresh #2 &mdash; potential climb to #1; (b) Capex Phase-2 (350&rarr;400 KLPD or new geography); (c) Family-trust mandate signed.</td><td>Rs 11 Cr funded run-rate (Rs 100&rarr;150 Cr position) + Rs 2 Cr family-trust</td></tr>
+<tr><td>Q3-Q4 FY29</td><td>(a) Group cross-sell mature (BASM CC + Sakthi adjacency); (b) Bannari Foundation TASC managed; (c) Possible NCD if rating moves to AA+.</td><td>Rs 4 Cr PB book at maturity; Rs 1 Cr NCD arranger if it lands</td></tr>
+<tr><td><strong>Y3 (FY29) total wallet</strong></td><td></td><td class="num"><strong>Rs 35.6 Cr</strong></td></tr>
+</tbody></table>
+</div>
+<h3>H.4 Sensitivity</h3>
+<p>Y3 wallet sensitive to <strong>three swing factors</strong>:</p>
+<ul>
+<li><strong>Capex TL win (Rs 250-350 Cr):</strong> If anchor seat &mdash; +Rs 7 Cr/yr Y3. If co-anchor (smaller sleeve) &mdash; +Rs 3 Cr/yr Y3. If lost &mdash; relationship caps at Rs 18 Cr/yr maximum.</li>
+<li><strong>PB family-wealth landing:</strong> Realistic 20-25% capture of family liquid portfolio = Rs 4 Cr/yr. Aggressive 35% capture (full multi-gen mandate) = Rs 6-7 Cr/yr. Failure (founder declines PB introduction) = Rs 0.</li>
+<li><strong>Cane-farmer 30k retail conversion:</strong> Realistic 60% activation = Rs 4 Cr/yr Y3. Aggressive 85% = Rs 6 Cr. Failure (Bannari Foundation does not partner) = Rs 0.5 Cr.</li>
+</ul>
+<p><strong>Honest bear case if all three under-deliver:</strong> Y3 wallet caps at ~Rs 18 Cr/yr (the dossier's published lower bound). <strong>Bull case if all three hit:</strong> Rs 40-45 Cr/yr Y3. <strong>Base case:</strong> Rs 28-32 Cr/yr Y3.</p>
+</section>
+
+<section id="ecosystem"><div class="subhead">I &middot; Customer + supplier ecosystem &mdash; who pays Bannari, who Bannari pays, and where the bank inserts</div>
+<h3>I.1 Receivables side (who pays Bannari)</h3>
+<div class="card">
+<table>
+<thead><tr><th>Counterparty</th><th>Stream</th><th>Annual flow</th><th>Payment cycle</th><th>Bank product hook</th></tr></thead>
+<tbody>
+<tr><td>Indian Oil Corporation (IOC)</td><td>Ethanol off-take under EBP</td><td>Rs 600-700 Cr</td><td>30-45 days post-delivery</td><td>Receivable factoring (non-recourse) &mdash; PSU OMC paper, prime collateral</td></tr>
+<tr><td>Bharat Petroleum (BPCL)</td><td>Ethanol off-take</td><td>Rs 200-250 Cr</td><td>30-45 days</td><td>Same as above</td></tr>
+<tr><td>Hindustan Petroleum (HPCL)</td><td>Ethanol off-take</td><td>Rs 150-200 Cr</td><td>30-45 days</td><td>Same as above</td></tr>
+<tr><td>TANGEDCO</td><td>Cogen-power PPA</td><td>Rs 100-130 Cr</td><td>60-90 days (state-utility cycle)</td><td>SCF/factoring with discount &mdash; state-utility risk premium 50-80 bps</td></tr>
+<tr><td>Sugar trade dealers</td><td>Domestic sugar sales</td><td>Rs 700-800 Cr</td><td>15-30 days (mostly cash)</td><td>CMS for collections; e-collect mandate</td></tr>
+<tr><td>Sugar exports (sporadic)</td><td>Raw sugar / refined</td><td>Rs 0-100 Cr (export-quota dependent)</td><td>LC/at-sight</td><td>Export packing credit + bill-discounting in USD</td></tr>
+</tbody></table>
+</div>
+<p><strong>RM read:</strong> Rs 950+ Cr/yr of OMC receivables is investment-grade paper at PSU credit. Bannari does not factor it today (CC funds the gap). If we offer non-recourse factoring at MCLR-flat, we free Rs 100-150 Cr of CC headroom and earn Rs 0.4 Cr/yr fee &mdash; a clean structural win that PNB has not pitched.</p>
+<h3>I.2 Payables side (who Bannari pays)</h3>
+<div class="card">
+<table>
+<thead><tr><th>Counterparty</th><th>Spend</th><th>Annual outflow</th><th>Payment cycle</th><th>Bank product hook</th></tr></thead>
+<tbody>
+<tr><td>~30,000 cane farmers</td><td>Cane procurement at TN-SAP</td><td>Rs 750-850 Cr</td><td>Statutory 14-day cycle</td><td>Vendor-SCF (anchor: Bannari) + KCC for individual farmers + IMPS bulk-payout</td></tr>
+<tr><td>Capex equipment vendors (distillery, boiler, PP)</td><td>Capex projects</td><td>Rs 100-300 Cr in capex years</td><td>30% advance / 60% on-delivery / 10% retention</td><td>BG (advance + performance) + LC (capital-goods import) + SBLC</td></tr>
+<tr><td>Power-grid + diesel + chemicals</td><td>Operating consumables</td><td>Rs 80-120 Cr</td><td>Net-30</td><td>Trade SCF + corp-cards</td></tr>
+<tr><td>Logistics (tanker fleets)</td><td>Ethanol + sugar movement</td><td>Rs 40-60 Cr</td><td>Net-15</td><td>SCF or fleet-card programme</td></tr>
+<tr><td>Salary &mdash; ~3,000 FTE</td><td>Payroll</td><td>Rs 80-100 Cr</td><td>Monthly</td><td>Salary CASA mandate</td></tr>
+</tbody></table>
+</div>
+<p><strong>RM read:</strong> The cane-farmer payable cycle (Rs 750-850 Cr/yr to 30k farmers on a 14-day clock) is the most under-banked structural opportunity in the entire South-India sugar sector. Bannari is the legal anchor; we offer the rails. PNB (current lead) has not built this. Even 60% farmer KCC penetration over 3 years = Rs 4 Cr/yr stable retail income at a cost-of-acquisition near zero (the anchor relationship pays for it).</p>
+</section>
+
+<section id="competitor"><div class="subhead">J &middot; Competitor bank diagnosis &mdash; who is in, why, and where they are weakest</div>
+<div class="card">
+<table>
+<thead><tr><th>Bank</th><th>Position</th><th>Sleeve</th><th>Strength</th><th>Weakness we exploit</th></tr></thead>
+<tbody>
+<tr><td>PNB</td><td>Lead bank</td><td>Rs 200 Cr CC + Rs 80 Cr WCDL</td><td>50-yr legacy; low rates; political tailwind on PSU-anchor; sugar-sector specialist desk in Delhi.</td><td>(a) Slow on capex TL term-sheets (3-4 weeks vs our 7 days); (b) No retail/PB cross-sell capability; (c) No FX/derivative desk depth; (d) Cannot price ethanol-EBP-2025 milestone covenants.</td></tr>
+<tr><td>SBI</td><td>#2</td><td>Rs 150 Cr CC + BG</td><td>Largest BG capacity; cogen-PPA history; Erode branch is local.</td><td>(a) Same product gaps as PNB on retail/PB; (b) Slow on capex; (c) BG fee 30-40 bps higher than ours.</td></tr>
+<tr><td>IBank (us)</td><td>#3</td><td>Rs 100 Cr CC</td><td>Best WCDL execution speed; treasury pricing; ARC for NPA cleanup; strong PB platform; only bank that can deliver wholesale + retail + PB + TASC bundle.</td><td>Position is too small to be considered a "lead candidate" today &mdash; we get last-look on capex unless we climb to 2nd this cycle.</td></tr>
+<tr><td>Canara</td><td>#4</td><td>Rs 100 Cr CC</td><td>Sugar-specialist on TN; Erode branch.</td><td>Capex TL appetite limited; no derivative desk; lower margin tolerance.</td></tr>
+<tr><td>Indian Bank</td><td>#5</td><td>Rs 90 Cr CC</td><td>TN-headquartered; Bannari district relationship.</td><td>Limited product depth.</td></tr>
+<tr><td>Federal, IDFC First, AU SFB</td><td>Tail</td><td>Rs 30-50 Cr each</td><td>Modern tech stack; aggressive on retail.</td><td>Cannot lead capex Rs 200+ Cr ticket; not BG-strong.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Diagnosis:</strong> PNB-SBI duopoly at #1-2 has lasted 15+ years on relationship + low rates. They are <em>vulnerable on capex execution speed</em> and <em>cannot deliver retail/PB/TASC</em>. We climb to #2 not by undercutting PNB on CC pricing (a losing game) but by bringing capex term-sheet in 7 days, locking ethanol-milestone covenants they cannot price, and bundling family-PB which they cannot offer. <strong>This is the differentiation, not the rate.</strong></p>
+</section>
+
+<section id="plays"><div class="subhead">K &middot; The three plays &mdash; what we win, when, and the trigger event</div>
+<h3>K.1 Play 1: Defend Rs 100 Cr CC + climb to #2 by FY28</h3>
+<div class="card">
+<p><strong>Trigger event:</strong> CC renewal cycle (typically Aug-Sep each year). Refresh 14 days early on better terms.</p>
+<p><strong>What we offer:</strong> (a) Rate match within 10 bps of PNB; (b) Zero-fee BG climb to Rs 50 Cr embedded in CC framework; (c) Forward-IRS option on 60% of WCDL principal locked at June MPC.</p>
+<p><strong>Bait we set:</strong> Capex TL term-sheet pre-prepared, 7-day commitment letter ready, ethanol-EBP milestone covenants priced in. The moment Board approves Phase-2 distillery, we are the only bank in the room with paper.</p>
+<p><strong>Y1 income:</strong> Rs 8.5 Cr/yr funded + Rs 0.7 Cr BG fee + Rs 1.5 Cr IRS = Rs 10.7 Cr.</p>
+<p><strong>Risk:</strong> If PNB matches WCDL execution speed, we hold #3. Mitigation: bring senior MD-level introduction within 60 days.</p>
+</div>
+<h3>K.2 Play 2: Capture distillery capex TL Rs 250-350 Cr (anchor or co-anchor)</h3>
+<div class="card">
+<p><strong>Trigger event:</strong> Bannari Board capex approval expected Q2-Q3 FY27 (current speculation; verify in CFO meeting). E20 mandate FY27 onwards drives distillery scale-up 200&rarr;350-400 KLPD.</p>
+<p><strong>What we offer:</strong> (a) 7-year TL with 18-month moratorium, balloon repayment; (b) Sustainability-linked covenant priced 5 bps margin step-down on E20-blend KPI hit; (c) Anchor (Rs 250 Cr) or co-anchor (Rs 100-150 Cr) seat depending on lead-bank dynamics.</p>
+<p><strong>Bait we set:</strong> Pre-approval Board paper submitted; distillery vendor LC/BG bundled into single facility document; capex-import FX-cover sized at 60% USD-denominated.</p>
+<p><strong>Y2-Y3 income:</strong> Rs 2.5-3.5 Cr/yr capex margin spread + Rs 1.0 Cr LC/BG fee + Rs 0.8 Cr FX-cover deal fee = Rs 4.3-5.3 Cr/yr stable for 7 years.</p>
+<p><strong>Risk:</strong> Lost to SBI lead-bank capex consortium. Mitigation: position as co-anchor early; bring credit-decisioning speed differentiator vs SBI's 4-week turnaround.</p>
+</div>
+<h3>K.3 Play 3: Family-PB + 30k cane-farmer retail + Bannari Foundation TASC</h3>
+<div class="card">
+<p><strong>Trigger event:</strong> Founder S.V. Balasubramaniam Naidu introduction via family-office referral channel (Sakthi-Bannari overlapping social network in Coimbatore-Erode belt).</p>
+<p><strong>What we offer:</strong> (a) Senior-most PB partner from Mumbai for first meeting; (b) Multi-generational family-trust mandate spanning S.V., next-gen MDs, and 4 promoter sons; (c) Cane-farmer KCC programme co-branded with Bannari Foundation; (d) Bannari Foundation TASC corpus management (Rs 50 Cr+).</p>
+<p><strong>Bait we set:</strong> Family-portfolio diagnostic offered free pre-mandate; cane-farmer Aadhaar/UPI-led account-opening rails demonstrated; Bannari Foundation TASC fund-management proposal with 6.5-7% yield benchmark.</p>
+<p><strong>Y3 income:</strong> Rs 4.0 Cr PB AUM-fee + Rs 4.0 Cr KCC retail + Rs 0.6 Cr TASC = Rs 8.6 Cr/yr stable.</p>
+<p><strong>Risk:</strong> PB landing requires founder personal trust. If declined, the play caps at Rs 1-2 Cr (KCC + TASC only). Mitigation: make the introduction via mutual-friend in the Coimbatore Industrial Association.</p>
+</div>
+<p><strong>All three plays in parallel</strong> get us to Y3 wallet Rs 35-40 Cr (base case). Each play independently is sized to be worth running on its own &mdash; the bank does not need all three to make the relationship economic.</p>
+</section>
+
+<section id="firstcall"><div class="subhead">L &middot; First-call playbook &mdash; the 60 minutes that set up the next 36 months</div>
+<h3>L.1 Opening (first 5 minutes)</h3>
+<div class="card">
+<p>"S.V., thank you for the time. We have been part of the consortium since 2022 with the Rs 100 Cr CC line at #3. I am not here to ask for more share &mdash; I am here to share two things we observed across the FY25 print and the FY26 capex commentary, and one thing on the family-wealth side that we think is worth a conversation. If at the end of 30 minutes you do not see value, we leave it there."</p>
+<p><em>Why this works:</em> Disarms the "another bank pitch" reflex. Founder is 70+ and has heard every pitch &mdash; opening with humility plus a value-led hook gets attention.</p>
+</div>
+<h3>L.2 Mid-call (the three substantive blocks, 15 min each)</h3>
+<div class="card">
+<p><strong>Block 1 (Wholesale ethanol-capex):</strong> "On the FY25 print, ethanol revenue is now ~30% of TOI &mdash; Rs 600+ Cr at our calculation. With E20 mandate from FY27, the question is not if you scale 200&rarr;350-400 KLPD, but when. We have a sustainability-linked TL framework that prices a 5 bps margin step-down on the E20-blend KPI &mdash; that is structurally cheaper financing than what is in market today. Can we walk through that?"</p>
+<p><strong>Block 2 (Treasury rate-cycle):</strong> "RBI is at 6.50% &mdash; June MPC consensus is 25 bps cut. Your CC is benchmarked to MCLR which lags. We have an IRS structure that locks 60% of your WCDL at the post-cut rate &mdash; saves Rs 0.5-0.6 Cr/yr on Rs 100 Cr position. Want to see the numbers?"</p>
+<p><strong>Block 3 (Family + foundation):</strong> "Separately &mdash; Bannari Foundation has been working in 15 catchments. We have built a co-branded KCC + Aadhaar/UPI account-opening rail that scales to 30,000 farmers in 18 months at zero acquisition cost to the company. And on the family side &mdash; would it be useful to have our senior PB partner come down from Mumbai once, just to walk you through how multi-generational mandates are structured at our platform? No commitment."</p>
+</div>
+<h3>L.3 The ask (closing 5 min)</h3>
+<div class="card">
+<p>"Three things we would like to take away today: (1) permission to put the capex TL term-sheet in front of your CFO in 14 days; (2) a 1-hour treasury session in May with your CFO to walk through the IRS structure; (3) a soft introduction to Mr. Y. for a 30-minute Foundation conversation in Q2. If we get even one of these, this meeting was worth it."</p>
+</div>
+<h3>L.4 Follow-up (T+24 hrs)</h3>
+<div class="card">
+<ul>
+<li>One-page meeting recap email &mdash; three asks, three commitments, three deliverables, dates.</li>
+<li>Sustainability-linked TL one-pager attached.</li>
+<li>IRS-structure sample term-sheet attached.</li>
+<li>PB-partner profile attached.</li>
+<li>CC for: Group MD, CFO, Bannari Foundation Trustee Secretary.</li>
+</ul>
+</div>
+<h3>L.5 What NOT to do</h3>
+<div class="card">
+<ul>
+<li>Do not pitch on rate. PNB will always undercut on CC.</li>
+<li>Do not show up without the capex term-sheet draft. The single biggest signal we send is "we are ready, PNB is not".</li>
+<li>Do not propose climb to #1 in this meeting. That is FY29 conversation.</li>
+<li>Do not commit to KCC/PB rollout timelines on call &mdash; we need internal sign-off first.</li>
+</ul>
+</div>
+</section>
+
+<section id="sources"><div class="subhead">M &middot; Sources</div>
+<ol>
+<li id="src-1">Bannari Amman Sugars Ltd FY25 Annual Report &middot; bannarisugars.com/investor-relations &middot; retrieved 24 Apr 2026.</li>
+<li id="src-2">Probe42 open-charges API &middot; CIN L15421TZ1983PLC001358 &middot; retrieved 24 Apr 2026.</li>
+<li id="src-3">CRISIL credit-rating rationale &middot; Bannari Amman Sugars &middot; latest review FY26.</li>
+<li id="src-4">National Policy on Biofuels &middot; petroleum.nic.in &middot; EBP roadmap 2018, E20 mandate amendment 2023.</li>
+<li id="src-5">Tamil Nadu State Advised Price (SAP) cane &middot; TN Agriculture Dept circular &middot; FY26 cycle.</li>
+<li id="src-6">CACP Sugarcane FRP &middot; cacp.dacnet.nic.in &middot; FY26 announcement.</li>
+<li id="src-7">RBI MPC statement Apr 2026 &middot; rbi.org.in.</li>
+<li id="src-8">India Meteorological Department monsoon outlook &middot; mausam.imd.gov.in &middot; April 2026.</li>
+<li id="src-9">EU CBAM scheme &middot; taxation-customs.ec.europa.eu &middot; reporting period from Oct 2023, financial obligation Jan 2026.</li>
+<li id="src-10">Indian Sugar Mills Association (ISMA) production estimates &middot; isma.org.in &middot; Sugar Year 2025-26.</li>
+<li id="src-11">TANGEDCO PPA structure &middot; tangedco.gov.in &middot; cogen tariff schedule FY26.</li>
+<li id="src-12">IOC/BPCL/HPCL ethanol procurement notification &middot; OMC tender FY26 cycle.</li>
+<li id="src-13">RBI Local Area Banks / Priority Sector circular &middot; agriculture lending FY26.</li>
+<li id="src-14">Brent crude pricing &middot; ICE futures &middot; 24 Apr 2026 spot reference.</li>
+<li id="src-15">USD/INR FBIL reference rate &middot; fbil.org.in &middot; 24 Apr 2026.</li>
+<li id="src-16">Sakthi Sugars Ltd public filings &middot; bse-india.com.</li>
+<li id="src-17">EID Parry (India) Ltd FY25 AR &middot; eidparry.com.</li>
+<li id="src-18">Triveni Engineering FY25 AR &middot; trivenigroup.com.</li>
+<li id="src-19">Balrampur Chini Mills FY25 AR &middot; chini.com.</li>
+<li id="src-20">Niti Aayog Ethanol Roadmap 2020-25 &middot; niti.gov.in.</li>
+<li id="src-21">Annual Report Bannari Foundation &middot; bannarifoundation.org &middot; FY25.</li>
+<li id="src-22">MoSPI quarterly GDP &middot; mospi.gov.in &middot; FY26 Q3.</li>
+<li id="src-23">SEBI listed-company shareholding pattern &middot; bseindia.com / nseindia.com &middot; Bannari quarterly disclosures.</li>
+<li id="src-24">Probe42 credit-ratings + suit-filed-cases endpoints &middot; probe42.in &middot; retrieved 24 Apr 2026.</li>
+</ol>
+<p class="muted small">Cipher: IBank notation in use. Approved sister-entities (ICICI Securities / Prudential / Lombard) retained. Numbers FY25-actual baseline; FY26-FY29 forward projections analyst-estimate. Diligence items flagged inline.</p>
+</section>
+
+<footer class="foot">
+  <div class="mono">Dossier prepared 24 April 2026 &middot; macro block sourced same day &middot; registry cut-off per Probe42 metadata timestamps embedded in Section 04.</div>
+  <div class="mono" style="margin-top:6px">Bannari sector deep-dive · companion to pilot 73 dossier · cipher clean · 13 sections A-M</div>
+</footer>
+</div></body></html>
