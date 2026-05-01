@@ -1,0 +1,410 @@
+"""TII Sector Deep-Dive (companion to pilot 152)."""
+from pathlib import Path
+from .base import HEAD, FOOT, ref
+
+OUT = Path("/home/user/St") / "tube-investments-india-sector.html"
+
+NAV = """
+<nav class="nav"><ol>
+<li><a href="#tldr">A · TL;DR</a></li>
+<li><a href="#history">B · History</a></li>
+<li><a href="#promoters">C · Promoters/KMP</a></li>
+<li><a href="#valuechain">D · Value-chain</a></li>
+<li><a href="#driver-fs">E · Driver→FS</a></li>
+<li><a href="#product-fs">F · Product→FS</a></li>
+<li><a href="#hooks">G · Hooks</a></li>
+<li><a href="#questions">H · Q-bank</a></li>
+<li><a href="#objections">I · Objections</a></li>
+<li><a href="#math">J · Math</a></li>
+<li><a href="#ecosystem">K · Ecosystem</a></li>
+<li><a href="#competitors">L · Competitors</a></li>
+<li><a href="#plays">M · Plays</a></li>
+<li><a href="#firstcall">N · First-call</a></li>
+<li><a href="#sources">O · Sources</a></li>
+</ol></nav>
+"""
+
+def A():
+    return f"""
+<section id="tldr" class="hero">
+<div class="eyebrow">Sector deep-dive companion · Pilot 152 · Tube Investments of India · Murugappa flagship engineering</div>
+<h1>The play in 90 seconds<br>Anchor TI Clean Mobility EV capex Rs 400-700 Cr · climb to top-3 group-banker on Murugappa cross-sell</h1>
+<p class="lede">TII is the listed Murugappa flagship (BSE 540762/NSE TIINDIA){ref("955")} consolidating precision steel tubes + auto-components + bicycles (BSA/Hercules/Philips) + the rapidly-scaling TI Clean Mobility EV business. FY24 consolidated revenue Rs 16,890 Cr; FY24 EBITDA Rs 2,200 Cr (13%); virtually debt-free at standalone level{ref("955")}. The structural play is the <strong>EV-mobility capex window FY26-FY29</strong> &mdash; Rs 400-700 Cr at TI Clean Mobility (Montra Eviator + Montra Cargo + Cellestial e-tractor) needs anchor capex TL with sustainability-linked covenant + bundled FX/LME-steel hedge + family-PB on the 5-flagship Murugappa promoter base.</p>
+<div class="grid c4" style="margin-top:18px">
+<div class="kpi accent"><div class="k">Y3 wallet</div><div class="v num">Rs 24-42 Cr/yr</div><div class="sub">Anchor + group cross-sell</div></div>
+<div class="kpi pos"><div class="k">EV capex window</div><div class="v num">Rs 400-700 Cr</div><div class="sub">TI Clean Mobility{ref("956")}</div></div>
+<div class="kpi"><div class="k">FY24 baseline</div><div class="v num">Rs 16,890 Cr</div><div class="sub">+12.6% YoY</div></div>
+<div class="kpi pos"><div class="k">Group cross-sell</div><div class="v num">Rs 75,000+ Cr</div><div class="sub">5 flagships</div></div>
+</div>
+<div class="card accent" style="margin-top:20px">
+<h4 style="margin-top:0">The single sentence the RM walks in with</h4>
+<p style="font-size:1.1rem;margin-bottom:0"><em>"Mr. Aru &mdash; we have studied TI Clean Mobility's roadmap and we want to be the anchor capex bank on the Rs 400-700 Cr EV capex window. Our term-sheet with sustainability-linked KPIs is ready. Separately we want to bring our PB partner to the Murugappa family for a no-commitment conversation. Three structural ideas in 30 minutes."</em></p>
+</div>
+<div class="meta" style="margin-top:14px">
+<span>Companion to <strong><a href="tube-investments-india-dossier.html">tube-investments-india-dossier.html</a></strong></span>
+<span>Cut <strong>Probe42 28 Apr 2026</strong></span>
+<span>Author <strong>RM-meeting prep · LCG/PBG Chennai</strong></span>
+</div>
+</section>
+"""
+
+def B():
+    return f"""
+<section id="history"><div class="subhead">B · Company history &mdash; the 75-year arc from TI Cycles to Murugappa engineering flagship</div>
+<h3>B.1 Founding (1949) &mdash; British TI + Murugappa JV</h3>
+<div class="card"><p>TI Cycles of India founded 1949 as a JV between Tube Investments plc (UK) and the Murugappa Chettiar group{ref("955")}. Manufactured bicycles under BSA / Hercules / Philips brands &mdash; brands that defined the Indian cycle market through the 1950s-60s. Tube Products of India was incorporated separately for industrial precision tubes.</p></div>
+
+<h3>B.2 Murugappa control (1959-1990s) &mdash; Indianisation + diversification</h3>
+<div class="card"><p>The two companies merged in 1959 to form integrated Tube Investments of India. Built India's first cold-rolled-steel-strip + precision-tubes capability and the largest bicycle distribution network through 1970s-80s. By the late 1980s, Murugappa Group (via Ambadi Investments) had bought out the British TI plc stake.</p></div>
+
+<h3>B.3 Demerger and re-listing (2006-2017)</h3>
+<div class="card"><p>The current entity (CIN L35100TN2008PLC069496){ref("955")} was incorporated 06 Oct 2008 as part of a Murugappa restructuring &mdash; demerging the investment + financial-services arm (now Cholamandalam Holdings) from the engineering business. TII relisted on BSE+NSE in 2017.</p></div>
+
+<h3>B.4 The 2010s &mdash; auto-component scale + global tier-1 supply</h3>
+<div class="card"><p>Built scale in auto-component precision tubes (door-impact beams, propeller shafts, axle tubes) supplying Stellantis, Ford, Renault, GM, plus all Indian OEMs. Tier-1 supplier with Tier-2 export capability. Bicycles continued domestic + emerging-market export. Engineering division added cold-rolled stainless tube + boiler tube grades.</p></div>
+
+<h3>B.5 The EV pivot (2020-2024) &mdash; TI Clean Mobility</h3>
+<div class="card"><p>The structural inflection. <strong>TI Clean Mobility</strong> announced 2021 with initial capex Rs ~750 Cr{ref("956")} for e-3W passenger (Montra Eviator) + e-3W cargo (Montra Cargo) + e-tractor (via 2024 Cellestial E-Mobility acquisition). IPLTech Electric for e-CV; Jayem Automotives + TIVOLT formed broader EV platform. By FY25, TII emerged as the most credible domestic challenger to Mahindra Last Mile Mobility + Bajaj e-3W in the small-commercial-EV cluster.</p></div>
+
+<h3>B.6 Next 36 months (FY26-FY29) &mdash; capex window + family transition</h3>
+<div class="card"><p>FY24 revenue Rs 16,890 Cr; analyst-est FY28 Rs 30,000 Cr (CAGR ~12%, EV-business swing factor). EV-capex envelope Rs 400-700 Cr. Family transition: Vellayan Subbiah is Group Executive Chairman of Murugappa overall; M.A.M. Arunachalam (Aru) is TII Chairman; Mukesh Ahuja became MD in 2024 &mdash; signals more aggressive growth + capex-deployment phase.</p></div>
+
+<h3>B.7 Why this matters for the IBank pitch</h3>
+<div class="card"><p>(1) Murugappa is a builder-group, not a trader-group &mdash; TII has reinvested across every cycle. (2) The EV-mobility play is engineering execution, not greenfield speculation. (3) The 5-flagship Murugappa structure makes TII the entry-point to a Rs 75,000 Cr group-treasury opportunity (TII + CUMI + EID Parry + Coromandel + Chola Finance). The bank that wins TII gets cross-sell into all five.</p></div>
+</section>
+"""
+
+def C():
+    return f"""
+<section id="promoters"><div class="subhead">C · Promoters + Key Managerial Personnel</div>
+
+<h3>C.1 M.A.M. Arunachalam (Aru) — Chairman, TII</h3>
+<div class="card"><p>Murugappa family fifth-generation; TII Chairman since 2017{ref("955")}. Strategic focus on EV mobility + auto-component global expansion + bicycle modernisation. <strong>Decision style:</strong> growth-oriented; family-stewardship-aware; respects bankers who bring capex execution speed + global capability. <strong>What he cares about:</strong> TI Clean Mobility scale-up; Murugappa group reputation; family governance + 5-flagship coordination. <strong>RM angle:</strong> bring senior MD-level introduction; do not pitch on rate.</p></div>
+
+<h3>C.2 Mukesh Ahuja — Managing Director (since 2024)</h3>
+<div class="card"><p>Joined TII as MD in 2024 from outside the family &mdash; signals a more aggressive operational + growth-deployment phase. <strong>Decision style:</strong> execution-focused; capital-efficient; will deep-test the bank's capex term-sheet speed. <strong>What he cares about:</strong> TI Clean Mobility unit economics (path to EBITDA breakeven); auto-component ROCE; bicycle business turnaround. <strong>RM angle:</strong> primary banking counterparty; build relationship over first 90 days with capex term-sheet + monthly review cadence.</p></div>
+
+<h3>C.3 K. Mahendra Kumar — CFO</h3>
+<div class="card"><p>CFO; primary day-to-day banking counterparty. <strong>What he cares about:</strong> consortium dynamics; pricing discipline; treasury optimisation; FX + commodity hedge. <strong>RM angle:</strong> CFO-level meetings monthly; bring treasury head + capex underwriter.</p></div>
+
+<h3>C.4 Vellayan Subbiah — Group Executive Chairman, Murugappa</h3>
+<div class="card"><p>Group-level Murugappa Chairman; not directly TII operational but key strategic decisions cross his desk. <strong>RM angle:</strong> family-PB conversation needs to navigate to him via Aru; senior PB partner introduction.</p></div>
+
+<h3>C.5 Subsidiaries / Operating structure</h3>
+<div class="card"><p>TII Standalone &mdash; precision tubes + auto-components + bicycles. Subsidiaries: <strong>TI Clean Mobility Pvt Ltd</strong> (e-3W passenger + cargo); <strong>IPLTech Electric Pvt Ltd</strong> (e-CV); <strong>Jayem Automotives Pvt Ltd</strong>; <strong>TIVOLT Electric Vehicles Pvt Ltd</strong>; <strong>TI Medical Pvt Ltd</strong>; <strong>Cellestial E-Mobility</strong> (e-tractor, acquired 2024). Each subsidiary CIN should be Probe42-pulled for charge-register diligence.</p></div>
+</section>
+"""
+
+def D():
+    return f"""
+<section id="valuechain"><div class="subhead">D · Value-chain &mdash; precision-tubes + auto-components + EV-mobility cluster</div>
+<p>TII operates across three distinct value-chains under one listed entity: (1) <strong>precision-steel-tubes</strong> (HRC steel → cold-rolled strip → cold-drawn precision tube → auto-component fabrication); (2) <strong>bicycles</strong> (steel + components → frame fab → assembly → BSA/Hercules/Philips brand → 5,000+ dealer outlets); (3) <strong>EV mobility</strong> (battery cell + e-motor + chassis → e-3W / e-tractor / e-CV → fleet customers + last-mile-mobility operators).</p>
+
+<h3>D.1 Precision-tube cash flow</h3>
+<div class="card"><table>
+<thead><tr><th>Stage</th><th>Pricing power</th><th>WC impact</th><th>Bank product</th></tr></thead>
+<tbody>
+<tr><td>HRC + special-steel procurement</td><td>None &mdash; LME-linked</td><td>30-45 day cycle; Rs 300-500 Cr peak</td><td>WCDL + LME-steel hedge + LC</td></tr>
+<tr><td>Cold-rolled strip + cold-drawn tube</td><td>Strong &mdash; precision/auto-grade 18-22% gross margin</td><td>15-30 day WIP cycle</td><td>WCDL + capex TL on cold-rolled mill</td></tr>
+<tr><td>Auto-OEM tier-1 supply</td><td>Strong via cert + 5-yr contracts</td><td>30-60 day OEM receivable</td><td>OEM-anchor SCF + receivable factoring</td></tr>
+<tr><td>Export to Stellantis / Ford / Renault tier-2</td><td>Strong &mdash; USD/EUR LC at-sight or D/A</td><td>FX-exposed receivable</td><td>Export-finance + USD/EUR forward</td></tr>
+</tbody></table></div>
+
+<h3>D.2 EV-mobility cash flow (TI Clean Mobility)</h3>
+<div class="card"><table>
+<thead><tr><th>Stage</th><th>Notes</th><th>Bank product</th></tr></thead>
+<tbody>
+<tr><td>Battery cell import (China + Korea)</td><td>USD-LC; cell still imported pending domestic giga-factory</td><td>USD LC + forward + capex TL on giga-factory if announced</td></tr>
+<tr><td>E-motor + e-axle + chassis assembly</td><td>Vertical-integration in progress; some China-sourced components</td><td>Vendor-SCF + WCDL</td></tr>
+<tr><td>e-3W + e-tractor manufacturing</td><td>Capex-heavy; greenfield-line at TII facilities</td><td>Capex TL with sustainability-linked covenant</td></tr>
+<tr><td>Fleet sale + dealer-finance</td><td>Last-mile-mobility operators (Ola/Uber/Zomato/Swiggy) + retail farmer (e-tractor)</td><td>Fleet-finance + dealer-finance + retail loan</td></tr>
+</tbody></table></div>
+</section>
+"""
+
+def E():
+    return f"""
+<section id="driver-fs"><div class="subhead">E · Driver &rarr; FS line-item map</div>
+<p>Sized to FY25 baseline (TOI ~Rs 18,800 Cr; EBITDA ~Rs 2,540 Cr; promoter 44%; multi-bank consortium across subsidiaries).</p>
+<div class="card"><table>
+<thead><tr><th>Driver</th><th>FS impact at TII</th><th>IBank product entry</th></tr></thead>
+<tbody>
+<tr><td><strong>TI Clean Mobility EV scale-up</strong>{ref("956")}</td><td>Capex Rs 400-700 Cr FY26-29; battery + chassis-line capex burst; subsidiary-level debt</td><td><strong>Capex TL Rs 250-400 Cr anchor</strong> + LC for battery imports + sustainability covenant</td></tr>
+<tr><td><strong>LME-steel + zinc</strong>{ref("14")}</td><td>50-55% of COGS; 1% LME move = Rs 22-25 Cr EBITDA swing</td><td><strong>LME-steel + zinc IRS</strong> + commodity-linked WCDL</td></tr>
+<tr><td><strong>USD/INR + EUR/INR</strong></td><td>Auto-component export Rs 1,200-1,800 Cr/yr USD; capex import EUR/USD</td><td>Forward USD + EUR; LC at-sight</td></tr>
+<tr><td><strong>EV-mobility demand</strong></td><td>Last-mile-mobility + e-tractor demand; FY27 inflection</td><td>Fleet-finance + dealer-finance partnership</td></tr>
+<tr><td><strong>Auto-OEM JIT cycle</strong></td><td>30-60 day OEM receivable; Stellantis/Ford/Renault/Maruti/Tata</td><td>OEM-anchor SCF + factoring</td></tr>
+<tr><td><strong>Bicycle channel</strong></td><td>5,000+ dealer outlets; e-bike pivot</td><td>Bicycle-dealer SCF + retail finance</td></tr>
+<tr><td><strong>RBI repo cycle</strong>{ref("7")}</td><td>WCDL benchmarked; Rs 1.5-2 Cr/yr saving on Rs 300 Cr position</td><td>WCDL + IRS lock</td></tr>
+<tr><td><strong>USA tariff</strong>{ref("6")}</td><td>Indirect &mdash; precision-tubes export risk; possible anti-dumping</td><td>FX hedge + export-finance</td></tr>
+<tr><td><strong>Murugappa group treasury</strong></td><td>5-flagship Rs 75,000+ Cr opportunity; group cash management</td><td>Group treasury sweep + ZBA + cross-sell mandate</td></tr>
+<tr><td><strong>Family wealth (Vellayan + Aru + others)</strong></td><td>Multi-gen Murugappa wealth; not on any single PB platform</td><td>PB AUM + family-trust + ESOP advisory</td></tr>
+<tr><td><strong>EU CBAM</strong>{ref("9")}</td><td>Steel-related; auto-component scope-3 reporting</td><td>Sustainability-linked covenant + ESG advisory</td></tr>
+</tbody></table></div>
+</section>
+"""
+
+def F():
+    return f"""
+<section id="product-fs"><div class="subhead">F · IBank product &rarr; FS map</div>
+<div class="card"><table>
+<thead><tr><th>Product</th><th>Structure</th><th>Size</th><th>Price</th><th>Y3 income</th></tr></thead>
+<tbody>
+<tr><td>Capex TL (TI Clean Mobility EV)</td><td>8-yr TL with 24-month moratorium; sustainability-linked: EV-revenue-mix &gt; 25% by FY29 = 5 bps step-down</td><td>Rs 250-400 Cr anchor</td><td>MCLR + 90-120 bps</td><td>Rs 8-12 Cr/yr stable</td></tr>
+<tr><td>LC + BG (capex import + steel)</td><td>USD/EUR LC for Korean / Japanese / German precision-mill machinery + steel-import</td><td>Rs 250-500 Cr revolving</td><td>0.30-0.45% fee</td><td>Rs 1.5-3.0 Cr/yr</td></tr>
+<tr><td>LME-steel + zinc IRS + FX</td><td>Steel + zinc IRS Rs 500-800 Cr notional + FX USD/EUR 100-300 Mn</td><td>USD 100-300 Mn FX + Rs 500-800 Cr LME</td><td>Spread 5-15 bps</td><td>Rs 2.5-5.0 Cr/yr</td></tr>
+<tr><td>WCDL + CC</td><td>Steel cycle + WIP + EV-mobility ramp-up WC</td><td>Rs 300-500 Cr</td><td>MCLR + 60-90 bps</td><td>Rs 3-5 Cr/yr</td></tr>
+<tr><td>OEM-anchor SCF + factoring</td><td>Stellantis / Ford / Renault / Maruti / M&M paper</td><td>Rs 150-300 Cr</td><td>MCLR + 50-80 bps</td><td>Rs 1.5-3 Cr/yr</td></tr>
+<tr><td>Bicycle-dealer SCF + e-bike retail</td><td>BSA / Hercules / Philips dealer network 5,000+ outlets</td><td>Rs 100-200 Cr</td><td>MCLR + 70-100 bps</td><td>Rs 1-2 Cr/yr</td></tr>
+<tr><td>Fleet-finance (e-3W + e-tractor)</td><td>Last-mile-mobility + farmer e-tractor retail loan</td><td>Rs 100-200 Cr book</td><td>MCLR + 90-130 bps</td><td>Rs 1-2 Cr/yr</td></tr>
+<tr><td>Salary CASA + payroll (12,500 FTE)</td><td>TII + subsidiaries</td><td>Rs 25-50 Cr float</td><td>0%</td><td>Rs 0.8-1.5 Cr/yr</td></tr>
+<tr><td>PB (Murugappa family)</td><td>Vellayan + Aru + 5-flagship promoter family</td><td>Rs 300-600 Cr AUM</td><td>50-80 bps</td><td>Rs 1.5-3.0 Cr/yr</td></tr>
+<tr><td>Group treasury sweep + ZBA</td><td>Cross-flagship liquidity</td><td>Rs 1,000-2,000 Cr float</td><td>fee on int</td><td>Rs 1-2 Cr/yr</td></tr>
+</tbody></table></div>
+
+<h3>F.1 Y3 (FY29) wallet build-up</h3>
+<div class="card"><ul>
+<li>Wholesale: Rs 14.5-26.5 Cr</li>
+<li>Treasury (FX + LME + group): Rs 5.5-10 Cr</li>
+<li>Retail + PB + TASC: Rs 3.5-7.0 Cr</li>
+<li><strong>Total Y3 wallet: Rs 24-42 Cr/yr</strong> (matches dossier headline)</li>
+</ul></div>
+</section>
+"""
+
+def G():
+    return f"""
+<section id="hooks"><div class="subhead">G · Five conversation hooks</div>
+<div class="card"><ol>
+<li><strong>1. TI Clean Mobility capex anchor</strong> &mdash; "Mr. Aru, TI Clean Mobility scaling to commercial unit economics needs Rs 400-700 Cr capex over FY26-29. We have a 7-day capex term-sheet ready with a sustainability-linked covenant: 5 bps margin step-down on EV-revenue-mix crossing 25% by FY29. Anchor Rs 250-400 Cr."</li>
+<li><strong>2. LME-steel + zinc hedge</strong> &mdash; "Steel + zinc 50-55% of COGS at Rs 9,000-10,000 Cr/yr; 1% LME move = Rs 22-25 Cr EBITDA. We can lock 60% via IRS structure for 12-18 months. PSU consortium cannot price this at scale."</li>
+<li><strong>3. Murugappa family-PB</strong> &mdash; "5-flagship Murugappa promoter family is multi-gen wealth not yet institutionalised on any bank's PB platform. Senior PB partner can fly down for a no-commitment first conversation any week."</li>
+<li><strong>4. Auto-component export USD receivable</strong> &mdash; "Stellantis/Ford/Renault USD paper is investment-grade factor-eligible at MCLR-plus-50. Rs 150-300 Cr book opportunity."</li>
+<li><strong>5. Group treasury cross-sell</strong> &mdash; "TII is the entry point. CUMI + EID Parry + Coromandel + Chola Finance = Rs 75,000+ Cr group-treasury opportunity. We want anchor TII first, then sweep across all five."</li>
+</ol></div>
+</section>
+"""
+
+def H():
+    return f"""
+<section id="questions"><div class="subhead">H · Question bank</div>
+<div class="card"><h4 style="margin-top:0">12 questions for the meeting</h4>
+<ol>
+<li>What is the TI Clean Mobility unit-economics target FY27 vs FY29?</li>
+<li>Is battery-cell vertical integration (giga-factory) on the roadmap or remains imported?</li>
+<li>What is the Cellestial e-tractor commercial launch timeline + capex sleeve?</li>
+<li>What is the auto-component export book today + FY28 USD/EUR target?</li>
+<li>Which OEMs are tier-1 supply contracts up for renewal FY26-27?</li>
+<li>What is the LME-steel + zinc hedge ratio today?</li>
+<li>What is the bicycle-business turnaround thesis &mdash; e-bike pivot timeline?</li>
+<li>Murugappa group treasury &mdash; is there a centralised cash-management mandate today?</li>
+<li>Family-PB &mdash; is the Murugappa wealth held at HUF / family-trust level or individually?</li>
+<li>What is the open MCA charges split across TII + TI Clean Mobility + IPLTech + Cellestial subsidiaries?</li>
+<li>Sustainability covenant appetite &mdash; will Aru / Mukesh sign EV-revenue-mix-linked margin step-down?</li>
+<li>Group cross-sell &mdash; who is the right entry-point at CUMI / EID Parry / Coromandel / Chola Finance?</li>
+</ol></div>
+<div class="card"><h4 style="margin-top:0">What NOT to ask</h4>
+<ul>
+<li>Do not ask for share-of-wallet on first meeting.</li>
+<li>Do not pitch on rate &mdash; PSU + private will all be within 10-15 bps.</li>
+<li>Do not propose family-succession or ESOP advisory in first meeting.</li>
+<li>Do not name specific competitor banks unless asked.</li>
+<li>Do not over-pitch the EV story &mdash; Aru already knows it.</li>
+</ul></div>
+</section>
+"""
+
+def I():
+    return f"""
+<section id="objections"><div class="subhead">I · Objection handling</div>
+<div class="card"><h4 style="margin-top:0">"We are happy with our current banks (SBI + HDFC lead)."</h4><p>"Mr. Aru &mdash; we are not asking to displace anyone. The Rs 400-700 Cr TI Clean Mobility capex window is incremental and partially greenfield (subsidiary-level debt). We are asking for an anchor or co-anchor seat on that sleeve specifically. Not displacing, adding to the consortium for a new ticket size."</p></div>
+<div class="card"><h4 style="margin-top:0">"Your rates are not competitive vs PSU."</h4><p>"Capex TL rates are within 10-15 bps. Differentiation: sustainability-linked covenant gives 5 bps step-down on EV-revenue-mix; LME-steel IRS at scale that PSU cannot price; 7-day term-sheet vs PSU 21-28 days; family-PB platform PSU does not have. Structure, not headline rate."</p></div>
+<div class="card"><h4 style="margin-top:0">"TI Clean Mobility is still loss-making &mdash; we need profitability proof first."</h4><p>"Exactly the structuring opportunity. Sustainability-linked covenant ties our pricing to your profitability path: when EV-revenue-mix crosses 25% (correlated with EBITDA breakeven), margin steps down 5 bps. We share the risk in a structurally honest way."</p></div>
+<div class="card"><h4 style="margin-top:0">"Murugappa family wealth is private."</h4><p>"That is exactly the design point of our PB platform &mdash; we are most discrete on India's senior promoter PB. Our partner can fly down for a 30-minute conversation about how families like yours have institutionalised wealth without losing control. No commitment."</p></div>
+<div class="card"><h4 style="margin-top:0">"You are too small to lead our group treasury."</h4><p>"We do not need to lead group treasury today &mdash; we want anchor on TII subsidiary-EV capex. Once we deliver on Phase-1 commissioning, the group treasury conversation becomes natural at the FY28 refresh."</p></div>
+<div class="card"><h4 style="margin-top:0">"Your turnaround time on credit decisions is slow."</h4><p>"Weekly committee with 7-day SLA on standard tickets. We will write SLA into the term-sheet."</p></div>
+</section>
+"""
+
+def J():
+    return f"""
+<section id="math"><div class="subhead">J · 12 / 24 / 36-month conversion math</div>
+<h3>J.1 12-month plan (FY27)</h3>
+<div class="card"><table><thead><tr><th>Quarter</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>Q1 FY27</td><td>(a) TI Clean Mobility capex term-sheet submitted; (b) LC + BG framework activated for battery-cell + machinery imports; (c) FX cover on USD/EUR LCs.</td><td>Rs 1.5 Cr LC + Rs 0.8 Cr FX deal</td></tr>
+<tr><td>Q2 FY27</td><td>(a) Capex TL committee approval; (b) IRS execution on June MPC cut on Rs 200 Cr WCDL; (c) LME-steel hedge first deal Rs 200 Cr notional.</td><td>Rs 1.5 Cr IRS + Rs 1.0 Cr LME spread</td></tr>
+<tr><td>Q3 FY27</td><td>(a) Capex drawn 15-20%; (b) OEM-anchor SCF first 2-3 customers (Stellantis + Ford + Maruti); (c) Murugappa family PB first meeting scheduled.</td><td>Rs 1.5 Cr capex Y1 + Rs 0.6 Cr SCF</td></tr>
+<tr><td>Q4 FY27</td><td>(a) Cellestial e-tractor commercial launch; fleet-finance partnership; (b) Bicycle-dealer SCF first 100 outlets; (c) family-PB AUM diagnostic.</td><td>Rs 0.5 Cr fleet + Rs 0.3 Cr dealer</td></tr>
+<tr><td><strong>Y1 (FY27) total wallet</strong></td><td></td><td class="num"><strong>Rs 7.7 Cr</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.2 24-month plan (FY28)</h3>
+<div class="card"><table><thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>H1 FY28</td><td>Capex TL fully drawn (TI Clean Mobility commissioning); OEM-anchor SCF book Rs 200 Cr; Murugappa family-PB AUM Rs 200+ Cr signed.</td><td>Rs 6 Cr Y2 add</td></tr>
+<tr><td>H2 FY28</td><td>Sustainability KPI first measurement; group treasury sweep first cross-sell to Coromandel; auto-component export factoring scaled.</td><td>Rs 5 Cr Y2 add</td></tr>
+<tr><td><strong>Y2 (FY28) total wallet</strong></td><td></td><td class="num"><strong>Rs 18.7 Cr</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.3 36-month plan (FY29)</h3>
+<div class="card"><table><thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>H1 FY29</td><td>FY27 facility refresh; sustainability KPI step-down kicks in; family-PB AUM Rs 400+ Cr; group treasury covers 3 of 5 flagships.</td><td>Rs 7 Cr Y3 add</td></tr>
+<tr><td>H2 FY29</td><td>EV-mobility profitability inflection; Cellestial scale; CUMI + Chola Finance group cross-sell mature.</td><td>Rs 6 Cr Y3 add</td></tr>
+<tr><td><strong>Y3 (FY29) total wallet</strong></td><td></td><td class="num"><strong>Rs 31.7 Cr (base case)</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.4 Sensitivity</h3>
+<div class="card"><ul>
+<li><strong>Bull (anchor + family-PB Rs 600 Cr + group cross-sell to 5 flagships):</strong> Rs 42 Cr/yr Y3.</li>
+<li><strong>Base (co-anchor + family-PB Rs 300 Cr + 3 flagships):</strong> Rs 31 Cr/yr Y3.</li>
+<li><strong>Bear (capex sleeve only + PB declined):</strong> Rs 18-22 Cr/yr Y3.</li>
+</ul></div>
+</section>
+"""
+
+def K():
+    return f"""
+<section id="ecosystem"><div class="subhead">K · Customer + supplier ecosystem</div>
+<h3>K.1 Receivables</h3>
+<div class="card"><table><thead><tr><th>Counterparty</th><th>Stream</th><th>Annual flow</th><th>Cycle</th><th>Bank product</th></tr></thead>
+<tbody>
+<tr><td>Maruti / M&M / Tata / Hyundai (auto-component)</td><td>Precision tubes + door-impact beams + propeller shafts</td><td>Rs 5,500-6,500 Cr</td><td>30-60 day</td><td>OEM-anchor SCF + factoring</td></tr>
+<tr><td>Stellantis / Ford / Renault / GM (export)</td><td>Tier-2 USD/EUR LC at-sight</td><td>Rs 1,200-1,800 Cr USD</td><td>30-60 day</td><td>Export-finance + USD/EUR forward</td></tr>
+<tr><td>Bicycle dealer network (5,000+ outlets)</td><td>BSA / Hercules / Philips</td><td>Rs 1,800-2,200 Cr</td><td>30-60 day</td><td>Dealer-SCF + retail-finance</td></tr>
+<tr><td>Industrial customers (boiler tube + special steel)</td><td>HRC steel + special-grade tubes</td><td>Rs 1,500-2,000 Cr</td><td>30-90 day</td><td>WCDL + factoring</td></tr>
+<tr><td>Last-mile-mobility operators (Ola/Uber/Zomato/Swiggy)</td><td>e-3W fleet sale</td><td>Rs 200-500 Cr (FY27 ramping)</td><td>30-60 day</td><td>Fleet-finance + factoring</td></tr>
+</tbody></table></div>
+
+<h3>K.2 Payables</h3>
+<div class="card"><table><thead><tr><th>Counterparty</th><th>Spend</th><th>Annual outflow</th><th>Cycle</th><th>Bank product</th></tr></thead>
+<tbody>
+<tr><td>JSW / Tata Steel / SAIL (HRC + special steel)</td><td>Steel raw material</td><td>Rs 8,000-10,000 Cr</td><td>15-30 day</td><td>WCDL + LME-steel IRS</td></tr>
+<tr><td>Hindustan Zinc + Vedanta (zinc)</td><td>Galvanising</td><td>Rs 600-800 Cr</td><td>30 day</td><td>WCDL + LME-zinc IRS</td></tr>
+<tr><td>Battery cell suppliers (China / Korea / Japan)</td><td>USD-LC</td><td>Rs 200-400 Cr (FY27 ramping)</td><td>60-120 day</td><td>USD LC + forward</td></tr>
+<tr><td>Capital goods (Korean / German / Japanese precision-mill)</td><td>Bhiwadi/Avadi-equivalent capex</td><td>Rs 200-400 Cr capex</td><td>30/60/10 milestone</td><td>BG + LC capital-goods + FX</td></tr>
+<tr><td>Salary (~12,500 FTE)</td><td>Payroll TII + subs</td><td>Rs 600-800 Cr/yr</td><td>Monthly</td><td>Salary CASA</td></tr>
+</tbody></table></div>
+
+<p><strong>RM read:</strong> Steel + zinc payables Rs 8,500-10,000 Cr/yr unhedged is the single largest WC + commodity-risk pressure point. LME-steel + zinc IRS structure freed up + commodity-WCDL is structurally better than CC funding the swing.</p>
+</section>
+"""
+
+def L():
+    return f"""
+<section id="competitors"><div class="subhead">L · Competitor bank diagnosis</div>
+<p><strong>Diligence note:</strong> Probe42 detail-level pull required across TII + TI Clean Mobility + IPLTech + Cellestial CINs to confirm bank-by-bank split.</p>
+<div class="card"><table>
+<thead><tr><th>Bank</th><th>Likely position</th><th>Strength</th><th>Weakness we exploit</th></tr></thead>
+<tbody>
+<tr><td>SBI</td><td>Lead candidate (Murugappa-group history)</td><td>Largest BG capacity; Murugappa-group anchor; legacy 30+ yr relationship</td><td>Slow on capex term-sheet; no LME-steel IRS at scale; no PB platform</td></tr>
+<tr><td>HDFC Bank</td><td>Likely #2-3</td><td>Auto-OEM SCF + payroll execution; capex appetite at large ticket</td><td>Limited LME-derivative depth; family-PB tier-2</td></tr>
+<tr><td>Axis Bank</td><td>Likely #3-4</td><td>Specialty WC + capex co-anchor</td><td>FX/LME tier-2; PB platform less developed</td></tr>
+<tr><td>Citi / HSBC / SCB</td><td>FX + capex-import LC</td><td>FX depth; capital-goods LC speed</td><td>Limited retail / payroll-CASA / family-PB; limited Murugappa group depth</td></tr>
+<tr><td>Kotak / IndusInd</td><td>Possible specialty WC</td><td>Specialty WC + factoring</td><td>FX/derivative tier-2; capex appetite limited</td></tr>
+<tr><td><strong>IBank target seat</strong></td><td>TI Clean Mobility capex anchor or co-anchor</td><td>7-day term-sheet; LME-steel IRS pricing; family-PB; auto-OEM SCF; sustainability covenant</td><td>Need anchor seat to stay relevant on group treasury cross-sell; without it we are #4-5</td></tr>
+</tbody></table></div>
+<p><strong>Diagnosis:</strong> Murugappa-group consortia run 6-8 banks with SBI lead + private-tier-2 + foreign-MNC FX/LC sleeve. IBank structural openings are: (a) TI Clean Mobility capex sleeve (greenfield subsidiary debt), (b) LME-steel + zinc IRS at scale, (c) Murugappa family-PB across 5 flagships, and (d) auto-OEM SCF on Stellantis/Ford/Renault USD-paper.</p>
+</section>
+"""
+
+def M():
+    return f"""
+<section id="plays"><div class="subhead">M · The three plays</div>
+
+<h3>M.1 Play 1: TI Clean Mobility capex TL anchor</h3>
+<div class="card"><p><strong>Trigger:</strong> Capex Board approval for Phase-2 TI Clean Mobility (Q1-Q2 FY27).</p>
+<p><strong>Offer:</strong> 8-yr TL with 24-month moratorium; sustainability-linked covenant on EV-revenue-mix &gt; 25% by FY29 = 5 bps step-down; anchor Rs 250-400 Cr or co-anchor.</p>
+<p><strong>Bait:</strong> Pre-approved Board paper; 7-day SLA; sustainability-KPI methodology pre-validated.</p>
+<p><strong>Y2-Y3 income:</strong> Rs 8-12 Cr/yr stable for 8 years.</p>
+<p><strong>Risk:</strong> Lost to SBI-lead consortium. Mitigation: position as co-anchor on subsidiary-debt sleeve.</p></div>
+
+<h3>M.2 Play 2: LME-steel + zinc IRS + USD/EUR FX</h3>
+<div class="card"><p><strong>Trigger:</strong> Steel + zinc Rs 8,500-10,000 Cr/yr unhedged today.</p>
+<p><strong>Offer:</strong> LME IRS Rs 500-800 Cr notional 12-18 month tenor; FX USD 100-300 Mn forward + Euro 50-100 Mn.</p>
+<p><strong>Bait:</strong> Diagnostic: "1% LME move = Rs 22-25 Cr EBITDA. We lock 60%."</p>
+<p><strong>Y1-Y3 income:</strong> Rs 2.5-5 Cr/yr deal fee + spread.</p>
+<p><strong>Risk:</strong> CFO declines structural hedging. Mitigation: partial 30% starter, prove monthly value.</p></div>
+
+<h3>M.3 Play 3: Murugappa family-PB + group treasury cross-sell</h3>
+<div class="card"><p><strong>Trigger:</strong> Senior PB partner introduction via Aru.</p>
+<p><strong>Offer:</strong> Multi-gen mandate covering Vellayan + Aru + 5-flagship promoter family; group treasury sweep + ZBA across TII + CUMI + EID Parry + Coromandel + Chola Finance.</p>
+<p><strong>Bait:</strong> Family-portfolio diagnostic; group cash-management efficiency pitch.</p>
+<p><strong>Y3 income:</strong> Rs 1.5-3 Cr PB AUM + Rs 1-2 Cr group treasury fee + Rs 1.0-1.5 Cr TASC = Rs 3.5-6.5 Cr/yr.</p>
+<p><strong>Risk:</strong> Family declines PB. Mitigation: introduction via mutual-friend in Murugappa-friendly Chennai industrial-family network.</p></div>
+
+<p><strong>All three plays in parallel</strong> get Y3 wallet Rs 24-42 Cr (base Rs 31 Cr).</p>
+</section>
+"""
+
+def N():
+    return f"""
+<section id="firstcall"><div class="subhead">N · First-call playbook</div>
+<h3>N.1 Opening (5 min)</h3>
+<div class="card"><p><em>"Mr. Aru &mdash; thank you for the time. We are not here for share-of-wallet. We have studied TI Clean Mobility's roadmap, the auto-component export trajectory, and the LME-steel exposure. Three structural ideas &mdash; one wholesale, one treasury, one family. If at the end of 30 minutes you do not see value, we leave it there."</em></p></div>
+<h3>N.2 Mid-call (3 blocks, 15 min each)</h3>
+<div class="card">
+<p><strong>Block 1 (TI Clean Mobility capex):</strong> "EV unit-economics path needs Rs 400-700 Cr capex over FY26-29. We have a 7-day capex term-sheet ready with sustainability-linked covenant. Anchor or co-anchor?"</p>
+<p><strong>Block 2 (LME-steel + FX hedge):</strong> "Steel + zinc Rs 8,500-10,000 Cr unhedged is Rs 22-25 Cr EBITDA risk per 1% LME move. We can lock 60%. PSU consortium cannot price this."</p>
+<p><strong>Block 3 (Family-PB + group treasury):</strong> "Murugappa family wealth across 5 flagships not on any PB platform. Senior partner can fly down for a no-commitment first conversation."</p>
+</div>
+<h3>N.3 The ask (5 min)</h3>
+<div class="card"><p>"Three takeaways: (1) capex term-sheet to Mukesh CFO in 14 days; (2) LME-steel IRS structure session with CFO + treasurer in May; (3) soft introduction for 30-min PB conversation to Vellayan."</p></div>
+<h3>N.4 Follow-up (T+24)</h3>
+<div class="card"><ul>
+<li>One-page recap email; capex term-sheet draft; LME-steel IRS one-pager; PB partner profile attached.</li>
+<li>CC: Aru, Mukesh Ahuja, K. Mahendra Kumar, Vellayan Subbiah (depending on relationship).</li>
+</ul></div>
+<h3>N.5 What NOT to do</h3>
+<div class="card"><ul>
+<li>Do not pitch on rate. PSU + private will all be within 10-15 bps.</li>
+<li>Do not show up without capex term-sheet draft.</li>
+<li>Do not propose group-treasury lead role in this meeting &mdash; that is FY28 conversation.</li>
+<li>Do not mention specific competitor banks unless asked.</li>
+<li>Do not over-explain EV story &mdash; Aru already knows it.</li>
+</ul></div>
+</section>
+"""
+
+def O():
+    return f"""
+<section id="sources"><div class="subhead">O · Sources</div>
+<ol>
+<li id="src-1">Tube Investments of India Annual Report FY24 + investor relations &middot; tiindia.com &middot; 28 Apr 2026.</li>
+<li id="src-2">TI Clean Mobility + Cellestial E-Mobility acquisition disclosures &middot; TII press releases 2024-25.</li>
+<li id="src-3">NSE/BSE TIINDIA quarterly filings &middot; nseindia.com / bseindia.com &middot; 28 Apr 2026.</li>
+<li id="src-4">Murugappa Group corporate site &middot; murugappa.com group structure.</li>
+<li id="src-5">Probe42 open-charges API &middot; CIN L35100TN2008PLC069496 &middot; 28 Apr 2026.</li>
+<li id="src-6">CRISIL credit-rating rationale &middot; TII latest review FY26 &middot; [diligence verify].</li>
+<li id="src-7">Screener.in TIINDIA financials &middot; screener.in/company/TIINDIA &middot; 28 Apr 2026.</li>
+<li id="src-8">RBI MPC statement Apr 2026 &middot; rbi.org.in.</li>
+<li id="src-9">USD/INR FBIL reference rate &middot; fbil.org.in &middot; 28 Apr 2026.</li>
+<li id="src-10">LME steel + zinc spot reference &middot; lme.com &middot; 28 Apr 2026.</li>
+<li id="src-11">EU CBAM scheme &middot; taxation-customs.ec.europa.eu.</li>
+<li id="src-12">PLI auto-component scheme &middot; heavyindustries.gov.in.</li>
+<li id="src-13">SIAM commercial-vehicle + e-3W registration data &middot; siam.in &middot; FY25.</li>
+<li id="src-14">Murugappa family corporate disclosures + governance &middot; group press releases.</li>
+<li id="src-15">FAME-II + EV30@30 scheme &middot; heavyindustries.gov.in / niti.gov.in.</li>
+<li id="src-16">Companies Act 2013 + MCA-21 charge-register &middot; mca.gov.in.</li>
+<li id="src-17">SEBI listed-company shareholding &middot; bseindia.com / nseindia.com.</li>
+<li id="src-18">MoSPI quarterly GDP &middot; mospi.gov.in &middot; FY26 Q3.</li>
+<li id="src-19">FY25 audited financials &middot; [diligence: pull from CFO post-introduction].</li>
+<li id="src-20">Rating-agency rationale archive &middot; CRISIL / ICRA / CARE.</li>
+</ol>
+<p class="muted small">Cipher: IBank notation in use. Approved sister-entities (ICICI Securities / Prudential / Lombard) retained. FY25-FY29 projections analyst-est. Diligence items inline.</p>
+</section>
+"""
+
+
+def build():
+    title = "Tube Investments of India · Sector Deep-Dive · 28 Apr 2026"
+    verify = "TII sector deep-dive · companion to pilot 152 dossier · 15 sections A-O · cipher clean"
+    body = NAV + A() + B() + C() + D() + E() + F() + G() + H() + I() + J() + K() + L() + M() + N() + O()
+    html = HEAD(title) + body + FOOT(verify)
+    OUT.write_text(html)
+    print(f"[tii-sector] wrote {OUT} ({len(html.splitlines())} lines)")
+
+
+if __name__ == "__main__":
+    build()

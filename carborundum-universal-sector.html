@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carborundum Universal Limited · Sector Deep-Dive · 28 Apr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0;--paper:#ffffff;--ink:#1a1a1a;--muted:#5a5a5a;--line:#e3dfd6;
+  --accent:#7a1f2b;--accent-soft:#f5e6e8;--pos:#2e7d4f;--neg:#b42318;
+  --amber:#b86a00;--cool:#1c4e80;--indigo:#3730a3;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --sans:'DM Sans',-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:'Literata','Iowan Old Style','Source Serif Pro',Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 48px 80px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;color:var(--ink);margin:0 0 .4em}
+h1{font-size:2.6rem;line-height:1.15}
+h2{font-size:1.85rem;line-height:1.2;border-bottom:2px solid var(--ink);padding-bottom:.35em;margin-top:2.2em}
+h3{font-size:1.3rem;margin-top:1.6em;color:var(--accent)}
+h4{font-size:1.05rem;margin-top:1.2em}
+p{margin:.6em 0}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+code,.mono{font-family:var(--mono);font-size:.92em}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.lede{font-size:1.12rem;color:var(--muted);max-width:72ch;margin:0 0 1.2em}
+.subhead{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--muted);margin:0 0 .4em}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card.accent{border-left:4px solid var(--accent);background:var(--accent-soft)}
+.card.warn{border-left:4px solid var(--amber);background:#fbf2e3}
+.card.pos{border-left:4px solid var(--pos);background:#e8f2ec}
+.card.neg{border-left:4px solid var(--neg);background:#fbe8e6}
+.grid{display:grid;gap:14px;margin:14px 0}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:780px){.grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.kpi .k{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.kpi .v{font-family:var(--serif);font-size:1.65rem;line-height:1.1;margin-top:4px}
+.kpi .sub{font-size:.82rem;color:var(--muted);margin-top:3px}
+.kpi.pos .v{color:var(--pos)} .kpi.neg .v{color:var(--neg)} .kpi.accent .v{color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem;background:var(--paper)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#faf7f1;font-weight:600}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:hover td{background:#fdfbf5}
+.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:2px 7px;border-radius:3px;background:var(--line);color:var(--ink);margin-right:4px;text-transform:uppercase}
+.tag.pos{background:var(--pos);color:#fff}
+.tag.neg{background:var(--neg);color:#fff}
+.tag.amber{background:var(--amber);color:#fff}
+.tag.cool{background:var(--cool);color:#fff}
+.tag.indigo{background:var(--indigo);color:#fff}
+.tag.accent{background:var(--accent);color:#fff}
+sup.ref{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-decoration:none;padding-left:2px}
+sup.ref a{color:var(--accent);text-decoration:none}
+.hero{border-top:6px solid var(--accent);padding-top:28px}
+.hero .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hero h1{font-size:3.1rem;margin:.15em 0 .3em}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:.92rem}
+.hero .meta span{font-family:var(--mono);font-size:.82rem}
+.nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:28px;z-index:10;font-size:.8rem}
+.nav ol{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.nav ol li a{color:var(--muted);text-decoration:none}
+.nav ol li a:hover{color:var(--accent)}
+ul.check{list-style:none;padding-left:0}
+ul.check li{padding:4px 0 4px 22px;position:relative}
+ul.check li::before{content:"✓";position:absolute;left:0;color:var(--pos);font-weight:700}
+ul.x{list-style:none;padding-left:0}
+ul.x li{padding:4px 0 4px 22px;position:relative}
+ul.x li::before{content:"✗";position:absolute;left:0;color:var(--neg);font-weight:700}
+.src-list{font-size:.85rem;columns:1;column-gap:32px}
+.src-list ol{padding-left:24px;margin:0}
+.src-list li{padding:4px 0;break-inside:avoid}
+.src-list .u{font-family:var(--mono);font-size:.78rem;color:var(--cool);word-break:break-all}
+.waterfall{font-family:var(--mono);font-size:.82rem;white-space:pre}
+footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
+.pestel-cell{font-size:.82rem}
+.pestel-cell .tt{font-weight:600;display:block;margin-bottom:2px}
+.playbook .phase{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:#fff;padding:3px 8px;border-radius:3px;font-size:.72rem;margin-right:6px}
+</style>
+</head><body><div class="wrap">
+
+<nav class="nav"><ol>
+<li><a href="#tldr">A · TL;DR</a></li>
+<li><a href="#history">B · History</a></li>
+<li><a href="#promoters">C · Promoters/KMP</a></li>
+<li><a href="#valuechain">D · Value-chain</a></li>
+<li><a href="#driver-fs">E · Driver→FS</a></li>
+<li><a href="#product-fs">F · Product→FS</a></li>
+<li><a href="#hooks">G · Hooks</a></li>
+<li><a href="#questions">H · Q-bank</a></li>
+<li><a href="#objections">I · Objections</a></li>
+<li><a href="#math">J · Math</a></li>
+<li><a href="#ecosystem">K · Ecosystem</a></li>
+<li><a href="#competitors">L · Competitors</a></li>
+<li><a href="#plays">M · Plays</a></li>
+<li><a href="#firstcall">N · First-call</a></li>
+<li><a href="#sources">O · Sources</a></li>
+</ol></nav>
+
+<section id="tldr" class="hero">
+<div class="eyebrow">Sector deep-dive companion · Pilot 153 · Carborundum Universal Limited · Abrasives / Ceramics / Electrominerals / Advanced materials</div>
+<h1>The play in 90 seconds<br>Lead M&A acquisition-financing window · multi-currency FX desk · Murugappa group cross-sell</h1>
+<p class="lede">CUMI is a 70-year Murugappa flagship listed on BSE+NSE (CARBORUNIV); FY24 revenue Rs 4,781 Cr; cash-positive Rs 442 Cr net; promoter holding 41.23%. The play is to anchor the M&A acquisition-financing window (Rs 200-500 Cr ongoing bolt-on pipeline in advanced-materials + aerospace-defence + battery-thermal), bundle multi-currency FX (USD + EUR + RUB + AUD across global subs), and bring Murugappa family-PB on the 5-flagship promoter base.</p>
+<div class="grid c4" style="margin-top:18px">
+<div class="kpi accent"><div class="k">Y3 wallet</div><div class="v num">Rs 18-32 Cr/yr</div><div class="sub">M&A + FX + group cross-sell</div></div>
+<div class="kpi pos"><div class="k">M&A pipeline</div><div class="v num">Rs 200-500 Cr</div><div class="sub">Bolt-on advanced-materials</div></div>
+<div class="kpi"><div class="k">FY24 baseline</div><div class="v num">Rs 4,781 Cr</div><div class="sub">+8.7% YoY</div></div>
+<div class="kpi pos"><div class="k">Net cash</div><div class="v num">Rs 442 Cr</div><div class="sub">Cash-positive</div></div>
+</div>
+<div class="card accent" style="margin-top:20px">
+<h4 style="margin-top:0">The single sentence the RM walks in with</h4>
+<p style="font-size:1.1rem;margin-bottom:0"><em>"Mr. Murugappan / Anantha &mdash; CUMI's M&A pipeline is the most under-banked Murugappa-flagship opportunity. We want to be the financing-bank-of-choice on the next 2-3 bolt-ons, run your multi-currency FX desk across the global subs, and bring our PB partner to the family."</em></p>
+</div>
+<div class="meta" style="margin-top:14px">
+<span>Companion to <strong><a href="carborundum-universal-dossier.html">carborundum-universal-dossier.html</a></strong></span>
+<span>Cut <strong>Probe42 28 Apr 2026</strong></span>
+<span>Author <strong>RM-meeting prep · LCG/PBG Chennai</strong></span>
+</div>
+</section>
+
+<section id="history"><div class="subhead">B · Company history &mdash; the 70-year arc from tripartite JV to Murugappa industrial-materials flagship</div>
+<h3>B.1 Founding (1954) — Tripartite JV</h3>
+<div class="card"><p>CUMI was incorporated 21 April 1954 in Madras as a tripartite JV of Murugappa Chettiar (India), Carborundum Co. (USA, then Saint-Gobain subsidiary), and Universal Grinding Wheel Co. (UK). Mandate: abrasives + bonded/coated grinding wheels for post-Independence Indian industry.</p></div>
+
+<h3>B.2 The 1960s-1980s — Domestic abrasives leadership</h3>
+<div class="card"><p>Built dominant Indian abrasives + ceramics + refractories franchise. Murugappa steadily increased holding while foreign JV partners reduced exposure. Plant footprint expanded across TN (Tiruvottiyur, Hosur), Maharashtra, AP.</p></div>
+
+<h3>B.3 The 1990s-2000s — Murugappa control + electrominerals</h3>
+<div class="card"><p>By early 1990s Murugappa effectively the controlling promoter. Added electrominerals (silicon carbide + fused alumina + zirconia) as distinct business line. Foskor Zirconia (South Africa) marked first global manufacturing footprint.</p></div>
+
+<h3>B.4 The 2010s — Russia + Australia + Murugappa Morgan</h3>
+<div class="card"><p>Acquired Volzhsky Abrasive Works (Russia, 2007 via subsidiary), establishing major silicon-carbide manufacturing base. Murugappa-Morgan Thermal Ceramics JV with Morgan Advanced Materials UK became Tier-1 ceramic-fibre + insulation supplier. Wendt India separately listed for super-abrasives.</p></div>
+
+<h3>B.5 2022-2024 M&amp;A burst — PLUSS + RHODIUS + AWUKO + Aerospace-Defence Hub</h3>
+<div class="card"><p>Structural inflection. Acquired PLUSS Advanced Technologies (India 2022) for phase-change-material + cold-chain + battery-thermal. Two German bolt-ons: RHODIUS Abrasive (2022) + CUMI AWUKO Abrasives (2023). Aerospace-Defence Innovation Hub launched 2023, signalling commitment to high-margin defence + advanced-materials adjacencies.</p></div>
+
+<h3>B.6 Next 36 months (FY26-FY29) — M&amp;A continuation + advanced-materials scale</h3>
+<div class="card"><p>FY24 Rs 4,781 Cr; analyst-est FY28 Rs 8,300 Cr (CAGR ~15% with M&A optionality). M&A pipeline in advanced-materials + aerospace-defence + battery-thermal expected to consume Rs 200-500 Cr financing window. Multi-currency FX flows from global subs drive Rs 1,500-2,000 Cr/yr forex turnover.</p></div>
+
+<h3>B.7 Why this matters for the IBank pitch</h3>
+<div class="card"><p>(1) CUMI is a compounder — Rs 25 Cr LT debt against Rs 442 Cr net cash means M&A capacity sits unused. (2) The M&A pipeline is real and ongoing. (3) Multi-currency FX desk + Russia/Belarus sanctions navigation is a high-value advisory mandate no domestic bank can do alone. (4) CUMI is one of 5 Murugappa flagships — cross-sell into TII + EID Parry + Coromandel + Chola Finance is the long-game.</p></div>
+
+</section>
+
+<section id="promoters"><div class="subhead">C · Promoters + Key Managerial Personnel</div>
+<h3>C.1 M.M. Murugappan — Chairman</h3>
+<div class="card"><p>Murugappa family fourth-generation; long-time CUMI architect since 1990s. Strategic focus on M&A bolt-ons + global manufacturing + advanced-materials pivot. Decision style: family-stewardship + portfolio thinking. RM angle: bring senior MD-level introduction; Murugappan is the strategic gate.</p></div>
+
+<h3>C.2 N. Ananthaseshan — Managing Director (since 2020)</h3>
+<div class="card"><p>Operational MD with deep manufacturing background. Decision style: execution + capital-efficient. What he cares about: M&A integration delivery; ROCE on bolt-ons; global subsidiary performance. RM angle: primary banking counterparty; bring M&A advisory + treasury head.</p></div>
+
+<h3>C.3 P. Padmanabhan — CFO</h3>
+<div class="card"><p>Day-to-day banking counterparty; multi-currency FX desk relationship lead. RM angle: monthly meetings; FX dealer + treasury strategist.</p></div>
+
+<h3>C.4 Subsidiaries / Operating structure</h3>
+<div class="card"><p><strong>Sterling Abrasives</strong> (India sub); <strong>Murugappa Morgan Thermal Ceramics</strong> (JV with Morgan Advanced Materials UK); <strong>RHODIUS Abrasive GmbH</strong> (Germany); <strong>CUMI AWUKO</strong> (Germany); <strong>Volzhsky Abrasive Works</strong> (Russia); <strong>Foskor Zirconia</strong> (South Africa); <strong>Wendt India</strong> (separately listed JV with Wendt GmbH); <strong>PLUSS Advanced Technologies</strong> (acquired 2022). Aerospace-Defence Innovation Hub (2023).</p></div>
+
+</section>
+
+<section id="valuechain"><div class="subhead">D · Value-chain &mdash; abrasives + ceramics + electrominerals + advanced-materials cluster</div>
+<p>CUMI operates across four interlinked value-chains: (1) <strong>abrasives</strong> (alumina/silicon-carbide → bonded/coated grinding wheels → industrial / auto / construction customers); (2) <strong>ceramics + refractories</strong> (alumina + zirconia → high-temp industrial + steel + cement linings → B2B customers); (3) <strong>electrominerals</strong> (silicon-carbide + fused alumina + zirconia → EV-battery + advanced-materials + steel customers); (4) <strong>advanced materials + PCM</strong> (PLUSS phase-change-material → cold-chain logistics + battery-thermal-management).</p>
+<div class="card"><table><thead><tr><th>Stage</th><th>Pricing power</th><th>WC impact</th><th>Bank product</th></tr></thead><tbody><tr><td>Bauxite + alumina + silicon-carbide raw material</td><td>Limited &mdash; commodity-linked</td><td>30-60 day cycle; Rs 200-300 Cr peak</td><td>WCDL + LC import</td></tr><tr><td>Manufacturing (abrasives / ceramics / electrominerals)</td><td>Strong &mdash; specialty grades 18-22% gross margin</td><td>30-45 day WIP</td><td>Capex TL on bolt-on M&amp;A</td></tr><tr><td>B2B sale (industrial + auto + steel + EV)</td><td>Strong via cert + spec</td><td>30-90 day receivable</td><td>Receivable factoring</td></tr><tr><td>Export to global subs + customer (USD/EUR)</td><td>Strong on spec; FX-exposed</td><td>30-60 day</td><td>Multi-currency FX + LC</td></tr></tbody></table></div>
+
+</section>
+
+<section id="driver-fs"><div class="subhead">E · Driver &rarr; FS line-item map</div>
+<p>Sized to FY25 baseline (TOI ~Rs 5,350 Cr; EBITDA ~Rs 565 Cr; promoter 41.23%; net cash Rs 442 Cr).</p>
+<div class="card"><table>
+<thead><tr><th>Driver</th><th>FS impact</th><th>IBank product entry</th></tr></thead>
+<tbody><tr><td><strong>M&amp;A pipeline (advanced-materials + defence)</strong></td><td>Bolt-on capex Rs 200-500 Cr over FY26-29; subsidiary-level acquisition financing</td><td><strong>Acquisition-financing TL Rs 200-300 Cr</strong></td></tr>
+<tr><td><strong>Multi-currency FX (USD/EUR/RUB/AUD)</strong></td><td>Global subs Germany + Russia + Australia + South Africa; Rs 1,500-2,000 Cr forex flows</td><td>Multi-currency FX desk + IRS + LC</td></tr>
+<tr><td><strong>Russia/Belarus sanctions exposure</strong></td><td>Volzhsky Abrasive Works operations; sanctions-navigation needed</td><td>Sanctions-cleared multi-bank routing + RUB hedge</td></tr>
+<tr><td><strong>EV-battery + cold-chain (PLUSS) tailwind</strong></td><td>Phase-change-material demand FY27-29 inflection</td><td>Capex TL + sustainability covenant</td></tr>
+<tr><td><strong>Aerospace-defence indigenisation</strong></td><td>HAL + DRDO + tier-2 defence supply</td><td>BG framework + customer-LC + defence-receivable factoring</td></tr>
+<tr><td><strong>LME-bauxite + alumina + zinc</strong></td><td>20-30% of COGS; commodity hedge</td><td>Commodity-WCDL + IRS</td></tr>
+<tr><td><strong>Murugappa group treasury</strong></td><td>5-flagship cross-sell: TII + EID Parry + Coromandel + Chola Finance</td><td>Group treasury sweep + cross-sell mandate</td></tr>
+<tr><td><strong>Family wealth (M.M. Murugappan + family)</strong></td><td>Multi-gen Murugappa wealth</td><td>PB AUM + family-trust</td></tr>
+<tr><td><strong>RBI repo cycle</strong></td><td>WCDL benchmarked</td><td>WCDL + IRS lock</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="product-fs"><div class="subhead">F · IBank product &rarr; FS map</div>
+<div class="card"><table>
+<thead><tr><th>Product</th><th>Structure</th><th>Size</th><th>Price</th><th>Y3 income</th></tr></thead>
+<tbody><tr><td><strong>Acquisition-financing TL (M&amp;A)</strong></td><td>Bolt-on advanced-materials + defence</td><td>Rs 200-300 Cr</td><td>MCLR + 80-110 bps</td><td>Rs 5-8 Cr/yr stable</td></tr>
+<tr><td><strong>Multi-currency FX desk</strong></td><td>USD + EUR + RUB + AUD; Rs 1,500-2,000 Cr/yr forex turnover</td><td>USD 80-200 Mn</td><td>Spread 8-15 bps</td><td>Rs 2-4 Cr/yr</td></tr>
+<tr><td><strong>LC + BG (capex import + customer-LC)</strong></td><td>USD/EUR LC for German + Australian capex</td><td>Rs 150-300 Cr revolving</td><td>0.30-0.45% fee</td><td>Rs 1-2 Cr/yr</td></tr>
+<tr><td><strong>WCDL + CC</strong></td><td>Raw material cycle + WIP</td><td>Rs 150-250 Cr</td><td>MCLR + 60-90 bps</td><td>Rs 1.5-2.5 Cr/yr</td></tr>
+<tr><td><strong>Receivable factoring (industrial paper)</strong></td><td>B2B customer paper</td><td>Rs 80-150 Cr</td><td>MCLR + 50-80 bps</td><td>Rs 0.6-1.2 Cr/yr</td></tr>
+<tr><td><strong>Salary CASA + payroll (5,200 FTE)</strong></td><td>CUMI + Indian subs</td><td>Rs 12-25 Cr float</td><td>0%</td><td>Rs 0.5-1 Cr/yr</td></tr>
+<tr><td><strong>PB (Murugappa family — CUMI share)</strong></td><td>5-flagship promoter family</td><td>Rs 250-500 Cr AUM</td><td>50-80 bps</td><td>Rs 1.5-2.5 Cr/yr</td></tr>
+<tr><td><strong>Group treasury sweep</strong></td><td>Cross-flagship liquidity</td><td>Rs 800-1,500 Cr float</td><td>Fee on int</td><td>Rs 0.8-1.5 Cr/yr</td></tr>
+<tr><td><strong>Sanctions advisory (Russia/Belarus)</strong></td><td>Volzhsky operations navigation</td><td>Advisory mandate</td><td>Fee-based</td><td>Rs 0.5-1 Cr/yr</td></tr>
+</tbody></table></div>
+<p class="muted small">Pricing indicative; final depends on rating, tenor, collateral, consortium dynamics.</p>
+<h3>F.1 Y3 wallet build-up</h3><div class='card'><ul><li>Wholesale: Rs 9-19.5 Cr</li><li>Treasury (FX + group): Rs 5-9 Cr</li><li>Retail + PB + TASC: Rs 2.7-4.7 Cr</li><li><strong>Total: Rs 18-32 Cr/yr</strong></li></ul></div>
+</section>
+
+<section id="hooks"><div class="subhead">G · Five conversation hooks</div>
+<div class="card"><ol><li><strong>1. M&amp;A acquisition-financing</strong> &mdash; "Mr. Anantha &mdash; CUMI's M&A pipeline (RHODIUS, AWUKO, PLUSS done; next bolt-on imminent) needs Rs 200-300 Cr acquisition-financing on each. We have a 7-day acquisition-TL term-sheet pre-validated for Murugappa-flagship CUMI corporate-rating profile."</li>
+<li><strong>2. Multi-currency FX desk</strong> &mdash; "Global subs Germany + Russia + Australia + South Africa drive Rs 1,500-2,000 Cr forex flows annually. We can run the consolidated multi-currency FX desk + RUB sanctions navigation + IRS structure. PSU consortium cannot do this at scale."</li>
+<li><strong>3. Russia/Belarus sanctions advisory</strong> &mdash; "Volzhsky Abrasive Works needs sanctions-cleared payment routing. We have the global correspondent network + advisory team to keep your Russia operations cash-flowing without OFAC exposure."</li>
+<li><strong>4. Murugappa family-PB</strong> &mdash; "5-flagship Murugappa promoter family is multi-gen wealth not yet on any institutional PB platform. CUMI's share Rs 250-500 Cr AUM. Senior partner can fly down for no-commitment first conversation."</li>
+<li><strong>5. Group treasury cross-sell</strong> &mdash; "CUMI is one entry. CUMI + TII + EID Parry + Coromandel + Chola Finance = Rs 75,000+ Cr group-treasury opportunity. We want anchor CUMI first, then sweep across all five."</li>
+</ol></div>
+</section>
+
+<section id="questions"><div class="subhead">H · Question bank</div>
+<div class="card"><h4 style="margin-top:0">12 questions for the meeting</h4><ol><li>What is the M&amp;A pipeline FY26-29 sizing + sectors targeted (advanced-materials / defence / battery-thermal)?</li>
+<li>What is the Russia / Volzhsky operational outlook + sanctions-navigation status?</li>
+<li>How is the multi-currency FX desk structured today (which bank consolidates)?</li>
+<li>What is the LME hedge ratio on bauxite + alumina input?</li>
+<li>What is the PLUSS phase-change-material commercial scale-up timeline?</li>
+<li>What is the Aerospace-Defence Innovation Hub revenue target FY28?</li>
+<li>What is the Wendt India + Murugappa Morgan dividend / treasury policy?</li>
+<li>Murugappa family-PB &mdash; CUMI share via TII bundle or independent?</li>
+<li>Group treasury &mdash; centralised mandate or per-flagship today?</li>
+<li>Open MCA charges on CUMI + Wendt + PLUSS &mdash; bank-by-bank split?</li>
+<li>Sustainability covenant appetite for advanced-materials capex?</li>
+<li>FY26 capex envelope (organic vs M&amp;A split)?</li>
+</ol></div>
+<div class="card"><h4 style="margin-top:0">What NOT to ask</h4><ul><li>Do not ask about Russia-sanctions specifics until trust is established.</li>
+<li>Do not pitch on rate &mdash; CUMI's cash-positive position means rate is irrelevant.</li>
+<li>Do not propose family-succession in first meeting.</li>
+<li>Do not name competitor banks unless asked.</li>
+<li>Do not over-pitch group cross-sell &mdash; signals greed.</li>
+</ul></div>
+</section>
+
+<section id="objections"><div class="subhead">I · Objection handling</div>
+<div class="card"><h4 style="margin-top:0">"We are cash-positive — we don't need a TL."</h4><p>"You are cash-positive on the standalone but not on the M&A capacity. RHODIUS + AWUKO + PLUSS each were Rs 100-200 Cr. The next bolt-on doesn't have to come out of cash &mdash; we can pre-validate acquisition-TL with 7-day SLA so M&A doesn't slow down."</p></div>
+<div class="card"><h4 style="margin-top:0">"Russia is too sensitive — we manage it ourselves."</h4><p>"Volzhsky needs sanctions-cleared payment routing every quarter. Our global correspondent network + OFAC-advisory team is a structural advantage. No PSU peer offers this."</p></div>
+<div class="card"><h4 style="margin-top:0">"Your rates are not competitive vs PSU."</h4><p>"On TL pricing yes &mdash; within 10-15 bps. Differentiation: M&A advisory + multi-currency FX desk + sanctions navigation + family-PB. PSU consortium cannot bundle this."</p></div>
+<div class="card"><h4 style="margin-top:0">"Murugappa family wealth is private."</h4><p>"Exactly the design point. Most discrete senior promoter PB platform. Senior partner can fly down for 30-min conversation. No commitment."</p></div>
+<div class="card"><h4 style="margin-top:0">"You don't know the abrasives industry."</h4><p>"We work with Norton (3M) + Saint-Gobain Abrasives + Tyrolit at the global parent level. We can bring abrasives-cluster lead + M&A advisor to the technical due-diligence visit."</p></div>
+
+</section>
+
+<section id="math"><div class="subhead">J · 12 / 24 / 36-month conversion math</div>
+
+<h3>J.1 12-month plan (FY27)</h3>
+<div class="card"><table><thead><tr><th>Quarter</th><th>Action</th><th>Wallet impact</th></tr></thead><tbody>
+<tr><td>Q1 FY27</td><td>(a) Pre-validated acquisition-TL term-sheet for next bolt-on M&amp;A; (b) Multi-currency FX desk consolidation pitch; (c) Senior PB partner introduction.</td><td>Rs 0.5 Cr LC + Rs 0.6 Cr FX deal</td></tr>
+<tr><td>Q2 FY27</td><td>(a) M&amp;A target identified by CUMI; (b) IRS execution on alumina hedge; (c) Sanctions-advisory mandate signed for Volzhsky.</td><td>Rs 0.8 Cr IRS + Rs 0.5 Cr advisory</td></tr>
+<tr><td>Q3 FY27</td><td>(a) Acquisition-TL drawn; (b) Group treasury cross-sell first to TII / Coromandel; (c) Receivable factoring book launch.</td><td>Rs 1.5 Cr capex Y1 + Rs 0.4 Cr SCF</td></tr>
+<tr><td>Q4 FY27</td><td>(a) FX hedge book Rs 100 Mn established; (b) Murugappa family PB AUM diagnostic; (c) Bicycle-equivalent dealer channels.</td><td>Rs 0.5 Cr FX spread</td></tr>
+<tr><td><strong>Y1 (FY27) total wallet</strong></td><td></td><td class="num"><strong>Rs 4.8 Cr</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.2 24-month plan (FY28)</h3>
+<div class="card"><table><thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead><tbody>
+<tr><td>H1 FY28</td><td>Acquisition-TL drawn full; FX desk consolidated; Murugappa family-PB AUM Rs 200+ Cr signed.</td><td>Rs 5 Cr Y2 add</td></tr>
+<tr><td>H2 FY28</td><td>Sanctions advisory steady; group treasury sweep covers 3 of 5 flagships; PCM (PLUSS) inflection drives factoring book.</td><td>Rs 4 Cr Y2 add</td></tr>
+<tr><td><strong>Y2 (FY28) wallet</strong></td><td></td><td class="num"><strong>Rs 13.8 Cr</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.3 36-month plan (FY29)</h3>
+<div class="card"><table><thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead><tbody>
+<tr><td>H1 FY29</td><td>Second M&amp;A bolt-on financed; FX book Rs 200+ Mn; family-PB AUM Rs 400+ Cr.</td><td>Rs 7 Cr Y3 add</td></tr>
+<tr><td>H2 FY29</td><td>Aerospace-Defence Hub orderbook factoring; group cross-sell mature.</td><td>Rs 5 Cr Y3 add</td></tr>
+<tr><td><strong>Y3 (FY29) wallet</strong></td><td></td><td class="num"><strong>Rs 25.8 Cr base</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.4 Sensitivity</h3>
+<div class="card"><ul>
+<li><strong>Bull (2 M&amp;A bolt-ons + family-PB Rs 500 Cr + group cross-sell):</strong> Rs 32 Cr Y3.</li>
+<li><strong>Base (1 bolt-on + family-PB Rs 300 Cr):</strong> Rs 25 Cr Y3.</li>
+<li><strong>Bear (cash-positive maintained, no M&amp;A, PB declined):</strong> Rs 15-18 Cr Y3.</li>
+</ul></div>
+
+</section>
+
+<section id="ecosystem"><div class="subhead">K · Customer + supplier ecosystem</div>
+
+<h3>K.1 Receivables</h3>
+<div class="card"><table><thead><tr><th>Counterparty</th><th>Stream</th><th>Annual flow</th><th>Cycle</th><th>Bank product</th></tr></thead><tbody>
+<tr><td>Auto OEM (Maruti / Tata / M&amp;M / Hyundai)</td><td>Bonded/coated abrasives + grinding wheels</td><td>Rs 800-1,000 Cr</td><td>30-60 day</td><td>OEM-anchor SCF + factoring</td></tr>
+<tr><td>Steel + cement industrial customers</td><td>Refractories + ceramic linings</td><td>Rs 600-800 Cr</td><td>60-90 day</td><td>Receivable factoring</td></tr>
+<tr><td>Construction + infra</td><td>Coated abrasives + grinding wheels</td><td>Rs 500-700 Cr</td><td>30-60 day</td><td>WCDL + dealer-finance</td></tr>
+<tr><td>Global subs (RHODIUS / AWUKO / Volzhsky / Foskor / PLUSS)</td><td>Inter-company + third-party</td><td>Rs 1,500-2,000 Cr (consolidated)</td><td>30-90 day</td><td>Multi-currency FX + LC</td></tr>
+<tr><td>Aerospace-defence (HAL / DRDO / tier-2)</td><td>Specialty ceramics + advanced materials</td><td>Rs 100-200 Cr (FY27 ramping)</td><td>60-120 day (PSU)</td><td>Defence-receivable factoring + BG</td></tr>
+</tbody></table></div>
+
+<h3>K.2 Payables</h3>
+<div class="card"><table><thead><tr><th>Counterparty</th><th>Spend</th><th>Annual outflow</th><th>Cycle</th><th>Bank product</th></tr></thead><tbody>
+<tr><td>Bauxite + alumina + silicon-carbide raw material</td><td>Domestic + import</td><td>Rs 1,000-1,300 Cr</td><td>30 day</td><td>WCDL + LC import</td></tr>
+<tr><td>Energy (electricity + furnace fuel)</td><td>Operating</td><td>Rs 200-300 Cr</td><td>Monthly</td><td>Operational</td></tr>
+<tr><td>Capital goods (German + Australian capex)</td><td>Multi-currency LC</td><td>Rs 100-200 Cr capex</td><td>30/60/10 milestone</td><td>BG + LC capital-goods + FX</td></tr>
+<tr><td>Salary (5,200 FTE consolidated)</td><td>Payroll</td><td>Rs 350-450 Cr/yr</td><td>Monthly</td><td>Salary CASA</td></tr>
+</tbody></table></div>
+<p><strong>RM read:</strong> Multi-currency receivable book (Rs 1,500-2,000 Cr) is the structural opportunity. Single-bank consolidation of FX desk + LC + receivable factoring delivers Rs 4-6 Cr/yr from optimisation alone.</p>
+
+</section>
+
+<section id="competitors"><div class="subhead">L · Competitor bank diagnosis</div>
+
+<p><strong>Diligence note:</strong> Probe42 detail-level pull required across CUMI + Wendt + PLUSS CINs.</p>
+<div class="card"><table><thead><tr><th>Bank</th><th>Position</th><th>Strength</th><th>Weakness we exploit</th></tr></thead><tbody>
+<tr><td>SBI</td><td>Lead candidate (Murugappa-group history)</td><td>BG + capex; legacy 30+ yr</td><td>FX desk tier-2 on multi-currency; no M&amp;A advisory; no PB at scale</td></tr>
+<tr><td>HDFC Bank</td><td>Likely #2-3</td><td>Auto-OEM SCF + payroll</td><td>Limited multi-currency FX depth; no Russia/sanctions navigation</td></tr>
+<tr><td>Citi / Deutsche / HSBC</td><td>FX + capex-import LC</td><td>Multi-currency FX strong; sanctions advisory</td><td>Domestic retail/payroll/CASA limited; PB platform tier-2</td></tr>
+<tr><td>Axis / Kotak</td><td>Specialty WC</td><td>Specialty WC + factoring</td><td>FX/derivative tier-2; M&amp;A advisory limited</td></tr>
+<tr><td><strong>IBank target seat</strong></td><td>M&amp;A acquisition-financing anchor + multi-currency FX + family-PB</td><td>7-day TL; multi-currency FX desk; sanctions advisory; family-PB platform; group cross-sell</td><td>Need to displace Citi/Deutsche on FX consolidation; need anchor on next M&amp;A to be relevant</td></tr>
+</tbody></table></div>
+<p><strong>Diagnosis:</strong> CUMI consortium runs 5-6 banks; SBI lead + private + foreign-MNC FX. IBank openings: (a) M&amp;A acquisition-financing (Citi + Deutsche typically lead this), (b) multi-currency FX desk consolidation, (c) Russia sanctions advisory, (d) Murugappa family-PB.</p>
+
+</section>
+
+<section id="plays"><div class="subhead">M · The three plays</div>
+<h3>M.1 Play 1: M&amp;A acquisition-financing anchor</h3>
+<div class="card"><p><strong>Trigger:</strong> Next bolt-on (advanced-materials or defence) announced FY27. <strong>Offer:</strong> Pre-validated 7-day acquisition-TL Rs 200-300 Cr + LC for cross-border consideration + FX cover. <strong>Bait:</strong> CUMI's M&A track record (RHODIUS / AWUKO / PLUSS) means we already know your due-diligence cycle. <strong>Y2-Y3 income:</strong> Rs 5-8 Cr/yr stable. <strong>Risk:</strong> Lost to Citi/Deutsche cross-border M&A teams. <strong>Mitigation:</strong> Bring M&A advisory + global correspondent network.</p></div>
+
+<h3>M.2 Play 2: Multi-currency FX desk + Russia sanctions advisory</h3>
+<div class="card"><p><strong>Trigger:</strong> Quarterly Volzhsky payment + global subs FX needs. <strong>Offer:</strong> Consolidated multi-currency FX desk (USD + EUR + RUB + AUD) + sanctions-cleared correspondent network + IRS structure on commodity exposure. <strong>Bait:</strong> Diagnostic showing Rs 4-6 Cr/yr saving from FX consolidation. <strong>Y1-Y3 income:</strong> Rs 2-4 Cr/yr deal fee + spread. <strong>Risk:</strong> CFO declines consolidation. <strong>Mitigation:</strong> Phase 1 with Russia-only desk to prove value.</p></div>
+
+<h3>M.3 Play 3: Murugappa family-PB + group treasury cross-sell</h3>
+<div class="card"><p><strong>Trigger:</strong> Senior PB partner introduction via M.M. Murugappan. <strong>Offer:</strong> Multi-gen mandate covering Murugappan + Subbiah + Vellayan + 5-flagship promoter family; group treasury sweep across CUMI + TII + EID Parry + Coromandel + Chola Finance. <strong>Bait:</strong> Family-portfolio diagnostic + group cash-management efficiency pitch. <strong>Y3 income:</strong> Rs 1.5-2.5 Cr PB + Rs 0.8-1.5 Cr group treasury + Rs 0.4-0.7 Cr TASC = Rs 2.7-4.7 Cr/yr. <strong>Risk:</strong> Family declines. <strong>Mitigation:</strong> Introduction via Aru / TII relationship if CUMI-direct doesn't open.</p></div>
+
+
+<p><strong>All three plays in parallel</strong> get Y3 wallet Rs 18-32 Cr base case.</p>
+</section>
+
+<section id="firstcall"><div class="subhead">N · First-call playbook</div>
+
+<h3>N.1 Opening (5 min)</h3>
+<div class="card"><p><em>"Mr. Murugappan / Anantha &mdash; thank you for the time. We are not here for share-of-wallet on the existing book. We have studied CUMI's M&amp;A track record (RHODIUS, AWUKO, PLUSS), the multi-currency FX flows, and the Russia/Volzhsky exposure. Three structural ideas &mdash; one M&amp;A, one treasury, one family. If at the end of 30 minutes you do not see value, we leave it there."</em></p></div>
+<h3>N.2 Mid-call (3 blocks)</h3>
+<div class="card">
+<p><strong>Block 1 (M&amp;A financing):</strong> "Next bolt-on doesn't have to come out of cash. Pre-validated acquisition-TL with 7-day SLA on Murugappa-flagship rating profile."</p>
+<p><strong>Block 2 (Multi-currency FX + Russia):</strong> "Rs 1,500-2,000 Cr forex turnover across global subs is structurally under-optimised. We can consolidate FX desk + RUB sanctions navigation + IRS. Rs 4-6 Cr/yr saving."</p>
+<p><strong>Block 3 (Family-PB):</strong> "5-flagship Murugappa family wealth is the largest unbanked promoter-PB opportunity in TN. Senior partner can fly down."</p>
+</div>
+<h3>N.3 The ask (5 min)</h3>
+<div class="card"><p>"Three takeaways: (1) Acquisition-TL term-sheet to CFO P. Padmanabhan in 14 days; (2) FX consolidation diagnostic in May; (3) PB conversation with Vellayan in Q2."</p></div>
+<h3>N.4 Follow-up (T+24)</h3>
+<div class="card"><ul><li>Recap email + acquisition-TL one-pager + FX diagnostic + sanctions-advisory profile + PB partner profile.</li><li>CC: M.M. Murugappan, Anantha, Padmanabhan, Vellayan.</li></ul></div>
+<h3>N.5 What NOT to do</h3>
+<div class="card"><ul><li>Do not pitch on rate &mdash; CUMI cash-positive.</li><li>Do not propose group-treasury lead role &mdash; that is FY28 conversation.</li><li>Do not over-discuss Russia in first meeting.</li><li>Do not over-pitch family-PB &mdash; restrained ask only.</li></ul></div>
+
+</section>
+
+<section id="sources"><div class="subhead">O · Sources</div>
+<ol><li id="src-1">CUMI Annual Report FY24 + investor relations &middot; cumi-murugappa.com &middot; 28 Apr 2026</li>
+<li id="src-2">RHODIUS + AWUKO + PLUSS acquisition disclosures 2022-2023</li>
+<li id="src-3">NSE/BSE CARBORUNIV quarterly filings &middot; nseindia.com / bseindia.com</li>
+<li id="src-4">Murugappa Group corporate site &middot; murugappa.com</li>
+<li id="src-5">Probe42 open-charges API &middot; CIN L29224TN1954PLC000318</li>
+<li id="src-6">CRISIL credit-rating rationale CARBORUNIV [verify FY26]</li>
+<li id="src-7">Screener.in CARBORUNIV financials</li>
+<li id="src-8">RBI MPC Apr 2026 &middot; rbi.org.in</li>
+<li id="src-9">USD/EUR/RUB/AUD FX FBIL reference &middot; 28 Apr 2026</li>
+<li id="src-10">LME bauxite/alumina/zinc reference &middot; lme.com</li>
+<li id="src-11">EU CBAM scheme &middot; taxation-customs.ec.europa.eu</li>
+<li id="src-12">OFAC sanctions list (Russia/Belarus) &middot; treasury.gov &middot; current</li>
+<li id="src-13">MCA-21 charge register &middot; mca.gov.in</li>
+<li id="src-14">SEBI listed-company shareholding &middot; bseindia.com</li>
+<li id="src-15">MoSPI quarterly GDP &middot; mospi.gov.in &middot; FY26 Q3</li>
+<li id="src-16">FY25 audited financials &middot; [diligence]</li>
+<li id="src-17">Wikipedia CUMI overview &middot; en.wikipedia.org</li>
+<li id="src-18">Tofler CUMI profile &middot; tofler.in</li>
+<li id="src-19">Tracxn CUMI legal entity &middot; tracxn.com</li>
+<li id="src-20">Murugappa group governance disclosures &middot; group press releases</li>
+</ol>
+<p class="muted small">Cipher: IBank notation in use. Approved sister-entities (ICICI Securities / Prudential / Lombard) retained. FY25-FY29 projections analyst-est. Diligence items inline.</p>
+</section>
+
+<footer class="foot">
+  <div class="mono">Dossier prepared 24 April 2026 &middot; macro block sourced same day &middot; registry cut-off per Probe42 metadata timestamps embedded in Section 04.</div>
+  <div class="mono" style="margin-top:6px">Sector deep-dive · companion to pilot 153 dossier · 15 sections A-O · cipher clean</div>
+</footer>
+</div></body></html>
