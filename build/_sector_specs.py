@@ -187,3 +187,25 @@ ROWS += [
 # Generate cluster_label inferences for KPI: pad-sector inheritance from cluster
 # The dossier has all the financial detail; sector file is meeting-prep companion.
 
+
+# Batch 152-171 additions (20 new dossiers)
+ROWS += [
+    ("eid-parry", "EID Parry (India)", 154, "agri", 18, 32, "present", {"ibank_pct":"~12%","incumbent":"SBI+Indian Bank"}),
+    ("coromandel-international", "Coromandel International", 155, "agri", 22, 40, "present", {"ibank_pct":"~10%","incumbent":"SBI+Citi"}),
+    ("cholamandalam-finance", "Cholamandalam Finance (Chola)", 156, "retail", 28, 50, "present", {"ibank_pct":"~13%","incumbent":"SBI+HDFC+Citi"}),
+    ("ashok-leyland", "Ashok Leyland", 157, "auto", 30, 55, "present", {"ibank_pct":"~12%","incumbent":"SBI+IndusInd+Axis"}),
+    ("mrf-limited", "MRF Limited", 158, "auto", 20, 38, "present", {"ibank_pct":"~9%","incumbent":"SBI+HDFC+Axis"}),
+    ("sundaram-finance", "Sundaram Finance", 159, "retail", 22, 42, "present", {"ibank_pct":"~11%","incumbent":"SBI+HDFC+Citi"}),
+    ("sundram-fasteners", "Sundram Fasteners", 160, "auto", 14, 26, "present", {"ibank_pct":"~10%","incumbent":"SBI+HDFC+Citi"}),
+    ("eicher-motors", "Eicher Motors (Royal Enfield + VECV)", 161, "auto", 20, 38, "present", {"ibank_pct":"~10%","incumbent":"SBI+HDFC+Citi"}),
+    ("ramco-cements", "The Ramco Cements", 162, "engg", 18, 34, "present", {"ibank_pct":"~10%","incumbent":"SBI+Indian Bank"}),
+    ("ramco-systems", "Ramco Systems", 163, "gcc", 8, 15, "greenfield"),
+    ("india-cements", "The India Cements (UltraTech sub)", 164, "engg", 14, 26, "present", {"ibank_pct":"~8%","incumbent":"UltraTech-AB consortium"}),
+    ("hyundai-motor-india", "Hyundai Motor India", 165, "auto", 45, 85, "absent", {"incumbent":"Citi+HSBC+DBS+SBI+HDFC"}),
+    ("saint-gobain-india", "Saint-Gobain India", 166, "engg", 24, 44, "present", {"ibank_pct":"~9%","incumbent":"BNP+SocGen+Citi"}),
+    ("zoho-corporation", "Zoho Corporation", 167, "gcc", 22, 42, "absent", {"incumbent":"Citi+HSBC+DBS"}),
+    ("hexaware-technologies", "Hexaware Technologies (Carlyle PE)", 168, "gcc", 18, 34, "present", {"ibank_pct":"~9%","incumbent":"Citi+JPMorgan+DBS"}),
+    ("bahwan-cybertek", "Bahwan CyberTek", 169, "gcc", 8, 15, "greenfield"),
+    ("schwing-stetter-india", "Schwing Stetter India (XCMG)", 170, "engg", 10, 18, "present", {"ibank_pct":"~9%","incumbent":"SBI+Deutsche+HDFC"}),
+    ("lapp-india", "Lapp India (cable; Siechem peer)", 171, "engg", 6, 12, "greenfield"),
+]
