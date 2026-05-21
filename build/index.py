@@ -238,6 +238,7 @@ def build():
         # Batch 5: KCP + SP Apparels (pilots 172-173) — bespoke 15-section sectors
         ("kcp-limited-dossier.html", "Pilot 172 · Velagapudi family 5-business conglomerate", "The KCP Limited", "84-yr Velagapudi family multi-business listed conglomerate: cement (2.2 MTPA Macherla+Mukthyala) + sugar India + KCP Vietnam Industries (Phu Yen+Son Hoa) + heavy engineering (Steel Foundry) + FIVES CAIL-KCP EPC + Mercure Hyderabad hotel; FY24 Rs 2,846 Cr.", "Rs 14&ndash;26 Cr/yr"),
         ("sp-apparels-dossier.html", "Pilot 173 · P. Sundararajan family Tirupur kids+infant apparel exporter", "S.P. Apparels", "36-yr P. Sundararajan family Tirupur knitwear exporter (61.81% promoter); FY24 Rs 1,087 Cr → FY25 Rs 1,395 Cr (+28% surge); Disney/Carter's/Walmart-tier customers; ICRA A-; Sri Lanka SPAIPL + UK SPUK subsidiaries; Crocodile India retail (SPRV).", "Rs 10&ndash;18 Cr/yr"),
+        ("cavinkare-dossier.html", "Pilot 174 · C.K. Ranganathan FMCG conglomerate · sachet-revolution pioneer", "CavinKare", "42-yr C.K. Ranganathan FMCG group — pioneered India's shampoo-sachet revolution; 100% closely-held Ranganathan family; FY25 Rs 1,940 Cr; FY25 PAT +588%; 5 verticals — personal care (Chik+Meera+Nyle+Spinz+Indica, 13 brands) + Cavin's dairy + Garden snacks + Maa beverages + Trends salons (Green Trends+Limelite); Cavin's dairy capex 3.8→6 lakh L/day; bespoke 15-section sector deep-dive.", "Rs 10&ndash;20 Cr/yr"),
     ]:
         a(f"<a class='navcard' href='{href}'>")
         a(f"<span class='nctype'>{kind}</span>")

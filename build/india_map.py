@@ -181,6 +181,7 @@ def build():
         "L65991TN1941PLC001128": "kcp-limited-dossier.html",
         "L18101TZ2005PLC012295": "sp-apparels-dossier.html",
         "U67100TN1994PTC027463": "siechem-technologies-dossier.html",
+        "U24246TN1990PTC046613": "cavinkare-dossier.html",
     }
     # Patch dossier links + tier1 flags inside each city's companies list
     for city in cities:
