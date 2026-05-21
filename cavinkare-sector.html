@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CavinKare Private Limited · Sector Deep-Dive · 28 Apr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0;--paper:#ffffff;--ink:#1a1a1a;--muted:#5a5a5a;--line:#e3dfd6;
+  --accent:#7a1f2b;--accent-soft:#f5e6e8;--pos:#2e7d4f;--neg:#b42318;
+  --amber:#b86a00;--cool:#1c4e80;--indigo:#3730a3;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --sans:'DM Sans',-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:'Literata','Iowan Old Style','Source Serif Pro',Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 48px 80px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;color:var(--ink);margin:0 0 .4em}
+h1{font-size:2.6rem;line-height:1.15}
+h2{font-size:1.85rem;line-height:1.2;border-bottom:2px solid var(--ink);padding-bottom:.35em;margin-top:2.2em}
+h3{font-size:1.3rem;margin-top:1.6em;color:var(--accent)}
+h4{font-size:1.05rem;margin-top:1.2em}
+p{margin:.6em 0}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+code,.mono{font-family:var(--mono);font-size:.92em}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.lede{font-size:1.12rem;color:var(--muted);max-width:72ch;margin:0 0 1.2em}
+.subhead{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--muted);margin:0 0 .4em}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card.accent{border-left:4px solid var(--accent);background:var(--accent-soft)}
+.card.warn{border-left:4px solid var(--amber);background:#fbf2e3}
+.card.pos{border-left:4px solid var(--pos);background:#e8f2ec}
+.card.neg{border-left:4px solid var(--neg);background:#fbe8e6}
+.grid{display:grid;gap:14px;margin:14px 0}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:780px){.grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.kpi .k{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.kpi .v{font-family:var(--serif);font-size:1.65rem;line-height:1.1;margin-top:4px}
+.kpi .sub{font-size:.82rem;color:var(--muted);margin-top:3px}
+.kpi.pos .v{color:var(--pos)} .kpi.neg .v{color:var(--neg)} .kpi.accent .v{color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem;background:var(--paper)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#faf7f1;font-weight:600}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:hover td{background:#fdfbf5}
+.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:2px 7px;border-radius:3px;background:var(--line);color:var(--ink);margin-right:4px;text-transform:uppercase}
+.tag.pos{background:var(--pos);color:#fff}
+.tag.neg{background:var(--neg);color:#fff}
+.tag.amber{background:var(--amber);color:#fff}
+.tag.cool{background:var(--cool);color:#fff}
+.tag.indigo{background:var(--indigo);color:#fff}
+.tag.accent{background:var(--accent);color:#fff}
+sup.ref{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-decoration:none;padding-left:2px}
+sup.ref a{color:var(--accent);text-decoration:none}
+.hero{border-top:6px solid var(--accent);padding-top:28px}
+.hero .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hero h1{font-size:3.1rem;margin:.15em 0 .3em}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:.92rem}
+.hero .meta span{font-family:var(--mono);font-size:.82rem}
+.nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:28px;z-index:10;font-size:.8rem}
+.nav ol{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.nav ol li a{color:var(--muted);text-decoration:none}
+.nav ol li a:hover{color:var(--accent)}
+ul.check{list-style:none;padding-left:0}
+ul.check li{padding:4px 0 4px 22px;position:relative}
+ul.check li::before{content:"✓";position:absolute;left:0;color:var(--pos);font-weight:700}
+ul.x{list-style:none;padding-left:0}
+ul.x li{padding:4px 0 4px 22px;position:relative}
+ul.x li::before{content:"✗";position:absolute;left:0;color:var(--neg);font-weight:700}
+.src-list{font-size:.85rem;columns:1;column-gap:32px}
+.src-list ol{padding-left:24px;margin:0}
+.src-list li{padding:4px 0;break-inside:avoid}
+.src-list .u{font-family:var(--mono);font-size:.78rem;color:var(--cool);word-break:break-all}
+.waterfall{font-family:var(--mono);font-size:.82rem;white-space:pre}
+footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
+.pestel-cell{font-size:.82rem}
+.pestel-cell .tt{font-weight:600;display:block;margin-bottom:2px}
+.playbook .phase{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:#fff;padding:3px 8px;border-radius:3px;font-size:.72rem;margin-right:6px}
+</style>
+</head><body><div class="wrap">
+
+<nav class="nav"><ol>
+<li><a href="#tldr">A · TL;DR</a></li>
+<li><a href="#history">B · History</a></li>
+<li><a href="#promoters">C · Promoters/KMP</a></li>
+<li><a href="#valuechain">D · Value-chain</a></li>
+<li><a href="#driver-fs">E · Driver→FS</a></li>
+<li><a href="#product-fs">F · Product→FS</a></li>
+<li><a href="#hooks">G · Hooks</a></li>
+<li><a href="#questions">H · Q-bank</a></li>
+<li><a href="#objections">I · Objections</a></li>
+<li><a href="#math">J · Math</a></li>
+<li><a href="#ecosystem">K · Ecosystem</a></li>
+<li><a href="#competitors">L · Competitors</a></li>
+<li><a href="#plays">M · Plays</a></li>
+<li><a href="#firstcall">N · First-call</a></li>
+<li><a href="#sources">O · Sources</a></li>
+</ol></nav>
+
+<section id="tldr" class="hero">
+<div class="eyebrow">Sector deep-dive companion · Pilot 174 · CavinKare Private Limited · FMCG / Personal Care / Dairy / Snacks / Beverages / Salons</div>
+<h1>The play in 90 seconds<br>Anchor Cavin's dairy capex · run FMCG distributor-SCF at scale · capture C.K. Ranganathan family-PB + Ka Enterprises family-office</h1>
+<p class="lede">CavinKare is the C.K. Ranganathan founder-led FMCG conglomerate — the company that pioneered India's shampoo-sachet revolution and built a credible mass-market challenge to HUL/P&G/Godrej from Chennai. Unlisted, 100% closely-held by the Ranganathan family; CIN U24246TN1990PTC046613; founded 1983 as Chik India, renamed CavinKare 1998; HQ Ekkattuthangal/Teynampet Chennai. FY25 revenue Rs 1,940 Cr (~9% CAGR); FY25 EBITDA +10.38%; FY25 PAT +587.61% (sharp recovery off low FY24 base). Five-vertical FMCG platform: personal care (Chik, Meera, Nyle, Spinz, Indica, Karthika, Fairever, Raaga, Buds & Berries — 13 brands) + Cavin's dairy + Garden snacks + Maa fruit-pulp/beverages + Trends salons (Green Trends + Limelite). The play is anchor Cavin's dairy capex (Kanchipuram + Erode 3.8 → 6 lakh litres/day) + FMCG distributor-SCF across the 1,300-distributor / 25-lakh-retail-outlet network + C.K. Ranganathan family-PB (incl Ka Enterprises startup-investment family-office) + Trends-salon franchise finance.</p>
+<div class="grid c4" style="margin-top:18px">
+<div class="kpi accent"><div class="k">Y3 wallet</div><div class="v num">Rs 10-20 Cr/yr</div><div class="sub">Dairy capex + distributor-SCF + family-PB</div></div>
+<div class="kpi pos"><div class="k">FY25 revenue</div><div class="v num">Rs 1,940 Cr</div><div class="sub">~9% CAGR</div></div>
+<div class="kpi"><div class="k">Promoter hold</div><div class="v num">100%</div><div class="sub">Ranganathan family closely-held</div></div>
+<div class="kpi pos"><div class="k">FMCG verticals</div><div class="v num">5</div><div class="sub">Care + dairy + snacks + beverages + salons</div></div>
+</div>
+<div class="card accent" style="margin-top:20px">
+<h4 style="margin-top:0">The single sentence the RM walks in with</h4>
+<p style="font-size:1.1rem;margin-bottom:0"><em>"Mr. Ranganathan — you built the sachet revolution; now Cavin's dairy is doubling Kanchipuram + Erode capacity and that needs capex depth. Three structural ideas: anchor the dairy capex, run distributor-SCF across your 1,300-distributor network, and bring our PB platform to the Ranganathan family and Ka Enterprises. If you don't see value in 30 minutes, we leave it there."</em></p>
+</div>
+<div class="meta" style="margin-top:14px">
+<span>Companion to <strong><a href="cavinkare-dossier.html">cavinkare-dossier.html</a></strong></span>
+<span>Cut <strong>Probe42 28 Apr 2026</strong></span>
+<span>Author <strong>RM-meeting prep · LCG/PBG Chennai</strong></span>
+</div>
+</section>
+
+<section id="history"><div class="subhead">B · Company history &mdash; the 42-year arc from a Rs 15,000 sachet-shampoo startup to a Rs 1,940 Cr Chennai FMCG conglomerate</div>
+<h3>B.1 The pre-history — Chinni Krishnan and the sachet idea (1970s-1983)</h3>
+<div class="card"><p>The CavinKare story begins with Chinni Krishnan, C.K. Ranganathan's father — a Cuddalore pharmacist-entrepreneur who founded Beauty Cosmetics (maker of "Velvette" shampoo) and is widely credited as the original conceiver of the shampoo-sachet idea — making premium personal-care affordable in single-use Rs 1 portions. He died in 1982; the FMCG legacy was divided among his sons.</p></div>
+
+<h3>B.2 Founding (1983) — C.K. Ranganathan starts Chik India with Rs 15,000</h3>
+<div class="card"><p>The youngest son, C.K. Ranganathan, started his own venture in 1983 in Cuddalore with ~Rs 15,000 startup capital. He launched Chik shampoo — named in honour of his father Chinni Krishnan — in Rs 1 sachets targeted at rural + daily-wage consumers ignored by multinationals. Current legal entity (then Chik India Pvt Ltd) incorporated 22 March 1990.</p></div>
+
+<h3>B.3 The sachet revolution (1983-1992) — Chik becomes #1 in South India</h3>
+<div class="card"><p>C.K. Ranganathan's genius was distribution + pricing innovation. Innovations included the empty-sachet buy-back scheme, aggressive village-level distribution, and Rs 1-2 pricing discipline. By 1992 Chik became the #1 shampoo brand in South India — ahead of multinational incumbents. The sachet revolution became a Harvard/IIM case study on bottom-of-pyramid market creation.</p></div>
+
+<h3>B.4 The CavinKare rebrand (1998) — from single-product to FMCG platform</h3>
+<div class="card"><p>In 1998 an internal employee contest produced the name CavinKare — combining "Cavin" (Tamil for beauty/grace) with the initials of Chinni Krishnan. The rebrand marked the shift from single-product to a multi-brand FMCG platform: Meera (herbal hair-care), Nyle, Spinz, Indica + Karthika (hair-colour), Fairever, Raaga.</p></div>
+
+<h3>B.5 Diversification (2000-2010) — salons, fruit-pulp, dairy</h3>
+<div class="card"><p>CavinKare expanded beyond personal care: Trends In Vogue Pvt Ltd established 2000 — pioneering the "Family Salon" concept in India (Green Trends + Limelite + Trends In Vogue & Academy). Maa Fruits Pvt Ltd acquired Feb 2008 for ~Rs 27.6 Cr (mango/guava/pineapple/apple juices + fruit-pulp). In 2009 CavinKare bought a Kanchipuram dairy farm to launch Cavin's dairy.</p></div>
+
+<h3>B.6 The 2010-2024 build — FMCG full-stack + dairy scale + second-generation transition</h3>
+<div class="card"><p>Through 2010s-2020s CavinKare built a true 5-vertical FMCG platform. Dairy scaled aggressively; CavinKare announced near-doubling of Kanchipuram + Erode capacity 3.8 → 6 lakh litres/day with value-added focus (protein-rich cheese). Second generation — Manuranjith + Dharaneeswari — joined the Board. C.K. Ranganathan built Ka Enterprises, an angel-investment vehicle backing 50+ TN startups. FY25 revenue Rs 1,940 Cr; PAT +587.61%.</p></div>
+
+<h3>B.7 Why this matters for the IBank pitch</h3>
+<div class="card"><p>(1) C.K. Ranganathan is a genuine first-generation FMCG builder — the sachet revolution is a cited market-creation case study. (2) 100% closely-held Ranganathan family — sizeable, multi-generational, uninstitutionalised family-PB. (3) 5-vertical structure means a single bank can win 5+ distinct product flows. (4) Cavin's dairy capex (3.8 → 6 lakh litres/day) is a committed Rs 150-300 Cr financing window. (5) ~1,300 distributors + 25 lakh+ retail outlets = one of TN's largest unbanked distributor-SCF opportunities. (6) Ka Enterprises startup-ecosystem creates a family-office + PB adjacency rare among traditional FMCG promoters.</p></div>
+
+</section>
+
+<section id="promoters"><div class="subhead">C · Promoters + Key Managerial Personnel</div>
+<h3>C.1 C.K. Ranganathan — Founder, Chairman & Managing Director</h3>
+<div class="card"><p>Founded Chik India 1983 with Rs 15,000; built CavinKare into a ~Rs 2,000 Cr FMCG group; one of India's most-respected first-generation FMCG entrepreneurs; former CII Southern Region Chairman; active angel investor via Ka Enterprises. Decision style: visionary-builder; distribution-obsessed; respects bankers who understand mass-market FMCG economics + the sachet/rural-distribution model. RM angle: bring senior MD-level introduction; the relationship is won on respect for the build, not on rate.</p></div>
+
+<h3>C.2 Amudhavalli Ranganathan — Director</h3>
+<div class="card"><p>C.K. Ranganathan's spouse; family co-promoter. Decision style: family-stewardship + governance-aware; likely gatekeeper for family-PB introduction. RM angle: family-trust + multi-gen wealth structuring conversation should include her.</p></div>
+
+<h3>C.3 Ranganathan Manuranjith — Director (next generation)</h3>
+<div class="card"><p>Son of C.K. Ranganathan; second-generation leadership. Decision style: growth-oriented; digital + premiumisation focus. What he cares about: Cavin's dairy scale-up; salon-services expansion; new-category entry. RM angle: he is the likely day-to-day strategic counterparty for the next decade — build the relationship early.</p></div>
+
+<h3>C.4 Ranganathan Dharaneeswari — Director (next generation)</h3>
+<div class="card"><p>Daughter of C.K. Ranganathan; second-generation leadership. Decision style: brand + consumer-insight focused. RM angle: discrete PB conversation + next-gen wealth structuring.</p></div>
+
+<h3>C.5 Subsidiaries / Group structure</h3>
+<div class="card"><p><strong>CavinKare Private Limited</strong> — flagship FMCG (personal care + dairy + snacks); <strong>Trends In Vogue Private Limited</strong> — salon chains (Green Trends + Limelite + Trends In Vogue & Academy; est. 2000); <strong>Maa Fruits Private Limited</strong> — fruit-pulp + juices (acquired Feb 2008 ~Rs 27.6 Cr); <strong>CavinKare Products Private Limited</strong> — group entity; <strong>Packwell Packaging</strong> + manufacturing-support entities. Promoter family-office: <strong>Ka Enterprises</strong> — C.K. Ranganathan's angel-investment / VC vehicle backing 50+ TN startups. Other Directors: Lakshmi Jayaraman, Jayaraman Nagarajan, Kabir Kishin Thakur (7-member Board).</p></div>
+
+</section>
+
+<section id="valuechain"><div class="subhead">D · Value-chain &mdash; 5-vertical FMCG cluster — personal care + dairy + snacks + beverages + salons</div>
+<p>CavinKare operates five distinct FMCG value-chains under one promoter group. (1) <strong>Personal Care</strong>: palm-derivatives + surfactants + herbal extracts + packaging film &rarr; blending/filling/sachet-packing &rarr; ~1,300 distributors &rarr; 25 lakh+ retail outlets (kirana + modern-trade + e-commerce). (2) <strong>Cavin's Dairy</strong>: raw-milk procurement (Kanchipuram + Erode catchment farmers) &rarr; chilling + processing + UHT/value-added &rarr; cold-chain distribution &rarr; retail + institutional. (3) <strong>Garden Snacks</strong>: edible-oil + flour + spices &rarr; namkeen manufacturing &rarr; distributor network. (4) <strong>Maa Beverages</strong>: seasonal fruit procurement (mango/guava, Apr-Jul peak) &rarr; pulping + juice/tetra-pack &rarr; retail + B2B. (5) <strong>Trends Salons</strong>: Green Trends + Limelite + Trends In Vogue franchise outlets &rarr; styling + beauty services + product retail.</p>
+<div class="card"><table><thead><tr><th>Vertical</th><th>Pricing power</th><th>WC + financing impact</th><th>Bank product</th></tr></thead><tbody><tr><td>Personal Care (Chik, Meera, Nyle, Spinz, Indica + 8 more brands)</td><td>Moderate — mass-market sachet economy; brand-led in select SKUs</td><td>45-60 day distributor cycle; palm-oil + packaging input volatility</td><td>CC + WCDL + distributor-SCF + LC (palm derivatives)</td></tr><tr><td>Cavin's Dairy (UHT milk, curd, paneer, cheese)</td><td>Moderate — value-added premiumisation; commodity milk pass-through</td><td>Capex-intensive (cold-chain); milk-procurement daily-payment cycle</td><td>Capex TL + WCDL + milk-procurement finance + cold-chain TL</td></tr><tr><td>Garden Snacks (namkeen) + Chinni's</td><td>Moderate — competitive vs Haldiram/Bikaji/Balaji</td><td>30-45 day cycle; edible-oil input volatility</td><td>WCDL + distributor-SCF + commodity hedge</td></tr><tr><td>Maa Beverages (fruit-pulp + juices)</td><td>Strong on B2B pulp supply; competitive on consumer juice</td><td>Seasonal — mango/guava procurement Apr-Jul drives peak WC</td><td>Seasonal WCDL + fruit-procurement finance</td></tr><tr><td>Trends Salons (Green Trends + Limelite franchise)</td><td>Strong — pioneer of Family Salon; franchise-fee + product-retail</td><td>Franchise-network outlet capex; modest WC</td><td>Franchise-finance + outlet capex TL + CMS</td></tr></tbody></table></div>
+
+</section>
+
+<section id="driver-fs"><div class="subhead">E · Driver &rarr; FS line-item map</div>
+<p>Sized to FY25 baseline (TOI Rs 1,940 Cr; EBITDA Rs 181 Cr; FY25 PAT Rs 83 Cr after +588% recovery; promoter 100%; multi-bank ~Rs 250 Cr).</p>
+<div class="card"><table>
+<thead><tr><th>Driver</th><th>FS impact</th><th>IBank product entry</th></tr></thead>
+<tbody><tr><td><strong>Cavin's dairy capacity near-doubling (3.8 → 6 lakh L/day)</strong></td><td>Kanchipuram + Erode plant capex; cold-chain + value-added (cheese, protein); structural capex burst FY26-28</td><td><strong>Dairy capex TL Rs 150-300 Cr + cold-chain financing</strong></td></tr>
+<tr><td><strong>FMCG distribution depth (~1,300 distributors / 25 lakh+ outlets)</strong></td><td>Distributor receivable + channel inventory; 45-60 day cycle</td><td><strong>Distributor-SCF anchored on CavinKare credit at MCLR + 60-90 bps</strong></td></tr>
+<tr><td><strong>Palm oil + surfactant + packaging input costs</strong></td><td>45-55% of personal-care COGS; commodity volatility hits gross margin</td><td>LC import + commodity-WCDL + selective hedge</td></tr>
+<tr><td><strong>Milk-procurement cycle (Kanchipuram + Erode catchment farmers)</strong></td><td>Daily farmer-payment cycle; raw-milk price volatility</td><td>Milk-procurement finance + IMPS bulk-payout + farmer-KCC</td></tr>
+<tr><td><strong>Maa Fruits seasonality (mango/guava Apr-Jul)</strong></td><td>Seasonal procurement spike; pulp inventory builds for full-year supply</td><td>Seasonal WCDL + fruit-procurement finance</td></tr>
+<tr><td><strong>Rural + mass-market demand cycle</strong></td><td>Sachet-economy + Tier-2/3/4 penetration; monsoon + rural-income sensitive</td><td>WCDL flex + distributor-SCF</td></tr>
+<tr><td><strong>Premiumisation + salon-services growth</strong></td><td>Green Trends + Limelite franchise expansion; professional-beauty CAGR 12-15%</td><td>Franchise-finance + outlet capex TL</td></tr>
+<tr><td><strong>Second-generation transition (Manuranjith + Dharaneeswari)</strong></td><td>Family-stewardship + governance + succession; potential restructuring / fundraise</td><td>PB AUM + family-trust + ESOP advisory + succession-planning</td></tr>
+<tr><td><strong>Ka Enterprises startup-investment family-office</strong></td><td>C.K. Ranganathan angel-investing 50+ TN startups</td><td>Family-office mandate + PB + AIF / venture-debt adjacency</td></tr>
+<tr><td><strong>RBI repo cycle</strong></td><td>FMCG WC + dairy capex benchmarked to MCLR; June MPC cut consensus</td><td>WCDL + IRS lock</td></tr>
+<tr><td><strong>Possible CavinKare IPO / PE event</strong></td><td>FMCG group of this scale + brand-equity is a credible IPO / strategic-stake candidate</td><td>IPO BRLM advisory + pre-IPO structuring + DCM mandate</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="product-fs"><div class="subhead">F · IBank product &rarr; FS map</div>
+<div class="card"><table>
+<thead><tr><th>Product</th><th>Structure</th><th>Size</th><th>Price</th><th>Y3 income</th></tr></thead>
+<tbody><tr><td><strong>Cavin's dairy capex TL (Kanchipuram + Erode)</strong></td><td>Cold-chain + value-added; sustainability covenant</td><td>Rs 150-300 Cr</td><td>MCLR + 80-110 bps</td><td>Rs 1.2-2.5 Cr/yr</td></tr>
+<tr><td><strong>FMCG distributor-SCF (anchor: CavinKare)</strong></td><td>~1,300-distributor network; non-recourse 45-60 day</td><td>Rs 100-200 Cr book</td><td>MCLR + 60-90 bps</td><td>Rs 0.8-1.5 Cr/yr</td></tr>
+<tr><td><strong>CC + WCDL (FMCG + sachet-economy cycle)</strong></td><td>Personal care + snacks 45-60 day cycle</td><td>Rs 150-250 Cr</td><td>MCLR + 60-90 bps</td><td>Rs 1.2-2.0 Cr/yr</td></tr>
+<tr><td><strong>Maa Fruits seasonal WC (mango/guava procurement)</strong></td><td>Apr-Jul pulp-procurement peak</td><td>Rs 40-80 Cr</td><td>MCLR + 70-100 bps</td><td>Rs 0.3-0.6 Cr/yr</td></tr>
+<tr><td><strong>Milk-procurement cycle finance (dairy farmers)</strong></td><td>Kanchipuram + Erode catchment; IMPS bulk-payout + farmer-KCC</td><td>Rs 50-100 Cr</td><td>MCLR + 60-90 bps</td><td>Rs 0.4-0.7 Cr/yr</td></tr>
+<tr><td><strong>LC + Trade (palm oil + packaging + capex import)</strong></td><td>Palm derivatives + packaging film + dairy machinery</td><td>Rs 60-120 Cr revolving</td><td>0.30-0.45% fee</td><td>Rs 0.4-0.8 Cr/yr</td></tr>
+<tr><td><strong>Trends-salon franchise finance (Green Trends + Limelite)</strong></td><td>Franchisee outlet-network capex + WC</td><td>Rs 30-60 Cr</td><td>MCLR + 90-120 bps</td><td>Rs 0.3-0.6 Cr/yr</td></tr>
+<tr><td><strong>Salary CASA + payroll (5,500 FTE)</strong></td><td>Multi-vertical + salon network</td><td>Rs 15-30 Cr float</td><td>0%</td><td>Rs 0.6-1.1 Cr/yr</td></tr>
+<tr><td><strong>PB (C.K. Ranganathan family + Ka Enterprises family-office)</strong></td><td>100% closely-held promoter family + startup-investment vehicle</td><td>Rs 300-600 Cr AUM</td><td>50-80 bps</td><td>Rs 1.8-3.2 Cr/yr</td></tr>
+<tr><td><strong>TASC (CavinKare Foundation + PF)</strong></td><td>CSR Foundation + PF + Gratuity</td><td>Rs 60-120 Cr corpus</td><td>30-50 bps</td><td>Rs 0.3-0.5 Cr/yr</td></tr>
+</tbody></table></div>
+<p class="muted small">Pricing indicative; final depends on rating, tenor, collateral, consortium dynamics.</p>
+<h3>F.1 Y3 wallet build-up</h3><div class='card'><ul><li>Wholesale (dairy capex + CC/WCDL + LC): Rs 2.8-5.3 Cr</li><li>Distributor-SCF + Maa seasonal + milk-procurement: Rs 1.5-2.8 Cr</li><li>Salon-franchise finance: Rs 0.3-0.6 Cr</li><li>Retail + PB + TASC: Rs 2.7-4.8 Cr</li><li><strong>Total: Rs 10-20 Cr/yr</strong></li></ul></div>
+</section>
+
+<section id="hooks"><div class="subhead">G · Five conversation hooks</div>
+<div class="card"><ol><li><strong>1. Cavin's dairy capex anchor</strong> &mdash; "Mr. Ranganathan / Manuranjith — Cavin's near-doubling of Kanchipuram + Erode capacity from 3.8 to 6 lakh litres/day plus the protein-rich cheese push needs Rs 150-300 Cr of cold-chain + processing capex. We have a 7-day capex term-sheet with a sustainability-linked covenant: 5 bps margin step-down on cold-chain-energy-efficiency KPI."</li>
+<li><strong>2. FMCG distributor-SCF at scale</strong> &mdash; "Your ~1,300-distributor / 25-lakh-retail-outlet network is one of the largest unbanked channel-finance opportunities in Tamil Nadu FMCG. Distributor-SCF anchored on CavinKare's credit at MCLR+60-90 frees CC headroom and earns Rs 0.8-1.5 Cr/yr — PSU consortium has not built this for you."</li>
+<li><strong>3. C.K. Ranganathan family-PB + Ka Enterprises family-office</strong> &mdash; "100% closely-held Ranganathan family + your Ka Enterprises angel-portfolio of 50+ TN startups — that is a multi-generation family-office + PB mandate that has never been institutionalised. Our senior PB partner can fly down for a no-commitment first conversation."</li>
+<li><strong>4. Maa Fruits seasonal + milk-procurement finance</strong> &mdash; "Two structural cycle-finance plays: Maa Fruits mango/guava procurement spikes Apr-Jul; Cavin's milk-procurement is a daily farmer-payment cycle. Both are tailor-made for seasonal WCDL + IMPS bulk-payout + farmer-KCC rails."</li>
+<li><strong>5. IPO / strategic-event readiness</strong> &mdash; "A Rs 1,940 Cr 5-vertical FMCG group with brand-equity like Chik + Meera + Cavin's is a credible IPO or strategic-stake candidate. When that conversation comes, we want to be the bank that already knows the group — BRLM + pre-IPO structuring + DCM."</li>
+</ol></div>
+</section>
+
+<section id="questions"><div class="subhead">H · Question bank</div>
+<div class="card"><h4 style="margin-top:0">12 questions for the meeting</h4><ol><li>Cavin's dairy capacity expansion — what is the capex split (Kanchipuram vs Erode; processing vs cold-chain)?</li>
+<li>What is the value-added dairy revenue mix today and FY28 target (cheese, protein, premium)?</li>
+<li>FMCG distributor network — how many distributors, what is the average credit period, and which bank does channel-finance today?</li>
+<li>Personal-care portfolio — which of the 13 brands are growing vs which are being rationalised?</li>
+<li>Maa Fruits — is it B2B pulp-supply-led or consumer-juice-led; what is the seasonal WC peak?</li>
+<li>Trends In Vogue — Green Trends + Limelite outlet count and franchise-expansion plans?</li>
+<li>Palm-oil + packaging input — hedge ratio and procurement strategy?</li>
+<li>Second-generation transition — how are Manuranjith and Dharaneeswari's mandates structured?</li>
+<li>Ka Enterprises — is the startup-investment activity inside CavinKare or a separate family-office vehicle?</li>
+<li>Is there any IPO / PE / strategic-stake plan on a 3-5 year horizon?</li>
+<li>What is the open MCA charges ~Rs 250 Cr split by bank across the group entities?</li>
+<li>Family-PB — is the Ranganathan family wealth held via HUF / family-trust or individually?</li>
+</ol></div>
+<div class="card"><h4 style="margin-top:0">What NOT to ask</h4><ul><li>Do not ask about the broader Chinni Krishnan family FMCG entities — CavinKare is C.K. Ranganathan's independent build; the topic is sensitive.</li>
+<li>Do not pitch on rate — FMCG groups run tight cost-discipline.</li>
+<li>Do not propose family-succession or ESOP advisory in the first meeting.</li>
+<li>Do not name specific competitor banks unless asked.</li>
+<li>Do not over-pitch an IPO — raise it only as optionality, the family decides timing.</li>
+</ul></div>
+</section>
+
+<section id="objections"><div class="subhead">I · Objection handling</div>
+<div class="card"><h4 style="margin-top:0">"We are happy with our current FMCG WC banks (HDFC + SBI + Axis + Kotak)."</h4><p>"Mr. Ranganathan — we are not displacing the WC consortium. We want the Cavin's dairy capex sleeve (which is incremental and partly greenfield), the distributor-SCF layer (which the consortium has not built), and the family-PB mandate. Three additive sleeves, not a displacement."</p></div>
+<div class="card"><h4 style="margin-top:0">"Your rates are not competitive vs PSU / large private."</h4><p>"FMCG WC rates are commoditised. Our differentiation: a sustainability-linked covenant on dairy cold-chain energy-efficiency; distributor-SCF at scale; family-office + PB platform; and IPO/DCM readiness when that conversation comes. We compete on structure and partnership, not headline rate."</p></div>
+<div class="card"><h4 style="margin-top:0">"Distributor finance — our distributors arrange their own working capital."</h4><p>"Exactly the inefficiency. An anchor-led SCF programme on CavinKare's credit gives your distributors cheaper funding, improves your collection cycle, and deepens channel loyalty. It is a win for the distributor, for CavinKare's WC, and a clean annuity for us."</p></div>
+<div class="card"><h4 style="margin-top:0">"CavinKare is a private family company — we keep banking relationships simple."</h4><p>"That is precisely why a single relationship bank across all five verticals + the family-PB makes sense — simplicity through consolidation, not fragmentation. One bank that understands personal care + dairy + snacks + beverages + salons + the family."</p></div>
+<div class="card"><h4 style="margin-top:0">"Ranganathan family wealth is private."</h4><p>"That is the design point of our PB platform — we are the most discrete on senior promoter PB. Our partner can fly down to discuss multi-generation structuring + the Ka Enterprises startup-portfolio. No commitment."</p></div>
+<div class="card"><h4 style="margin-top:0">"You don't understand mass-market FMCG / the sachet economy."</h4><p>"We bank Marico, Dabur, Emami, Hatsun Agro and several regional FMCG leaders. We can bring the FMCG-cluster team — distributor-SCF specialist, dairy-capex underwriter, consumer-sector analyst — for a working session."</p></div>
+
+</section>
+
+<section id="math"><div class="subhead">J · 12 / 24 / 36-month conversion math</div>
+
+<h3>J.1 12-month plan (FY27)</h3>
+<div class="card"><table><thead><tr><th>Quarter</th><th>Action</th><th>Wallet impact</th></tr></thead><tbody>
+<tr><td>Q1 FY27 (Apr-Jun 2026)</td><td>(a) Cavin's dairy capex term-sheet (Kanchipuram + Erode cold-chain); (b) Distributor-SCF concept for personal-care channel; (c) Senior PB partner introduction to C.K. Ranganathan.</td><td>Rs 0.5 Cr LC + Rs 0.4 Cr Maa seasonal WC</td></tr>
+<tr><td>Q2 FY27 (Jul-Sep 2026)</td><td>(a) Dairy capex committee approval; (b) Distributor-SCF onboarding first 100-150 distributors; (c) Milk-procurement IMPS bulk-payout mandate.</td><td>Rs 1.0 Cr capex Y1 + Rs 0.4 Cr SCF</td></tr>
+<tr><td>Q3 FY27 (Oct-Dec 2026)</td><td>(a) Dairy capex drawn 20%; (b) Distributor-SCF book Rs 80 Cr; (c) Trends-salon franchise-finance pilot.</td><td>Rs 0.6 Cr SCF + Rs 0.3 Cr franchise-fin</td></tr>
+<tr><td>Q4 FY27 (Jan-Mar 2027)</td><td>(a) Salary CASA mandate kick-off; (b) Ranganathan family-PB AUM diagnostic; (c) Ka Enterprises family-office relationship scoped.</td><td>Rs 0.4 Cr salary-CASA + Rs 0.5 Cr PB ramp</td></tr>
+<tr><td><strong>Y1 (FY27) total wallet</strong></td><td></td><td class="num"><strong>Rs 5.0 Cr</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.2 24-month plan (FY28)</h3>
+<div class="card"><table><thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead><tbody>
+<tr><td>H1 FY28</td><td>Dairy capex fully drawn; distributor-SCF book Rs 150 Cr; salary CASA mandate 3,500 FTE; family-PB AUM Rs 150+ Cr signed.</td><td>Rs 3.8 Cr Y2 add</td></tr>
+<tr><td>H2 FY28</td><td>Sustainability KPI first measurement (cold-chain energy); Maa Fruits seasonal WC scaled; Trends-salon franchise-finance scaled; Ka Enterprises family-office mandate.</td><td>Rs 3.0 Cr Y2 add</td></tr>
+<tr><td><strong>Y2 (FY28) wallet</strong></td><td></td><td class="num"><strong>Rs 11.8 Cr</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.3 36-month plan (FY29) &mdash; the inflection year</h3>
+<div class="card"><table><thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead><tbody>
+<tr><td>H1 FY29</td><td>Dairy capex refresh + value-added line; family-PB AUM Rs 350+ Cr; distributor-SCF book Rs 200 Cr; possible IPO/DCM advisory mandate.</td><td>Rs 2.5 Cr Y3 add</td></tr>
+<tr><td>H2 FY29</td><td>Sustainability KPI step-down kicks in; full 5-vertical group cross-sell mature; Ka Enterprises AIF / venture-debt adjacency.</td><td>Rs 1.5 Cr Y3 add</td></tr>
+<tr><td><strong>Y3 (FY29) wallet</strong></td><td></td><td class="num"><strong>Rs 15.8 Cr base</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.4 Sensitivity</h3>
+<div class="card"><ul>
+<li><strong>Bull (dairy capex anchor + distributor-SCF at scale + family-PB Rs 600 Cr + IPO mandate):</strong> Rs 20 Cr/yr Y3.</li>
+<li><strong>Base (dairy capex + distributor-SCF + family-PB Rs 350 Cr):</strong> Rs 16 Cr/yr Y3.</li>
+<li><strong>Bear (dairy capex sleeve only + PB declined):</strong> Rs 10 Cr/yr Y3.</li>
+</ul></div>
+
+</section>
+
+<section id="ecosystem"><div class="subhead">K · Customer + supplier ecosystem</div>
+
+<h3>K.1 Receivables (who pays CavinKare) — FMCG channel + institutional book</h3>
+<div class="card"><table><thead><tr><th>Counterparty</th><th>Stream</th><th>Annual flow (FY25 est)</th><th>Cycle</th><th>Bank product</th></tr></thead><tbody>
+<tr><td>~1,300 FMCG distributors (personal care + snacks)</td><td>Chik / Meera / Nyle / Spinz / Indica / Garden distribution</td><td>Rs 1,000-1,150 Cr</td><td>45-60 day</td><td>Distributor-SCF (anchor: CavinKare) + receivable factoring</td></tr>
+<tr><td>Modern trade + e-commerce (Reliance Retail, DMart, Amazon, Flipkart, BigBasket)</td><td>Personal care + dairy + snacks listings</td><td>Rs 300-400 Cr</td><td>30-60 day</td><td>MT-receivable factoring + e-commerce SCF</td></tr>
+<tr><td>Cavin's dairy retail + institutional (HoReCa, QSR, B2B)</td><td>UHT milk, curd, paneer, cheese, milkshakes</td><td>Rs 400-500 Cr</td><td>7-30 day (mostly fast)</td><td>CMS / e-collect + institutional-receivable factoring</td></tr>
+<tr><td>Maa Fruits B2B pulp buyers (juice brands, food processors)</td><td>Mango / guava / pineapple pulp supply</td><td>Rs 120-180 Cr</td><td>30-60 day</td><td>B2B-receivable factoring</td></tr>
+<tr><td>Trends salons — franchisee fees + product retail</td><td>Green Trends + Limelite franchise royalty + product</td><td>Rs 80-130 Cr</td><td>15-30 day</td><td>CMS + franchise-fee collection</td></tr>
+<tr><td>Exports (Gulf + SE Asia + Africa — personal care)</td><td>Chik / Meera / Spinz export</td><td>Rs 60-100 Cr (USD/AED)</td><td>30-60 day</td><td>Export-finance + USD/AED forward</td></tr>
+</tbody></table></div>
+<p><strong>RM read:</strong> The ~1,300-distributor FMCG receivable book (Rs 1,000-1,150 Cr/yr on a 45-60 day cycle) is the single largest unbanked structural opportunity at CavinKare. An anchor-led distributor-SCF programme at MCLR+60-90 unlocks a Rs 100-200 Cr book + earns Rs 0.8-1.5 Cr/yr fee — while improving CavinKare's own collection cycle and channel loyalty. Modern-trade + e-commerce receivable (Rs 300-400 Cr) is a second clean factoring layer.</p>
+
+<h3>K.2 Payables (suppliers — who CavinKare pays)</h3>
+<div class="card"><table><thead><tr><th>Counterparty</th><th>Spend</th><th>Annual outflow</th><th>Cycle</th><th>Bank product</th></tr></thead><tbody>
+<tr><td>Palm-oil + surfactant + chemical suppliers (Godrej Industries, Adani Wilmar, KLK, domestic oleochemicals)</td><td>Personal-care raw material (45-55% of care COGS)</td><td>Rs 400-500 Cr/yr</td><td>30-60 day</td><td>Vendor-SCF + LC import (palm derivatives)</td></tr>
+<tr><td>~30,000-50,000 dairy farmers (Kanchipuram + Erode catchment)</td><td>Raw-milk procurement (daily-payment cycle)</td><td>Rs 700-900 Cr/yr</td><td>Daily / 10-day cycle</td><td>Milk-procurement finance + IMPS bulk-payout + farmer-KCC</td></tr>
+<tr><td>Packaging suppliers (sachet film, bottles, cartons, tetra-pack — Uflex, Huhtamaki, Tetra Pak, EPL)</td><td>Packaging material</td><td>Rs 250-350 Cr/yr</td><td>30-60 day</td><td>Vendor-SCF + LC</td></tr>
+<tr><td>Mango / guava growers + agri-aggregators (seasonal, Apr-Jul)</td><td>Maa Fruits procurement</td><td>Rs 100-150 Cr/yr</td><td>Cash / 15-day</td><td>Seasonal fruit-procurement finance + farmer payout rails</td></tr>
+<tr><td>Edible oil + flour + spices (Garden snacks raw material)</td><td>Snacks raw material</td><td>Rs 120-180 Cr/yr</td><td>30 day</td><td>Vendor-SCF + commodity-WCDL</td></tr>
+<tr><td>Capital goods (dairy processing + cold-chain + filling lines — Tetra Pak, GEA, SPX Flow, Alfa Laval)</td><td>Cavin's dairy capex (FY26-28)</td><td>Rs 150-300 Cr in capex window</td><td>30/60/10 milestone</td><td>BG (advance + performance) + LC capital-goods + FX</td></tr>
+<tr><td>Salary (~5,500 FTE across 5 verticals + salon network)</td><td>Payroll</td><td>Rs 280-360 Cr/yr</td><td>Monthly</td><td>Salary CASA mandate + IMPS bulk-payout</td></tr>
+<tr><td>Advertising + media + trade-marketing</td><td>Brand-building (FMCG ad-intensity 8-12% of revenue)</td><td>Rs 180-250 Cr/yr</td><td>Net-30-60</td><td>Corp-cards + media-vendor SCF</td></tr>
+</tbody></table></div>
+<p><strong>RM read:</strong> The dairy milk-procurement cycle (Rs 700-900 Cr/yr to 30,000-50,000 farmers on a near-daily payment clock) is structurally the most under-banked rail in the CavinKare group — IMPS bulk-payout + farmer-KCC under an anchor framework is a high-volume, low-cost-of-acquisition retail-banking opportunity. Palm-oil + packaging vendor-SCF (Rs 650-850 Cr/yr combined) is the second-largest anchor-SCF layer.</p>
+
+</section>
+
+<section id="competitors"><div class="subhead">L · Competitor bank diagnosis</div>
+
+<p><strong>Diligence note:</strong> Probe42 detail-level pull required across CavinKare + Trends In Vogue + Maa Fruits + CavinKare Products CINs to confirm bank-by-bank split.</p>
+<div class="card"><table><thead><tr><th>Bank</th><th>Likely position</th><th>Strength</th><th>Weakness we exploit</th></tr></thead><tbody>
+<tr><td>HDFC Bank</td><td>Likely lead (FMCG WC + payroll)</td><td>FMCG WC execution; payroll; modern-trade receivable; pan-India reach</td><td>Distributor-SCF not built at scale; family-PB tier-2 for closely-held promoter; modest dairy-capex appetite</td></tr>
+<tr><td>SBI</td><td>Likely #2 (term debt + dairy capex)</td><td>Largest BG + dairy-sector capex experience; cane/milk-cluster history</td><td>Slow on capex term-sheet (3-4 weeks); no PB platform; weak on distributor-SCF tech</td></tr>
+<tr><td>Axis Bank / Kotak</td><td>Likely #3-4 (WC + transaction banking)</td><td>Transaction banking + WCDL; CMS</td><td>Family-PB tier-2; distributor-SCF limited; dairy-capex appetite modest</td></tr>
+<tr><td>Citi / SCB / DBS</td><td>Possible on FMCG-MNC-style transaction banking</td><td>CMS + FX + tech</td><td>Limited closely-held-family-PB depth; no dairy-capex / farmer-KCC capability</td></tr>
+<tr><td>Tamil Nadu PSU / co-operative banks</td><td>Possible on milk-procurement catchment</td><td>Local dairy-catchment presence</td><td>No SCF tech; no PB; cannot lead capex or family-office</td></tr>
+<tr><td><strong>IBank target seat</strong></td><td>Dairy-capex anchor + distributor-SCF + family-PB + milk-procurement rails</td><td>7-day capex term-sheet; anchor-led distributor-SCF at scale; IMPS bulk-payout + farmer-KCC rails; family-PB + family-office platform; IPO/DCM readiness</td><td>Need anchor seat on capex + SCF to be relevant on the FMCG WC consortium</td></tr>
+</tbody></table></div>
+<p><strong>Diagnosis:</strong> CavinKare's FMCG WC consortium (~Rs 250 Cr) has structural openings for IBank: (a) the <strong>Cavin's dairy capex sleeve</strong> (Rs 150-300 Cr, partly greenfield); (b) <strong>anchor-led distributor-SCF</strong> across the ~1,300-distributor network — a layer no incumbent has built; (c) <strong>milk-procurement rails</strong> (IMPS bulk-payout + farmer-KCC) for the Kanchipuram + Erode catchment; (d) the <strong>C.K. Ranganathan family-PB + Ka Enterprises family-office</strong> mandate — entirely uninstitutionalised today.</p>
+
+</section>
+
+<section id="plays"><div class="subhead">M · The three plays</div>
+<h3>M.1 Play 1: Cavin's dairy capex anchor (Kanchipuram + Erode 3.8 → 6 lakh L/day)</h3>
+<div class="card"><p><strong>Trigger:</strong> CavinKare has publicly committed to near-doubling Kanchipuram + Erode dairy capacity with a value-added (cheese, protein) focus — capex Rs 150-300 Cr over FY26-28. <strong>Offer:</strong> 7-yr capex TL with a sustainability-linked covenant: 5 bps margin step-down on a cold-chain energy-efficiency KPI; bundled LC for imported processing + filling lines (Tetra Pak / GEA / Alfa Laval). <strong>Bait:</strong> Pre-validated Board paper; 7-day commitment SLA; cold-chain-KPI methodology pre-priced. <strong>Y2-Y3 income:</strong> Rs 1.2-2.5 Cr/yr stable for 7 years. <strong>Risk:</strong> Lost to SBI dairy-capex consortium. <strong>Mitigation:</strong> position as co-anchor; lead on speed.</p></div>
+
+<h3>M.2 Play 2: Anchor-led FMCG distributor-SCF + milk-procurement rails</h3>
+<div class="card"><p><strong>Trigger:</strong> ~1,300-distributor network funds its own working capital today (sub-optimal for CavinKare's collection cycle); 30,000-50,000 dairy farmers on a near-daily milk-payment clock. <strong>Offer:</strong> (a) anchor-led distributor-SCF on CavinKare's credit at MCLR+60-90, Rs 100-200 Cr book; (b) milk-procurement IMPS bulk-payout + farmer-KCC under an anchor framework. <strong>Bait:</strong> Diagnostic showing collection-cycle improvement + channel-loyalty uplift; farmer-KCC pilot in 5 catchment villages. <strong>Y1-Y3 income:</strong> Rs 0.8-1.5 Cr/yr SCF fee + Rs 0.4-0.7 Cr/yr milk-procurement. <strong>Risk:</strong> CavinKare prefers distributors self-fund. <strong>Mitigation:</strong> pilot 100-150 distributors, prove the cycle benefit.</p></div>
+
+<h3>M.3 Play 3: C.K. Ranganathan family-PB + Ka Enterprises family-office + IPO readiness</h3>
+<div class="card"><p><strong>Trigger:</strong> 100% closely-held Ranganathan family wealth + the Ka Enterprises angel-portfolio (50+ TN startups) are entirely uninstitutionalised; second-generation transition (Manuranjith + Dharaneeswari) is underway. <strong>Offer:</strong> Multi-generation family-PB mandate + Ka Enterprises family-office (AIF / venture-debt adjacency) + IPO/DCM readiness advisory for the eventual capital-markets event. <strong>Bait:</strong> Family-portfolio diagnostic; startup-portfolio structuring review; pre-IPO-readiness conversation. <strong>Y3 income:</strong> Rs 1.8-3.2 Cr PB AUM + Rs 0.6-1.1 Cr salary-CASA + Rs 0.3-0.5 Cr TASC = Rs 2.7-4.8 Cr/yr. <strong>Risk:</strong> Family declines PB. <strong>Mitigation:</strong> introduction via a mutual contact in the Chennai FMCG / CII Southern Region network.</p></div>
+
+
+<p><strong>All three plays in parallel</strong> get Y3 wallet Rs 10-20 Cr base case.</p>
+</section>
+
+<section id="firstcall"><div class="subhead">N · First-call playbook</div>
+
+<h3>N.1 Opening (5 min)</h3>
+<div class="card"><p><em>"Mr. Ranganathan — thank you for the time. We are not here for share-of-wallet on the FMCG working-capital book. We have studied the Cavin's dairy capacity plan, the distribution network, and the second-generation transition. Three structural ideas — one dairy-capex, one distributor-SCF, one family. If at the end of 30 minutes you do not see value, we leave it there."</em></p></div>
+
+<h3>N.2 Mid-call (3 blocks, 15 min each)</h3>
+<div class="card">
+<p><strong>Block 1 (Cavin's dairy capex):</strong> "Cavin's near-doubling Kanchipuram + Erode to 6 lakh litres/day plus the protein-cheese push needs Rs 150-300 Cr of cold-chain + processing capex. We have a 7-day capex term-sheet with a sustainability-linked covenant on cold-chain energy efficiency. Can we walk through?"</p>
+<p><strong>Block 2 (Distributor-SCF + milk-procurement rails):</strong> "Your ~1,300-distributor network self-funds its working capital today — that is a drag on your collection cycle. An anchor-led SCF programme on CavinKare's credit gives distributors cheaper funding and tightens your cash conversion. Separately, the daily milk-procurement payout to 30,000-50,000 farmers is tailor-made for IMPS bulk-payout + farmer-KCC."</p>
+<p><strong>Block 3 (Family-PB + Ka Enterprises):</strong> "Separately — the Ranganathan family wealth and your Ka Enterprises startup-portfolio are a multi-generation family-office mandate that has never been institutionalised. Our senior PB partner can come down once, no commitment, to walk through how families like yours have structured this."</p>
+</div>
+
+<h3>N.3 The ask (5 min)</h3>
+<div class="card"><p>"Three takeaways: (1) permission to put the dairy-capex term-sheet in front of your CFO + Manuranjith in 14 days; (2) a distributor-SCF diagnostic session in May; (3) a soft introduction for a 30-minute family-PB conversation in Q2."</p></div>
+
+<h3>N.4 Follow-up (T+24)</h3>
+<div class="card">
+<ul>
+<li>One-page recap email; dairy-capex term-sheet draft; distributor-SCF one-pager; milk-procurement / farmer-KCC outline; PB-partner profile.</li>
+<li>CC: C.K. Ranganathan, Ranganathan Manuranjith, CFO, dairy-vertical head.</li>
+</ul>
+</div>
+
+<h3>N.5 What NOT to do</h3>
+<div class="card"><ul>
+<li>Do not pitch on rate — FMCG groups run tight cost-discipline.</li>
+<li>Do not show up without the dairy-capex term-sheet draft.</li>
+<li>Do not raise the broader Chinni Krishnan family FMCG entities — sensitive topic.</li>
+<li>Do not propose family-succession or ESOP advisory in the first meeting.</li>
+<li>Do not over-pitch an IPO — present it only as future optionality.</li>
+</ul></div>
+
+</section>
+
+<section id="sources"><div class="subhead">O · Sources</div>
+<ol><li id="src-1">CavinKare Private Limited corporate website + registry summary &middot; cavinkare.com &middot; CIN U24246TN1990PTC046613 &middot; 28 Apr 2026</li>
+<li id="src-2">CavinKare financials &middot; Tracxn + Tofler aggregations &middot; 28 Apr 2026</li>
+<li id="src-3">Cavin's dairy capacity expansion (Kanchipuram + Erode 3.8 → 6 lakh litres/day) &middot; Business Standard + CavinKare press releases</li>
+<li id="src-4">Trends In Vogue Pvt Ltd (Green Trends + Limelite salon chains; est. 2000) &middot; trendsinvogue.in</li>
+<li id="src-5">Maa Fruits Pvt Ltd acquisition Feb 2008 &middot; Crunchbase + media archives</li>
+<li id="src-6">C.K. Ranganathan biography + sachet-revolution history &middot; Madras Musings + ThePrint + media archives</li>
+<li id="src-7">Probe42 open-charges API &middot; CIN U24246TN1990PTC046613</li>
+<li id="src-8">ZaubaCorp CAVINKARE PRIVATE LIMITED directors + filings</li>
+<li id="src-9">MCA-21 charge register &middot; mca.gov.in</li>
+<li id="src-10">Ka Enterprises (C.K. Ranganathan angel-investment vehicle) &middot; media coverage</li>
+<li id="src-11">India FMCG sector size + growth &middot; NielsenIQ + industry reports FY25</li>
+<li id="src-12">India dairy sector size + value-added growth &middot; industry estimates FY25</li>
+<li id="src-13">RBI MPC Apr 2026 &middot; rbi.org.in</li>
+<li id="src-14">USD/INR + AED/INR FX FBIL reference &middot; 28 Apr 2026</li>
+<li id="src-15">Palm-oil + edible-oil commodity reference &middot; MPOB + Solvent Extractors Association</li>
+<li id="src-16">Modern-trade + e-commerce FMCG channel data &middot; industry reports</li>
+<li id="src-17">CII Southern Region (C.K. Ranganathan former Chairman) &middot; cii.in</li>
+<li id="src-18">Tirupur / Kanchipuram / Erode dairy-catchment data &middot; TN Animal Husbandry Dept</li>
+<li id="src-19">MoSPI quarterly GDP + rural-consumption data &middot; mospi.gov.in &middot; FY26 Q3</li>
+<li id="src-20">FY24 + FY25 audited financials &middot; [diligence: request from CFO post-introduction]</li>
+</ol>
+<p class="muted small">Cipher: IBank notation in use. Approved sister-entities (ICICI Securities / Prudential / Lombard) retained. FY25-FY29 projections analyst-est. Diligence items inline.</p>
+</section>
+
+<footer class="foot">
+  <div class="mono">Dossier prepared 24 April 2026 &middot; macro block sourced same day &middot; registry cut-off per Probe42 metadata timestamps embedded in Section 04.</div>
+  <div class="mono" style="margin-top:6px">Sector deep-dive · companion to pilot 174 dossier · 15 sections A-O · cipher clean</div>
+</footer>
+</div></body></html>

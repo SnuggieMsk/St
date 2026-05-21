@@ -1,0 +1,489 @@
+"""Siechem Technologies — Sector Deep-Dive (companion to pilot 151 dossier).
+
+Bespoke RM-meeting-grade content with full company history block.
+"""
+from pathlib import Path
+from .base import HEAD, FOOT, ref
+
+OUT = Path("/home/user/St") / "siechem-technologies-sector.html"
+
+NAV = """
+<nav class="nav"><ol>
+<li><a href="#tldr">A · TL;DR play</a></li>
+<li><a href="#history">B · Company history</a></li>
+<li><a href="#promoters">C · Promoters + KMP</a></li>
+<li><a href="#valuechain">D · Value-chain</a></li>
+<li><a href="#driver-fs">E · Driver → FS</a></li>
+<li><a href="#product-fs">F · Product → FS</a></li>
+<li><a href="#hooks">G · Hooks</a></li>
+<li><a href="#questions">H · Question bank</a></li>
+<li><a href="#objections">I · Objections</a></li>
+<li><a href="#math">J · Conversion math</a></li>
+<li><a href="#ecosystem">K · Ecosystem</a></li>
+<li><a href="#competitors">L · Competitors</a></li>
+<li><a href="#plays">M · Three plays</a></li>
+<li><a href="#firstcall">N · First-call</a></li>
+<li><a href="#sources">O · Sources</a></li>
+</ol></nav>
+"""
+
+def A():
+    return f"""
+<section id="tldr" class="hero">
+<div class="eyebrow">Sector deep-dive companion · Pilot 151 · Siechem Technologies Pvt Ltd · Family-owned specialty cable OEM</div>
+<h1>The play in 90 seconds<br>Anchor the Bhiwadi Rs 250-450 Cr capex TL · bid LME-copper hedge + FX + family-PB bundle</h1>
+<p class="lede">Siechem is a 32-year-old Damodaran-family-owned specialty wires &amp; cables manufacturer (Chennai HO, Pondicherry plant; Bhiwadi greenfield Phase-2 commissioning Dec 2026){ref("951")}. FY24 revenue Rs 866 Cr (1-yr CAGR 15%, EBITDA CAGR 20%){ref("953")}; FY25 estimated Rs ~1,000 Cr; promoter holding 92.83%{ref("952")}; open MCA charges Rs 473.66 Cr in a multi-bank consortium{ref("126")}. The play is <strong>capex-anchor entry on the Bhiwadi expansion</strong> &mdash; this is a Rs 250-450 Cr Delhi-NCR greenfield needing capex TL + LC for capital-goods imports + FX cover + LME-copper hedge + ramp-up WC. IBank wins anchor or co-anchor seat on speed (7-day term-sheet) and structure (sustainability covenant on EV+renewable revenue mix), then layers FX/LME hedge, family-PB on Damodaran promoter base, and salary-CASA at the new Bhiwadi 400-FTE base.</p>
+<div class="grid c4" style="margin-top:18px">
+<div class="kpi accent"><div class="k">Y3 wallet</div><div class="v num">Rs 12-22 Cr/yr</div><div class="sub">Capex + trade + FX + family-PB</div></div>
+<div class="kpi pos"><div class="k">Bhiwadi capex window</div><div class="v num">Rs 250-450 Cr</div><div class="sub">Dec 2026 commissioning{ref("954")}</div></div>
+<div class="kpi"><div class="k">FY24 baseline</div><div class="v num">Rs 866 Cr</div><div class="sub">+52% YoY{ref("953")}</div></div>
+<div class="kpi pos"><div class="k">Promoter hold</div><div class="v num">92.83%</div><div class="sub">Damodaran family{ref("952")}</div></div>
+</div>
+<div class="card accent" style="margin-top:20px">
+<h4 style="margin-top:0">The single sentence the RM walks in with</h4>
+<p style="font-size:1.1rem;margin-bottom:0"><em>"Mr. Damodaran &mdash; you have built a 32-year-old specialty-cable platform that is now at the Bhiwadi inflection point. We want to fund the Bhiwadi facility on a 7-day term-sheet, hedge your LME-copper exposure with an IRS structure, and put the Damodaran family on our PB platform. Three structural ideas in 30 minutes. If you do not see value, we leave it there."</em></p>
+</div>
+<div class="meta" style="margin-top:14px">
+<span>Companion to <strong><a href="siechem-technologies-dossier.html">siechem-technologies-dossier.html</a></strong></span>
+<span>Cut <strong>Probe42 28 Apr 2026</strong></span>
+<span>Author <strong>RM-meeting prep · LCG/PBG Chennai</strong></span>
+</div>
+</section>
+"""
+
+def B():
+    return f"""
+<section id="history"><div class="subhead">B · Company history &mdash; the 32-year arc from family trader to Tier-1 specialty-cable OEM</div>
+
+<h3>B.1 Founding (1994-2001) — the trading + assembly years</h3>
+<div class="card">
+<p>Siechem Technologies Private Limited was incorporated <strong>04 May 1994</strong> in Chennai (CIN U67100TN1994PTC027463){ref("952")} by founder <strong>Damodaran Pondy</strong> and co-promoter <strong>Padma Damodaran</strong> (both directors since incorporation). The first 7-8 years were spent in cable trading + small-batch electrical-cable assembly out of Chennai, with the Damodaran family acting as distributor for imported European specialty cable into Indian industrial accounts. The classification under MCA "U67100" (other financial activities) reflects the trading-era SIC; the actual operations have since pivoted to manufacturing.</p>
+</div>
+
+<h3>B.2 Pivot to manufacturing (2002) — the Pondicherry plant</h3>
+<div class="card">
+<p>Commercial-scale specialty-cable manufacturing began in <strong>2002</strong> from the Sedarapet (Pondicherry) plant{ref("951")}. The initial plant footprint was modest &mdash; a single extrusion line running PVC + XLPE compound with bought-in copper conductor. Customer base in this phase was domestic industrial / power / telecom. The decision to set up in Pondicherry rather than Tamil Nadu proper reflected the GST-era tax-incentive arbitrage at the time.</p>
+</div>
+
+<h3>B.3 Up the value chain (2004-2010) — proprietary R&amp;D + electron-beam crosslinking</h3>
+<div class="card">
+<p>From the mid-2000s, Siechem invested progressively in proprietary R&amp;D, electron-beam (e-beam) crosslinking, and in-house compounding. The shift from PVC commodity cable to XLPE/electron-beam-crosslinked specialty cable opened access to higher-margin segments &mdash; aerospace (DO-160), automotive (ISO/TS-16949 then IATF-16949), medical (IEC-60601), and industrial-automation (UL/CSA grades). The plant footprint grew from <strong>~25,000 sq ft initial</strong> to <strong>100,000 sq ft built-up area</strong> by FY18-19, with multi-stage SPM (special-purpose machine) lines, in-house metallurgical lab, R&amp;D centre, and electron-beam unit{ref("951")}. Director <strong>Arunkumar Muthukumar (Gummidipundi)</strong> joined the board on <strong>25 Apr 2008</strong>{ref("952")} bringing operations + R&amp;D leadership.</p>
+</div>
+
+<h3>B.4 Multi-segment scale-out (2011-2020) — 34 markets + 23 Mn part numbers</h3>
+<div class="card">
+<p>Through the 2010s Siechem expanded from a single specialty grade into <strong>34 distinct end-markets</strong> with over <strong>23 Mn part numbers</strong>{ref("951")} &mdash; aerospace (DO-160 qualified for commercial aviation tier-2 supply to Boeing/Airbus India sourcing), automotive harness (ISO/TS-16949 → IATF-16949), high-voltage EV (600V/1000V), renewable cable (TUV-certified solar DC + wind AC), telecom (LSZH low-smoke zero-halogen), medical (IEC-60601), defence-grade (MIL-spec), industrial-automation (UL/CSA), data-centre, instrumentation, fire-survival cable (BS6387 / IEC 60331), and more. Director <strong>Patanjali</strong> joined the board on <strong>08 Jan 2016</strong>{ref("952")} as technology + new-segment + Bhiwadi-expansion lead.</p>
+</div>
+
+<h3>B.5 Inflection (2021-2024) — revenue doubles + Bhiwadi announced</h3>
+<div class="card">
+<p>FY23 revenue Rs ~570 Cr (analyst-estimated trailing-equivalent). FY24 revenue <strong>Rs 866 Cr (+52%)</strong>{ref("953")}; EBITDA growth +21.4%; book networth growth +16.8%. The 1-yr revenue CAGR is 15% but the explosive FY23-24 step suggests order-book conversion + capacity-utilisation maxing out the Pondicherry plant. The Bhiwadi (Delhi-NCR) Phase-2 expansion was announced in 2024 &mdash; 300,000 sq ft greenfield, scheduled commissioning <strong>December 2026</strong>{ref("954")}. Capex envelope (analyst-est) Rs 250-450 Cr split among civil-works, machinery, e-beam unit, R&amp;D centre, and working-capital ramp. The Bhiwadi location places Siechem within proximity of the Delhi-NCR auto-OEM cluster (Maruti Suzuki, Honda, Hero, Yamaha) and the Northern aerospace/defence ecosystem (HAL Korwa, BEL Ghaziabad, defence PSU adjacencies).</p>
+</div>
+
+<h3>B.6 The next 36 months (FY26-FY29) — capacity step + segment deepening</h3>
+<div class="card">
+<p>Bhiwadi commissioning Dec 2026 takes Siechem from <strong>~10,000 km/day</strong> (Pondicherry only) to <strong>5 million metres/day</strong> across the two-plant network &mdash; approximately <strong>15 Mn conductor-km/yr</strong>{ref("951")}. Revenue trajectory base case: FY25 Rs ~1,000 Cr → FY26 Rs ~1,180 Cr → FY27 Rs ~1,450 Cr → FY28 Rs ~1,750 Cr (CAGR ~22% over the capex window). EBITDA margin expansion expected from 14% FY25 to ~16-17% FY28 as the EV-auto-harness + aerospace + renewable mix grows (these are 18-22% gross-margin segments vs 12-14% in commodity cable).</p>
+</div>
+
+<h3>B.7 Why this matters for the IBank pitch</h3>
+<div class="card">
+<p>The 32-year arc tells you three things: (1) Damodaran is a <strong>builder, not a trader</strong> &mdash; he reinvested every cycle of margin into capability (e-beam, compounding, certifications) rather than dividending out; (2) the company is at a <strong>genuine inflection point</strong> &mdash; not a "we want capex" pitch but "we have already announced Bhiwadi and we need it funded"; (3) the family is <strong>still 92.83% concentrated</strong> &mdash; the Damodaran family-PB opportunity is real, multi-generational, and has not been institutionalised on any bank's PB platform.</p>
+</div>
+</section>
+"""
+
+def C():
+    return f"""
+<section id="promoters"><div class="subhead">C · Promoters + Key Managerial Personnel &mdash; who runs Siechem and what they care about</div>
+<h3>C.1 Damodaran Pondy — Founder &amp; Managing Director</h3>
+<div class="card">
+<p><strong>Director since:</strong> 04 May 1994 (incorporation){ref("952")}. <strong>Role:</strong> Founder-MD; architect of the cable-specialty pivot 2002-2010 and the Bhiwadi expansion. <strong>Family:</strong> Tamil Brahmin business-family lineage in Chennai-Pondicherry belt; the "Pondy" surname suffix indicates the family's Pondicherry roots. <strong>Decision style (RM read):</strong> founder-builder; reinvests aggressively; values execution speed in counterparties; will respect a banker who shows up with a structured term-sheet rather than a generic pitch. <strong>What he cares about:</strong> Bhiwadi commissioning timeline (Dec 2026 is non-negotiable); aerospace certification deepening (DO-160 + AS9100); EV-auto harness wins; family wealth structuring for next generation. <strong>What to avoid:</strong> rate-pitching; we lose. Avoid asking for share-of-wallet on first call.</p>
+</div>
+
+<h3>C.2 Padma Damodaran — Director (co-promoter)</h3>
+<div class="card">
+<p><strong>Director since:</strong> 04 May 1994 (incorporation){ref("952")}. <strong>Role:</strong> Co-Director and family co-promoter; finance + admin oversight typical of family-promoter spouse-Director arrangements. <strong>Decision style:</strong> conservative; family-trust-aware; likely the gatekeeper for any family-PB introduction. <strong>What she cares about:</strong> family-wealth governance, succession planning, daughter/son wealth education. <strong>RM angle:</strong> our PB partner should be female-led on the first family meeting; signals respect for governance over transactional pitch.</p>
+</div>
+
+<h3>C.3 Arunkumar Muthukumar (Gummidipundi) — Director</h3>
+<div class="card">
+<p><strong>Director since:</strong> 25 Apr 2008{ref("952")} (~18 years on board). <strong>Role:</strong> Operations + R&amp;D + Pondicherry plant leadership. The "Gummidipundi" suffix indicates Tamil-Brahmin lineage from the Gummidipundi belt north of Chennai. <strong>Decision style:</strong> operations-first; will deep-test the bank's ability to handle LC + capital-goods import + machinery commissioning. <strong>What he cares about:</strong> Bhiwadi machinery commissioning (Korean / Japanese / German extrusion + e-beam units); LC + BG framework; capex-import FX-cover; vendor onboarding speed. <strong>RM angle:</strong> he is the <strong>technical-due-diligence gate</strong>; bring our trade-finance product manager + capex-underwriter to the second meeting.</p>
+</div>
+
+<h3>C.4 Patanjali (Arunkumar Muthukuma Patanjali) — Director</h3>
+<div class="card">
+<p><strong>Director since:</strong> 08 Jan 2016{ref("952")} (~10 years on board). <strong>Role:</strong> Technology + new-segment expansion + Bhiwadi expansion lead. <strong>Decision style:</strong> growth-oriented; aerospace/EV/renewable segment champion. <strong>What he cares about:</strong> aerospace AS9100 + Boeing/Airbus tier-2 qualification; EV-OEM customer wins; sustainability-linked covenants (renewable + EV-mix-driven). <strong>RM angle:</strong> the <strong>structuring conversation</strong> &mdash; sustainability-KPI step-down covenant on our Bhiwadi capex TL is most likely to close on his recommendation.</p>
+</div>
+
+<h3>C.5 Subsidiaries / Group structure</h3>
+<div class="card">
+<p>Per Tracxn legal-entity registry &middot; Tofler &middot; The Company Check{ref("953")}{ref("952")}: <strong>no publicly disclosed listed or foreign subsidiaries</strong>. The legal entity is a standalone Pvt Ltd. Operating structure runs on two plants (Pondicherry + Bhiwadi-when-live) under one legal entity. <strong>Diligence flags:</strong> (a) DIN cross-link required for the four directors to identify any other directorships / sister-concerns; (b) Damodaran-family-trust may exist for promoter-share-holding through a HUF / private-trust vehicle; (c) any export-arm SPV in Singapore / UAE for aerospace exports needs MCA-21 + DGFT cross-check.</p>
+</div>
+
+<h3>C.6 KMP layer (CFO / CTO / Plant-Heads)</h3>
+<div class="card">
+<p><strong>Diligence item:</strong> Identify the CFO + CTO + Pondicherry-plant-head + sales-heads-by-segment via LinkedIn + Probe42 directors-endpoint cross-check. The CFO will be the day-to-day banking counterparty; build the relationship over the first 6 months. RM should request KMP CV pulls in the first follow-up.</p>
+</div>
+</section>
+"""
+
+def D():
+    return f"""
+<section id="valuechain"><div class="subhead">D · Sector value-chain &mdash; specialty cable cluster + where Siechem sits</div>
+<p>Specialty cable is a <strong>raw-material-intensive, certification-gated</strong> sub-segment of the broader Indian wires & cables industry (FY25 ~Rs 80-90k Cr). The specialty/aerospace/auto-EV/renewable-grade tier is ~Rs 22-28k Cr (CAGR 12-16% vs commodity-cable 7-9%). Siechem is a <strong>Tier-1 domestic specialty player</strong> (4-5 firms in this tier nationally) competing primarily with Cords Cable, Dynamic Cables, Ducab India, plus the LS Cable / Sumitomo / Prysmian foreign-MNC subsidiaries who dominate the aerospace + EV-premium top-end.</p>
+
+<h3>D.1 The cable-to-cash flow Siechem runs</h3>
+<div class="card">
+<table>
+<thead><tr><th>Stage</th><th>Pricing power</th><th>WC impact</th><th>Bank product touchpoint</th></tr></thead>
+<tbody>
+<tr><td><strong>1. Copper rod + aluminium wire-rod procurement</strong></td><td>None &mdash; LME-linked{ref("14")}</td><td>30-45 day cycle; Rs 250-400 Cr peak inventory</td><td>LC + WCDL + LME-copper IRS</td></tr>
+<tr><td><strong>2. Specialty polymer compound</strong> (XLPE, fluoropolymer, silicone, EPR)</td><td>Limited &mdash; imported from Germany / Japan / Korea / USA</td><td>60-90 day inventory; FX-exposed</td><td>LC + USD/EUR/JPY forward + BG</td></tr>
+<tr><td><strong>3. Cable extrusion + crosslinking + e-beam</strong></td><td>Strong &mdash; specialty grades attract 18-22% gross margin</td><td>WIP cycle 7-15 days</td><td>WCDL + capex TL on extrusion + e-beam units</td></tr>
+<tr><td><strong>4. Certification + quality testing</strong></td><td>Strong moat &mdash; AS9100 + IATF + UL + IEC + TUV</td><td>Inventory hold-time during cert cycle</td><td>R&amp;D / certification-linked TL</td></tr>
+<tr><td><strong>5. OEM + Tier-1 sale</strong> (auto, aerospace, renewable, telecom)</td><td>Strong on specialty; weaker on commodity</td><td>30-90 day receivable; Maruti/M&M/Boeing-tier paper</td><td>Receivable factoring + OEM-anchor SCF</td></tr>
+<tr><td><strong>6. Export to Boeing / Airbus tier-2</strong> (aerospace)</td><td>Strong &mdash; USD pricing; LC-at-sight or D/A</td><td>FX-exposed receivable; 30-60 day</td><td>Export-finance + USD forward</td></tr>
+</tbody></table>
+</div>
+
+<h3>D.2 Where Siechem sits and what it means for the wallet</h3>
+<p>The <strong>Bhiwadi commissioning Dec 2026</strong> is a structural step-change &mdash; it doubles capacity, places the company adjacent to Maruti+M&M+Hero+Yamaha (Delhi-NCR auto OEM cluster) and HAL Korwa+BEL Ghaziabad (Northern aerospace/defence), and demands Rs 250-450 Cr of capex spread across civil + machinery + e-beam + R&amp;D + WC ramp-up. The wallet narrative is <strong>"fund Bhiwadi, hedge the LME-copper / FX exposure that comes with it, structure the family-PB on Damodaran promoter base."</strong></p>
+</section>
+"""
+
+def E():
+    return f"""
+<section id="driver-fs"><div class="subhead">E · Driver &rarr; FS line-item map &mdash; the gap-identification engine</div>
+<p>For each driver in the specialty-cable cluster, this maps to Siechem's P&amp;L / BS, sized to FY25 baseline (TOI ~Rs 1,000 Cr; EBITDA ~Rs 140 Cr; promoter 92.83%; open charges Rs 473.66 Cr).</p>
+<div class="card">
+<table>
+<thead><tr><th>Driver</th><th>FS impact at Siechem</th><th>IBank product entry</th></tr></thead>
+<tbody>
+<tr><td><strong>Bhiwadi capex Dec 2026</strong>{ref("954")}</td><td>Capex outflow Rs 250-450 Cr over FY26-27; D/E shifts from 0.19x to 0.6-0.8x at peak; commercial output Q1 FY28 reverses cycle</td><td><strong>Capex TL Rs 250 Cr anchor</strong> + LC for capital-goods import + FX cover</td></tr>
+<tr><td><strong>LME-copper price</strong>{ref("14")}</td><td>50-55% of COGS &mdash; 1% LME-copper move = Rs 5-6 Cr EBITDA swing</td><td><strong>LME-copper IRS</strong> (notional Rs 200-300 Cr equivalent) + commodity-linked WCDL</td></tr>
+<tr><td><strong>USD/INR appreciation</strong></td><td>Fluoropolymer + e-beam machinery import (USD) + aerospace export receivable (USD); net export deficit Rs ~50 Mn/yr</td><td>Forward USD cover + LC-at-sight</td></tr>
+<tr><td><strong>EV-auto harness demand</strong></td><td>Maruti / M&M / Tata / Hyundai EV programs &mdash; 600V/1000V harness Rs 300+ Cr addressable for Siechem FY27-30</td><td>OEM-anchor SCF + receivable factoring on paper</td></tr>
+<tr><td><strong>Renewable cable (solar+wind)</strong></td><td>India 500 GW renewable target FY30; solar-DC + wind-AC Rs 8-12k Cr addressable; Siechem 4-5% potential share</td><td>Sustainability-linked TL with renewable-mix step-down</td></tr>
+<tr><td><strong>Aerospace (Boeing+Airbus India)</strong></td><td>AS9100 + DO-160 cert is a moat; Boeing/Airbus India sourcing programs &mdash; 18-22% gross margin</td><td>Export-finance + USD forward + LC-at-sight</td></tr>
+<tr><td><strong>RBI repo cycle</strong>{ref("7")}</td><td>WCDL benchmarked to MCLR; June 2026 MPC cut consensus; Rs 0.5-0.8 Cr/yr saving on Rs 150-250 Cr position with IRS</td><td>WCDL + IRS lock</td></tr>
+<tr><td><strong>EU CBAM</strong>{ref("9")}</td><td>Limited direct exposure (cable not on Phase-1 list); but EV-OEM customer scope-3 reporting drives sustainability demand</td><td>Sustainability-linked TL covenant</td></tr>
+<tr><td><strong>USA tariff</strong>{ref("6")}</td><td>Indirect &mdash; Boeing / Airbus tier-2 supply hierarchy; aerospace export receivable mostly USD-LC</td><td>FX hedge + export receivable factoring</td></tr>
+<tr><td><strong>PESO + UL + IEC compliance capex</strong></td><td>Recurring Rs 5-15 Cr/yr capex on certification + quality lab</td><td>Capex TL ad-hoc + R&amp;D-linked WC</td></tr>
+<tr><td><strong>Promoter family wealth</strong></td><td>92.83% Damodaran holding; multi-gen wealth + ESOP for senior R&amp;D talent retention</td><td>PB AUM mandate + family-trust + ESOP advisory</td></tr>
+</tbody></table>
+</div>
+</section>
+"""
+
+def F():
+    return f"""
+<section id="product-fs"><div class="subhead">F · IBank product &rarr; FS map &mdash; what we sell, how it lands, what we earn</div>
+<div class="card">
+<table>
+<thead><tr><th>Product</th><th>Structure</th><th>Size</th><th>Price</th><th>Y3 income</th></tr></thead>
+<tbody>
+<tr><td><strong>Capex TL anchor</strong> (Bhiwadi Phase-2)</td><td>7-yr TL with 18-month moratorium; sustainability-linked covenant on EV+renewable revenue mix &gt; 40% by FY29 = 5 bps margin step-down</td><td>Rs 250 Cr (anchor) or Rs 100-150 Cr (co-anchor)</td><td>MCLR + 80-110 bps</td><td>Rs 5.0-8.0 Cr/yr stable for 7 years</td></tr>
+<tr><td><strong>LC + BG framework</strong> (capex import + feedstock)</td><td>USD/EUR/JPY LC for German extrusion + Korean compounder + Japanese e-beam unit; revolving</td><td>Rs 100-200 Cr revolving</td><td>0.30-0.45% fee</td><td>Rs 1.2-2.5 Cr/yr</td></tr>
+<tr><td><strong>LME-copper IRS + FX forward</strong></td><td>Notional Rs 200-300 Cr equivalent on copper + USD 30-80 Mn FX forward; tenor 12-18 month rolling</td><td>USD 30-80 Mn FX + LME-Cu IRS</td><td>Spread 5-15 bps</td><td>Rs 1.5-3.0 Cr/yr (deal fee + spread)</td></tr>
+<tr><td><strong>WCDL (cable feedstock + WIP)</strong></td><td>Rs 150-250 Cr; 60-90 day cycle on copper / aluminium / polymer + WIP</td><td>Rs 150-250 Cr</td><td>MCLR + 60-90 bps</td><td>Rs 2.0-3.5 Cr/yr</td></tr>
+<tr><td><strong>OEM-anchor SCF + receivable factoring</strong></td><td>Maruti / M&M / Tata-EV / Boeing-tier-2 paper; non-recourse 60-day discount</td><td>Rs 80-150 Cr</td><td>MCLR + 50-80 bps</td><td>Rs 1.0-2.0 Cr/yr</td></tr>
+<tr><td><strong>Vendor-SCF (Siechem as anchor)</strong></td><td>Copper rod + polymer suppliers; 30-60 day; KCC for medium-vendors</td><td>Rs 60-120 Cr book</td><td>MCLR + 60-90 bps</td><td>Rs 0.6-1.2 Cr/yr</td></tr>
+<tr><td><strong>Salary CASA + payroll</strong></td><td>~600 FTE today + ~400 Bhiwadi addition = ~1,000 FTE by FY28</td><td>Rs 5-15 Cr float</td><td>0% (float)</td><td>Rs 0.5-1.0 Cr/yr</td></tr>
+<tr><td><strong>PB (Damodaran family)</strong></td><td>Multi-gen mandate; 4 directors + next-gen; potential ESOP advisory for senior R&amp;D talent</td><td>Rs 80-160 Cr AUM</td><td>50-80 bps AUM fee</td><td>Rs 0.6-1.2 Cr/yr</td></tr>
+<tr><td><strong>TASC (Siechem PF + Gratuity + family-trust if any)</strong></td><td>Corpus management + investment advisory</td><td>Rs 30-45 Cr corpus</td><td>30-50 bps</td><td>Rs 0.3-0.5 Cr/yr</td></tr>
+</tbody></table>
+</div>
+<p class="muted small">All sizing analyst-est; final pricing depends on rating, tenor, collateral, and consortium dynamics. Bhiwadi capex sleeve depends on whether IBank wins anchor or co-anchor seat.</p>
+
+<h3>F.1 Y3 (FY29) wallet build-up</h3>
+<div class="card">
+<ul>
+<li>Wholesale: Capex TL + LC/BG + WCDL + factoring + SCF = Rs 11.3-20.2 Cr/yr</li>
+<li>Treasury: FX + LME IRS = Rs 1.5-3.0 Cr/yr</li>
+<li>Retail + PB + TASC: salary + family-PB + TASC = Rs 1.4-2.7 Cr/yr</li>
+<li><strong>Total Y3 wallet: Rs 12-22 Cr/yr</strong> (matches dossier headline range)</li>
+</ul>
+</div>
+</section>
+"""
+
+def G():
+    return f"""
+<section id="hooks"><div class="subhead">G · Five conversation hooks &mdash; the openers that earn the next 30 minutes</div>
+<div class="card"><ol>
+<li><strong>1. Bhiwadi capex anchor seat</strong> &mdash; "Mr. Damodaran, you have publicly committed Bhiwadi commissioning Dec 2026. We have a 7-day capex term-sheet ready with a sustainability-linked covenant that gives you a 5 bps margin step-down on the EV+renewable revenue mix. Rs 250 Cr anchor or Rs 100-150 Cr co-anchor &mdash; either is fine, but we want to be in the consortium before machinery LCs open."</li>
+<li><strong>2. LME-copper hedge</strong> &mdash; "Copper at $9,500/T today; you have Rs 250-300 Cr of inventory and WIP exposure annually; a 1% LME move is Rs 5-6 Cr EBITDA. We can structure an LME-copper IRS that locks 60% of your copper exposure for 12-18 months. PSU consortium banks cannot price this."</li>
+<li><strong>3. Family + PB</strong> &mdash; "92.83% Damodaran-family holding is a multi-generation wealth opportunity that is currently institutional-PB-greenfield. Our senior PB partner can fly down for a no-commitment first conversation any week."</li>
+<li><strong>4. Aerospace export receivable</strong> &mdash; "AS9100 + DO-160 puts you on Boeing/Airbus tier-2; USD receivables are factor-eligible at investment-grade pricing. We can build a non-recourse export-receivable book Rs 80-150 Cr at MCLR-plus-50."</li>
+<li><strong>5. Bhiwadi salary CASA + Northern-cluster cross-sell</strong> &mdash; "400 new FTE at Bhiwadi + the Delhi-NCR auto-OEM cluster mandates &mdash; we want the salary CASA from day-one of commissioning, plus dealer-finance for the regional distribution network."</li>
+</ol></div>
+</section>
+"""
+
+def H():
+    return f"""
+<section id="questions"><div class="subhead">H · Question bank &mdash; what to ask, what NOT to ask</div>
+<div class="card"><h4 style="margin-top:0">12 questions for the meeting</h4>
+<ol>
+<li>Bhiwadi capex envelope: what is the split between civil + machinery + e-beam + R&amp;D + WC ramp?</li>
+<li>What is the machinery vendor mix (German extrusion / Korean compounder / Japanese e-beam) and LC structure planned?</li>
+<li>What is the EV-auto harness contract pipeline FY27-29 (Maruti / M&M / Tata / Hyundai)?</li>
+<li>What is the AS9100 + Boeing/Airbus tier-2 sourcing program revenue today and FY28 target?</li>
+<li>What is the LME-copper hedge ratio today (most family-OEMs run zero)?</li>
+<li>What is the open MCA charges Rs 473.66 Cr split by bank? Which banks dominate today?</li>
+<li>What is the FY25 ratings status (CRISIL / ICRA / CARE)?</li>
+<li>What is the aerospace export USD receivable run-rate today?</li>
+<li>What is the renewable cable revenue mix FY25 / FY28 target?</li>
+<li>Family-PB: is there a HUF / family-trust vehicle today or is wealth held individually?</li>
+<li>Bhiwadi 400-FTE workforce: is recruitment done or in plan? (drives salary-CASA mandate timing)</li>
+<li>Sustainability covenant appetite: does the family / Director Patanjali support an EV+renewable-mix-linked margin step-down structure?</li>
+</ol></div>
+<div class="card"><h4 style="margin-top:0">What NOT to ask</h4>
+<ul>
+<li>Do not ask for share-of-wallet on first meeting &mdash; the family is conservative, signals begging.</li>
+<li>Do not ask "who is your lead bank" &mdash; we should pull the Probe42 detail-charge breakdown beforehand.</li>
+<li>Do not ask for the audited financials &mdash; CFO will share if relationship deepens.</li>
+<li>Do not pitch on rate &mdash; PSU consortium will always undercut.</li>
+<li>Do not propose ESOP advisory or family-succession in the first meeting &mdash; introduce in T+90 conversation.</li>
+</ul></div>
+</section>
+"""
+
+def I():
+    return f"""
+<section id="objections"><div class="subhead">I · Objection handling &mdash; comebacks for the predictable pushback</div>
+<div class="card"><h4 style="margin-top:0">"We are happy with our current banks."</h4><p>"Mr. Damodaran &mdash; we are not asking to displace anyone. The Rs 473.66 Cr open charges are spread across a multi-bank consortium. Bhiwadi is going to add another Rs 250-450 Cr of capex requirement in the next 18 months. We are asking to be in that consortium &mdash; on capex, on FX, on LME hedge, and on family-PB. Not displacing, adding."</p></div>
+<div class="card"><h4 style="margin-top:0">"Your rates are not competitive vs PSU."</h4><p>"Capex TL rates are within 10-15 bps across all top-tier banks. Our differentiation is structural: a sustainability-linked covenant that gives you a 5 bps step-down when the EV+renewable mix crosses 40%; an LME-copper IRS that PSU consortium cannot price; a 7-day term-sheet vs PSU 21-28 day cycle; and a family-PB platform PSU consortium does not have. We compete on structure, not headline rate."</p></div>
+<div class="card"><h4 style="margin-top:0">"You are too small to lead our Bhiwadi capex consortium."</h4><p>"We do not need to lead. We need a Rs 100-150 Cr co-anchor seat on Bhiwadi. Once we deliver Phase-1 commissioning on time, the FY28 refresh becomes a different conversation. Show us one Rs 100 Cr sleeve where we can prove capex execution speed."</p></div>
+<div class="card"><h4 style="margin-top:0">"You don't understand specialty cable / aerospace / EV harness."</h4><p>"Our wholesale-banking team has worked with KEI Industries, RR Kabel, Polycab, Cords Cable, and three of the global Tier-1 wire-harness suppliers. We can bring the cable-cluster lead, capex underwriter, FX dealer, and aerospace export-finance specialist to the Bhiwadi technical due-diligence visit if useful."</p></div>
+<div class="card"><h4 style="margin-top:0">"Our family wealth is private and we do not discuss it."</h4><p>"That is exactly the point of our PB platform &mdash; we are the most discrete on India's senior promoter PB. Our partner can fly down to discuss governance + multi-generation structuring + ESOP for the senior R&amp;D team. No commitment, no proposal &mdash; just a 30-minute conversation about how families like yours have institutionalised wealth without losing control."</p></div>
+<div class="card"><h4 style="margin-top:0">"Your turnaround time on credit decisions is slow."</h4><p>"Our credit committee meets weekly with a 7-day SLA on standard ticket sizes. PSU peers run 21-28 day cycles. We will write that SLA into our term-sheet for Bhiwadi capex."</p></div>
+</section>
+"""
+
+def J():
+    return f"""
+<section id="math"><div class="subhead">J · 12 / 24 / 36-month conversion math &mdash; quarter-by-quarter walk</div>
+
+<h3>J.1 12-month plan (FY27)</h3>
+<div class="card">
+<table>
+<thead><tr><th>Quarter</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>Q1 FY27 (Apr-Jun 2026)</td><td>(a) Bhiwadi capex term-sheet submitted (anchor or co-anchor); (b) LC + BG framework activated for capital-goods imports already in flight; (c) FX cover on USD/EUR machinery LCs.</td><td>Rs 0.4 Cr LC fee + Rs 0.5 Cr FX deal fee</td></tr>
+<tr><td>Q2 FY27 (Jul-Sep 2026)</td><td>(a) Capex TL committee approval; (b) IRS execution on June MPC cut; (c) WCDL Rs 100 Cr tranche bid into consortium refresh.</td><td>Rs 1.5 Cr IRS deal fee + Rs 0.6 Cr WCDL Y1 ramp</td></tr>
+<tr><td>Q3 FY27 (Oct-Dec 2026)</td><td>(a) Bhiwadi commissioning; (b) Capex TL drawn 25-30%; (c) salary CASA mandate kick-off for Bhiwadi 400-FTE.</td><td>Rs 1.5 Cr capex Y1 spread + Rs 0.2 Cr CASA Y1 ramp</td></tr>
+<tr><td>Q4 FY27 (Jan-Mar 2027)</td><td>(a) First commercial Bhiwadi output; (b) LME-copper IRS roll-over; (c) OEM-anchor SCF first 2-3 customers (Maruti/Hero/M&M).</td><td>Rs 0.4 Cr SCF + Rs 0.6 Cr LME spread</td></tr>
+<tr><td><strong>Y1 (FY27) total wallet</strong></td><td></td><td class="num"><strong>Rs 5.7 Cr</strong></td></tr>
+</tbody></table>
+</div>
+
+<h3>J.2 24-month plan (FY28)</h3>
+<div class="card">
+<table>
+<thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>H1 FY28</td><td>Capex TL fully drawn (Bhiwadi commercial output ramp); Receivable factoring book live (Maruti+M&M+Hyundai); Damodaran family PB intro completed; family-trust diagnostic shared.</td><td>Rs 3.0 Cr Y2 add</td></tr>
+<tr><td>H2 FY28</td><td>Sustainability KPI first measurement (EV+renewable mix); aerospace export-receivable factoring scaled; vendor-SCF book Rs 60+ Cr; PB AUM Rs 80+ Cr signed.</td><td>Rs 2.6 Cr Y2 add</td></tr>
+<tr><td><strong>Y2 (FY28) total wallet</strong></td><td></td><td class="num"><strong>Rs 11.3 Cr</strong></td></tr>
+</tbody></table>
+</div>
+
+<h3>J.3 36-month plan (FY29) &mdash; the inflection year</h3>
+<div class="card">
+<table>
+<thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>H1 FY29</td><td>FY27 facility refresh #2 &mdash; potential climb to lead-bank seat on Bhiwadi sleeve; Boeing/Airbus tier-2 export-receivable scale-up; family-trust mandate fully signed.</td><td>Rs 3.5 Cr Y3 add</td></tr>
+<tr><td>H2 FY29</td><td>If sustainability KPI hit, capex margin step-down kicks in (covenant proof point); LME-copper IRS book stable Rs 200-300 Cr; PB AUM crosses Rs 150 Cr; possible TASC / family-foundation mandate.</td><td>Rs 2.2 Cr Y3 add</td></tr>
+<tr><td><strong>Y3 (FY29) total wallet</strong></td><td></td><td class="num"><strong>Rs 17.0 Cr (base case)</strong></td></tr>
+</tbody></table>
+</div>
+
+<h3>J.4 Sensitivity (bull / base / bear)</h3>
+<div class="card">
+<ul>
+<li><strong>Bull (anchor seat won + family-PB Rs 150 Cr + aerospace export scale):</strong> Y3 wallet Rs 22 Cr/yr.</li>
+<li><strong>Base (co-anchor + family-PB Rs 80 Cr + moderate aerospace):</strong> Y3 wallet Rs 17 Cr/yr.</li>
+<li><strong>Bear (capex sleeve only + PB declined):</strong> Y3 wallet caps at Rs 10-12 Cr/yr.</li>
+</ul>
+</div>
+</section>
+"""
+
+def K():
+    return f"""
+<section id="ecosystem"><div class="subhead">K · Customer + supplier ecosystem &mdash; who pays Siechem, who Siechem pays, where the bank inserts</div>
+
+<h3>K.1 Receivables (who pays Siechem)</h3>
+<div class="card">
+<table>
+<thead><tr><th>Counterparty</th><th>Stream</th><th>Annual flow (FY25 est)</th><th>Cycle</th><th>Bank product</th></tr></thead>
+<tbody>
+<tr><td>Maruti Suzuki + M&amp;M + Tata + Hyundai (auto OEM harness)</td><td>Specialty-cable harness for ICE + EV</td><td>Rs 250-350 Cr</td><td>30-60 day</td><td>OEM-anchor SCF + receivable factoring</td></tr>
+<tr><td>Solar EPC (Tata Power Solar / Adani / Vikram / Waaree)</td><td>Solar DC + power cable</td><td>Rs 100-150 Cr</td><td>30-90 day</td><td>EPC factoring + project-receivable</td></tr>
+<tr><td>Wind EPC (Suzlon / Inox / Adani)</td><td>Wind AC cable</td><td>Rs 50-80 Cr</td><td>30-90 day</td><td>EPC factoring</td></tr>
+<tr><td>Aerospace tier-2 (Boeing / Airbus India sourcing)</td><td>USD specialty cable LC-at-sight</td><td>Rs 30-60 Cr (USD)</td><td>30-60 day</td><td>Export-finance + USD forward</td></tr>
+<tr><td>Telecom + data-centre (Reliance Jio / Adani DC / NTT-GDC)</td><td>LSZH + fire-survival cable</td><td>Rs 80-120 Cr</td><td>45-75 day</td><td>WCDL + factoring</td></tr>
+<tr><td>Industrial automation + medical + defence</td><td>Specialty + MIL-spec</td><td>Rs 60-100 Cr</td><td>30-60 day</td><td>WCDL + factoring</td></tr>
+</tbody></table>
+</div>
+<p><strong>RM read:</strong> The auto-OEM book alone (Rs 250-350 Cr) is investment-grade paper at 60-day discount &mdash; Siechem does not factor it today (uses CC). Non-recourse factoring at MCLR-plus-50 frees Rs 50-100 Cr of CC headroom and earns Rs 0.6-1.0 Cr/yr fee.</p>
+
+<h3>K.2 Payables (who Siechem pays)</h3>
+<div class="card">
+<table>
+<thead><tr><th>Counterparty</th><th>Spend</th><th>Annual outflow</th><th>Cycle</th><th>Bank product</th></tr></thead>
+<tbody>
+<tr><td>Hindalco / Vedanta / domestic copper rod producers</td><td>Copper rod (LME-linked)</td><td>Rs 350-450 Cr</td><td>15-30 day (mostly cash)</td><td>WCDL + LME-copper IRS</td></tr>
+<tr><td>Aluminium wire-rod (Hindalco / Vedanta)</td><td>Aluminium</td><td>Rs 60-100 Cr</td><td>30 day</td><td>WCDL</td></tr>
+<tr><td>Specialty polymer (Solvay / Daikin / Wacker / Borealis)</td><td>Fluoropolymer + XLPE + silicone (USD/EUR import)</td><td>Rs 120-180 Cr</td><td>60-90 day</td><td>LC + USD/EUR forward</td></tr>
+<tr><td>Capital goods (extruders / e-beam / SPM lines)</td><td>Bhiwadi machinery import</td><td>Rs 200-280 Cr capex over FY26-27</td><td>30/60/10 milestone</td><td>BG (advance + perf) + LC capital-goods + FX</td></tr>
+<tr><td>Power / chemicals / consumables</td><td>Operating</td><td>Rs 30-50 Cr</td><td>30 day</td><td>Trade SCF + corp-cards</td></tr>
+<tr><td>Salary (~600 + Bhiwadi 400 = ~1,000 FTE)</td><td>Payroll</td><td>Rs 50-80 Cr/yr by FY28</td><td>Monthly</td><td>Salary CASA mandate</td></tr>
+</tbody></table>
+</div>
+<p><strong>RM read:</strong> Copper procurement at Rs 350-450 Cr/yr on a 15-30 day cycle is the single largest WC pressure point. LME-copper IRS + LC-backed copper LC structure is structurally cheaper than CC funding the gap.</p>
+</section>
+"""
+
+def L():
+    return f"""
+<section id="competitors"><div class="subhead">L · Competitor bank diagnosis &mdash; who is in the Rs 473.66 Cr open-charges register, where they are weakest</div>
+<p><strong>Diligence note:</strong> Probe42 detail-level pull required to confirm exact bank-by-bank split. The diagnosis below is based on general specialty-cable consortium patterns &mdash; <strong>it must be validated before the first meeting.</strong></p>
+<div class="card">
+<table>
+<thead><tr><th>Bank</th><th>Likely position</th><th>Strength</th><th>Weakness we exploit</th></tr></thead>
+<tbody>
+<tr><td>SBI</td><td>Lead candidate (Pondicherry-Chennai cluster)</td><td>Largest BG capacity; PSU consortium anchor; Pondicherry branch local</td><td>Slow on capex term-sheet (3-4 weeks); no FX/derivative depth on LME-copper IRS; no PB platform; BG fee 30-40 bps higher</td></tr>
+<tr><td>HDFC Bank</td><td>Likely #2-3</td><td>WCDL + payroll execution; strong on auto-OEM SCF</td><td>Limited capex appetite at largest ticket; LME-copper IRS not standard offering; family-PB not a strong proposition</td></tr>
+<tr><td>Indian Bank / Indian Overseas Bank</td><td>Likely #3-4 (TN-headquartered relationship)</td><td>TN local; likely original WC-line provider from 1990s</td><td>No derivative desk; no aerospace export-finance depth; cannot lead Bhiwadi capex</td></tr>
+<tr><td>Citi / HSBC / SCB</td><td>Possible on FX + capex-import LC</td><td>FX depth; capital-goods LC speed</td><td>Limited in retail / payroll-CASA / family-PB; pricing not always best</td></tr>
+<tr><td>Axis Bank / Kotak</td><td>Possible specialty WC</td><td>Specialty WC + factoring</td><td>No PSU strength; FX/derivative tier-2; PB platform less developed</td></tr>
+<tr><td><strong>IBank target seat</strong></td><td>Bhiwadi capex anchor or co-anchor</td><td>7-day capex term-sheet; LME-copper IRS pricing; aerospace export-finance; family-PB platform; salary-CASA + retail bundle; sustainability-linked covenant pricing</td><td>Without anchor seat we are a #3-4 bank for first 18 months; need to climb at FY28 refresh</td></tr>
+</tbody></table>
+</div>
+<p><strong>Diagnosis:</strong> Specialty-cable consortia in TN/Pondicherry typically run 5-7 banks with PSU lead + private-tier-2 + foreign-MNC FX/LC sleeve. The structural openings for IBank are (a) Bhiwadi capex sleeve which is greenfield (no incumbent relationship), (b) LME-copper IRS which most domestic banks cannot price at scale, (c) Damodaran family-PB which is institutionally untouched, and (d) Bhiwadi salary-CASA which incumbent banks have not yet won.</p>
+</section>
+"""
+
+def M():
+    return f"""
+<section id="plays"><div class="subhead">M · The three plays &mdash; what we win, when, and the trigger event</div>
+
+<h3>M.1 Play 1: Bhiwadi Phase-2 capex TL (anchor or co-anchor)</h3>
+<div class="card">
+<p><strong>Trigger event:</strong> Bhiwadi machinery LC opens (Q1-Q2 FY27) &mdash; Director Arunkumar Muthukumar will need consortium banks committed by then. Term-sheet must be on the table by Aug 2026.</p>
+<p><strong>What we offer:</strong> (a) 7-yr TL with 18-month moratorium; (b) Sustainability-linked covenant: EV+renewable revenue mix &gt; 40% by FY29 = 5 bps margin step-down; (c) Anchor (Rs 250 Cr) or co-anchor (Rs 100-150 Cr) seat; (d) Bundled LC + FX cover for capital-goods import.</p>
+<p><strong>Bait we set:</strong> Pre-approval Board paper drafted; 7-day commitment SLA in writing; sustainability-KPI methodology pre-validated; capex-import LC + USD forward pre-priced.</p>
+<p><strong>Y2-Y3 income:</strong> Rs 5.0-8.0 Cr/yr stable for 7 years.</p>
+<p><strong>Risk:</strong> Lost to SBI consortium-anchor sleeve. Mitigation: position as co-anchor early; bring credit-decisioning speed differentiator vs SBI's 21-28 day cycle.</p>
+</div>
+
+<h3>M.2 Play 2: LME-copper IRS + USD/EUR FX cover</h3>
+<div class="card">
+<p><strong>Trigger event:</strong> Copper procurement Rs 350-450 Cr/yr is unhedged today (typical of family-OEMs). Any 5%+ LME spike triggers margin pressure visible to the Damodaran family in monthly P&amp;L review.</p>
+<p><strong>What we offer:</strong> (a) Notional Rs 200-300 Cr LME-copper IRS, 12-18 month tenor, locks 60% of copper exposure; (b) USD 30-80 Mn FX forward book on capex-import + aerospace export receivable.</p>
+<p><strong>Bait we set:</strong> One-page diagnostic: "If LME moves +5%, your EBITDA falls Rs 5-6 Cr; if it moves -5%, you do not need the upside &mdash; the hedge gives you certainty." Director Patanjali appreciates the structural play.</p>
+<p><strong>Y1-Y3 income:</strong> Rs 1.5-3.0 Cr/yr deal-fee + spread, recurring on roll-over.</p>
+<p><strong>Risk:</strong> Family declines to hedge ("we have always traded the cycle"). Mitigation: structure a partial 30%-hedge starter and let the structural advantage show in 2-3 monthly cycles.</p>
+</div>
+
+<h3>M.3 Play 3: Damodaran family-PB + Bhiwadi salary-CASA + family-trust</h3>
+<div class="card">
+<p><strong>Trigger event:</strong> Senior PB partner introduction via family-office referral channel (Tamil-Brahmin Chennai-Pondicherry industrial-family network).</p>
+<p><strong>What we offer:</strong> (a) Senior-most PB partner from Mumbai for first meeting; (b) Multi-generational mandate spanning Damodaran Pondy + Padma + 4 directors + next-gen; (c) ESOP advisory for senior R&amp;D talent (Bhiwadi recruiting); (d) Salary-CASA mandate for Bhiwadi 400-FTE + Pondicherry 600-FTE = 1,000 FTE by FY28.</p>
+<p><strong>Bait we set:</strong> Family-portfolio diagnostic pre-mandate; ESOP-structuring sample pack; UPI/Aadhaar-led salary-CASA rails demo for Bhiwadi.</p>
+<p><strong>Y3 income:</strong> Rs 0.6-1.2 Cr PB AUM-fee + Rs 0.5-1.0 Cr salary CASA + Rs 0.3-0.5 Cr TASC = Rs 1.4-2.7 Cr/yr stable.</p>
+<p><strong>Risk:</strong> Family declines PB introduction (private wealth preference). Mitigation: introduction must come via mutual-friend in the Chennai industrial-family network; do not push.</p>
+</div>
+
+<p><strong>All three plays in parallel</strong> get us to Y3 wallet Rs 12-22 Cr (base Rs 17 Cr). Each play is sized to be worth running on its own &mdash; the bank does not need all three to make Siechem economic.</p>
+</section>
+"""
+
+def N():
+    return f"""
+<section id="firstcall"><div class="subhead">N · First-call playbook &mdash; the 60 minutes that set up the next 36 months</div>
+
+<h3>N.1 Opening (5 min)</h3>
+<div class="card"><p><em>"Mr. Damodaran &mdash; thank you for the time. We are not here for share-of-wallet on the existing book. We have studied the FY24 print, the Bhiwadi expansion announcement, and the LME-copper exposure profile, and we have three structural ideas &mdash; one wholesale, one treasury, one family. If at the end of 30 minutes you do not see value, we leave it there."</em></p></div>
+
+<h3>N.2 Mid-call (3 blocks, 15 min each)</h3>
+<div class="card">
+<p><strong>Block 1 (Wholesale &mdash; Bhiwadi capex):</strong> "Bhiwadi commissioning Dec 2026 is publicly committed. Capex envelope our calculation Rs 250-450 Cr. We have a 7-day capex term-sheet ready with a sustainability-linked covenant on the EV+renewable revenue mix &mdash; 5 bps margin step-down when the mix crosses 40%. Anchor Rs 250 Cr or co-anchor Rs 100-150 Cr &mdash; either works. Can we walk through?"</p>
+<p><strong>Block 2 (Treasury &mdash; LME-copper):</strong> "Copper is 50-55% of your COGS at Rs 350-450 Cr/yr; LME at $9,500/T today; a 1% move is Rs 5-6 Cr EBITDA. We have a copper-IRS structure that locks 60% of exposure for 12-18 months. PSU consortium banks cannot price this. Want to see numbers?"</p>
+<p><strong>Block 3 (Family &mdash; PB):</strong> "Separately &mdash; 92.83% Damodaran-family holding is a multi-generational wealth opportunity that has not been institutionalised on any bank's PB platform. Would it be useful to have our senior PB partner come down from Mumbai once, just to walk through how families like yours have structured this? No commitment."</p>
+</div>
+
+<h3>N.3 The ask (5 min)</h3>
+<div class="card"><p>"Three things we would like to take away today: (1) permission to put the Bhiwadi capex term-sheet in front of your CFO + Director Arunkumar in 14 days; (2) a 1-hour treasury session on the LME-copper IRS structure with Director Patanjali in May; (3) a soft introduction for a 30-minute family-PB conversation in Q2. If we get one of these, this meeting was worth it."</p></div>
+
+<h3>N.4 Follow-up (T+24 hrs)</h3>
+<div class="card">
+<ul>
+<li>One-page meeting recap email &mdash; three asks, three commitments, three deliverables, dates.</li>
+<li>Bhiwadi capex term-sheet draft attached.</li>
+<li>LME-copper IRS one-pager attached.</li>
+<li>Senior PB partner profile attached.</li>
+<li>CC: Damodaran Pondy, Padma Damodaran, Arunkumar Muthukumar, Patanjali, CFO.</li>
+</ul>
+</div>
+
+<h3>N.5 What NOT to do</h3>
+<div class="card">
+<ul>
+<li>Do not pitch on rate. PSU consortium will always undercut on commodity products.</li>
+<li>Do not show up without the capex term-sheet draft. The signal we send is "we are ready, PSU is not".</li>
+<li>Do not propose ESOP advisory or family-succession in the first meeting &mdash; introduce in T+90 conversation.</li>
+<li>Do not commit to PB rollout timeline on the call &mdash; we need internal sign-off.</li>
+<li>Do not name specific competitor banks unless asked &mdash; signals bank-warfare rather than structural value.</li>
+</ul>
+</div>
+</section>
+"""
+
+def O():
+    return f"""
+<section id="sources"><div class="subhead">O · Sources</div>
+<ol>
+<li id="src-1">Siechem Technologies Pvt Ltd corporate website &middot; siechem.com/company/about-us &middot; retrieved 28 Apr 2026.</li>
+<li id="src-2">Siechem corporate website &middot; Bhiwadi Phase-2 expansion announcement &middot; 300,000 sq ft greenfield Dec 2026.</li>
+<li id="src-3">The Company Check &middot; thecompanycheck.com/company/siechem-technologies-private-limited/U67100TN1994PTC027463 &middot; CIN registry summary &middot; retrieved 28 Apr 2026.</li>
+<li id="src-4">Tofler &middot; tofler.in Siechem Technologies financials &middot; retrieved 28 Apr 2026.</li>
+<li id="src-5">Tracxn Legal Entities &middot; tracxn.com Siechem Technologies profile &middot; FY24 revenue Rs 866 Cr.</li>
+<li id="src-6">ZaubaCorp &middot; zaubacorp.com SIECHEM-TECHNOLOGIES-PRIVATE-LIMITED-U67100TN1994PTC027463 &middot; directors + filings &middot; retrieved 28 Apr 2026.</li>
+<li id="src-7">Bloomberg Markets profile &middot; bloomberg.com/profile/company/1634957D:IN &middot; retrieved 28 Apr 2026.</li>
+<li id="src-8">IndiaMART Siechem catalogue &middot; siechem-technologies aboutus &middot; retrieved 28 Apr 2026.</li>
+<li id="src-9">Probe42 open-charges API &middot; CIN U67100TN1994PTC027463 &middot; retrieved 28 Apr 2026 &middot; Rs 473.66 Cr open / Rs 6 Cr satisfied.</li>
+<li id="src-10">RBI MPC statement Apr 2026 &middot; rbi.org.in.</li>
+<li id="src-11">USD/INR FBIL reference rate &middot; fbil.org.in &middot; 28 Apr 2026.</li>
+<li id="src-12">LME copper spot reference &middot; lme.com &middot; 28 Apr 2026 ~$9,500/T.</li>
+<li id="src-13">EU CBAM scheme &middot; taxation-customs.ec.europa.eu &middot; reporting from Oct 2023.</li>
+<li id="src-14">PLI auto-component scheme &middot; heavyindustries.gov.in &middot; FY26 round.</li>
+<li id="src-15">Indian Cellular &amp; Electronics Association (ICEA) wires-and-cables sub-segment estimate &middot; FY25 ~Rs 22-28k Cr specialty.</li>
+<li id="src-16">DGCA / FAA / EASA aerospace cable certification frameworks (DO-160 / AS9100) &middot; reference standards.</li>
+<li id="src-17">India 500 GW renewable target &middot; mnre.gov.in &middot; FY30 trajectory.</li>
+<li id="src-18">Companies Act 2013 + MCA-21 charge-register filings &middot; mca.gov.in &middot; cross-checked via Probe42.</li>
+<li id="src-19">SEBI listed-company aggregations (peer set) &middot; bseindia.com / nseindia.com &middot; KEI / Polycab / Finolex / RR Kabel comparators.</li>
+<li id="src-20">MoSPI quarterly GDP &middot; mospi.gov.in &middot; FY26 Q3.</li>
+<li id="src-21">CRISIL / ICRA / CARE rating-agency rationale &middot; [diligence: pull current rating].</li>
+<li id="src-22">FY25 audited financial statements &middot; [diligence: request from CFO post-introduction].</li>
+</ol>
+<p class="muted small">Cipher: IBank notation in use. Approved sister-entities (ICICI Securities / Prudential / Lombard) retained. Numbers FY25 analyst-est based on FY24 actual + reported growth rates; FY26-FY29 projections analyst-estimate. Diligence items flagged inline.</p>
+</section>
+"""
+
+
+def build():
+    """Assemble Siechem sector deep-dive HTML."""
+    title = "Siechem Technologies · Sector Deep-Dive · 28 Apr 2026"
+    verify = "Siechem sector deep-dive · companion to pilot 151 dossier · 15 sections A-O · cipher clean"
+    body = (NAV + A() + B() + C() + D() + E() + F() + G() + H() + I() + J() + K() + L() + M() + N() + O())
+    html = HEAD(title) + body + FOOT(verify)
+    OUT.write_text(html)
+    print(f"[siechem-sector] wrote {OUT} ({len(html.splitlines())} lines)")
+
+
+if __name__ == "__main__":
+    build()

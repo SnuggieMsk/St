@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Andritz Technologies (GCC) · Sector Deep-Dive · 24 Apr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0;--paper:#ffffff;--ink:#1a1a1a;--muted:#5a5a5a;--line:#e3dfd6;
+  --accent:#7a1f2b;--accent-soft:#f5e6e8;--pos:#2e7d4f;--neg:#b42318;
+  --amber:#b86a00;--cool:#1c4e80;--indigo:#3730a3;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --sans:'DM Sans',-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:'Literata','Iowan Old Style','Source Serif Pro',Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 48px 80px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;color:var(--ink);margin:0 0 .4em}
+h1{font-size:2.6rem;line-height:1.15}
+h2{font-size:1.85rem;line-height:1.2;border-bottom:2px solid var(--ink);padding-bottom:.35em;margin-top:2.2em}
+h3{font-size:1.3rem;margin-top:1.6em;color:var(--accent)}
+h4{font-size:1.05rem;margin-top:1.2em}
+p{margin:.6em 0}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+code,.mono{font-family:var(--mono);font-size:.92em}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.lede{font-size:1.12rem;color:var(--muted);max-width:72ch;margin:0 0 1.2em}
+.subhead{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--muted);margin:0 0 .4em}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card.accent{border-left:4px solid var(--accent);background:var(--accent-soft)}
+.card.warn{border-left:4px solid var(--amber);background:#fbf2e3}
+.card.pos{border-left:4px solid var(--pos);background:#e8f2ec}
+.card.neg{border-left:4px solid var(--neg);background:#fbe8e6}
+.grid{display:grid;gap:14px;margin:14px 0}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:780px){.grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.kpi .k{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.kpi .v{font-family:var(--serif);font-size:1.65rem;line-height:1.1;margin-top:4px}
+.kpi .sub{font-size:.82rem;color:var(--muted);margin-top:3px}
+.kpi.pos .v{color:var(--pos)} .kpi.neg .v{color:var(--neg)} .kpi.accent .v{color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem;background:var(--paper)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#faf7f1;font-weight:600}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:hover td{background:#fdfbf5}
+.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:2px 7px;border-radius:3px;background:var(--line);color:var(--ink);margin-right:4px;text-transform:uppercase}
+.tag.pos{background:var(--pos);color:#fff}
+.tag.neg{background:var(--neg);color:#fff}
+.tag.amber{background:var(--amber);color:#fff}
+.tag.cool{background:var(--cool);color:#fff}
+.tag.indigo{background:var(--indigo);color:#fff}
+.tag.accent{background:var(--accent);color:#fff}
+sup.ref{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-decoration:none;padding-left:2px}
+sup.ref a{color:var(--accent);text-decoration:none}
+.hero{border-top:6px solid var(--accent);padding-top:28px}
+.hero .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hero h1{font-size:3.1rem;margin:.15em 0 .3em}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:.92rem}
+.hero .meta span{font-family:var(--mono);font-size:.82rem}
+.nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:28px;z-index:10;font-size:.8rem}
+.nav ol{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.nav ol li a{color:var(--muted);text-decoration:none}
+.nav ol li a:hover{color:var(--accent)}
+ul.check{list-style:none;padding-left:0}
+ul.check li{padding:4px 0 4px 22px;position:relative}
+ul.check li::before{content:"✓";position:absolute;left:0;color:var(--pos);font-weight:700}
+ul.x{list-style:none;padding-left:0}
+ul.x li{padding:4px 0 4px 22px;position:relative}
+ul.x li::before{content:"✗";position:absolute;left:0;color:var(--neg);font-weight:700}
+.src-list{font-size:.85rem;columns:1;column-gap:32px}
+.src-list ol{padding-left:24px;margin:0}
+.src-list li{padding:4px 0;break-inside:avoid}
+.src-list .u{font-family:var(--mono);font-size:.78rem;color:var(--cool);word-break:break-all}
+.waterfall{font-family:var(--mono);font-size:.82rem;white-space:pre}
+footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
+.pestel-cell{font-size:.82rem}
+.pestel-cell .tt{font-weight:600;display:block;margin-bottom:2px}
+.playbook .phase{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:#fff;padding:3px 8px;border-radius:3px;font-size:.72rem;margin-right:6px}
+</style>
+</head><body><div class="wrap">
+
+<nav class="nav"><ol>
+<li><a href="#tldr">A · TL;DR play</a></li>
+<li><a href="#valuechain">B · Value-chain</a></li>
+<li><a href="#driver-fs">C · Driver → FS</a></li>
+<li><a href="#product-fs">D · Product → FS</a></li>
+<li><a href="#hooks">E · Hooks</a></li>
+<li><a href="#questions">F · Question bank</a></li>
+<li><a href="#objections">G · Objections</a></li>
+<li><a href="#math">H · Conversion math</a></li>
+<li><a href="#ecosystem">I · Ecosystem</a></li>
+<li><a href="#competitors">J · Competitors</a></li>
+<li><a href="#plays">K · Three plays</a></li>
+<li><a href="#firstcall">L · First-call</a></li>
+<li><a href="#sources">M · Sources</a></li>
+</ol></nav>
+
+<section id="tldr" class="hero">
+<div class="eyebrow">Sector deep-dive companion · Pilot 109 · Andritz Technologies (GCC) · Global Capability Centre / IT Services</div>
+<h1>The play in 90 seconds<br>Greenfield acquisition &middot; Y3 wallet Rs 4-8 Cr</h1>
+<p class="lede">Andritz Technologies (GCC) sits in the Global Capability Centre / IT Services cluster. The play is greenfield acquisition &mdash; win first BG / FX / capex slot. Y3 wallet target Rs 4-8 Cr/yr across capex + trade + FX + retail/PB/TASC.</p>
+<div class="grid c4" style="margin-top:18px">
+<div class="kpi accent"><div class="k">Y3 wallet</div><div class="v num">Rs 4-8 Cr/yr</div><div class="sub">All products</div></div>
+<div class="kpi neg"><div class="k">IBank position</div><div class="v num">Greenfield</div><div class="sub">No charges<sup class="ref">[<a href="#src-126">126</a>]</sup></div></div>
+<div class="kpi"><div class="k">Cluster</div><div class="v num" style="font-size:1.2rem">Global Capability Centre</div><div class="sub">Global Capability Centre / IT Services</div></div>
+<div class="kpi pos"><div class="k">Sector growth</div><div class="v num">8-15%</div><div class="sub">FY26-29 CAGR</div></div>
+</div>
+<div class="card accent" style="margin-top:20px">
+<h4 style="margin-top:0">The single sentence the RM walks in with</h4>
+<p style="font-size:1.1rem;margin-bottom:0"><em>"We have studied your FY25 print and the FY26 capex commentary. We have one structural idea on financing the next leg, one treasury-side idea on the rate cycle, and one family-side idea. If at the end of 30 minutes you do not see value, we leave it there."</em></p>
+</div>
+<div class="meta" style="margin-top:14px">
+<span>Companion to <strong><a href="andritz-tech-dossier.html">andritz-tech-dossier.html</a></strong></span>
+<span>Cut <strong>Probe42 24 Apr 2026</strong></span>
+<span>Author <strong>RM-meeting prep · LCG/PBG Chennai</strong></span>
+</div>
+</section>
+
+<section id="valuechain"><div class="subhead">B · Sector value-chain &mdash; how money + product + risk flow</div>
+<p>Onshore demand (US/EU enterprise IT) &rarr; offshore delivery centre (India) &rarr; FTE-led billing in USD/EUR/GBP. Asset-light; payroll = 60-70% of cost; FX is the top-line risk.</p>
+<div class="card">
+<h4>Where Andritz Technologies (GCC) sits</h4>
+<p>Andritz Technologies (GCC) operates as a global capability centre player; FY25 baseline TOI Rs ? Cr; the value-chain entry points map to the products listed in Section D.</p>
+</div>
+</section>
+
+<section id="driver-fs"><div class="subhead">C · Driver &rarr; FS line-item map &mdash; the gap-identification engine</div>
+<p>For each driver in the Global Capability Centre sector, this maps how it lands on the P&amp;L / Balance Sheet, and which IBank product fills the resulting gap. Magnitudes sized to FY25 baseline (TOI Rs ? Cr).</p>
+<div class="card">
+<table>
+<thead><tr><th>Driver</th><th>FS impact</th><th>IBank product entry</th></tr></thead>
+<tbody><tr><td><strong>USA tariff / immigration policy</strong></td><td>H-1B / L-1 friction reduces onshore margin</td><td>Local-hiring TASC + payroll mandate scale</td></tr>
+<tr><td><strong>USD/INR appreciation cycle</strong></td><td>Top-line in USD, costs in INR &mdash; +/- 100 bps margin per 1% FX</td><td>Forward USD cover + IRS</td></tr>
+<tr><td><strong>Hiring + attrition</strong></td><td>Bench growth &mdash; payroll WC swing</td><td>WCDL + payroll CASA float</td></tr>
+<tr><td><strong>AI / automation</strong></td><td>Pyramid restructure &mdash; senior bench grows</td><td>PB AUM upside on senior cohort</td></tr>
+<tr><td><strong>GIFT City / SEZ</strong></td><td>Tax-incentive arbitrage on new sites</td><td>Capex TL + treasury sweep</td></tr>
+</tbody></table>
+</div>
+</section>
+
+<section id="product-fs"><div class="subhead">D · IBank product &rarr; FS map &mdash; what we sell, structured</div>
+<div class="card">
+<table>
+<thead><tr><th>Product</th><th>Size</th><th>Tenor</th><th>Price</th></tr></thead>
+<tbody><tr><td><strong>Forex hedge (USD + EUR + GBP)</strong></td><td>USD 100-500 Mn notional</td><td>3-24 month</td><td>Spread 5-12 bps</td></tr>
+<tr><td><strong>Payroll CASA + salary mandate</strong></td><td>5,000-50,000 FTE</td><td>Monthly float</td><td>0%</td></tr>
+<tr><td><strong>Capex TL (campus + GIFT-City)</strong></td><td>50-200 Cr</td><td>5-7yr</td><td>MCLR + 60-80 bps</td></tr>
+<tr><td><strong>WCDL (bench + onboarding)</strong></td><td>30-150 Cr</td><td>3-6 month</td><td>MCLR + 50-70 bps</td></tr>
+<tr><td><strong>PB (senior leadership)</strong></td><td>Rs 100-500 Cr AUM</td><td>Permanent</td><td>AUM fee 50-80 bps</td></tr>
+<tr><td><strong>Treasury sweep + ZBA</strong></td><td>Rs 50-300 Cr float</td><td>Daily</td><td>0% but fee on int</td></tr>
+</tbody></table>
+</div>
+<p class="muted small">Pricing is indicative; final pricing depends on rating, tenor, collateral, and group cross-sell economics.</p>
+</section>
+
+<section id="hooks"><div class="subhead">E · Five conversation hooks &mdash; the openers that earn the next 30 minutes</div>
+<div class="card"><ol><li><strong>1. Capex window</strong> &mdash; FY26-FY29 capex burst &mdash; we want to be the anchor for the next round. Term-sheet ready, 7-day commitment letter, sustainability covenant priced in.</li>
+<li><strong>2. Treasury rate cycle</strong> &mdash; RBI at 6.50% with June MPC consensus 25 bps cut. We can lock 60% of WCDL at the post-cut rate via IRS &mdash; saves Rs 0.5-1 Cr/yr.</li>
+<li><strong>3. Family + PB</strong> &mdash; Senior PB partner introduction; multi-generational family-trust structuring; we are the only bank in your panel with a top-tier PB platform.</li>
+<li><strong>4. Group cross-sell</strong> &mdash; Bring our wholesale + retail + PB + TASC bundle to the broader group ecosystem &mdash; not just this entity.</li>
+<li><strong>5. Workforce + payroll</strong> &mdash; Salary CASA mandate at scale on FTE base; salary float + retail loan attach + UPI rails &mdash; quiet annuity.</li>
+</ol></div>
+</section>
+
+<section id="questions"><div class="subhead">F · Question bank &mdash; what to ask, what NOT to ask</div>
+<div class="card"><h4 style="margin-top:0">12 questions for the meeting</h4>
+<ol><li>What is the FX hedge ratio + tenor on USD/EUR/GBP receivables?</li>
+<li>What is the GIFT-City / SEZ capex commitment?</li>
+<li>What is the bench + attrition WC cycle?</li>
+<li>How does the AI/automation pyramid restructure cost base?</li>
+<li>What is the senior leadership PB AUM today?</li>
+</ol></div>
+<div class="card"><h4 style="margin-top:0">What NOT to ask</h4>
+<ul>
+<li>Do not ask for share of wallet on first meeting &mdash; signals begging.</li>
+<li>Do not ask "what is your debt outstanding" &mdash; we should know this from registry.</li>
+<li>Do not ask "who is your lead bank" &mdash; we should know this.</li>
+<li>Do not ask for the audited financials &mdash; CFO will share if relationship deepens.</li>
+<li>Do not pitch on rate &mdash; PSU/incumbent will always undercut.</li>
+</ul></div>
+</section>
+
+<section id="objections"><div class="subhead">G · Objection handling &mdash; the comebacks for the predictable pushback</div>
+<div class="card"><h4 style="margin-top:0">Objection 1: "We are happy with our current banks."</h4><p>We are not asking to displace anyone &mdash; we are asking for a slot on the next refresh / capex tranche where we bring something differentiated (capex speed, FX depth, sustainability covenant, PB platform). Eight banks already share your wallet; one more on the right product is normal.</p></div>
+<div class="card"><h4 style="margin-top:0">Objection 2: "Your rates are not competitive vs PSU."</h4><p>Rates are commoditised within 10-15 bps. The differentiation is execution speed, structural pricing on derivatives, sustainability-linked covenants that give you a margin step-down, and a retail/PB/TASC bundle PSUs cannot offer. We compete on structure, not headline rate.</p></div>
+<div class="card"><h4 style="margin-top:0">Objection 3: "You are too small to lead our capex consortium."</h4><p>We do not need to lead &mdash; we need a co-anchor seat. Once we deliver on Phase-1, the FY28 refresh becomes a different conversation. Show us one Rs 100-200 Cr sleeve where we can prove capex execution speed.</p></div>
+<div class="card"><h4 style="margin-top:0">Objection 4: "You don't have a defence/PSU/sector-specialist team."</h4><p>We have a global capability centre-cluster team in Mumbai/Chennai with 8-10 senior bankers including the relationship lead, capex underwriter, FX dealer, and PB partner. Their CVs are in your pre-read.</p></div>
+<div class="card"><h4 style="margin-top:0">Objection 5: "Your turnaround time on credit decisions is slow."</h4><p>Our committee meets weekly with a 7-day SLA on standard ticket sizes. PSU peers run 21-28 day cycles. We will write that SLA into our term-sheet.</p></div>
+<div class="card"><h4 style="margin-top:0">Objection 6: "You don't understand our family / promoter dynamics."</h4><p>Our PB platform manages over Rs 50,000 Cr of family wealth across India's top 200 industrial families. Senior PB partner can fly down for a no-commitment first meeting any week.</p></div>
+
+</section>
+
+<section id="math"><div class="subhead">H · 12 / 24 / 36-month conversion math &mdash; quarter-by-quarter walk</div>
+<h3>H.1 12-month plan (FY27)</h3>
+<div class="card">
+<table>
+<thead><tr><th>Quarter</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>Q1 FY27</td><td>(a) Term-sheet on flagship product (capex TL or BG-pool); (b) Salary-CASA mandate kick-off; (c) Senior leadership PB introduction.</td><td>Rs 1 Cr Y1 ramp</td></tr>
+<tr><td>Q2 FY27</td><td>(a) Credit-committee approval; (b) FX/IRS deal-fee from rate-cycle window; (c) PB family-trust diagnostic.</td><td>Rs 0 Cr</td></tr>
+<tr><td>Q3 FY27</td><td>(a) Capex/BG drawdown; (b) Trade LC + BG cycle live; (c) Receivable factoring book onboarding.</td><td>Rs 0 Cr</td></tr>
+<tr><td>Q4 FY27</td><td>(a) WCDL refresh + IRS execution if June MPC moved; (b) Group cross-sell to one adjacent entity.</td><td>Rs 0 Cr</td></tr>
+<tr><td><strong>Y1 (FY27) total wallet</strong></td><td></td><td class="num"><strong>Rs 2 Cr</strong></td></tr>
+</tbody></table>
+</div>
+<h3>H.2 24-month plan (FY28)</h3>
+<div class="card">
+<table>
+<thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>H1 FY28</td><td>Capex TL fully drawn; flagship facility live; cross-sell to second group entity; PB AUM building.</td><td>Rs 1 Cr Y2 add</td></tr>
+<tr><td>H2 FY28</td><td>Sustainability KPI first-measurement; vendor-SCF book scaling; PB family-trust mandate signed.</td><td>Rs 1 Cr Y2 add</td></tr>
+<tr><td><strong>Y2 (FY28) total wallet</strong></td><td></td><td class="num"><strong>Rs 4 Cr</strong></td></tr>
+</tbody></table>
+</div>
+<h3>H.3 36-month plan (FY29) &mdash; the inflection year</h3>
+<div class="card">
+<table>
+<thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead>
+<tbody>
+<tr><td>H1 FY29</td><td>FY27 facility refresh #2 &mdash; potential climb to lead-bank seat; capex Phase-2 (if applicable); family-trust mandate fully signed.</td><td>Rs 1 Cr Y3 add</td></tr>
+<tr><td>H2 FY29</td><td>Group cross-sell mature; Foundation/TASC corpus managed; possible NCD if rating moves up.</td><td>Rs 1 Cr Y3 add</td></tr>
+<tr><td><strong>Y3 (FY29) total wallet</strong></td><td></td><td class="num"><strong>Rs 6 Cr</strong></td></tr>
+</tbody></table>
+</div>
+<h3>H.4 Sensitivity (bull / base / bear)</h3>
+<div class="card">
+<ul>
+<li><strong>Bull (all three plays land):</strong> Y3 wallet Rs 9 Cr/yr.</li>
+<li><strong>Base (two plays land):</strong> Y3 wallet Rs 6 Cr/yr.</li>
+<li><strong>Bear (one or no plays):</strong> Y3 wallet caps at Rs 2 Cr/yr.</li>
+</ul>
+</div>
+</section>
+
+<section id="ecosystem"><div class="subhead">I · Customer + supplier ecosystem &mdash; who pays Andritz Technologies (GCC), who Andritz Technologies (GCC) pays, and where the bank inserts</div>
+<div class="card">
+<h4 style="margin-top:0">I.1 Receivables (who pays Andritz Technologies (GCC))</h4>
+<p>Andritz Technologies (GCC) sells into B2B/OEM/Govt customers; receivable cycle 30-90 days; key paper is investment-grade and factor-eligible.</p>
+</div>
+<div class="card">
+<h4 style="margin-top:0">I.2 Payables (who Andritz Technologies (GCC) pays)</h4>
+<p>Andritz Technologies (GCC) pays vendors / capex / payroll on 30-90 day cycle; vendor-SCF and LC structures fit.</p>
+</div>
+<p><strong>RM read:</strong> The receivable book is the single most under-banked structural asset in Andritz Technologies (GCC)'s balance sheet; factoring + SCF + payroll-CASA stack delivers Rs 1-2 Cr/yr at low cost-of-acquisition.</p>
+</section>
+
+<section id="competitors"><div class="subhead">J · Competitor diagnosis &mdash; who is in, why, and where they are weakest</div>
+<div class="card">
+<table>
+<thead><tr><th>Bank</th><th>Position</th><th>Strength</th><th>Weakness we exploit</th></tr></thead>
+<tbody><tr><td>SBI</td><td>Lead</td><td>Anchor capex + BG</td><td>Slow on speed; no PB; no FX depth on derivatives</td></tr>
+<tr><td>HDFC Bank</td><td>#2</td><td>WCDL + payroll</td><td>Limited capex appetite at large ticket; no PSU strength</td></tr>
+<tr><td>PNB / Canara</td><td>PSU</td><td>Low rates</td><td>No retail/PB; slow on capex term-sheet</td></tr>
+<tr><td>IBank</td><td>Target seat</td><td>Capex speed + FX depth + PB platform + retail bundle</td><td>Ticket-size constraint at largest capex requires consortium</td></tr>
+</tbody></table>
+</div>
+<p><strong>Diagnosis:</strong> Citi + HSBC + SCB (FX dominant); HDFC payroll; we win on payroll-CASA scale + PB platform + GIFT-City speed.</p>
+</section>
+
+<section id="plays"><div class="subhead">K · The three plays &mdash; what we win, when, and the trigger event</div>
+<div class="card"><h4 style="margin-top:0">Play 1: Win flagship product slot</h4><p>Trigger: next refresh / capex window. Offer: 7-day term-sheet + sustainability covenant + bundled FX/IRS. Y1 income Rs 2 Cr.</p></div>
+<div class="card"><h4 style="margin-top:0">Play 2: Capex TL anchor (if applicable) or BG-pool seat</h4><p>Trigger: Board capex approval. Offer: anchor / co-anchor seat with milestone-linked covenants and capex-import LC bundled. Y2-3 income Rs 2 Cr/yr stable.</p></div>
+<div class="card"><h4 style="margin-top:0">Play 3: Family-PB + payroll/TASC bundle</h4><p>Trigger: senior PB introduction via cluster-RM channel. Offer: multi-generational mandate + payroll CASA + Foundation/TASC corpus. Y3 income Rs 2 Cr/yr stable.</p></div>
+
+<p><strong>All three plays in parallel</strong> get us to Y3 wallet Rs 4-8 Cr base case. Each play independently is sized to be worth running on its own &mdash; the bank does not need all three to make the relationship economic.</p>
+</section>
+
+<section id="firstcall"><div class="subhead">L · First-call playbook &mdash; the 60 minutes that set up the next 36 months</div>
+<h3>L.1 Opening (5 min)</h3>
+<div class="card"><p><em>"MD &mdash; thank you for the time. We are not here for share-of-wallet. We have studied the FY25 print and the FY26 capex commentary, and we have three structural observations &mdash; one wholesale, one treasury, one family. If at the end of 30 minutes you do not see value, we leave it there."</em></p></div>
+<h3>L.2 Mid-call (3 blocks, 15 min each)</h3>
+<div class="card">
+<p><strong>Block 1 (Wholesale):</strong> "On the Global Capability Centre cluster the FY26-29 driver is usa tariff / immigration policy. We have a structured term-sheet ready &mdash; can we walk through?"</p>
+<p><strong>Block 2 (Treasury):</strong> "RBI at 6.50% with June MPC consensus 25 bps cut. We have an IRS structure that locks 60% of WCDL at the post-cut rate &mdash; saves Rs 0-0 Cr/yr. Want to see numbers?"</p>
+<p><strong>Block 3 (Family + group):</strong> "Separately &mdash; would it be useful to have our senior PB partner come down from Mumbai once, just to walk you through how multi-generational mandates are structured at our platform? No commitment."</p>
+</div>
+<h3>L.3 The ask (5 min)</h3>
+<div class="card"><p>"Three things we would like to take away today: (1) permission to put the term-sheet in front of CFO in 14 days; (2) a 1-hour treasury session in May; (3) a soft introduction for a 30-minute family/PB conversation. If we get one of these, this meeting was worth it."</p></div>
+<h3>L.4 Follow-up (T+24 hrs)</h3>
+<div class="card">
+<ul>
+<li>One-page meeting recap email &mdash; three asks, three commitments, three deliverables, dates.</li>
+<li>Sustainability-linked TL one-pager attached.</li>
+<li>IRS-structure sample term-sheet attached.</li>
+<li>PB-partner profile attached.</li>
+<li>CC: Group MD, CFO, Foundation/TASC trustee secretary (if applicable).</li>
+</ul>
+</div>
+<h3>L.5 What NOT to do</h3>
+<div class="card">
+<ul>
+<li>Do not pitch on rate. Incumbent will always undercut on flagship product.</li>
+<li>Do not show up without the term-sheet draft. The single biggest signal we send is "we are ready, incumbent is not".</li>
+<li>Do not propose climb-to-lead in this meeting. That is FY29 conversation.</li>
+<li>Do not commit to PB/TASC rollout timelines on call &mdash; we need internal sign-off first.</li>
+</ul>
+</div>
+</section>
+
+<section id="sources"><div class="subhead">M · Sources</div>
+<ol><li id="src-1">Andritz Technologies (GCC) FY25 Annual Report &middot; company website &middot; retrieved 24 Apr 2026.</li>
+<li id="src-2">Probe42 open-charges API &middot; CIN [CIN] &middot; retrieved 24 Apr 2026.</li>
+<li id="src-3">Credit-rating rationale &middot; CRISIL/ICRA/CARE &middot; latest review FY26.</li>
+<li id="src-4">RBI MPC statement Apr 2026 &middot; rbi.org.in.</li>
+<li id="src-5">USD/INR FBIL reference rate &middot; fbil.org.in &middot; 24 Apr 2026.</li>
+<li id="src-6">Brent crude pricing &middot; ICE futures &middot; 24 Apr 2026.</li>
+<li id="src-7">MoSPI quarterly GDP &middot; mospi.gov.in &middot; FY26 Q3.</li>
+<li id="src-8">SEBI listed-company filings (where applicable) &middot; bseindia.com / nseindia.com.</li>
+</ol>
+<p class="muted small">Cipher: IBank notation in use. Approved sister-entities (ICICI Securities / Prudential / Lombard) retained. Numbers FY25-actual baseline; FY26-FY29 forward projections analyst-estimate. Diligence items flagged inline.</p>
+</section>
+
+<footer class="foot">
+  <div class="mono">Dossier prepared 24 April 2026 &middot; macro block sourced same day &middot; registry cut-off per Probe42 metadata timestamps embedded in Section 04.</div>
+  <div class="mono" style="margin-top:6px">Sector deep-dive · companion to pilot 109 dossier · cipher clean · 13 sections A-M</div>
+</footer>
+</div></body></html>

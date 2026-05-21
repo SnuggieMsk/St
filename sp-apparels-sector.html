@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S.P. Apparels Limited · Sector Deep-Dive · 28 Apr 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0;--paper:#ffffff;--ink:#1a1a1a;--muted:#5a5a5a;--line:#e3dfd6;
+  --accent:#7a1f2b;--accent-soft:#f5e6e8;--pos:#2e7d4f;--neg:#b42318;
+  --amber:#b86a00;--cool:#1c4e80;--indigo:#3730a3;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --sans:'DM Sans',-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:'Literata','Iowan Old Style','Source Serif Pro',Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 48px 80px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;color:var(--ink);margin:0 0 .4em}
+h1{font-size:2.6rem;line-height:1.15}
+h2{font-size:1.85rem;line-height:1.2;border-bottom:2px solid var(--ink);padding-bottom:.35em;margin-top:2.2em}
+h3{font-size:1.3rem;margin-top:1.6em;color:var(--accent)}
+h4{font-size:1.05rem;margin-top:1.2em}
+p{margin:.6em 0}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+code,.mono{font-family:var(--mono);font-size:.92em}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.lede{font-size:1.12rem;color:var(--muted);max-width:72ch;margin:0 0 1.2em}
+.subhead{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--muted);margin:0 0 .4em}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card.accent{border-left:4px solid var(--accent);background:var(--accent-soft)}
+.card.warn{border-left:4px solid var(--amber);background:#fbf2e3}
+.card.pos{border-left:4px solid var(--pos);background:#e8f2ec}
+.card.neg{border-left:4px solid var(--neg);background:#fbe8e6}
+.grid{display:grid;gap:14px;margin:14px 0}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:780px){.grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.kpi .k{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.kpi .v{font-family:var(--serif);font-size:1.65rem;line-height:1.1;margin-top:4px}
+.kpi .sub{font-size:.82rem;color:var(--muted);margin-top:3px}
+.kpi.pos .v{color:var(--pos)} .kpi.neg .v{color:var(--neg)} .kpi.accent .v{color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem;background:var(--paper)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#faf7f1;font-weight:600}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:hover td{background:#fdfbf5}
+.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:2px 7px;border-radius:3px;background:var(--line);color:var(--ink);margin-right:4px;text-transform:uppercase}
+.tag.pos{background:var(--pos);color:#fff}
+.tag.neg{background:var(--neg);color:#fff}
+.tag.amber{background:var(--amber);color:#fff}
+.tag.cool{background:var(--cool);color:#fff}
+.tag.indigo{background:var(--indigo);color:#fff}
+.tag.accent{background:var(--accent);color:#fff}
+sup.ref{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-decoration:none;padding-left:2px}
+sup.ref a{color:var(--accent);text-decoration:none}
+.hero{border-top:6px solid var(--accent);padding-top:28px}
+.hero .eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hero h1{font-size:3.1rem;margin:.15em 0 .3em}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:.92rem}
+.hero .meta span{font-family:var(--mono);font-size:.82rem}
+.nav{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:28px;z-index:10;font-size:.8rem}
+.nav ol{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.nav ol li a{color:var(--muted);text-decoration:none}
+.nav ol li a:hover{color:var(--accent)}
+ul.check{list-style:none;padding-left:0}
+ul.check li{padding:4px 0 4px 22px;position:relative}
+ul.check li::before{content:"✓";position:absolute;left:0;color:var(--pos);font-weight:700}
+ul.x{list-style:none;padding-left:0}
+ul.x li{padding:4px 0 4px 22px;position:relative}
+ul.x li::before{content:"✗";position:absolute;left:0;color:var(--neg);font-weight:700}
+.src-list{font-size:.85rem;columns:1;column-gap:32px}
+.src-list ol{padding-left:24px;margin:0}
+.src-list li{padding:4px 0;break-inside:avoid}
+.src-list .u{font-family:var(--mono);font-size:.78rem;color:var(--cool);word-break:break-all}
+.waterfall{font-family:var(--mono);font-size:.82rem;white-space:pre}
+footer.foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
+.pestel-cell{font-size:.82rem}
+.pestel-cell .tt{font-weight:600;display:block;margin-bottom:2px}
+.playbook .phase{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:#fff;padding:3px 8px;border-radius:3px;font-size:.72rem;margin-right:6px}
+</style>
+</head><body><div class="wrap">
+
+<nav class="nav"><ol>
+<li><a href="#tldr">A · TL;DR</a></li>
+<li><a href="#history">B · History</a></li>
+<li><a href="#promoters">C · Promoters/KMP</a></li>
+<li><a href="#valuechain">D · Value-chain</a></li>
+<li><a href="#driver-fs">E · Driver→FS</a></li>
+<li><a href="#product-fs">F · Product→FS</a></li>
+<li><a href="#hooks">G · Hooks</a></li>
+<li><a href="#questions">H · Q-bank</a></li>
+<li><a href="#objections">I · Objections</a></li>
+<li><a href="#math">J · Math</a></li>
+<li><a href="#ecosystem">K · Ecosystem</a></li>
+<li><a href="#competitors">L · Competitors</a></li>
+<li><a href="#plays">M · Plays</a></li>
+<li><a href="#firstcall">N · First-call</a></li>
+<li><a href="#sources">O · Sources</a></li>
+</ol></nav>
+
+<section id="tldr" class="hero">
+<div class="eyebrow">Sector deep-dive companion · Pilot 173 · S.P. Apparels Limited · Knitted Kids+Infant Apparel Export / Crocodile Retail / Adult Apparel</div>
+<h1>The play in 90 seconds<br>Anchor Avinashi capex + UK+Sri Lanka cross-currency · capture USD/GBP export factoring on Disney/Carter's paper · P. Sundararajan family-PB</h1>
+<p class="lede">S.P. Apparels is a 36-yr P. Sundararajan family Tirupur knitwear exporter (BSE 540048/NSE SPAL; promoter 61.81%; HQ Avinashi/Tirupur TN). FY24 revenue Rs 1,087 Cr → FY25 Rs 1,395 Cr (+28% surge); FY25 EBITDA Rs 231 Cr (16.6%); FY25 PAT Rs 95 Cr; FY25 networth Rs 856 Cr; FY25 total debt Rs 381 Cr (+88% on UK + Sri Lanka subsidiary capex deployment); ICRA-rated. Integrated end-to-end Tirupur knitwear manufacturing: raw cotton → knitting → dyeing → cutting → stitching → finishing → packaging → export to global brand customers (Disney + Carter's + Babies R Us + Mothercare + Walmart + Target). Subsidiaries: S.P. Retail Ventures (Crocodile India retail brand); SPAIPL (Sri Lanka, 2024 incorp); SPUK (UK, Apr 2026 capex); Jumeirah Lanka (corporate-guarantee Rs 27.96 Cr HSBC). The play is anchor Avinashi capex + multi-currency FX desk (USD/GBP/EUR/LKR) + non-recourse export-receivable factoring on Disney/Carter's-tier paper + P. Sundararajan family-PB on 61.81% closely-held promoter base + Crocodile India retail-dealer SCF.</p>
+<div class="grid c4" style="margin-top:18px">
+<div class="kpi accent"><div class="k">Y3 wallet</div><div class="v num">Rs 10-18 Cr/yr</div><div class="sub">Capex + export FX + Crocodile retail + family-PB</div></div>
+<div class="kpi pos"><div class="k">FY25 surge</div><div class="v num">+28%</div><div class="sub">Rs 1,395 Cr revenue</div></div>
+<div class="kpi"><div class="k">Promoter hold</div><div class="v num">61.81%</div><div class="sub">P. Sundararajan family</div></div>
+<div class="kpi pos"><div class="k">Subsidiaries</div><div class="v num">4 active</div><div class="sub">SPRV + SPAIPL + SPUK + Jumeirah</div></div>
+</div>
+<div class="card accent" style="margin-top:20px">
+<h4 style="margin-top:0">The single sentence the RM walks in with</h4>
+<p style="font-size:1.1rem;margin-bottom:0"><em>"Mr. Sundararajan — your FY25 +28% revenue surge and the UK+Sri Lanka subsidiary build-out are both extraordinary, and they need multi-currency banking depth that PSU consortium cannot provide. Three structural ideas: anchor Avinashi capex, run your USD/GBP/EUR/LKR FX desk, and put the Sundararajan family on our PB platform."</em></p>
+</div>
+<div class="meta" style="margin-top:14px">
+<span>Companion to <strong><a href="sp-apparels-dossier.html">sp-apparels-dossier.html</a></strong></span>
+<span>Cut <strong>Probe42 28 Apr 2026</strong></span>
+<span>Author <strong>RM-meeting prep · LCG/PBG Chennai</strong></span>
+</div>
+</section>
+
+<section id="history"><div class="subhead">B · Company history &mdash; the 36-year arc from 1989 Tirupur partnership to listed kids+infant apparel exporter with UK+Sri Lanka subsidiaries</div>
+<h3>B.1 Founding (1989) — P. Sundararajan's Tirupur partnership</h3>
+<div class="card"><p>Promoted as a partnership firm by P. Sundararajan in 1989 in the Tirupur knitwear cluster of Tamil Nadu — India's "Banian City" producing 50%+ of the country's knitwear exports. Second-wave Tirupur entrepreneur building integrated knitwear export business for Western brand customers.</p></div>
+
+<h3>B.2 The 1990s — Integrated knitwear export capability</h3>
+<div class="card"><p>Grew from small partnership to integrated knitwear-export entity. Strategic moat: end-to-end vertical integration — raw cotton/yarn → knitting → dyeing → cutting → stitching → finishing → packaging → export logistics. Compared favourably to standard Tirupur fragmented sub-contracting. Plants expanded across Avinashi and Tirupur township.</p></div>
+
+<h3>B.3 The 2000s — Kids+infants niche + first global brand customers</h3>
+<div class="card"><p>Carved out a specific niche in infant and children's knitted apparel (bodysuits, sleepsuits, tops, bottoms, dresses). Kids+infant apparel has higher safety + quality + chemical-compliance requirements creating a higher-margin segment with stickier customer relationships. Major customers added: Disney, Carter's, Babies R Us, Mothercare, Pumpkin Patch, OshKosh, Walmart, Target.</p></div>
+
+<h3>B.4 Incorporation (2005) + Crocodile India retail (2010s)</h3>
+<div class="card"><p>Partnership incorporated as S.P. Apparels Limited on 10 November 2005 as public limited company. Retail-apparel division eventually hived off into separate subsidiary S.P. Retail Ventures Limited (SPRV) marketing apparel under the Crocodile India brand.</p></div>
+
+<h3>B.5 IPO 2016 — BSE+NSE listing</h3>
+<div class="card"><p>Listed on BSE 540048 / NSE SPAL in 2016 raising growth capital + providing partial-exit liquidity to P. Sundararajan family. Promoter holding remained at 61.81% — among the more closely-held listed Tirupur knitwear exporters.</p></div>
+
+<h3>B.6 The 2020-2024 transformation — Sri Lanka + UK + revenue surge</h3>
+<div class="card"><p>Structural inflection. FY24 revenue Rs 1,087 Cr → FY25 Rs 1,395 Cr (+28% YoY). FY24 SPAIPL (Sri Lanka) incorporated — accessing GSP+ tariff preference for EU exports + diversifying away from TN production concentration. Apr 2026 saw SPUK (UK subsidiary, Rs 6.31 Cr) + further SPAIPL investment + Rs 27.96 Cr corporate guarantee for Jumeirah Lanka Pvt Ltd's HSBC loan.</p></div>
+
+<h3>B.7 Why this matters for the IBank pitch</h3>
+<div class="card"><p>(1) P. Sundararajan is a founder-builder — integrated vertical capability + global-brand customer base + 36-year continuous management. (2) Kids+infants niche is one of the stickiest apparel-export segments — safety/compliance moat creates pricing power. (3) FY25 +28% surge + Sri Lanka + UK signal active growth-deployment phase. (4) USD/GBP export-receivable book on Disney/Carter's/Walmart paper at investment-grade is structural factoring opportunity. (5) 61.81% closely-held promoter family + dual-generation Director cohort = sizeable family-PB. (6) Crocodile India retail + adult-apparel diversification create cross-sell.</p></div>
+
+</section>
+
+<section id="promoters"><div class="subhead">C · Promoters + Key Managerial Personnel</div>
+<h3>C.1 P. Sundararajan — Chairman & Managing Director</h3>
+<div class="card"><p>Founder since 1989; 36-year veteran of Tirupur apparel-export industry. Central figure in TN garment-exporter community (former Chairman/lead of Tirupur Exporters Association). Decision style: founder-builder; export-experience deep; respects bankers who understand Tirupur knitwear cluster economics + global-brand customer dynamics. RM angle: bring senior MD-level introduction + Tirupur-experienced relationship lead.</p></div>
+
+<h3>C.2 S. Latha — Whole-time Director</h3>
+<div class="card"><p>Second-generation family member; operational leadership across SPAL + SPRV. Decision style: family-stewardship + operational focus. RM angle: discrete PB conversation + family-trust + multi-gen wealth structuring matters.</p></div>
+
+<h3>C.3 V. Balaji — CFO (estimated)</h3>
+<div class="card"><p>Day-to-day banking counterparty; multi-currency FX desk + export-receivable + cross-border consortium relationship lead. RM angle: monthly meetings; bring FX dealer + trade-finance + capex underwriter.</p></div>
+
+<h3>C.4 P. Velusamy — Director + Independent Directors</h3>
+<div class="card"><p>Additional family + Independent Directors include senior textile + auditing + governance leaders from Coimbatore + Tirupur industrial ecosystem.</p></div>
+
+<h3>C.5 Subsidiaries / Operating structure</h3>
+<div class="card"><p><strong>S.P. Retail Ventures Limited (SPRV)</strong> — Crocodile India retail brand (apparel retail division); <strong>S.P. Apparels (International) Pvt Ltd (SPAIPL)</strong> — Sri Lanka subsidiary (FY24 incorp; GSP+ tariff access for EU); <strong>SPUK</strong> — UK subsidiary (Apr 2026 capex Rs 6.31 Cr); <strong>Jumeirah Lanka Pvt Ltd</strong> — corporate guarantee Rs 27.96 Cr for HSBC loan. Manufacturing: multiple plants in Avinashi + Tirupur (TN) cluster + Sri Lanka.</p></div>
+
+</section>
+
+<section id="valuechain"><div class="subhead">D · Value-chain &mdash; Tirupur knitwear cluster + integrated vertical apparel-export pipeline</div>
+<p>S.P. Apparels operates an end-to-end integrated knitwear export pipeline anchored on the Tirupur cluster. The cluster: <strong>raw cotton</strong> (open-end + ring-spun yarn from Tamil Nadu + Maharashtra spinners) → <strong>knitting</strong> (circular + flat knitting machines, Korean/German/Japanese equipment) → <strong>dyeing + finishing</strong> (in-house ZLD-compliant dyeing units) → <strong>cutting</strong> (CAD-driven; high efficiency) → <strong>stitching</strong> (~22,000 FTE across multiple lines) → <strong>finishing + packaging + label</strong> (per global brand specification) → <strong>export logistics</strong> (Chennai/Cochin/Tuticorin ports; Apparel Export Promotion Council documentation). India PLI textile (5,000 Cr scheme) + China+1 tailwind drive Tirupur cluster benefit.</p>
+<div class="card"><table><thead><tr><th>Stage</th><th>Pricing power</th><th>WC impact</th><th>Bank product</th></tr></thead><tbody><tr><td>Cotton + yarn procurement (Maharashtra + Tamil Nadu spinners)</td><td>Limited — commodity-linked + season-dependent</td><td>30-60 day; cotton-fibre stocking peaks Oct-Mar</td><td>WCDL + cotton-IRS (limited) + LC</td></tr><tr><td>Knitting (in-house circular + flat machines)</td><td>Specialty — Korean / German tech-led; quality moat</td><td>7-15 day WIP cycle</td><td>Capex TL on knitting + e-beam-equivalent</td></tr><tr><td>Dyeing + finishing (in-house ZLD-compliant)</td><td>Strong — ZLD-compliance moat (TN Pollution Control)</td><td>Inventory hold during process</td><td>Capex TL + WCDL</td></tr><tr><td>Cutting + stitching (~22,000 FTE)</td><td>Strong — labour-arbitrage but quality-cert moat</td><td>15-30 day WIP cycle</td><td>WCDL + salary CASA mandate</td></tr><tr><td>Quality + compliance + packaging (per global brand spec)</td><td>Strong — multi-cert (OEKO-TEX + GOTS + WRAP + BSCI + customer-specific)</td><td>Inventory hold; brand-audit cycle</td><td>Compliance-linked TL covenant</td></tr><tr><td>Export to global brands (USD/GBP LC at-sight)</td><td>Strong — Tier-1 retailer customer paper investment-grade</td><td>30-60 day FX-exposed receivable</td><td>Non-recourse export factoring + USD/GBP forward</td></tr><tr><td>Crocodile India domestic retail (SPRV)</td><td>Strong — premium-casual brand</td><td>30-60 day dealer cycle</td><td>Dealer-SCF + retail-loan + CMS</td></tr></tbody></table></div>
+
+</section>
+
+<section id="driver-fs"><div class="subhead">E · Driver &rarr; FS line-item map</div>
+<p>Sized to FY25 baseline (TOI Rs 1,395 Cr; EBITDA Rs 231 Cr; FY25 PAT Rs 95 Cr; promoter 61.81%; ICRA-rated). FY25 surge +28% reflects export-demand recovery + customer-orderbook scale.</p>
+<div class="card"><table>
+<thead><tr><th>Driver</th><th>FS impact</th><th>IBank product entry</th></tr></thead>
+<tbody><tr><td><strong>UK + Sri Lanka subsidiary capex deployment FY26</strong></td><td>FY25 debt rose to Rs 381 Cr from Rs 203 Cr FY24 (+88%) reflecting capex + Jumeirah-Lanka corporate-guarantee; subsidiary scale needed</td><td><strong>Cross-border capex TL Rs 200-300 Cr + multi-currency LC framework</strong></td></tr>
+<tr><td><strong>USD/GBP export-receivable on Tier-1 global brand paper</strong></td><td>75-80% revenue export; Disney + Carter's + Walmart + Target customers; investment-grade LC paper</td><td><strong>Non-recourse USD/GBP factoring Rs 200-400 Cr at MCLR + 50-80 bps</strong></td></tr>
+<tr><td><strong>USA tariff + China+1 tailwind</strong></td><td>India apparel exports benefit from China decoupling; potential 200-300 bps gross margin opportunity</td><td>Export-finance growth + sustainability covenant</td></tr>
+<tr><td><strong>Cotton + yarn commodity cycle</strong></td><td>45-55% of COGS; commodity hedge limited (no NCDEX cotton-IRS at scale)</td><td>WCDL + LC + selective forward</td></tr>
+<tr><td><strong>EU + UK regulation (REACH + Modern Slavery + sustainability)</strong></td><td>Compliance-linked margin step-down opportunity</td><td>Sustainability-linked TL covenant pricing</td></tr>
+<tr><td><strong>Sri Lanka GSP+ tariff (EU export)</strong></td><td>SPAIPL Sri Lanka subsidiary accesses GSP+ for EU; cross-border manufacturing arbitrage</td><td>Sri Lanka multi-currency LC + cross-border WC</td></tr>
+<tr><td><strong>Tirupur cluster ZLD compliance + worker-welfare</strong></td><td>TN Pollution Control + WRAP + BSCI customer audits; capex investment</td><td>Capex TL + worker-welfare TASC</td></tr>
+<tr><td><strong>RBI repo cycle + USD/INR direction</strong></td><td>WCDL benchmarked + 75-80% USD revenue; FY26 cuts + INR cycle</td><td>WCDL + IRS lock + USD forward hedge</td></tr>
+<tr><td><strong>PLI Textile (Rs 10,683 Cr scheme)</strong></td><td>MMF + technical textile incentive; SPAL applicable on certain product mixes</td><td>PLI-linked subsidy capex framework</td></tr>
+<tr><td><strong>Crocodile India retail expansion</strong></td><td>SPRV outlet network expansion in Tier-2/3 cities</td><td>Retail-dealer SCF + retail-loan + co-branded card</td></tr>
+<tr><td><strong>Promoter family wealth (61.81%)</strong></td><td>P. Sundararajan family multi-generation; HUF/family-trust to be confirmed</td><td>PB AUM + family-trust + ESOP-equivalent</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="product-fs"><div class="subhead">F · IBank product &rarr; FS map</div>
+<div class="card"><table>
+<thead><tr><th>Product</th><th>Structure</th><th>Size</th><th>Price</th><th>Y3 income</th></tr></thead>
+<tbody><tr><td><strong>Capex TL (Avinashi + UK + Sri Lanka)</strong></td><td>Sustainability + automation covenant</td><td>Rs 200-400 Cr</td><td>MCLR + 70-100 bps</td><td>Rs 1.5-3 Cr/yr</td></tr>
+<tr><td><strong>USD/GBP export factoring (Disney/Carter's/Walmart paper)</strong></td><td>Tier-1 retailer LC non-recourse 60-day discount</td><td>Rs 200-400 Cr book</td><td>MCLR + 50-80 bps</td><td>Rs 1.5-2.5 Cr/yr</td></tr>
+<tr><td><strong>Multi-currency FX (USD + GBP + EUR + LKR)</strong></td><td>Export receivable + UK/SL subsidiary</td><td>USD/GBP/EUR/LKR 50-100 Mn notional</td><td>Spread 5-15 bps</td><td>Rs 1-2 Cr/yr</td></tr>
+<tr><td><strong>CC + WCDL (cotton + yarn + WIP cycle)</strong></td><td>60-90 day fabric → finished cycle</td><td>Rs 150-250 Cr</td><td>MCLR + 60-90 bps</td><td>Rs 1-1.8 Cr/yr</td></tr>
+<tr><td><strong>LC + Trade (capex + raw material import)</strong></td><td>Cotton + Korean/Japanese knitting machinery</td><td>Rs 100-200 Cr revolving</td><td>0.30-0.45% fee</td><td>Rs 0.7-1.2 Cr/yr</td></tr>
+<tr><td><strong>Sri Lanka cross-border WC + LC (SPAIPL + Jumeirah Lanka)</strong></td><td>Multi-currency cross-border (LKR/USD/INR)</td><td>Rs 30-60 Cr / LKR equiv</td><td>0.30% fee</td><td>Rs 0.3-0.5 Cr/yr</td></tr>
+<tr><td><strong>Crocodile India retail-dealer SCF + retail-loan (SPRV)</strong></td><td>Crocodile India outlet dealer network</td><td>Rs 50-100 Cr</td><td>MCLR + 80-110 bps</td><td>Rs 0.5-0.9 Cr/yr</td></tr>
+<tr><td><strong>Salary CASA + payroll (22,000 FTE Tirupur)</strong></td><td>Pan-Tirupur + Sri Lanka workforce</td><td>Rs 40-80 Cr float</td><td>0%</td><td>Rs 1.5-2.5 Cr/yr</td></tr>
+<tr><td><strong>PB (P. Sundararajan family + senior leadership)</strong></td><td>61.81% closely-held promoter family</td><td>Rs 250-500 Cr AUM</td><td>50-80 bps</td><td>Rs 1.5-2.7 Cr/yr</td></tr>
+<tr><td><strong>TASC (SP Foundation + PF + worker-welfare)</strong></td><td>Worker-welfare Foundation + PF + Gratuity</td><td>Rs 60-120 Cr corpus</td><td>30-50 bps</td><td>Rs 0.3-0.5 Cr/yr</td></tr>
+</tbody></table></div>
+<p class="muted small">Pricing indicative; final depends on rating, tenor, collateral, consortium dynamics.</p>
+<h3>F.1 Y3 wallet build-up</h3><div class='card'><ul><li>Wholesale (capex + LC + FX): Rs 3.2-6.2 Cr</li><li>Export factoring + Sri Lanka: Rs 1.8-3.0 Cr</li><li>CC + WCDL + Crocodile SCF: Rs 1.5-2.7 Cr</li><li>Retail + PB + TASC: Rs 3.3-5.7 Cr</li><li><strong>Total: Rs 10-18 Cr/yr</strong></li></ul></div>
+</section>
+
+<section id="hooks"><div class="subhead">G · Five conversation hooks</div>
+<div class="card"><ol><li><strong>1. Avinashi capex + UK/SL cross-border anchor</strong> &mdash; "Mr. Sundararajan — FY25 +28% revenue surge + Sri Lanka + UK subsidiary build-out drove debt from Rs 203 Cr to Rs 381 Cr in one year. We have a 7-day capex term-sheet with sustainability-linked covenant: 5 bps margin step-down on OEKO-TEX/GOTS-mix crossing 60% by FY29. Rs 200-300 Cr cross-border facility."</li>
+<li><strong>2. USD/GBP export factoring on Disney/Carter's/Walmart paper</strong> &mdash; "75-80% of your revenue is export to Tier-1 global retailers. Disney/Carter's/Walmart LCs are investment-grade factor-eligible at MCLR+50-80. We can build a Rs 200-400 Cr non-recourse factoring book that frees up CC headroom and earns Rs 1.5-2.5 Cr/yr fee."</li>
+<li><strong>3. Sri Lanka GSP+ + Jumeirah-Lanka cross-currency</strong> &mdash; "SPAIPL + Jumeirah Lanka Rs 27.96 Cr corporate guarantee for HSBC + SPUK Apr 2026 capex — multi-currency cross-border (USD + GBP + EUR + LKR + INR) needs single-bank consolidation. PSU consortium cannot do this. HSBC has the parent guarantee — we want the operating + factoring sleeve."</li>
+<li><strong>4. P. Sundararajan family-PB + Crocodile India dealer-SCF</strong> &mdash; "61.81% Sundararajan-family holding is a multi-gen wealth opportunity. Plus SPRV / Crocodile India retail-dealer network growing — dealer-SCF + retail-loan at SPRV. Senior PB partner can fly down for a no-commitment first conversation."</li>
+<li><strong>5. Tirupur cluster + global-brand customer relationships</strong> &mdash; "Tirupur cluster is the most complex apparel-export environment in India — multi-vendor sub-contracting + ZLD-compliance + BSCI audits + customer-specific certifications. Our textile-cluster team has worked with KPR + Page Industries + Pearl Global + Eastman + Shahi — bring them for a technical due-diligence visit."</li>
+</ol></div>
+</section>
+
+<section id="questions"><div class="subhead">H · Question bank</div>
+<div class="card"><h4 style="margin-top:0">12 questions for the meeting</h4><ol><li>FY25 +28% revenue surge — sustainable or one-time customer-orderbook recovery?</li>
+<li>Avinashi capacity utilisation FY26-29 + capex envelope split (knitting + dyeing + automation)?</li>
+<li>Sri Lanka GSP+ EU export ramp — what % of revenue target by FY28?</li>
+<li>UK SPUK strategy — what is the operating mandate (sales office, design + JV, manufacturing)?</li>
+<li>Jumeirah Lanka — what is the venture (hotel? other?); why the Rs 27.96 Cr HSBC corporate guarantee?</li>
+<li>Customer concentration — what % from top-3 customers (Disney, Carter's, Walmart)?</li>
+<li>Cotton + yarn procurement — Maharashtra spinners or TN; commodity hedge ratio?</li>
+<li>PLI Textile applicability — MMF + technical textile commitment?</li>
+<li>Crocodile India (SPRV) — outlet network today and FY28 target?</li>
+<li>Adult-apparel + private-label growth — outside core kids+infants?</li>
+<li>Sustainability covenant appetite — OEKO-TEX/GOTS/BCI etc?</li>
+<li>Family-PB — HUF/family-trust structure or individually held wealth?</li>
+</ol></div>
+<div class="card"><h4 style="margin-top:0">What NOT to ask</h4><ul><li>Do not ask about specific brand-customer pricing (NDA-protected).</li>
+<li>Do not pitch on rate — Tirupur exporters are tight on cost-discipline.</li>
+<li>Do not propose family-succession + ESOP advisory in first meeting.</li>
+<li>Do not name specific competitor banks unless asked.</li>
+<li>Do not over-pitch capex displacing existing consortium — we want incremental cross-border + factoring sleeves.</li>
+</ul></div>
+</section>
+
+<section id="objections"><div class="subhead">I · Objection handling</div>
+<div class="card"><h4 style="margin-top:0">"We are happy with our current banks (HSBC for Sri Lanka, SBI/HDFC for India)."</h4><p>"Understood — we are not displacing HSBC on the Sri Lanka corporate-guarantee mandate. We want the operating + factoring + multi-currency FX sleeve. Plus the Avinashi capex tranche which is separate from cross-border. Three distinct sleeves with three distinct value propositions."</p></div>
+<div class="card"><h4 style="margin-top:0">"Your rates are not competitive vs PSU on capex."</h4><p>"On commodity products yes. Our differentiation: sustainability-linked covenant gives 5 bps step-down on certification-mix; non-recourse export factoring at scale; multi-currency cross-border desk for Sri Lanka + UK; family-PB platform. PSU consortium cannot bundle."</p></div>
+<div class="card"><h4 style="margin-top:0">"Sri Lanka has FX + macro risk — we manage it carefully."</h4><p>"That's the precise reason for single-bank multi-currency consolidation. Our LKR + USD + INR cross-border + correspondent network manages payment + collection cycles with sanctions-clean routing. PSU peers cannot do Sri Lankan corporate-banking at this level."</p></div>
+<div class="card"><h4 style="margin-top:0">"Tirupur cluster banking is well-served — what's new?"</h4><p>"What's new is the structural shift: FY25 +28% surge + Sri Lanka GSP+ + UK + Jumeirah-Lanka guarantee mean SPAL is no longer a pure-Tirupur knitwear exporter. It's a multi-currency cross-border integrated apparel-export + retail platform. We're competing on multi-currency depth + cross-border execution speed."</p></div>
+<div class="card"><h4 style="margin-top:0">"Family wealth is private."</h4><p>"That's exactly the design point of our PB platform — most discrete senior promoter PB. Senior partner can fly down to discuss governance + multi-gen wealth structuring. No commitment."</p></div>
+<div class="card"><h4 style="margin-top:0">"You don't understand kids+infants apparel-export."</h4><p>"We have worked with Kitex Garments (kids apparel listed peer in Kochi) + Eastman Industries + Pearl Global at parent-customer level. Bring our textile-cluster team for a Tirupur visit."</p></div>
+
+</section>
+
+<section id="math"><div class="subhead">J · 12 / 24 / 36-month conversion math</div>
+
+<h3>J.1 12-month plan (FY27)</h3>
+<div class="card"><table><thead><tr><th>Quarter</th><th>Action</th><th>Wallet impact</th></tr></thead><tbody>
+<tr><td>Q1 FY27 (Apr-Jun 2026)</td><td>(a) Avinashi capex term-sheet (automation + sustainability); (b) USD/GBP factoring concept for Disney + Carter's paper; (c) Senior PB partner introduction.</td><td>Rs 0.6 Cr LC + Rs 0.4 Cr FX deal</td></tr>
+<tr><td>Q2 FY27 (Jul-Sep 2026)</td><td>(a) Capex TL committee approval; (b) Factoring book Rs 50 Cr first 2-3 customers; (c) Sri Lanka multi-currency LC setup.</td><td>Rs 1.0 Cr capex Y1 + Rs 0.5 Cr factoring fee</td></tr>
+<tr><td>Q3 FY27 (Oct-Dec 2026)</td><td>(a) Capex drawn 20%; (b) Factoring book Rs 100 Cr (Disney + Walmart + Target); (c) Crocodile India SPRV dealer-SCF first 50 outlets.</td><td>Rs 0.6 Cr factoring + Rs 0.3 Cr SPRV-SCF</td></tr>
+<tr><td>Q4 FY27 (Jan-Mar 2027)</td><td>(a) Multi-currency FX desk consolidation (USD+GBP+EUR+LKR); (b) Salary CASA mandate kick-off; (c) Family-PB AUM diagnostic.</td><td>Rs 0.5 Cr FX desk + Rs 0.4 Cr salary-CASA</td></tr>
+<tr><td><strong>Y1 (FY27) total wallet</strong></td><td></td><td class="num"><strong>Rs 4.3 Cr</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.2 24-month plan (FY28)</h3>
+<div class="card"><table><thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead><tbody>
+<tr><td>H1 FY28</td><td>Capex TL fully drawn; factoring book Rs 200 Cr; salary CASA mandate 14,000 FTE; family-PB AUM Rs 100+ Cr signed; SPRV dealer-SCF 150 outlets.</td><td>Rs 3.5 Cr Y2 add</td></tr>
+<tr><td>H2 FY28</td><td>Sustainability KPI first measurement (OEKO-TEX/GOTS-mix); Sri Lanka GSP+ EU export ramp; Jumeirah-Lanka operating cycle; UK SPUK first quarter.</td><td>Rs 2.6 Cr Y2 add</td></tr>
+<tr><td><strong>Y2 (FY28) wallet</strong></td><td></td><td class="num"><strong>Rs 10.4 Cr</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.3 36-month plan (FY29) &mdash; the inflection year</h3>
+<div class="card"><table><thead><tr><th>Period</th><th>Action</th><th>Wallet impact</th></tr></thead><tbody>
+<tr><td>H1 FY29</td><td>FY27 capex refresh + Sri Lanka Phase-2; family-PB AUM Rs 300+ Cr; SPRV outlets cross 250; full multi-currency consolidation.</td><td>Rs 2.5 Cr Y3 add</td></tr>
+<tr><td>H2 FY29</td><td>Sustainability KPI step-down kicks in; factoring book Rs 400 Cr stable; FX desk consolidated; possible NCD if rating moves to A+.</td><td>Rs 1.5 Cr Y3 add</td></tr>
+<tr><td><strong>Y3 (FY29) wallet</strong></td><td></td><td class="num"><strong>Rs 14.4 Cr base</strong></td></tr>
+</tbody></table></div>
+
+<h3>J.4 Sensitivity</h3>
+<div class="card"><ul>
+<li><strong>Bull (capex anchor + factoring at scale + family-PB Rs 500 Cr + SPRV scale):</strong> Rs 18 Cr/yr Y3.</li>
+<li><strong>Base (capex co-anchor + factoring + family-PB Rs 250 Cr):</strong> Rs 14 Cr/yr Y3.</li>
+<li><strong>Bear (capex sleeve only + PB declined):</strong> Rs 10 Cr/yr Y3.</li>
+</ul></div>
+
+</section>
+
+<section id="ecosystem"><div class="subhead">K · Customer + supplier ecosystem</div>
+
+<h3>K.1 Receivables (who pays SP Apparels) — global brand customer book</h3>
+<div class="card"><table><thead><tr><th>Counterparty</th><th>Stream</th><th>Annual flow (FY25 est)</th><th>Cycle</th><th>Bank product</th></tr></thead><tbody>
+<tr><td><strong>Disney (Disney Stores + licensed apparel)</strong></td><td>Kids+infant character apparel (Mickey, Disney Princesses, Marvel, Star Wars kids)</td><td>Rs 250-350 Cr (USD)</td><td>30-60 day LC at-sight</td><td>USD non-recourse factoring (MCLR+50-80)</td></tr>
+<tr><td><strong>Carter's Inc + OshKosh (USA)</strong></td><td>Kids+infants bodysuits/sleepsuits private-label</td><td>Rs 150-250 Cr (USD)</td><td>30-60 day LC</td><td>USD non-recourse factoring</td></tr>
+<tr><td><strong>Walmart + Target (USA mass-market)</strong></td><td>Kids+infants apparel + adult basics private-label</td><td>Rs 200-300 Cr (USD)</td><td>45-90 day</td><td>USD factoring + advance D/A</td></tr>
+<tr><td><strong>Mothercare + Babies R Us + Pumpkin Patch + UK/EU retailers</strong></td><td>Kids+infants global retailer</td><td>Rs 150-200 Cr (GBP/EUR)</td><td>30-60 day</td><td>GBP/EUR forward + factoring</td></tr>
+<tr><td>Other global retailers (DPSC; Argos; ASDA; Tesco F&F; Carrefour)</td><td>Kids+infants apparel</td><td>Rs 100-150 Cr (USD/EUR)</td><td>30-90 day</td><td>Factoring + LC</td></tr>
+<tr><td>Sri Lanka SPAIPL + Jumeirah Lanka operations</td><td>Domestic Sri Lanka + ASEAN/EU export</td><td>Rs 80-120 Cr (LKR/USD)</td><td>Cross-currency</td><td>Multi-currency factoring + LC</td></tr>
+<tr><td>Crocodile India (SPRV) domestic retail</td><td>Branded menswear dealer + retail outlets</td><td>Rs 80-150 Cr (INR)</td><td>30-60 day dealer cycle</td><td>Dealer-SCF + retail-loan + CMS</td></tr>
+</tbody></table></div>
+<p><strong>RM read:</strong> The export receivable book (~Rs 850-1,200 Cr/yr USD/GBP/EUR LC at-sight from Tier-1 global retailers) is the single most under-banked structural asset on SPAL's balance sheet. Disney/Carter's/Walmart LCs are investment-grade factor-eligible at MCLR+50-80 non-recourse. Even 30% factoring at SPAL's full export book = Rs 250-350 Cr book + Rs 1.5-2 Cr/yr fee. PSU consortium has not built this structure at scale.</p>
+
+<h3>K.2 Payables (suppliers — who SP Apparels pays)</h3>
+<div class="card"><table><thead><tr><th>Counterparty</th><th>Spend</th><th>Annual outflow</th><th>Cycle</th><th>Bank product</th></tr></thead><tbody>
+<tr><td><strong>Cotton + cotton yarn (Maharashtra + Tamil Nadu spinners; e.g., Vardhman + Trident + KPR Mill + Welspun + Nahar + Sangam India)</strong></td><td>Open-end + ring-spun yarn raw material</td><td>Rs 450-600 Cr/yr</td><td>30-60 day</td><td>WCDL + Vendor-SCF (anchor: SPAL) + LC</td></tr>
+<tr><td>Knitting + dyeing chemicals (Atul + Aksharchem + Bodal + Kiri Industries)</td><td>Dyes + chemicals</td><td>Rs 60-100 Cr</td><td>30-60 day</td><td>Vendor-SCF + WCDL</td></tr>
+<tr><td>Trim + accessories (zippers, buttons, labels — YKK + RIRI + Coats + customer-specified)</td><td>Trim suppliers</td><td>Rs 80-150 Cr</td><td>30-60 day</td><td>Vendor-SCF + LC import</td></tr>
+<tr><td>Knitting + dyeing machinery (Korean + Italian + Japanese — Mayer Cie + Pailung + Yamato + Brueckner)</td><td>Capital goods (capex years)</td><td>Rs 80-200 Cr in capex years</td><td>30/60/10 milestone</td><td>BG (advance + performance) + LC capital-goods + EUR/JPY/KRW forward</td></tr>
+<tr><td>Salary (~22,000 FTE Tirupur cluster + Sri Lanka SPAIPL)</td><td>Payroll (worker-welfare focus)</td><td>Rs 280-350 Cr/yr</td><td>Monthly</td><td>Salary CASA mandate + IMPS bulk-payout</td></tr>
+<tr><td>Power + utilities (TANGEDCO + captive solar) + diesel + fuel</td><td>Operating</td><td>Rs 80-120 Cr</td><td>Monthly</td><td>Trade SCF + cash management</td></tr>
+<tr><td>Sri Lanka procurement (LKR-denominated)</td><td>SPAIPL local supplier cycle</td><td>Rs 60-100 Cr (LKR equiv)</td><td>30-60 day</td><td>Sri Lanka WCDL + LKR/USD LC</td></tr>
+<tr><td>Logistics + warehousing + export documentation</td><td>Chennai/Cochin/Tuticorin port handling</td><td>Rs 30-50 Cr</td><td>Net-15-30 day</td><td>SCF + corp-cards</td></tr>
+</tbody></table></div>
+<p><strong>RM read:</strong> Cotton + yarn supplier cycle Rs 450-600 Cr/yr is the largest unbanked vendor-SCF opportunity for SPAL. Vendor-SCF anchored on SPAL credit (ICRA A- equivalent) at MCLR+60-90 unlocks Rs 100-150 Cr book + earns Rs 0.6-1.0 Cr/yr. Worker-welfare salary-CASA mandate at 22,000-FTE Tirupur cluster is structural retail-banking opportunity with low cost-of-acquisition.</p>
+
+</section>
+
+<section id="competitors"><div class="subhead">L · Competitor bank diagnosis</div>
+
+<p><strong>Diligence note:</strong> Probe42 detail-level pull required across SPAL + SPRV + SPAIPL + SPUK + Jumeirah Lanka CINs to confirm bank-by-bank split.</p>
+<div class="card"><table><thead><tr><th>Bank</th><th>Likely position</th><th>Strength</th><th>Weakness we exploit</th></tr></thead><tbody>
+<tr><td><strong>HSBC</strong></td><td>Lead bank (cross-border + Sri Lanka)</td><td>Sri Lanka corporate-guarantee Rs 27.96 Cr for Jumeirah Lanka; global correspondent network</td><td>Limited Indian-domestic capex appetite; smaller PSU-equivalent BG capacity; PB platform tier-2 for closely-held promoter family</td></tr>
+<tr><td>SBI</td><td>Likely #2 (Tirupur cluster + India domestic)</td><td>Largest BG + domestic capex; Tirupur cluster history; cotton-cluster experience</td><td>Slow on capex term-sheet (3-4 weeks); no USD/GBP factoring at scale; no multi-currency LKR/UK depth; no PB platform</td></tr>
+<tr><td>HDFC Bank</td><td>Likely #3 (working capital + payroll)</td><td>WCDL + payroll execution; Tirupur SME-segment understanding</td><td>Limited capex appetite for large ticket; modest export factoring; PB platform tier-2</td></tr>
+<tr><td>Axis Bank / Kotak</td><td>Specialty WC + export-finance</td><td>Specialty WC + factoring</td><td>FX/derivative tier-2; PB platform less developed; cross-border depth limited</td></tr>
+<tr><td>Indian Bank / IOB</td><td>TN-headquartered (legacy relationship)</td><td>TN local presence; original WC-line in 1990s-2000s</td><td>No FX desk at scale; cannot lead cross-border facility; modest PB</td></tr>
+<tr><td>Citi / SCB</td><td>FX + cross-border (potential)</td><td>FX depth; cross-border execution</td><td>Limited domestic retail/CASA/Tirupur cluster understanding</td></tr>
+<tr><td><strong>IBank target seat</strong></td><td>USD/GBP export factoring anchor + Avinashi capex sleeve + family-PB + Crocodile dealer-SCF</td><td>7-day capex term-sheet; USD/GBP non-recourse factoring at scale; multi-currency (USD/GBP/EUR/LKR/INR) desk; family-PB platform; Crocodile dealer-SCF execution</td><td>Need anchor seat on factoring + capex to be relevant on multi-bank consortium</td></tr>
+</tbody></table></div>
+<p><strong>Diagnosis:</strong> SPAL's multi-currency multi-bank consortium (~Rs 380 Cr) has structural openings: (a) <strong>USD/GBP export factoring</strong> at Tier-1 retailer paper investment-grade quality (Disney/Carter's/Walmart LCs); (b) <strong>Avinashi capex sleeve</strong> on automation + sustainability + UK/Sri Lanka cross-border financing; (c) <strong>Crocodile India retail-dealer SCF</strong> on SPRV outlet network expansion; (d) <strong>P. Sundararajan family-PB</strong> on 61.81% closely-held promoter base + multi-gen wealth.</p>
+
+</section>
+
+<section id="plays"><div class="subhead">M · The three plays</div>
+<h3>M.1 Play 1: USD/GBP export factoring anchor (Disney/Carter's/Walmart paper)</h3>
+<div class="card"><p><strong>Trigger:</strong> SPAL exports 75-80% revenue to Tier-1 global retailers; Disney/Carter's/Walmart LCs are investment-grade factor-eligible; SPAL currently uses CC to fund the cycle (sub-optimal). <strong>Offer:</strong> Non-recourse USD/GBP factoring book Rs 200-400 Cr at MCLR+50-80; frees CC headroom; earns Rs 1.5-2.5 Cr/yr stable. <strong>Bait:</strong> Pre-priced LC discount with Disney + Carter's; first-3-customer pilot. <strong>Y2-Y3 income:</strong> Rs 1.5-2.5 Cr/yr stable. <strong>Risk:</strong> Lost to HSBC export-finance team. <strong>Mitigation:</strong> Compete on speed + scale + Tirupur-cluster-relationship-experience.</p></div>
+
+<h3>M.2 Play 2: Avinashi capex + Sri Lanka cross-border financing</h3>
+<div class="card"><p><strong>Trigger:</strong> FY25 debt rose to Rs 381 Cr (+88%) on UK + Sri Lanka subsidiary capex; FY26 SPUK + SPAIPL further investment; Avinashi automation + sustainability capex ongoing. <strong>Offer:</strong> Multi-currency cross-border facility Rs 200-300 Cr (USD + GBP + LKR + INR) + sustainability-linked covenant on OEKO-TEX/GOTS-mix step-down. <strong>Bait:</strong> 7-day term-sheet on cross-border facility; Sri Lanka VND-equivalent multi-currency rate-card. <strong>Y2-Y3 income:</strong> Rs 1.5-3.0 Cr/yr capex margin + FX spread. <strong>Risk:</strong> Lost to HSBC on Sri Lanka sleeve. <strong>Mitigation:</strong> position as India-side + UK-side specialist.</p></div>
+
+<h3>M.3 Play 3: P. Sundararajan family-PB + Crocodile India (SPRV) dealer-SCF + worker-welfare TASC</h3>
+<div class="card"><p><strong>Trigger:</strong> 61.81% closely-held promoter family + SPRV/Crocodile India outlet network expanding + 22,000-FTE Tirupur worker base. <strong>Offer:</strong> Multi-gen family-PB (Sundararajan + Latha + family-trust) + Crocodile India dealer-SCF Rs 50-100 Cr + worker-welfare TASC. <strong>Bait:</strong> Family-portfolio diagnostic + Crocodile dealer-SCF pilot + worker-welfare salary-CASA mandate. <strong>Y3 income:</strong> Rs 1.5-2.7 Cr PB + Rs 0.5-0.9 Cr SPRV + Rs 1.5-2.5 Cr salary + Rs 0.3-0.5 Cr TASC = Rs 3.8-6.6 Cr/yr. <strong>Risk:</strong> Family declines PB. <strong>Mitigation:</strong> introduction via mutual-friend in Tirupur Exporters Association network.</p></div>
+
+
+<p><strong>All three plays in parallel</strong> get Y3 wallet Rs 10-18 Cr base case.</p>
+</section>
+
+<section id="firstcall"><div class="subhead">N · First-call playbook</div>
+
+<h3>N.1 Opening (5 min)</h3>
+<div class="card"><p><em>"Mr. Sundararajan — thank you for the time. We are not here for share-of-wallet on the existing book. We have studied SPAL's FY25 +28% revenue surge, the Sri Lanka + UK subsidiary build-out, and the Tier-1 retailer customer book (Disney + Carter's + Walmart). Three structural ideas — one factoring, one capex/cross-border, one family. If at the end of 30 minutes you do not see value, we leave it there."</em></p></div>
+
+<h3>N.2 Mid-call (3 blocks, 15 min each)</h3>
+<div class="card">
+<p><strong>Block 1 (USD/GBP export factoring):</strong> "75-80% of your revenue is export to Disney/Carter's/Walmart-tier global retailers. Their LCs are investment-grade factor-eligible at MCLR+50-80. We can build a non-recourse Rs 200-400 Cr factoring book that frees CC headroom and earns Rs 1.5-2.5 Cr/yr. Want to see the LC-discount mechanics for Disney + Carter's specifically?"</p>
+<p><strong>Block 2 (Avinashi capex + Sri Lanka cross-border):</strong> "FY25 debt rose from Rs 203 Cr to Rs 381 Cr (+88%) on UK + Sri Lanka subsidiary capex. We have a multi-currency cross-border facility Rs 200-300 Cr (USD + GBP + LKR + INR) ready with sustainability-linked covenant on OEKO-TEX/GOTS-mix step-down. PSU consortium cannot do this."</p>
+<p><strong>Block 3 (Family-PB + Crocodile + worker-welfare):</strong> "61.81% Sundararajan-family closely-held + Crocodile India retail expansion + 22,000-FTE Tirupur worker base — three retail/PB sleeves. Senior PB partner can fly down for a no-commitment first conversation."</p>
+</div>
+
+<h3>N.3 The ask (5 min)</h3>
+<div class="card"><p>"Three takeaways: (1) Permission to put USD/GBP factoring term-sheet in front of CFO V. Balaji in 14 days; (2) Sri Lanka multi-currency cross-border diagnostic session in May; (3) Soft introduction to family-trust conversation in Q2 via S. Latha."</p></div>
+
+<h3>N.4 Follow-up (T+24)</h3>
+<div class="card">
+<ul>
+<li>One-page recap email; USD/GBP factoring one-pager; Sri Lanka multi-currency cross-border facility outline; family-PB partner profile; worker-welfare salary-CASA proposal.</li>
+<li>CC: P. Sundararajan, S. Latha, V. Balaji (CFO), Sri Lanka subsidiary head.</li>
+</ul>
+</div>
+
+<h3>N.5 What NOT to do</h3>
+<div class="card"><ul>
+<li>Do not pitch on rate — Tirupur exporters are tight on cost-discipline.</li>
+<li>Do not show up without USD/GBP factoring sample term-sheet.</li>
+<li>Do not propose displacing HSBC on Sri Lanka corporate-guarantee sleeve — we want operating + factoring + multi-currency sleeve only.</li>
+<li>Do not propose family-succession or ESOP advisory in first meeting.</li>
+<li>Do not over-pitch Crocodile India (SPRV) cross-sell in first SPAL meeting.</li>
+</ul></div>
+
+</section>
+
+<section id="sources"><div class="subhead">O · Sources</div>
+<ol><li id="src-1">S.P. Apparels Limited Annual Report FY24 + investor relations &middot; s-p-apparels.com &middot; 28 Apr 2026</li>
+<li id="src-2">S.P. Apparels financials &middot; screener.in/company/SPAL &middot; 28 Apr 2026</li>
+<li id="src-3">SPUK + SPAIPL Sri Lanka subsidiary disclosures Apr 2026 + Jumeirah Lanka HSBC corporate guarantee</li>
+<li id="src-4">ICRA credit-rating rationale Sep 2025 [verify FY26] &middot; icra.in</li>
+<li id="src-5">S.P. Retail Ventures (SPRV) Crocodile India brand disclosures &middot; sprvl.in</li>
+<li id="src-6">NSE/BSE SPAL quarterly filings</li>
+<li id="src-7">Probe42 open-charges API &middot; CIN L18101TZ2005PLC012295</li>
+<li id="src-8">ZaubaCorp S.P. APPARELS LIMITED filings</li>
+<li id="src-9">Tofler S.P. Apparels Limited financial profile</li>
+<li id="src-10">P. Sundararajan biography &middot; Bloomberg + corporate disclosures</li>
+<li id="src-11">Apparel Export Promotion Council (AEPC) export data &middot; aepcindia.com</li>
+<li id="src-12">Tirupur Exporters Association (TEA) cluster reports &middot; tea-india.org</li>
+<li id="src-13">PLI Textile scheme (Rs 10,683 Cr) &middot; ministryoftextiles.gov.in</li>
+<li id="src-14">Sri Lanka GSP+ tariff preference (EU) &middot; ec.europa.eu</li>
+<li id="src-15">WRAP / BSCI / OEKO-TEX / GOTS apparel-compliance standards</li>
+<li id="src-16">RBI MPC Apr 2026 &middot; rbi.org.in</li>
+<li id="src-17">USD/INR + GBP/INR + EUR/INR + LKR/INR FX FBIL &middot; 28 Apr 2026</li>
+<li id="src-18">Cotton + yarn raw material reference &middot; Cotton Association of India + NCDEX</li>
+<li id="src-19">MCA-21 charge register &middot; mca.gov.in</li>
+<li id="src-20">MoSPI quarterly GDP &middot; mospi.gov.in &middot; FY26 Q3</li>
+</ol>
+<p class="muted small">Cipher: IBank notation in use. Approved sister-entities (ICICI Securities / Prudential / Lombard) retained. FY25-FY29 projections analyst-est. Diligence items inline.</p>
+</section>
+
+<footer class="foot">
+  <div class="mono">Dossier prepared 24 April 2026 &middot; macro block sourced same day &middot; registry cut-off per Probe42 metadata timestamps embedded in Section 04.</div>
+  <div class="mono" style="margin-top:6px">Sector deep-dive · companion to pilot 173 dossier · 15 sections A-O · cipher clean</div>
+</footer>
+</div></body></html>
