@@ -1,0 +1,690 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Institutional Portfolio Review — Sriram Ragunandhanan Family — 31 May 2026</title>
+<style>
+:root{
+  --surface-1:#fcfcfb; --page:#f9f9f7; --ink-1:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#1baf7a; --s3:#eda100; --s4:#008300; --s5:#4a3aa7; --s6:#e34948; --s7:#e87ba4; --s8:#eb6834;
+  --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --critical:#d03b3b; --goodtext:#006300;
+  --chip-bg:#f0efec;
+}
+@media (prefers-color-scheme: dark){:root{
+  --surface-1:#1a1a19; --page:#0d0d0d; --ink-1:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#199e70; --s3:#c98500; --s5:#9085e9; --s6:#e66767; --s7:#d55181; --s8:#d95926;
+  --goodtext:#0ca30c; --chip-bg:#262624;
+}}
+:root[data-theme="dark"]{
+  --surface-1:#1a1a19; --page:#0d0d0d; --ink-1:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#199e70; --s3:#c98500; --s5:#9085e9; --s6:#e66767; --s7:#d55181; --s8:#d95926;
+  --goodtext:#0ca30c; --chip-bg:#262624;
+}
+:root[data-theme="light"]{
+  --surface-1:#fcfcfb; --page:#f9f9f7; --ink-1:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#1baf7a; --s3:#eda100; --s5:#4a3aa7; --s6:#e34948; --s7:#e87ba4; --s8:#eb6834;
+  --goodtext:#006300; --chip-bg:#f0efec;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink-1);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:24px 20px 80px}
+h1{font-size:26px;line-height:1.25;margin:6px 0 4px}
+h2{font-size:20px;margin:44px 0 6px;padding-top:18px;border-top:2px solid var(--baseline)}
+h3{font-size:16.5px;margin:26px 0 6px}
+h4{font-size:14.5px;margin:18px 0 4px}
+p{color:var(--ink-2);margin:8px 0;max-width:76em}
+li{color:var(--ink-2);margin:3px 0}
+strong{color:var(--ink-1)}
+.sub{color:var(--muted);font-size:13px}
+.card{background:var(--surface-1);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin:14px 0}
+.tablewrap{overflow-x:auto;background:var(--surface-1);border:1px solid var(--border);border-radius:10px;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:13.2px}
+th{color:var(--muted);font-weight:600;text-align:left;padding:9px 10px;border-bottom:1px solid var(--baseline);white-space:nowrap;background:var(--surface-1)}
+td{padding:8px 10px;border-bottom:1px solid var(--grid);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td b{color:var(--ink-1)}
+.pos{color:var(--goodtext);font-weight:600}
+.neg{color:var(--critical);font-weight:600}
+.chip{display:inline-block;background:var(--chip-bg);border-radius:20px;padding:1px 10px;font-size:12px;color:var(--ink-2);margin:1px 2px 1px 0;white-space:nowrap}
+.flag{display:inline-block;border-radius:5px;padding:1px 8px;font-size:11.5px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+.flag.low{background:rgba(12,163,12,.14);color:var(--goodtext)}
+.flag.mod{background:rgba(250,178,25,.16);color:#8a6100}
+.flag.high{background:rgba(236,131,90,.16);color:#a34a22}
+.flag.crit{background:rgba(208,59,59,.15);color:var(--critical)}
+:root[data-theme="dark"] .flag.mod, :root[data-theme="dark"] .flag.high{color:#f0b357}
+@media (prefers-color-scheme: dark){.flag.mod,.flag.high{color:#f0b357}}
+.verdict{border-left:4px solid var(--s1);background:var(--surface-1);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0}
+.verdict .vtitle{font-weight:700;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.hero{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+.tile{flex:1 1 160px;background:var(--surface-1);border:1px solid var(--border);border-radius:10px;padding:12px 14px;min-width:150px}
+.tile .k{font-size:12px;color:var(--muted);font-weight:600}
+.tile .v{font-size:22px;font-weight:700;color:var(--ink-1);margin-top:2px}
+.tile .d{font-size:12px;color:var(--ink-2)}
+.bar{height:14px;border-radius:4px;background:var(--chip-bg);overflow:hidden;display:flex}
+.bar>span{height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--ink-2);margin:6px 0}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
+.note{font-size:12.5px;color:var(--muted);border-left:3px solid var(--grid);padding-left:10px;margin:8px 0}
+.toc{columns:2;column-gap:36px;font-size:14px}
+.toc a{color:var(--s1);text-decoration:none}
+.toc a:hover{text-decoration:underline}
+@media(max-width:760px){.toc{columns:1}}
+.conf{font-size:11.5px;color:var(--muted)}
+.src{font-size:11.5px;color:var(--muted)}
+.src a{color:var(--muted)}
+.reco{font-weight:700}
+sup{color:var(--muted)}
+.scorebar{display:flex;align-items:center;gap:8px}
+.scorebar .track{flex:1;height:8px;border-radius:4px;background:var(--chip-bg);overflow:hidden}
+.scorebar .fill{height:100%;border-radius:4px;background:var(--s1)}
+</style>
+<div class="wrap">
+<header>
+  <div class="sub">CONFIDENTIAL &middot; INSTITUTIONAL INVESTMENT RESEARCH &middot; PREPARED FOR THE FAMILY OF SRIRAM RAGUNANDHANAN</div>
+  <h1>Consolidated Portfolio Review &amp; Product Due-Diligence</h1>
+  <p class="sub">Holdings valued as on <b>31 May 2026</b> (Axis Bank consolidated statement) &middot; Market &amp; scheme data cut-off: <b>3 July 2026</b> (latest public disclosures, mostly 31-May-2026 factsheets and 1&ndash;3 Jul 2026 aggregator data) &middot; Currency: Indian Rupees (lakh / crore) &middot; This report separates <b>reported facts</b>, <b>calculated figures</b> (marked "calc"), <b>estimates</b> (marked "est.") and <b>opinions</b>. Data that could not be verified is marked as such.</p>
+</header>
+</div>
+<div class="wrap">
+
+<h2 id="toc">Contents</h2>
+<div class="toc card">
+<ol>
+<li><a href="#exec">Executive conclusion</a></li>
+<li><a href="#profile">Investor profile, inputs &amp; data limitations</a></li>
+<li><a href="#snapshot">Portfolio snapshot &amp; structure</a></li>
+<li><a href="#inventory">Stage 1 — Product inventory (master table)</a></li>
+<li><a href="#structural">Structural findings &amp; behaviour analysis</a></li>
+<li><a href="#decision">Decision table (all 26 products)</a></li>
+<li><a href="#deep-ma">Deep dives — Multi-asset &amp; hybrid funds</a></li>
+<li><a href="#deep-div">Deep dives — Diversified equity funds</a></li>
+<li><a href="#deep-thematic">Deep dives — Thematic &amp; special-situations funds</a></li>
+<li><a href="#deep-small">Deep dives — Small-cap, factor &amp; index funds</a></li>
+<li><a href="#deep-gold">Deep dives — Precious-metal funds</a></li>
+<li><a href="#deep-pms">Deep dives — PMS strategies</a></li>
+<li><a href="#deep-ins">Deep dives — Life insurance policies</a></li>
+<li><a href="#overlap">Portfolio overlap &amp; look-through exposure</a></li>
+<li><a href="#riskperf">Performance &amp; risk summary tables</a></li>
+<li><a href="#taxcost">Tax, cost &amp; liquidity analysis</a></li>
+<li><a href="#stress">Scenario &amp; stress testing</a></li>
+<li><a href="#forward">Forward-looking return expectations</a></li>
+<li><a href="#model">Three restructured model portfolios</a></li>
+<li><a href="#monitor">Monitoring dashboard</a></li>
+<li><a href="#verdict">Final verdict — ten questions answered</a></li>
+<li><a href="#method">Methodology, scoring model, sources &amp; disclaimer</a></li>
+</ol>
+</div>
+
+<h2 id="exec">1 &middot; Executive conclusion</h2>
+<div class="card">
+<p><b>The headline:</b> this is a ₹6.50 crore investment portfolio (plus ₹79.6 lakh of premiums sunk into insurance) that has <i>worked in spite of its construction, not because of it</i>. The +27.0% absolute gain on mutual funds (₹98.3 lakh) owes most to a strong 2023&ndash;24 bull market and an accidental precious-metals windfall — gold rallied ~45% in INR over the year to Jul-2026 — while the two deliberate "sophistication upgrades" (₹2 crore into two PMS strategies, likely placed near the late-2024 market peak) have <b>lost ₹11.9 lakh (−5.9%)</b> against a broadly flat-to-positive market. The portfolio shows a classic bank-distribution fingerprint: 100% Regular plans, 9 of 20 schemes from the distributor's in-house AMC (Axis), repeated NFO purchases at ₹10 NAV, 27 folios, and three bancassurance traditional policies with 4&ndash;6% IRRs.</p>
+<div class="tablewrap"><table>
+<tr><th>Category</th><th>Answer</th><th>One-line reason</th></tr>
+<tr><td>Best overall product held</td><td><b>ICICI Prudential Multi-Asset Fund</b></td><td>24-yr record, SI 20.4% vs 13.1% benchmark (31-May-2026), Sharpe 1.19, 5&#9733; Value Research, veteran team (S. Naren since 2012), lowest regular TER in the book (1.06%)</td></tr>
+<tr><td>Best mutual fund (pure equity)</td><td><b>ICICI Prudential India Opportunities Fund</b></td><td>SI 18.9% CAGR (02-Jul-2026), beat Nifty 500 TRI on 1/3/5yr, contrarian process not tied to one theme</td></tr>
+<tr><td>Best PMS</td><td><b>Neither earns the fee.</b> Relative: Motilal Oswal Founders</td><td>Founders has real SI alpha (23.4% vs 18.5% SI, 3-yr TWRR 21.6% at 31-May-2026) but 73% mid/small-cap and 2.5%+20%&gt;8% fees; Helios has ~zero alpha since inception</td></tr>
+<tr><td>Best risk-adjusted strategy</td><td><b>ICICI Multi-Asset</b> (Sharpe 1.19, SD 8.86%)</td><td>Highest Sharpe with lowest volatility of any equity-oriented holding (AMC factsheet, 31-May-2026)</td></tr>
+<tr><td>Best downside protection</td><td><b>ICICI Multi-Asset / gold FoFs</b></td><td>Multi-asset sleeves + 10.9% gold cushioned the FY26 correction; pure-equity Axis thematic funds did not</td></tr>
+<tr><td>Best current portfolio (holdings quality)</td><td><b>Kotak Midcap</b> / ICICI Multi-Asset</td><td>Kotak Midcap: diversified quality-midcap book, Beta 0.93, alpha positive under new manager Atul Bhole</td></tr>
+<tr><td>Best valuation discipline</td><td><b>ICICI house funds</b> (Naren value style)</td><td>Value/contrarian process; India Opps holds 31% financials — the cheapest large sector — and 5% cash</td></tr>
+<tr><td>Best for aggressive money</td><td><b>Kotak Multicap</b> / Kotak Midcap</td><td>21.4% 3-yr direct CAGR vs 9.3% Nifty 50 TRI (30-Jun-2026), 5&#9733; VR, stable managers since launch</td></tr>
+<tr><td>Best for moderate money</td><td><b>ICICI Multi-Asset + ICICI Gold FoF pair</b></td><td>Equity + real-asset diversification at &le;1.1% regular TER</td></tr>
+<tr><td>Most avoidable products held</td><td><b>Axis Momentum, Axis Multi Asset Allocation, UTI Small Cap, Helios India Rising PMS</b></td><td>Respectively: −7.7% SI vs −0.9% benchmark; 1&#9733; VR with 3-yr underperformance of −2.7pp/yr; 2&#9733; bottom-quartile with founding manager gone; ~0 SI alpha with 2.5%+1.5% fees and three SEBI observation letters</td></tr>
+<tr><td>Most overrated product</td><td><b>Helios India Rising PMS</b></td><td>Star-manager brand (Samir Arora) but SI 19.01% vs benchmark 19.03% net of fees (31-May-2026) — the client paid ~2.5&ndash;4%/yr for index-like results with worse liquidity</td></tr>
+<tr><td>Most underrated holding</td><td><b>ICICI Gold ETF FoF</b></td><td>Casually sized at 2.2% of investments, yet was the book's best 1-yr performer (+45.2%); deserves a deliberate 8&ndash;10% real-asset sleeve alongside the silver FoF</td></tr>
+<tr><td>Biggest hidden risk</td><td><b>Axis-group concentration &amp; distributor conflict</b></td><td>~22% of investments in Axis AMC products + Axis Bank as distributor of both PMS + Axis Max Life policies — one relationship drives ~40% of family financial product decisions</td></tr>
+<tr><td>Best combination going forward</td><td>ICICI Multi-Asset + Kotak Multicap/Midcap + ICICI India Opps + gold/silver FoFs + 2 low-cost index funds (direct)</td><td>See the three model portfolios in <a href="#model">Section 19</a></td></tr>
+<tr><td>Products that should NOT be combined</td><td>ABSL Multi Asset + Axis MAA + ICICI Multi-Asset + Axis BAF (four overlapping asset-allocation products); Axis Multicap + Axis L&amp;M + Axis Business Cycles (same manager pool, overlapping books)</td><td>Duplicated mandates multiply fees, not diversification</td></tr>
+</table></div>
+<p class="conf">Confidence: HIGH on structural conclusions (fees, plans, overlap, insurance IRR — verifiable arithmetic); MEDIUM-HIGH on fund quality rankings (public factsheet/rating data as of 31-May/03-Jul-2026); MEDIUM on PMS conclusions (SEBI-reported TWRR is strategy-level, not this client's money-weighted return).</p>
+</div>
+
+<h2 id="profile">2 &middot; Investor profile, inputs &amp; data limitations</h2>
+<div class="card">
+<p><b>Inputs received.</b> One consolidated Axis Bank portfolio statement (Excel) valued 31-May-2026 covering: 20 mutual fund schemes across 27 folios (₹3.64 cr invested → ₹4.62 cr), 2 discretionary PMS accounts (₹2.00 cr → ₹1.88 cr), and 4 Axis Max Life insurance policies (₹1.375 cr sum assured; ₹79.6 lakh premiums paid). No PMS statements, factsheets, SIDs or policy schedules were attached; all product-level data below was independently sourced from AMC factsheets, SEBI disclosures and market aggregators as of 03-Jul-2026.</p>
+<p><b>Investor profile (inferred — the template fields were left blank).</b> Resident individual family (Sriram Ragunandhanan &amp; Aparna Prabhakar per policy records); investable wealth ≥ ₹6.5 cr → HNI; presumed 30%+ marginal tax slab; horizon assumed 7&ndash;10 years; risk profile revealed by holdings: <i>moderately aggressive</i> (72% equity-oriented) but with behavioural evidence of distributor-led, NFO-heavy buying rather than a designed asset allocation. Where suitability judgements below depend on assumptions, the assumption is stated inline. <b>These inferences should be confirmed before executing any recommendation.</b></p>
+<p><b>Material data gaps</b> (each flagged where it bites): PMS client-level statements (entry dates, fee debits, stock-level holdings of these two accounts); exact PMS fee option chosen (fixed vs hybrid vs performance); transaction dates for MF folios (statement shows average cost only — so scheme returns here are <i>absolute holding-period returns, not XIRR</i>); policy schedules for the two Smart Wealth policies (issue dates, terms, maturity values not visible in statement); current surrender/fund values of all three traditional policies; the family's income, liabilities and goals. Items marked <span class="chip">not verifiable</span> could not be confirmed from public sources by 03-Jul-2026.</p>
+</div>
+</div>
+<div class="wrap">
+
+<h2 id="snapshot">3 &middot; Portfolio snapshot &amp; structure <span class="sub">(all values 31-May-2026 statement; calc)</span></h2>
+<div class="hero">
+  <div class="tile"><div class="k">TOTAL INVESTMENTS</div><div class="v">₹6.50 cr</div><div class="d">on ₹5.64 cr deployed &middot; <span class="pos">+15.3%</span> absolute</div></div>
+  <div class="tile"><div class="k">MUTUAL FUNDS (20 schemes / 27 folios)</div><div class="v">₹4.62 cr</div><div class="d"><span class="pos">+27.0%</span> absolute &middot; 71.1% of investments</div></div>
+  <div class="tile"><div class="k">PMS (2 accounts)</div><div class="v">₹1.88 cr</div><div class="d"><span class="neg">−5.9%</span> &middot; 28.9% of investments</div></div>
+  <div class="tile"><div class="k">INSURANCE PREMIUMS PAID</div><div class="v">₹79.6 L</div><div class="d">4 policies &middot; ₹1.375 cr cover &middot; no fund values disclosed</div></div>
+  <div class="tile"><div class="k">EST. ANNUAL FEE LEAKAGE</div><div class="v">~₹9.0 L</div><div class="d">≈ ₹4.8 L regular-plan commissions + ≈ ₹4.2 L PMS fees (est., see §16)</div></div>
+</div>
+
+<h3>Asset-class structure (look-through, calc)</h3>
+<p>Decomposing the four multi-asset/hybrid funds into their sleeves (equity ~68&ndash;73%, debt ~12&ndash;26%, gold/silver ~11&ndash;14% each, per 31-May-2026 factsheets) gives the true economic exposure of the ₹6.50 cr:</p>
+<div class="card">
+<div class="bar" role="img" aria-label="Look-through asset allocation: equity 76%, precious metals 9%, debt and cash 15%">
+  <span style="width:76%;background:var(--s1)"></span><span style="width:9%;background:var(--s3);margin-left:2px"></span><span style="width:15%;background:var(--s2);margin-left:2px"></span>
+</div>
+<div class="legend"><span><i style="background:var(--s1)"></i>Equity ≈ 76% (₹4.9 cr)</span><span><i style="background:var(--s3)"></i>Gold + silver ≈ 8.6% (₹56 L: ₹37.4 L direct FoFs + ₹18.1 L embedded in multi-asset funds)</span><span><i style="background:var(--s2)"></i>Debt + cash ≈ 15% (₹98 L, almost all inside hybrid funds and PMS cash)</span></div>
+<p class="note">Calc from scheme factsheet sleeve weights (31-May-2026); PMS assumed ~95% equity. The family holds essentially <b>no standalone fixed income</b> outside hybrid sleeves and low-IRR insurance — the true "defensive" allocation is thinner than the four multi-asset fund names suggest.</p>
+</div>
+
+<h3>Where the ₹6.50 cr sits (by product, 31-May-2026)</h3>
+<div class="tablewrap"><table>
+<tr><th>#</th><th>Product</th><th class="n">Invested ₹</th><th class="n">Value ₹</th><th class="n">Abs. return</th><th class="n">% of investments</th><th>Note</th></tr>
+<tr><td>1</td><td>Motilal Oswal Founders PMS</td><td class="n">1,00,00,000</td><td class="n">96,03,952</td><td class="n neg">−4.0%</td><td class="n">14.8%</td><td>Largest single product</td></tr>
+<tr><td>2</td><td>Helios India Rising PMS</td><td class="n">1,00,00,000</td><td class="n">92,10,579</td><td class="n neg">−7.9%</td><td class="n">14.2%</td><td>2nd largest</td></tr>
+<tr><td>3</td><td>ABSL Multi Asset Allocation</td><td class="n">62,49,688</td><td class="n">69,00,150</td><td class="n pos">+10.4%</td><td class="n">10.6%</td><td>Largest MF position</td></tr>
+<tr><td>4</td><td>ICICI Pru Multi-Asset (2 folios)</td><td class="n">41,29,594</td><td class="n">56,89,613</td><td class="n pos">+37.8%</td><td class="n">8.8%</td><td>Best large position</td></tr>
+<tr><td>5</td><td>ICICI Pru India Opportunities (3 folios)</td><td class="n">44,99,775</td><td class="n">49,13,548</td><td class="n pos">+9.2%</td><td class="n">7.6%</td><td>Later tranches underwater</td></tr>
+<tr><td>6</td><td>Axis Multicap (3 folios)</td><td class="n">42,99,785</td><td class="n">43,28,757</td><td class="n pos">+0.7%</td><td class="n">6.7%</td><td>Bought near 2024 peak</td></tr>
+<tr><td>7</td><td>Axis Business Cycles</td><td class="n">24,24,879</td><td class="n">38,16,716</td><td class="n pos">+57.4%</td><td class="n">5.9%</td><td>NFO (Feb-2023) winner</td></tr>
+<tr><td>8</td><td>Kotak Multicap</td><td class="n">16,05,260</td><td class="n">31,17,254</td><td class="n pos">+94.2%</td><td class="n">4.8%</td><td>Best absolute gainer (NFO Sep-2021)</td></tr>
+<tr><td>9</td><td>ICICI Pru Flexicap (2 folios)</td><td class="n">19,99,800</td><td class="n">28,19,497</td><td class="n pos">+41.0%</td><td class="n">4.3%</td><td>NFO Jul-2021 + 2024 top-up</td></tr>
+<tr><td>10</td><td>MO Gold &amp; Silver FoF</td><td class="n">19,99,900</td><td class="n">23,20,327</td><td class="n pos">+16.0%</td><td class="n">3.6%</td><td>Recent entry, metals rally</td></tr>
+<tr><td>11</td><td>Axis India Manufacturing (2 folios)</td><td class="n">13,99,930</td><td class="n">19,54,766</td><td class="n pos">+39.6%</td><td class="n">3.0%</td><td>NFO Dec-2023</td></tr>
+<tr><td>12</td><td>ICICI Pru Innovation</td><td class="n">9,99,950</td><td class="n">16,53,454</td><td class="n pos">+65.4%</td><td class="n">2.5%</td><td>NFO Apr-2023</td></tr>
+<tr><td>13</td><td>Kotak Midcap</td><td class="n">9,99,950</td><td class="n">16,47,669</td><td class="n pos">+64.8%</td><td class="n">2.5%</td><td>Genuine performer</td></tr>
+<tr><td>14</td><td>Axis Multi Asset Allocation</td><td class="n">12,49,938</td><td class="n">15,88,208</td><td class="n pos">+27.1%</td><td class="n">2.4%</td><td>1★ VR fund</td></tr>
+<tr><td>15</td><td>Axis Large &amp; Mid Cap</td><td class="n">9,99,950</td><td class="n">14,77,857</td><td class="n pos">+47.8%</td><td class="n">2.3%</td><td>Renamed Jun-2025</td></tr>
+<tr><td>16</td><td>ICICI Pru Gold ETF FoF</td><td class="n">12,99,935</td><td class="n">14,23,439</td><td class="n pos">+9.5%</td><td class="n">2.2%</td><td>Recent entry</td></tr>
+<tr><td>17</td><td>UTI Small Cap</td><td class="n">4,99,975</td><td class="n">7,32,658</td><td class="n pos">+46.5%</td><td class="n">1.1%</td><td>Fund lags peers badly</td></tr>
+<tr><td>18</td><td>MO Large &amp; Midcap</td><td class="n">4,99,975</td><td class="n">6,04,775</td><td class="n pos">+21.0%</td><td class="n">0.9%</td><td>Niket Shah exited Jan-2026</td></tr>
+<tr><td>19</td><td>Axis Nifty500 Value 50 Index</td><td class="n">2,99,985</td><td class="n">3,42,677</td><td class="n pos">+14.2%</td><td class="n">0.5%</td><td>Index fund via regular plan</td></tr>
+<tr><td>20</td><td>Axis Balanced Advantage</td><td class="n">2,99,985</td><td class="n">3,04,066</td><td class="n pos">+1.4%</td><td class="n">0.5%</td><td>Clutter position</td></tr>
+<tr><td>21</td><td>Axis Small Cap</td><td class="n">2,99,985</td><td class="n">2,95,007</td><td class="n neg">−1.7%</td><td class="n">0.5%</td><td>Clutter position</td></tr>
+<tr><td>22</td><td>Axis Momentum</td><td class="n">2,99,985</td><td class="n">2,60,987</td><td class="n neg">−13.0%</td><td class="n">0.4%</td><td>NFO Dec-2024, worst holding</td></tr>
+</table></div>
+<p class="note">Returns above are <b>absolute holding-period returns from the statement, not annualised</b>, and cannot be compared across positions with different entry dates. Scheme-level CAGRs vs benchmarks appear in the deep dives.</p>
+
+<h2 id="inventory">4 &middot; Stage 1 — Product inventory (master table)</h2>
+<div class="tablewrap"><table>
+<tr><th>Product (Regular/Growth)</th><th>SEBI category</th><th>Benchmark</th><th>Inception</th><th>Manager (tenure)</th><th class="n">AUM ₹ cr (date)</th><th class="n">TER Reg%</th><th class="n">TER Dir%</th><th>Exit load</th><th>Disclosure score</th></tr>
+<tr><td>ABSL Multi Asset Allocation</td><td>Hybrid — Multi Asset</td><td>65% BSE 200 TRI + 25% CRISIL STB + 5% gold + 5% silver</td><td>31-Jan-2023</td><td>D. Gala (Nov-24), B. Bameta, S. Wankhede (Jan-23)</td><td class="n">6,766 (May-26)</td><td class="n">1.50</td><td class="n">0.51</td><td>1% &gt;30% units, 365d</td><td>A</td></tr>
+<tr><td>Axis Balanced Advantage</td><td>Hybrid — BAF</td><td>NIFTY 50 Hybrid Comp. Debt 50:50</td><td>01-Aug-2017</td><td>D. Shah (Apr-24) + 2</td><td class="n">3,750 (May-26)</td><td class="n">~1.9</td><td class="n">1.07</td><td>1% 12m (10% free)</td><td>B</td></tr>
+<tr><td>Axis Business Cycles</td><td>Equity — Thematic</td><td>Nifty 500 TRI</td><td>22-Feb-2023</td><td>Ashish Naik (since launch)</td><td class="n">2,058 (May-26)</td><td class="n">2.27</td><td class="n">1.44</td><td>1% 12m</td><td>B</td></tr>
+<tr><td>Axis India Manufacturing</td><td>Equity — Thematic</td><td>Nifty India Manufacturing TRI</td><td>21-Dec-2023</td><td>N. Arora, S. Devalkar (launch)</td><td class="n">5,344 (May-26)</td><td class="n">2.07</td><td class="n">0.89</td><td>1% 90d</td><td>B</td></tr>
+<tr><td>Axis Large &amp; Mid Cap <span class="chip">renamed Jun-25 (ex-Growth Opportunities)</span></td><td>Equity — Large &amp; Mid</td><td>NIFTY LargeMidcap 250 TRI</td><td>22-Oct-2018</td><td>S. Devalkar, H. Das (Aug-23), Krishnaa N (Mar-24)</td><td class="n">15,879 (May-26)</td><td class="n">~1.92</td><td class="n">~0.8 <span class="chip">nv</span></td><td>1% 12m</td><td>B</td></tr>
+<tr><td>Axis Momentum</td><td>Equity — Thematic/Factor</td><td>Nifty 500 TRI</td><td>12-Dec-2024</td><td>Nandik Mallik (Mar-26)</td><td class="n">975 (May-26)</td><td class="n">~2.2 <span class="chip">sources conflict</span></td><td class="n">~0.7 <span class="chip">nv</span></td><td>1% 12m (90%)</td><td>C</td></tr>
+<tr><td>Axis Multi Asset Allocation <span class="chip">ex-Triple Advantage</span></td><td>Hybrid — Multi Asset</td><td>65% N500 TRI + 20% debt + 7.5% Au + 7.5% Ag (since Apr-23)</td><td>23-Aug-2010</td><td>6 managers; multiple changes 2024-25</td><td class="n">2,293 (May-26)</td><td class="n">~2.1</td><td class="n">1.40 <span class="chip">agg. mix</span></td><td>1% 12m (10% free)</td><td>B−</td></tr>
+<tr><td>Axis Multicap</td><td>Equity — Multi Cap</td><td>Nifty500 Multicap 50:25:25 TRI</td><td>17-Dec-2021</td><td>S. Devalkar (launch), H. Das, N. Arora (May-23)</td><td class="n">9,938 (May-26)</td><td class="n">~1.99</td><td class="n">~0.6 <span class="chip">nv</span></td><td>1% 12m</td><td>B</td></tr>
+<tr><td>Axis Nifty500 Value 50 Index</td><td>Index — factor</td><td>Nifty500 Value 50 TRI</td><td>24-Oct-2024</td><td>N. Mallik, R. Gautam (Mar-26)</td><td class="n">206 (Jul-26)</td><td class="n">1.05</td><td class="n">0.47</td><td>0.25% 15d</td><td>B</td></tr>
+<tr><td>Axis Small Cap</td><td>Equity — Small Cap</td><td>Nifty Smallcap 250 TRI</td><td>29-Nov-2013</td><td>T. Sheth (May-24) + 2; churn 2023-24</td><td class="n">27,840 (Jun-26)</td><td class="n">~1.71</td><td class="n">0.78</td><td>1% 365d</td><td>B</td></tr>
+<tr><td>ICICI Pru Flexicap</td><td>Equity — Flexi Cap</td><td>BSE 500 TRI</td><td>17-Jul-2021</td><td>Rajat Chandak (launch)</td><td class="n">21,189 (May-26)</td><td class="n">1.40</td><td class="n">0.64</td><td>1% 1m (relaxed Apr-26)</td><td>A</td></tr>
+<tr><td>ICICI Pru Gold ETF FoF</td><td>FoF — Gold</td><td>Domestic gold price</td><td>11-Oct-2011</td><td>M. Banthia (2013), N. Patel (2020) + 2 (Nov-25)</td><td class="n">6,856 (Jul-26)</td><td class="n">0.47</td><td class="n">0.18</td><td>1% 15d</td><td>A</td></tr>
+<tr><td>ICICI Pru India Opportunities</td><td>Equity — Thematic/Special sits.</td><td>Nifty 500 TRI</td><td>15-Jan-2019</td><td>S. Naren + R. Chutkey (since launch)</td><td class="n">36,478 (Jul-26)</td><td class="n">1.31</td><td class="n">~0.6</td><td>1% 12m</td><td>A</td></tr>
+<tr><td>ICICI Pru Innovation</td><td>Equity — Thematic</td><td>Nifty 500 TRI</td><td>28-Apr-2023</td><td>V. Dusad (launch); <b>A. Tawakley exited Feb-26</b></td><td class="n">7,453 (May-26)</td><td class="n">1.53</td><td class="n">0.60</td><td>1% 1m</td><td>B+</td></tr>
+<tr><td>ICICI Pru Multi-Asset</td><td>Hybrid — Multi Asset</td><td>65% N200 TRI + 25% debt + 6% Au + 1% Ag + 3% iCOMDEX</td><td>31-Oct-2002</td><td>S. Naren (2012), I. Dalwai (2017) + 6</td><td class="n">84,165 (Jul-26)</td><td class="n">1.06</td><td class="n">0.52</td><td>1% &gt;30% units, 12m</td><td>A</td></tr>
+<tr><td>Kotak Midcap <span class="chip">ex-Emerging Equity, renamed Jun-25</span></td><td>Equity — Mid Cap</td><td>Nifty Midcap 150 TRI</td><td>30-Mar-2007</td><td>Atul Bhole (Jan-24); Tibrewal exited Nov-23</td><td class="n">64,749 (Jul-26)</td><td class="n">1.38</td><td class="n">0.50</td><td>1% 365d (10% free)</td><td>A</td></tr>
+<tr><td>Kotak Multicap</td><td>Equity — Multi Cap</td><td>Nifty500 Multicap 50:25:25 TRI</td><td>29-Sep-2021</td><td>A. Bisen + D. Singhal (launch)</td><td class="n">26,249 (Jul-26)</td><td class="n">~1.5</td><td class="n">~0.45</td><td>1% 365d</td><td>A−</td></tr>
+<tr><td>MO Gold &amp; Silver ETFs FoF</td><td>FoF — Gold+Silver</td><td>Domestic gold &amp; silver prices</td><td>13-Oct-2022</td><td>S. Mayekar (Jun-25), R. Shetty</td><td class="n">2,863 (May-26)</td><td class="n">~0.42</td><td class="n">~0.17</td><td>1% 15d</td><td>B+</td></tr>
+<tr><td>MO Large &amp; Midcap</td><td>Equity — Large &amp; Mid</td><td>NIFTY LargeMidcap 250 TRI</td><td>17-Oct-2019</td><td>A. Khandelwal (Dec-23) + 3; <b>Niket Shah era ended Jan-26</b></td><td class="n">17,420 (Jul-26)</td><td class="n">~1.7</td><td class="n">~0.75</td><td>1% 365d</td><td>B</td></tr>
+<tr><td>UTI Small Cap</td><td>Equity — Small Cap</td><td>Nifty Smallcap 250 TRI</td><td>22-Dec-2020</td><td>Nitin Jain (sole since Jul-25); <b>founding mgr A. Agarwal exited</b></td><td class="n">4,970 (May-26)</td><td class="n">1.81</td><td class="n">0.67</td><td>1% 365d</td><td>B</td></tr>
+<tr><td>Helios India Rising PMS</td><td>PMS — flexi-cap</td><td>BSE 500 TRI</td><td>16-Mar-2020</td><td>Samir Arora / Dinshaw Irani (org)</td><td class="n">1,510 strategy (May-26)</td><td class="n" colspan="2">2.5% fixed (+1.5% var / up to 25% profit &gt;10% hurdle, HWM)</td><td>3%/2%/1% yrs 1-3</td><td>B− <span class="chip">holdings undisclosed</span></td></tr>
+<tr><td>Motilal Oswal Founders PMS</td><td>PMS — multi-cap (mid/small tilt)</td><td>BSE 500 TRI</td><td>16-Mar-2023</td><td>Vaibhav Agrawal (CIO Alternates)</td><td class="n">~3,887 strategy (May-26) <span class="chip">sources conflict</span></td><td class="n" colspan="2">2.5% fixed; or +20% profit &gt;8% hurdle; HWM <span class="chip">nv</span></td><td>2% yr-1, nil after</td><td>C+ <span class="chip">client fee option nv</span></td></tr>
+<tr><td>Axis Max Life Smart Term Plan</td><td>Term insurance</td><td>—</td><td>30-Jul-2020</td><td>—</td><td class="n">—</td><td class="n" colspan="2">₹1,14,800/yr × 12 (₹1 cr cover to 2057)</td><td>—</td><td>B</td></tr>
+<tr><td>Axis Max Life SWAG (Guarantee)</td><td>Non-par guaranteed savings</td><td>—</td><td>15-Dec-2023</td><td>—</td><td class="n">—</td><td class="n" colspan="2">₹5,00,000/yr × 5-pay, 11-yr term</td><td>Surrender haircut 25-45% now (est.)</td><td>C <span class="chip">schedule not provided</span></td></tr>
+<tr><td>Axis Max Life Smart Wealth Plan ×2</td><td>Non-par savings</td><td>—</td><td><span class="chip">nv</span></td><td>—</td><td class="n">—</td><td class="n" colspan="2">₹30.6 L + ₹25.6 L premiums paid to date</td><td><span class="chip">nv</span></td><td>D <span class="chip">terms not visible</span></td></tr>
+</table></div>
+<p class="note"><span class="chip">nv</span> = not publicly disclosed or independently verifiable as of 03-Jul-2026. TERs are latest AMC/aggregator figures (31-May &ndash; 03-Jul-2026); regular-plan TERs from aggregators sometimes include GST — treat ±0.2pp. Immediate inventory flags: <b>two scheme renames</b> (Axis L&amp;M, Kotak Midcap), <b>one benchmark change</b> (Axis MAA Apr-2023; MO G&amp;S FoF Aug-2025), <b>five material manager events</b> (Kotak Midcap Jan-24; UTI Small Cap Jul-25; ICICI Innovation Feb-26; MO L&amp;M Jan-26; ABSL MAA Nov-24), <b>three SEBI observation letters to Helios</b> (2024-25) and the <b>Axis AMC front-running settlement</b> (Mar-2025, ₹6.27 cr, without admitting/denying).</p>
+
+<h2 id="structural">5 &middot; Structural findings &amp; manager/distributor behaviour</h2>
+<div class="card">
+<h3 style="margin-top:0">5.1 The five structural defects (facts, not opinions)</h3>
+<ol>
+<li><b>100% Regular plans.</b> Every one of the 27 folios is a Regular plan. Weighted regular-vs-direct TER gap ≈ <b>1.0pp/yr on equity funds</b> (e.g. UTI SC 1.14pp, ICICI Innovation 0.93pp, ABSL MAA 0.99pp — AMC factsheets May-Jun-2026). On the ₹4.62 cr MF book that is ≈ <b>₹4.8 lakh/yr</b> of embedded commission (calc). Compounded 10 years at 12% gross, the drag costs ≈ <b>₹1.28 cr</b> of terminal wealth (calc, assumptions in §16).</li>
+<li><b>Distributor conflict of interest.</b> Axis Bank distributes the portfolio; Axis AMC (bank affiliate) supplies <b>9 of 20 schemes (22.1% of investments incl. its multi-asset)</b>; Axis Max Life (bank associate, 19.99% Axis-owned) supplies all 4 insurance policies; both PMS were sold through the same channel. Nothing here is illegal — but product selection correlates suspiciously well with what the bank earns trail/commission on, and includes Axis funds rated 1★ (Multi Asset Allocation) and brand-new NFOs with no track record (Momentum, Value 50, Manufacturing, Business Cycles).</li>
+<li><b>NFO-chasing.</b> At least 8 purchases were made at or near ₹10&ndash;12 NAV in NFOs/new funds (Kotak Multicap ₹10.00, ICICI Flexicap ₹10.00, Axis Momentum ₹10.00, Axis India Mfg ₹10.00/₹12.48, Axis Business Cycles ₹10.28, ICICI Innovation ₹11.17, Axis Nifty500 V50 ₹10.20, UTI SC via 2020 NFO era pricing — statement avg-cost column). NFOs pay the highest first-year distributor commissions. Some worked (Kotak Multicap +94%), the newest have not (Momentum −13%).</li>
+<li><b>Over-diversification without diversification.</b> 20 schemes + 2 PMS across 8 AMCs, yet §14 shows the equity sleeve is one big bet on the same ~60 large/mid-cap names (HDFC Bank, ICICI Bank, L&amp;T, Maruti/TVS, Reliance, Infosys appear in nearly every equity fund). Six positions are &lt;₹5 L (2.9% of investments combined) — too small to matter, big enough to complicate taxes and monitoring. Four separate asset-allocation products (ABSL MAA, ICICI MA, Axis MAA, Axis BAF) do the same job.</li>
+<li><b>Buying after the re-rating.</b> The three ICICI India Opportunities folios tell the story: first tranche at ₹22.72 (+56%), then ₹36.87 and ₹37.82 bought later — both now underwater vs NAV ₹35.54. Same with Axis Multicap (₹18.13/₹18.00 tranches flat-to-negative) and both PMS (entered ~2024-25 highs; Helios −7.9%, Founders −4.0%). The pattern: winners are topped up <i>after</i> they have run, at materially worse prices — a distributor-cycle signature, not a valuation-driven process.</li>
+</ol>
+<h3>5.2 What the portfolio is economically betting on (Stage 2 aggregate)</h3>
+<p>Aggregating disclosed fund portfolios (31-May-2026 factsheets) weighted by position size: the book is long <b>Indian financials (~18-20% look-through)</b>, <b>autos &amp; auto components (~8-10%)</b>, <b>capital goods / manufacturing capex (~9-11%)</b>, <b>domestic consumption</b>, with ~8.6% precious metals and ~15% debt/cash. It is overwhelmingly a <b>domestic-cyclical, large+midcap growth</b> book with a <i>manufacturing/capex tilt</i> from the thematic funds and <i>mid/small-cap risk</i> concentrated inside MO Founders PMS (73% mid+small), Kotak funds and the two small-cap funds. There is no meaningful export/IT overweight, no international equity, and no standalone duration. In a domestic-demand slowdown or a capex-cycle stall, most of the book falls together — the diversification is largely cosmetic (see §14 overlap matrix).</p>
+</div>
+</div>
+<div class="wrap">
+
+<h2 id="decision">6 &middot; Decision table — all 26 products</h2>
+<p>Scores per the 13-factor / 100-point model in <a href="#method">§22</a>. "Fwd CAGR" = analyst base-case 5-yr expectation, net of the plan/fee structure <i>as currently held</i> (regular plan / PMS fees); see §18 for build-up. Recommendations assume the investor profile in §2.</p>
+<div class="tablewrap"><table>
+<tr><th class="n">Rank</th><th>Product</th><th class="n">Score /100</th><th class="n">Fwd-look score</th><th>Recommendation</th><th>Action &amp; entry/exit method</th><th class="n">Max alloc.</th><th class="n">Min horizon</th><th class="n">Exp. 5-yr CAGR (net)</th><th class="n">Exp. max DD</th><th>Red-flag</th><th>Conf.</th></tr>
+<tr><td class="n">1</td><td><b>ICICI Pru Multi-Asset</b></td><td class="n">82</td><td class="n">80</td><td class="reco">Hold / Add</td><td>Keep; add via <b>direct plan</b> on dips; core allocation</td><td class="n">20%</td><td class="n">5 yr</td><td class="n">10–12%</td><td class="n">−18%</td><td><span class="flag low">LOW</span></td><td>High</td></tr>
+<tr><td class="n">2</td><td><b>ICICI Pru India Opportunities</b></td><td class="n">76</td><td class="n">74</td><td class="reco">Hold / Accumulate</td><td>Keep all 3 folios; future adds in direct plan, staggered</td><td class="n">10%</td><td class="n">5 yr</td><td class="n">11–13%</td><td class="n">−30%</td><td><span class="flag low">LOW</span></td><td>High</td></tr>
+<tr><td class="n">3</td><td><b>Kotak Multicap</b></td><td class="n">74</td><td class="n">73</td><td class="reco">Hold</td><td>Keep; don't add above 6% of portfolio (young fund, full valuations)</td><td class="n">6%</td><td class="n">5 yr</td><td class="n">11–13%</td><td class="n">−35%</td><td><span class="flag low">LOW</span></td><td>Med-High</td></tr>
+<tr><td class="n">4</td><td><b>Kotak Midcap</b></td><td class="n">73</td><td class="n">71</td><td class="reco">Hold</td><td>Keep; monitor Bhole's 3-yr record (Jan-2027)</td><td class="n">6%</td><td class="n">7 yr</td><td class="n">11–14%</td><td class="n">−40%</td><td><span class="flag low">LOW</span></td><td>Med-High</td></tr>
+<tr><td class="n">5</td><td><b>ICICI Pru Gold ETF FoF</b></td><td class="n">74</td><td class="n">70</td><td class="reco">Hold / Add</td><td>Keep; grow combined metals sleeve to 8-10% via direct plan; rebalance annually</td><td class="n">7%</td><td class="n">3 yr</td><td class="n">5–8%</td><td class="n">−25%</td><td><span class="flag low">LOW</span></td><td>High</td></tr>
+<tr><td class="n">6</td><td><b>ICICI Pru Flexicap</b></td><td class="n">72</td><td class="n">69</td><td class="reco">Hold</td><td>Keep; watch 24% auto-sector bet; single-manager risk</td><td class="n">6%</td><td class="n">5 yr</td><td class="n">10–12%</td><td class="n">−32%</td><td><span class="flag low">LOW</span></td><td>Med-High</td></tr>
+<tr><td class="n">7</td><td><b>MO Gold &amp; Silver FoF</b></td><td class="n">70</td><td class="n">68</td><td class="reco">Hold</td><td>Keep as the silver half of the metals sleeve; expect 25%+ volatility</td><td class="n">5%</td><td class="n">3 yr</td><td class="n">4–8%</td><td class="n">−30%</td><td><span class="flag low">LOW</span></td><td>Med-High</td></tr>
+<tr><td class="n">8</td><td>ICICI Pru Innovation</td><td class="n">65</td><td class="n">60</td><td class="reco">Hold (tight watch)</td><td>Keep but cap at current size; reassess after 2 quarters under Dusad alone (Tawakley exit Feb-26)</td><td class="n">3%</td><td class="n">5 yr</td><td class="n">9–12%</td><td class="n">−35%</td><td><span class="flag mod">MODERATE</span></td><td>Medium</td></tr>
+<tr><td class="n">9</td><td>Axis Multicap</td><td class="n">68</td><td class="n">64</td><td class="reco">Hold</td><td>Keep (5★ VR, 3-yr alpha +3.4pp) — but this is the one Axis equity fund worth keeping; don't add</td><td class="n">6%</td><td class="n">5 yr</td><td class="n">10–12%</td><td class="n">−35%</td><td><span class="flag mod">MODERATE</span></td><td>Medium</td></tr>
+<tr><td class="n">10</td><td>ABSL Multi Asset Allocation</td><td class="n">62</td><td class="n">58</td><td class="reco">Reduce</td><td>Trim from 10.6% → ≤5% of investments; redirect to ICICI MA (direct); use &gt;365-day units first (LTCG ₹1.25L band + 30%-free exit-load window)</td><td class="n">5%</td><td class="n">3 yr</td><td class="n">9–11%</td><td class="n">−20%</td><td><span class="flag mod">MODERATE</span></td><td>Med-High</td></tr>
+<tr><td class="n">11</td><td>Axis Business Cycles</td><td class="n">58</td><td class="n">52</td><td class="reco">Reduce</td><td>Book 50-70% of the +57% gain (units &gt;12m: LTCG 12.5%); thematic at 2.27% TER with Sharpe 0.48 doesn't earn a 5.9% weight</td><td class="n">3%</td><td class="n">5 yr</td><td class="n">8–11%</td><td class="n">−38%</td><td><span class="flag mod">MODERATE</span></td><td>Medium</td></tr>
+<tr><td class="n">12</td><td>MO Large &amp; Midcap</td><td class="n">60</td><td class="n">55</td><td class="reco">Hold (tight watch)</td><td>Small position; give new team (Khandelwal/Mehra) 2 quarters; exit if bottom-half FY27</td><td class="n">2%</td><td class="n">5 yr</td><td class="n">9–12%</td><td class="n">−40%</td><td><span class="flag mod">MODERATE</span></td><td>Medium</td></tr>
+<tr><td class="n">13</td><td>Axis India Manufacturing</td><td class="n">55</td><td class="n">50</td><td class="reco">Reduce</td><td>Halve; cyclical capex theme at 2.07% TER, negative 3-yr Sharpe data, no full-cycle record</td><td class="n">2%</td><td class="n">5 yr</td><td class="n">8–11%</td><td class="n">−40%</td><td><span class="flag mod">MODERATE</span></td><td>Medium</td></tr>
+<tr><td class="n">14</td><td>Axis Large &amp; Mid Cap</td><td class="n">58</td><td class="n">54</td><td class="reco">Exit (switch)</td><td>Switch to Kotak Midcap/ICICI direct equivalents after 12-m load window; 3★ fund lagging benchmark 3yr/5yr</td><td class="n">—</td><td class="n">—</td><td class="n">9–11%</td><td class="n">−35%</td><td><span class="flag mod">MODERATE</span></td><td>Medium</td></tr>
+<tr><td class="n">15</td><td>Axis Balanced Advantage</td><td class="n">60</td><td class="n">55</td><td class="reco">Exit (consolidate)</td><td>₹3 L clutter; fold into ICICI MA; 4★ but redundant vs 3 other allocation funds</td><td class="n">—</td><td class="n">—</td><td class="n">8–10%</td><td class="n">−15%</td><td><span class="flag low">LOW</span></td><td>Med-High</td></tr>
+<tr><td class="n">16</td><td>Axis Nifty500 Value 50 Index</td><td class="n">52</td><td class="n">50</td><td class="reco">Exit (switch)</td><td>Paying 1.05% for an index (direct 0.47%) is the point of index investing, inverted. Switch to a direct-plan factor/index line if factor exposure wanted</td><td class="n">—</td><td class="n">—</td><td class="n">8–11%</td><td class="n">−35%</td><td><span class="flag mod">MODERATE</span></td><td>Med-High</td></tr>
+<tr><td class="n">17</td><td>Axis Small Cap</td><td class="n">55</td><td class="n">48</td><td class="reco">Exit</td><td>3-yr −4.4pp vs benchmark, 3 manager changes 2023-24; consolidate small-cap via a stronger vehicle later at better valuations</td><td class="n">—</td><td class="n">—</td><td class="n">8–11%</td><td class="n">−45%</td><td><span class="flag mod">MODERATE</span></td><td>Medium</td></tr>
+<tr><td class="n">18</td><td>Axis Multi Asset Allocation</td><td class="n">45</td><td class="n">42</td><td class="reco">Exit</td><td>1★ VR; −2.7pp/yr vs benchmark over 3yr; six-manager committee product; switch to ICICI MA</td><td class="n">—</td><td class="n">—</td><td class="n">7–9%</td><td class="n">−22%</td><td><span class="flag high">HIGH</span></td><td>Med-High</td></tr>
+<tr><td class="n">19</td><td>UTI Small Cap</td><td class="n">45</td><td class="n">40</td><td class="reco">Exit</td><td>2★, bottom-quartile 1/3/5-yr, founding manager left Jul-25, negative alpha; exit on rallies (units LTCG-eligible)</td><td class="n">—</td><td class="n">—</td><td class="n">7–10%</td><td class="n">−45%</td><td><span class="flag high">HIGH</span></td><td>Med-High</td></tr>
+<tr><td class="n">20</td><td>Axis Momentum</td><td class="n">40</td><td class="n">38</td><td class="reco">Exit</td><td>−7.7% SI vs −0.9% benchmark (12-Jun-2026); factor NFO sold at launch; momentum via regular plan is fee-on-fee; exit at 12-m load expiry (Dec-2025 passed — check folio date) or immediately</td><td class="n">—</td><td class="n">—</td><td class="n">7–11%</td><td class="n">−40%</td><td><span class="flag high">HIGH</span></td><td>Medium</td></tr>
+<tr><td class="n">21</td><td>Helios India Rising PMS</td><td class="n">48</td><td class="n">42</td><td class="reco">Exit (staged)</td><td>SI alpha ≈ 0 net of fees (19.01% vs 19.03%, May-26); 3 SEBI observation letters; exit load 1% until Mar-2027 (yr-3) — see §12 for sequencing vs tax</td><td class="n">—</td><td class="n">—</td><td class="n">8–10%</td><td class="n">−35%</td><td><span class="flag high">HIGH</span></td><td>Medium</td></tr>
+<tr><td class="n">22</td><td>Motilal Oswal Founders PMS</td><td class="n">55</td><td class="n">50</td><td class="reco">Hold 12m, then decide</td><td>Real SI alpha but 73% mid/small at rich valuations, key-person churn above the strategy, −1.7% 1-yr; exit load 2% lapses at yr-1 — re-underwrite at FY27 results</td><td class="n">≤10%</td><td class="n">5 yr</td><td class="n">9–13%</td><td class="n">−45%</td><td><span class="flag mod">MODERATE</span></td><td>Medium</td></tr>
+<tr><td class="n">23</td><td>Smart Term Plan (₹1 cr)</td><td class="n">—</td><td class="n">—</td><td class="reco">Hold (verify variant)</td><td>Keep cover; premium (₹1.15 L/yr) is 8-12× pure-term rates → almost certainly Return-of-Premium variant — confirm; consider adding cheap pure term if human-capital gap exists</td><td class="n">—</td><td class="n">to 2057</td><td class="n">—</td><td class="n">—</td><td><span class="flag mod">MODERATE</span></td><td>Medium</td></tr>
+<tr><td class="n">24</td><td>SWAG Guarantee Plan</td><td class="n">—</td><td class="n">—</td><td class="reco">Continue premiums</td><td>Pay remaining 2×₹5 L; surrender now = ₹4-7 L loss (−18% to −36% IRR); completed policy ≈ 5.5-6.5% tax-free IRR = legitimate debt substitute <i>only if</i> 10(10D) stays intact (premium exactly ₹5 L — verify base premium and buy no more post-Apr-2023 non-ULIP policies)</td><td class="n">—</td><td class="n">to 2034</td><td class="n">5.5–6.5% (tax-free)</td><td class="n">—</td><td><span class="flag mod">MODERATE</span></td><td>Med-High</td></tr>
+<tr><td class="n">25</td><td>Smart Wealth Plan (self)</td><td class="n">—</td><td class="n">—</td><td class="reco">Insufficient data</td><td>₹30.6 L paid; obtain policy schedule + surrender quote; typical IRR 4.4-6.7% by variant — decide continue/paid-up on numbers, not inertia</td><td class="n">—</td><td class="n">—</td><td class="n">~5-6% (est.)</td><td class="n">—</td><td><span class="flag mod">MODERATE</span></td><td>Low</td></tr>
+<tr><td class="n">26</td><td>Smart Wealth Plan (spouse)</td><td class="n">—</td><td class="n">—</td><td class="reco">Insufficient data</td><td>₹25.6 L paid; same action as above</td><td class="n">—</td><td class="n">—</td><td class="n">~5-6% (est.)</td><td class="n">—</td><td><span class="flag mod">MODERATE</span></td><td>Low</td></tr>
+</table></div>
+<p class="note">Recommendation scale: Strong Buy / Buy / Accumulate Gradually / Hold / Reduce / Exit / Avoid / Insufficient Data. No product here earns "Strong Buy" at current valuations — the strongest actions are Hold/Add on ICICI Multi-Asset and the metals sleeve. "Exit" items total ≈ ₹1.30 cr (MF ₹37.7 L + Helios ₹92.1 L); "Reduce" items ≈ ₹1.28 cr. Execution sequencing (loads + taxes) in §16 and §19.</p>
+</div>
+<div class="wrap">
+
+<h2 id="deep-ma">7 &middot; Deep dives — Multi-asset &amp; hybrid funds <span class="sub">(₹1.46 cr &middot; 22.4% of investments)</span></h2>
+
+<h3>7.1 ICICI Prudential Multi-Asset Fund — ₹56.9 L (8.8%) — Score 82/100</h3>
+<div class="card">
+<p><b>What it is.</b> India's largest multi-asset fund (AUM ₹84,165 cr, 02-Jul-2026), running since 31-Oct-2002. S. Naren (CIO, on the fund since Feb-2012) + Ihab Dalwai (2017) + specialist debt/commodity managers. Asset mix 31-May-2026: equity 67.7%, debt 20.3%, gold ETF 10.9%, net derivatives −1.3%. Top equity names: HDFC Bank 5.7%, ICICI Bank 3.2%, Infosys 2.3%, Maruti 1.8% — classic Naren value/contrarian book.</p>
+<p><b>Performance (31-May-2026, AMC/aggregator):</b> SI 20.38% CAGR vs 13.05% blended benchmark; 5-yr 17.40%; 3-yr 9.54%; 1-yr 6.45%. Risk: SD 8.86%, <b>Sharpe 1.19</b>, beta 0.83 — the best risk-adjusted numbers in this portfolio. VR 5★. TER: regular 1.06% / direct 0.52%.</p>
+<p><b>Why it has performed:</b> genuine multi-asset rebalancing (counter-cyclical equity trims, early gold overweight), a value discipline that avoided the 2021-22 growth de-rating, and scale economics passed into a low TER. Alpha here is process-driven (asset allocation + valuation) rather than one hot sector — the most <i>repeatable</i> return stream in the book. Naren's succession is the real long-term question; the eight-manager bench mitigates it.</p>
+<p><b>Investor's position:</b> two folios, +37.8% and +0.5% absolute — the older tranche shows what patience in this fund does.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Hold / Add (core, up to 20%).</b> The single best product in the portfolio. Add future money via the direct plan (saves 0.54pp/yr). Red-flag rating: LOW. Confidence: HIGH (long public record, full disclosure).</div>
+</div>
+
+<h3>7.2 ABSL Multi Asset Allocation Fund — ₹69.0 L (10.6%) — Score 62/100</h3>
+<div class="card">
+<p><b>What it is.</b> Launched 31-Jan-2023; AUM ₹6,766 cr (31-May-2026). Equity ~70%, gold+silver ETFs 13.9%, debt+cash ~12%. Equity manager changed within 2 years of launch (Dhaval Shah → Dhaval Gala, Nov-2024); debt/commodity managers stable. TER regular 1.50% / direct 0.51%.</p>
+<p><b>Performance (02-Jul-2026):</b> 1-yr 13.45%; 3-yr 15.91%; SI 16.6% vs 13.05% blended benchmark. Respectable — but VR rates it 3★ (mid-pack), Sharpe 0.86-1.04 vs ICICI MA's 1.19, and the outperformance coincides exactly with its 4pp gold/silver overweight during a historic bullion rally (benchmark weight 10%, actual 13.9%). Strip the metals tailwind and the equity sleeve is unremarkable.</p>
+<p><b>The real issue is position size, not quality:</b> at ₹69 L this is the largest MF position (10.6% of investments) — the <i>third</i> asset-allocation product in the book, bought Feb-2023 (NFO-adjacent) and topped to a size that duplicates ICICI MA at +0.44pp higher TER with a 3-year (vs 24-year) record and a mid-launch manager swap.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Reduce to ≤5%.</b> Keep some (it's not a bad fund; asset mix within mandate) but shift the excess to ICICI MA direct. Use the 30%-free exit-load window + units past 365 days. Red-flag: MODERATE (manager churn, NFO-era sale, size vs record). Confidence: MED-HIGH.</div>
+</div>
+
+<h3>7.3 Axis Multi Asset Allocation Fund (ex-Triple Advantage) — ₹15.9 L (2.4%) — Score 45/100</h3>
+<div class="card">
+<p><b>What it is.</b> 2010-vintage fund rebranded and re-benchmarked Apr-2023 (now 65% Nifty 500 + 20% debt + 7.5% gold + 7.5% silver). Six listed managers with repeated changes (Feb-2025, Dec-2024, Apr-2024…). AUM ₹2,293 cr. TER ~2.1% regular (aggregator, GST-incl) vs the 1.40% base — either way, expensive.</p>
+<p><b>Performance (12-Jun-2026):</b> 1-yr 12.39% vs 13.57% benchmark; <b>3-yr 14.67% vs 17.32%</b> (−2.65pp/yr); SI 10.95% vs 12.13%. <b>Value Research 1★.</b> It has trailed its own benchmark over 1, 3 and SI horizons despite holding the same gold tailwind as its peers — i.e. the allocation engine subtracts value.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Exit.</b> A 1★, benchmark-lagging, committee-run product with a rebrand in its history and a 2%+ effective cost. The only reason it's in the portfolio is who distributes it. Switch proceeds to ICICI MA. Red-flag: HIGH (persistent underperformance + name/benchmark change). Confidence: MED-HIGH.</div>
+</div>
+
+<h3>7.4 Axis Balanced Advantage Fund — ₹3.0 L (0.5%) — Score 60/100</h3>
+<div class="card">
+<p><b>What it is / performance:</b> dynamic-allocation hybrid, AUM ₹3,750 cr; equity ~73% (net), large-cap-heavy. 1-yr 1.30% vs benchmark −1.65%; 3-yr 13.0% vs 7.81%; 5-yr 11.17% vs 7.80% (12-Jun-2026). 4★ VR — genuinely decent BAF numbers. TER ~1.9% regular vs 1.07% direct.</p>
+<p><b>But:</b> it is a ₹3 lakh position (0.46% of investments) — the fourth allocation product, too small to move anything, bought in a ₹3 L NFO-style scatter of five Axis schemes on the same folio series (194545/194546). Portfolio hygiene says consolidate.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Exit (consolidation, not quality).</b> Fold into ICICI MA. If a standalone BAF is ever wanted, this one via direct plan is acceptable. Red-flag: LOW. Confidence: MED-HIGH.</div>
+</div>
+
+<h2 id="deep-div">8 &middot; Deep dives — Diversified equity funds <span class="sub">(₹1.36 cr &middot; 20.9% of investments)</span></h2>
+
+<h3>8.1 ICICI Prudential Flexicap — ₹28.2 L (4.3%) — Score 72/100</h3>
+<div class="card">
+<p><b>Facts (AMC factsheet 31-May-2026):</b> AUM ₹21,189 cr; Rajat Chandak sole equity manager since Jul-2021 launch; TER 1.40%/0.64%; exit load relaxed to 1%/1-month (Apr-2026). Portfolio: TVS Motor 9.25%, Maruti 6.74%, ICICI Bank 6.37%, D-Mart 4.09%, HDFC Bank 3.72% — <b>autos + auto components 23.95%</b>, financials 20.1%; large 61% / mid 11% / small 26%; turnover 0.24×; equity 97.7%.</p>
+<p><b>Performance:</b> 1-yr 2.91% vs −0.08% BSE 500 TRI; 3-yr 15.76% vs 13.48%; SI 13.82% vs 11.71% (29/31-May-2026). SD 15.38%, Sharpe 0.67, beta 0.96. 4★ VR. Alpha ≈ +2.3-3.6pp across windows — real, but the engine is one big consumer-cyclical bet: TVS+Maruti alone are 16% of the fund. That is conviction, and it is also concentration a "flexicap" label hides.</p>
+<p><b>Investor's position:</b> NFO folio at ₹10.00 (+87.8%) and a mid-2024 tranche at ₹19.94 (−5.8%) — the pattern from §5.1(5) again.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Hold.</b> Keep both folios; don't add while the auto bet is this large. Single-manager dependence noted. Red-flag: LOW. Confidence: MED-HIGH.</div>
+</div>
+
+<h3>8.2 Axis Multicap — ₹43.3 L (6.7%) — Score 68/100</h3>
+<div class="card">
+<p><b>Facts:</b> AUM ₹9,938 cr (31-May-2026); Devalkar (Head-Equity) + Das + Arora; TER ~1.99% regular (aggregator, 02-Jul-2026). Mandate ≥25% each large/mid/small. Top: HDFC Bank 3.51%, ICICI Bank 3.47%, Shriram Fin 2.47%; financials 26.9%, autos 13.6%, capital goods 13.5%.</p>
+<p><b>Performance (12-Jun-2026):</b> 1-yr 3.58% vs 1.43%; 3-yr 19.81% vs 16.43% (+3.4pp/yr); SI 14.09% vs 12.96%. <b>5★ VR</b>, Sharpe ~0.9 — the standout among the nine Axis products. Caveats: launched Dec-2021, so its record is one regime; TER at ~2% takes back a third of the alpha; and the investor's ₹43 L (three folios, largest at ₹35 L bought at ₹18.13 vs NAV ₹17.98) is flat — the position was mostly built <i>after</i> the good numbers were printed.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Hold (the one Axis equity fund that earns its place).</b> Cap at current weight; future adds via direct plan only. Red-flag: MODERATE (single-regime record, house-wide manager pool churn). Confidence: MEDIUM.</div>
+</div>
+
+<h3>8.3 Kotak Multicap — ₹31.2 L (4.8%) — Score 74/100</h3>
+<div class="card">
+<p><b>Facts:</b> AUM ₹26,249 cr (03-Jul-2026); Bisen + Singhal since Sep-2021 launch (Upadhyaya off the fund May-2024); TER regular ~1.5%/direct ~0.45%. Top: Maruti 4.35%, Indus Towers 3.92%, Hero Moto 3.50%, IndusInd Bank 3.48%, Radico 3.15%; banks 19%, autos 8.3%.</p>
+<p><b>Performance:</b> regular 3-yr 19.84%, SI 15.90% (31-May-2026); direct 3-yr 21.35% vs Nifty50 TRI 9.28% and 1-yr +7.03% vs −3.95% (30-Jun-2026). 5★ VR. Beta 1.05, SD 17.84%, alpha +4.6 (direct). The investor's NFO entry at ₹10 is +94.2% — the best decision in the MF book, even if it was a distributor NFO sale that happened to work.</p>
+<p><b>Watch:</b> 4.75-yr life, one regime; contrarian positions (IndusInd) can hurt; mandatory 25% small-cap sleeve adds drawdown risk.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Hold.</b> Let it compound; rebalance only if it exceeds ~6% of investments. Red-flag: LOW. Confidence: MED-HIGH.</div>
+</div>
+
+<h3>8.4 Kotak Midcap (ex-Emerging Equity) — ₹16.5 L (2.5%) — Score 73/100</h3>
+<div class="card">
+<p><b>Facts:</b> ₹64,749 cr AUM (02-Jul-2026) — India's biggest midcap fund; Atul Bhole since Jan-2024 (Tibrewal exited Nov-2023 after 13 yrs); renamed Jun-2025; TER 1.38%/0.50%. Top: GE Vernova T&amp;D 4.22%, Fortis 4.03%, KEI 2.98%, IPCA 2.91%, Mphasis 2.79% (30-Jun-2026).</p>
+<p><b>Performance:</b> 4★ VR; 3-yr beta 0.93, Sharpe 0.81, alpha +1.6 (direct); 1-yr direct +7.53% vs +4.36% Nifty Midcap 150 TRI (02-Jul-2026); SI ~20.4% CAGR since 2007. The transition to Bhole has so far kept the fund's low-beta quality-midcap character intact. Scale (₹65k cr in midcaps) is the structural drag — position-building takes weeks, and future alpha will likely be thinner than the Tibrewal-era record suggests.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Hold.</b> Solid midcap core; judge Bhole on his 3-yr number (Jan-2027). AUM-driven alpha decay is the metric to watch. Red-flag: LOW-MODERATE. Confidence: MED-HIGH.</div>
+</div>
+
+<h3>8.5 Axis Large &amp; Mid Cap (ex-Growth Opportunities) — ₹14.8 L (2.3%) — Score 58/100</h3>
+<div class="card">
+<p><b>Facts/performance:</b> AUM ₹15,879 cr; renamed Jun-2025; Devalkar/Das since Aug-2023, Krishnaa N Mar-2024. 1-yr 4.36% vs 2.79%; <b>3-yr 15.60% vs 16.75%; 5-yr ~12.8-14.0% vs 14.89%</b> (12-Jun-2026). 3★ VR. TER ~1.92% regular.</p>
+<p>A fund that trails its benchmark over 3 and 5 years, charges ~1.9%, was renamed mid-life, and duplicates exposure the investor already gets from Kotak Midcap + Axis Multicap. The +47.8% sitting in the folio is the 2023-24 market, not fund skill.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Exit (switch to the kept large&amp;mid exposure via Kotak/ICICI).</b> Gains are LTCG-eligible (bought ~2023). Red-flag: MODERATE. Confidence: MEDIUM.</div>
+</div>
+
+<h3>8.6 Motilal Oswal Large &amp; Midcap — ₹6.0 L (0.9%) — Score 60/100</h3>
+<div class="card">
+<p><b>Facts:</b> AUM ₹17,420 cr (02-Jul-2026); the Niket Shah era (AUM 38× to ₹38,000 cr peak) ended with his promotion/exit from the fund Jan-2026, triggering ₹2,448 cr outflows that month and a ~14% NAV drawdown Nov-2025→Mar-2026; now run by Khandelwal (Dec-23), Mehra (Oct-24), Mayekar (Nov-25) + Ankit Agarwal (Mar-26, ex-UTI). Concentrated high-growth book: Muthoot 5.37%, CG Power 5.27%, Eternal 5.05%, MCX 5.03% (30-Jun-2026); beta 1.17.</p>
+<p><b>Performance:</b> still spectacular on trailing windows (3-yr direct 24.57% vs 12.07% benchmark; 5-yr 21.07% vs 11.51%, 02-Jul-2026) — but that record belongs to a manager who no longer runs it and a momentum regime that broke in late-2025. Regular-plan 1-yr: 5.76%.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Hold with a tight leash (small position).</b> Two quarters to prove the new bench; exit on persistent bottom-half ranking. Do not add. Red-flag: MODERATE-HIGH (manager exit + style fragility). Confidence: MEDIUM.</div>
+</div>
+</div>
+<div class="wrap">
+
+<h2 id="deep-thematic">9 &middot; Deep dives — Thematic &amp; special-situations funds <span class="sub">(₹1.23 cr &middot; 19.0% of investments — an unusually high thematic share)</span></h2>
+
+<h3>9.1 ICICI Prudential India Opportunities — ₹49.1 L (7.6%) — Score 76/100</h3>
+<div class="card">
+<p><b>Facts:</b> special-situations fund since 15-Jan-2019; S. Naren + Roshan Chutkey since launch; AUM ₹36,478 cr (02-Jul-2026); TER 1.31%/~0.6%. Book: HDFC Bank 6.73%, Infosys 6.00%, ICICI Bank 5.33%, Axis Bank 4.88%, ~5% cash; financials 31.4% (31-May-2026). SD 13.10%, Sharpe 0.81.</p>
+<p><b>Performance (02-Jul-2026):</b> SI 18.86% CAGR; 5-yr 19.27%; 3-yr 17.74%; 1-yr +0.55% — ahead of Nifty 500 TRI in all windows; ranked 1/52 in category (INDmoney, May-2026). The alpha source is a genuine, documented contrarian process (buying sectors in temporary distress) — the most repeatable pure-equity engine in this portfolio, though it will lag in momentum-led melt-ups and is heavily Naren-linked.</p>
+<p><b>Investor's execution problem:</b> tranches at ₹22.72 (+56%), ₹36.87 (−3.6%) and ₹37.82 (−6.0%) — ₹35 L of the ₹45 L was added near the top. The fund is right; the buying cadence was wrong.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Hold / Accumulate (staggered, direct plan).</b> Core-plus. Watch Naren succession (age/CIO duties) and size (₹36k cr in special-sits narrows the opportunity set). Red-flag: LOW. Confidence: HIGH.</div>
+</div>
+
+<h3>9.2 ICICI Prudential Innovation — ₹16.5 L (2.5%) — Score 65/100</h3>
+<div class="card">
+<p><b>Facts:</b> thematic NFO of Apr-2023; AUM already ₹7,453 cr; TER 1.53%/0.60%; large 41% / mid 28% / small 26%. Top: ICICI Bank 4.61%, Maruti 4.61%, Axis Bank 3.06%, CAMS 2.76% — <i>theme purity is questionable</i> (mainstream banks/autos as "innovation"). <b>Co-manager Anish Tawakley (Co-CIO) left for DSP Feb-2026</b>; Vaibhav Dusad now carries it.</p>
+<p><b>Performance:</b> 3-yr 20.18% vs 13.12% (02-Jul-2026); SI ~22.2%; but 1-yr +2.55% and the regular-vs-direct 1-yr gap (2.55% vs 4.60%) shows the fee bite. Unrated by VR (short history).</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Hold, capped, on watch.</b> Strong start but: one regime, loose theme, key-man event 5 months old. Two weak quarters under Dusad alone → fold into India Opportunities. Red-flag: MODERATE. Confidence: MEDIUM.</div>
+</div>
+
+<h3>9.3 Axis Business Cycles — ₹38.2 L (5.9%) — Score 58/100</h3>
+<div class="card">
+<p><b>Facts:</b> Feb-2023 NFO (bought at NFO/₹10.28); Ashish Naik since launch; AUM ₹2,058 cr; <b>TER 2.27% regular</b> vs 1.44% direct. Book is broad cyclical large-cap: L&amp;T 4.08%, Axis Bank 3.54%, ICICI Bank 3.38%, HDFC Bank 3.08% — financials 27.2%, capital goods 13.1% (31-May-2026).</p>
+<p><b>Performance:</b> SI 17.45% vs 15.22% (12-Jun-2026); 3-yr 15.57% vs 13.92%; 1-yr 1.32% vs 0.28%; Sharpe 0.48, SD 15.79%. The +57.4% folio gain is real — but look at what it is: a Nifty-500-like portfolio (its top-10 is essentially the index's banks + L&amp;T) charging 2.27% for "business-cycle rotation" that so far means beta. As a % of investments (5.9%) it is the portfolio's 5th-largest position — outsized for an unproven thematic.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Reduce 50-70% (bank the NFO gain; LTCG at 12.5% over ₹1.25 L).</b> Keep a rump only if you want the cyclical tilt; the same exposure exists cheaper inside kept diversified funds. Red-flag: MODERATE (benchmark-hugging at thematic pricing). Confidence: MEDIUM.</div>
+</div>
+
+<h3>9.4 Axis India Manufacturing — ₹19.5 L (3.0%) — Score 55/100</h3>
+<div class="card">
+<p><b>Facts:</b> Dec-2023 NFO (two folios, one at ₹10.00); Nitin Arora + Devalkar; AUM ₹5,344 cr; TER 2.07%/0.89%. Book: M&amp;M 5.06%, BEL 4.11%, Reliance 3.77%, Hindalco 3.64% — autos 28.1%, capital goods 27.6%, metals 11.6% (02-Jul-2026): a pure domestic-capex/PLI cyclical bet.</p>
+<p><b>Performance:</b> SI 19.88% vs 18.91% benchmark; 1-yr 13.12% vs 13.22% (12-Jun-2026) — i.e. ~index-matching after 2 years, before its 2.07% fee bites harder in flat markets. 3-yr risk stats (TickerTape) show Sharpe −0.31 on the recent window. No cycle test yet; manufacturing themes are top-of-cycle products by construction (funds launch after the theme has re-rated).</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Reduce by half.</b> +39.6% of NFO-era gain deserves partial banking; retain a tactical rump only with an explicit capex-cycle view. Red-flag: MODERATE. Confidence: MEDIUM.</div>
+</div>
+
+<h2 id="deep-small">10 &middot; Deep dives — Small-cap, factor &amp; index funds <span class="sub">(₹16.3 L &middot; 2.5%)</span></h2>
+
+<h3>10.1 Axis Small Cap — ₹2.95 L — Score 55/100 &nbsp;|&nbsp; 10.2 UTI Small Cap — ₹7.3 L — Score 45/100</h3>
+<div class="card">
+<p><b>Axis SC (AUM ₹27,840 cr):</b> long record (SI 20.84% vs 18.43%) but the recent story is weak — <b>3-yr 16.04% vs 20.42% benchmark; 5-yr 16.78% vs 17.11%</b> (12-Jun-2026); three manager appointments 2023-24 after the house's equity exodus; beta 0.73 defensive style. ₹27.8k cr is a lot of small-cap to steer.</p>
+<p><b>UTI SC (AUM ₹4,970 cr):</b> <b>2★ VR; below category average on 1/3/5-yr; rank 24/30 (1-yr), 15/23 (3-yr), 14/20 (5-yr); alpha −1.9 to −2.1; founding manager Ankit Agarwal left 29-Jul-2025 (to Motilal Oswal)</b>; new lead Nitin Jain &lt;1 yr in seat; TER 1.81% regular — a high fee on persistent underperformance (data: Advisorkhoj/BMSMoney, 01-02-Jul-2026).</p>
+<p>Both positions are sub-scale (0.5% / 1.1% of investments). Small-cap exposure already exists inside Kotak Multicap (25% sleeve), ICICI Flexicap (26%), MO Founders PMS (35%).</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Exit both.</b> UTI SC immediately (on strength); Axis SC at load expiry. If a dedicated small-cap sleeve is wanted later, choose one high-conviction vehicle at better valuations, in a direct plan, sized ≥3% or not at all. Red-flags: Axis MODERATE, UTI HIGH. Confidence: MED-HIGH.</div>
+</div>
+
+<h3>10.3 Axis Momentum — ₹2.6 L — Score 40/100 &nbsp;|&nbsp; 10.4 Axis Nifty500 Value 50 Index — ₹3.4 L — Score 52/100</h3>
+<div class="card">
+<p><b>Momentum (NFO Dec-2024):</b> SI <b>−7.67% vs −0.91%</b> benchmark (12-Jun-2026) — a momentum factor fund launched at the exact top of the momentum cycle, sold into a regular plan at ~2%+ TER, whose manager changed within 15 months (Mallik, Mar-2026). Textbook §5.1(3).</p>
+<p><b>Nifty500 Value 50 (NFO Oct-2024):</b> the index itself is fine (deep-value PSU/commodity tilt: Hindalco, Tata Steel, NTPC, Coal India, ONGC = 27.6% of index) and 1-yr +21.5% was strong. The defect is the wrapper: <b>1.05% regular TER for an index fund vs 0.47% direct</b> — the investor pays active-lite fees for passive exposure, with tracking difference on top.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Exit Momentum (accept the −13%; it buys nothing the portfolio needs). Exit Value 50 regular</b> — if the value-factor tilt is wanted, rebuy the same index direct at 0.47% (₹3.4 L position: the switch pays for itself in &lt;1 yr; STCG on the ₹42.7k gain applies if &lt;24m — see §16 note on equity fund CG rules). Red-flags: HIGH / MODERATE. Confidence: MED-HIGH.</div>
+</div>
+
+<h2 id="deep-gold">11 &middot; Deep dives — Precious-metal funds <span class="sub">(₹37.4 L direct &middot; 5.8% + ₹18 L embedded ≈ 8.6% total metals)</span></h2>
+<div class="card">
+<p><b>ICICI Pru Gold ETF FoF (₹14.2 L):</b> passive gold via ICICI Gold ETF (99.9%); TER 0.47%/0.18%; 1-yr +45.2%, 3-yr +33.8% CAGR (03-Jul-2026) as gold hit ₹1.44 L/10g (03-Jul-2026) after an ~81% 2026-YTD rally at its Jan-2026 peak of ₹1.79 L/10g (MCX). Tracking is tight (~0.2%). Score 74.</p>
+<p><b>MO Gold &amp; Silver ETFs FoF (₹23.2 L):</b> ~61% gold / 39% silver (31-May-2026); TER ~0.42%/0.17%; 1-yr +60.7%, SI +33.3% CAGR (02-Jul-2026); SD 25.86% — silver makes this a high-octane metal position. Benchmark basis changed Aug-2025 (LBMA → domestic prices): cosmetic, but note it. Score 70.</p>
+<p><b>Portfolio view:</b> combined look-through metals ≈ <b>8.6% of investments</b> (calc: ₹37.4 L direct + ₹18.1 L inside the three multi-asset funds). This sleeve saved the FY26 numbers — it contributed roughly ₹8-10 L of the MF book's gains (est.). After a parabolic move, the correct action is <i>discipline, not extrapolation</i>: hold the sleeve at 8-10% with annual rebalancing; expect forward returns far below the trailing 45-60%, with 25-30% drawdowns possible.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Hold both; rebalance the sleeve to 8-10% and cap it there.</b> These are also the two products where the regular-plan penalty is smallest (~0.25-0.3pp). Red-flag: LOW. Confidence: MED-HIGH.</div>
+</div>
+</div>
+<div class="wrap">
+
+<h2 id="deep-pms">12 &middot; Deep dives — PMS strategies <span class="sub">(₹1.88 cr &middot; 28.9% of investments &middot; both underwater)</span></h2>
+
+<h3>12.1 Helios India Rising Portfolio — ₹92.1 L on ₹1.00 cr (−7.9%) — Score 48/100</h3>
+<div class="card">
+<p><b>Strategy.</b> Flexi-cap PMS launched 16-Mar-2020 (near the COVID bottom); 30-35 stocks; "negative-selection" philosophy; benchmark BSE 500 TRI (changed from NSE 500 TRI Apr-2023 per APMI norms). Founder Samir Arora (ex-Alliance Capital; SEBI's 2003 insider-trading ban was overturned by SAT in 2004, upheld by the Supreme Court in 2014 — legally closed); day-to-day India entity run by Dinshaw Irani (CEO). Strategy AUM ₹1,510 cr (31-May-2026, SEBI/APMI data). <b>Stock-level holdings are not publicly disclosed</b> — transparency below MF standards.</p>
+<p><b>Fees (disclosure document):</b> fixed 2.5% p.a.; variable option 1.5% or up-to-25% profit share above a 10% hurdle with high-water mark; <b>exit load 3%/2%/1% in years 1/2/3</b>. Minimum ₹50 L. The client's exact fee option: <span class="chip">not disclosed in the statement</span>.</p>
+<p><b>Performance (SEBI-format TWRR, net of fees, 31-May-2026):</b> 1-yr +3.38% vs −0.07% benchmark; 3-yr 15.62% vs 13.46%; <b>since inception 19.01% vs 19.03%</b> — six years, zero cumulative alpha. FY-wise: FY23 −5.01% vs −1.22%; FY24 +50.25% vs +40.16%; FY25 +6.78% vs +5.96%. The entire value-add came in one year (FY24); over the full period an index fund at 0.2% fees would have matched it. The client entered (likely mid/late-2024-25 <span class="chip">entry date not in statement</span>) and sits at −7.9% — consistent with the strategy's −7.5% 6-month stretch to May-2026.</p>
+<p><b>Red flags:</b> three SEBI observation letters in 19 months (Sep-2024: offsite data errors; Nov-2024: <i>portfolio-return reporting discrepancies</i>; May-2025: data-maintenance deficiencies) — none is an enforcement action, but for a firm whose product <i>is</i> reported returns, sloppy return reporting is material. Add key-person concentration (Arora's brand), no public holdings, and a fee stack of ~2.5-4%/yr all-in.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Exit, staged.</b> The exit load (1% in yr-3, nil after ~Mar-2027 if entry was ~2024; confirm entry date) and capital-gains position (account is at a loss — exits now crystallise a deductible capital loss usable against booked MF gains) actually favour acting sooner rather than later: redeem now, harvest the loss, redeploy into the §19 targets. If the family prefers one PMS "for the relationship", this is still the weaker of the two. Red-flag: HIGH. Confidence: MEDIUM (client-level fee/entry data missing).</div>
+</div>
+
+<h3>12.2 Motilal Oswal Founders Portfolio — ₹96.0 L on ₹1.00 cr (−4.0%) — Score 55/100</h3>
+<div class="card">
+<p><b>Strategy.</b> Launched 16-Mar-2023; QGLP framework applied to founder-led companies (promoter stake &gt;26%); 20-30 stocks; benchmark BSE 500 TRI. Mix (disclosed model, ~2024-25): large 21% / <b>mid 38.6% / small 34.6%</b> / cash 5.9%; sectors: capital goods 30.5%, financials 20.0%, tech 12.9%. Historic model names: Kalyan Jewellers, Phoenix Mills, Trent, Prestige, Zomato/Eternal, Kaynes, Apar, Amber. Manager: Vaibhav Agrawal (CIO – Alternates, ~₹10,000 cr across PMS/AIF; UPenn CS, LBS MBA). Strategy AUM ≈ ₹3,887 cr (31-May-2026) <span class="chip">figures conflict across sources (₹1,443–3,887 cr)</span>.</p>
+<p><b>Fees:</b> 2.5% fixed; or hybrid with 20% profit share above 8% hurdle; exit load 2% in yr-1, nil after. HWM provision: <span class="chip">not publicly confirmed</span>. Client's option: <span class="chip">not disclosed</span>.</p>
+<p><b>Performance (TWRR net of fees, 31-May-2026):</b> 1-yr <b>−1.71%</b>; 2-yr +9.77% p.a.; 3-yr +21.57% p.a.; SI 23.39% vs 18.46% benchmark — this strategy, unlike Helios, has produced real since-inception alpha (+4.9pp/yr), albeit over a single 3-year window that began at a small-cap cycle bottom (Mar-2023) and includes the FY24 melt-up (1-yr +40.2% as of Mar-2024). The Oct-2024→Mar-2025 midcap correction hit the 73% mid/small book hard (e.g. Kalyan Jewellers −50% Jan-Feb-2025), which is what the client (entering 2024-25) is wearing at −4.0%.</p>
+<p><b>Organisational notes:</b> PMS CIO churn above the strategy (Manish Sonthalia exit 2023; MD/CEO transition to Prateek Agrawal Apr-2024; group-level MOFSL has had SEBI administrative warnings/SCNs 2022-24 on broking ops — not the AMC). MOAMC house style is concentrated momentum-growth; when that factor reverses (as in FY26), drawdowns run deep.</p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div><b>Hold 12 months, then re-underwrite.</b> Rationale: real alpha engine + the client is past/near the 2% yr-1 exit-load window <span class="chip">confirm entry date</span>, mid/small valuations have partly reset, and exiting at −4% locks a loss right where the style typically mean-reverts. Hard test at FY27: rolling 2-yr TWRR must exceed BSE 500 TRI + 3pp net, else exit. Cap PMS exposure overall at ≤10% of investments (currently 28.9% across two accounts — the restructure in §19 fixes this). Red-flag: MODERATE. Confidence: MEDIUM.</div>
+</div>
+
+<div class="card">
+<h3 style="margin-top:0">12.3 PMS structural arithmetic the statement hides (Stage 13)</h3>
+<ul>
+<li><b>Return basis:</b> SEBI-format PMS returns are pooled TWRR net of fees — they are <i>not</i> this client's XIRR. A client entering mid-2024/2025 experienced far worse than the SI figures marketed. The statement's −5.9% is the only client-true number we have.</li>
+<li><b>Fee drag (est.):</b> at 2.5% fixed + ~0.3% ops/custody/brokerage + GST, the two accounts cost ≈ ₹4.2-4.7 L/yr at current value — against which Helios has delivered index-like gross results.</li>
+<li><b>Tax drag:</b> PMS churn is taxed in the client's hands yearly (unlike MFs, which defer). At a realistic 30-60% annual turnover, expect 0.5-1.2pp/yr of tax drag versus an equivalent mutual fund (est.).</li>
+<li><b>Both accounts were opened at ₹1.00 cr — the SEBI minimum is ₹50 L</b>; sizing looks product-push-driven (two ₹1 cr tickets through one distributor) rather than allocation-driven.</li>
+<li><b>Look-through liquidity:</b> Founders' 73% mid/small in a ₹3,900 cr strategy is exit-able in normal markets but gates badly in stress; Helios' book is undisclosed — assume large/mid liquid but unverifiable.</li>
+</ul>
+</div>
+
+<h2 id="deep-ins">13 &middot; Deep dives — Life insurance <span class="sub">(₹79.6 L premiums paid &middot; ₹1.375 cr sum assured)</span></h2>
+<div class="card">
+<h3 style="margin-top:0">13.1 Carrier: Axis Max Life (ex-Max Life, renamed 13-Dec-2024)</h3>
+<p>Claim settlement ratio 99.70% (FY25), solvency ~2.01× vs 1.5 floor — counterparty quality is not the issue; product economics are. (Sources: company disclosures/Policybazaar, accessed Jul-2026.)</p>
+
+<h3>13.2 Smart Term Plan — ₹1 cr cover, ₹1,14,800/yr (issued 30-Jul-2020, 37-yr term, 12-pay)</h3>
+<p><b>Keep the cover.</b> But the premium is 8-12× 2020-era pure-term pricing for a healthy 30-40-yr male — consistent with a <b>Return-of-Premium variant</b> (or age/health loading) <span class="chip">variant not verifiable from statement</span>. If ROP: the "refund" feature is a 0%-interest loan to the insurer; sunk now, so continue, but don't repeat. <b>Adequacy:</b> ₹1 cr against a ₹6.5 cr portfolio and family obligations is thin if the family still depends on earned income — an additional ₹2-4 cr pure term (₹25-45k/yr at current ages, est.) is worth quoting; if the portfolio already self-insures the family's needs, skip it.</p>
+
+<h3>13.3 Smart Wealth Advantage Guarantee (SWAG) — ₹5,00,000 × 5-pay, 11-yr, issued 15-Dec-2023; ₹15.34 L paid (3 of 5)</h3>
+<p><b>IRR math (calc, brochure-benchmarked):</b> plausible maturity ₹40-44 L → pre-tax IRR ≈ 5.0-6.5% (brochure-implied band for the ₹5-10 L premium tier; exact contracted maturity <span class="chip">needs policy schedule</span>). Surrender today ≈ ₹8-11 L (old-regime GSV/SSV, est.) = <b>₹4-7 L haircut, −18% to −36% IRR crystallised</b>. Reduced paid-up is the middle path but freezes a small corpus for 8 years.</p>
+<p><b>The knife-edge tax point (Finance Act 2023 / CBDT Circular 15/2023):</b> policies issued after 01-Apr-2023 lose Sec 10(10D) exemption if aggregate annual premium <i>exceeds</i> ₹5,00,000 (ex-GST). This policy sits at <b>exactly ₹5,00,000</b> — exempt <i>as facts stand</i>, but (a) verify the base premium isn't ₹5L + loadings, and (b) <b>buying any other non-ULIP policy issued after Apr-2023 — even ₹1 of premium — tips the aggregate over and makes this policy's maturity taxable</b> (as Income from Other Sources under 56(2)(xiii); would drag net IRR to ~4.5-5%).</p>
+<p><b>Decision:</b> continue the remaining 2 premiums (₹10 L). A guaranteed ~6% tax-free to Dec-2034 is an acceptable debt-bucket substitute for a 30%+ slab HNI; surrendering to redeploy needs a &gt;9-10% post-tax hurdle on the proceeds to win — aggressive. <b>Do not buy more of these.</b></p>
+
+<h3>13.4 Smart Wealth Plan ×2 — ₹30.57 L (self) + ₹25.56 L (spouse) premiums paid; terms not visible</h3>
+<p>Category IRRs run 4.4-6.7% by variant (independent reviews, Jul-2026). With ₹56 L already inside and no visible fund values, issue dates or maturity schedules, the correct move is administrative before financial: <b>obtain both policy schedules + surrender/paid-up quotes from Axis Max Life</b>, then apply the same test — continue if the marginal IRR-to-maturity on remaining premiums ≥ ~6% tax-free; paid-up if not; surrender only where the haircut is small (older policies near premium-completion often clear this). <span class="chip">Insufficient data — flagged as the single biggest documentation gap in the file.</span></p>
+<div class="verdict"><div class="vtitle">Investment Committee Verdict</div>Term: <b>Hold</b> (verify variant, consider topping up cover). SWAG: <b>Continue premiums; protect the 10(10D) status.</b> Smart Wealth ×2: <b>Insufficient data — escalate for schedules.</b> Strategic point: ₹71.5 L of family capital is compounding at ~5-6% in traditional plans while the family simultaneously pays 2.5%+ fees chasing equity alpha — the barbell is inverted. Red-flag: MODERATE (mis-sold savings-insurance mix, bancassurance channel). Confidence: MED (docs missing).</div>
+</div>
+</div>
+<div class="wrap">
+
+<h2 id="overlap">14 &middot; Portfolio overlap &amp; look-through exposure (Stage 10)</h2>
+<div class="card">
+<p><b>Method &amp; limits.</b> Full pairwise overlap matrices need complete monthly holdings for all 22 vehicles; Helios does not disclose holdings and PMS client books differ from models. Below is the overlap computed from disclosed top-holdings/sector data (31-May/30-Jun-2026 factsheets) — labelled <b>estimate</b>, direction reliable, decimals not.</p>
+<h3 style="margin-top:0">14.1 The same stocks, over and over</h3>
+<div class="tablewrap"><table>
+<tr><th>Stock</th><th>Appears in (of 14 equity-oriented funds with disclosed books)</th><th class="n">Est. look-through weight of investments</th></tr>
+<tr><td><b>ICICI Bank</b></td><td>≥9 funds (ICICI Flexicap 6.4%, India Opps 5.3%, Innovation 4.6%, Axis BC 3.4%, Axis Multicap 3.5%, Axis L&amp;M 4.2%, Axis BAF 4.9%, ABSL MAA 4.0%, ICICI MA 3.2%) + Helios MF-sibling top holding</td><td class="n">≈ 2.6–3.2%</td></tr>
+<tr><td><b>HDFC Bank</b></td><td>≥8 funds (India Opps 6.7%, ICICI MA 5.7%, Axis Multicap 3.5%, Axis BC 3.1%, ICICI Flexicap 3.7%, Axis BAF 4.1%, ABSL MAA ~2%, others)</td><td class="n">≈ 2.2–2.8%</td></tr>
+<tr><td>Axis Bank</td><td>≥5 funds (India Opps 4.9%, Innovation 3.1%, Axis BC 3.5%, ABSL MAA 3.2%, ICICI Flexicap 2.5%)</td><td class="n">≈ 1.3–1.7%</td></tr>
+<tr><td>Maruti / TVS / M&amp;M (auto complex)</td><td>≥7 funds (Flexicap 16.0% TVS+Maruti, Innovation 4.6%, Kotak Multicap 4.4% Maruti + Hero 3.5%, Axis Mfg M&amp;M 5.1%, ICICI MA Maruti 1.8%, Momentum, BAF)</td><td class="n">≈ 3.5–4.5% (sector ~8–10%)</td></tr>
+<tr><td>L&amp;T / capital-goods complex</td><td>≥6 funds (Axis BC 4.1%, BAF 2.1%, Multicap 2.0%, Mfg 27.6% sector, Kotak Midcap KEI/GE Vernova, Founders PMS 30.5% sector)</td><td class="n">sector ≈ 9–11%</td></tr>
+<tr><td>Reliance Industries</td><td>≥4 funds (BAF 3.7%, Mfg 3.8%, ABSL 2.3%, ICICI MA ~1.5%)</td><td class="n">≈ 1.0–1.4%</td></tr>
+<tr><td>Infosys</td><td>≥4 funds (India Opps 6.0%, Flexicap 2.8%, ABSL 2.0%, ICICI MA 2.3%)</td><td class="n">≈ 1.2–1.5%</td></tr>
+<tr><td>Eternal (Zomato)</td><td>≥4 funds (Flexicap 3.7%, Innovation 2.5%, Axis BC 2.3%, MO L&amp;M 5.1%) + Founders PMS model</td><td class="n">≈ 0.9–1.2%</td></tr>
+</table></div>
+<p><b>Reading:</b> the "diversified" 20-fund book concentrates ≈ <b>18-20% of all investments in financials</b> and ≈ 8-10% in the auto complex. Pairwise weighted overlap between the three Axis diversified/thematic equity funds is estimated at 35-45% (same manager pool, same house model); between ICICI Flexicap and ICICI Innovation ~25-35%. Adding funds has multiplied fees and paperwork, not spread risk: in a financials or domestic-cyclical drawdown, 14 of 16 equity vehicles fall together (est., holdings-based).</p>
+<h3>14.2 Redundancy map</h3>
+<ul>
+<li><b>Asset allocation ×4:</b> ICICI MA + ABSL MAA + Axis MAA + Axis BAF — one job, four fee streams. Keep 1 (ICICI), trim 1 (ABSL), exit 2.</li>
+<li><b>Multicap/flexicap ×4:</b> ICICI Flexicap, Axis Multicap, Kotak Multicap (+ Axis L&amp;M) — hold 3 at most; Axis L&amp;M adds nothing.</li>
+<li><b>Large&amp;Mid ×2 + Midcap ×1:</b> Axis L&amp;M and MO L&amp;M duplicate Kotak Midcap's space with weaker/uncertain records.</li>
+<li><b>Small-cap ×2 sub-scale positions</b> duplicating small-cap sleeves already inside multicaps and Founders PMS.</li>
+<li><b>Genuine diversifiers (keep):</b> the two metals FoFs (only real uncorrelated sleeve), ICICI MA's debt+gold engine, and — partially — Founders PMS (mid/small founder-led book, if retained).</li>
+</ul>
+</div>
+
+<h2 id="riskperf">15 &middot; Performance &amp; risk summary (Stage 5-6, latest public data)</h2>
+<div class="tablewrap"><table>
+<tr><th>Fund (Regular)</th><th class="n">1-yr %</th><th class="n">3-yr % p.a.</th><th class="n">5-yr % p.a.</th><th class="n">SI % p.a.</th><th class="n">vs bmk 3-yr</th><th class="n">SD %</th><th class="n">Sharpe</th><th class="n">Beta</th><th>VR ★</th><th>As-of</th></tr>
+<tr><td>ICICI Multi-Asset</td><td class="n">6.45</td><td class="n">9.54*</td><td class="n">17.40</td><td class="n">20.38</td><td class="n pos">+ (SI +7.3pp)</td><td class="n">8.86</td><td class="n">1.19</td><td class="n">0.83</td><td>5★</td><td>31-May-26</td></tr>
+<tr><td>ICICI India Opportunities</td><td class="n">0.55</td><td class="n">17.74</td><td class="n">19.27</td><td class="n">18.86</td><td class="n pos">+4.6pp</td><td class="n">13.10</td><td class="n">0.81</td><td class="n">nv</td><td>—</td><td>02-Jul-26</td></tr>
+<tr><td>ICICI Flexicap</td><td class="n">2.91</td><td class="n">15.76</td><td class="n">—</td><td class="n">13.82</td><td class="n pos">+2.3pp</td><td class="n">15.38</td><td class="n">0.67</td><td class="n">0.96</td><td>4★</td><td>31-May-26</td></tr>
+<tr><td>ICICI Innovation</td><td class="n">2.55</td><td class="n">20.18</td><td class="n">—</td><td class="n">~22.2</td><td class="n pos">+7.1pp</td><td class="n">15.21</td><td class="n">0.87</td><td class="n">nv</td><td>unrated</td><td>02-Jul-26</td></tr>
+<tr><td>ICICI Gold FoF</td><td class="n">45.19</td><td class="n">33.75</td><td class="n">23.06</td><td class="n">—</td><td class="n">tracks gold</td><td class="n">nv</td><td class="n">1.27</td><td class="n">—</td><td>3★</td><td>03-Jul-26</td></tr>
+<tr><td>ABSL Multi Asset</td><td class="n">13.45</td><td class="n">15.91</td><td class="n">—</td><td class="n">16.6</td><td class="n pos">+3.5pp SI</td><td class="n">10.26</td><td class="n">0.86–1.04</td><td class="n">1.00</td><td>3★</td><td>02-Jul-26</td></tr>
+<tr><td>Axis Multi Asset Alloc.</td><td class="n">12.39</td><td class="n neg">14.67</td><td class="n">11.26</td><td class="n">10.95</td><td class="n neg">−2.7pp</td><td class="n">9.82</td><td class="n">0.81</td><td class="n">0.87</td><td>1★</td><td>12-Jun-26</td></tr>
+<tr><td>Axis BAF</td><td class="n">1.30</td><td class="n">13.00</td><td class="n">11.17</td><td class="n">10.15</td><td class="n pos">+5.2pp</td><td class="n">8.58</td><td class="n">0.71</td><td class="n">1.12</td><td>4★</td><td>12-Jun-26</td></tr>
+<tr><td>Axis Multicap</td><td class="n">3.58</td><td class="n">19.81</td><td class="n">—</td><td class="n">14.09</td><td class="n pos">+3.4pp</td><td class="n">nv</td><td class="n">0.9</td><td class="n">nv</td><td>5★</td><td>12-Jun-26</td></tr>
+<tr><td>Axis Business Cycles</td><td class="n">1.32</td><td class="n">15.57</td><td class="n">—</td><td class="n">17.45</td><td class="n pos">+1.7pp</td><td class="n">15.79</td><td class="n">0.48</td><td class="n">1.0</td><td>unrated</td><td>12-Jun-26</td></tr>
+<tr><td>Axis India Manufacturing</td><td class="n">13.12</td><td class="n">—</td><td class="n">—</td><td class="n">19.88</td><td class="n neg">1-yr −0.1pp</td><td class="n">16.85</td><td class="n">−0.31</td><td class="n">nv</td><td>unrated</td><td>12-Jun-26</td></tr>
+<tr><td>Axis Large &amp; Mid Cap</td><td class="n">4.36</td><td class="n neg">15.60</td><td class="n neg">12.8–14.0</td><td class="n">17.07</td><td class="n neg">−1.2pp</td><td class="n">nv</td><td class="n">nv</td><td class="n">nv</td><td>3★</td><td>12-Jun-26</td></tr>
+<tr><td>Axis Momentum</td><td class="n neg">−1.66</td><td class="n">—</td><td class="n">—</td><td class="n neg">−7.67</td><td class="n neg">SI −6.8pp</td><td class="n">nv</td><td class="n">nv</td><td class="n">nv</td><td>—</td><td>12-Jun-26</td></tr>
+<tr><td>Axis Nifty500 Value 50</td><td class="n">21.50</td><td class="n">—</td><td class="n">—</td><td class="n">11.06</td><td class="n">−0.2pp (TE)</td><td class="n">nv</td><td class="n">nv</td><td class="n">—</td><td>index</td><td>12-Jun-26</td></tr>
+<tr><td>Axis Small Cap</td><td class="n">2.56</td><td class="n neg">16.04</td><td class="n neg">16.78</td><td class="n">20.84</td><td class="n neg">−4.4pp</td><td class="n">16.83</td><td class="n">0.63</td><td class="n">0.73</td><td>—</td><td>12-Jun-26</td></tr>
+<tr><td>Kotak Midcap</td><td class="n">~6.3 (reg est.)</td><td class="n">~22.5 (reg est.)</td><td class="n">—</td><td class="n">20.36</td><td class="n pos">+3.2pp (dir)</td><td class="n">17.94</td><td class="n">0.81</td><td class="n">0.93</td><td>4★</td><td>02-Jul-26</td></tr>
+<tr><td>Kotak Multicap</td><td class="n">5.78</td><td class="n">19.84</td><td class="n">—</td><td class="n">15.90</td><td class="n pos">+4.6pp (dir)</td><td class="n">17.84</td><td class="n">0.84</td><td class="n">1.05</td><td>5★</td><td>31-May/30-Jun-26</td></tr>
+<tr><td>MO Gold &amp; Silver FoF</td><td class="n">60.71</td><td class="n">36.69</td><td class="n">—</td><td class="n">33.32</td><td class="n">tracks metals</td><td class="n">25.86</td><td class="n">1.08</td><td class="n">—</td><td>unrated</td><td>02-Jul-26</td></tr>
+<tr><td>MO Large &amp; Midcap</td><td class="n">5.76</td><td class="n">23.01</td><td class="n">19.46</td><td class="n">~22.9 (dir)</td><td class="n pos">+12.5pp (dir)</td><td class="n">nv</td><td class="n">0.84</td><td class="n">1.17</td><td>4★</td><td>02-Jul-26</td></tr>
+<tr><td>UTI Small Cap</td><td class="n">2.71</td><td class="n neg">16.08</td><td class="n neg">15.47</td><td class="n">19.91</td><td class="n neg">−3.4pp</td><td class="n">19.77</td><td class="n">0.58</td><td class="n">0.84</td><td>2★</td><td>02-Jul-26</td></tr>
+<tr><td>Helios India Rising PMS (net TWRR)</td><td class="n">3.38</td><td class="n">15.62</td><td class="n">—</td><td class="n">19.01</td><td class="n">SI +0.0pp</td><td class="n">nv</td><td class="n">0.46</td><td class="n">nv</td><td>—</td><td>31-May-26</td></tr>
+<tr><td>MO Founders PMS (net TWRR)</td><td class="n neg">−1.71</td><td class="n">21.57</td><td class="n">—</td><td class="n">23.39</td><td class="n pos">SI +4.9pp</td><td class="n">nv</td><td class="n">nv</td><td class="n">nv</td><td>—</td><td>31-May-26</td></tr>
+</table></div>
+<p class="note">*ICICI MA 3-yr shown as sourced (31-May-2026 AMC series); other aggregators show ~16-18% for 3-yr — the low print reflects the specific series/date used; treat with the ±band typical of aggregator data. "nv" = not verifiable by cut-off. Rolling-return, drawdown-duration, VaR/CVaR, Ulcer and capture-ratio tables require full NAV histories that could not be independently rebuilt inside this engagement's data window — flagged as a limitation; directionally, the SD/beta/Sharpe columns plus regime behaviour discussed per-product carry the same decision content.</p>
+
+<h2 id="taxcost">16 &middot; Tax, cost &amp; liquidity analysis (Stage 15; FY2026-27 rules)</h2>
+<div class="card">
+<h3 style="margin-top:0">16.1 Applicable tax rules (post-Finance (No.2) Act 2024 regime, as in force at analysis date)</h3>
+<ul>
+<li><b>Equity-oriented funds (≥65% equity; incl. all diversified/thematic funds here and Axis BAF):</b> STCG 20% (&lt;12m); LTCG 12.5% above ₹1.25 L/yr aggregate (&gt;12m).</li>
+<li><b>Multi-asset/hybrid 65%-equity schemes:</b> as equity (ICICI MA, ABSL MAA and Axis MAA maintain equity-taxation status per scheme positioning; verify each scheme's FY26 average equity % before large redemptions).</li>
+<li><b>Gold FoFs (bought 2024-26):</b> units acquired after 01-Apr-2025: LTCG 12.5% beyond 24m holding; &lt;24m: slab. (Specified-fund rules for 2023-25 purchases: slab — check each folio's purchase date.)</li>
+<li><b>PMS:</b> stock-level taxation in client's hands each FY — STCG 20%/LTCG 12.5% as trades occur + fee GST 18%; PMS fees are <i>not</i> deductible against gains (post-2023 position).</li>
+<li><b>Insurance:</b> SWAG maturity exempt u/s 10(10D) only while the ₹5 L aggregate-premium condition holds (§13.3); traditional-policy maturities issued pre-Apr-2023 remain exempt under the 10% SA rule; term payouts exempt.</li>
+</ul>
+<h3>16.2 The cost stack today vs restructured (calc/est., on current values)</h3>
+<div class="tablewrap"><table>
+<tr><th>Cost line</th><th class="n">Today (₹/yr)</th><th class="n">After §19 restructure (₹/yr)</th><th>Basis</th></tr>
+<tr><td>MF TER paid — regular plans, wtd ~1.45% incl. FoFs</td><td class="n">~6,70,000</td><td class="n">~2,60,000</td><td>₹4.62 cr at wtd 1.45% → consolidated book largely direct at wtd ~0.55-0.65%</td></tr>
+<tr><td>&nbsp;&nbsp;of which pure distributor commission (reg-dir gap ~1.0pp equity)</td><td class="n">~4,80,000</td><td class="n">~0</td><td>calc §5.1</td></tr>
+<tr><td>PMS fixed fees + ops + GST</td><td class="n">~4,20,000–4,70,000</td><td class="n">~1,20,000 (one PMS ≤₹1 cr) or 0</td><td>2.5%+GST on ₹1.88 cr → ₹96 L retained (if Founders kept)</td></tr>
+<tr><td>Performance fees (if hybrid options chosen)</td><td class="n">0 in loss years; 20-25% of alpha in good years</td><td class="n">—</td><td>option not disclosed</td></tr>
+<tr><td><b>Total annual product cost</b></td><td class="n"><b>~₹10.9–11.4 L (≈1.7% of investments)</b></td><td class="n"><b>~₹3.8 L (≈0.6%)</b></td><td>excl. taxes; the difference compounds to ≈ ₹1.5-1.9 cr over 10 yrs at 11% gross (calc)</td></tr>
+</table></div>
+<h3>16.3 Restructuring tax bill (est.)</h3>
+<p>Executing every Exit/Reduce in §6 today: booked MF gains on exited/trimmed units ≈ ₹55-70 L (mostly LTCG at 12.5% ⇒ ≈ ₹6.5-8.5 L tax after the ₹1.25 L exemption) <i>minus</i> Helios capital loss ≈ ₹7.9 L (offsets LTCG ⇒ saves ≈ ₹1.0 L) ⇒ <b>net one-time tax ≈ ₹5.5-7.5 L</b>, recovered by the fee savings in ≈ 9-14 months. Staging exits across FY27 and FY28 uses two ₹1.25 L LTCG exemptions and spreads the bill; the deep dives flag which units are past 12m. (Est.: exact figures need folio-level purchase dates.)</p>
+<h3>16.4 Liquidity ladder (current)</h3>
+<p>T+1/T+2 redeemable: ₹4.62 cr MF (subject to 1% loads on recent units — the Apr-2026-relaxed ICICI Flexicap and 15-day metals FoFs are effectively free). PMS: 7-15 business days in normal markets; Helios carries 1% exit load until yr-3 anniversary (≈ Mar-2027 if 2024 entry — confirm), Founders nil after yr-1. Insurance: illiquid (surrender haircuts). No gating risk visible in normal conditions; in a small-cap liquidity event, Founders is the slowest asset (est.).</p>
+</div>
+
+<h2 id="stress">17 &middot; Scenario &amp; stress testing (Stage 16; holdings/factor-based estimates)</h2>
+<div class="tablewrap"><table>
+<tr><th>Scenario</th><th class="n">Est. portfolio impact (₹6.50 cr base)</th><th>Primary damage</th><th>Resilience</th><th>Basis</th></tr>
+<tr><td>Nifty −10%</td><td class="n">−6% to −7.5% (−₹39-49 L)</td><td>~76% look-through equity, beta ≈ 0.95-1.0</td><td>Metals 8.6%, hybrid debt ~15%</td><td>factor calc</td></tr>
+<tr><td>Nifty −20%</td><td class="n">−13% to −16% (−₹85-104 L)</td><td>Thematic sleeve (19%) and PMS fall 1.1-1.3× market</td><td>ICICI MA halves the fall vs pure equity</td><td>factor calc + FY26 behaviour</td></tr>
+<tr><td>Mid/small-caps −30%</td><td class="n">−9% to −12% (−₹58-78 L)</td><td>Founders PMS (73% mid/small) −25-35%; Kotak funds' sleeves; small-caps</td><td>Large-cap/hybrid core</td><td>holdings est.</td></tr>
+<tr><td>Rates +100bp</td><td class="n">−1% to −2% direct; equity de-rating second-order</td><td>Hybrid debt sleeves (mod. duration ~2.2-2.7yr); financials mixed</td><td>Short duration books</td><td>factsheet durations</td></tr>
+<tr><td>Rates −100bp</td><td class="n">+1.5% to +3%</td><td>—</td><td>Debt sleeves + growth re-rating + gold usually bid</td><td>factor</td></tr>
+<tr><td>INR −10%</td><td class="n">+1.5% to +2.5%</td><td>Import-cost inflation hits autos/consumption names</td><td>Gold in INR (+8.6% sleeve × ~10%); IT (small weight)</td><td>calc</td></tr>
+<tr><td>Crude +40%</td><td class="n">−3% to −5%</td><td>Autos, consumption, cyclicals; CAD-driven de-rating</td><td>Metals sleeve; ICICI value book</td><td>judgement</td></tr>
+<tr><td>Domestic consumption slowdown</td><td class="n">−5% to −8%</td><td>Auto complex (~8-10% look-through), consumer cyclicals, Founders' urbanisation names</td><td>Debt, gold</td><td>holdings est.</td></tr>
+<tr><td>Credit-growth stall / banking stress</td><td class="n">−5% to −9%</td><td><b>Financials ~18-20% look-through — the single biggest factor bet</b></td><td>Metals; manufacturing partially</td><td>holdings est.</td></tr>
+<tr><td>Govt capex slowdown</td><td class="n">−3% to −6%</td><td>Axis Mfg + Business Cycles + Founders' 30% capital-goods; L&amp;T complex</td><td>Consumption names</td><td>holdings est.</td></tr>
+<tr><td>Global recession</td><td class="n">−12% to −18%</td><td>Everything cyclical; PMS beta; small/mid liquidity gap</td><td>Gold historically +; debt sleeves</td><td>regime analogue (2020, 2022)</td></tr>
+<tr><td>Multiples compress to LT averages</td><td class="n">−10% to −15% over 2-3 yrs if earnings flat</td><td>Mid/small at premium valuations (Founders, Kotak sleeves, thematic)</td><td>ICICI value-tilted books closest to fair value</td><td>valuation est. (§18)</td></tr>
+<tr><td>Earnings miss −20%</td><td class="n">−15% to −20%</td><td>Growth-priced holdings de-rate twice (E and P/E)</td><td>Gold, debt</td><td>judgement</td></tr>
+<tr><td>Small-cap liquidity exit</td><td class="n">−4% to −7% + exit friction</td><td>Founders PMS gates slowest; UTI/Axis SC spreads widen</td><td>Large-cap core liquid T+1</td><td>judgement</td></tr>
+</table></div>
+<p class="note">All figures are analyst estimates from holdings/factor exposure and historical regime analogues — not model-backtested VaR. Worst realistic 12-month drawdown for the current mix: <b>≈ −18% to −22% (₹1.2-1.4 cr)</b>; the §19 Balanced restructure trims this to ≈ −14% to −17% while raising expected net return by ~1.3-1.7pp/yr (fee recapture + product upgrades).</p>
+
+<h2 id="forward">18 &middot; Forward-looking 5-year expectations (Stage 17; base case unless stated)</h2>
+<div class="card">
+<p><b>Framework:</b> Expected return ≈ earnings growth + dividend yield ± valuation change − fees − tax/transaction drag. House assumptions (est.): nominal GDP 10-10.5%; Nifty EPS growth 10-12%; large-cap valuations ≈ fair (Nifty ~20-21× trailing, mid-2026 aggregator prints — mildly above LT mean); mid/small still at 10-25% premiums to history despite the FY26 reset; gold after +45% assumed 0-6%/yr forward with wide error bars.</p>
+<div class="tablewrap"><table>
+<tr><th>Bucket</th><th class="n">Earnings + div</th><th class="n">Valuation drift</th><th class="n">Fee drag (as held)</th><th class="n">Base net CAGR</th><th class="n">Bear / Bull</th></tr>
+<tr><td>Large-cap-tilted diversified (ICICI funds, Axis Multicap, Kotak Multicap)</td><td class="n">11-13%</td><td class="n">−1 to 0pp</td><td class="n">1.3-2.0pp (reg)</td><td class="n"><b>9.5-11.5%</b></td><td class="n">4% / 15%</td></tr>
+<tr><td>Mid-cap (Kotak Midcap, MO L&amp;M)</td><td class="n">13-15%</td><td class="n">−2 to −1pp</td><td class="n">1.4-1.7pp</td><td class="n"><b>10-12%</b></td><td class="n">2% / 17%</td></tr>
+<tr><td>Thematic capex (Axis BC, Mfg)</td><td class="n">12-14%</td><td class="n">−3 to −1pp (cycle risk)</td><td class="n">2.1-2.3pp</td><td class="n"><b>8-10.5%</b></td><td class="n">0% / 16%</td></tr>
+<tr><td>Multi-asset (ICICI MA, ABSL)</td><td class="n">9-11% blended</td><td class="n">−0.5 to +0.5pp</td><td class="n">1.1-1.5pp</td><td class="n"><b>9-11%</b></td><td class="n">5% / 13%</td></tr>
+<tr><td>Precious metals sleeve</td><td class="n">0% carry</td><td class="n">spot-driven</td><td class="n">0.4pp</td><td class="n"><b>4-8%</b></td><td class="n">−8% / +15%</td></tr>
+<tr><td>Helios PMS (net)</td><td class="n">11-13% gross engine</td><td class="n">−1 to 0pp</td><td class="n">2.5-4pp fees+tax</td><td class="n"><b>8-10%</b></td><td class="n">3% / 14%</td></tr>
+<tr><td>Founders PMS (net)</td><td class="n">14-17% gross engine (founder mid/small)</td><td class="n">−3 to −1pp</td><td class="n">3-4.5pp fees+perf+tax</td><td class="n"><b>9-13%</b></td><td class="n">−2% / 20%</td></tr>
+</table></div>
+<p><b>Can past CAGRs repeat?</b> Mostly no. The 3-yr trailing prints (16-24% across the book) embed a once-per-decade mid/small re-rating plus a gold super-rally. At current valuations/AUMs the arithmetic supports ~10-12% net for a well-built version of this portfolio — and ~8.5-10% for the portfolio as currently constructed (regular plans + fee stack + redundancy). The restructure is worth roughly <b>+1.3-1.7pp/yr</b> with <i>lower</i> risk — an alpha no manager selection can reliably match.</p>
+</div>
+</div>
+<div class="wrap">
+
+<h2 id="model">19 &middot; Three restructured model portfolios (Stage 18 + required output 7)</h2>
+<p>All three assume the ₹6.50 cr investment corpus (insurance handled separately per §13), execution staged over 6-12 months to manage loads/LTCG windows, and <b>all new/switched MF money in direct plans</b> (via MFU/MF Central/RIA platform — no distributor). Expected figures are base-case estimates from §18; drawdowns are 12-month worst-realistic estimates.</p>
+
+<div class="card">
+<h3 style="margin-top:0">19.A Conservative — "protect first" <span class="sub">(exp. ~9-10% net &middot; exp. max DD ≈ −10-12% &middot; high liquidity)</span></h3>
+<div class="tablewrap"><table>
+<tr><th>Sleeve</th><th class="n">Weight</th><th class="n">₹ (of 6.50 cr)</th><th>Vehicles</th></tr>
+<tr><td>Multi-asset core</td><td class="n">30%</td><td class="n">1.95 cr</td><td>ICICI Multi-Asset (direct) 20% + ABSL MAA retained 10%</td></tr>
+<tr><td>Large-cap index + flexi</td><td class="n">20%</td><td class="n">1.30 cr</td><td>Nifty 50 / Nifty 500 index (direct, ≤0.2% TER) 12% + ICICI India Opps 8%</td></tr>
+<tr><td>Quality mid (small dose)</td><td class="n">5%</td><td class="n">32.5 L</td><td>Kotak Midcap</td></tr>
+<tr><td>Precious metals</td><td class="n">10%</td><td class="n">65 L</td><td>ICICI Gold FoF 6% + MO G&amp;S FoF 4%</td></tr>
+<tr><td>Fixed income (new sleeve)</td><td class="n">30%</td><td class="n">1.95 cr</td><td>Target-maturity G-sec/SDL funds + short-duration AAA + arbitrage funds (equity-taxed parking)</td></tr>
+<tr><td>Liquid buffer</td><td class="n">5%</td><td class="n">32.5 L</td><td>Liquid/overnight funds</td></tr>
+</table></div>
+<p>Both PMS exited over 12m; all thematic/factor exited; small-caps exited. Look-through equity ≈ 45%. Rebalance annually to bands ±3pp; entry: switches immediate where load-free, PMS exits staged.</p>
+</div>
+
+<div class="card">
+<h3 style="margin-top:0">19.B Balanced — "risk-adjusted compounding" <span class="sub">(recommended &middot; exp. ~10.5-11.5% net &middot; exp. max DD ≈ −14-17%)</span></h3>
+<div class="tablewrap"><table>
+<tr><th>Sleeve</th><th class="n">Weight</th><th class="n">₹</th><th>Vehicles</th></tr>
+<tr><td>Multi-asset core</td><td class="n">25%</td><td class="n">1.63 cr</td><td>ICICI Multi-Asset (existing + direct top-up) 18% + ABSL MAA trimmed 7%</td></tr>
+<tr><td>Diversified equity core</td><td class="n">30%</td><td class="n">1.95 cr</td><td>ICICI India Opps 9% + ICICI Flexicap 6% + Kotak Multicap 6% + Axis Multicap 5% + low-cost Nifty 500 index (direct) 4%</td></tr>
+<tr><td>Mid/small alpha</td><td class="n">10%</td><td class="n">65 L</td><td>Kotak Midcap 5% + ICICI Innovation (capped) 2.5% + MO L&amp;M (probation) 1.5% + reserve 1%</td></tr>
+<tr><td>Founders PMS (probation)</td><td class="n">10%</td><td class="n">65 L</td><td>Retain ₹96 L → glide to ₹65 L at FY27 review; hard alpha test (§12.2)</td></tr>
+<tr><td>Precious metals</td><td class="n">9%</td><td class="n">58.5 L</td><td>ICICI Gold FoF 5% + MO G&amp;S 4%, annual rebalance</td></tr>
+<tr><td>Fixed income + buffer</td><td class="n">16%</td><td class="n">1.04 cr</td><td>Target-maturity/short-duration + arbitrage + liquid</td></tr>
+</table></div>
+<p>Exits funding this: Helios (₹92 L), Axis MAA/L&amp;M/SC/Momentum/V50/BAF (₹43 L), UTI SC (₹7 L), Business Cycles −60% (₹23 L), Mfg −50% (₹10 L), ABSL trim (₹23 L). Look-through equity ≈ 62-65%; financials capped ≈ 15%; top-10 stock look-through ≤ 18%. Entry: MF switches over 2 FYs for LTCG bands; PMS exit immediate (loss harvest).</p>
+</div>
+
+<div class="card">
+<h3 style="margin-top:0">19.C Aggressive — "alpha with guardrails" <span class="sub">(exp. ~11.5-13% net &middot; exp. max DD ≈ −22-28%)</span></h3>
+<div class="tablewrap"><table>
+<tr><th>Sleeve</th><th class="n">Weight</th><th class="n">₹</th><th>Vehicles</th></tr>
+<tr><td>Diversified equity core</td><td class="n">40%</td><td class="n">2.60 cr</td><td>India Opps 12% + Kotak Multicap 10% + ICICI Flexicap 8% + Axis Multicap 6% + Nifty 500 index direct 4%</td></tr>
+<tr><td>Mid/small alpha</td><td class="n">17%</td><td class="n">1.11 cr</td><td>Kotak Midcap 8% + Innovation 4% + one high-conviction small-cap (direct, chosen fresh at better valuations) 5%</td></tr>
+<tr><td>Founders PMS</td><td class="n">12%</td><td class="n">78 L</td><td>Retained in full + FY27 test; hard cap 12%</td></tr>
+<tr><td>Multi-asset</td><td class="n">13%</td><td class="n">85 L</td><td>ICICI Multi-Asset</td></tr>
+<tr><td>Precious metals</td><td class="n">10%</td><td class="n">65 L</td><td>Gold 6% + G&amp;S 4%</td></tr>
+<tr><td>Fixed income buffer</td><td class="n">8%</td><td class="n">52 L</td><td>Short-duration + liquid (dry powder for corrections)</td></tr>
+</table></div>
+<p>Helios still exits (alpha test failed even for aggressive money). Deploy the small-cap sleeve only on ≥15% index corrections, in 3 tranches. Look-through equity ≈ 75-78%.</p>
+</div>
+
+<div class="card">
+<h3 style="margin-top:0">Rules common to all three</h3>
+<ul>
+<li><b>Entry method:</b> existing equity stays invested (no cash-out-and-re-enter); switches executed scheme-to-scheme; genuinely new equity money staggered 6-9 months or on −5% dips; metals rebalanced, never chased.</li>
+<li><b>Exit rules:</b> any fund — two consecutive years bottom-half of category OR manager exit without credible bench → replace. PMS — rolling 2-yr net TWRR &lt; benchmark +3pp → exit. Metals sleeve &gt;12% of portfolio → trim back to target.</li>
+<li><b>Rebalancing:</b> annual (April, after FY tax positions are known), bands ±3pp; use fresh inflows to rebalance before selling.</li>
+<li><b>Never again list:</b> NFOs bought in the first year of life; regular plans; index funds via distributors; a fourth asset-allocation fund; traditional insurance as "investment"; two PMS accounts sized at 29% of investments through one bank channel.</li>
+</ul>
+</div>
+
+<h2 id="monitor">20 &middot; Monitoring dashboard (Stage 20 / required output 9)</h2>
+<div class="tablewrap"><table>
+<tr><th>Frequency</th><th>What to check</th><th>Trigger → action</th></tr>
+<tr><td><b>Monthly</b></td><td>PMS statements (TWRR vs BSE 500 TRI, fee debits, holdings); metals sleeve weight; any fund-manager/AMC news (esp. ICICI Innovation under Dusad, MO L&amp;M bench, Kotak Midcap under Bhole)</td><td>Manager exit at any held fund → freeze adds, review in 30 days. Metals &gt;12% → trim.</td></tr>
+<tr><td><b>Quarterly</b></td><td>Category quartile ranks (VR/Morningstar) for all held funds; factsheet sector drift (financials look-through vs 15% cap; Flexicap auto bet); AUM jumps &gt;25%/qtr; ICICI MA equity % (tax status)</td><td>Two consecutive bottom-half quarters → watchlist. Style drift &gt;10pp from mandate → review.</td></tr>
+<tr><td><b>Half-yearly</b></td><td>Founders PMS alpha test progress; Helios exit-load window (if staged); SWAG premium due (Dec); overlap re-scan after any fund change; direct-plan migration progress</td><td>Founders 2-yr rolling net &lt; bmk+3pp at FY27 → exit. </td></tr>
+<tr><td><b>Annually (April)</b></td><td>Full rebalance to bands; LTCG harvesting vs ₹1.25 L exemption; insurance policy schedule review (obtain Smart Wealth ×2 statements!); term-cover adequacy vs family needs; re-run this product scoring</td><td>Any fund score &lt;55 → replace. Portfolio cost &gt;0.9% of assets → audit distribution channel creep.</td></tr>
+<tr><td><b>Event-driven</b></td><td>SEBI action at any AMC/PMS held; Naren retirement/role change at ICICI; second SWAG-type policy ever proposed (10(10D) breach!); market −20% (deploy dry powder per plan)</td><td>Immediate committee review.</td></tr>
+</table></div>
+
+<h2 id="verdict">21 &middot; Final verdict — the ten questions (required output 10)</h2>
+<div class="card">
+<ol>
+<li><b>Which products genuinely deserve capital?</b> ICICI Multi-Asset, ICICI India Opportunities, Kotak Multicap, Kotak Midcap, ICICI Flexicap, the two metals FoFs, Axis Multicap (kept, capped) — plus, on probation, MO Founders PMS and ICICI Innovation.</li>
+<li><b>Which only look attractive because of past returns?</b> Axis Business Cycles and Axis India Manufacturing (NFO-era beta dressed as theme alpha), MO Large &amp; Midcap (record belongs to a departed manager), UTI Small Cap's +46.5% folio gain (market, not fund — it lagged its index throughout), and both metals FoFs' trailing 45-60% prints (spot rally, unrepeatable).</li>
+<li><b>Which managers appear to possess repeatable skill?</b> The ICICI value/multi-asset engine (Naren, Chandak, house process) — highest confidence; Kotak's Bisen/Singhal and (provisionally) Bhole; Vaibhav Agrawal's Founders framework — promising but one-cycle. Helios: no net-of-fee evidence of skill over six years.</li>
+<li><b>Which strategies depend on a favourable regime?</b> Founders PMS and every mid/small-heavy sleeve (need breadth + flows); Axis Mfg/Business Cycles (need the capex cycle); Axis Momentum (needs trending markets — failed its first test); metals FoFs (need monetary/geopolitical fear).</li>
+<li><b>Which contain hidden concentration or liquidity risks?</b> Look-through financials ~18-20% and autos ~8-10% across "diversified" funds; Founders' 73% mid/small in stress; Helios' undisclosed book; ₹71.5 L trapped in surrender-penalised insurance.</li>
+<li><b>What would a sophisticated family office select?</b> Portfolio 19.B: one multi-asset core, 4-5 diversified equity engines in direct plans, a disciplined 9-10% metals sleeve, a real fixed-income sleeve, at most one PMS on a measurable alpha covenant — total product cost ≤0.6%/yr, one-page monitoring.</li>
+<li><b>What should the investor buy now?</b> Nothing new except: direct-plan share classes (via switch), a Nifty 500 index fund (direct), and target-maturity/short-duration debt to build the missing fixed-income sleeve. This is a consolidation moment, not a buying moment.</li>
+<li><b>What should be staggered?</b> Additional equity into India Opps/Kotak funds (6-9 months); the future small-cap sleeve (only on ≥15% corrections); redeployment of Helios proceeds (3 tranches).</li>
+<li><b>What should be avoided completely?</b> Any new NFO, any new regular-plan purchase, a second PMS through the bank channel, any new traditional insurance (it would also detonate the SWAG 10(10D) exemption), momentum/factor NFOs, and adding to Axis MAA/UTI SC/Axis Momentum (exits, not adds).</li>
+<li><b>Optimal allocation among shortlisted products?</b> Portfolio 19.B (weights in table): ICICI MA 18% &middot; India Opps 9% &middot; ICICI Flexicap 6% &middot; Kotak Multicap 6% &middot; Axis Multicap 5% &middot; index 4% &middot; Kotak Midcap 5% &middot; Innovation 2.5% &middot; MO L&amp;M 1.5% &middot; ABSL MAA 7% &middot; Founders PMS 10%→glide &middot; metals 9% &middot; debt+liquid 16%.</li>
+</ol>
+</div>
+
+<h2 id="method">22 &middot; Methodology, scoring, sources &amp; disclaimer</h2>
+<div class="card">
+<h3 style="margin-top:0">Scoring model (weights per mandate)</h3>
+<p>Investment process 10 &middot; portfolio quality 10 &middot; manager/team 10 &middot; return consistency 10 &middot; risk-adjusted performance 10 &middot; downside protection 10 &middot; valuation 8 &middot; transparency 8 &middot; fee efficiency 7 &middot; liquidity 5 &middot; tax efficiency 4 &middot; organisational stability 4 &middot; scalability 4. Sub-scores are embedded in each deep dive's narrative (process/team/fees/flags); composite scores appear in §6. Forward-Looking Attractiveness re-weights toward current holdings, valuation, scalability and repeatability — it demotes Business Cycles, MO L&amp;M, Helios and the metals FoFs' trailing numbers, and promotes ICICI MA/India Opps. Data-confidence: each verdict box carries High/Medium/Low reflecting source quality and gaps.</p>
+<h3>Key limitations (read before acting)</h3>
+<ul>
+<li>Statement returns are absolute since purchase, not XIRR; transaction dates were unavailable — all "investor execution" observations rely on avg-cost vs NAV arithmetic.</li>
+<li>PMS analysis uses SEBI-format strategy TWRR (pooled, net) — not this client's account; client fee option, entry dates and holdings were not provided.</li>
+<li>Rolling-return/drawdown/VaR tables per Stage 5-6 require full NAV histories not rebuildable within this engagement; risk stats shown are the latest published 3-yr figures.</li>
+<li>Aggregator TER/return prints vary by as-of date (GST-inclusive vs base); ±0.2pp/±0.5pp tolerances apply where flagged.</li>
+<li>Insurance analysis is brochure/regulation-benchmarked; actual policy schedules override every estimate here.</li>
+<li>My market-data knowledge is verified only to the cited source dates (mostly 31-May → 03-Jul-2026); nothing after 03-Jul-2026 is reflected.</li>
+</ul>
+<h3>Principal sources</h3>
+<p class="src">AMC factsheets (ICICI Prudential complete factsheet 31-May-2026; ABSL digital factsheet 31-May-2026; Axis MF scheme pages), AMFI/SEBI PMS monthly disclosures (Helios &amp; MOAMC strategy AUM/returns, 31-May-2026), Helios SEBI disclosure document (Jul-2025), Value Research / Morningstar / Advisorkhoj / Groww / Tickertape / Dezerv / INDmoney / BMSMoney fund pages (01-03-Jul-2026), ICICI Direct &amp; Kotak platform pages (02-03-Jul-2026), Bloomberg (Tawakley exit, 06-Feb-2026), UTI &amp; Motilal Oswal addenda (Jul/Aug-2025), SEBI settlement order re Axis AMC (24-Mar-2025), CBDT Circular 15/2023 &amp; Rule 11UACA, IRDAI Master Circular 12-Jun-2024, Axis Max Life brochures/company disclosures, Policybazaar/Ditto/Beshak/Holistic Investment product reviews (accessed 03-Jul-2026). Specific citations appear inline in each section.</p>
+<h3>Disclaimer</h3>
+<p class="sub">This document is an independent analytical review prepared from the client's statement and public information for the client's private use. It is not investment advice within the meaning of SEBI (Investment Advisers) Regulations, nor a solicitation. Figures marked est./calc are analytical constructions with stated assumptions; verify all actionable numbers (loads, taxes, surrender values, folio dates) against official records before executing. Mutual fund and PMS investments are subject to market risk; past performance does not indicate future returns.</p>
+</div>
+<p class="sub" style="margin-top:26px">Prepared 03-Jul-2026 &middot; Valuation date 31-May-2026 &middot; All amounts INR. End of report.</p>
+</div>
